@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-yes.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-yes.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-yes.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false};
+  </script>
+
+  <meta name="description" content="#!&#x2F;bin&#x2F;bash # # &#x2F;etc&#x2F;rc.d&#x2F;rc.sysinit - run once at boot time # # Taken in part from Miquel van Smoorenburg’s bcheckrc. # HOSTNAME&#x3D;&#96;&#x2F;bin&#x2F;hostname&#96; HOSTTYPE&#x3D;&#96;uname -m&#96; unamer&#x3D;&#96;uname -r&#96; if [ -f &#x2F;etc&#x2F;sys">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FC4 实体机的&#x2F;etc&#x2F;rc.d&#x2F;rc.sysinit">
+<meta property="og:url" content="http://yoursite.com/2014/11/25/fc4-%E5%AE%9E%E4%BD%93%E6%9C%BA%E7%9A%84-etc-rc-d-rc-sysinit/index.html">
+<meta property="og:site_name" content="Ye&#39;s Blog">
+<meta property="og:description" content="#!&#x2F;bin&#x2F;bash # # &#x2F;etc&#x2F;rc.d&#x2F;rc.sysinit - run once at boot time # # Taken in part from Miquel van Smoorenburg’s bcheckrc. # HOSTNAME&#x3D;&#96;&#x2F;bin&#x2F;hostname&#96; HOSTTYPE&#x3D;&#96;uname -m&#96; unamer&#x3D;&#96;uname -r&#96; if [ -f &#x2F;etc&#x2F;sys">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2014-11-25T03:40:00.000Z">
+<meta property="article:modified_time" content="2020-07-31T14:35:50.205Z">
+<meta property="article:author" content="ZorroYe">
+<meta property="article:tag" content="未分类">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2014/11/25/fc4-%E5%AE%9E%E4%BD%93%E6%9C%BA%E7%9A%84-etc-rc-d-rc-sysinit/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>FC4 实体机的/etc/rc.d/rc.sysinit | Ye's Blog</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?2b0dbd880dfaff3fde3fcb1beb61713d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Ye's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">勤解万难</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ZorroYe</p>
+  <div class="site-description" itemprop="description">升级认知，看透本质</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">369</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zorroye" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zorroye" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:439753096@qq.com" title="E-Mail → mailto:439753096@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2014/11/25/fc4-%E5%AE%9E%E4%BD%93%E6%9C%BA%E7%9A%84-etc-rc-d-rc-sysinit/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          FC4 实体机的/etc/rc.d/rc.sysinit
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2014-11-25 11:40:00" itemprop="dateCreated datePublished" datetime="2014-11-25T11:40:00+08:00">2014-11-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-31 22:35:50" itemprop="dateModified" datetime="2020-07-31T22:35:50+08:00">2020-07-31</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>#!/bin/bash</p>
+<p>#</p>
+<p># /etc/rc.d/rc.sysinit - run once at boot time</p>
+<p>#</p>
+<p># Taken in part from Miquel van Smoorenburg’s bcheckrc.</p>
+<p>#</p>
+<p>HOSTNAME=`/bin/hostname`</p>
+<p>HOSTTYPE=`uname -m`</p>
+<p>unamer=`uname -r`</p>
+<p>if [ -f /etc/sysconfig/network ]; then</p>
+<p>    . /etc/sysconfig/network</p>
+<p>fi</p>
+<p>if [ -z “$HOSTNAME” -o “$HOSTNAME” = “(none)” ]; then</p>
+<p>    HOSTNAME=localhost</p>
+<p>fi</p>
+<p># Mount /proc and /sys (done here so volume labels can work with fsck)</p>
+<p>mount -n -t proc /proc /proc</p>
+<p>if [ ! -d /proc/bus/usb ]; then</p>
+<p>modprobe usbcore &gt;/dev/null 2&gt;&amp;1 &amp;&amp; mount -n -t usbfs /proc/bus/usb /proc/bus/usb</p>
+<p>else</p>
+<p>mount -n -t usbfs /proc/bus/usb /proc/bus/usb</p>
+<p>fi</p>
+<p>mount -n -t sysfs /sys /sys &gt;/dev/null 2&gt;&amp;1</p>
+<p>. /etc/init.d/functions</p>
+<p># Check SELinux status</p>
+<p>selinuxfs=`LC_ALL=C awk ‘/ selinuxfs / { print $2 }’ /proc/mounts`</p>
+<p>SELINUX=</p>
+<p>if [ -n “$selinuxfs” ] &amp;&amp; [ “`cat /proc/self/attr/current`“ != “kernel” ]; then</p>
+<p>if [ -r $selinuxfs/enforce ] ; then</p>
+<p>SELINUX=`cat $selinuxfs/enforce`</p>
+<p>else</p>
+<p># assume enforcing if you can’t read it</p>
+<p>SELINUX=1</p>
+<p>fi</p>
+<p>fi</p>
+<p>if [ -n “$SELINUX” -a -x /sbin/restorecon ] &amp;&amp; LC_ALL=C fgrep -q “ /dev “ /proc/mounts ; then</p>
+<p>/sbin/restorecon  -R /dev 2&gt;/dev/null</p>
+<p>fi</p>
+<p>disable_selinux() {</p>
+<p>echo “*** Warning – SELinux is active”</p>
+<p>echo “*** Disabling security enforcement for system recovery.”</p>
+<p>echo “*** Run ‘setenforce 1’ to reenable.”</p>
+<p>echo “0” &gt; $selinuxfs/enforce</p>
+<p>}</p>
+<p>relabel_selinux() {</p>
+<p>    if [ -x /usr/bin/rhgb-client ] &amp;&amp; /usr/bin/rhgb-client –ping ; then</p>
+<p>chvt 1</p>
+<p>    fi</p>
+<p>    echo “</p>
+<p>         *** Warning – SELinux relabel is required. ***</p>
+<p>*** Disabling security enforcement.         ***</p>
+<p>*** Relabeling could take a very long time, ***</p>
+<p>*** depending on file system size.          ***</p>
+<p>“</p>
+<p>    echo “0” &gt; $selinuxfs/enforce</p>
+<p>    /sbin/fixfiles -f -F relabel &gt; /dev/null 2&gt;&amp;1 </p>
+<p>    rm -f  /.autorelabel </p>
+<p>    echo “*** Enabling security enforcement.         ***“</p>
+<p>    echo $SELINUX &gt; $selinuxfs/enforce</p>
+<p>    if [ -x /usr/bin/rhgb-client ] &amp;&amp; /usr/bin/rhgb-client –ping ; then</p>
+<p>chvt 8</p>
+<p>    fi</p>
+<p>}</p>
+<p>if [ “$HOSTTYPE” != “s390” -a “$HOSTTYPE” != “s390x” ]; then</p>
+<p>  last=0</p>
+<p>  for i in `LC_ALL=C grep ‘^[0-9].*respawn:/sbin/mingetty’ /etc/inittab | sed ‘s/^.* tty\([0-9][0-9]*\).*/\1/g’`; do</p>
+<p>        &gt; /dev/tty$i</p>
+<p>        last=$i</p>
+<p>  done</p>
+<p>  if [ $last -gt 0 ]; then</p>
+<p>       &gt; /dev/tty$((last+1))</p>
+<p>       &gt; /dev/tty$((last+2))</p>
+<p>  fi</p>
+<p>fi</p>
+<p>if [ “$CONSOLETYPE” = “vt” -a -x /sbin/setsysfont ]; then</p>
+<p>   echo -n “Setting default font ($SYSFONT): “</p>
+<p>   /sbin/setsysfont</p>
+<p>   if [ $? -eq 0 ]; then</p>
+<p>      success</p>
+<p>   else</p>
+<p>      failure</p>
+<p>   fi</p>
+<p>   echo ; echo</p>
+<p>fi</p>
+<p># Print a text banner.</p>
+<p>echo -en $”\t\tWelcome to “</p>
+<p>if LC_ALL=C fgrep -q “Red Hat” /etc/redhat-release ; then </p>
+<p> [ “$BOOTUP” = “color” ] &amp;&amp; echo -en “\\033[0;31m”</p>
+<p> echo -en “Red Hat”</p>
+<p> [ “$BOOTUP” = “color” ] &amp;&amp; echo -en “\\033[0;39m”</p>
+<p> PRODUCT=`sed “s/Red Hat \(.*\) release.*/\1/“ /etc/redhat-release`</p>
+<p> echo “ $PRODUCT”</p>
+<p>elif LC_ALL=C fgrep -q “Fedora” /etc/redhat-release ; then </p>
+<p> [ “$BOOTUP” = “color” ] &amp;&amp; echo -en “\\033[0;31m”</p>
+<p> echo -en “Fedora”</p>
+<p> [ “$BOOTUP” = “color” ] &amp;&amp; echo -en “\\033[0;39m”</p>
+<p> PRODUCT=`sed “s/Fedora \(.*\) release.*/\1/“ /etc/redhat-release`</p>
+<p> echo “ $PRODUCT”</p>
+<p>else</p>
+<p> PRODUCT=`sed “s/ release.*//g” /etc/redhat-release`</p>
+<p> echo “$PRODUCT”</p>
+<p>fi</p>
+<p>if [ “$PROMPT” != “no” ]; then</p>
+<p> echo -en $”\t\tPress ‘I’ to enter interactive startup.”</p>
+<p> echo</p>
+<p>fi</p>
+<p># Fix console loglevel</p>
+<p>if [ -n “$LOGLEVEL” ]; then</p>
+<p>/bin/dmesg -n $LOGLEVEL</p>
+<p>fi</p>
+<p>[ -x /sbin/start_udev ] &amp;&amp; /sbin/start_udev</p>
+<p># Only read this once.</p>
+<p>cmdline=$(cat /proc/cmdline)</p>
+<p># Initialize hardware</p>
+<p>if [ -f /proc/sys/kernel/modprobe ]; then</p>
+<p>   if ! strstr “$cmdline” nomodules &amp;&amp; [ -f /proc/modules ] ; then</p>
+<p>       sysctl -w kernel.modprobe=”/sbin/modprobe” &gt;/dev/null 2&gt;&amp;1</p>
+<p>       sysctl -w kernel.hotplug=”/sbin/udevsend” &gt;/dev/null 2&gt;&amp;1</p>
+<p>   else</p>
+<p>       # We used to set this to NULL, but that causes ‘failed to exec’ messages”</p>
+<p>       sysctl -w kernel.modprobe=”/bin/true” &gt;/dev/null 2&gt;&amp;1</p>
+<p>       sysctl -w kernel.hotplug=”/bin/true” &gt;/dev/null 2&gt;&amp;1</p>
+<p>   fi</p>
+<p>fi</p>
+<p>echo -n $”Initializing hardware… “</p>
+<p>ide=””</p>
+<p>scsi=””</p>
+<p>network=””</p>
+<p>audio=””</p>
+<p>other=””</p>
+<p>eval `kmodule -d | while read devtype mod ; do</p>
+<p>case “$devtype” in</p>
+<p>“IDE”)ide=”$ide $mod”</p>
+<p>  echo “ide=\“$ide”\“;;</p>
+<p>“SCSI”) scsi=”$scsi $mod”</p>
+<p>  echo “scsi=\“$scsi”\“;;</p>
+<p>“NETWORK”) network=”$network $mod”</p>
+<p>  echo “network=\“$network”\“;;</p>
+<p>“AUDIO”) audio=”$audio $mod”</p>
+<p>  echo “audio=\“$audio”\“;;</p>
+<p>*) other=”$other $mod”</p>
+<p>  echo “other=\“$other”\“;;</p>
+<p>esac</p>
+<p>done`</p>
+<p>load_module () {</p>
+<p>LC_ALL=C fgrep -xq “$1” /etc/hotplug/blacklist 2&gt;/dev/null || modprobe $1 &gt;/dev/null 2&gt;&amp;1</p>
+<p>}</p>
+<p># IDE</p>
+<p>for module in $ide ; do</p>
+<p>load_module $module</p>
+<p>done</p>
+<p># SCSI</p>
+<p>for module in `/sbin/modprobe -c | LC_ALL=C awk ‘/^alias[[:space:]]+scsi_hostadapter[0-9]*[[:space:]]/ { print $3 }’` $scsi; do</p>
+<p>load_module $module</p>
+<p>done</p>
+<p>load_module floppy</p>
+<p>echo -n $” storage”</p>
+<p># Network</p>
+<p>pushd /etc/sysconfig/network-scripts &gt;/dev/null 2&gt;&amp;1</p>
+<p>interfaces=`ls ifcfg* | LC_ALL=C egrep -v ‘(ifcfg-lo|:|rpmsave|rpmorig|rpmnew)’ | \</p>
+<p>            LC_ALL=C egrep -v ‘(~|\.bak)$’ | \</p>
+<p>            LC_ALL=C egrep ‘ifcfg-[A-Za-z0-9\._-]+$’ | \</p>
+<p>   sed ‘s/^ifcfg-//g’ |</p>
+<p>   sed ‘s/[0-9]/ &amp;/‘ | LC_ALL=C sort -k 1,1 -k 2n | sed ‘s/ //‘`</p>
+<p>for i in $interfaces ; do</p>
+<p>eval $(LC_ALL=C fgrep “DEVICE=” ifcfg-$i)</p>
+<p>load_module $DEVICE</p>
+<p>done</p>
+<p>popd &gt;/dev/null 2&gt;&amp;1</p>
+<p>for module in $network ; do</p>
+<p>load_module $module</p>
+<p>done</p>
+<p>echo -n $” network”</p>
+<p># Sound</p>
+<p>for module in `/sbin/modprobe -c | LC_ALL=C awk ‘/^alias[[:space:]]+snd-card-[[:digit:]]+[[:space:]]/ { print $3 }’` $audio; do</p>
+<p>load_module $module</p>
+<p>done</p>
+<p>echo -n $” audio”</p>
+<p># Everything else (duck and cover)</p>
+<p>for module in $other ; do</p>
+<p>load_module $module</p>
+<p>done</p>
+<p>echo -n $” done”</p>
+<p>success</p>
+<p>echo</p>
+<p># Load other user-defined modules</p>
+<p>for file in /etc/sysconfig/modules/*.modules ; do</p>
+<p>  [ -x $file ] &amp;&amp; $file</p>
+<p>done</p>
+<p># Load modules (for backward compatibility with VARs)</p>
+<p>if [ -f /etc/rc.modules ]; then</p>
+<p>/etc/rc.modules</p>
+<p>fi</p>
+<p># Start the graphical boot, if necessary; /usr may not be mounted yet, so we</p>
+<p># may have to do this again after mounting</p>
+<p>RHGB_STARTED=0</p>
+<p>mount -n /dev/pts</p>
+<p>if strstr “$cmdline” rhgb &amp;&amp; ! strstr “$cmdline” early-login &amp;&amp; [ “$BOOTUP” = “color” -a “$GRAPHICAL” = “yes” -a -x /usr/bin/rhgb ]; then</p>
+<p>   LC_MESSAGES= /usr/bin/rhgb</p>
+<p>   RHGB_STARTED=1</p>
+<p>fi</p>
+<p># Configure kernel parameters</p>
+<p>update_boot_stage RCkernelparam</p>
+<p>sysctl -e -p /etc/sysctl.conf &gt;/dev/null 2&gt;&amp;1</p>
+<p># Set the system clock.</p>
+<p>update_boot_stage RCclock</p>
+<p>ARC=0</p>
+<p>SRM=0</p>
+<p>UTC=0</p>
+<p>if [ -f /etc/sysconfig/clock ]; then</p>
+<p>   . /etc/sysconfig/clock</p>
+<p>   # convert old style clock config to new values</p>
+<p>   if [ “${CLOCKMODE}” = “GMT” ]; then</p>
+<p>      UTC=true</p>
+<p>   elif [ “${CLOCKMODE}” = “ARC” ]; then</p>
+<p>      ARC=true</p>
+<p>   fi</p>
+<p>fi</p>
+<p>CLOCKDEF=””</p>
+<p>CLOCKFLAGS=”$CLOCKFLAGS –hctosys”</p>
+<p>case “$UTC” in</p>
+<p>    yes|true)CLOCKFLAGS=”$CLOCKFLAGS –utc”</p>
+<p>CLOCKDEF=”$CLOCKDEF (utc)” ;;</p>
+<p>    no|false)CLOCKFLAGS=”$CLOCKFLAGS –localtime”</p>
+<p>CLOCKDEF=”$CLOCKDEF (localtime)” ;;</p>
+<p>esac</p>
+<p>case “$ARC” in</p>
+<p>    yes|true)CLOCKFLAGS=”$CLOCKFLAGS –arc”</p>
+<p>CLOCKDEF=”$CLOCKDEF (arc)” ;;</p>
+<p>esac</p>
+<p>case “$SRM” in</p>
+<p>    yes|true)CLOCKFLAGS=”$CLOCKFLAGS –srm”</p>
+<p>CLOCKDEF=”$CLOCKDEF (srm)” ;;</p>
+<p>esac</p>
+<p>/sbin/hwclock $CLOCKFLAGS</p>
+<p>action $”Setting clock $CLOCKDEF: `date`“ /bin/true</p>
+<p>if [ “$CONSOLETYPE” = “vt” -a -x /bin/loadkeys ]; then</p>
+<p> KEYTABLE=</p>
+<p> KEYMAP=</p>
+<p> if [ -f /etc/sysconfig/console/default.kmap ]; then</p>
+<p>  KEYMAP=/etc/sysconfig/console/default.kmap</p>
+<p> else</p>
+<p>  if [ -f /etc/sysconfig/keyboard ]; then</p>
+<p>    . /etc/sysconfig/keyboard</p>
+<p>  fi</p>
+<p>  if [ -n “$KEYTABLE” -a -d “/lib/kbd/keymaps” ]; then</p>
+<p>     KEYMAP=”$KEYTABLE.map”</p>
+<p>  fi</p>
+<p> fi</p>
+<p> if [ -n “$KEYMAP” ]; then </p>
+<p>  if [ -n “$KEYTABLE” ]; then</p>
+<p>    echo -n $”Loading default keymap ($KEYTABLE): “</p>
+<p>  else</p>
+<p>    echo -n $”Loading default keymap: “</p>
+<p>  fi</p>
+<p>  loadkeys -u $KEYMAP &lt; /dev/tty0 &gt; /dev/tty0 2&gt;/dev/null &amp;&amp; \</p>
+<p>     success $”Loading default keymap” || failure $”Loading default keymap”</p>
+<p>  echo</p>
+<p> fi</p>
+<p>fi</p>
+<p># Set the hostname.</p>
+<p>update_boot_stage RChostname</p>
+<p>action $”Setting hostname ${HOSTNAME}: “ hostname ${HOSTNAME}</p>
+<p># Initialiaze ACPI bits</p>
+<p>if [ -d /proc/acpi ]; then</p>
+<p>   for module in /lib/modules/$unamer/kernel/drivers/acpi/* ; do</p>
+<p>      insmod $module &gt;/dev/null 2&gt;&amp;1</p>
+<p>   done</p>
+<p>fi</p>
+<p># configure all zfcp (scsi over fibrechannel) devices before trying to mount them</p>
+<p># zfcpconf.sh exists only on mainframe</p>
+<p>[ -x /sbin/zfcpconf.sh ] &amp;&amp; /sbin/zfcpconf.sh</p>
+<p># RAID setup</p>
+<p>update_boot_stage RCraid</p>
+<p>echo “raidautorun /dev/md0” | nash –quiet</p>
+<p>if [ -f /etc/mdadm.conf ]; then</p>
+<p>    /sbin/mdadm -A -s</p>
+<p>fi</p>
+<p># LVM2 initialization</p>
+<p>if [ -x /sbin/lvm.static ]; then</p>
+<p>    if ! LC_ALL=C fgrep -q “device-mapper” /proc/devices 2&gt;/dev/null ; then</p>
+<p>modprobe dm-mod &gt;/dev/null 2&gt;&amp;1</p>
+<p>    fi</p>
+<p>    echo “mkdmnod” | /sbin/nash –quiet &gt;/dev/null 2&gt;&amp;1</p>
+<p>    [ -n “$SELINUX” ] &amp;&amp; restorecon /dev/mapper/control &gt;/dev/null 2&gt;&amp;1</p>
+<p>    if [ -c /dev/mapper/control -a -x /sbin/lvm.static ]; then</p>
+<p>if /sbin/lvm.static vgscan –mknodes –ignorelockingfailure &gt; /dev/null 2&gt;&amp;1 ; then</p>
+<p>   action $”Setting up Logical Volume Management:” /sbin/lvm.static vgchange -a y –ignorelockingfailure</p>
+<p>fi</p>
+<p>    fi</p>
+<p>fi</p>
+<p>if [ -f /fastboot ] || strstr “$cmdline” fastboot ; then</p>
+<p>fastboot=yes</p>
+<p>fi</p>
+<p>if [ -f /fsckoptions ]; then</p>
+<p>fsckoptions=`cat /fsckoptions`</p>
+<p>fi</p>
+<p>if [ -f /forcefsck ] || strstr “$cmdline” forcefsck ; then</p>
+<p>fsckoptions=”-f $fsckoptions”</p>
+<p>elif [ -f /.autofsck ]; then</p>
+<p>[ -f /etc/sysconfig/autofsck ] &amp;&amp; . /etc/sysconfig/autofsck</p>
+<p>if [ “$AUTOFSCK_DEF_CHECK” = “yes” ]; then</p>
+<p>AUTOFSCK_OPT=”$AUTOFSCK_OPT -f”</p>
+<p>fi</p>
+<p>fsckoptions=”$AUTOFSCK_OPT $fsckoptions”</p>
+<p>fi</p>
+<p>if [ “$BOOTUP” = “color” ]; then</p>
+<p>fsckoptions=”-C $fsckoptions”</p>
+<p>else</p>
+<p>fsckoptions=”-V $fsckoptions”</p>
+<p>fi</p>
+<p>if [ -f /etc/sysconfig/readonly-root ]; then</p>
+<p>    . /etc/sysconfig/readonly-root</p>
+<p>    if [ “$READONLY” = “yes” ]; then</p>
+<p>        # Call rc.readonly to set up magic stuff needed for readonly root</p>
+<p>        . /etc/rc.readonly</p>
+<p>    fi</p>
+<p>fi</p>
+<p>_RUN_QUOTACHECK=0</p>
+<p>if [ -z “$fastboot” -a “$READONLY” != “yes” ]; then</p>
+<p>        STRING=$”Checking filesystems”</p>
+<p>echo $STRING</p>
+<p>if [ “${RHGB_STARTED}” != “0” -a -w /etc/rhgb/temp/rhgb-console ]; then</p>
+<p>fsck -T -A -a $fsckoptions &gt; /etc/rhgb/temp/rhgb-console</p>
+<p>else</p>
+<p>fsck -T -A -a $fsckoptions</p>
+<p>fi</p>
+<p>rc=$?</p>
+<p>if [ “$rc” -eq “0” ]; then</p>
+<p>success “$STRING”</p>
+<p>echo</p>
+<p>elif [ “$rc” -eq “1” ]; then</p>
+<p>       passed “$STRING”</p>
+<p>echo</p>
+<p>elif [ “$rc” -eq “2” -o “$rc” -eq “3” ]; then </p>
+<p>echo $”Unmounting file systems”</p>
+<p>umount -a</p>
+<p>mount -n -o remount,ro /</p>
+<p>echo $”Automatic reboot in progress.”</p>
+<p>reboot -f</p>
+<p>        fi</p>
+<p>        # A return of 4 or higher means there were serious problems.</p>
+<p>if [ $rc -gt 1 ]; then</p>
+<p>       if [ -x /usr/bin/rhgb-client ] &amp;&amp; /usr/bin/rhgb-client –ping ; then</p>
+<p>   chvt 1</p>
+<p>fi</p>
+<p>failure “$STRING”</p>
+<p>echo</p>
+<p>echo</p>
+<p>echo $”*** An error occurred during the file system check.”</p>
+<p>echo $”*** Dropping you to a shell; the system will reboot”</p>
+<p>echo $”*** when you leave the shell.”</p>
+<p>                str=$”(Repair filesystem)”</p>
+<p>PS1=”$str \# # “; export PS1</p>
+<p>[ “$SELINUX” = “1” ] &amp;&amp; disable_selinux</p>
+<p>sulogin</p>
+<p>echo $”Unmounting file systems”</p>
+<p>umount -a</p>
+<p>mount -n -o remount,ro /</p>
+<p>echo $”Automatic reboot in progress.”</p>
+<p>reboot -f</p>
+<p>elif [ “$rc” -eq “1” ]; then</p>
+<p>_RUN_QUOTACHECK=1</p>
+<p>fi</p>
+<p>if [ -f /.autofsck -a -x /usr/bin/rhgb-client ] &amp;&amp; /usr/bin/rhgb-client –ping ; then</p>
+<p>chvt 8</p>
+<p>    fi</p>
+<p>fi</p>
+<p># Unmount the initrd, if necessary</p>
+<p>if LC_ALL=C fgrep -q /initrd /proc/mounts &amp;&amp; ! LC_ALL=C fgrep -q /initrd/loopfs /proc/mounts ; then</p>
+<p>   umount /initrd</p>
+<p>   /sbin/blockdev –flushbufs /dev/ram0 &gt;/dev/null 2&gt;&amp;1</p>
+<p>fi</p>
+<p># Update quotas if necessary</p>
+<p>if [ X”$_RUN_QUOTACHECK” = X1 -a -x /sbin/quotacheck ]; then</p>
+<p>if [ -x /sbin/convertquota ]; then</p>
+<p>   # try to convert old quotas</p>
+<p>   for mountpt in `LC_ALL=C awk ‘$4 ~ /quota/{print $2}’ /etc/mtab` ; do</p>
+<p>if [ -f “$mountpt/quota.user” ]; then</p>
+<p>   action $”Converting old user quota files: “ \</p>
+<p>   /sbin/convertquota -u $mountpt &amp;&amp; \</p>
+<p>rm -f $mountpt/quota.user</p>
+<p>fi</p>
+<p>if [ -f “$mountpt/quota.group” ]; then</p>
+<p>   action $”Converting old group quota files: “ \</p>
+<p>   /sbin/convertquota -g $mountpt &amp;&amp; \</p>
+<p>rm -f $mountpt/quota.group</p>
+<p>fi</p>
+<p>   done</p>
+<p>fi</p>
+<p>action $”Checking local filesystem quotas: “ /sbin/quotacheck -aRnug</p>
+<p>fi</p>
+<p># Remount the root filesystem read-write.</p>
+<p>update_boot_stage RCmountfs</p>
+<p>state=`LC_ALL=C awk ‘/ \/ / &amp;&amp; ($3 !~ /rootfs/) { print $4 }’ /proc/mounts`</p>
+<p>[ “$state” != “rw” -a “$READONLY” != “yes” ] &amp;&amp; \</p>
+<p>  action $”Remounting root filesystem in read-write mode: “ mount -n -o remount,rw /</p>
+<p># Clean up SELinux labels</p>
+<p>if [ -n “$SELINUX” ]; then</p>
+<p>   for file in /etc/mtab /etc/ld.so.cache ; do</p>
+<p>   [ -r $file ] &amp;&amp; restorecon $file  &gt;/dev/null 2&gt;&amp;1</p>
+<p>   done</p>
+<p>fi</p>
+<p># Clear mtab</p>
+<p>(&gt; /etc/mtab) &amp;&gt; /dev/null</p>
+<p># Remove stale backups</p>
+<p>rm -f /etc/mtab~ /etc/mtab~~</p>
+<p># Enter mounted filesystems into /etc/mtab</p>
+<p>mount -f /</p>
+<p>mount -f /proc &gt;/dev/null 2&gt;&amp;1</p>
+<p>mount -f /sys &gt;/dev/null 2&gt;&amp;1</p>
+<p>mount -f /dev/pts &gt;/dev/null 2&gt;&amp;1</p>
+<p>mount -f /proc/bus/usb &gt;/dev/null 2&gt;&amp;1</p>
+<p># Mount all other filesystems (except for NFS and /proc, which is already</p>
+<p># mounted). Contrary to standard usage,</p>
+<p># filesystems are NOT unmounted in single user mode.</p>
+<p>action $”Mounting local filesystems: “ mount -a -t nonfs,nfs4,smbfs,ncpfs,cifs,gfs -O no_netdev</p>
+<p>if [ -x /sbin/quotaon ]; then</p>
+<p>    action $”Enabling local filesystem quotas: “ /sbin/quotaon -aug</p>
+<p>fi</p>
+<p># Check to see if a full relabel is needed</p>
+<p>if [ -n “$SELINUX” ]; then </p>
+<p>    if [ -f /.autorelabel ] || strstr “$cmdline” autorelabel ; then</p>
+<p>relabel_selinux</p>
+<p>    fi</p>
+<p>else</p>
+<p>    if [ -d /etc/selinux ]; then</p>
+<p>        [ -f /.autorelabel ] || touch /.autorelabel</p>
+<p>    fi</p>
+<p>fi</p>
+<p># Start the graphical boot, if necessary and not done yet.</p>
+<p>if strstr “$cmdline” rhgb &amp;&amp; ! strstr “$cmdline” early-login &amp;&amp; [ “$RHGB_STARTED” -eq 0 -a “$BOOTUP” = “color” -a “$GRAPHICAL” = “yes” -a -x /usr/bin/rhgb ]; then</p>
+<p>   LC_MESSAGES= /usr/bin/rhgb</p>
+<p>   RHGB_STARTED=1</p>
+<p>fi</p>
+<p># Initialize pseudo-random number generator</p>
+<p>if [ -f “/var/lib/random-seed” ]; then</p>
+<p>cat /var/lib/random-seed &gt; /dev/urandom</p>
+<p>else</p>
+<p>touch /var/lib/random-seed</p>
+<p>fi</p>
+<p>chmod 600 /var/lib/random-seed</p>
+<p>dd if=/dev/urandom of=/var/lib/random-seed count=1 bs=512 2&gt;/dev/null</p>
+<p># Use the hardware RNG to seed the entropy pool, if available</p>
+<p>#[ -x /sbin/rngd -a -c /dev/hw_random ] &amp;&amp; rngd</p>
+<p># Configure machine if necessary.</p>
+<p>if [ -f /.unconfigured ]; then</p>
+<p>    if [ -x /usr/bin/rhgb-client ] &amp;&amp; /usr/bin/rhgb-client –ping ; then</p>
+<p>chvt 1</p>
+<p>    fi</p>
+<p>    if [ -x /usr/bin/system-config-keyboard ]; then</p>
+<p>/usr/bin/system-config-keyboard</p>
+<p>    fi</p>
+<p>    if [ -x /usr/bin/passwd ]; then </p>
+<p>        /usr/bin/passwd root</p>
+<p>    fi</p>
+<p>    if [ -x /usr/sbin/netconfig ]; then</p>
+<p>/usr/sbin/netconfig</p>
+<p>    fi</p>
+<p>    if [ -x /usr/sbin/timeconfig ]; then</p>
+<p>/usr/sbin/timeconfig</p>
+<p>    fi</p>
+<p>    if [ -x /usr/sbin/authconfig ]; then</p>
+<p>/usr/sbin/authconfig –nostart</p>
+<p>    fi</p>
+<p>    if [ -x /usr/sbin/ntsysv ]; then</p>
+<p>/usr/sbin/ntsysv –level 35</p>
+<p>    fi</p>
+<p>    # Reread in network configuration data.</p>
+<p>    if [ -f /etc/sysconfig/network ]; then</p>
+<p>. /etc/sysconfig/network</p>
+<p># Reset the hostname.</p>
+<p>action $”Resetting hostname ${HOSTNAME}: “ hostname ${HOSTNAME}</p>
+<p>    fi</p>
+<p>    rm -f /.unconfigured</p>
+<p>    if [ -x /usr/bin/rhgb-client ] &amp;&amp; /usr/bin/rhgb-client –ping ; then</p>
+<p>chvt 8</p>
+<p>    fi</p>
+<p>fi</p>
+<p># Clean out /.</p>
+<p>rm -f /fastboot /fsckoptions /forcefsck /.autofsck /halt /poweroff &amp;&gt; /dev/null</p>
+<p># Do we need (w|u)tmpx files? We don’t set them up, but the sysadmin might…</p>
+<p>_NEED_XFILES=</p>
+<p>[ -f /var/run/utmpx -o -f /var/log/wtmpx ] &amp;&amp; _NEED_XFILES=1</p>
+<p># Clean up /var.  I’d use find, but /usr may not be mounted.</p>
+<p>for afile in /var/lock/* /var/run/* ; do</p>
+<p>if [ -d “$afile” ]; then</p>
+<p>  case “$afile” in</p>
+<p>*/news|*/mon);;</p>
+<p>*/sudo)rm -f $afile/*/* ;;</p>
+<p>*/vmware)rm -rf $afile/*/* ;;</p>
+<p>*/samba)rm -rf $afile/*/* ;;</p>
+<p>*/screen)rm -rf $afile/* ;;</p>
+<p>*)rm -f $afile/* ;;</p>
+<p>  esac</p>
+<p>else</p>
+<p>  rm -f $afile</p>
+<p>fi</p>
+<p>done</p>
+<p>rm -f /var/lib/rpm/__db* &amp;&gt; /dev/null</p>
+<p>rm -f /var/gdm/.gdmfifo &amp;&gt; /dev/null</p>
+<p># Reset pam_console permissions</p>
+<p>[ -x /sbin/pam_console_apply ] &amp;&amp; /sbin/pam_console_apply -r</p>
+<p>{</p>
+<p># Clean up utmp/wtmp</p>
+<p>&gt; /var/run/utmp</p>
+<p>touch /var/log/wtmp</p>
+<p>chgrp utmp /var/run/utmp /var/log/wtmp</p>
+<p>chmod 0664 /var/run/utmp /var/log/wtmp</p>
+<p>if [ -n “$_NEED_XFILES” ]; then</p>
+<p>  &gt; /var/run/utmpx</p>
+<p>  touch /var/log/wtmpx</p>
+<p>  chgrp utmp /var/run/utmpx /var/log/wtmpx</p>
+<p>  chmod 0664 /var/run/utmpx /var/log/wtmpx</p>
+<p>fi</p>
+<p># Clean up various /tmp bits</p>
+<p>[ -n “$SELINUX” ] &amp;&amp; restorecon /tmp</p>
+<p>rm -f /tmp/.X*-lock /tmp/.lock.* /tmp/.gdm_socket /tmp/.s.PGSQL.*</p>
+<p>rm -rf /tmp/.X*-unix /tmp/.ICE-unix /tmp/.font-unix /tmp/hsperfdata_* \</p>
+<p>       /tmp/kde-* /tmp/ksocket-* /tmp/mc-* /tmp/mcop-* /tmp/orbit-*  \</p>
+<p>       /tmp/scrollkeeper-*  /tmp/ssh-*</p>
+<p># Make ICE directory</p>
+<p>mkdir -m 1777 -p /tmp/.ICE-unix &gt;/dev/null 2&gt;&amp;1</p>
+<p>chown root:root /tmp/.ICE-unix</p>
+<p>[ -n “$SELINUX” ] &amp;&amp; restorecon /tmp/.ICE-unix &gt;/dev/null 2&gt;&amp;1</p>
+<p># Start up swapping.</p>
+<p>update_boot_stage RCswap</p>
+<p>action $”Enabling swap space: “ swapon -a -e</p>
+<p># Set up binfmt_misc</p>
+<p>/bin/mount -t binfmt_misc none /proc/sys/fs/binfmt_misc &gt; /dev/null 2&gt;&amp;1</p>
+<p># Initialize the serial ports.</p>
+<p>if [ -f /etc/rc.serial ]; then</p>
+<p>. /etc/rc.serial</p>
+<p>fi</p>
+<p># If they asked for ide-scsi, load it</p>
+<p>if strstr “$cmdline” ide-scsi ; then</p>
+<p>modprobe ide-cd &gt;/dev/null 2&gt;&amp;1</p>
+<p>modprobe ide-scsi &gt;/dev/null 2&gt;&amp;1</p>
+<p>fi</p>
+<p># Boot time profiles. Yes, this should be somewhere else.</p>
+<p>if [ -x /usr/sbin/system-config-network-cmd ]; then</p>
+<p>  if strstr “$cmdline” netprofile= ; then</p>
+<p>    for arg in $cmdline ; do</p>
+<p>        if [ “${arg##netprofile=}” != “${arg}” ]; then</p>
+<p>   /usr/sbin/system-config-network-cmd –profile ${arg##netprofile=}</p>
+<p>        fi</p>
+<p>    done</p>
+<p>  fi</p>
+<p>fi</p>
+<p># Now that we have all of our basic modules loaded and the kernel going,</p>
+<p># let’s dump the syslog ring somewhere so we can find it later</p>
+<p>dmesg -s 131072 &gt; /var/log/dmesg</p>
+<p># create the crash indicator flag to warn on crashes, offer fsck with timeout</p>
+<p>touch /.autofsck &amp;&gt; /dev/null</p>
+<p>kill -TERM `/sbin/pidof getkey` &gt;/dev/null 2&gt;&amp;1</p>
+<p>} &amp;</p>
+<p>if strstr “$cmdline” confirm ; then</p>
+<p>touch /var/run/confirm</p>
+<p>fi</p>
+<p>if [ “$PROMPT” != “no” ]; then</p>
+<p>/sbin/getkey i &amp;&amp; touch /var/run/confirm</p>
+<p>fi</p>
+<p>wait</p>
+<p># Let rhgb know that we’re leaving rc.sysinit</p>
+<p>if [ -x /usr/bin/rhgb-client ] &amp;&amp; /usr/bin/rhgb-client –ping ; then</p>
+<p>    /usr/bin/rhgb-client –sysinit</p>
+<p>fi</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%9C%AA%E5%88%86%E7%B1%BB/" rel="tag"># 未分类</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2014/11/14/%E3%80%90%E8%BD%AC%E8%BD%BD%E3%80%91issh-%E8%BF%9E-ipad/" rel="prev" title="【转载】issh 连 IPAD">
+      <i class="fa fa-chevron-left"></i> 【转载】issh 连 IPAD
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2014/11/25/fc4-rc-sysinit%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B/" rel="next" title="FC4 rc.sysinit启动过程">
+      FC4 rc.sysinit启动过程 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZorroYe</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

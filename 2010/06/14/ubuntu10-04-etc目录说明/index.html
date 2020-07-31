@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-yes.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-yes.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-yes.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false};
+  </script>
+
+  <meta name="description" content="ls -al &#x2F;etc | awk ‘{print $8}’ acpi                              #管电源 adduser.conf                 #adduser默认配置 alternatives anacrontab                   #anacron配置文件，anacron用于执行关机期间的cron apache2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ubuntu10.04     &#x2F;etc目录说明">
+<meta property="og:url" content="http://yoursite.com/2010/06/14/ubuntu10-04-etc%E7%9B%AE%E5%BD%95%E8%AF%B4%E6%98%8E/index.html">
+<meta property="og:site_name" content="Ye&#39;s Blog">
+<meta property="og:description" content="ls -al &#x2F;etc | awk ‘{print $8}’ acpi                              #管电源 adduser.conf                 #adduser默认配置 alternatives anacrontab                   #anacron配置文件，anacron用于执行关机期间的cron apache2">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2010-06-14T11:40:00.000Z">
+<meta property="article:modified_time" content="2020-07-31T14:35:49.463Z">
+<meta property="article:author" content="ZorroYe">
+<meta property="article:tag" content="未分类">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2010/06/14/ubuntu10-04-etc%E7%9B%AE%E5%BD%95%E8%AF%B4%E6%98%8E/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>ubuntu10.04     /etc目录说明 | Ye's Blog</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?2b0dbd880dfaff3fde3fcb1beb61713d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Ye's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">勤解万难</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ZorroYe</p>
+  <div class="site-description" itemprop="description">升级认知，看透本质</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">369</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zorroye" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zorroye" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:439753096@qq.com" title="E-Mail → mailto:439753096@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2010/06/14/ubuntu10-04-etc%E7%9B%AE%E5%BD%95%E8%AF%B4%E6%98%8E/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ubuntu10.04     /etc目录说明
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2010-06-14 19:40:00" itemprop="dateCreated datePublished" datetime="2010-06-14T19:40:00+08:00">2010-06-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-31 22:35:49" itemprop="dateModified" datetime="2020-07-31T22:35:49+08:00">2020-07-31</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>ls -al /etc | awk ‘{print $8}’</p>
+<p>acpi                              #管电源</p>
+<p>adduser.conf                 #adduser默认配置</p>
+<p>alternatives</p>
+<p>anacrontab                   #anacron配置文件，anacron用于执行关机期间的cron</p>
+<p>apache2                       #apache配置文件夹</p>
+<p>apm                             #管电源</p>
+<p>apparmor                     #应用程序访问控制系统，类似selinux</p>
+<p>apparmor.d       </p>
+<p>apport                          #用于生成系统崩溃报告</p>
+<p>apt                              #apt配置</p>
+<p>at.deny                        #设置哪些用户不能用at</p>
+<p>avahi                           #IPv4LL网络地址配置后台</p>
+<p>bash.bashrc                 #.bashrc默认配置</p>
+<p>bash_completion          #bash自动补齐功能</p>
+<p>bash_completion.d       </p>
+<p>bindresvport.blacklist    #600-1024的端口绑定</p>
+<p>blkid.conf                     #查看文件系统信息等</p>
+<p>blkid.tab</p>
+<p>bluetooth                     #蓝牙配置文件</p>
+<p>bogofilter.cf                 </p>
+<p>bonobo-activation</p>
+<p>brlapi.key</p>
+<p>brltty</p>
+<p>byobu</p>
+<p>ca-certificates</p>
+<p>ca-certificates.conf</p>
+<p>calendar</p>
+<p>chatscripts</p>
+<p>checkbox.d</p>
+<p>compizconfig</p>
+<p>computer-janitor.d</p>
+<p>ConsoleKit</p>
+<p>console-setup</p>
+<p>couchdb</p>
+<p>cron.d                          #cron配置文件</p>
+<p>cron.daily</p>
+<p>cron.hourly</p>
+<p>cron.monthly</p>
+<p>crontab</p>
+<p>cron.weekly</p>
+<p>crypttab</p>
+<p>cups                            #cups配置</p>
+<p>cvs-cron.conf</p>
+<p>cvs-pserver.conf</p>
+<p>dbconfig-common</p>
+<p>dbus-1                         #输入法配置</p>
+<p>debconf.conf</p>
+<p>debian_version</p>
+<p>default</p>
+<p>defoma</p>
+<p>deluser.conf</p>
+<p>depmod.d</p>
+<p>dhcp3</p>
+<p>dictionaries-common</p>
+<p>doc-base</p>
+<p>dpkg                           #dpkg配置</p>
+<p>eioXpack</p>
+<p>emacs</p>
+<p>environment               #环境参数</p>
+<p>esound</p>
+<p>Evermore</p>
+<p>firefox</p>
+<p>firefox-3.0</p>
+<p>fonts                          #字体配置</p>
+<p>foomatic</p>
+<p>fstab                          #默认文件系统加载</p>
+<p>fuse.conf</p>
+<p>gai.conf</p>
+<p>gamin</p>
+<p>gconf</p>
+<p>gdb</p>
+<p>gdm</p>
+<p>gimp</p>
+<p>gnome</p>
+<p>gnome-app-install</p>
+<p>gnome-system-tools</p>
+<p>gnome-vfs-2.0</p>
+<p>gnome-vfs-mime-magic</p>
+<p>gre.d</p>
+<p>groff</p>
+<p>group</p>
+<p>group-</p>
+<p>grub.d</p>
+<p>gshadow                       #组密码配置</p>
+<p>gshadow-</p>
+<p>gtk-2.0</p>
+<p>hal</p>
+<p>hdparm.conf</p>
+<p>host.conf            </p>
+<p>hostname                      #计算机名</p>
+<p>hosts                            #IP地址对应</p>
+<p>hosts.allow                    </p>
+<p>hosts.deny</p>
+<p>hp</p>
+<p>ifplugd</p>
+<p>init</p>
+<p>init.d</p>
+<p>initramfs-tools</p>
+<p>inputrc</p>
+<p>insserv</p>
+<p>insserv.conf</p>
+<p>insserv.conf.d</p>
+<p>iproute2</p>
+<p>issue                           #登录提示</p>
+<p>issue.net                     #网络登录提示</p>
+<p>.java</p>
+<p>java-6-openjdk</p>
+<p>kbd</p>
+<p>kernel</p>
+<p>kernel-img.conf</p>
+<p>kerneloops.conf</p>
+<p>ldap</p>
+<p>ld.so.cache</p>
+<p>ld.so.conf</p>
+<p>ld.so.conf.d</p>
+<p>legal</p>
+<p>lftp.conf</p>
+<p>libpaper.d</p>
+<p>locale.alias</p>
+<p>localtime</p>
+<p>logcheck</p>
+<p>login.defs</p>
+<p>logrotate.conf            #轮替配置</p>
+<p>logrotate.d                #轮替包含文件</p>
+<p>lsb-base</p>
+<p>lsb-base-logging.sh</p>
+<p>lsb-release</p>
+<p>ltrace.conf</p>
+<p>magic</p>
+<p>magic.mime</p>
+<p>mailcap</p>
+<p>mailcap.order</p>
+<p>manpath.config</p>
+<p>menu</p>
+<p>menu-methods</p>
+<p>mime.types</p>
+<p>mke2fs.conf</p>
+<p>modprobe.d</p>
+<p>modules</p>
+<p>mono</p>
+<p>motd</p>
+<p>mplayer</p>
+<p>mtab                         #所有加载的文件系统记录</p>
+<p>mtab.fuselock</p>
+<p>mtools.conf</p>
+<p>mysql</p>
+<p>nanorc</p>
+<p>netscsid.conf</p>
+<p>network</p>
+<p>NetworkManager</p>
+<p>networks</p>
+<p>nsswitch.conf</p>
+<p>obex-data-server</p>
+<p>ocsinventory</p>
+<p>openal</p>
+<p>openoffice</p>
+<p>opt</p>
+<p>pam.conf</p>
+<p>pam.d</p>
+<p>pango</p>
+<p>papersize</p>
+<p>passwd                      #系统账户</p>
+<p>passwd-</p>
+<p>pcmcia</p>
+<p>perl</p>
+<p>php5</p>
+<p>pm</p>
+<p>pnm2ppa.conf</p>
+<p>polkit-1</p>
+<p>popularity-contest.conf</p>
+<p>ppp</p>
+<p>profile</p>
+<p>profile.d</p>
+<p>protocols</p>
+<p>pulse</p>
+<p>purple</p>
+<p>.pwd.lock</p>
+<p>python</p>
+<p>python2.6</p>
+<p>rc0.d                          #系统启动时要开启的服务</p>
+<p>rc1.d</p>
+<p>rc2.d</p>
+<p>rc3.d</p>
+<p>rc4.d</p>
+<p>rc5.d</p>
+<p>rc6.d</p>
+<p>rc.local</p>
+<p>rcS.d</p>
+<p>request-key.conf</p>
+<p>resolvconf</p>
+<p>resolv.conf                  #DNS配置</p>
+<p>rmt</p>
+<p>rpc</p>
+<p>rsyslog.conf</p>
+<p>rsyslog.d</p>
+<p>samba                        #共享配置</p>
+<p>sane.d</p>
+<p>screenrc</p>
+<p>securetty</p>
+<p>security</p>
+<p>sensors3.conf</p>
+<p>sensors.d</p>
+<p>services                        #服务端口记录</p>
+<p>sgml</p>
+<p>shadow                         #密码记录文件</p>
+<p>shadow-</p>
+<p>shells                            #系统所有的shell</p>
+<p>skel                               #预配置目录</p>
+<p>sound</p>
+<p>speech-dispatcher</p>
+<p>ssh                                #ssh配置</p>
+<p>ssl</p>
+<p>sudoers                          #sudo权限设置</p>
+<p>sudoers.d</p>
+<p>su-to-rootrc</p>
+<p>sysctl.conf</p>
+<p>sysctl.d</p>
+<p>sysstat</p>
+<p>terminfo</p>
+<p>thnuclnt</p>
+<p>thunderbird                     #邮箱配置</p>
+<p>timezone</p>
+<p>timidity</p>
+<p>ts.conf</p>
+<p>ucf.conf</p>
+<p>udev</p>
+<p>ufw                               #ufw防火墙配置</p>
+<p>updatedb.conf</p>
+<p>update-manager</p>
+<p>update-motd.d</p>
+<p>update-notifier</p>
+<p>vga</p>
+<p>vim                               #vi配置</p>
+<p>vlc                                #影音软件VLC配置</p>
+<p>vmware                        #vmware配置</p>
+<p>vmware-installer           #vmware-tools文件</p>
+<p>vmware-vix</p>
+<p>w3m</p>
+<p>wgetrc</p>
+<p>wildmidi</p>
+<p>wodim.conf</p>
+<p>wpa_supplicant</p>
+<p>X11                              #XWINDOW配置</p>
+<p>xdg</p>
+<p>xml</p>
+<p>xul-ext</p>
+<p>xulrunner-1.9.2</p>
+<p>zsh_command_not_found</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%9C%AA%E5%88%86%E7%B1%BB/" rel="tag"># 未分类</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2010/06/09/%E9%B8%9F%E5%93%A5%E7%9A%84linux%E7%A7%81%E6%88%BF%E8%8F%9C-%E5%9F%BA%E7%A1%80%E5%AD%A6%E4%B9%A0%E7%AF%87%E7%AC%AC%E4%BA%8C%E7%89%88/" rel="prev" title="鸟哥的linux私房菜-基础学习篇(第二版)">
+      <i class="fa fa-chevron-left"></i> 鸟哥的linux私房菜-基础学习篇(第二版)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2010/07/01/ubuntu%E7%9B%B8%E5%85%B3%E6%94%B6%E8%97%8F/" rel="next" title="ubuntu相关收藏">
+      ubuntu相关收藏 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZorroYe</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-yes.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-yes.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-yes.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false};
+  </script>
+
+  <meta name="description" content="转自：http:&#x2F;&#x2F;nbbbs.zol.com.cn&#x2F;24&#x2F;544_237379.html文章是07年的，有点旧   启动过程：1、 电源开启。2、 执行固件中的代码。3、 收集硬件信息并初始硬件。4、 选择启动项（通常是选择 OS ，但有时会选择硬件测试等类似情况。）。用户可能会被提示进行启动选择。5、 控制权交给 &#x2F;System&#x2F;Library&#x2F;CoreServices&#x2F;BootX （启动引导">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[转载]Mac OS X 系统启动过程">
+<meta property="og:url" content="http://yoursite.com/2013/03/13/%E8%BD%AC%E8%BD%BDmac-os-x-%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B/index.html">
+<meta property="og:site_name" content="Ye&#39;s Blog">
+<meta property="og:description" content="转自：http:&#x2F;&#x2F;nbbbs.zol.com.cn&#x2F;24&#x2F;544_237379.html文章是07年的，有点旧   启动过程：1、 电源开启。2、 执行固件中的代码。3、 收集硬件信息并初始硬件。4、 选择启动项（通常是选择 OS ，但有时会选择硬件测试等类似情况。）。用户可能会被提示进行启动选择。5、 控制权交给 &#x2F;System&#x2F;Library&#x2F;CoreServices&#x2F;BootX （启动引导">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2013-03-13T00:21:00.000Z">
+<meta property="article:modified_time" content="2020-07-31T14:35:50.074Z">
+<meta property="article:author" content="ZorroYe">
+<meta property="article:tag" content="未分类">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2013/03/13/%E8%BD%AC%E8%BD%BDmac-os-x-%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>[转载]Mac OS X 系统启动过程 | Ye's Blog</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?2b0dbd880dfaff3fde3fcb1beb61713d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Ye's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">勤解万难</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ZorroYe</p>
+  <div class="site-description" itemprop="description">升级认知，看透本质</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">369</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zorroye" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zorroye" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:439753096@qq.com" title="E-Mail → mailto:439753096@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2013/03/13/%E8%BD%AC%E8%BD%BDmac-os-x-%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [转载]Mac OS X 系统启动过程
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2013-03-13 08:21:00" itemprop="dateCreated datePublished" datetime="2013-03-13T08:21:00+08:00">2013-03-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-31 22:35:50" itemprop="dateModified" datetime="2020-07-31T22:35:50+08:00">2020-07-31</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>转自：<a target="_blank" rel="noopener" href="http://nbbbs.zol.com.cn/24/544_237379.html">http://nbbbs.zol.com.cn/24/544_237379.html</a><br>文章是07年的，有点旧  </p>
+<p>启动过程：<br>1、 电源开启。<br>2、 执行固件中的代码。<br>3、 收集硬件信息并初始硬件。<br>4、 选择启动项（通常是选择 OS ，但有时会选择硬件测试等类似情况。）。用户可能会被提示进行启动选择。<br>5、 控制权交给 /System/Library/CoreServices/BootX （启动引导器）。 BootX 载入内核并描绘 OS 标识（如有）。BootX 尝试载入先前缓存的设备驱动列表（根据 /usr/sbin/kextcache 进行创建或更新）。缓存的类型为 mkext 且为多内核扩展包含了信息词典（info dictionaries）与二进制文件。注意：如果 mkext 缓存丢失或损坏，BootX 将在 /System/Library/Extensions 中搜索当前方案中所需要的扩展（由该扩展包中 Info.plist 文件的 OSBundleRequired 属性值进行决定。）<br>6、 执行内核中的 init 例程。决定要启动之系统的根设备。从此刻起，将不再使用固件中的程序。<br>7、 由内核初始各种 Mach/BSD 数据结构。<br>8、 初始 I/O （输入输出）设备。<br>9、 内核开始运行 /sbin/mach_init ，Mach 服务命名（引导程序）后台。mach_init 为服务名和要准备访问其它服务所用的 Mach 端口提供映射。<br>到这步时，启动开始转为用户等级：<br>10、 mach_init 开始 /sbin/init，传统的 BSD 初始化（init）进程。初始化将决定运行等级，并运行 /etc/rc.boot （设置让机器能够运行单用户－single user 模式）。<br>在此步中，将执行： rc.boot 与其它 rc 脚本源程序 /etc/rc.common，一个包含实用功能的 shell 脚本，如 CheckForNetwork() （检查如网络已启动）， GetPID(), purgedir() （仅删除目录内容， 而非结构），等。<br>11、 rc.boot 会显示要启动的类型（多用户，安全模式，光驱，网络等等）。网络启动的情况下（ sysctl 的变量 kern.netboot 将会为何种情况而设之为 1 ），其将用一个启动参数来运行 /etc/rc.netboot 。<br>/etc/rc.netboot 会处理网络启动的参数特征。例如:执行网络和（如有）本地挂载。其还会呼叫 /usr/bin/nbst 来关联当作根设备使用的磁盘镜像到一个影子文件（shadow file）。此方法是将那个希望处于本地存储器的文件（磁盘）重定向写入到影子文件。<br>12、 rc.boot 会在必须进行文件系统一致性检查（file system consistency check， fsck）时，显示图形。单用户模式和用光盘启动时不会运行 fsck。安全模式启动时总会运行 fsck。rc.boot 也会处理 fsck 的返回状态。<br>13、 如果 rc.boot 成功退出， /etc/rc 多用户启动脚本将会运行。如果正在从一个光驱启动，脚本将切换到 /etc/rc.cdrom （安装）。<br>14、 /etc/rc 挂载本地文件系统 (HFS+、HFS、UFS、/dev/fd、/.vol)，确保目录 /private/var/tmp 存在，然后运行 /etc/rc.installer_cleanup 如果有（重启前，会由安装器离开）。<br>15、 /etc/rc.cleanup 运行。其将“清理”一定数量的 Unix 与 Mac 特殊目录/文件。<br>16、 启动缓存 （BootCache）开始。<br>17、 各种 sysctl 变量被设置（如：vnodes 的最大值、System V IPC 等）。如果 /etc/sysctl.conf 已存在 (在 Mac OS X Server 中为 /etc/sysctl-macosxserver.conf)，它将读取和设置 sysctl 变量为已包含在其中的。<br>18、 syslogd 开始。<br>19、 创建机器检查符号文件（Mach symbol file）。<br>20、 /etc/rc 开始 kextd 后台进程，用来从内核或委托进程 （client processes）加载所需的内核扩展。<br>21、 /usr/libexec/register_mach_bootstrap_servers 将运行以加载包含在 /etc/mach_init.d 中的各种 Mach 引导程序所基于的服务。<br>22、 portmap 与 netinfo 开始。<br>23、 如 /System/Library/Extensions.mkext 旧于 /System/Library/Extensions， /etc/rc 将删除已存在的 mkext 并创建一个新的（不存在时，会创建）。<br>24、 /etc/rc 启动 /usr/sbin/update，一个后台程序，用来频繁地清空磁盘上的互联网文件系统缓存。<br>25、 /etc/rc 启动虚拟内存系统。 设置 /private/var/vm 为一个交换目录。/sbin/dynamic_pager 以适当的参数启动（交换文件名路径模板、已创建的交换文件大小、当创建额外交换文件或删除已存在文件时，指定高、低水平的警报切换开关。）<br>26、 /etc/rc 启动 /usr/libexec/fix_prebinding 以修复错误地预连编二进制文件 （prebound binaries）<br>27、 /etc/rc 执行 /etc/rc.cleanup 以清除并重置文件与设备。<br>28、 /etc/rc 最后将启动 /sbin/SystemStarter ，处理启动项从下列位置： /System/Library/StartupItems 与 /Library/StartupItems。一个启动项是一个程序、一个 shell 脚本、匹配一个文件夹名的名称。文件夹包含一个属性列表文件含有一些配对的关键值，如： Deion、Provides、Requires、 OrderPreference、启动与停止信息等等。您可以运行 SystemStarter -n -D 以作为根用户 (root) 来进行程序打印调试与从属信息（不包含现在已经在运行的任何项目）。<br>29、 CoreGraphics 启动开始 Apple 类型服务后台(ATSServer) 和 Window 服务器 (WindowServer)。<br>默认下，loginwindow 程序 (loginwindow.app 位于 /System/Library/CoreServices 目录下) 已为控制设备执行。如果您不想运行到图形登录，可以修改 /etc/ttys 中相关的行。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%9C%AA%E5%88%86%E7%B1%BB/" rel="tag"># 未分类</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2013/03/12/ubuntu10-04-%E8%B0%83%E6%95%B4%E5%B1%8F%E5%B9%95%E4%BA%AE%E5%BA%A6/" rel="prev" title="ubuntu10.04 调整屏幕亮度">
+      <i class="fa fa-chevron-left"></i> ubuntu10.04 调整屏幕亮度
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2013/03/20/1%E3%80%81%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%EF%BC%8C%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/" rel="next" title="1、基础概念，文件说明">
+      1、基础概念，文件说明 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZorroYe</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
