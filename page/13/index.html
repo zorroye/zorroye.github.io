@@ -216,7 +216,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">369</span>
+          <span class="site-state-item-count">367</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -265,211 +265,6 @@
 
         <div class="content index posts-expand">
           
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2013/04/11/%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%854%EF%BC%9Aacpi/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2013/04/11/%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%854%EF%BC%9Aacpi/" class="post-title-link" itemprop="url">基础补充4：ACPI</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2013-04-11 09:31:00" itemprop="dateCreated datePublished" datetime="2013-04-11T09:31:00+08:00">2013-04-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-31 22:35:50" itemprop="dateModified" datetime="2020-07-31T22:35:50+08:00">2020-07-31</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>ACPI:由BIOS、硬件、操作系统共同支持来实现的  </p>
-<blockquote>
-<p><img src="http://img2.ph.126.net/Gpm_QaMIKP4DnkJXZW3caA==/3032611399098946130.jpg" alt="基础补充4：ACPI - leaf - ------坚持雅操------" title="基础补充4：ACPI - leaf - ------坚持雅操------"></p>
-<p>   </p>
-</blockquote>
-<p>ACPI的功能：略  </p>
-<blockquote>
-<p>IRQ的数目是通过ACPI来实现扩充的。  </p>
-</blockquote>
-<p>ACPI的各个状态  </p>
-<blockquote>
-<p>G0(正常)—————–G1(睡眠)—————-G2(可网络唤醒等关机状态)———G3(关机)<br>|S0                              |S1-S4                        |S5<br>|C/D/P State</p>
-</blockquote>
-<blockquote>
-<p>S State：  </p>
-<blockquote>
-<p>cat /proc/acpi/sleep  </p>
-<blockquote>
-<p>S0 S3 S4 S5  </p>
-</blockquote>
-<p>-————————  </p>
-</blockquote>
-<blockquote>
-<p>S0：正常状态<br>S3：待机状态：STR：当前状态存储到内存，未关机<br>S4：休眠状态：STD：当前状态存储到硬盘并关机，从新开机后回到关机前的状态<br>S5：关机状态：包含G2、G3  </p>
-</blockquote>
-<p>C State：调CPU的状态，如CPU的电压，暂停CPU执行的指令  </p>
-<blockquote>
-<p>cat /proc/acpi/processor/CPU0/power  </p>
-</blockquote>
-<p>D State：调设备的用电量：屏幕亮度，空闲时关闭网卡等  </p>
-<p>P State：调CPU的频率  </p>
-<blockquote>
-<p>cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies  </p>
-<blockquote>
-<p>2900000 2200000 1700000 800000  </p>
-</blockquote>
-</blockquote>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2013/04/09/%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%853%EF%BC%9Ainitrd-img%E9%87%8C%E7%9A%84init%E5%92%8C-etc-rc-sysinit/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2013/04/09/%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%853%EF%BC%9Ainitrd-img%E9%87%8C%E7%9A%84init%E5%92%8C-etc-rc-sysinit/" class="post-title-link" itemprop="url">基础补充3：initrd.img里的init和/etc/rc.sysinit</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2013-04-09 15:52:00" itemprop="dateCreated datePublished" datetime="2013-04-09T15:52:00+08:00">2013-04-09</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-31 22:35:50" itemprop="dateModified" datetime="2020-07-31T22:35:50+08:00">2020-07-31</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>了解这两个文件对以后制作LFS很有帮助。  </p>
-<p>1、调出initrd.img 里的init文件  </p>
-<blockquote>
-<p>mv initrd.img initrd.gz<br>gunzip initrd.gz<br>cpio -id &lt; initrd 就能看到了  </p>
-<p><img src="http://img2.ph.126.net/m66GHfFX_CgNhzDRGsQc0Q==/2232096565415793248.png" alt="基础补充3：initrd.img里的init和/etc/rc.sysinit - leaf - ------坚持雅操------" title="基础补充3：initrd.img里的init和/etc/rc.sysinit - leaf - ------坚持雅操------"></p>
-<p> <br>-————————–FC4 init内容—————————–<br>#———开启nash用于执行以下内容，nash同bash，比较小巧。#!是固定格式。—–</p>
-<blockquote>
-<p>#!/bin/nash        </p>
-</blockquote>
-<p>#——加载3目录。initrd里面已经有这3个“空”目录了，加载到内存中供kernel使用 ——–<br>#——这3个目录里的文件将由kernel产生<br>#—–需要注意的是/目录是由kernel产生的，而不是initrd提供的。<br>#—–procfs和sysfs是内核层的文件，除了内核，其他都改不了。用于存储硬件和进程相关信息。<br>#—–/dev文件 以tmpfs文件系统来存储<br>#—–tmpfs是建立在内存中的，刚开机由于没有实体设备被加载，所有产生的信息都存在内存中。  </p>
-<blockquote>
-<p>mount -t proc /proc /proc<br>setquiet<br>echo Mounted /proc filesystem<br>echo Mounting sysfs<br>mount -t sysfs /sys /sys<br>echo Creating /dev<br>mount -o mode=0755 -t tmpfs /dev /dev  </p>
-</blockquote>
-<p>#———建立设备文件，console用于显示，null和zero起到垃圾桶的作用 ————-<br>#——mknod 主要是建b c  </p>
-<blockquote>
-<p>mknod /dev/console c 5 1<br>mknod /dev/null c 1 3<br>mknod /dev/zero c 1 5  </p>
-</blockquote>
-<p>#———————建立伪终端目录、临时暂存—————————–<br>#—–/dev/pts 给ssh和xterm用。<br>#—-/dev/shm 用于提供暂存<br>#—-udev用于动态的管理设备文件，特别是热插拔的设备。改善/dev的问题<br>#—-udev配合/sysfs使用。  </p>
-<blockquote>
-<p>mkdir /dev/pts<br>mkdir /dev/shm<br>echo Starting udev<br>/sbin/udevstart          #自动从/sys中找到热插拔设备<br>echo -n “/sbin/hotplug” &gt; /proc/sys/kernel/hotplug  </p>
-</blockquote>
-<p>#——–加载模块——-  </p>
-<blockquote>
-<p>echo “Loading jbd.ko module”<br>insmod /lib/jbd.ko<br>echo “Loading ext3.ko module”<br>insmod /lib/ext3.ko  </p>
-</blockquote>
-<p>#—–mkrootdev 主要是把grub.conf里面的 root (hd0,0) 的路径先建立好。<br>#—–将找到的root路径：/dev/root  挂载到initrd的/sysroot下<br>#——然后用switchroot到该目录。正式切到硬盘操作系统的环境中。switchroot同chroot  </p>
-<blockquote>
-<p>/sbin/udevstart<br>echo Creating root device<br>mkrootdev /dev/root<br>echo Mounting root filesystem<br>mount -o defaults –ro -t ext3 /dev/root /sysroot<br>echo Switching to new root<br>switchroot –movedev /sysroot  </p>
-</blockquote>
-</blockquote>
-<p>2、/etc/rc.sysinit  </p>
-<blockquote>
-<p>设置3个变量    HOSTNAME,HOSTTYPE,unamer  </p>
-</blockquote>
-<blockquote>
-<p>/etc/sysconfig/network                   设置网络状态<br>HOSTNAME=localhost                  HOSTNAME变量设值<br>mount -n -t proc /proc /proc            挂载/proc<br>/proc/bus/usb                                   检查USB设备文件所需的目录<br>mount -n -t sysfs /sys /sys &gt;/dev/null 2&gt;&amp;1    挂载/sys<br>. /etc/init.d/functions                         设置环境变量<br>设置SELINUX<br>打印welcome to<br>/bin/dmesg                                         设置系统能够记录的等级，当前设置值是1<br>/sbin/start_udev                                 开启udev机制，/etc/udev下所有规则可套用<br>cat /proc/cmdline                              读取grub.conf vmlinuz这一行<br>/proc/sys/kernel/modprobe             加载各硬件模块<br>mount -n /dev/pts                             产生一个tty接口<br>sysctl -e -p /etc/sysctl.conf &gt;/dev/null 2&gt;&amp;1    加载sysctl.conf 设置值<br>/etc/sysconfig/clock                         设置时间种类，如UTC<br>/sbin/hwclock                                   设置系统时间<br>设置hostname<br>/proc/acpi                                          开启ACPI功能<br>/sbin/zfcpconf.sh                               scsi相关<br>/etc/mdadm.conf                               raid相关<br>/sbin/lvm.static                                  LVM相关<br>. /etc/sysconfig/readonly-root           以只读方式挂载文件系统<br>mount -n -o remount,rw /                  以可读可写方式挂载根目录<br>清空SElinux表<br>(&gt; /etc/mtab) &amp;&gt; /dev/null                 清空/etc/mtab<br>从新挂载系统目录<br>/usr/bin/rhgb                                       加载图形开机画面背景，并显示开机进度条<br>进行系统初始设置<br>清除相关文件<br>mkdir -m 1777 -p /tmp/.ICE-unix &gt;/dev/null 2&gt;&amp;1 设定X window所要使用的目录<br>swapon -a -e                                       开启swap交换空间<br>/usr/sbin/system-config-network-cmd        设置网络<br>dmesg -s 131072 &gt; /var/log/dmesg        写入dmesg信息<br>touch /.autofsck &amp;&gt; /dev/null                    建立.autofsck文件，判断是否正常启动还是非正常断电<br>/usr/bin/rhgb-client –sysinit                      告知系统要离开这个脚本了，继续则转到inittab脚本     </p>
-</blockquote>
-<blockquote>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
       
   
   
@@ -1247,6 +1042,275 @@
 <p>推荐网站  </p>
 <blockquote>
 <p><a target="_blank" rel="noopener" href="http://www.osx86.net/">http://www.osx86.net/</a>  </p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2013/03/20/2%E3%80%81mac%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2013/03/20/2%E3%80%81mac%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B/" class="post-title-link" itemprop="url">2、mac启动过程</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2013-03-20 20:46:00" itemprop="dateCreated datePublished" datetime="2013-03-20T20:46:00+08:00">2013-03-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-31 22:35:50" itemprop="dateModified" datetime="2020-07-31T22:35:50+08:00">2020-07-31</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>白苹果的启动<br>-——————-  </p>
+<blockquote>
+<p>UEFI自检—–&gt;  </p>
+<blockquote>
+<p>SMC芯片验证和识别信息——–&gt;  </p>
+<blockquote>
+<p>mac启动  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>黑苹果的启动<br>-——————-  </p>
+<blockquote>
+<p>UEFI自检—–&gt;  </p>
+<blockquote>
+<p>变色龙引导—–&gt;  </p>
+<blockquote>
+<p>变色龙读取配置文件org.apple.Boot.plist—–&gt;  </p>
+<blockquote>
+<p>解压核心—&gt;  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>变色龙读取DSDT.aml——-&gt;<br>变色龙调用SMBIOS添加机型信息——-&gt;  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>变色龙调用FakeSMC添加模拟的BIOS信息和硬件信息—–&gt;  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>变色龙调用DSDT.aml并添加硬件信息—&gt;  </p>
+<blockquote>
+<p>变色龙调用SSDT.aml并应用——&gt;  </p>
+<blockquote>
+<p>核心加载模块———&gt;  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>mac启动  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>#这里我们可以看到，我们直接修改FakeSMC就可以使mac识别，如果不改FakeSMC则可以添加DSDT等使mac识别  </p>
+<p>附变色龙引导log<br>-——————-<br>Chameleon 2.2svn (svn-r2187) [2013-02-21 13:57:37]<br>msr(383): platform_info 60011f00<br>msr(387): flex_ratio 00000000<br>Sticking with [BCLK: 103Mhz, Bus-Ratio: 310]<br>CPU: Brand String:             Intel(R) Core(TM) i3-2100 CPU @ 3.10GHz<br>CPU: Vendor/Family/ExtFamily:  0x756e6547/0x6/0x0<br>CPU: Model/ExtModel/Stepping:  0x2a/0x2/0x7<br>CPU: MaxCoef/CurrCoef:         0x0/0x1f<br>CPU: MaxDiv/CurrDiv:           0x0/0x0<br>CPU: TSCFreq:                  3193MHz<br>CPU: FSBFreq:                  103MHz<br>CPU: CPUFreq:                  3193MHz<br>CPU: NoCores/NoThreads:        2/4<br>CPU: Features:                 0x000002ff<br>Attempting to read GPT<br>Read GPT<br>Reading GPT partition 1, type C12A7328-F81F-11D2-BA4B-00A0C93EC93B<br>Reading GPT partition 2, type 48465300-0000-11AA-AA11-00306543ECAC<br>Read HFS+ file: [hd(0,2)/System/Library/CoreServices/SystemVersion.plist] 478 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/org.chameleon.Boot.plist] 476 bytes.<br>Module ‘Symbols.dylib’ by ‘Chameleon’ Loaded.<br>    Description: Chameleon symbols for linking<br>    Version: 0<br>    Compat:  0<br>Read HFS+ file: [hd(0,2)/Extra/modules/klibc.dylib] 44252 bytes.<br>Module ‘klibc.dylib’ by ‘Unknown’ Loaded.<br>    Description:<br>    Version: 0<br>    Compat:  0<br>Read HFS+ file: [hd(0,2)/Extra/modules/uClibcxx.dylib] 77808 bytes.<br>Module ‘uClibcxx.dylib’ by ‘Unknown’ Loaded.<br>    Description:<br>    Version: 0<br>    Compat:  0<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/theme.plist] 2787 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/background.png] 160 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/logo.png] 9791 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_generic.png] 30749 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_generic_o.png] 31641 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsplus.png] 33224 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsplus_o.png] 34030 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsplus_ml.png] 29768 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsplus_ml_o.png] 30578 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsplus_lion.png] 28223 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsplus_lion_o.png] 28963 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsplus_sl.png] 29902 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsplus_sl_o.png] 30684 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsplus_leo.png] 28892 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsplus_leo_o.png] 29666 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsplus_tiger.png] 28400 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsplus_tiger_o.png] 29157 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsraid.png] 33806 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsraid_o.png] 34633 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsraid_ml.png] 30436 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsraid_ml_o.png] 31257 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsraid_lion.png] 28949 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsraid_lion_o.png] 29725 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsraid_sl.png] 30605 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsraid_sl_o.png] 31378 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsraid_leo.png] 29649 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsraid_leo_o.png] 30429 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsraid_tiger.png] 29104 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsraid_tiger_o.png] 29917 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_ext3.png] 33010 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_ext3_o.png] 33943 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_freebsd.png] 27264 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_freebsd_o.png] 28018 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_openbsd.png] 28850 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_openbsd_o.png] 29596 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_befs.png] 27817 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_befs_o.png] 28529 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_fat.png] 32113 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_fat_o.png] 33007 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_ntfs.png] 34190 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_ntfs_o.png] 34992 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_cdrom.png] 31453 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_cdrom_o.png] 31312 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_selection.png] 148 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_scroll_prev.png] 3995 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_scroll_next.png] 3898 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/menu_boot.png] 137 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/menu_verbose.png] 137 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/menu_ignore_caches.png] 137 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/menu_single_user.png] 137 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/menu_memory_info.png] 136 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/menu_video_info.png] 136 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/menu_help.png] 136 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/menu_verbose_disabled.png] 135 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/menu_ignore_caches_disabled.png] 135 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/menu_single_user_disabled.png] 135 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/menu_selection.png] 158 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/progress_bar.png] 292 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/progress_bar_background.png] 139 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/text_scroll_prev.png] 562 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/text_scroll_next.png] 557 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/font_console.png] 2931 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/font_small.png] 3371 bytes.<br>Read HFS+ file: [hd(0,2)/Library/Preferences/SystemConfiguration/com.apple.Boot.plist] 232 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/org.chameleon.Boot.plist] 476 bytes.<br>Loading Darwin 10.8<br>No Kernel Cache File ‘/System/Library/Caches/com.apple.kext.caches/Startup/kernelcache’ found<br>Loading kernel /mach_kernel<br>Read HFS+ file: [hd(0,2)/mach_kernel] 4096 bytes.<br>Read HFS+ file: [hd(0,2)/mach_kernel] 8188064 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/dadt.aml] 102813 bytes.<br>Using PCI-Root-UID value: 0<br>LAN Controller [10ec:8168] :: PciRoot(0x0)/Pci(0x1c,0x2)/Pci(0x0,0x0)<br>Setting up lan keys<br>Read HFS+ file: [hd(0,2)/Extra/SMBios.plist] 687 bytes.<br>SMBus CmdReg: 0x3<br>Scanning SMBus [8086:1c22], mmio: 0xfe604004, ioport: 0xf040, hostc: 0x1<br>SPD[0] (size): 146 @0x50<br>Slot: 0 Type 24 2048MB (DDR3 SDRAM) 1333MHz Vendor=Apacer Technology<br>      PartNo=78.A1GC6.9LZ SerialNo=02010212<br>SPD[0] (size): 255 @0x51<br>SPD[0] (size): 146 @0x52<br>Slot: 2 Type 24 2048MB (DDR3 SDRAM) 1333MHz Vendor=Apacer Technology<br>      PartNo=78.A1GC6.9LZ SerialNo=02010212<br>SPD[0] (size): 255 @0x53<br>SPD[0] (size): 255 @0x54<br>SPD[0] (size): 255 @0x55<br>SPD[0] (size): 255 @0x56<br>SPD[0] (size): 255 @0x57<br>CPU is Intel(R) Core(TM) i3-2100 CPU @ 3.10GHz, family 0x6, model 0x2a  </p>
+<p>Type: 0, Length: 24, Handle: 0x0<br>BIOSInformation:<br>    vendor: Apple Inc.<br>    version: IM121.88Z.0047.B0A.1104221555<br>    releaseDate: 04/22/11  </p>
+<p>Type: 1, Length: 27, Handle: 0x1<br>SystemInformation:<br>    manufacturer: Apple Inc.<br>    productName: iMac12,1<br>    version: 1.0<br>    serialNumber: C02JL367DHJT<br>    uuid: 4093C112-8064-E011-816C-F46D0423CA64<br>    wakeupReason: 0x6<br>    skuNumber: To be filled by O.E.M.<br>    family: iMac  </p>
+<p>Type: 2, Length: 15, Handle: 0x2<br>BaseBoard:<br>    manufacturer: Apple Inc.<br>    product: Mac-942B5BF58194151B<br>    version: Rev x.0x<br>    serialNumber: 109424350001705<br>    assetTagNumber: To be filled by O.E.M.<br>    locationInChassis: To be filled by O.E.M.<br>    boardType: 0xA  </p>
+<p>Type: 3, Length: 21, Handle: 0x3<br>SystemEnclosure:<br>    manufacturer: Chassis Manufacture<br>    type: 3<br>    version: Chassis Version<br>    serialNumber: Chassis Serial Number<br>    assetTagNumber: Asset-1234567890  </p>
+<p>Type: 4, Length: 42, Handle: 0x4<br>ProcessorInformation:<br>    socketDesignation: LGA1155<br>    processorType: 3<br>    processorFamily: 0xBF<br>    manufacturer: Intel<br>    processorID: 0x206A7<br>    processorVersion: Intel(R) Core(TM) i3-2100 CPU @ 3.10GHz<br>    externalClock: 0MHz<br>    maximumClock: 3193MHz<br>    currentClock: 3223MHz<br>    serialNumber: To Be Filled By O.E.M.<br>    assetTag: To Be Filled By O.E.M.<br>    partNumber: To Be Filled By O.E.M.  </p>
+<p>Type: 7, Length: 19, Handle: 0x5<br>Type: 7, Length: 19, Handle: 0x6<br>Type: 7, Length: 19, Handle: 0x7<br>Type: 8, Length: 9, Handle: 0x8<br>Type: 8, Length: 9, Handle: 0x9<br>Type: 8, Length: 9, Handle: 0xa<br>Type: 8, Length: 9, Handle: 0xb<br>Type: 8, Length: 9, Handle: 0xc<br>Type: 8, Length: 9, Handle: 0xd<br>Type: 8, Length: 9, Handle: 0xe<br>Type: 8, Length: 9, Handle: 0xf<br>Type: 8, Length: 9, Handle: 0x10<br>Type: 8, Length: 9, Handle: 0x11<br>Type: 8, Length: 9, Handle: 0x12<br>Type: 8, Length: 9, Handle: 0x13<br>Type: 8, Length: 9, Handle: 0x14<br>Type: 8, Length: 9, Handle: 0x15<br>Type: 8, Length: 9, Handle: 0x16<br>Type: 8, Length: 9, Handle: 0x17<br>Type: 8, Length: 9, Handle: 0x18<br>Type: 8, Length: 9, Handle: 0x19<br>Type: 8, Length: 9, Handle: 0x1a<br>Type: 9, Length: 17, Handle: 0x1b<br>Type: 9, Length: 17, Handle: 0x1c<br>Type: 9, Length: 17, Handle: 0x1d<br>Type: 9, Length: 17, Handle: 0x1e<br>Type: 10, Length: 6, Handle: 0x1f<br>Type: 11, Length: 5, Handle: 0x20<br>Type: 12, Length: 5, Handle: 0x21<br>Type: 16, Length: 15, Handle: 0x22<br>Type: 18, Length: 23, Handle: 0x23<br>Type: 19, Length: 15, Handle: 0x24<br>Type: 17, Length: 28, Handle: 0x25<br>MemoryDevice:<br>    deviceLocator: DIMM0<br>    bankLocator: BANK0<br>    memoryType: DDR3<br>    memorySpeed: 1333MHz<br>    manufacturer: Apacer Technology<br>    serialNumber: 02010212<br>    assetTag: AssetTagNum0<br>    partNumber: 78.A1GC6.9LZ  </p>
+<p>Type: 18, Length: 23, Handle: 0x26<br>Type: 20, Length: 19, Handle: 0x27<br>Type: 17, Length: 28, Handle: 0x28<br>MemoryDevice:<br>    deviceLocator: DIMM1<br>    bankLocator: BANK1<br>    memoryType: DDR3<br>    memorySpeed: 1333MHz<br>    manufacturer: Apacer Technology<br>    serialNumber: 02010212<br>    assetTag: AssetTagNum1<br>    partNumber: 78.A1GC6.9LZ  </p>
+<p>Type: 18, Length: 23, Handle: 0x29<br>Type: 20, Length: 19, Handle: 0x2a<br>Type: 32, Length: 20, Handle: 0x2b<br>Type: 34, Length: 11, Handle: 0x2c<br>Type: 26, Length: 22, Handle: 0x2d<br>Type: 36, Length: 16, Handle: 0x2e<br>Type: 35, Length: 11, Handle: 0x2f<br>Type: 28, Length: 22, Handle: 0x30<br>Type: 36, Length: 16, Handle: 0x31<br>Type: 35, Length: 11, Handle: 0x32<br>Type: 27, Length: 14, Handle: 0x33<br>Type: 36, Length: 16, Handle: 0x34<br>Type: 35, Length: 11, Handle: 0x35<br>Type: 27, Length: 14, Handle: 0x36<br>Type: 36, Length: 16, Handle: 0x37<br>Type: 35, Length: 11, Handle: 0x38<br>Type: 29, Length: 22, Handle: 0x39<br>Type: 36, Length: 16, Handle: 0x3a<br>Type: 35, Length: 11, Handle: 0x3b<br>Type: 39, Length: 22, Handle: 0x3c<br>Type: 34, Length: 16, Handle: 0x3d<br>Type: 26, Length: 22, Handle: 0x3e<br>Type: 36, Length: 16, Handle: 0x3f<br>Type: 35, Length: 11, Handle: 0x40<br>Type: 26, Length: 22, Handle: 0x41<br>Type: 36, Length: 16, Handle: 0x42<br>Type: 35, Length: 11, Handle: 0x43<br>Type: 28, Length: 22, Handle: 0x44<br>Type: 36, Length: 16, Handle: 0x45<br>Type: 35, Length: 11, Handle: 0x46<br>Type: 27, Length: 14, Handle: 0x47<br>Type: 36, Length: 16, Handle: 0x48<br>Type: 35, Length: 11, Handle: 0x49<br>Type: 28, Length: 22, Handle: 0x4a<br>Type: 36, Length: 16, Handle: 0x4b<br>Type: 35, Length: 11, Handle: 0x4c<br>Type: 27, Length: 14, Handle: 0x4d<br>Type: 36, Length: 16, Handle: 0x4e<br>Type: 35, Length: 11, Handle: 0x4f<br>Type: 29, Length: 22, Handle: 0x50<br>Type: 36, Length: 16, Handle: 0x51<br>Type: 35, Length: 11, Handle: 0x52<br>Type: 29, Length: 22, Handle: 0x53<br>Type: 36, Length: 16, Handle: 0x54<br>Type: 35, Length: 11, Handle: 0x55<br>Type: 39, Length: 22, Handle: 0x56<br>Type: 41, Length: 11, Handle: 0x57<br>Type: 41, Length: 11, Handle: 0x58<br>Type: 41, Length: 11, Handle: 0x59<br>Type: 139, Length: 94, Handle: 0x5a<br>Type: 13, Length: 22, Handle: 0x5b<br>Type: 131, Length: 6, Handle: 0x5b<br>AppleProcessorType:<br>    ProcessorType: 0x901  </p>
+<p>Type: 127, Length: 4, Handle: 0x5c  </p>
+<p>Customizing SystemID with : 4093c112-8064-e011-816c-f46d0423ca64<br>Read HFS+ file: [hd(0,2)/Extra/dadt.aml] 102813 bytes.<br>ACPI table not found: SSDT.aml<br>FADT: Using custom DSDT!<br>FADT: Using custom DSDT!<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/Accusys6xxxx.kext/Contents/Info.plist] 2409 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/acfs.kext/Contents/Info.plist] 1319 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/acfsctl.kext/Contents/Info.plist] 1197 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/ALF.kext/Contents/Info.plist] 1659 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AMDRadeonAccelerator.kext/Contents/Info.plist] 15314 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/Apple16X50Serial.kext/Contents/Info.plist] 2047 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/Apple16X50Serial.kext/Contents/PlugIns/Apple16X50ACPI.kext/Contents/Info.plist] 1912 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/Apple_iSight.kext/Contents/Info.plist] 2033 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleACPIPlatform.kext/Contents/Info.plist] 3715 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleACPIPlatform.kext/Contents/PlugIns/AppleACPIButtons.kext/Contents/Info.plist] 2964 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleACPIPlatform.kext/Contents/PlugIns/AppleACPIEC.kext/Contents/Info.plist] 2141 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleAHCIPort.kext/Contents/Info.plist] 6744 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleAPIC.kext/Contents/Info.plist] 1818 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleAVBAudio.kext/Contents/Info.plist] 2306 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleAVBAudio.kext/Contents/PlugIns/AppleAVBAudioPlugin.kext/Contents/Info.plist] 2459 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleBacklight.kext/Contents/Info.plist] 17087 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleBacklightExpert.kext/Info.plist] 1923 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleBluetoothMultitouch.kext/Contents/Info.plist] 56598 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleBMC.kext/Contents/Info.plist] 2140 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleEFIRuntime.kext/Contents/Info.plist] 2077 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleEFIRuntime.kext/Contents/PlugIns/AppleEFINVRAM.kext/Contents/Info.plist] 2073 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleFileSystemDriver.kext/Contents/Info.plist] 3067 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleFSCompressionTypeDataless.kext/Contents/Info.plist] 2405 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleFSCompressionTypeZlib.kext/Contents/Info.plist] 2379 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleFWAudio.kext/Contents/Info.plist] 7590 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleGraphicsControl.kext/Contents/Info.plist] 2024 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleGraphicsControl.kext/Contents/PlugIns/AppleMuxControl.kext/Contents/Info.plist] 13227 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleGraphicsControl.kext/Contents/PlugIns/ApplePolicyControl.kext/Contents/Info.plist] 2557 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleGraphicsPowerManagement.kext/Contents/Info.plist] 79681 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleHDA.kext/Contents/Info.plist] 3213 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleHDA.kext/Contents/PlugIns/AppleHDAController.kext/Contents/Info.plist] 4807 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleHDA.kext/Contents/PlugIns/AppleHDAHardwareConfigDriver.kext/Contents/Info.plist] 12558 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleHDA.kext/Contents/PlugIns/AppleMikeyDriver.kext/Contents/Info.plist] 2207 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleHDA.kext/Contents/PlugIns/DspFuncLib.kext/Contents/Info.plist] 1859 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleHDA.kext/Contents/PlugIns/IOHDAFamily.kext/Contents/Info.plist] 1995 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleHIDKeyboard.kext/Contents/Info.plist] 41939 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleHIDKeyboard.kext/Contents/PlugIns/AppleBluetoothHIDKeyboard.kext/Contents/Info.plist] 45724 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleHIDKeyboard.kext/Contents/PlugIns/AppleUSBHIDKeyboard.kext/Contents/Info.plist] 14763 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleHIDMouse.kext/Contents/Info.plist] 1606 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleHIDMouse.kext/Contents/PlugIns/AppleBluetoothHIDMouse.kext/Contents/Info.plist] 17736 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleHIDMouse.kext/Contents/PlugIns/AppleUSBHIDMouse.kext/Contents/Info.plist] 10106 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleHPET.kext/Contents/Info.plist] 1985 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleHWSensor.kext/Contents/Info.plist] 2265 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleIRController.kext/Contents/Info.plist] 5668 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleKeyStore.kext/Contents/Info.plist] 2245 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleKeyswitch.kext/Contents/Info.plist] 2720 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleLPC.kext/Contents/Info.plist] 4043 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleLSIFusionMPT.kext/Contents/Info.plist] 4038 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleMatch.kext/Contents/Info.plist] 1411 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleMCCSControl.kext/Contents/Info.plist] 3525 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleMCEDriver.kext/Contents/Info.plist] 1800 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleMCP89RootPortPM.kext/Contents/Info.plist] 2117 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleMikeyHIDDriver.kext/Contents/Info.plist] 1972 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleMobileDevice.kext/Contents/Info.plist] 3618 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleMultitouchDriver.kext/Contents/Info.plist] 1695 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/ApplePlatformEnabler.kext/Contents/Info.plist] 1857 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleRAID.kext/Contents/Info.plist] 2294 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleRAIDCard.kext/Contents/Info.plist] 4292 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleRTC.kext/Contents/Info.plist] 1969 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleSDXC.kext/Contents/Info.plist] 2915 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleSEP.kext/Contents/Info.plist] 2970 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleSmartBatteryManager.kext/Contents/Info.plist] 2063 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleSMBIOS.kext/Contents/Info.plist] 1929 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleSMBusController.kext/Contents/Info.plist] 2912 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleSMBusPCI.kext/Contents/Info.plist] 1999 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleSMC.kext/Contents/Info.plist] 1940 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleSMCLMU.kext/Contents/Info.plist] 2053 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleSRP.kext/Contents/Info.plist] 1352 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/Info.plist] 1159 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/AppleATAPIStorage.kext/Contents/Info.plist] 3097 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/AppleFireWireStorage.kext/Contents/Info.plist] 2619 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/AppleHollywood.kext/Contents/Info.plist] 16755 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/AppleMemorexCDROMDriver.kext/Contents/Info.plist] 2314 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/AppleUSBCardReader.kext/Contents/Info.plist] 5123 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/AppleUSBODD.kext/Contents/Info.plist] 2620 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/AppleXserveRAID.kext/Contents/Info.plist] 2495 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/CanonEOS1D.kext/Contents/Info.plist] 2727 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/FireWireStorageDeviceSpecifics.kext/Contents/Info.plist] 7367 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/FWPreferredProtocolSpeed.kext/Contents/Info.plist] 2775 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/initioFWBridge.kext/Contents/Info.plist] 2703 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/IOFireWireSerialBusProtocolSansPhysicalUnit.kext/Contents/Info.plist] 2757 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/LSI-FW-500.kext/Contents/Info.plist] 3865 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/MaxTranserSizeOverrideDriver.kext/Contents/Info.plist] 3088 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/MKE-LF-D211A.kext/Contents/Info.plist] 2844 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/MKE-SR-8171.kext/Contents/Info.plist] 2261 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/OxfordSemiconductor.kext/Contents/Info.plist] 2719 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/PioneerSuperDrive.kext/Contents/Info.plist] 2208 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/PlasmonUDO.kext/Contents/Info.plist] 2218 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/PreventMediaMountDriver.kext/Contents/Info.plist] 2693 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/QPSQueFire.kext/Contents/Info.plist] 2661 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/SanyoIDShot.kext/Contents/Info.plist] 2798 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/SonyXDCAMDriver.kext/Contents/Info.plist] 2698 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/StorageLynx.kext/Contents/Info.plist] 2565 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/UFIWriteProtectedMediaDriver.kext/Contents/Info.plist] 3108 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/USBStorageDeviceSpecifics.kext/Contents/Info.plist] 112471 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/WriteProtectedMediaDriver.kext/Contents/Info.plist] 6905 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleThunderboltDPAdapters.kext/Contents/Info.plist] 1289 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleThunderboltDPAdapters.kext/Contents/PlugIns/AppleThunderboltDPAdapterFamily.kext/Contents/Info.plist] 1867 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleThunderboltDPAdapters.kext/Contents/PlugIns/AppleThunderboltDPInAdapter.kext/Contents/Info.plist] 2396 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleThunderboltDPAdapters.kext/Contents/PlugIns/AppleThunderboltDPOutAdapter.kext/Contents/Info.plist] 2485 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleThunderboltEDMService.kext/Contents/Info.plist] 1296 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleThunderboltEDMService.kext/Contents/PlugIns/AppleThunderboltEDMSink.kext/Contents/Info.plist] 2557 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleThunderboltEDMService.kext/Contents/PlugIns/AppleThunderboltEDMSource.kext/Contents/Info.plist] 2509 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleThunderboltNHI.kext/Contents/Info.plist] 2392 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleThunderboltPCIAdapters.kext/Contents/Info.plist] 1350 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleThunderboltPCIAdapters.kext/Contents/PlugIns/AppleThunderboltPCIDownAdapter.kext/Contents/Info.plist] 2207 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleThunderboltPCIAdapters.kext/Contents/PlugIns/AppleThunderboltPCIUpAdapter.kext/Contents/Info.plist] 2281 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleThunderboltUTDM.kext/Contents/Info.plist] 2914 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleTyMCEDriver.kext/Contents/Info.plist] 2301 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleUpstreamUserClient.kext/Contents/Info.plist] 2238 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleUSBAudio.kext/Contents/Info.plist] 4033 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleUSBDisplays.kext/Contents/Info.plist] 26094 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleUSBEthernetHost.kext/Contents/Info.plist] 2693 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleUSBMultitouch.kext/Contents/Info.plist] 386012 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleUSBTopCase.kext/Contents/Info.plist] 1523 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCButtons.kext/Contents/Info.plist] 87849 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/Contents/Info.plist] 53670 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyEventDriver.kext/Contents/Info.plist] 127228 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTrackpad.kext/Contents/Info.plist] 40192 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleWWANAutoEject.kext/Contents/Info.plist] 4296 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleXsanFilter.kext/Contents/Info.plist] 2258 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/ArcMSR.kext/Contents/Info.plist] 2803 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/ATI4600Controller.kext/Contents/Info.plist] 2037 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/ATIFramebuffer.kext/Contents/Info.plist] 22576 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/ATIRadeonX2000.kext/Contents/Info.plist] 3532 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/ATISupport.kext/Contents/Info.plist] 2030 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/ATTOCelerityFC.kext/Contents/Info.plist] 3046 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/ATTOCelerityFC8.kext/Contents/Info.plist] 3000 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/ATTOExpressPCI4.kext/Contents/Info.plist] 2487 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/ATTOExpressSASHBA.kext/Contents/Info.plist] 2945 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/ATTOExpressSASHBA2.kext/Contents/Info.plist] 3018 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/ATTOExpressSASHBA3.kext/Contents/Info.plist] 2893 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/ATTOExpressSASRAID.kext/Contents/Info.plist] 2955 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/ATTOExpressSASRAID2.kext/Contents/Info.plist] 3028 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AudioAUUC.kext/Info.plist] 2194 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/autofs.kext/Contents/Info.plist] 1740 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/BJUSBLoad.kext/Contents/Info.plist] 125615 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/BootCache.kext/Contents/Info.plist] 2093 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/CalDigitHDProDrv.kext/Contents/Info.plist] 2364 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/cd9660.kext/Contents/Info.plist] 1666 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/cddafs.kext/Contents/Info.plist] 1587 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/CellPhoneHelper.kext/Contents/Info.plist] 100096 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/corecrypto.kext/Contents/Info.plist] 1978 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/CoreStorage.kext/Contents/Info.plist] 3004 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/CoreStorage.kext/Contents/PlugIns/CoreStorageFsck.kext/Contents/Info.plist] 2419 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/Dont Steal Mac OS X.kext/Contents/Info.plist] 2453 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/EVOenabler.kext/Contents/Info.plist] 101757 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/exfat.kext/Contents/Info.plist] 1637 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/FakeSMC.kext/Contents/Info.plist] 2452 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/GeForce.kext/Contents/Info.plist] 2335 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/HDAEnabler1.kext/Contents/Info.plist] 1953 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/HighPointIOP.kext/Contents/Info.plist] 3180 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/HighPointRR.kext/Contents/Info.plist] 4538 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IO80211Family.kext/Contents/Info.plist] 1869 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IO80211Family.kext/Contents/PlugIns/AirPortAtheros40.kext/Contents/Info.plist] 2545 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IO80211Family.kext/Contents/PlugIns/AirPortBrcm4331.kext/Contents/Info.plist] 2480 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IO80211Family.kext/Contents/PlugIns/AppleAirPortBrcm43224.kext/Contents/Info.plist] 2827 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IO80211Family.kext/Contents/PlugIns/IO80211NetBooter.kext/Contents/Info.plist] 2013 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOAcceleratorFamily.kext/Contents/Info.plist] 1876 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOACPIFamily.kext/Contents/Info.plist] 1678 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOAHCIFamily.kext/Contents/Info.plist] 1603 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOAHCIFamily.kext/Contents/PlugIns/IOAHCIBlockStorage.kext/Contents/Info.plist] 2180 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOAHCIFamily.kext/Contents/PlugIns/IOAHCISerialATAPI.kext/Contents/Info.plist] 2429 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOATAFamily.kext/Contents/Info.plist] 1641 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOATAFamily.kext/Contents/PlugIns/AppleIntelPIIXATA.kext/Contents/Info.plist] 6218 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOATAFamily.kext/Contents/PlugIns/IOATABlockStorage.kext/Contents/Info.plist] 2120 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOATAFamily.kext/Contents/PlugIns/IOATAPIProtocolTransport.kext/Contents/Info.plist] 2493 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOAudioFamily.kext/Contents/Info.plist] 1753 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOAVBFamily.kext/Contents/Info.plist] 2355 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOAVBFamily.kext/Contents/PlugIns/IOAVBDiscoveryPlugin.kext/Contents/Info.plist] 2719 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOAVBFamily.kext/Contents/PlugIns/IOAVBPlugin.kext/Contents/Info.plist] 4867 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOAVBFamily.kext/Contents/PlugIns/IOMRPPlugin.kext/Contents/Info.plist] 5578 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOBDStorageFamily.kext/Contents/Info.plist] 2578 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOBluetoothFamily.kext/Contents/PlugIns/IOBluetoothUSBDFU.kext/Contents/Info.plist] 8250 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOCDStorageFamily.kext/Contents/Info.plist] 3079 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IODVDStorageFamily.kext/Contents/Info.plist] 2525 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOFireWireAVC.kext/Contents/Info.plist] 3968 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOFireWireFamily.kext/Contents/Info.plist] 2368 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOFireWireFamily.kext/Contents/PlugIns/AppleFWOHCI.kext/Contents/Info.plist] 2835 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOFireWireIP.kext/Contents/Info.plist] 2110 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOFireWireIP.kext/Contents/PlugIns/IOFireWireIPPrivate.kext/Contents/Info.plist] 2554 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOFireWireSBP2.kext/Contents/Info.plist] 2875 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOFireWireSerialBusProtocolTransport.kext/Contents/Info.plist] 2643 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOGraphicsFamily.kext/Info.plist] 3289 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOHDIXController.kext/Contents/Info.plist] 2253 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOHDIXController.kext/Contents/PlugIns/AppleDiskImagesCryptoEncoding.kext/Contents/Info.plist] 2548 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOHDIXController.kext/Contents/PlugIns/AppleDiskImagesFileBackingStore.kext/Contents/Info.plist] 2325 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOHDIXController.kext/Contents/PlugIns/AppleDiskImagesHTTPBackingStore.kext/Contents/Info.plist] 2322 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOHDIXController.kext/Contents/PlugIns/AppleDiskImagesKernelBacked.kext/Contents/Info.plist] 2558 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOHDIXController.kext/Contents/PlugIns/AppleDiskImagesPartitionBackingStore.kext/Contents/Info.plist] 2549 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOHDIXController.kext/Contents/PlugIns/AppleDiskImagesRAMBackingStore.kext/Contents/Info.plist] 2307 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOHDIXController.kext/Contents/PlugIns/AppleDiskImagesReadWriteDiskImage.kext/Contents/Info.plist] 2291 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOHDIXController.kext/Contents/PlugIns/AppleDiskImagesSparseDiskImage.kext/Contents/Info.plist] 2273 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOHDIXController.kext/Contents/PlugIns/AppleDiskImagesUDIFDiskImage.kext/Contents/Info.plist] 2573 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOHIDFamily.kext/Contents/Info.plist] 2839 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDEventDriver.kext/Contents/Info.plist] 2420 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDEventDriverSafeBoot.kext/Contents/Info.plist] 11673 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDSystem.kext/Contents/Info.plist] 1787 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDUserClient.kext/Contents/Info.plist] 4016 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IONDRVSupport.kext/Info.plist] 3073 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IONetworkingFamily.kext/Contents/Info.plist] 2529 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IONetworkingFamily.kext/Contents/PlugIns/AppleBCM5701Ethernet.kext/Contents/Info.plist] 4168 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IONetworkingFamily.kext/Contents/PlugIns/AppleIntel8254XEthernet.kext/Contents/Info.plist] 3180 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IONetworkingFamily.kext/Contents/PlugIns/AppleRTL8169Ethernet.kext/Contents/Info.plist] 4309 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IONetworkingFamily.kext/Contents/PlugIns/AppleUSBEthernet.kext/Contents/Info.plist] 5309 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IONetworkingFamily.kext/Contents/PlugIns/AppleUSBGigEthernet.kext/Contents/Info.plist] 4984 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IONetworkingFamily.kext/Contents/PlugIns/AppleYukon2.kext/Contents/Info.plist] 23266 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IONetworkingFamily.kext/Contents/PlugIns/Intel82574L.kext/Contents/Info.plist] 3147 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IONetworkingFamily.kext/Contents/PlugIns/IOEthernetAVBController.kext/Contents/Info.plist] 1738 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IONetworkingFamily.kext/Contents/PlugIns/nvenet.kext/Contents/Info.plist] 2431 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOPCIFamily.kext/Info.plist] 2780 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/Info.plist] 1866 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/PlugIns/ACPI_SMC_PlatformPlugin.kext/Contents/Info.plist] 2642 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/PlugIns/AppleSMCPDRC.kext/Contents/Info.plist] 2170 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/PlugIns/IOPlatformPluginLegacy.kext/Contents/Info.plist] 1941 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/PlugIns/X86PlatformPlugin.kext/Contents/Info.plist] 2811 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/PlugIns/X86PlatformShim.kext/Contents/Info.plist] 2132 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOSCSIArchitectureModelFamily.kext/Contents/Info.plist] 2471 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOSCSIArchitectureModelFamily.kext/Contents/PlugIns/IOSCSIBlockCommandsDevice.kext/Contents/Info.plist] 2573 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOSCSIArchitectureModelFamily.kext/Contents/PlugIns/IOSCSIMultimediaCommandsDevice.kext/Contents/Info.plist] 2446 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOSCSIArchitectureModelFamily.kext/Contents/PlugIns/IOSCSIReducedBlockCommandsDevice.kext/Contents/Info.plist] 2238 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOSCSIArchitectureModelFamily.kext/Contents/PlugIns/SCSITaskUserClient.kext/Contents/Info.plist] 4960 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOSCSIParallelFamily.kext/Contents/Info.plist] 1712 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOSerialFamily.kext/Contents/Info.plist] 2542 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOSerialFamily.kext/Contents/PlugIns/AppleUSBIrDA.kext/Contents/Info.plist] 2229 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOSerialFamily.kext/Contents/PlugIns/AppleWWANSupport.kext/Contents/Info.plist] 4960 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOSerialFamily.kext/Contents/PlugIns/AppleWWANSupport1.kext/Contents/Info.plist] 7486 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOSerialFamily.kext/Contents/PlugIns/AppleWWANSupport2.kext/Contents/Info.plist] 2201 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOSMBusFamily.kext/Contents/Info.plist] 1491 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOStorageFamily.kext/Contents/Info.plist] 5912 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOStreamFamily.kext/Contents/Info.plist] 1398 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOStreamFamily.kext/Contents/PlugIns/IOStreamUserClient.kext/Contents/Info.plist] 1984 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOSurface.kext/Contents/Info.plist] 2181 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOThunderboltFamily.kext/Contents/Info.plist] 1709 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOTimeSyncFamily.kext/Contents/Info.plist] 1748 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOTimeSyncFamily.kext/Contents/PlugIns/IO8021ASPlugin.kext/Contents/Info.plist] 2841 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBAttachedSCSI.kext/Contents/Info.plist] 2955 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/Info.plist] 1797 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBCDC.kext/Contents/Info.plist] 15650 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBCDCACMControl.kext/Contents/Info.plist] 1976 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBCDCACMData.kext/Contents/Info.plist] 9481 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBCDCDMM.kext/Contents/Info.plist] 1984 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBCDCECMControl.kext/Contents/Info.plist] 2049 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBCDCECMData.kext/Contents/Info.plist] 3311 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBCDCEEM.kext/Contents/Info.plist] 2013 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBCDCWCM.kext/Contents/Info.plist] 1916 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBEHCI.kext/Contents/Info.plist] 2266 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBHub.kext/Contents/Info.plist] 2388 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBMergeNub.kext/Contents/Info.plist] 54239 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBOHCI.kext/Contents/Info.plist] 2201 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBOpticalMouse.kext/Contents/Info.plist] 6821 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBUHCI.kext/Contents/Info.plist] 2219 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBVideoSupport.kext/Contents/Info.plist] 5461 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBXHCI.kext/Contents/Info.plist] 2279 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/IOUSBCompositeDriver.kext/Contents/Info.plist] 3267 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/IOUSBHIDDriver.kext/Contents/Info.plist] 2308 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/IOUSBHIDDriverSafeBoot.kext/Contents/Info.plist] 5318 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/IOUSBUserClient.kext/Contents/Info.plist] 3504 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBMassStorageClass.kext/Contents/Info.plist] 6148 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUserEthernet.kext/Contents/Info.plist] 3093 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOVideoFamily.kext/Contents/Info.plist] 1462 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOVideoFamily.kext/Contents/PlugIns/IOVideoDeviceUserClient.kext/Contents/Info.plist] 2209 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/iPodDriver.kext/Contents/Info.plist] 3937 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/iPodDriver.kext/Contents/PlugIns/iPodSBCDriver.kext/Contents/Info.plist] 2995 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/JMicronATA.kext/Contents/Info.plist] 2231 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/mcxalr.kext/Contents/Info.plist] 1324 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/msdosfs.kext/Contents/Info.plist] 1504 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/ntfs.kext/Contents/Info.plist] 1630 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/NullCPUPowerManagement.kext/Contents/Info.plist] 1498 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/NVDAGF100Hal.kext/Contents/Info.plist] 2375 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/NVDAGK100Hal.kext/Contents/Info.plist] 1879 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/NVDANV50Hal.kext/Contents/Info.plist] 2427 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/NVDAResman.kext/Contents/Info.plist] 2607 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/NVSMU.kext/Contents/Info.plist] 1977 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/OSvKernDSPLib.kext/Contents/Info.plist] 1356 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/PPP.kext/Contents/Info.plist] 1742 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/PromiseSTEX.kext/Contents/Info.plist] 2494 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/Quarantine.kext/Contents/Info.plist] 1870 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/RadeonHD.kext/Contents/Info.plist] 2561 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/RealtekRTL81xx.kext/Contents/Info.plist] 1969 bytes.  </p>
+<blockquote>
+<p>…………………………………………………………………….  </p>
+</blockquote>
+<p>Read HFS+ file: [hd(0,2)/System/Library/Extensions/EVOenabler.kext/Contents/MacOS/EVOenabler] 4096 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/EVOenabler.kext/Contents/MacOS/EVOenabler] 36264 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/FakeSMC.kext/Contents/MacOS/fakesmc] 4096 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/FakeSMC.kext/Contents/MacOS/fakesmc] 55992 bytes.  </p>
+<blockquote>
+<p>…………………………………………………………………….  </p>
+</blockquote>
+<p>Starting Darwin x86_64<br>Boot Args: boot-uuid=4159DDB1-8659-378A-8D3C-C8366B8B54EF rd=*uuid -v</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2013/03/20/1%E3%80%81%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%EF%BC%8C%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2013/03/20/1%E3%80%81%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%EF%BC%8C%E6%96%87%E4%BB%B6%E8%AF%B4%E6%98%8E/" class="post-title-link" itemprop="url">1、基础概念，文件说明</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2013-03-20 20:19:00" itemprop="dateCreated datePublished" datetime="2013-03-20T20:19:00+08:00">2013-03-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-31 22:35:50" itemprop="dateModified" datetime="2020-07-31T22:35:50+08:00">2020-07-31</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>SMC芯片<br>-———————-  </p>
+<blockquote>
+<p>用来认证是否为苹果电脑的芯片。  </p>
+</blockquote>
+<p>VendorID、DeviceID<br>-————————-  </p>
+<blockquote>
+<p>系统中的每个设备都有他的VendorID（厂商ID）和DevieID（设备ID）  </p>
+</blockquote>
+<p>内核缓存<br>-———————  </p>
+<blockquote>
+<p>内核缓存可以加快启动速度，它使内核不用一个一个的加载驱动，所以启动速度快  </p>
+<p>重建缓存<br>安装了新的kext要重建缓存，如果不重建缓存，新kext将无效  </p>
+</blockquote>
+<p>KEXT<br>-———————-  </p>
+<blockquote>
+<p>Kext是Kernel extension（内核拓展）的缩写，相当于Win下的驱动，linux的模块<br>通常是在/System/Library/Extensions目录下  </p>
+</blockquote>
+<p>QE/CI<br>-———————-  </p>
+<blockquote>
+<p>Quartz Extreme and Core Image。Mac系统里两种用来保证显卡加速的技术<br>作用：<br>没有开启QE/CI时，CPU是唯一承担全部运算任务的组件。<br>你将不能观赏高清电影例如DVD，DivX，而且系统运行将变得迟缓</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>-———————————————  </p>
+<blockquote>
+<blockquote>
+<p>黑苹果相关  </p>
+</blockquote>
+</blockquote>
+<p>-——————————————–<br>引导软件：  </p>
+<blockquote>
+<p>HJMAC、XPC、变色龙、CLover。这些都是引导软件，选一种使用即可  </p>
+</blockquote>
+<p>org.apple.Boot.plist：变色龙配置文件  </p>
+<p>DSDT.aml<br>-———————-  </p>
+<blockquote>
+<p>提供硬件配置信息,为mac自动加载驱动做准备。<br>要通过变色龙加载，即写入org.apple.Boot.plist  </p>
+</blockquote>
+<blockquote>
+<p>.aml<br>ACPI Machine Language：ACPI机器语言，后缀为.aml<br>当从系统中提取出DSDT以及其他ACPI表时，为该格式  </p>
+<p>.dsl<br>要修改的话，DSDT需要先反编译成.dsl文件才能修改<br>DSDT_editor可以加载aml文件，它直接反编译了  </p>
+</blockquote>
+<p>smbios.plist  </p>
+<blockquote>
+<p>提供机型信息来设定机型，设定什么机型mac就按照什么机型去管理电脑。<br>根据CPU的类型来挑选一个模板（IntelCPU）<br>要通过变色龙加载，即写入org.apple.Boot.plist</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>Fakesmc.kext  </p>
+<blockquote>
+<p>模拟smc芯片的驱动，必备。<br>FakeSMC文件设置的机型必须与smbios.plist相对应  </p>
 </blockquote>
 
       

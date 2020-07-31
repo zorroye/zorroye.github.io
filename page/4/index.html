@@ -216,7 +216,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">369</span>
+          <span class="site-state-item-count">367</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -265,179 +265,6 @@
 
         <div class="content index posts-expand">
           
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/14/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BB%BAkvm/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2016/04/14/%E5%91%BD%E4%BB%A4%E8%A1%8C%E5%BB%BAkvm/" class="post-title-link" itemprop="url">命令行建kvm</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2016-04-14 22:39:00" itemprop="dateCreated datePublished" datetime="2016-04-14T22:39:00+08:00">2016-04-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-31 22:35:50" itemprop="dateModified" datetime="2020-07-31T22:35:50+08:00">2020-07-31</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>一、建kvm  </p>
-<blockquote>
-<p>1、新建磁盘  </p>
-<blockquote>
-<p>qemu-img create -f qcow2 centos.img -opreallocation=metadata 30G  </p>
-</blockquote>
-<p>2、建kvm虚拟机  </p>
-<blockquote>
-<p>virt-install –name=centos7 –ram=2048 –vcpus=2 –os-type=linux –hvm \<br>--cdrom=/home/ywz/iso/ubuntu-12.04.5-server-amd64.iso \<br>--file=/home/ywz/img/centos7.img,format=qcow2,bus=virtio \<br>--network bridge=virbr0  \<br>--vnc –vncport=5992 –vnclisten=0.0.0.0 –force –autostart  </p>
-</blockquote>
-<p>3、挂在裸设备(lvm)装虚拟机  </p>
-<blockquote>
-<p>virt-install –name=centos7-lvm –ram=2048 –vcpus=2 –os-type=linux  –hvm\<br>--cdrom=/home/ywz/iso/centos7-custom.iso \<br>--file=/dev/kvmvg/kvmlv \<br>--network bridge=br0  \<br>--vnc –vncport=5992 –vnclisten=0.0.0.0 –force –autostart  </p>
-</blockquote>
-</blockquote>
-<blockquote>
-</blockquote>
-<p>二、备份kvm虚拟机配置  </p>
-<blockquote>
-<p>virsh dumpxml centos7-lvm &gt;&gt; centos7-lvm.xml  </p>
-</blockquote>
-<p>三、xml文件设置  </p>
-<blockquote>
-<p>CPU方面<br>1、最大可用cpu  </p>
-<blockquote>
-<p><vcpu placement='static' current='2'>4</vcpu>  </p>
-</blockquote>
-<p>2、绑定CPU  </p>
-<blockquote>
-<p>  <cputune><br>    <vcpupin vcpu='0' cpuset='15'/><br>    <vcpupin vcpu='1' cpuset='31'/><br>  </cputune>  </p>
-</blockquote>
-<blockquote>
-</blockquote>
-<blockquote>
-</blockquote>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/14/diskgenius%E5%A4%84%E7%90%86%E5%9D%8F%E9%81%93/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2016/04/14/diskgenius%E5%A4%84%E7%90%86%E5%9D%8F%E9%81%93/" class="post-title-link" itemprop="url">diskgenius处理坏道</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2016-04-14 21:35:00" itemprop="dateCreated datePublished" datetime="2016-04-14T21:35:00+08:00">2016-04-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-31 22:35:50" itemprop="dateModified" datetime="2020-07-31T22:35:50+08:00">2020-07-31</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>用了6年的笔记本硬盘出现坏道，晚上用diskgenius扫描并处理了一下  </p>
-<p><img src="http://img0.ph.126.net/XNWZBY37ncREZ3b4hkcS_A==/200691658495968771.png" alt="diskgenius处理坏道 - leaf - ------勤解万难------" title="diskgenius处理坏道 - leaf - ------勤解万难------">  </p>
-<p>1、右击硬盘，点新建分区，点右下角的高级选项<br>2、然后把柱面，磁头号，扇区填一下。  </p>
-<blockquote>
-<p>3213-0-17至3213-34-43 的区域  </p>
-</blockquote>
-<blockquote>
-<p>6393-0-61至6393-1-12的区域<br>这两块区域不要使用即可<br>我的话直接从3000-0-1到6500-0-1都不使用。</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
       
   
   
@@ -1114,6 +941,191 @@
     <div class="post-body" itemprop="articleBody">
           <p>网络实验神器<br>下载地址<br><a target="_blank" rel="noopener" href="https://cloud.mail.ru/public/MxRX/QJBWXcEuX">https://cloud.mail.ru/public/MxRX/QJBWXcEuX</a><br>我的是Version 0.9.0-54  </p>
 <p>网页的账号admin 密码是 unl<br>终端的账号root     密码是 unl</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/02/06/ubuntu14-04-%E9%93%BE%E6%8E%A5iscsi/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2016/02/06/ubuntu14-04-%E9%93%BE%E6%8E%A5iscsi/" class="post-title-link" itemprop="url">ubuntu14.04 链接iscsi</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-02-06 17:56:00" itemprop="dateCreated datePublished" datetime="2016-02-06T17:56:00+08:00">2016-02-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-31 22:35:50" itemprop="dateModified" datetime="2020-07-31T22:35:50+08:00">2020-07-31</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>一、安装  </p>
+<blockquote>
+<p>sudo apt-get install open-iscsi 然后重启  </p>
+</blockquote>
+<p>二、配置  </p>
+<blockquote>
+<p>sudo nano /etc/iscsi/iscsi.conf<br>#设置开机自动连接iscsi设备  </p>
+<blockquote>
+<p>node.startup = automatic   </p>
+</blockquote>
+<p>#设置单向验证的账号密码  </p>
+<blockquote>
+<p>node.session.auth.authmethod = CHAP<br>node.session.auth.username = username<br>node.session.auth.password = password<br>-———双向验证再增加以下两行—————<br>node.session.auth.username_in = username<br>node.session.auth.password_in = password</p>
+</blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>三、连接  </p>
+<blockquote>
+<p>查找iscsi设备<br>运行该命令后在/etc/iscsi下面会多出nodes和send_targets文件夹  </p>
+<blockquote>
+<p>sudo iscsiadm -m discovery -t sendtargets -p 192.168.3.12  </p>
+</blockquote>
+<p>连接  </p>
+<blockquote>
+<p>sudo iscsiadm -m node -T iqn.ubuntu -p 192.168.3.12 -l  </p>
+<p><img src="http://img2.ph.126.net/MAwRwRK7yJjnuvmtUKIAaA==/6631214000750360321.png" alt="ubuntu14.04 链接iscsi - leaf - ------勤解万难------" title="ubuntu14.04 链接iscsi - leaf - ------勤解万难------"></p>
+<p> </p>
+<p><img src="http://img0.ph.126.net/93IO30mUx6IiDu-2D2kXPg==/6598138492018427937.png" alt="ubuntu14.04 链接iscsi - leaf - ------勤解万难------" title="ubuntu14.04 链接iscsi - leaf - ------勤解万难------"></p>
+<p>   </p>
+</blockquote>
+<p>格式化及挂载  </p>
+<blockquote>
+<p>fdisk /dev/sdd<br>mkfs.ext4 /dev/sdd1<br>mkdir /mnt/iscsi1<br>mount /dev/sdd1 /mnt/iscsi1  </p>
+</blockquote>
+</blockquote>
+<p>四、配置开机挂载  </p>
+<blockquote>
+<p>设置网络为动态获取或者静态地址/etc/network/interface</p>
+<blockquote>
+<p>auto eth1<br>iface eth1 inet dhcp  </p>
+</blockquote>
+<p>查看设备UUID  </p>
+<blockquote>
+<p>ls -l /dev/disk/by-uuid 可以看到刚挂载的设备的UUID  </p>
+</blockquote>
+<p>更改/etc/fstab  </p>
+<blockquote>
+<p>UUID=c017977c-a0d8-4e6b-9eee-38b6f5c17ebc    /mnt/iscsi1 ext4 _netdev,relatime 0 2  </p>
+</blockquote>
+</blockquote>
+<p>参考<br><a target="_blank" rel="noopener" href="http://blog.csdn.net/sinchb/article/details/8433994">http://blog.csdn.net/sinchb/article/details/8433994</a><br><a target="_blank" rel="noopener" href="http://blog.csdn.net/wbryfl/article/details/6702347">http://blog.csdn.net/wbryfl/article/details/6702347</a><br>其他<br><a target="_blank" rel="noopener" href="http://www.server-world.info/en/note?os=Ubuntu%5C_14.04&amp;p=iscsi&amp;f=2">http://www.server-world.info/en/note?os=Ubuntu\_14.04&amp;p=iscsi&amp;f=2</a><br><a target="_blank" rel="noopener" href="http://manpages.ubuntu.com/manpages/hardy/man8/iscsiadm.8.html">http://manpages.ubuntu.com/manpages/hardy/man8/iscsiadm.8.html</a>  </p>
+<blockquote>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/02/06/%E5%85%B3%E4%BA%8Eluns/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2016/02/06/%E5%85%B3%E4%BA%8Eluns/" class="post-title-link" itemprop="url">关于luns</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-02-06 11:39:00" itemprop="dateCreated datePublished" datetime="2016-02-06T11:39:00+08:00">2016-02-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-31 22:35:50" itemprop="dateModified" datetime="2020-07-31T22:35:50+08:00">2020-07-31</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>增加lun容量，会多出未分区的容量</p>
+<p>添加lun，会多出一个磁盘。</p>
+<p><img src="http://img0.ph.126.net/bdXEHrn7VrPLkCAF2A-Xqw==/6598219855878877965.png" alt="关于luns - leaf - ------勤解万难------" title="关于luns - leaf - ------勤解万难------"></p>
 
       
     </div>

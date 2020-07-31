@@ -216,7 +216,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">369</span>
+          <span class="site-state-item-count">367</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -265,173 +265,6 @@
 
         <div class="content index posts-expand">
           
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/07/%E5%8D%8E%E4%B8%BA%E8%AE%BE%E7%BD%AE%E7%AE%A1%E7%90%86%E7%BD%91%E6%AE%B5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2016/10/07/%E5%8D%8E%E4%B8%BA%E8%AE%BE%E7%BD%AE%E7%AE%A1%E7%90%86%E7%BD%91%E6%AE%B5/" class="post-title-link" itemprop="url">华为设置管理网段</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2016-10-07 09:00:00" itemprop="dateCreated datePublished" datetime="2016-10-07T09:00:00+08:00">2016-10-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-31 22:35:50" itemprop="dateModified" datetime="2020-07-31T22:35:50+08:00">2020-07-31</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><img src="http://img1.ph.126.net/gCjkxtw8xugDoXI-VWT8yw==/6631549351794629980.png" alt="华为设置管理网段 - leaf - ------勤解万难------" title="华为设置管理网段 - leaf - ------勤解万难------"></p>
-<p>10.1.11.0   办公网段</p>
-<p>10.1.252.0 管理网段</p>
-<p>单独给交换机设置IP地址，会导致10.1.11.11访问不了10.1.252.21</p>
-<p>需要在S5700S-li上设置一条静态路由</p>
-<p>ip route-static 10.1.11.0 24 10.1.252.11</p>
-<p>即可</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/28/acl%E8%AE%BE%E7%BD%AE%E7%BD%91%E6%AE%B5%E4%B8%8D%E8%83%BD%E4%BA%92%E8%AE%BF/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2016/09/28/acl%E8%AE%BE%E7%BD%AE%E7%BD%91%E6%AE%B5%E4%B8%8D%E8%83%BD%E4%BA%92%E8%AE%BF/" class="post-title-link" itemprop="url">ACL设置网段不能互访</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2016-09-28 17:32:00" itemprop="dateCreated datePublished" datetime="2016-09-28T17:32:00+08:00">2016-09-28</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-31 22:35:50" itemprop="dateModified" datetime="2020-07-31T22:35:50+08:00">2020-07-31</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>vlan21</p>
-<p>acl name acl-vlan21 3010</p>
-<p>rule deny ip source 10.1.21.0 0.0.0.255 destination 10.1.22.0 0.0.0.255</p>
-<p>rule deny ip source 10.1.21.0 0.0.0.255 destination 10.1.31.0 0.0.0.15</p>
-<p>rule deny ip source 10.1.21.0 0.0.0.255 destination 10.1.32.0 0.0.0.15</p>
-<p>rule deny ip source 10.1.21.0 0.0.0.255 destination 10.1.252.0 0.0.0.63</p>
-<p>traffic-filter vlan 21 inbound acl name acl-vlan21</p>
-<p>vlan22</p>
-<p>acl name acl-vlan22 3015</p>
-<p>rule deny ip source 10.1.22.0 0.0.0.255 destination 192.168.1.0 0.0.0.255</p>
-<p>rule deny ip source 10.1.22.0 0.0.0.255 destination 10.1.31.0   0.0.0.15</p>
-<p>rule deny ip source 10.1.22.0 0.0.0.255 destination 10.1.32.0   0.0.0.15</p>
-<p>rule deny ip source 10.1.22.0 0.0.0.255 destination 10.1.128.0  0.0.0.63</p>
-<p>rule deny ip source 10.1.22.0 0.0.0.255 destination 10.1.252.0  0.0.0.63</p>
-<p>traffic-filter vlan 22 inbound acl name acl-vlan22</p>
-<p>vlan31</p>
-<p>acl name acl-vlan31 3020</p>
-<p>rule deny ip source 10.1.31.0 0.0.0.15 destination 10.1.32.0   0.0.0.15</p>
-<p>rule deny ip source 10.1.31.0 0.0.0.15 destination 10.1.128.0  0.0.0.63</p>
-<p>rule deny ip source 10.1.31.0 0.0.0.15 destination 10.1.252.0  0.0.0.63</p>
-<p>traffic-filter vlan 31 inbound acl name acl-vlan31</p>
-<p>vlan32</p>
-<p>acl name acl-vlan32 3025</p>
-<p>rule deny ip source 10.1.32.0 0.0.0.15 destination 10.1.128.0  0.0.0.63</p>
-<p>rule deny ip source 10.1.32.0 0.0.0.15 destination 10.1.252.0  0.0.0.63</p>
-<p>traffic-filter vlan 32 inbound acl name acl-vlan32</p>
-<p>vlan128</p>
-<p>acl name acl-vlan128 3030</p>
-<p>rule deny ip source 10.1.128.0 0.0.0.63 destination 10.1.252.0  0.0.0.63</p>
-<p>traffic-filter vlan 128 inbound acl name acl-vlan128</p>
-<p>vlan252</p>
-<p>无</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
       
   
   
@@ -717,7 +550,7 @@
           <p>接console口</p>
 <p>交换机重启</p>
 <p>按CTRL+B</p>
-<p>密码 <a href="mailto:&#x41;&#100;&#x6d;&#105;&#110;&#x40;&#x68;&#x75;&#97;&#119;&#x65;&#105;&#46;&#99;&#111;&#x6d;">&#x41;&#100;&#x6d;&#105;&#110;&#x40;&#x68;&#x75;&#97;&#119;&#x65;&#105;&#46;&#99;&#111;&#x6d;</a></p>
+<p>密码 <a href="mailto:&#x41;&#x64;&#109;&#x69;&#110;&#x40;&#104;&#117;&#97;&#119;&#101;&#105;&#46;&#99;&#111;&#x6d;">&#x41;&#x64;&#109;&#x69;&#110;&#x40;&#104;&#117;&#97;&#119;&#101;&#105;&#46;&#99;&#111;&#x6d;</a></p>
 <p>按7  Clear password for console user</p>
 <p>按1  Boot with default mode</p>
 
@@ -1069,6 +902,144 @@
 <p>#设置要镜像的端口</p>
 <p>interface GigabitEthernet 0/0/2</p>
 <p>mirror to observe-port both</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/08/05/%E6%97%A0%E6%B3%95%E5%88%9B%E5%BB%BAk-3%E4%B8%AD%E9%97%B4%E5%B1%82%E7%BB%84%E4%BB%B6-%E8%AF%B7%E7%A1%AE%E8%AE%A4%E4%B8%AD%E9%97%B4%E4%BB%B6%E9%85%8D%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2016/08/05/%E6%97%A0%E6%B3%95%E5%88%9B%E5%BB%BAk-3%E4%B8%AD%E9%97%B4%E5%B1%82%E7%BB%84%E4%BB%B6-%E8%AF%B7%E7%A1%AE%E8%AE%A4%E4%B8%AD%E9%97%B4%E4%BB%B6%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">无法创建k/3中间层组件 请确认中间件配置</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-08-05 08:50:00" itemprop="dateCreated datePublished" datetime="2016-08-05T08:50:00+08:00">2016-08-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-31 22:35:50" itemprop="dateModified" datetime="2020-07-31T22:35:50+08:00">2020-07-31</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>服务器上面有账号，客户端如果也用这个账号，然后用了不同的密码，会导致远程组件配置工具测试不成功。</p>
+<p>解决方法：</p>
+<p>客户端账号使用服务器上相关账号的相同密码</p>
+<p>或者</p>
+<p>客户端使用不同的账号进行登录</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/07/24/win2012%E6%97%A0%E6%B3%95%E5%AE%89%E8%A3%85-net3-5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2016/07/24/win2012%E6%97%A0%E6%B3%95%E5%AE%89%E8%A3%85-net3-5/" class="post-title-link" itemprop="url">win2012无法安装.net3.5</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-07-24 18:55:00" itemprop="dateCreated datePublished" datetime="2016-07-24T18:55:00+08:00">2016-07-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-31 22:35:50" itemprop="dateModified" datetime="2020-07-31T22:35:50+08:00">2020-07-31</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><a target="_blank" rel="noopener" href="https://www.baidu.com/s?ie=UTF-8&amp;wd=win2012%E6%97%A0%E6%B3%95%E5%AE%89%E8%A3%85.net3.5">https://www.baidu.com/s?ie=UTF-8&amp;wd=win2012%E6%97%A0%E6%B3%95%E5%AE%89%E8%A3%85.net3.5</a></p>
+<p>1、挂载安装盘</p>
+<p>2、安装的时候选指定备用源路径</p>
+<p>3、选择安装盘路径 如E:\Sources\SxS</p>
+<p>安装完毕</p>
 
       
     </div>

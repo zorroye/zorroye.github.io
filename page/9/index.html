@@ -216,7 +216,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">369</span>
+          <span class="site-state-item-count">367</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -265,214 +265,6 @@
 
         <div class="content index posts-expand">
           
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2014/12/13/%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%858%EF%BC%9Ax-window/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2014/12/13/%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%858%EF%BC%9Ax-window/" class="post-title-link" itemprop="url">基础补充8：X window</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2014-12-13 09:34:00" itemprop="dateCreated datePublished" datetime="2014-12-13T09:34:00+08:00">2014-12-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-31 22:35:50" itemprop="dateModified" datetime="2020-07-31T22:35:50+08:00">2020-07-31</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>1、只开X server 。一片黑屏，鼠标可以动  </p>
-<blockquote>
-<p>X :1&amp;  </p>
-<p><img src="http://img1.ph.126.net/DewYm4SOrcTGz8A4WqtyCA==/6619130367956356525.jpg" alt="基础补充8：X window - leaf - ------坚持雅操------" title="基础补充8：X window - leaf - ------坚持雅操------"></p>
-<p>   </p>
-</blockquote>
-<p>2、开X client 。屏幕左上角有终端输入界面，但是没有窗口,不能移动  </p>
-<blockquote>
-<p>xterm -display ：1&amp;  </p>
-<p><img src="http://img0.ph.126.net/FId_qUF5cLsqT31gHlh5-Q==/887490601669063227.jpg" alt="基础补充8：X window - leaf - ------坚持雅操------" title="基础补充8：X window - leaf - ------坚持雅操------"></p>
-<p>   </p>
-</blockquote>
-<p>3、开窗口管理器，twm或者metacity 。有窗口，还可以移动  </p>
-<blockquote>
-<p>twm -display :1 -f /etc/X11/twm/system.twmrc &amp;<br>或者<br>metacity -display :1&amp;  </p>
-<p><img src="http://img2.ph.126.net/jwi6o_qmZj1nSWmxpMCstQ==/145241088082979159.jpg" alt="基础补充8：X window - leaf - ------坚持雅操------" title="基础补充8：X window - leaf - ------坚持雅操------"></p>
-<p> </p>
-<p><img src="http://img1.ph.126.net/vgEWzw9txT0xb9imd50knA==/887490601669063228.jpg" alt="基础补充8：X window - leaf - ------坚持雅操------" title="基础补充8：X window - leaf - ------坚持雅操------"></p>
-<p>   </p>
-</blockquote>
-<p>4、Widget   图形库  </p>
-<blockquote>
-<p>包括gtk+ 和QT 。窗口的颜色，按钮，图案啥的都需要图形库的支持  </p>
-</blockquote>
-<p>5、Display Manager  </p>
-<blockquote>
-<p>提供登陆界面和 会话协议XDMCP  </p>
-</blockquote>
-<p>6、Desktop Manager  </p>
-<blockquote>
-<p>包括gnome、KDE等 。<br>是以上的集合，然后再加上自行开发的界面。  </p>
-</blockquote>
-<p>init5和startx的区别  </p>
-<blockquote>
-<p>init 5  </p>
-</blockquote>
-<p><img src="http://img1.ph.126.net/U-DEBwBEJ4tm1B-mvJrwtg==/2206200867558479713.png" alt="基础补充8：X window - leaf - ------坚持雅操------" title="基础补充8：X window - leaf - ------坚持雅操------">  </p>
-<blockquote>
-<p>startx  </p>
-</blockquote>
-<p> </p>
-<p><img src="http://img0.ph.126.net/SfJv_fMGdbtlnwy2Pc1KjQ==/3261169080270047412.png" alt="基础补充8：X window - leaf - ------坚持雅操------" title="基础补充8：X window - leaf - ------坚持雅操------"></p>
-<p>   </p>
-<blockquote>
-<p>init 5 是启动prefdm，然后通过gdm启动X server。进gnome会话后还要开启Xsession登陆界面<br>startx 是启动xinit来启动X server，然后直接进gnome会话  </p>
-</blockquote>
-<blockquote>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2014/12/02/%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%857%EF%BC%9Afc4%E5%AE%89%E8%A3%85geforce-mx-420%E9%A9%B1%E5%8A%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2014/12/02/%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%857%EF%BC%9Afc4%E5%AE%89%E8%A3%85geforce-mx-420%E9%A9%B1%E5%8A%A8/" class="post-title-link" itemprop="url">基础补充7：FC4安装Geforce MX 420驱动</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2014-12-02 14:59:00" itemprop="dateCreated datePublished" datetime="2014-12-02T14:59:00+08:00">2014-12-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-31 22:35:50" itemprop="dateModified" datetime="2020-07-31T22:35:50+08:00">2020-07-31</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>0、安装编译环境。  </p>
-<blockquote>
-<p>主要是安装kernel-src ，kernel-devel ，gcc , glibc , ncurse 等。  </p>
-</blockquote>
-<p>1、下载nvidia驱动  </p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="http://www.nvidia.cn/object/unix-cn.html">http://www.nvidia.cn/object/unix-cn.html</a><br>我下载的是NVIDIA-Linux-x86-96.43.23-pkg1.run。已经加了x权限了。  </p>
-</blockquote>
-<p>2、进 init 3环境  </p>
-<blockquote>
-<p>nano /etc/inittab     </p>
-<p>　　id:5:initdefault:   把5改为3  </p>
-</blockquote>
-<p>3、安装nvidia驱动  </p>
-<blockquote>
-<p>sh NVIDIA-Linux-x86-96.43.23-pkg1.run<br>然后点配置xorg.conf文件。 或者运行 nvidia-xconfig 也可以  </p>
-</blockquote>
-<p>4、进init 5 环境  </p>
-<blockquote>
-<p>改 /etc/inittab  </p>
-<blockquote>
-<p>id:3:initdefault:   把3改为5</p>
-</blockquote>
-</blockquote>
-<p>5、遇到的问题（问题才开始）  </p>
-<blockquote>
-<p>（EE） failed to initialize GLX Extension<br>1、看/var/log/Xorg.0.log ，模块的存放地址没有问题(/usr/X11R6/xorg/modules)<br>2、init 3，然后modprobe nvidia 能加载nvidia，startx正常。说明驱动安装没有问题。<br>3、感觉应该是图形启动之前模块还没加载，导致这个问题。  </p>
-<blockquote>
-<p>做法是在电脑开机加载模块的时候添加显卡模块。<br>cd /etc/sysconfig/modules/<br>nano nvidia.modules<br>加入 /sbin/modprobe nvidia 保存。  </p>
-</blockquote>
-<p>进度条的时候白屏死机<br>进/etc/X11/xorg.conf   设置成16位色  </p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
       
   
   
@@ -1856,6 +1648,145 @@
 <p>user-session=Lubuntu</p>
 </blockquote>
 <p>转载自：<a target="_blank" rel="noopener" href="http://www.cnblogs.com/xiangzi888/archive/2012/06/20/2557093.html">http://www.cnblogs.com/xiangzi888/archive/2012/06/20/2557093.html</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2014/07/18/%E7%A7%BB%E5%8A%A8gpu-%E6%B5%AE%E7%82%B9%E8%BF%90%E7%AE%97%E6%AF%94%E8%BE%83/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2014/07/18/%E7%A7%BB%E5%8A%A8gpu-%E6%B5%AE%E7%82%B9%E8%BF%90%E7%AE%97%E6%AF%94%E8%BE%83/" class="post-title-link" itemprop="url">移动GPU 浮点运算比较</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2014-07-18 21:57:00" itemprop="dateCreated datePublished" datetime="2014-07-18T21:57:00+08:00">2014-07-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-31 22:35:50" itemprop="dateModified" datetime="2020-07-31T22:35:50+08:00">2020-07-31</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>默认300MH下  </p>
+<p>ipad2/iphone4S     PowerVR SGX543MP2           19.2GFLOPS<br>RK3288                  Mali-T760（4 ShaderCore）   21.6GFLOPS<br>iphone5                  PowerVR SGX543MP3            28.8GFLOPS<br>ipad3                       PowerVR SGX543MP4            38.4GFLOPS<br>全志A80T               PowerVR G6230                        38.4GFLOPS<br>骁龙600                  Adreno 320                                  38.4GFLOPS<br>骁龙800／801       Adreno 330                                  76.8GFLOPS<br>ipad4                       PowerVR SGX554MP4             76.8GFLOPS<br>iphone5s（A7）   PowerVR G6430                         76.8GFLOPS<br>Iphone6？？          PowerVR GX6650                    115.2GFLOPS<br>小米平板                 NVIDIA K1                                 115.2GFLOPS<br> 骁龙805                 Adreno 420                                115.2GFLOPS  </p>
+<p><a target="_blank" rel="noopener" href="http://bbs.imp3.net/thread-11142812-1-1.html">http://bbs.imp3.net/thread-11142812-1-1.html</a><br><a target="_blank" rel="noopener" href="http://www.leiphone.com/5s-g6430.html">http://www.leiphone.com/5s-g6430.html</a><br><a target="_blank" rel="noopener" href="http://news.mydrivers.com/1/293/293965.htm">http://news.mydrivers.com/1/293/293965.htm</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2014/07/15/ubuntu14-04-x64%E5%AE%89%E8%A3%85dota2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2014/07/15/ubuntu14-04-x64%E5%AE%89%E8%A3%85dota2/" class="post-title-link" itemprop="url">ubuntu14.04 X64安装Dota2</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2014-07-15 13:42:00" itemprop="dateCreated datePublished" datetime="2014-07-15T13:42:00+08:00">2014-07-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-31 22:35:50" itemprop="dateModified" datetime="2020-07-31T22:35:50+08:00">2020-07-31</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>1、<a target="_blank" rel="noopener" href="http://store.steampowered.com/about/">http://store.steampowered.com/about/</a>  下载steam<br>2、注册 steam账号<br>3、<a target="_blank" rel="noopener" href="http://www.dota2.com.cn/">http://www.dota2.com.cn/</a>   注册dota2账号<br>4、将steam设置为中文   view-setting-interface  里面设置为中文<br>5、打开浏览器(如火狐)，输入 steam://run/570  按确定。提示使用什么软件打开  </p>
+<blockquote>
+<p>然后选择/usr/bin/steam  打开  (选那个脚本的)  </p>
+</blockquote>
+<p>6、下载dota2 下载  </p>
+<p><img src="http://img0.ph.126.net/WZVwUzltG-6mYrIVdepzZA==/3682255645429244871.png" alt="ubuntu14.04 X64安装Dota2 - leaf - ------坚持雅操------" title="ubuntu14.04 X64安装Dota2 - leaf - ------坚持雅操------">  </p>
+<p>7、还有终端输入.export LC_CTYPE=”en_US.UTF-8” &amp;&amp; steam 不然好像是无法在steam在输入  </p>
+<p>参考：<a target="_blank" rel="noopener" href="http://tieba.baidu.com/p/3139011858#">http://tieba.baidu.com/p/3139011858#</a></p>
 
       
     </div>

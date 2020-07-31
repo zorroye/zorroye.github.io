@@ -216,7 +216,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">369</span>
+          <span class="site-state-item-count">367</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -265,242 +265,6 @@
 
         <div class="content index posts-expand">
           
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2012/10/10/fedora17%E5%AE%89%E8%A3%85nvidia%E5%AE%98%E6%96%B9%E9%A9%B1%E5%8A%A8/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2012/10/10/fedora17%E5%AE%89%E8%A3%85nvidia%E5%AE%98%E6%96%B9%E9%A9%B1%E5%8A%A8/" class="post-title-link" itemprop="url">fedora17安装nvidia官方驱动</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2012-10-10 12:25:00" itemprop="dateCreated datePublished" datetime="2012-10-10T12:25:00+08:00">2012-10-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-31 22:35:49" itemprop="dateModified" datetime="2020-07-31T22:35:49+08:00">2020-07-31</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>版本：fedora17 x64位<br>CPU：AMD Athlon(tm) II X4 635 Processor × 4<br>主板：AMD 870 (无板载显卡)<br>内存：DDR3-1333 8G<br>显卡：8500GT  </p>
-<p>0、设置了sudoers、yum源  </p>
-<blockquote>
-<p>sudo gedit /etc/sudoers  </p>
-<blockquote>
-<p># User privilege specification<br>root    ALL=(ALL) ALL<br>加入   你的账户名   ALL=(ALL) ALL  </p>
-</blockquote>
-<p>yum源就加163的就好了  </p>
-<blockquote>
-<p>mirrors.163.com<br>点fedora使用帮助，里面有详细信息  </p>
-</blockquote>
-</blockquote>
-<p>1、安装相关编译包  </p>
-<blockquote>
-<p>gcc、make、kernel-devel、kernel-headers、dkms<br>sudo yum -y install gcc make dkms<br>kernel-devel和kernel-headers是从DVD安装光盘里找的<br>#也可以把kernel更新到最新版，再用yum下载kernel源码  </p>
-</blockquote>
-<p>2、相关设置  </p>
-<blockquote>
-<p>1、阻止nouveau模块的加载  </p>
-<blockquote>
-<p>sudo gedit /etc/modprobe.d/blacklist.conf<br>添加一行：blacklist nouveau  </p>
-</blockquote>
-<blockquote>
-<p>sudo gedit /boot/grub2/grub.cfg<br>在menuentry ‘Fedora Linux’ 这一段的linux    /boot/vmlinuz 这一行末尾rhgb quiet后面添加 nouveau.modeset=0  </p>
-</blockquote>
-<p>2、降低selinux级别  </p>
-<blockquote>
-<p>sudo setsebool -P allow_execstack on  </p>
-</blockquote>
-<p>3、下载nvidia官方驱动和设置权限  </p>
-<blockquote>
-<p>下载最新的就可以：NVIDIA-Linux-x86_64-304.51.run<br>chmod a+x NVIDIA-Linux-x86_64-304.51.run  </p>
-</blockquote>
-</blockquote>
-<p>3、操作  </p>
-<blockquote>
-<p>1、进文本模式  </p>
-<blockquote>
-<p>重启进菜单后-按e进编辑模式-找到rhgb quiet，输入 3   然后按F10启动  </p>
-</blockquote>
-<p>2、nvidia安装  </p>
-<blockquote>
-<p>sh ./NVIDIA-Linux-x86_64-304.51.run</p>
-</blockquote>
-<blockquote>
-<p>里面就是选accept，然后再要不要生成xorg.conf的时候按ok 就好了  </p>
-</blockquote>
-<p>3、设置分辨率  </p>
-<blockquote>
-<p>重启后发现分辨率只有640x480<br>1、查看频率  </p>
-<blockquote>
-<p>gtf 1280 1024 60  -x  </p>
-</blockquote>
-<p>  # 1280x1024 @ 60.00 Hz (GTF) <strong>hsync: 63.60 kHz; pclk: 108.88 MHz</strong><br>  Modeline “1280x1024_60.00”  108.88  1280 1360 1496 1712  1024 1025 1028 1060  -HSync +Vsync<br>2、设置频率  </p>
-</blockquote>
-<blockquote>
-<p>sudo gedit /etc/X11/xorg.conf  </p>
-<blockquote>
-<p>Section “Monitor”<br>    Identifier     “Monitor0”<br>    VendorName     “Unknown”<br>    ModelName      “Unknown”<br>    HorizSync       28.0 - <strong>63.60</strong><br>    VertRefresh     43.0 - <strong>108.88</strong><br>    Option         “DPMS”<br>EndSection  </p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>4、查看模块  </p>
-<blockquote>
-<p>lsmod  </p>
-<blockquote>
-<p>nvidia              11262717  40<br>nouveau               785691  0  </p>
-</blockquote>
-<p>modinfo nvidia  </p>
-<blockquote>
-<p>filename:       /lib/modules/3.3.4-5.fc17.x86_64/extra/nvidia.ko<br>alias:          char-major-195-*<br>version:        304.51<br>supported:      external<br>license:        NVIDIA</p>
-</blockquote>
-</blockquote>
-<p>后记  </p>
-<blockquote>
-<p>碰到的问题就是屏幕分辨率的问题，没碰到安装不了驱动的问题，也没有黑屏和蓝进度条的问题  </p>
-</blockquote>
-<blockquote>
-<blockquote>
-</blockquote>
-</blockquote>
-<p>参考：  </p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="http://www.2cto.com/os/201109/104395.html">fedora15安装nvidia官方驱动</a></p>
-</blockquote>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="http://www.xufangxi.cn/Linux/11.html">解决linux低分辨率</a><br><a target="_blank" rel="noopener" href="http://www.cnblogs.com/ZJoy/archive/2011/03/15/1984938.html">xorg.conf配置详解</a><br><a target="_blank" rel="noopener" href="http://hi.baidu.com/cxkipq/item/99a2229216b58736336eebc2">linux gtf和cvt命令</a>  </p>
-</blockquote>
-<blockquote>
-<blockquote>
-</blockquote>
-</blockquote>
-<p>效果  </p>
-<blockquote>
-<p><img src="http://img4.ph.126.net/DvYtJ6ZJGYgSLMun86veQg==/6598258338725711534.jpg" alt="fedora17安装nvidia官方驱动 - leaf - ------坚持雅操------" title="fedora17安装nvidia官方驱动 - leaf - ------坚持雅操------"></p>
-</blockquote>
-<blockquote>
-<p><img src="http://img7.ph.126.net/B1auivZnvejbCt67buGBDQ==/6597256683634379457.jpg" alt="fedora17安装nvidia官方驱动 - leaf - ------坚持雅操------" title="fedora17安装nvidia官方驱动 - leaf - ------坚持雅操------"></p>
-<p><img src="http://img5.ph.126.net/74zwresWU4eSY0k7iIXNOA==/2682175053093706855.jpg" alt="fedora17安装nvidia官方驱动 - leaf - ------坚持雅操------" title="fedora17安装nvidia官方驱动 - leaf - ------坚持雅操------"></p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2012/10/08/%E5%85%B3%E4%BA%8E%E4%B8%9C%E5%A5%A5%E4%BC%9A%E8%AE%A1%E7%BB%A7%E7%BB%AD%E6%95%99%E8%82%B2%E6%89%93%E4%B8%8D%E5%BC%80%E8%A7%86%E9%A2%91/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2012/10/08/%E5%85%B3%E4%BA%8E%E4%B8%9C%E5%A5%A5%E4%BC%9A%E8%AE%A1%E7%BB%A7%E7%BB%AD%E6%95%99%E8%82%B2%E6%89%93%E4%B8%8D%E5%BC%80%E8%A7%86%E9%A2%91/" class="post-title-link" itemprop="url">关于东奥会计继续教育打不开视频</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2012-10-08 15:14:00" itemprop="dateCreated datePublished" datetime="2012-10-08T15:14:00+08:00">2012-10-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-31 22:35:49" itemprop="dateModified" datetime="2020-07-31T22:35:49+08:00">2020-07-31</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>视频能听声音，没图像显示为绿色<br>1、设置mediaplayer  </p>
-<blockquote>
-<p>工具-选项-性能-视频加速-选 无  </p>
-</blockquote>
-<p>2、设置IE浏览器  </p>
-<blockquote>
-<p>一般出现在IE8或者更改一级的IE浏览器里，原因就是“兼容性视图”。只要点一下然后关闭IE再开，就能看了</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
       
   
   
@@ -1311,6 +1075,294 @@
 <blockquote>
 <p>in.telnetd:ALL：加在allow里表示允许进出，加在deny里表示禁止进出<br>in.telnetd:ALL：spawn …|| …||….   后面接操作指令  </p>
 </blockquote>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2012/10/05/%E9%B8%9F%E5%93%A5%E5%9F%BA%E7%A1%80%E7%AC%AC%E4%BA%8C%E5%8D%81%E7%AB%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2012/10/05/%E9%B8%9F%E5%93%A5%E5%9F%BA%E7%A1%80%E7%AC%AC%E4%BA%8C%E5%8D%81%E7%AB%A0/" class="post-title-link" itemprop="url">鸟哥基础第二十章</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2012-10-05 18:48:00" itemprop="dateCreated datePublished" datetime="2012-10-05T18:48:00+08:00">2012-10-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-31 22:35:49" itemprop="dateModified" datetime="2020-07-31T22:35:49+08:00">2020-07-31</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>RPM命令  </p>
+<blockquote>
+<p>1、rpm包名称  </p>
+<blockquote>
+<p>*.i386.rpm：适用于所有x86平台<br>*.noarch.rpm：没有硬件上的限制，一般就是文本文件  </p>
+</blockquote>
+<p>2、rpm安装目录  </p>
+<blockquote>
+<p>/etc<br>/usr/bin<br>/usr/lib<br>/usr/share/doc<br>/usr/share/man<br>/var/lib/rpm                                      #为系统安装的rpm包信息记录  </p>
+</blockquote>
+<p>3、rpm命令  </p>
+<blockquote>
+<p>安装  </p>
+<blockquote>
+<p>rpm -i                                       #install<br>其他参数  </p>
+<blockquote>
+<p>rpm -i *.rpm –force         #强制安装<br>rpm -i *.rpm –test           #只测试能否安装到电脑里  </p>
+</blockquote>
+</blockquote>
+<p>升级  </p>
+<blockquote>
+<p>rpm -U *.rpm                           #有该软件则升级，没有该软件则安装<br>rpm -F *.rpm                           #有该软件则升级，没有该软件则不安装</p>
+</blockquote>
+<p>卸载  </p>
+<blockquote>
+<p>rpm -e                                       #erase  </p>
+</blockquote>
+<p>重建数据库  </p>
+<blockquote>
+<p>rpm –rebuilddb                         #重建后的信息都写在/var/lib/rpm里面  </p>
+</blockquote>
+<p>查询(很重要)                                      #查询都是在/var/lib/rpm里面查询的  </p>
+<blockquote>
+<p>rpm -q  openldap                         #query              查询有没有安装过这个rpm软件<br>rpm -qa                                        #all                  列出所有系统中安装的rpm软件             <br>rpm -qi openldap                          #information   查询rpm软件的信息<br>rpm -ql openldap(重要)                 #list                列出这个rpm软件安装在哪些地方，方便配置、删除等<br>rpm -qc openldap                         #configure      只列出rpm软件配置文件所在位置<br>rpm -qd openldap                         #document       查看rpm软件的帮助文档<br>rpm -qR openldap                         #required       列出rpm软件相关的依赖文件，如函数库等<br>rpm -qf  /etc/openldap/ldap.conf   #file                列出该文件属于哪个rpm软件里面的<br>rpm -qp[licdf]  wmx.i686.rpm         #package       查看rpm安装包的相关信息  </p>
+</blockquote>
+<p>rpm验证  </p>
+<blockquote>
+<p>rpm -V openldap                            #verify            验证该软件里的文件有没有被改动过<br>S.5….T  c /etc/openldap/ldap.conf  </p>
+<blockquote>
+<p>SM5DLUGT，没有改动过的话用.表示  </p>
+<blockquote>
+<p>S：size        容量是否改变<br>M：mode     文件类型或权限有没有被改变<br>5：md5     <br>D：device     设备名称有没有被改变过<br>L：link           链接文件的属性有没有被改变<br>U：user        u有没有被改变<br>G：group      g有没有被改变<br>T：mtime      建立时间有没有被改变  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>c：配置文件<br>d：文档<br>l：授权文件<br>r：自述文件  </p>
+</blockquote>
+</blockquote>
+<p>rpm数字签名  </p>
+</blockquote>
+</blockquote>
+<p>SRPM  </p>
+<blockquote>
+<p>srpm目录  </p>
+<blockquote>
+<p>/usr/src/redhat/SPEC                 #存放配置文件<br>/usr/src/redhat/SOURCE            #存放源文件<br>/usr/src/redhat/BUILD                #存放编译时的暂存文件，编译时就是再这个目录下进行的<br>/usr/src/redhat/RPMS                #编译好后，会放到这个文件夹中  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+</blockquote>
+<p>相关命令  </p>
+<blockquote>
+<p>cd /usr/src/redhat/SPEC<br>rpmbulid -bb *.spec                    #编译成rpm文件<br>rpmbulid -ba *.spec                    #打包成srpm文件  </p>
+</blockquote>
+</blockquote>
+<p>扩展：dpkg  </p>
+<blockquote>
+<p>dpkg数据库：/var/lib/dpkg<br>安装：dpkg -i<br>卸载：dpkg -r<br>查询：<br>dpkg -s             相当于rpm -qi<br>dpkg -L             相当于rpm -ql<br>dpkg -l              相当于rpm -qa  </p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2012/10/05/%E9%B8%9F%E5%93%A5%E5%9F%BA%E7%A1%80%E7%AC%AC%E5%8D%81%E4%B9%9D%E7%AB%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2012/10/05/%E9%B8%9F%E5%93%A5%E5%9F%BA%E7%A1%80%E7%AC%AC%E5%8D%81%E4%B9%9D%E7%AB%A0/" class="post-title-link" itemprop="url">鸟哥基础第十九章</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2012-10-05 13:39:00" itemprop="dateCreated datePublished" datetime="2012-10-05T13:39:00+08:00">2012-10-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-31 22:35:49" itemprop="dateModified" datetime="2020-07-31T22:35:49+08:00">2020-07-31</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>函数库：  </p>
+<blockquote>
+<p>静态函数库：*.a<br>动态函数库：*.so  </p>
+</blockquote>
+<blockquote>
+<p>存放位置：  </p>
+<blockquote>
+<p>/lib<br>/usr/lib<br>/lib/modules/`uname -r` #这里是核心函数库  </p>
+</blockquote>
+<p>相关操作  </p>
+<blockquote>
+<p>1、ld.so.conf  </p>
+<blockquote>
+<p>/etc/ld.so.cache<br>/etc/ld.so.conf             #就写着要包含/etc/ld.so.conf.d下的所有.conf文件<br>/etc/ld.so.conf.d          #写着要加载的动态函数库目录，只能加载整个目录  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>2、ldconfig  </p>
+<blockquote>
+<p>ldconfig                       #将/etc/ld.so.conf.d里面包含的函数库目录全部读入内存中  </p>
+</blockquote>
+<blockquote>
+<p>ldconfig -p                   #查看当前读入到内存中的函数库  </p>
+</blockquote>
+<p>3、ldd  </p>
+<blockquote>
+<p>ldd /usr/bin/make        #查看该命令所包含的动态函数库<br>ldd -v /usr/bin/make    #详细查看该命令所包含的动态函数库<br>ldd /lib/libc.so.6           #也可以查看与某个函数库相关的函数库  </p>
+</blockquote>
+<p>4、安装  </p>
+<blockquote>
+<p>缺什么就装什么  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>tarball编译：C语言源码：*.c ———&gt;目标文件*.o————-&gt;执行文件  </p>
+<blockquote>
+<p>1、configure  建立makefile文件  </p>
+<blockquote>
+<p>参数：–help  </p>
+<blockquote>
+<p> –prefix<br><a target="_blank" rel="noopener" href="http://hi.baidu.com/issweight/item/f9d1b49da703d0df7a7f01c2">#查看 configure参数</a>  </p>
+</blockquote>
+</blockquote>
+<p>2、make clean  </p>
+<blockquote>
+<p>清除*.o文件<br>由于make一次后，编译过的*.o在下次make时不会再编译，所以先清除好重新编译  </p>
+</blockquote>
+<p>3、make  </p>
+<blockquote>
+<p>gcc语法  </p>
+<blockquote>
+<p>gcc -c hello.c                   #编译成目标文件：hello.o<br>gcc -o hello  hello.o         #编译成执行文件：hello<br>其他参数：<br>gcc -O -c hello.c              #优化编译<br>gcc -Wall -o hello.c          #产生相信编译过程信息<br>gcc abc.c -lm -L/usr/lib -I/usr/include  </p>
+<blockquote>
+<p>#-l：加入某个函数库<br>#m：libm.so：加入这个函数库<br>#-L：函数库的地址<br>#-I：源码位置  </p>
+</blockquote>
+</blockquote>
+<p>makefile语法规则  </p>
+<blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>make参数  </p>
+<blockquote>
+<p>CFLAGS=”-Wall” make    #同gcc -Wall  </p>
+</blockquote>
+</blockquote>
+<p>4、make install  </p>
+<blockquote>
+<p>其实就是把编译好的文件放到相关目录下  </p>
+</blockquote>
+<p>5、在/etc/man.config中添加man文件地址  </p>
+<blockquote>
+</blockquote>
+<p>6、升级  </p>
+<blockquote>
+<p>patch -p 0 &lt; patch文件                #p 0 表示去掉几个/，如/home/a/b/c   p4 就是c<br>编译安装  </p>
+</blockquote>
+<p>7、软件的删除  </p>
+<blockquote>
+<p>将目录下的相关文件删除即可，看一下install到哪里就到哪里删除  </p>
+</blockquote>
+</blockquote>
+<p>其他命令  </p>
+<blockquote>
+<p>md5sum ：算md5码</p>
 </blockquote>
 
       

@@ -216,7 +216,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">369</span>
+          <span class="site-state-item-count">367</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -265,238 +265,6 @@
 
         <div class="content index posts-expand">
           
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/04/29/ubuntu-14-04-server-%E4%BD%BF%E7%94%A8lxc%E5%B9%B6%E8%AE%BF%E9%97%AE%E5%A4%96%E7%BD%91/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2015/04/29/ubuntu-14-04-server-%E4%BD%BF%E7%94%A8lxc%E5%B9%B6%E8%AE%BF%E9%97%AE%E5%A4%96%E7%BD%91/" class="post-title-link" itemprop="url">Ubuntu 14.04 Server 使用lxc并访问外网</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2015-04-29 14:13:00" itemprop="dateCreated datePublished" datetime="2015-04-29T14:13:00+08:00">2015-04-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-31 22:35:50" itemprop="dateModified" datetime="2020-07-31T22:35:50+08:00">2020-07-31</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>1、安装</p>
-<blockquote>
-<p>sudo apt-get install lxc</p>
-</blockquote>
-<blockquote>
-</blockquote>
-<p>2、配置网络</p>
-<blockquote>
-<p>设置宿主网络：创建桥接接口 sudo nano /etc/network/interfaces</p>
-</blockquote>
-<blockquote>
-<p>auto eth0</p>
-<p>iface eth0 inet manual</p>
-<p># The primary network interface</p>
-<p>auto br0</p>
-<p>iface br0 inet static</p>
-<p>address 192.168.1.20</p>
-<p>netmask 255.255.255.0</p>
-<p>gateway 192.168.1.1</p>
-<p>dns-nameservers 192.168.1.1</p>
-<p>bridge_portseth0</p>
-<p>bridge_stpoff</p>
-<p>bridge_maxwait0</p>
-<p>bridge_fd0</p>
-<p>说明：特权容器和普通容器选一个设置即可 不用全部设置。</p>
-<p>设置特权容器网络：sudo nano /etc/lxc/default.conf 接口由lxcbr0改为br0</p>
-<p>lxc.network.type = veth</p>
-<p>#lxc.network.link = lxcbr0</p>
-<p>lxc.network.link = br0</p>
-<p>lxc.network.flags = up</p>
-<p>lxc.network.hwaddr = 00:16:3e:xx:xx:xx</p>
-<p>设置普通容器网络：sudo nano /etc/lxc/lxc-usernet</p>
-<p># USERNAME TYPE BRIDGE COUNT</p>
-<p>ywz veth br0 2  #2表示有2个网络接口，也就是能开2个容器</p>
-</blockquote>
-<blockquote>
-<p> nano ~/.config/lxc/default.conf (用于普通容器连外网)</p>
-<p>lxc.id_map = u 0 100000 65536</p>
-<p>lxc.id_map = g 0 100000 65536</p>
-<p>lxc.network.type = veth</p>
-<p>lxc.network.link = br0</p>
-</blockquote>
-<blockquote>
-<p>/etc/default/lxc-net 可以设置LXC是否提供net网络。USE_LXC_BRIDGE </p>
-</blockquote>
-<p>3、创建容器和使用</p>
-<blockquote>
-<p>lxc-create –template download –name Y011</p>
-</blockquote>
-<blockquote>
-<p>特权容器存放位置  /var/lib/lxc</p>
-</blockquote>
-<blockquote>
-<p>普通容器存放位置~/.local/share/lxc</p>
-<p>设置固定IP：</p>
-<p> 在容器存放地址的/rootfs/etc/network/interfaces和/rootfs/etc/resolv.conf设置</p>
-</blockquote>
-<p>4、设置容器自启动</p>
-<blockquote>
-<p>~/.local/share/lxc/Y011/config 添加</p>
-<p>lxc.start.auto = 1</p>
-<p>lxc.start.delay = 5</p>
-<p>lxc.start.order = 100</p>
-<p>lxc.group = ubuntu</p>
-</blockquote>
-<p>5、限制内存容量</p>
-<blockquote>
-<p>~/.local/share/lxc/Y011/config 添加</p>
-<p>lxc.cgroup.memory.limit_in_bytes = 134217728</p>
-</blockquote>
-<p>6、克隆和快照</p>
-<blockquote>
-<p>lxc-clone -o Y011 -n Y012</p>
-<p>lxc-snapshot -n Y011</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/04/28/ubuntu14-04-server-%E8%AE%BE%E7%BD%AE%E7%BD%91%E7%BB%9C/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2015/04/28/ubuntu14-04-server-%E8%AE%BE%E7%BD%AE%E7%BD%91%E7%BB%9C/" class="post-title-link" itemprop="url">Ubuntu14.04 Server 设置网络</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2015-04-28 17:02:00" itemprop="dateCreated datePublished" datetime="2015-04-28T17:02:00+08:00">2015-04-28</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-31 22:35:50" itemprop="dateModified" datetime="2020-07-31T22:35:50+08:00">2020-07-31</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>静态地址设置</p>
-<blockquote>
-<p>cat /etc/network/interfaces</p>
-<p># This file describes the network interfaces available on your system</p>
-<p># and how to activate them. For more information, see interfaces(5).</p>
-<p># The loopback network interface</p>
-<p>auto lo</p>
-<p>iface lo inet loopback</p>
-<p># The primary network interface</p>
-<p>auto eth0</p>
-<p>iface eth0 inet static</p>
-<p>address 192.168.1.20</p>
-<p>netmask 255.255.255.0</p>
-<p>gateway 192.168.1.1</p>
-<p>dns-nameservers 192.168.1.1  #dns在这边改了，不是在/etc/resolv.conf改</p>
-</blockquote>
-<p>改网络接口名称（原先接口名称为p2p1）</p>
-<p>1、查mac地址</p>
-<p>2、新建文件</p>
-<blockquote>
-<p>nano /etc/udev/rules.d/70-persistent-net.rules</p>
-</blockquote>
-<blockquote>
-<p>SUBSYSTEM==”net”, ACTION==”add”,  ATTR{address}==”00:e0:4c:60:d1:59”,  NAME=”eth0”</p>
-</blockquote>
-<p>3、更改上面的文件</p>
-<blockquote>
-<p>/etc/network/interfaces</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
       
   
   
@@ -1427,6 +1195,214 @@
 <blockquote>
 </blockquote>
 <p>ios下我用易联和shadowsocks</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2014/12/13/%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%858%EF%BC%9Ax-window/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2014/12/13/%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%858%EF%BC%9Ax-window/" class="post-title-link" itemprop="url">基础补充8：X window</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2014-12-13 09:34:00" itemprop="dateCreated datePublished" datetime="2014-12-13T09:34:00+08:00">2014-12-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-31 22:35:50" itemprop="dateModified" datetime="2020-07-31T22:35:50+08:00">2020-07-31</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>1、只开X server 。一片黑屏，鼠标可以动  </p>
+<blockquote>
+<p>X :1&amp;  </p>
+<p><img src="http://img1.ph.126.net/DewYm4SOrcTGz8A4WqtyCA==/6619130367956356525.jpg" alt="基础补充8：X window - leaf - ------坚持雅操------" title="基础补充8：X window - leaf - ------坚持雅操------"></p>
+<p>   </p>
+</blockquote>
+<p>2、开X client 。屏幕左上角有终端输入界面，但是没有窗口,不能移动  </p>
+<blockquote>
+<p>xterm -display ：1&amp;  </p>
+<p><img src="http://img0.ph.126.net/FId_qUF5cLsqT31gHlh5-Q==/887490601669063227.jpg" alt="基础补充8：X window - leaf - ------坚持雅操------" title="基础补充8：X window - leaf - ------坚持雅操------"></p>
+<p>   </p>
+</blockquote>
+<p>3、开窗口管理器，twm或者metacity 。有窗口，还可以移动  </p>
+<blockquote>
+<p>twm -display :1 -f /etc/X11/twm/system.twmrc &amp;<br>或者<br>metacity -display :1&amp;  </p>
+<p><img src="http://img2.ph.126.net/jwi6o_qmZj1nSWmxpMCstQ==/145241088082979159.jpg" alt="基础补充8：X window - leaf - ------坚持雅操------" title="基础补充8：X window - leaf - ------坚持雅操------"></p>
+<p> </p>
+<p><img src="http://img1.ph.126.net/vgEWzw9txT0xb9imd50knA==/887490601669063228.jpg" alt="基础补充8：X window - leaf - ------坚持雅操------" title="基础补充8：X window - leaf - ------坚持雅操------"></p>
+<p>   </p>
+</blockquote>
+<p>4、Widget   图形库  </p>
+<blockquote>
+<p>包括gtk+ 和QT 。窗口的颜色，按钮，图案啥的都需要图形库的支持  </p>
+</blockquote>
+<p>5、Display Manager  </p>
+<blockquote>
+<p>提供登陆界面和 会话协议XDMCP  </p>
+</blockquote>
+<p>6、Desktop Manager  </p>
+<blockquote>
+<p>包括gnome、KDE等 。<br>是以上的集合，然后再加上自行开发的界面。  </p>
+</blockquote>
+<p>init5和startx的区别  </p>
+<blockquote>
+<p>init 5  </p>
+</blockquote>
+<p><img src="http://img1.ph.126.net/U-DEBwBEJ4tm1B-mvJrwtg==/2206200867558479713.png" alt="基础补充8：X window - leaf - ------坚持雅操------" title="基础补充8：X window - leaf - ------坚持雅操------">  </p>
+<blockquote>
+<p>startx  </p>
+</blockquote>
+<p> </p>
+<p><img src="http://img0.ph.126.net/SfJv_fMGdbtlnwy2Pc1KjQ==/3261169080270047412.png" alt="基础补充8：X window - leaf - ------坚持雅操------" title="基础补充8：X window - leaf - ------坚持雅操------"></p>
+<p>   </p>
+<blockquote>
+<p>init 5 是启动prefdm，然后通过gdm启动X server。进gnome会话后还要开启Xsession登陆界面<br>startx 是启动xinit来启动X server，然后直接进gnome会话  </p>
+</blockquote>
+<blockquote>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2014/12/02/%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%857%EF%BC%9Afc4%E5%AE%89%E8%A3%85geforce-mx-420%E9%A9%B1%E5%8A%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2014/12/02/%E5%9F%BA%E7%A1%80%E8%A1%A5%E5%85%857%EF%BC%9Afc4%E5%AE%89%E8%A3%85geforce-mx-420%E9%A9%B1%E5%8A%A8/" class="post-title-link" itemprop="url">基础补充7：FC4安装Geforce MX 420驱动</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2014-12-02 14:59:00" itemprop="dateCreated datePublished" datetime="2014-12-02T14:59:00+08:00">2014-12-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-31 22:35:50" itemprop="dateModified" datetime="2020-07-31T22:35:50+08:00">2020-07-31</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>0、安装编译环境。  </p>
+<blockquote>
+<p>主要是安装kernel-src ，kernel-devel ，gcc , glibc , ncurse 等。  </p>
+</blockquote>
+<p>1、下载nvidia驱动  </p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://www.nvidia.cn/object/unix-cn.html">http://www.nvidia.cn/object/unix-cn.html</a><br>我下载的是NVIDIA-Linux-x86-96.43.23-pkg1.run。已经加了x权限了。  </p>
+</blockquote>
+<p>2、进 init 3环境  </p>
+<blockquote>
+<p>nano /etc/inittab     </p>
+<p>　　id:5:initdefault:   把5改为3  </p>
+</blockquote>
+<p>3、安装nvidia驱动  </p>
+<blockquote>
+<p>sh NVIDIA-Linux-x86-96.43.23-pkg1.run<br>然后点配置xorg.conf文件。 或者运行 nvidia-xconfig 也可以  </p>
+</blockquote>
+<p>4、进init 5 环境  </p>
+<blockquote>
+<p>改 /etc/inittab  </p>
+<blockquote>
+<p>id:3:initdefault:   把3改为5</p>
+</blockquote>
+</blockquote>
+<p>5、遇到的问题（问题才开始）  </p>
+<blockquote>
+<p>（EE） failed to initialize GLX Extension<br>1、看/var/log/Xorg.0.log ，模块的存放地址没有问题(/usr/X11R6/xorg/modules)<br>2、init 3，然后modprobe nvidia 能加载nvidia，startx正常。说明驱动安装没有问题。<br>3、感觉应该是图形启动之前模块还没加载，导致这个问题。  </p>
+<blockquote>
+<p>做法是在电脑开机加载模块的时候添加显卡模块。<br>cd /etc/sysconfig/modules/<br>nano nvidia.modules<br>加入 /sbin/modprobe nvidia 保存。  </p>
+</blockquote>
+<p>进度条的时候白屏死机<br>进/etc/X11/xorg.conf   设置成16位色  </p>
 </blockquote>
 
       

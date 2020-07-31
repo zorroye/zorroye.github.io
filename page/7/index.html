@@ -216,7 +216,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">369</span>
+          <span class="site-state-item-count">367</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -265,718 +265,6 @@
 
         <div class="content index posts-expand">
           
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/06/17/ubuntu-server-14-04-%E5%AE%89%E8%A3%85nagios%EF%BC%8Cnrpe/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2015/06/17/ubuntu-server-14-04-%E5%AE%89%E8%A3%85nagios%EF%BC%8Cnrpe/" class="post-title-link" itemprop="url">Ubuntu Server 14.04 安装nagios，nrpe</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2015-06-17 21:07:00" itemprop="dateCreated datePublished" datetime="2015-06-17T21:07:00+08:00">2015-06-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-31 22:35:50" itemprop="dateModified" datetime="2020-07-31T22:35:50+08:00">2020-07-31</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>0、安装软件</p>
-<p>1、设置主机及相关关系</p>
-<p>2、设置主机组</p>
-<p>3、设置监控的服务</p>
-<p>4、nrpe设置</p>
-<p>0、安装软件及初始化</p>
-<blockquote>
-<p>sudo apt-get install apache2 -y</p>
-</blockquote>
-<blockquote>
-<p>sudo apt-get install nagios3 nagios-plugins nagios-images -y</p>
-</blockquote>
-<blockquote>
-<p>更改管理员账户</p>
-</blockquote>
-<blockquote>
-<p>sudo sed -i ‘s/nagiosadmin/ywz/g’ /etc/nagios3/cgi.cfg </p>
-</blockquote>
-<blockquote>
-<p>sudo htpasswd /etc/nagios3/htpasswd.users ywz</p>
-</blockquote>
-<blockquote>
-<p>添加用户</p>
-</blockquote>
-<blockquote>
-<p>sudo htpasswd /etc/nagios3/htpasswd.users user1</p>
-</blockquote>
-<blockquote>
-<p>联系人设置</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>define contact{</p>
-</blockquote>
-<blockquote>
-<p>        contact_name                    ywz</p>
-</blockquote>
-<blockquote>
-<p>        alias                           ywz</p>
-</blockquote>
-<blockquote>
-<p>        service_notification_period     24x7</p>
-</blockquote>
-<blockquote>
-<p>        host_notification_period        24x7</p>
-</blockquote>
-<blockquote>
-<p>        service_notification_options    w,u,c,r</p>
-</blockquote>
-<blockquote>
-<p>        host_notification_options       d,r</p>
-</blockquote>
-<blockquote>
-<p>        service_notification_commands   notify-service-by-email</p>
-</blockquote>
-<blockquote>
-<p>        host_notification_commands      notify-host-by-email</p>
-</blockquote>
-<blockquote>
-<p>        email                           ywz_<a href="mailto:&#x33;&#48;&#54;&#x40;&#49;&#x36;&#x33;&#46;&#99;&#111;&#x6d;">&#x33;&#48;&#54;&#x40;&#49;&#x36;&#x33;&#46;&#99;&#111;&#x6d;</a></p>
-</blockquote>
-<blockquote>
-<p>        }</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>define contactgroup{</p>
-</blockquote>
-<blockquote>
-<p>        contactgroup_name       admins</p>
-</blockquote>
-<blockquote>
-<p>        alias                   Nagios Administrators</p>
-</blockquote>
-<blockquote>
-<p>        members                 ywz</p>
-</blockquote>
-<blockquote>
-<p>        }</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p><img src="http://img1.ph.126.net/mkDjilPJUD95PABtOkq2QA==/6630544398164876428.png" alt="Ubuntu Server 14.04 安装nagios，nrpe - leaf - ------勤解万难------" title="Ubuntu Server 14.04 安装nagios，nrpe - leaf - ------勤解万难------"></p>
-<p> </p>
-</blockquote>
-<p>1、设置主机及用户组</p>
-<blockquote>
-<p>设置名称，地址，及相互连接方式</p>
-</blockquote>
-<blockquote>
-<p>sudo nano /etc/nagios3/conf.d/hosts.cfg</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>define host{</p>
-</blockquote>
-<blockquote>
-<p>        host_name Baidu</p>
-</blockquote>
-<blockquote>
-<p>        alias   IC</p>
-</blockquote>
-<blockquote>
-<p>        address <a target="_blank" rel="noopener" href="http://www.baidu.coom/">www.baidu.coom</a></p>
-</blockquote>
-<blockquote>
-<p>        use     generic-host</p>
-</blockquote>
-<blockquote>
-<p>}</p>
-</blockquote>
-<blockquote>
-</blockquote>
-<blockquote>
-<p>define host{</p>
-</blockquote>
-<blockquote>
-<p>        host_name WAN</p>
-</blockquote>
-<blockquote>
-<p>        alias   pppoe</p>
-</blockquote>
-<blockquote>
-<p>        address  172.24.214.44</p>
-</blockquote>
-<blockquote>
-<p>        parents Baidu</p>
-</blockquote>
-<blockquote>
-<p>        use     generic-host</p>
-</blockquote>
-<blockquote>
-<p>}</p>
-</blockquote>
-<blockquote>
-</blockquote>
-<blockquote>
-</blockquote>
-<blockquote>
-<p>define host{</p>
-</blockquote>
-<blockquote>
-<p>        host_name Lan</p>
-</blockquote>
-<blockquote>
-<p>        alias   route</p>
-</blockquote>
-<blockquote>
-<p>        address 192.168.3.1</p>
-</blockquote>
-<blockquote>
-<p>        parents WAN</p>
-</blockquote>
-<blockquote>
-<p>        use     generic-host</p>
-</blockquote>
-<blockquote>
-<p>}</p>
-</blockquote>
-<blockquote>
-</blockquote>
-<blockquote>
-<p>define host{</p>
-</blockquote>
-<blockquote>
-<p>        host_name haproxy1</p>
-</blockquote>
-<blockquote>
-<p>        alias   haproxy1</p>
-</blockquote>
-<blockquote>
-<p>        address 192.168.3.17</p>
-</blockquote>
-<blockquote>
-<p>        parents Lan</p>
-</blockquote>
-<blockquote>
-<p>        use     generic-host</p>
-</blockquote>
-<blockquote>
-<p>}</p>
-</blockquote>
-<blockquote>
-</blockquote>
-<blockquote>
-<p>define host{</p>
-</blockquote>
-<blockquote>
-<p>        host_name haproxy2</p>
-</blockquote>
-<blockquote>
-<p>        alias   haproxy2</p>
-</blockquote>
-<blockquote>
-<p>        address 192.168.3.18</p>
-</blockquote>
-<blockquote>
-<p>        parents Lan</p>
-</blockquote>
-<blockquote>
-<p>        use     generic-host</p>
-</blockquote>
-<blockquote>
-<p>}</p>
-</blockquote>
-<blockquote>
-</blockquote>
-<blockquote>
-<p>define host{</p>
-</blockquote>
-<blockquote>
-<p>        host_name www1</p>
-</blockquote>
-<blockquote>
-<p>        alias   www1</p>
-</blockquote>
-<blockquote>
-<p>        address 192.168.3.33</p>
-</blockquote>
-<blockquote>
-<p>        parents Lan</p>
-</blockquote>
-<blockquote>
-<p>        use     generic-host</p>
-</blockquote>
-<blockquote>
-<p>}</p>
-</blockquote>
-<p><img src="http://img0.ph.126.net/uc9XHREN4TrO5B_baEmJ7g==/6630876450676878426.png" alt="Ubuntu Server 14.04 安装nagios，nrpe - leaf - ------勤解万难------" title="Ubuntu Server 14.04 安装nagios，nrpe - leaf - ------勤解万难------"></p>
-<p> </p>
-</blockquote>
-<p>2、设置主机组</p>
-<blockquote>
-<p>sudo nano /etc/nagios3/conf.d/hostgroups_nagios2.cfg</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p># Some generic hostgroup definitions</p>
-</blockquote>
-<blockquote>
-<p># A simple wildcard hostgroup</p>
-</blockquote>
-<blockquote>
-<p>define hostgroup {</p>
-</blockquote>
-<blockquote>
-<p>        hostgroup_name  all</p>
-</blockquote>
-<blockquote>
-<p>alias           All Servers</p>
-</blockquote>
-<blockquote>
-<p>members         *</p>
-</blockquote>
-<blockquote>
-<p>        }</p>
-</blockquote>
-<blockquote>
-</blockquote>
-<blockquote>
-<p># A list of your Debian GNU/Linux servers</p>
-</blockquote>
-<blockquote>
-<p>define hostgroup {</p>
-</blockquote>
-<blockquote>
-<p>        hostgroup_name  debian-servers</p>
-</blockquote>
-<blockquote>
-<p>alias           Debian GNU/Linux Servers</p>
-</blockquote>
-<blockquote>
-<p>members         localhost,haproxy1,haproxy2,www1</p>
-</blockquote>
-<blockquote>
-<p>        }</p>
-</blockquote>
-<blockquote>
-</blockquote>
-<blockquote>
-<p># A list of your web servers</p>
-</blockquote>
-<blockquote>
-<p>define hostgroup {</p>
-</blockquote>
-<blockquote>
-<p>        hostgroup_name  http-servers</p>
-</blockquote>
-<blockquote>
-<p>alias           HTTP servers</p>
-</blockquote>
-<blockquote>
-<p>members         localhost,www1</p>
-</blockquote>
-<blockquote>
-<p>        }</p>
-</blockquote>
-<blockquote>
-</blockquote>
-<blockquote>
-<p># A list of your ssh-accessible servers</p>
-</blockquote>
-<blockquote>
-<p>define hostgroup {</p>
-</blockquote>
-<blockquote>
-<p>        hostgroup_name  ssh-servers</p>
-</blockquote>
-<blockquote>
-<p>alias           SSH servers</p>
-</blockquote>
-<blockquote>
-<p>members         localhost, haproxy1, haproxy2,www1</p>
-</blockquote>
-<blockquote>
-<p>        }</p>
-</blockquote>
-<blockquote>
-</blockquote>
-<blockquote>
-<p>define hostgroup {</p>
-</blockquote>
-<blockquote>
-<p>hostgroup_name all-gateways</p>
-</blockquote>
-<blockquote>
-<p>aliasAll Gateways</p>
-</blockquote>
-<blockquote>
-<p>membersLan, WAN</p>
-</blockquote>
-<blockquote>
-<p>}</p>
-</blockquote>
-<blockquote>
-</blockquote>
-<blockquote>
-<p>define hostgroup {</p>
-</blockquote>
-<blockquote>
-<p>hostgroup_name ubuntu-servers</p>
-</blockquote>
-<blockquote>
-<p>aliasUbuntu servers</p>
-</blockquote>
-<blockquote>
-<p>members localhost, haproxy1, haproxy2, www1</p>
-</blockquote>
-<blockquote>
-<p>}</p>
-</blockquote>
-<p><img src="http://img1.ph.126.net/8LDGl8VTCyukhUv18UrBwA==/6630272818792815316.png" alt="Ubuntu Server 14.04 安装nagios，nrpe - leaf - ------勤解万难------" title="Ubuntu Server 14.04 安装nagios，nrpe - leaf - ------勤解万难------"></p>
-<p> </p>
-</blockquote>
-<p>2.1设置设备图标</p>
-<blockquote>
-<p>sudo nano /etc/nagios3/conf.d/extinfo_nagios2.cfg</p>
-</blockquote>
-<blockquote>
-<p>##</p>
-<p>## Extended Host and Service Information</p>
-<p>##</p>
-<p>define hostextinfo{</p>
-<p>        hostgroup_name   debian-servers</p>
-<p>        notes            Debian GNU/Linux servers</p>
-<p>#       notes_url        <a target="_blank" rel="noopener" href="http://webserver.localhost.localdomain/hostinfo.pl?host=netware1">http://webserver.localhost.localdomain/hostinfo.pl?host=netware1</a></p>
-<p>        icon_image       base/debian.png</p>
-<p>        icon_image_alt   Debian GNU/Linux</p>
-<p>        vrml_image       debian.png</p>
-<p>        statusmap_image  base/debian.gd2</p>
-<p>        }</p>
-<p>define hostextinfo{</p>
-<p>hostgroup_name all-gateways</p>
-<p>icon_image base/ng-switch40.png</p>
-<p>statusmap_image base/ng-switch40.png</p>
-<p>}</p>
-<p>define hostextinfo{</p>
-<p>hostgroup_name ubuntu-servers</p>
-<p>icon_image base/ubuntu.png</p>
-<p>statusmap_image base/ubuntu.png</p>
-<p>}</p>
-</blockquote>
-<p>3、设置需要监控服务</p>
-<blockquote>
-<p>sudo nano /etc/nagios3/conf.d/services_nagios2.cfg</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p># check that web services are running</p>
-</blockquote>
-<blockquote>
-<p>define service {</p>
-</blockquote>
-<blockquote>
-<p>        hostgroup_name                  http-servers</p>
-</blockquote>
-<blockquote>
-<p>        service_description             HTTP</p>
-</blockquote>
-<blockquote>
-<p> check_command                   check_http</p>
-</blockquote>
-<blockquote>
-<p>        use                             generic-service</p>
-</blockquote>
-<blockquote>
-<p>notification_interval           0 ; set &gt; 0 if you want to be renotified</p>
-</blockquote>
-<blockquote>
-<p>}</p>
-</blockquote>
-<blockquote>
-</blockquote>
-<blockquote>
-<p># check that ssh services are running</p>
-</blockquote>
-<blockquote>
-<p>define service {</p>
-</blockquote>
-<blockquote>
-<p>        hostgroup_name                  ssh-servers</p>
-</blockquote>
-<blockquote>
-<p>        service_description             SSH</p>
-</blockquote>
-<blockquote>
-<p>check_command                   check_ssh</p>
-</blockquote>
-<blockquote>
-<p>        use                             generic-service</p>
-</blockquote>
-<blockquote>
-<p>notification_interval           0 ; set &gt; 0 if you want to be renotified</p>
-</blockquote>
-<blockquote>
-<p>}</p>
-</blockquote>
-<blockquote>
-</blockquote>
-<blockquote>
-<p>define service {</p>
-</blockquote>
-<blockquote>
-<p>hostgroup_nameall-gateways</p>
-</blockquote>
-<blockquote>
-<p>service_descriptionPING</p>
-</blockquote>
-<blockquote>
-<p>check_commandcheck_ping!100.0,20%!500.0,60%</p>
-</blockquote>
-<blockquote>
-<p>usegeneric-service</p>
-</blockquote>
-<blockquote>
-<p>notification_interval0</p>
-</blockquote>
-<blockquote>
-<p>}</p>
-</blockquote>
-<p><img src="http://img2.ph.126.net/980I-29uNSfLr03RIM8r4A==/6630603771793179824.png" alt="Ubuntu Server 14.04 安装nagios，nrpe - leaf - ------勤解万难------" title="Ubuntu Server 14.04 安装nagios，nrpe - leaf - ------勤解万难------"></p>
-<p> </p>
-</blockquote>
-<p>3.1 nagios-plugins 安装</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="http://nagios-plugins.org/">http://nagios-plugins.org/</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.nagios.org/download/plugins/">https://www.nagios.org/download/plugins/</a></p>
-</blockquote>
-<p>4、nrpe相关设置</p>
-<blockquote>
-<p>被控端</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>sudo apt-get install nagios-nrpe-server -y</p>
-</blockquote>
-<blockquote>
-<p>更改配置文件</p>
-</blockquote>
-<blockquote>
-<p>sudo nano /etc/nagios/nrpe.cfg</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>allowed_hosts=192.168.1.50  </p>
-<p>command[check_all_disks]=/usr/lib/nagios/plugins/check_disk -w 20% -c 10% -e</p>
-</blockquote>
-<p>sudo service nagios-nrpe-server restart</p>
-</blockquote>
-<p>主控端</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>新建单独的配置文件</p>
-</blockquote>
-<blockquote>
-<p>sudo nano /etc/nagios3/conf.d/www1.cfg</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>define service{<br>usegeneric-service<br>host_name www1<br>service_descriptionDisk space<br>check_commandcheck_nrpe_1arg!check_all_disks<br>}  </p>
-<p>define service{ <br>        use     generic-service<br>        host_name       www1       <br>        service_description     Current Users<br>        check_command   check_nrpe_1arg!check_users<br>}  </p>
-<p>define service{ <br>        use     generic-service<br>        host_name       www1       <br>        service_description     Total Processes<br>        check_command   check_nrpe_1arg!check_total_procs<br>}  </p>
-<p>define service{ <br>        use     generic-service<br>        host_name       www1       <br>        service_description     Current Load<br>        check_command   check_nrpe_1arg!check_load<br>}</p>
-</blockquote>
-<blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-</blockquote>
-<p>说明</p>
-</blockquote>
-<blockquote>
-<p>1、插件的命令全部放在/usr/lib/nagios/plugins/下面</p>
-</blockquote>
-<blockquote>
-<p><img src="http://img0.ph.126.net/qHQS3yZeIwfewi25KrBj_A==/6630728016607132347.png" alt="Ubuntu Server 14.04 安装nagios，nrpe - leaf - ------勤解万难------" title="Ubuntu Server 14.04 安装nagios，nrpe - leaf - ------勤解万难------"></p>
-<p> </p>
-</blockquote>
-<blockquote>
-<p>2、check_nrpe_1arg 命令定义在/etc/nagios-plugins/config/check_nrpe.cfg</p>
-<p><img src="http://img0.ph.126.net/tngLW9gV9Z7bndmk7TSHsQ==/6630640055676909957.png" alt="Ubuntu Server 14.04 安装nagios，nrpe - leaf - ------勤解万难------" title="Ubuntu Server 14.04 安装nagios，nrpe - leaf - ------勤解万难------"></p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/06/02/%E7%89%A9%E8%81%94%E7%BD%91%E3%80%81%E7%A7%81%E6%9C%89%E4%BA%91%E5%9F%BA%E7%A1%80%EF%BC%9Addns%EF%BC%8C%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%EF%BC%8Cupnp/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2015/06/02/%E7%89%A9%E8%81%94%E7%BD%91%E3%80%81%E7%A7%81%E6%9C%89%E4%BA%91%E5%9F%BA%E7%A1%80%EF%BC%9Addns%EF%BC%8C%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%EF%BC%8Cupnp/" class="post-title-link" itemprop="url">物联网、私有云基础：DDNS，端口转发，UPNP</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2015-06-02 13:44:00" itemprop="dateCreated datePublished" datetime="2015-06-02T13:44:00+08:00">2015-06-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-07-31 22:35:50" itemprop="dateModified" datetime="2020-07-31T22:35:50+08:00">2020-07-31</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>一、概念</p>
-<p>DDNS：</p>
-<blockquote>
-<p>就是找你的路由器（路由器外网IP地址）</p>
-</blockquote>
-<blockquote>
-<p>我们每次PPPOE拨号后，外网的IP地址都不一样，所以就不知道外网的IP地址是多少了</p>
-<p>使用DDNS，就可以随时随地的找到你自己的网络的IP地址</p>
-</blockquote>
-<p>端口转发：</p>
-<blockquote>
-<p>就是在路由器上开个门，用于进出路由器（访问路由器背后自己家里建的服务）</p>
-</blockquote>
-<blockquote>
-<p>我们的路由器就相当于一堵城墙，端口转发就相当于城门，</p>
-<p>我们通过城门就可以进入我们家里自建的局域网服务了。</p>
-</blockquote>
-<blockquote>
-<p><img src="http://img1.ph.126.net/NW7i_crFIm2M8S7VbR868A==/6630515810862399928.png" alt="物联网、私有云基础：DDNS，端口转发，UPNP - leaf - ------勤解万难------" title="物联网、私有云基础：DDNS，端口转发，UPNP - leaf - ------勤解万难------"></p>
-<p> </p>
-</blockquote>
-<p>UPNP：</p>
-<blockquote>
-<p>自动设置端口转发规则，不需要自己手动设置。</p>
-</blockquote>
-<p>二、用途</p>
-<p>我们要这些IP地址：端口号  有什么用呢？</p>
-<blockquote>
-<p>我们在自己的局域网开通了私人博客，但是我们外出之后怎么访问自己的博客呢？</p>
-</blockquote>
-<blockquote>
-<p>就是通过 DDNS提供的IP地址：端口转发的端口号 访问！</p>
-</blockquote>
-<blockquote>
-<p>例子：</p>
-</blockquote>
-<blockquote>
-<p>局域网博客 192.168.1.3:80</p>
-</blockquote>
-<blockquote>
-<p>外网访问      60.189.231.110:80</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-</blockquote>
-<blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
       
   
   
@@ -1238,7 +526,7 @@
 <p>notification_email {</p>
 </blockquote>
 <blockquote>
-<p><a href="mailto:&#x79;&#x77;&#x7a;&#64;&#108;&#101;&#x61;&#102;&#x2e;&#99;&#111;&#x6d;">&#x79;&#x77;&#x7a;&#64;&#108;&#101;&#x61;&#102;&#x2e;&#99;&#111;&#x6d;</a></p>
+<p><a href="mailto:&#x79;&#119;&#x7a;&#64;&#108;&#x65;&#97;&#x66;&#46;&#99;&#x6f;&#x6d;">&#x79;&#119;&#x7a;&#64;&#108;&#x65;&#97;&#x66;&#46;&#99;&#x6f;&#x6d;</a></p>
 </blockquote>
 </blockquote>
 <blockquote>
@@ -1247,7 +535,7 @@
 </blockquote>
 </blockquote>
 <blockquote>
-<p>notification_email_from <a href="mailto:&#51;&#48;&#54;&#64;&#108;&#x65;&#97;&#x66;&#46;&#99;&#111;&#109;">&#51;&#48;&#54;&#64;&#108;&#x65;&#97;&#x66;&#46;&#99;&#111;&#109;</a><br>smtp_server 127.0.0.1<br>smtp_connect_timeout 20<br>router_id Yrpi2-cryst       #机器标识<br>}  </p>
+<p>notification_email_from <a href="mailto:&#x33;&#48;&#54;&#x40;&#x6c;&#x65;&#97;&#x66;&#x2e;&#x63;&#111;&#x6d;">&#x33;&#48;&#54;&#x40;&#x6c;&#x65;&#97;&#x66;&#x2e;&#x63;&#111;&#x6d;</a><br>smtp_server 127.0.0.1<br>smtp_connect_timeout 20<br>router_id Yrpi2-cryst       #机器标识<br>}  </p>
 <p>vrrp_script chk_haproxy {</p>
 </blockquote>
 <blockquote>
@@ -1357,7 +645,7 @@
 <p>/etc/keepalived/keepalived.conf</p>
 </blockquote>
 <blockquote>
-<p>global_defs  {<br>    notification_email {<br>        <a href="mailto:&#121;&#x77;&#x7a;&#64;&#108;&#x65;&#x61;&#x66;&#46;&#99;&#x6f;&#109;">&#121;&#x77;&#x7a;&#64;&#108;&#x65;&#x61;&#x66;&#46;&#99;&#x6f;&#109;</a><br>    }<br>    notification_email_from <a href="mailto:&#51;&#x30;&#54;&#x40;&#x6c;&#x65;&#97;&#x66;&#x2e;&#x63;&#x6f;&#x6d;">&#51;&#x30;&#54;&#x40;&#x6c;&#x65;&#97;&#x66;&#x2e;&#x63;&#x6f;&#x6d;</a><br>    smtp_server 127.0.0.1<br>    smtp_connect_timeout 20<br>    router_id Yrpi2-black<br>}  </p>
+<p>global_defs  {<br>    notification_email {<br>        <a href="mailto:&#121;&#119;&#122;&#x40;&#x6c;&#x65;&#97;&#x66;&#x2e;&#x63;&#111;&#109;">&#121;&#119;&#122;&#x40;&#x6c;&#x65;&#97;&#x66;&#x2e;&#x63;&#111;&#109;</a><br>    }<br>    notification_email_from <a href="mailto:&#51;&#x30;&#x36;&#64;&#108;&#x65;&#x61;&#102;&#x2e;&#x63;&#111;&#109;">&#51;&#x30;&#x36;&#64;&#108;&#x65;&#x61;&#102;&#x2e;&#x63;&#111;&#109;</a><br>    smtp_server 127.0.0.1<br>    smtp_connect_timeout 20<br>    router_id Yrpi2-black<br>}  </p>
 <p>vrrp_script chk_haproxy {<br>    script  “killall -0 haproxy”<br>    interval  2<br>    weight    2<br>}  </p>
 <p>vrrp_instance VI_1 {<br>    state BACKUP<br>    smtp_alert<br>    interface eth0<br>    virtual_router_id 51<br>    priority 100<br>    advert_int 1<br>    authentication {<br>        auth_type PASS<br>        auth_pass Amitabha<br>    }<br>    virtual_ipaddress {<br>        192.168.3.20<br>    }<br>    track_script {<br>        chk_haproxy<br>    }<br>}</p>
 </blockquote>
@@ -1993,7 +1281,7 @@
 <p>ssh-keygen -t rsa -C “ywz@ywz”</p>
 </blockquote>
 <blockquote>
-<p>cat ~/.ssh/id_rsa.pub | ssh <a href="mailto:&#x75;&#x62;&#x75;&#110;&#116;&#117;&#64;&#x31;&#57;&#x32;&#46;&#x31;&#x36;&#56;&#46;&#51;&#x2e;&#49;&#x38;">&#x75;&#x62;&#x75;&#110;&#116;&#117;&#64;&#x31;&#57;&#x32;&#46;&#x31;&#x36;&#56;&#46;&#51;&#x2e;&#49;&#x38;</a> “mkdir .ssh;cat &gt;&gt; .ssh/authorized_keys”</p>
+<p>cat ~/.ssh/id_rsa.pub | ssh <a href="mailto:&#117;&#98;&#x75;&#110;&#116;&#117;&#x40;&#x31;&#x39;&#50;&#x2e;&#x31;&#54;&#56;&#x2e;&#51;&#x2e;&#x31;&#x38;">&#117;&#98;&#x75;&#110;&#116;&#117;&#x40;&#x31;&#x39;&#50;&#x2e;&#x31;&#54;&#56;&#x2e;&#51;&#x2e;&#x31;&#x38;</a> “mkdir .ssh;cat &gt;&gt; .ssh/authorized_keys”</p>
 </blockquote>
 <blockquote>
 <blockquote>
@@ -2322,6 +1610,238 @@
 <p># Disable power saving</p>
 <p>options 8192cu rtw_power_mgnt=0 rtw_enusbss=1 rtw_ips_mode=1</p>
 </blockquote>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/04/29/ubuntu-14-04-server-%E4%BD%BF%E7%94%A8lxc%E5%B9%B6%E8%AE%BF%E9%97%AE%E5%A4%96%E7%BD%91/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2015/04/29/ubuntu-14-04-server-%E4%BD%BF%E7%94%A8lxc%E5%B9%B6%E8%AE%BF%E9%97%AE%E5%A4%96%E7%BD%91/" class="post-title-link" itemprop="url">Ubuntu 14.04 Server 使用lxc并访问外网</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-04-29 14:13:00" itemprop="dateCreated datePublished" datetime="2015-04-29T14:13:00+08:00">2015-04-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-31 22:35:50" itemprop="dateModified" datetime="2020-07-31T22:35:50+08:00">2020-07-31</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>1、安装</p>
+<blockquote>
+<p>sudo apt-get install lxc</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>2、配置网络</p>
+<blockquote>
+<p>设置宿主网络：创建桥接接口 sudo nano /etc/network/interfaces</p>
+</blockquote>
+<blockquote>
+<p>auto eth0</p>
+<p>iface eth0 inet manual</p>
+<p># The primary network interface</p>
+<p>auto br0</p>
+<p>iface br0 inet static</p>
+<p>address 192.168.1.20</p>
+<p>netmask 255.255.255.0</p>
+<p>gateway 192.168.1.1</p>
+<p>dns-nameservers 192.168.1.1</p>
+<p>bridge_portseth0</p>
+<p>bridge_stpoff</p>
+<p>bridge_maxwait0</p>
+<p>bridge_fd0</p>
+<p>说明：特权容器和普通容器选一个设置即可 不用全部设置。</p>
+<p>设置特权容器网络：sudo nano /etc/lxc/default.conf 接口由lxcbr0改为br0</p>
+<p>lxc.network.type = veth</p>
+<p>#lxc.network.link = lxcbr0</p>
+<p>lxc.network.link = br0</p>
+<p>lxc.network.flags = up</p>
+<p>lxc.network.hwaddr = 00:16:3e:xx:xx:xx</p>
+<p>设置普通容器网络：sudo nano /etc/lxc/lxc-usernet</p>
+<p># USERNAME TYPE BRIDGE COUNT</p>
+<p>ywz veth br0 2  #2表示有2个网络接口，也就是能开2个容器</p>
+</blockquote>
+<blockquote>
+<p> nano ~/.config/lxc/default.conf (用于普通容器连外网)</p>
+<p>lxc.id_map = u 0 100000 65536</p>
+<p>lxc.id_map = g 0 100000 65536</p>
+<p>lxc.network.type = veth</p>
+<p>lxc.network.link = br0</p>
+</blockquote>
+<blockquote>
+<p>/etc/default/lxc-net 可以设置LXC是否提供net网络。USE_LXC_BRIDGE </p>
+</blockquote>
+<p>3、创建容器和使用</p>
+<blockquote>
+<p>lxc-create –template download –name Y011</p>
+</blockquote>
+<blockquote>
+<p>特权容器存放位置  /var/lib/lxc</p>
+</blockquote>
+<blockquote>
+<p>普通容器存放位置~/.local/share/lxc</p>
+<p>设置固定IP：</p>
+<p> 在容器存放地址的/rootfs/etc/network/interfaces和/rootfs/etc/resolv.conf设置</p>
+</blockquote>
+<p>4、设置容器自启动</p>
+<blockquote>
+<p>~/.local/share/lxc/Y011/config 添加</p>
+<p>lxc.start.auto = 1</p>
+<p>lxc.start.delay = 5</p>
+<p>lxc.start.order = 100</p>
+<p>lxc.group = ubuntu</p>
+</blockquote>
+<p>5、限制内存容量</p>
+<blockquote>
+<p>~/.local/share/lxc/Y011/config 添加</p>
+<p>lxc.cgroup.memory.limit_in_bytes = 134217728</p>
+</blockquote>
+<p>6、克隆和快照</p>
+<blockquote>
+<p>lxc-clone -o Y011 -n Y012</p>
+<p>lxc-snapshot -n Y011</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2015/04/28/ubuntu14-04-server-%E8%AE%BE%E7%BD%AE%E7%BD%91%E7%BB%9C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2015/04/28/ubuntu14-04-server-%E8%AE%BE%E7%BD%AE%E7%BD%91%E7%BB%9C/" class="post-title-link" itemprop="url">Ubuntu14.04 Server 设置网络</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-04-28 17:02:00" itemprop="dateCreated datePublished" datetime="2015-04-28T17:02:00+08:00">2015-04-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-07-31 22:35:50" itemprop="dateModified" datetime="2020-07-31T22:35:50+08:00">2020-07-31</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>静态地址设置</p>
+<blockquote>
+<p>cat /etc/network/interfaces</p>
+<p># This file describes the network interfaces available on your system</p>
+<p># and how to activate them. For more information, see interfaces(5).</p>
+<p># The loopback network interface</p>
+<p>auto lo</p>
+<p>iface lo inet loopback</p>
+<p># The primary network interface</p>
+<p>auto eth0</p>
+<p>iface eth0 inet static</p>
+<p>address 192.168.1.20</p>
+<p>netmask 255.255.255.0</p>
+<p>gateway 192.168.1.1</p>
+<p>dns-nameservers 192.168.1.1  #dns在这边改了，不是在/etc/resolv.conf改</p>
+</blockquote>
+<p>改网络接口名称（原先接口名称为p2p1）</p>
+<p>1、查mac地址</p>
+<p>2、新建文件</p>
+<blockquote>
+<p>nano /etc/udev/rules.d/70-persistent-net.rules</p>
+</blockquote>
+<blockquote>
+<p>SUBSYSTEM==”net”, ACTION==”add”,  ATTR{address}==”00:e0:4c:60:d1:59”,  NAME=”eth0”</p>
+</blockquote>
+<p>3、更改上面的文件</p>
+<blockquote>
+<p>/etc/network/interfaces</p>
 </blockquote>
 
       
