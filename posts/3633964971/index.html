@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-yes.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-yes.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-yes.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false};
+  </script>
+
+  <meta name="description" content="0、安装软件 1、设置主机及相关关系 2、设置主机组 3、设置监控的服务 4、nrpe设置 0、安装软件及初始化  sudo apt-get install apache2 -y   sudo apt-get install nagios3 nagios-plugins nagios-images -y   更改管理员账户   sudo sed -i ‘s&#x2F;nagiosadmin&#x2F;ywz&#x2F;g’ &#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu Server 14.04 安装nagios，nrpe">
+<meta property="og:url" content="http://yoursite.com/posts/3633964971/index.html">
+<meta property="og:site_name" content="Ye&#39;s Blog">
+<meta property="og:description" content="0、安装软件 1、设置主机及相关关系 2、设置主机组 3、设置监控的服务 4、nrpe设置 0、安装软件及初始化  sudo apt-get install apache2 -y   sudo apt-get install nagios3 nagios-plugins nagios-images -y   更改管理员账户   sudo sed -i ‘s&#x2F;nagiosadmin&#x2F;ywz&#x2F;g’ &#x2F;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://img1.ph.126.net/mkDjilPJUD95PABtOkq2QA==/6630544398164876428.png">
+<meta property="og:image" content="http://img0.ph.126.net/uc9XHREN4TrO5B_baEmJ7g==/6630876450676878426.png">
+<meta property="og:image" content="http://img1.ph.126.net/8LDGl8VTCyukhUv18UrBwA==/6630272818792815316.png">
+<meta property="og:image" content="http://img2.ph.126.net/980I-29uNSfLr03RIM8r4A==/6630603771793179824.png">
+<meta property="og:image" content="http://img0.ph.126.net/qHQS3yZeIwfewi25KrBj_A==/6630728016607132347.png">
+<meta property="og:image" content="http://img0.ph.126.net/tngLW9gV9Z7bndmk7TSHsQ==/6630640055676909957.png">
+<meta property="article:published_time" content="2015-06-17T13:07:00.000Z">
+<meta property="article:modified_time" content="2020-08-01T06:28:03.615Z">
+<meta property="article:author" content="ZorroYe">
+<meta property="article:tag" content="未分类">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://img1.ph.126.net/mkDjilPJUD95PABtOkq2QA==/6630544398164876428.png">
+
+<link rel="canonical" href="http://yoursite.com/posts/3633964971/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Ubuntu Server 14.04 安装nagios，nrpe | Ye's Blog</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?2b0dbd880dfaff3fde3fcb1beb61713d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Ye's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">勤解万难</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ZorroYe</p>
+  <div class="site-description" itemprop="description">升级认知，看透本质</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">367</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zorroye" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zorroye" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:439753096@qq.com" title="E-Mail → mailto:439753096@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/3633964971/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Ubuntu Server 14.04 安装nagios，nrpe
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-06-17 21:07:00" itemprop="dateCreated datePublished" datetime="2015-06-17T21:07:00+08:00">2015-06-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-01 14:28:03" itemprop="dateModified" datetime="2020-08-01T14:28:03+08:00">2020-08-01</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>0、安装软件</p>
+<p>1、设置主机及相关关系</p>
+<p>2、设置主机组</p>
+<p>3、设置监控的服务</p>
+<p>4、nrpe设置</p>
+<p>0、安装软件及初始化</p>
+<blockquote>
+<p>sudo apt-get install apache2 -y</p>
+</blockquote>
+<blockquote>
+<p>sudo apt-get install nagios3 nagios-plugins nagios-images -y</p>
+</blockquote>
+<blockquote>
+<p>更改管理员账户</p>
+</blockquote>
+<blockquote>
+<p>sudo sed -i ‘s/nagiosadmin/ywz/g’ /etc/nagios3/cgi.cfg </p>
+</blockquote>
+<blockquote>
+<p>sudo htpasswd /etc/nagios3/htpasswd.users ywz</p>
+</blockquote>
+<blockquote>
+<p>添加用户</p>
+</blockquote>
+<blockquote>
+<p>sudo htpasswd /etc/nagios3/htpasswd.users user1</p>
+</blockquote>
+<blockquote>
+<p>联系人设置</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>define contact{</p>
+</blockquote>
+<blockquote>
+<p>        contact_name                    ywz</p>
+</blockquote>
+<blockquote>
+<p>        alias                           ywz</p>
+</blockquote>
+<blockquote>
+<p>        service_notification_period     24x7</p>
+</blockquote>
+<blockquote>
+<p>        host_notification_period        24x7</p>
+</blockquote>
+<blockquote>
+<p>        service_notification_options    w,u,c,r</p>
+</blockquote>
+<blockquote>
+<p>        host_notification_options       d,r</p>
+</blockquote>
+<blockquote>
+<p>        service_notification_commands   notify-service-by-email</p>
+</blockquote>
+<blockquote>
+<p>        host_notification_commands      notify-host-by-email</p>
+</blockquote>
+<blockquote>
+<p>        email                           ywz_<a href="mailto:&#51;&#x30;&#x36;&#x40;&#49;&#x36;&#x33;&#46;&#99;&#x6f;&#109;">&#51;&#x30;&#x36;&#x40;&#49;&#x36;&#x33;&#46;&#99;&#x6f;&#109;</a></p>
+</blockquote>
+<blockquote>
+<p>        }</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>define contactgroup{</p>
+</blockquote>
+<blockquote>
+<p>        contactgroup_name       admins</p>
+</blockquote>
+<blockquote>
+<p>        alias                   Nagios Administrators</p>
+</blockquote>
+<blockquote>
+<p>        members                 ywz</p>
+</blockquote>
+<blockquote>
+<p>        }</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p><img src="http://img1.ph.126.net/mkDjilPJUD95PABtOkq2QA==/6630544398164876428.png" alt="Ubuntu Server 14.04 安装nagios，nrpe - leaf - ------勤解万难------" title="Ubuntu Server 14.04 安装nagios，nrpe - leaf - ------勤解万难------"></p>
+<p> </p>
+</blockquote>
+<p>1、设置主机及用户组</p>
+<blockquote>
+<p>设置名称，地址，及相互连接方式</p>
+</blockquote>
+<blockquote>
+<p>sudo nano /etc/nagios3/conf.d/hosts.cfg</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>define host{</p>
+</blockquote>
+<blockquote>
+<p>        host_name Baidu</p>
+</blockquote>
+<blockquote>
+<p>        alias   IC</p>
+</blockquote>
+<blockquote>
+<p>        address <a target="_blank" rel="noopener" href="http://www.baidu.coom/">www.baidu.coom</a></p>
+</blockquote>
+<blockquote>
+<p>        use     generic-host</p>
+</blockquote>
+<blockquote>
+<p>}</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>define host{</p>
+</blockquote>
+<blockquote>
+<p>        host_name WAN</p>
+</blockquote>
+<blockquote>
+<p>        alias   pppoe</p>
+</blockquote>
+<blockquote>
+<p>        address  172.24.214.44</p>
+</blockquote>
+<blockquote>
+<p>        parents Baidu</p>
+</blockquote>
+<blockquote>
+<p>        use     generic-host</p>
+</blockquote>
+<blockquote>
+<p>}</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>define host{</p>
+</blockquote>
+<blockquote>
+<p>        host_name Lan</p>
+</blockquote>
+<blockquote>
+<p>        alias   route</p>
+</blockquote>
+<blockquote>
+<p>        address 192.168.3.1</p>
+</blockquote>
+<blockquote>
+<p>        parents WAN</p>
+</blockquote>
+<blockquote>
+<p>        use     generic-host</p>
+</blockquote>
+<blockquote>
+<p>}</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>define host{</p>
+</blockquote>
+<blockquote>
+<p>        host_name haproxy1</p>
+</blockquote>
+<blockquote>
+<p>        alias   haproxy1</p>
+</blockquote>
+<blockquote>
+<p>        address 192.168.3.17</p>
+</blockquote>
+<blockquote>
+<p>        parents Lan</p>
+</blockquote>
+<blockquote>
+<p>        use     generic-host</p>
+</blockquote>
+<blockquote>
+<p>}</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>define host{</p>
+</blockquote>
+<blockquote>
+<p>        host_name haproxy2</p>
+</blockquote>
+<blockquote>
+<p>        alias   haproxy2</p>
+</blockquote>
+<blockquote>
+<p>        address 192.168.3.18</p>
+</blockquote>
+<blockquote>
+<p>        parents Lan</p>
+</blockquote>
+<blockquote>
+<p>        use     generic-host</p>
+</blockquote>
+<blockquote>
+<p>}</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>define host{</p>
+</blockquote>
+<blockquote>
+<p>        host_name www1</p>
+</blockquote>
+<blockquote>
+<p>        alias   www1</p>
+</blockquote>
+<blockquote>
+<p>        address 192.168.3.33</p>
+</blockquote>
+<blockquote>
+<p>        parents Lan</p>
+</blockquote>
+<blockquote>
+<p>        use     generic-host</p>
+</blockquote>
+<blockquote>
+<p>}</p>
+</blockquote>
+<p><img src="http://img0.ph.126.net/uc9XHREN4TrO5B_baEmJ7g==/6630876450676878426.png" alt="Ubuntu Server 14.04 安装nagios，nrpe - leaf - ------勤解万难------" title="Ubuntu Server 14.04 安装nagios，nrpe - leaf - ------勤解万难------"></p>
+<p> </p>
+</blockquote>
+<p>2、设置主机组</p>
+<blockquote>
+<p>sudo nano /etc/nagios3/conf.d/hostgroups_nagios2.cfg</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p># Some generic hostgroup definitions</p>
+</blockquote>
+<blockquote>
+<p># A simple wildcard hostgroup</p>
+</blockquote>
+<blockquote>
+<p>define hostgroup {</p>
+</blockquote>
+<blockquote>
+<p>        hostgroup_name  all</p>
+</blockquote>
+<blockquote>
+<p>alias           All Servers</p>
+</blockquote>
+<blockquote>
+<p>members         *</p>
+</blockquote>
+<blockquote>
+<p>        }</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p># A list of your Debian GNU/Linux servers</p>
+</blockquote>
+<blockquote>
+<p>define hostgroup {</p>
+</blockquote>
+<blockquote>
+<p>        hostgroup_name  debian-servers</p>
+</blockquote>
+<blockquote>
+<p>alias           Debian GNU/Linux Servers</p>
+</blockquote>
+<blockquote>
+<p>members         localhost,haproxy1,haproxy2,www1</p>
+</blockquote>
+<blockquote>
+<p>        }</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p># A list of your web servers</p>
+</blockquote>
+<blockquote>
+<p>define hostgroup {</p>
+</blockquote>
+<blockquote>
+<p>        hostgroup_name  http-servers</p>
+</blockquote>
+<blockquote>
+<p>alias           HTTP servers</p>
+</blockquote>
+<blockquote>
+<p>members         localhost,www1</p>
+</blockquote>
+<blockquote>
+<p>        }</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p># A list of your ssh-accessible servers</p>
+</blockquote>
+<blockquote>
+<p>define hostgroup {</p>
+</blockquote>
+<blockquote>
+<p>        hostgroup_name  ssh-servers</p>
+</blockquote>
+<blockquote>
+<p>alias           SSH servers</p>
+</blockquote>
+<blockquote>
+<p>members         localhost, haproxy1, haproxy2,www1</p>
+</blockquote>
+<blockquote>
+<p>        }</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>define hostgroup {</p>
+</blockquote>
+<blockquote>
+<p>hostgroup_name all-gateways</p>
+</blockquote>
+<blockquote>
+<p>aliasAll Gateways</p>
+</blockquote>
+<blockquote>
+<p>membersLan, WAN</p>
+</blockquote>
+<blockquote>
+<p>}</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>define hostgroup {</p>
+</blockquote>
+<blockquote>
+<p>hostgroup_name ubuntu-servers</p>
+</blockquote>
+<blockquote>
+<p>aliasUbuntu servers</p>
+</blockquote>
+<blockquote>
+<p>members localhost, haproxy1, haproxy2, www1</p>
+</blockquote>
+<blockquote>
+<p>}</p>
+</blockquote>
+<p><img src="http://img1.ph.126.net/8LDGl8VTCyukhUv18UrBwA==/6630272818792815316.png" alt="Ubuntu Server 14.04 安装nagios，nrpe - leaf - ------勤解万难------" title="Ubuntu Server 14.04 安装nagios，nrpe - leaf - ------勤解万难------"></p>
+<p> </p>
+</blockquote>
+<p>2.1设置设备图标</p>
+<blockquote>
+<p>sudo nano /etc/nagios3/conf.d/extinfo_nagios2.cfg</p>
+</blockquote>
+<blockquote>
+<p>##</p>
+<p>## Extended Host and Service Information</p>
+<p>##</p>
+<p>define hostextinfo{</p>
+<p>        hostgroup_name   debian-servers</p>
+<p>        notes            Debian GNU/Linux servers</p>
+<p>#       notes_url        <a target="_blank" rel="noopener" href="http://webserver.localhost.localdomain/hostinfo.pl?host=netware1">http://webserver.localhost.localdomain/hostinfo.pl?host=netware1</a></p>
+<p>        icon_image       base/debian.png</p>
+<p>        icon_image_alt   Debian GNU/Linux</p>
+<p>        vrml_image       debian.png</p>
+<p>        statusmap_image  base/debian.gd2</p>
+<p>        }</p>
+<p>define hostextinfo{</p>
+<p>hostgroup_name all-gateways</p>
+<p>icon_image base/ng-switch40.png</p>
+<p>statusmap_image base/ng-switch40.png</p>
+<p>}</p>
+<p>define hostextinfo{</p>
+<p>hostgroup_name ubuntu-servers</p>
+<p>icon_image base/ubuntu.png</p>
+<p>statusmap_image base/ubuntu.png</p>
+<p>}</p>
+</blockquote>
+<p>3、设置需要监控服务</p>
+<blockquote>
+<p>sudo nano /etc/nagios3/conf.d/services_nagios2.cfg</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p># check that web services are running</p>
+</blockquote>
+<blockquote>
+<p>define service {</p>
+</blockquote>
+<blockquote>
+<p>        hostgroup_name                  http-servers</p>
+</blockquote>
+<blockquote>
+<p>        service_description             HTTP</p>
+</blockquote>
+<blockquote>
+<p> check_command                   check_http</p>
+</blockquote>
+<blockquote>
+<p>        use                             generic-service</p>
+</blockquote>
+<blockquote>
+<p>notification_interval           0 ; set &gt; 0 if you want to be renotified</p>
+</blockquote>
+<blockquote>
+<p>}</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p># check that ssh services are running</p>
+</blockquote>
+<blockquote>
+<p>define service {</p>
+</blockquote>
+<blockquote>
+<p>        hostgroup_name                  ssh-servers</p>
+</blockquote>
+<blockquote>
+<p>        service_description             SSH</p>
+</blockquote>
+<blockquote>
+<p>check_command                   check_ssh</p>
+</blockquote>
+<blockquote>
+<p>        use                             generic-service</p>
+</blockquote>
+<blockquote>
+<p>notification_interval           0 ; set &gt; 0 if you want to be renotified</p>
+</blockquote>
+<blockquote>
+<p>}</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>define service {</p>
+</blockquote>
+<blockquote>
+<p>hostgroup_nameall-gateways</p>
+</blockquote>
+<blockquote>
+<p>service_descriptionPING</p>
+</blockquote>
+<blockquote>
+<p>check_commandcheck_ping!100.0,20%!500.0,60%</p>
+</blockquote>
+<blockquote>
+<p>usegeneric-service</p>
+</blockquote>
+<blockquote>
+<p>notification_interval0</p>
+</blockquote>
+<blockquote>
+<p>}</p>
+</blockquote>
+<p><img src="http://img2.ph.126.net/980I-29uNSfLr03RIM8r4A==/6630603771793179824.png" alt="Ubuntu Server 14.04 安装nagios，nrpe - leaf - ------勤解万难------" title="Ubuntu Server 14.04 安装nagios，nrpe - leaf - ------勤解万难------"></p>
+<p> </p>
+</blockquote>
+<p>3.1 nagios-plugins 安装</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://nagios-plugins.org/">http://nagios-plugins.org/</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.nagios.org/download/plugins/">https://www.nagios.org/download/plugins/</a></p>
+</blockquote>
+<p>4、nrpe相关设置</p>
+<blockquote>
+<p>被控端</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>sudo apt-get install nagios-nrpe-server -y</p>
+</blockquote>
+<blockquote>
+<p>更改配置文件</p>
+</blockquote>
+<blockquote>
+<p>sudo nano /etc/nagios/nrpe.cfg</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>allowed_hosts=192.168.1.50  </p>
+<p>command[check_all_disks]=/usr/lib/nagios/plugins/check_disk -w 20% -c 10% -e</p>
+</blockquote>
+<p>sudo service nagios-nrpe-server restart</p>
+</blockquote>
+<p>主控端</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>新建单独的配置文件</p>
+</blockquote>
+<blockquote>
+<p>sudo nano /etc/nagios3/conf.d/www1.cfg</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>define service{<br>usegeneric-service<br>host_name www1<br>service_descriptionDisk space<br>check_commandcheck_nrpe_1arg!check_all_disks<br>}  </p>
+<p>define service{ <br>        use     generic-service<br>        host_name       www1       <br>        service_description     Current Users<br>        check_command   check_nrpe_1arg!check_users<br>}  </p>
+<p>define service{ <br>        use     generic-service<br>        host_name       www1       <br>        service_description     Total Processes<br>        check_command   check_nrpe_1arg!check_total_procs<br>}  </p>
+<p>define service{ <br>        use     generic-service<br>        host_name       www1       <br>        service_description     Current Load<br>        check_command   check_nrpe_1arg!check_load<br>}</p>
+</blockquote>
+<blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+<p>说明</p>
+</blockquote>
+<blockquote>
+<p>1、插件的命令全部放在/usr/lib/nagios/plugins/下面</p>
+</blockquote>
+<blockquote>
+<p><img src="http://img0.ph.126.net/qHQS3yZeIwfewi25KrBj_A==/6630728016607132347.png" alt="Ubuntu Server 14.04 安装nagios，nrpe - leaf - ------勤解万难------" title="Ubuntu Server 14.04 安装nagios，nrpe - leaf - ------勤解万难------"></p>
+<p> </p>
+</blockquote>
+<blockquote>
+<p>2、check_nrpe_1arg 命令定义在/etc/nagios-plugins/config/check_nrpe.cfg</p>
+<p><img src="http://img0.ph.126.net/tngLW9gV9Z7bndmk7TSHsQ==/6630640055676909957.png" alt="Ubuntu Server 14.04 安装nagios，nrpe - leaf - ------勤解万难------" title="Ubuntu Server 14.04 安装nagios，nrpe - leaf - ------勤解万难------"></p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%9C%AA%E5%88%86%E7%B1%BB/" rel="tag"># 未分类</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/3799354604/" rel="prev" title="物联网、私有云基础：DDNS，端口转发，UPNP">
+      <i class="fa fa-chevron-left"></i> 物联网、私有云基础：DDNS，端口转发，UPNP
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/2180576762/" rel="next" title="UBUNTU14.04安装SAMBA4.1.6作AD，DNS，ldap">
+      UBUNTU14.04安装SAMBA4.1.6作AD，DNS，ldap <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZorroYe</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

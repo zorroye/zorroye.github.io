@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-yes.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-yes.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-yes.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false};
+  </script>
+
+  <meta name="description" content="desktop:~&#x2F;Ocsinventory-Agent-2.0rc4$ sudo make install Installing &#x2F;usr&#x2F;local&#x2F;share&#x2F;perl&#x2F;5.10.1&#x2F;Ocsinventory&#x2F;Agent.pm Installing &#x2F;usr&#x2F;local&#x2F;share&#x2F;perl&#x2F;5.10.1&#x2F;Ocsinventory&#x2F;Compress.pm Installing &#x2F;usr&#x2F;lo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ocs-agent 安装过程">
+<meta property="og:url" content="http://yoursite.com/posts/380620447/index.html">
+<meta property="og:site_name" content="Ye&#39;s Blog">
+<meta property="og:description" content="desktop:~&#x2F;Ocsinventory-Agent-2.0rc4$ sudo make install Installing &#x2F;usr&#x2F;local&#x2F;share&#x2F;perl&#x2F;5.10.1&#x2F;Ocsinventory&#x2F;Agent.pm Installing &#x2F;usr&#x2F;local&#x2F;share&#x2F;perl&#x2F;5.10.1&#x2F;Ocsinventory&#x2F;Compress.pm Installing &#x2F;usr&#x2F;lo">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2011-05-04T07:14:00.000Z">
+<meta property="article:modified_time" content="2020-08-01T06:28:03.584Z">
+<meta property="article:author" content="ZorroYe">
+<meta property="article:tag" content="未分类">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/posts/380620447/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>ocs-agent 安装过程 | Ye's Blog</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?2b0dbd880dfaff3fde3fcb1beb61713d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Ye's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">勤解万难</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ZorroYe</p>
+  <div class="site-description" itemprop="description">升级认知，看透本质</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">367</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zorroye" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zorroye" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:439753096@qq.com" title="E-Mail → mailto:439753096@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/380620447/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ocs-agent 安装过程
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2011-05-04 15:14:00" itemprop="dateCreated datePublished" datetime="2011-05-04T15:14:00+08:00">2011-05-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-01 14:28:03" itemprop="dateModified" datetime="2020-08-01T14:28:03+08:00">2020-08-01</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>desktop:~/Ocsinventory-Agent-2.0rc4$ sudo make install</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Compress.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/postinst.pl</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Logger.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/LoggerBackend/Stderr.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/LoggerBackend/File.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/LoggerBackend/Syslog.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Network.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Hooks.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Config.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/AccountConfig.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Common.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/AccountInfo.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/IpDiscover.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/DeviceID.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/AccessLog.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/Virtualization/Parallels.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/Virtualization/Libvirt.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/Virtualization/SolarisZones.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/Virtualization/VmWareDesktop.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/Virtualization/Xen.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/Virtualization/VirtualBox.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/Virtualization/VmWareESX.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/Virtualization/Vmsystem.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/Virtualization/Qemu.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/Virtualization/Xen/XM.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/IpDiscover/IpDiscover.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/IpDiscover/Nmap.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/AIX.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/HPUX.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Solaris.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/BSD.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/MacOS.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Generic.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Solaris/Domains.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Solaris/Controllers.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Solaris/IPv4.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Solaris/Storages.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Solaris/Mem.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Solaris/Networks.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Solaris/Packages.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Solaris/Bios.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Solaris/Users.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Solaris/Slots.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Solaris/Memory.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Solaris/Drives.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Solaris/CPU.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/AIX/Domains.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/AIX/IPv4.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/AIX/Sounds.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/AIX/Storages.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/AIX/Modems.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/AIX/Mem.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/AIX/Networks.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/AIX/Controller.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/AIX/Videos.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/AIX/Users.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/AIX/Slots.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/AIX/Software.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/AIX/Hardware.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/AIX/Memory.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/AIX/Drives.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/AIX/CPU.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/MacOS/Domains.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/MacOS/IPv4.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/MacOS/Printers.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/MacOS/Storages.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/MacOS/Mem.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/MacOS/Uptime.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/MacOS/Networks.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/MacOS/Packages.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/MacOS/Bios.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/MacOS/Sound.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/MacOS/Hostname.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/MacOS/Video.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/MacOS/Drives.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/MacOS/CPU.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Generic/Ipmi.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Generic/Hostname.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Generic/Users.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Generic/Dmidecode.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Generic/Screen.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Generic/Packaging.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Generic/Lspci.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Generic/Processes.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Generic/Lspci/Controllers.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Generic/Lspci/Sounds.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Generic/Lspci/Modems.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Generic/Lspci/Videos.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Generic/Printers/Cups.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Generic/Packaging/BSDpkg.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Generic/Packaging/Pacman.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Generic/Packaging/RPM.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Generic/Packaging/ByHand.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Generic/Packaging/Deb.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Generic/Packaging/Gentoo.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Generic/Dmidecode/Ports.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Generic/Dmidecode/UUID.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Generic/Dmidecode/Bios.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Generic/Dmidecode/Slots.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Generic/Dmidecode/Memory.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/HPUX/Domains.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/HPUX/IPv4.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/HPUX/Storages.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/HPUX/Mem.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/HPUX/Networks.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/HPUX/Bios.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/HPUX/Controller.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/HPUX/Slots.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/HPUX/Software.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/HPUX/Memory.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/HPUX/Drives.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/HPUX/README</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/HPUX/CPU.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Domains.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Sounds.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Storages.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Mem.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Uptime.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Sys.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Drives.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Archs/ARM.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Archs/MIPS.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Archs/PowerPC.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Archs/SPARC.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Archs/m68k.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Archs/Alpha.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Archs/i386.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Archs/MIPS/CPU.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Archs/ARM/CPU.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Archs/Alpha/CPU.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Archs/PowerPC/Various.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Archs/PowerPC/CPU.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Archs/i386/CPU.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Archs/m68k/CPU.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Archs/SPARC/CPU.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Storages/3ware.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Storages/Lsilogic.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Storages/Adaptec.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Storages/ServeRaid.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Storages/HP.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Distro/LSB.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Distro/NonLSB.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Distro/NonLSB/Redhat.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Distro/NonLSB/Trustix.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Distro/NonLSB/Ubuntu.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Distro/NonLSB/ArchLinux.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Distro/NonLSB/Mandrake.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Distro/NonLSB/VmWare.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Distro/NonLSB/Fedora.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Distro/NonLSB/Gentoo.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Distro/NonLSB/Mandriva.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Distro/NonLSB/Knoppix.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Distro/NonLSB/Debian.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Distro/NonLSB/SuSE.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Distro/NonLSB/Slackware.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Network/IPv4.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/Linux/Network/Networks.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/BSD/Domains.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/BSD/IPv4.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/BSD/Storages.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/BSD/Mem.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/BSD/Uptime.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/BSD/Networks.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/BSD/Sys.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/BSD/Drives.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/BSD/CPU.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/BSD/Archs/Sparc.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/BSD/Archs/Sgimips.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/BSD/Archs/Alpha.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Backend/OS/BSD/Archs/I386.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/XML/Inventory.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/XML/Response.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/XML/Prolog.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/XML/SimpleMessage.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/XML/Response/Inventory.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/XML/Response/Prolog.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Modules/Download.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Modules/Snmp.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Modules/Example.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Modules/Snmp/If_Mib.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Modules/Snmp/11.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Modules/Snmp/3224.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Modules/Snmp/641.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Modules/Snmp/9.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Modules/Snmp/311.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Modules/Snmp/7244.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Modules/Snmp/8072.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Modules/Snmp/3375.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Modules/Snmp/2620.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Modules/Snmp/Printer_Mib.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Modules/Snmp/Host_Resources_Mib.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Modules/Snmp/Entity_Mib.pm</p>
+<p>Installing /usr/local/share/perl/5.10.1/Ocsinventory/Agent/Modules/Snmp/Default.pm</p>
+<p>Installing /usr/local/man/man1/ocsinventory-agent.1p</p>
+<p>Installing /usr/local/man/man3/Ocsinventory::Agent::XML::Inventory.3pm</p>
+<p>Installing /usr/local/man/man3/Ocsinventory::Agent::Common.3pm</p>
+<p>Installing /usr/local/bin/ipdiscover</p>
+<p>Installing /usr/local/bin/ocsinventory-agent</p>
+<p>#安装在/usr/local/share/perl下面</p>
+<p>Appending installation info to /usr/local/lib/perl/5.10.1/perllocal.pod</p>
+<p>[ ! -f run-postinst ] || /usr/bin/perl postinst.pl</p>
+<p>Do you want to configure the agent   #配置agent</p>
+<p>Please enter ‘y’ or ‘n’?&gt; [y] y</p>
+<p>Where do you want to write the configuration file?</p>
+<p> 0 -&gt; /etc/ocsinventory</p>
+<p> 1 -&gt; /usr/local/etc/ocsinventory</p>
+<p> 2 -&gt; /etc/ocsinventory-agent</p>
+<p>?&gt;  2  #配置文件放在/etc/ocsinventory-agent目录下</p>
+<p>Do you want to create the directory /etc/ocsinventory-agent?</p>
+<p>Please enter ‘y’ or ‘n’?&gt; [y] y</p>
+<p>[info] The config file will be written in /etc/ocsinventory/ocsinventory-agent.cfg,</p>
+<p>What is the address of your ocs server?&gt; [ocsinventory-ng] ywz-desktop  #设置服务器名</p>
+<p>Do you need credential for the server? (You probably don’t) #设置证书</p>
+<p>Please enter ‘y’ or ‘n’?&gt; [n] n</p>
+<p>Do you want to apply an administrative tag on this machine  #设置标签</p>
+<p>Please enter ‘y’ or ‘n’?&gt; [y] y</p>
+<p>tag?&gt;  test</p>
+<p>ocsinventory agent presents: /usr/local/bin/ocsinventory-agent</p>
+<p>Do yo want to install the cron task in /etc/cron.d #建立例行性命令</p>
+<p>Please enter ‘y’ or ‘n’?&gt; [y] y</p>
+<p>Where do you want the agent to store its files? (You probably don’t need to change it)?&gt; [/var/lib/ocsinventory-agent] </p>
+<p>Do you want to create the /var/lib/ocsinventory-agent directory?</p>
+<p>Please enter ‘y’ or ‘n’?&gt; [y] y</p>
+<p>New settings written! Thank you for using OCS Inventory</p>
+<p>Should I remove the old linux_agent</p>
+<p>Please enter ‘y’ or ‘n’?&gt; [n] y</p>
+<p>/etc/ocsinventory-client</p>
+<p>/etc/logrotate.d/ocsinventory-client</p>
+<p>/usr/sbin/ocsinventory-client.pl</p>
+<p>/etc/cron.d/ocsinventory-client</p>
+<p>/bin/ocsinv</p>
+<p>done</p>
+<p>Do you want to use OCS-Inventory software deployment feature?</p>
+<p>Please enter ‘y’ or ‘n’?&gt; [y] y</p>
+<p>Do you want to use OCS-Inventory SNMP scans feature?</p>
+<p>Please enter ‘y’ or ‘n’?&gt; [y] y</p>
+<p>Do you want to send an inventory of this machine?</p>
+<p>Please enter ‘y’ or ‘n’?&gt; [y] y</p>
+<p>[info] Accountinfo file doesn’t exist. I create an empty one.   #要安装libnet-snmp-perl</p>
+<p>   -&gt;  Success!</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%9C%AA%E5%88%86%E7%B1%BB/" rel="tag"># 未分类</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/342914756/" rel="prev" title="ocs-server 安装过程">
+      <i class="fa fa-chevron-left"></i> ocs-server 安装过程
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/3016358933/" rel="next" title="ubuntu10.04加入到win2003域 相关配置文件">
+      ubuntu10.04加入到win2003域 相关配置文件 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZorroYe</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

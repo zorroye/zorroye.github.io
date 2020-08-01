@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-yes.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-yes.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-yes.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false};
+  </script>
+
+  <meta name="description" content="关键词：    核心、核心模块、内核函数库、核心头文件函数库、函数库头文件、静态链接、动态链接命令、命令驱动硬件    关键词理解：    核心：主要就是驱动硬件。模块：提供对某种硬件的支持，供内核使用内核函数库：实现某种功能，供内核使用核心头文件：提供操作硬件的接口   函数库：提供某些软件功能函数库头文件：提供软件实现某些功能的接口    程序调用函数库和操作硬件    动态链接程序的源代码：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LFS制作-概念、原理">
+<meta property="og:url" content="http://yoursite.com/posts/319038377/index.html">
+<meta property="og:site_name" content="Ye&#39;s Blog">
+<meta property="og:description" content="关键词：    核心、核心模块、内核函数库、核心头文件函数库、函数库头文件、静态链接、动态链接命令、命令驱动硬件    关键词理解：    核心：主要就是驱动硬件。模块：提供对某种硬件的支持，供内核使用内核函数库：实现某种功能，供内核使用核心头文件：提供操作硬件的接口   函数库：提供某些软件功能函数库头文件：提供软件实现某些功能的接口    程序调用函数库和操作硬件    动态链接程序的源代码：">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://img1.ph.126.net/4slhQLhSG3gGwp_Gxxn6eg==/630785422826341551.png">
+<meta property="article:published_time" content="2012-10-18T05:56:00.000Z">
+<meta property="article:modified_time" content="2020-08-01T06:28:03.553Z">
+<meta property="article:author" content="ZorroYe">
+<meta property="article:tag" content="未分类">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://img1.ph.126.net/4slhQLhSG3gGwp_Gxxn6eg==/630785422826341551.png">
+
+<link rel="canonical" href="http://yoursite.com/posts/319038377/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>LFS制作-概念、原理 | Ye's Blog</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?2b0dbd880dfaff3fde3fcb1beb61713d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Ye's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">勤解万难</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ZorroYe</p>
+  <div class="site-description" itemprop="description">升级认知，看透本质</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">367</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zorroye" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zorroye" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:439753096@qq.com" title="E-Mail → mailto:439753096@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/319038377/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          LFS制作-概念、原理
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2012-10-18 13:56:00" itemprop="dateCreated datePublished" datetime="2012-10-18T13:56:00+08:00">2012-10-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-01 14:28:03" itemprop="dateModified" datetime="2020-08-01T14:28:03+08:00">2020-08-01</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>关键词：  </p>
+<blockquote>
+<p>核心、核心模块、内核函数库、核心头文件<br>函数库、函数库头文件、静态链接、动态链接<br>命令、命令驱动硬件  </p>
+</blockquote>
+<p>关键词理解：  </p>
+<blockquote>
+<p>核心：主要就是驱动硬件。<br>模块：提供对某种硬件的支持，供内核使用<br>内核函数库：实现某种功能，供内核使用<br>核心头文件：提供操作硬件的接口  </p>
+<p>函数库：提供某些软件功能<br>函数库头文件：提供软件实现某些功能的接口  </p>
+</blockquote>
+<p>程序调用函数库和操作硬件  </p>
+<blockquote>
+<p>动态链接程序的源代码：  </p>
+<blockquote>
+<p>包含动态函数库头文件、内核函数库头文件  </p>
+</blockquote>
+<p>程序的编译：  </p>
+<blockquote>
+<p>包含哪些头文件，由ld命令找到对应的函数库，并链接起来制作成可执行文件。  </p>
+</blockquote>
+<p>命令如何调用动态函数库：  </p>
+<blockquote>
+<p>ld.inux.so.2通过查找/etc/ld.so.cache、/lib、/usr/lib 来找到对应的动态函数库  </p>
+</blockquote>
+<p>命令的运行：  </p>
+<blockquote>
+<p>调用动态函数库—&gt;实现软件功能  </p>
+</blockquote>
+<blockquote>
+<p>调用动态函数库—&gt;调用内核函数库—-&gt;实现对硬件的操作  </p>
+</blockquote>
+</blockquote>
+<p>程序编译流程：<br>源代码 (source code) → 预处理器 (preprocessor) → <a target="_blank" rel="noopener" href="http://baike.baidu.com/view/487018.htm">编译器</a> (compiler) → <a target="_blank" rel="noopener" href="http://baike.baidu.com/view/1315652.htm">汇编程序</a> (assembler) →<br>→目标代码 (object code) → <a target="_blank" rel="noopener" href="http://baike.baidu.com/view/1402117.htm">链接器</a> (Linker) → 可执行程序 (executables)  </p>
+<p>程序制作：         源代码(包含内核头文件和函数头文件)——-&gt;gcc——-&gt;as——–&gt;  </p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>ld(ld搜索路径并将头文件中提到的函数库进行链接)—&gt;可执行程序  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>程序的执行：     程序——-&gt;ld-linux.so加载相关的函数库——&gt;实现操作。  </p>
+<p>工具链说明<br>linux-header：   <a target="_blank" rel="noopener" href="http://baike.baidu.com/view/16068.htm#2">API</a>(函数库)，用户可以使用其接口编程来实现对计算机软件及硬件的操作。  </p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>存放位置：/usr/include  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Glibc：              包含了主要的C函数库  </p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>存放位置：/lib、/usr/lib  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://zh.wikipedia.org/wiki/Ld.so">ld-linux.so</a>：动态加载器，由glibc提供。  </p>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p> 当应用程序需要使用动态链接库里的函数时，动态链接需要去找函数库，<br> 怎么找呢，就用到这个ld.so函数库。<br> 那ld.so去那里找动态函数库呢？下面就提供了搜索路径。  </p>
+<blockquote>
+<p>搜索动态链接库的顺序依此是<br>1、环境变量：LD_AOUT_LIBRARY_PATH(<a target="_blank" rel="noopener" href="http://zh.wikipedia.org/wiki/A.out" title="A.out">a.out</a>格式)<br>      环境变量：LD_LIBRARY_PATH(<a target="_blank" rel="noopener" href="http://zh.wikipedia.org/wiki/%E5%8F%AF%E5%9F%B7%E8%A1%8C%E8%88%87%E5%8F%AF%E9%8F%88%E6%8E%A5%E6%A0%BC%E5%BC%8F">ELF</a>格式)<br>2、/etc/ld.so.conf<br>3、缓存文件/etc/ld.so.cache。<br>     此为环境变量、/lib、/usr/lib、/etc/ld.so.conf指定目录的二进制索引文件。<br>     放入新函数库后要更新缓存，更新的命令是ldconfig。<br>4、默认目录，先在/lib中寻找，再到/usr/lib中寻找。  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>Binutils：           包括连接器、汇编器  </p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>存放位置：/usr  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>as：          汇编器，由binutils提供。  </p>
+<blockquote>
+<blockquote>
+<p>用来汇编gcc 的输出，产生的目标文件然后交由连接器 ld 连接</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>ld：           链接器(连接器)，由binutils提供。此为编译时候用的命令。  </p>
+<blockquote>
+<blockquote>
+<p>将一个或多个由编译器或汇编器生成的“目标文件”外加“库”链接为一个可执行文件。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>ld搜索路径：ld –verbose | grep SEARCH  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>ld从下面地方找出动态函数库文件，然后进行连接。  </p>
+</blockquote>
+</blockquote>
+<p><img src="http://img1.ph.126.net/4slhQLhSG3gGwp_Gxxn6eg==/630785422826341551.png" alt="LFS制作-概念、原理 - leaf - ------坚持雅操------" title="LFS制作-概念、原理 - leaf - ------坚持雅操------"></p>
+</blockquote>
+<p>GCC：              包含C、C++等编译器  </p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>存放位置：/usr  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>注意一点：  </p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>所有的程序都是由/usr里面的工具制作出来的。<br>/usr目录就相当于windows下的program files + windows  </p>
+</blockquote>
+</blockquote>
+<p>对linux内核不了解，以后会深入学的。以上只是自己的理解  </p>
+<blockquote>
+</blockquote>
+<p>参考：  </p>
+<blockquote>
+<p>lfs6.2中文版<br><a target="_blank" rel="noopener" href="http://zh.wikipedia.org/wiki/Ld.so">http://zh.wikipedia.org/wiki/Ld.so</a><br><a target="_blank" rel="noopener" href="http://lsscto.blog.51cto.com/779396/904078">http://lsscto.blog.51cto.com/779396/904078</a><br><a target="_blank" rel="noopener" href="http://blog.csai.cn/user1/265/archives/2005/2465.html">http://blog.csai.cn/user1/265/archives/2005/2465.html</a><br><a target="_blank" rel="noopener" href="http://www.simplemind.info/technolife/linuxsystem/lfs-problem.html">http://www.simplemind.info/technolife/linuxsystem/lfs-problem.html</a><br><a target="_blank" rel="noopener" href="http://zh.wikipedia.org/wiki/%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8">http://zh.wikipedia.org/wiki/%E7%B3%BB%E7%BB%9F%E8%B0%83%E7%94%A8</a>  </p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%9C%AA%E5%88%86%E7%B1%BB/" rel="tag"># 未分类</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/2713717643/" rel="prev" title="关于mate版本">
+      <i class="fa fa-chevron-left"></i> 关于mate版本
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/3703381300/" rel="next" title="LFS制作-1、准备工作">
+      LFS制作-1、准备工作 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZorroYe</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

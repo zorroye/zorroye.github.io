@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-yes.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-yes.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-yes.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false};
+  </script>
+
+  <meta name="description" content="原理：  dsdt让系统知道有这个显卡 FB告诉系统该显卡是如何处理信号的。  我是按这帖子做的：ATI 5系和6系显卡驱动&amp;修改FB探讨 具体步骤： 1、查看显卡信息。  GPU-Z可以查看  2、将ID加入到ATI5000Controller.kext和AMDRadeonAccelerator.kext中  5470m的ID里面有，所以不需要添加  3、提取rom，修改你的接口信息">
+<meta property="og:type" content="article">
+<meta property="og:title" content="msi EX465安装MACOSX 显卡驱动">
+<meta property="og:url" content="http://yoursite.com/posts/3670975691/index.html">
+<meta property="og:site_name" content="Ye&#39;s Blog">
+<meta property="og:description" content="原理：  dsdt让系统知道有这个显卡 FB告诉系统该显卡是如何处理信号的。  我是按这帖子做的：ATI 5系和6系显卡驱动&amp;修改FB探讨 具体步骤： 1、查看显卡信息。  GPU-Z可以查看  2、将ID加入到ATI5000Controller.kext和AMDRadeonAccelerator.kext中  5470m的ID里面有，所以不需要添加  3、提取rom，修改你的接口信息">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://img0.ph.126.net/9oQ4gEe614K_IX4ZZx3SAg==/1983835635956987556.jpg">
+<meta property="og:image" content="http://img2.ph.126.net/ow1qdSInakYScXDN6dzkFg==/2074470578457543017.jpg">
+<meta property="article:published_time" content="2013-12-08T05:49:00.000Z">
+<meta property="article:modified_time" content="2020-08-01T06:28:03.584Z">
+<meta property="article:author" content="ZorroYe">
+<meta property="article:tag" content="未分类">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://img0.ph.126.net/9oQ4gEe614K_IX4ZZx3SAg==/1983835635956987556.jpg">
+
+<link rel="canonical" href="http://yoursite.com/posts/3670975691/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>msi EX465安装MACOSX 显卡驱动 | Ye's Blog</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?2b0dbd880dfaff3fde3fcb1beb61713d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Ye's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">勤解万难</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ZorroYe</p>
+  <div class="site-description" itemprop="description">升级认知，看透本质</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">367</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zorroye" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zorroye" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:439753096@qq.com" title="E-Mail → mailto:439753096@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/3670975691/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          msi EX465安装MACOSX 显卡驱动
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2013-12-08 13:49:00" itemprop="dateCreated datePublished" datetime="2013-12-08T13:49:00+08:00">2013-12-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-01 14:28:03" itemprop="dateModified" datetime="2020-08-01T14:28:03+08:00">2020-08-01</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>原理：</p>
+<blockquote>
+<p>dsdt让系统知道有这个显卡</p>
+<p>FB告诉系统该显卡是如何处理信号的。</p>
+</blockquote>
+<p>我是按这帖子做的：ATI 5系和6系显卡驱动&amp;修改FB探讨</p>
+<p>具体步骤：</p>
+<p>1、查看显卡信息。</p>
+<blockquote>
+<p>GPU-Z可以查看</p>
+</blockquote>
+<p>2、将ID加入到ATI5000Controller.kext和AMDRadeonAccelerator.kext中</p>
+<blockquote>
+<p>5470m的ID里面有，所以不需要添加</p>
+</blockquote>
+<p>3、提取rom，修改你的接口信息</p>
+<blockquote>
+<p>1、rom提取用aida64提取</p>
+<p>2、用radeon_bios_decode和redsock_bios_decoder提取显卡信息</p>
+<p>./radeon_bios_decode &lt; 1002_68E0.rom</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>ATOM BIOS Rom:</p>
+</blockquote>
+<blockquote>
+<p>        SubsystemVendorID: 0x1462 SubsystemID: 0x1043       </p>
+</blockquote>
+<blockquote>
+<p>        IOBaseAddress: 0xd800                                            </p>
+</blockquote>
+<blockquote>
+<p>        Filename: BR35393.012</p>
+</blockquote>
+<blockquote>
+<p>        BIOS Bootup Message:</p>
+</blockquote>
+<blockquote>
+<p>MSI MS1455 PARK S3 LP DDR3 64Mx16 512MB                                    </p>
+</blockquote>
+<blockquote>
+<p>PCI ID: 1002:68e0</p>
+</blockquote>
+<blockquote>
+<p>Connector at index 0</p>
+</blockquote>
+<blockquote>
+<p>        Type [@offset 44904]: LVDS (7)</p>
+</blockquote>
+<blockquote>
+<p>        Encoder [@offset 44908]: INTERNAL_UNIPHY (0x1e)</p>
+</blockquote>
+<blockquote>
+<p>        i2cid [@offset 44960]: 0x90, OSX senseid: 0x1</p>
+</blockquote>
+<blockquote>
+<p>Connector at index 1</p>
+</blockquote>
+<blockquote>
+<p>        Type [@offset 44914]: VGA (1)</p>
+</blockquote>
+<blockquote>
+<p>        Encoder [@offset 44918]: INTERNAL_KLDSCP_DAC1 (0x15)</p>
+</blockquote>
+<blockquote>
+<p>        i2cid [@offset 44983]: 0x97, OSX senseid: 0x8</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>./redsock_bios_decoder &lt; 1002_68E0.rom</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>BR35393.012 :</p>
+</blockquote>
+<blockquote>
+<p>MSI MS1455 PARK S3 LP DDR3 64Mx16 512MB                                    </p>
+</blockquote>
+<blockquote>
+<p>Subsystem Vendor ID: 1462</p>
+</blockquote>
+<blockquote>
+<p>       Subsystem ID: 1043</p>
+</blockquote>
+<blockquote>
+<p>Object Header Structure Size: 140</p>
+</blockquote>
+<blockquote>
+<p>Connector Object Table Offset: 2a</p>
+</blockquote>
+<blockquote>
+<p>Router Object Table Offset: 0</p>
+</blockquote>
+<blockquote>
+<p>Encoder Object Table Offset: 6c</p>
+</blockquote>
+<blockquote>
+<p>Display Path Table Offset: 12</p>
+</blockquote>
+<blockquote>
+<p>Connector Object Id [14] which is [LVDS]</p>
+</blockquote>
+<blockquote>
+<p>        encoder obj id [0x1e] which is [INTERNAL_UNIPHY (osx txmit 0x10 [duallink 0x0] enc 0x0)] linkb: false</p>
+</blockquote>
+<blockquote>
+<p>Connector Object Id [5] which is [VGA]</p>
+</blockquote>
+<blockquote>
+<p>        encoder obj id [0x15] which is [INTERNAL_KLDSCP_DAC1 (osx txmit 0x00 enc 0x10?)] linkb: false</p>
+</blockquote>
+<p>提取的信息如下：</p>
+</blockquote>
+<blockquote>
+<p>         txmit       enc      senseid</p>
+<p>LVDS      10          00        01</p>
+<p>VGA       00          10        08</p>
+<p>LVDS前面部分</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>02 00 00 00 40 00 00 00 09 01 00 00</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>VGA前面部分</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>10 00 00 00 10 00 00 00 00 01 00 00</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>得到参数：</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>LVDS 02 00 00 00 40 00 00 00 09 01 00 00 10 00 00 01</p>
+</blockquote>
+<blockquote>
+<p>VGA  10 00 00 00 10 00 00 00 00 01 00 00 00 10 01 08</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>#紫色表示显示输出顺序，00表示最优先输出</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>整理得到最终参数</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>0200000040000000090100001000000110000000100000000001000000100108</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>3、我们选用Zonalis参数</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>我把5系列的参数基本上都试了一遍，最后才试到这个6接口的参数，坑爹啊！</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>000400000406000000710000200106060004000004060000007100001000050500040000040600000071000021030204000400000406000000710000110201030004000004060000007100002205040200040000040600000071000012040301</p>
+</blockquote>
+<blockquote>
+<p>我的只有2个接口，其他全部用0替代得到</p>
+</blockquote>
+<blockquote>
+<p>020000004000000009010000100000011000000010000000000100000010010800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>4、我们更改ATI5000Contrller.kext&gt;Contents&gt;MacOS&gt; ATI5000Contrller</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>用0XED打开，选16进制，搜索Zonalis参数，替换为下面的参数，保存即可</p>
+</blockquote>
+</blockquote>
+<p>4、笔记本A卡，且senseid为07</p>
+<blockquote>
+<p>这一步就是改EDID，识别显示器用的，本LVDS接口是01，所以跳过<br>edid只是解决花屏或显示器识别问题，能正常进入桌面，说明edid暂时没什么问题。  </p>
+</blockquote>
+<p>5、加载你修改的FB</p>
+<blockquote>
+<p>这一步就是改dsdt.aml。用DSDTSE修改</p>
+<p>1、用IDSDT将dsdt和rom信息写在一起</p>
+<p>2、更改相关参数</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>ATY后面原参数是Motmot。然后搜索Motmot，替换为Zonalis </p>
+</blockquote>
+<blockquote>
+<p>再搜索ATY，往下拉，将@0,name，@1,name的ATY,Display-A、ATY,Display-B</p>
+</blockquote>
+<blockquote>
+<p>之类的改为ATY,Zonalis。</p>
+</blockquote>
+<blockquote>
+<p>将@0,name，@1,name，device_type 的 Buffer（xxx）里面的数字删掉</p>
+</blockquote>
+<blockquote>
+<p>备注：我只有两个接口，所以只到@1,name</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>3、点编译，生成新dsdt.aml。放入/Extra下面即可</p>
+</blockquote>
+<p>6、重启查看已QE</p>
+<blockquote>
+<p><img src="http://img0.ph.126.net/9oQ4gEe614K_IX4ZZx3SAg==/1983835635956987556.jpg" alt="msi EX465安装MACOSX 显卡驱动 - leaf - ------坚持雅操------" title="msi EX465安装MACOSX 显卡驱动 - leaf - ------坚持雅操------"></p>
+</blockquote>
+<blockquote>
+<p><img src="http://img2.ph.126.net/ow1qdSInakYScXDN6dzkFg==/2074470578457543017.jpg" alt="msi EX465安装MACOSX 显卡驱动 - leaf - ------坚持雅操------" title="msi EX465安装MACOSX 显卡驱动 - leaf - ------坚持雅操------"></p>
+</blockquote>
+<p>附：我改过的参数整理。</p>
+<p>Aticonfig: Douc</p>
+<p>ConnectorInfo count in decimal: 2</p>
+<p>Disk offset in decimal 165856</p>
+<p>    02  00  00  00  00  05  00  00  09  03  00  00  21  03  02  02</p>
+<p>    00  04  00  00  04  02  00  00  00  03  00  00  11  02  01  01</p>
+<p>0200000000050000090300002103020200040000040200000003000011020101</p>
+<p>Aticonfig: Langur</p>
+<p>ConnectorInfo count in decimal: 3</p>
+<p>Disk offset in decimal 165904</p>
+<p>    00  04  00  00  04  06  00  00  00  01  00  00  21  03  04  02</p>
+<p>    00  04  00  00  04  06  00  00  00  01  00  00  11  02  01  01</p>
+<p>    04  00  00  00  14  02  00  00  00  01  00  00  02  04  05  03</p>
+<p>000400000406000000010000210304020004000004060000000100001102010104000000140200000001000002040503</p>
+<p>Aticonfig: Hoolock</p>
+<p>ConnectorInfo count in decimal: 3</p>
+<p>Disk offset in decimal 166176</p>
+<p>    00  04  00  00  04  06  00  00  00  01  00  00  21  03  05  01</p>
+<p>    00  04  00  00  04  06  00  00  00  01  00  00  11  02  04  02</p>
+<p>    04  00  00  00  14  02  00  00  00  01  00  00  02  04  01  03</p>
+<p>000400000406000000010000210305010004000004060000000100001102040204000000140200000001000002040103</p>
+<p>Aticonfig: Baboon</p>
+<p>ConnectorInfo count in decimal: 3</p>
+<p>Disk offset in decimal 166288</p>
+<p>    04  00  00  00  14  00  00  00  00  01  00  00  01  02  01  03</p>
+<p>    00  08  00  00  00  02  00  00  00  71  00  00  22  05  02  01</p>
+<p>    10  00  00  00  10  00  00  00  00  01  00  00  00  10  00  02</p>
+<p>040000001400000000010000010201030008000000020000007100002205020110000000100000000001000000100002</p>
+<p>Aticonfig: Eulemur</p>
+<p>ConnectorInfo count in decimal: 3</p>
+<p>Disk offset in decimal 166336</p>
+<p>    04  00  00  00  14  00  00  00  00  01  00  00  01  02  01  04</p>
+<p>    00  08  00  00  00  02  00  00  00  71  00  00  12  04  04  02</p>
+<p>    10  00  00  00  10  00  00  00  00  00  00  00  00  10  00  01</p>
+<p>040000001400000000010000010201040008000000020000007100001204040210000000100000000000000000100001</p>
+<p>Aticonfig: Galago</p>
+<p>ConnectorInfo count in decimal: 2</p>
+<p>Disk offset in decimal 166384</p>
+<p>    02  00  00  00  00  01  00  00  09  03  00  00  21  03  02  02</p>
+<p>    00  04  00  00  04  06  00  00  00  73  00  00  11  02  01  01</p>
+<p>0200000000010000090300002103020200040000040600000073000011020101</p>
+<p>Aticonfig: Colobus</p>
+<p>ConnectorInfo count in decimal: 2</p>
+<p>Disk offset in decimal 166432</p>
+<p>    02  00  00  00  00  01  00  00  09  03  00  00  21  03  02  02</p>
+<p>    00  04  00  00  04  06  00  00  00  73  00  00  11  02  01  01</p>
+<p>0200000000010000090300002103020200040000040600000073000011020101</p>
+<p>Aticonfig: Mangabey</p>
+<p>ConnectorInfo count in decimal: 2</p>
+<p>Disk offset in decimal 166480</p>
+<p>    02  00  00  00  40  00  00  00  09  01  00  00  00  00  00  03</p>
+<p>    00  04  00  00  04  06  00  00  00  73  00  00  11  02  01  01</p>
+<p>0200000040000000090100000000000300040000040600000073000011020101</p>
+<p>Aticonfig: Orangutan</p>
+<p>ConnectorInfo count in decimal: 2</p>
+<p>Disk offset in decimal 166608</p>
+<p>    02  00  00  00  40  00  00  00  09  01  00  00  00  00  00  05</p>
+<p>    00  04  00  00  04  06  00  00  00  73  00  00  11  02  01  01</p>
+<p>0200000040000000090100000000000500040000040600000073000011020101</p>
+<p>Personality: Nomascus</p>
+<p>ConnectorInfo count in decimal: 4</p>
+<p>Disk offset in decimal 169072</p>
+<p>    02  00  00  00  40  00  00  00  09  01  00  00  00  00  00  05</p>
+<p>    02  00  00  00  00  01  00  00  09  03  00  00  12  04  03  03</p>
+<p>    00  04  00  00  04  06  00  00  00  73  00  00  11  02  01  01</p>
+<p>    00  04  00  00  04  07  00  00  00  73  00  00  21  03  02  02</p>
+<p>02000000400000000901000000000005020000000001000009030000120403030004000004060000007300001102010100040000040700000073000021030202</p>
+<p>Personality: Vervet</p>
+<p>ConnectorInfo count in decimal: 4</p>
+<p>Disk offset in decimal 168752</p>
+<p>    00  04  00  00  00  04  00  00  00  71  00  00  12  04  04  02</p>
+<p>    04  00  00  00  14  00  00  00  00  71  00  00  01  12  01  04</p>
+<p>    00  02  00  00  14  00  00  00  00  71  00  00  00  00  06  03</p>
+<p>    00  08  00  00  00  02  00  00  00  71  00  00  22  05  05  01</p>
+<p>00040000000400000071000012040402040000001400000000710000011201040002000014000000007100000000060300080000000200000071000022050501</p>
+<p>Personality: Alouatta</p>
+<p>ConnectorInfo count in decimal: 4</p>
+<p>Disk offset in decimal 168640</p>
+<p>    02  00  00  00  00  01  00  00  09  01  00  00  12  04  03  03</p>
+<p>    00  04  00  00  04  06  00  00  00  71  00  00  11  02  01  01</p>
+<p>    00  04  00  00  04  06  00  00  00  71  00  00  21  03  02  02</p>
+<p>    00  04  00  00  04  06  00  00  00  71  00  00  22  05  04  04</p>
+<p>02000000000100000901000012040303000400000406000000710000110201010004000004060000007100002103020200040000040600000071000022050404</p>
+<p>Personality: Uakari</p>
+<p>ConnectorInfo count in decimal: 4</p>
+<p>Disk offset in decimal 168480</p>
+<p>    00  04  00  00  00  04  00  00  00  71  00  00  12  04  04  01</p>
+<p>    04  00  00  00  14  00  00  00  00  71  00  00  01  12  01  03</p>
+<p>    00  02  00  00  14  00  00  00  00  71  00  00  00  00  06  05</p>
+<p>    00  08  00  00  00  02  00  00  00  71  00  00  22  05  05  04</p>
+<p>00040000000400000071000012040401040000001400000000710000011201030002000014000000007100000000060500080000000200000071000022050504</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%9C%AA%E5%88%86%E7%B1%BB/" rel="tag"># 未分类</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/1858804712/" rel="prev" title="msi EX465安装MACOSX 系统安装">
+      <i class="fa fa-chevron-left"></i> msi EX465安装MACOSX 系统安装
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/2873657863/" rel="next" title="msi EX465安装MACOSX ACPI">
+      msi EX465安装MACOSX ACPI <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZorroYe</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

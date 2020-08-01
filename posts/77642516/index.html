@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-yes.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-yes.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-yes.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false};
+  </script>
+
+  <meta name="description" content="备注：有几个字体要下载的   #http:&#x2F;&#x2F;conky.sourceforge.net&#x2F;docs.html #http:&#x2F;&#x2F;forum.ubuntu.org.cn&#x2F;viewtopic.php?f&#x3D;33&amp;t&#x3D;173214 #全局设置————————————————————————— cpu_avg_samples         1   #监控几个CPU状况 net_avg_sampl">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CONKY配置">
+<meta property="og:url" content="http://yoursite.com/posts/77642516/index.html">
+<meta property="og:site_name" content="Ye&#39;s Blog">
+<meta property="og:description" content="备注：有几个字体要下载的   #http:&#x2F;&#x2F;conky.sourceforge.net&#x2F;docs.html #http:&#x2F;&#x2F;forum.ubuntu.org.cn&#x2F;viewtopic.php?f&#x3D;33&amp;t&#x3D;173214 #全局设置————————————————————————— cpu_avg_samples         1   #监控几个CPU状况 net_avg_sampl">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://img128.ph.126.net/B6XKezhP09_iTUMhkmgO3A==/1621858815808469013.jpg">
+<meta property="article:published_time" content="2011-03-19T07:35:00.000Z">
+<meta property="article:modified_time" content="2020-08-01T06:28:03.506Z">
+<meta property="article:author" content="ZorroYe">
+<meta property="article:tag" content="未分类">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://img128.ph.126.net/B6XKezhP09_iTUMhkmgO3A==/1621858815808469013.jpg">
+
+<link rel="canonical" href="http://yoursite.com/posts/77642516/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>CONKY配置 | Ye's Blog</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?2b0dbd880dfaff3fde3fcb1beb61713d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Ye's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">勤解万难</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ZorroYe</p>
+  <div class="site-description" itemprop="description">升级认知，看透本质</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">367</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zorroye" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zorroye" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:439753096@qq.com" title="E-Mail → mailto:439753096@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/77642516/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CONKY配置
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2011-03-19 15:35:00" itemprop="dateCreated datePublished" datetime="2011-03-19T15:35:00+08:00">2011-03-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-01 14:28:03" itemprop="dateModified" datetime="2020-08-01T14:28:03+08:00">2020-08-01</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p><img src="http://img128.ph.126.net/B6XKezhP09_iTUMhkmgO3A==/1621858815808469013.jpg" alt="CONKY配置 - leaf - ------坚持雅操------" title="CONKY配置 - leaf - ------坚持雅操------"></p>
+<p> 备注：有几个字体要下载的  </p>
+<p>#<a target="_blank" rel="noopener" href="http://conky.sourceforge.net/docs.html">http://conky.sourceforge.net/docs.html</a></p>
+<p>#<a target="_blank" rel="noopener" href="http://forum.ubuntu.org.cn/viewtopic.php?f=33&amp;t=173214">http://forum.ubuntu.org.cn/viewtopic.php?f=33&amp;t=173214</a></p>
+<p>#全局设置—————————————————————————</p>
+<p>cpu_avg_samples         1   #监控几个CPU状况</p>
+<p>net_avg_samples         1   #监控几个网络状况</p>
+<p>double_buffer         yes   #双倍缓存，用Ubuntu，不想看闪屏就这样写</p>
+<p>no_buffers            yes   #使用内存缓冲区</p>
+<p>update_interval       1.0   #定时更新时间,以秒为单位，Conky需要定时读取系统状态</p>
+<p>total_run_times         0   #开起来之后一直运行</p>
+<p>background            yes   #是否嵌入桌面</p>
+<p>override_utf8_locale  yes   #强制用UTF8解码，谁都不想看乱码</p>
+<p>out_to_console         no   #是否将Conky出错情况输出到终端</p>
+<p>minimum_size        170 5   #设定Conky的长宽，最小宽度为170像素，最小高度为5像素</p>
+<p>maximum_width         170   #设定Conky的长宽，最大宽度为170像素</p>
+<p>default_shade_color   black #默认底纹颜色和边框的颜色底纹</p>
+<p>default_outline_color white #默认轮廓色</p>
+<p>use_xft                yes  #指示conky用x字体，这样才能调用你安装的字体</p>
+<p>xftalpha               0.1  #Alpha of Xft font  ??</p>
+<p>xftfont Bitstream Charter:bold:size=9  #定义默认字体</p>
+<p>default_color        white  #定义默认字体颜色</p>
+<p>uppercase               no  #如果值设为“yes”则所有输出的文字都变成大写字母</p>
+<p>use_spacer            none  #???</p>
+<p>#全局设置—————————————————————————</p>
+<p>#窗体设置—————————————————————————</p>
+<p>own_window              yes  #自己的窗口，这样可以不闪</p>
+<p>own_window_transparent  yes  #背景透明</p>
+<p>own_window_type    override  #不受WM控制</p>
+<p>own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager  </p>
+<p>    #不装饰窗口（我们定义了他是个独立的窗口），</p>
+<p>    #永远在根窗口上（也就是屏幕），</p>
+<p>    #粘滞起来（不能让他乱跑）</p>
+<p>    #无视一切1，无视一切2</p>
+<p>#窗体设置—————————————————————————</p>
+<p>#边框设置—————————————————————————</p>
+<p>draw_borders            no   #不要边框，当然个人喜好 </p>
+<p>border_margin            0   #边框宽度 0</p>
+<p>draw_graph_borders      no   #不要边框图标      </p>
+<p>draw_shades             no   #字体绘制阴影</p>
+<p>draw_outline            no   #不要下划线</p>
+<p>#边框设置—————————————————————————</p>
+<p>#位置设置—————————————————————————</p>
+<p>#alignment        top_left   #设置最开始的位置</p>
+<p>#alignment      top_middle</p>
+<p>alignment        top_right        </p>
+<p>#alignment     bottom_left</p>
+<p>#alignment   bottom_middle</p>
+<p>#alignment    bottom_right</p>
+<p>#alignment            none</p>
+<p>gap_x                    0   #相对屏幕边界的位置调横向位移，这里是相对屏幕右上方调位置</p>
+<p>gap_y                   26   #相对屏幕边界的位置调纵向位移，这里是相对屏幕右上方调位置</p>
+<p>#位置设置—————————————————————————</p>
+<p>###——功能模块备份——###</p>
+<p>#图表显示硬盘实时读写状况————————————————————–</p>
+<p>#${color }Disk Read:${alignr}${color}$diskio_read</p>
+<p>#${color}${diskiograph_read /dev/sda 10,160 000000 ffffff}</p>
+<p>#${color }Disk Write:${alignr}${color}$diskio_write</p>
+<p>#${color}${diskiograph_write /dev/sda 10,160 000000 ffffff}</p>
+<p>#显示显卡型号————————————————————————</p>
+<p>#Video Card: ${color #cdc8b1}${execi 20 glxinfo | grep “OpenGL renderer” | cut -c 25-39}</p>
+<p>#GPUtemp:${execi 20 nvidia-settings -q gpucoretemp | grep “Attribute” | cut -d” “ -f6 | cut -c -2} °C</p>
+<p>#nvidia-settings -q gpucoretemp</p>
+<p>#显示系统信息————————————————————————</p>
+<p>#${font Microsoft YaHei:size=10}${color #F6E80C}主机:${font Bitstream Charter:bold:size=9}${color #c0ff3e} $alignr$nodename</p>
+<p>#${font Microsoft YaHei:size=10}${color #F6E80C}用户: ${font Bitstream Charter:bold:size=9}${color #c0ff3e} $alignr${execi 9999 whoami}</p>
+<p>###——功能模块备份——###</p>
+<p>#${font}:设字体</p>
+<p>#${color}:设字体颜色</p>
+<p>#${offset}:横向偏移，+向右</p>
+<p>#${voffset}：纵向偏移，+向下</p>
+<p>#${execi}:运行外部命令</p>
+<p>#功能设置—————————————————————————-</p>
+<p>TEXT</p>
+<p>${color }$stippled_hr</p>
+<p>${font Bitstream Charter:bold:size=10}${color #F6E80C}${execi 3600 python ~/.conky-rc/conkyForecast.py –location=CHXX0044 –datatype=CN}</p>
+<p>${font Weather:size=44}${color gold}${offset 16}${execi 3600 python ~/.conky-rc/conkyForecast.py –location=CHXX0044 –datatype=WF}</p>
+<p>${font Microsoft YaHei:bold:size=9}${color #ffe7ba}${voffset -96}${offset 90}${execi 3600 python ~/.conky-rc/conkyForecast.py –location=CHXX0044 –datatype=CC}</p>
+<p>${font Bitstream Charter:bold:size=9}${color #ffe7ba}${offset 90}${execi 3600 python ~/.conky-rc/conkyForecast.py –location=CHXX0044 –datatype=HT}</p>
+<p>${font Bitstream Charter:bold:size=9}${color #ffe7ba}${offset 90}${execi 3600 python ~/.conky-rc/conkyForecast.py –location=CHXX0044 –datatype=WS}${font Arrows:size=10}${execi 3600 python ~/.conky-rc/conkyForecast.py –location=CHXX0044 –datatype=BF}</p>
+<p>${font Microsoft YaHei:size=9}${color #ffe7ba}${offset 12}白天时间: ${color #ffe7ba}${execi 3600 python ~/.conky-rc/conkyForecast.py –location=CHXX0044 –datatype=SR}-${execi 3600 python ~/.conky-rc/conkyForecast.py –location=CHXX0044 –datatype=SS}</p>
+<p>${font Microsoft YaHei:bold:size=9}${color #F6E80C}${offset 15}${execi 3600 python ~/.conky-rc/conkyForecast.py –location=CHXX0044 –datatype=DW –startday=1 –endday=4 –spaces=3 –shortweekday}</p>
+<p>${font Weather:size=26}${color white}${offset 16}${execi 3600 python ~/.conky-rc/conkyForecast.py –location=CHXX0044 –datatype=WF –startday=1 –endday=4 –spaces=0}</p>
+<p>${font Weather:size=16}${color white}${voffset -20}z${font}:${color white}${execi 3600 python ~/.conky-rc/conkyForecast.py –location=CHXX0044 –datatype=HT –startday=1 –endday=4 –spaces=5}</p>
+<p>${font Weather:size=16}${color white}i${font}:${color white}${execi 3600 python ~/.conky-rc/conkyForecast.py –location=CHXX0044 –datatype=PC –startday=1 –endday=4 –spaces=4}</p>
+<p>${font Weather:size=16}${color white}v${font}:${color white}${execi 3600 python ~/.conky-rc/conkyForecast.py –location=CHXX0044 –datatype=WS –startday=1 –endday=4 –spaces=1}</p>
+<p>${font Arrows:size=10}${color gold}${voffset -15}${offset 38}${execi 3600 python ~/.conky-rc/conkyForecast.py –location=CHXX0044 –datatype=BF –startday=1 –endday=1 –spaces=0}${offset 27}${execi 3600 python ~/.conky-rc/conkyForecast.py –location=CHXX0044 –datatype=BF –startday=2 –endday=2 –spaces=0}${offset 30}${execi 3600 python ~/.conky-rc/conkyForecast.py –location=CHXX0044 –datatype=BF –startday=3 –endday=3 –spaces=0}${offset 22}${execi 3600 python ~/.conky-rc/conkyForecast.py –location=CHXX0044 –datatype=BF –startday=4 –endday=4 –spaces=0}${font}${color}</p>
+<p>${stippled_hr 1}</p>
+<p>${font Microsoft YaHei:size=9}${color #F6E80C}系统: ${font Bitstream Charter:bold:size=9}${color #c0ff3e} $alignr${execi 99999 lsb_release -d -s -c | tr -s “\n” “ “}</p>
+<p>${font Microsoft YaHei:size=9}${color #F6E80C}内核: ${font Bitstream Charter:bold:size=9}${color #c0ff3e}$alignr$kernel</p>
+<p>${font Microsoft YaHei:size=9}${color #F6E80C}用时: ${font Bitstream Charter:bold:size=9}${color #c0ff3e}$alignr$uptime</p>
+<p>${color }$stippled_hr</p>
+<p>${font Microsoft YaHei:size=9}${color #F6E80C}CPU温度:${font Bitstream Charter:bold:size=9}${color #c0ff3e}$alignr${acpitemp}°C</p>
+<p>${color white}CPU us:$alignr${color } $cpu% </p>
+<p>${cpubar 4}</p>
+<p>${color white}MEM:${color} $mem/$memmax$alignr$memperc%</p>
+<p>${membar 4}</p>
+<p>${color white}SWAP:${color} $swap/$swapmax$alignr$swapperc%</p>
+<p>${swapbar 4}</p>
+<p>${color }$stippled_hr</p>
+<p>${font Microsoft YaHei:size=9}${color #F6E80C}进程:${font Bitstream Charter:bold:size=9}${color #c0ff3e}$alignr$processes  ($running_processes running)</p>
+<p>${color #ffe7ba}Top Processes$alignr   CPU%  MEM%$color</p>
+<p>${top name 1}${color #FB0808}$alignr${top cpu 1}   ${top mem 1}$color</p>
+<p>${top name 2}${color #F6620C}$alignr${top cpu 2}   ${top mem 2}$color</p>
+<p>${top name 3}${color #F6E80C}$alignr${top cpu 3}   ${top mem 3}$color</p>
+<p>${top name 4}${color #08CB2F}$alignr${top cpu 4}   ${top mem 4}$color</p>
+<p>${top name 5}${color #0DBCCE}$alignr${top cpu 5}   ${top mem 5}$color</p>
+<p>${top name 6}${color #2758CF}$alignr${top cpu 6}   ${top mem 6}$color</p>
+<p>${top name 7}${color #8A11CB}$alignr${top cpu 6}   ${top mem 7}$color</p>
+<p>${color }$stippled_hr</p>
+<p>${font Microsoft YaHei:size=9}${color #F6E80C}硬盘温度:${font Bitstream Charter:bold:size=9}${color #c0ff3e}$alignr${hddtemp /dev/sda}°C</p>
+<p>${color white}Boot: ${alignr}${fs_free /boot} / ${fs_size /boot}</p>
+<p>${fs_bar 4 /boot}</p>
+<p>Root: ${alignr}${fs_free /} / ${fs_size /}</p>
+<p>${fs_bar 4 /}</p>
+<p>Home: ${alignr}${fs_free /home} / ${fs_size /home}</p>
+<p>${fs_bar 4 /home}</p>
+<p>Usr: ${alignr}${fs_free /usr} / ${fs_size /usr}</p>
+<p>${fs_bar 4 /usr}</p>
+<p>Var: ${alignr}${fs_free /var} / ${fs_size /var}</p>
+<p>${fs_bar 4 /var}</p>
+<p>Tmp: ${alignr}${fs_free /tmp} / ${fs_size /tmp}</p>
+<p>${fs_bar 4 /tmp}</p>
+<p>${color }$stippled_hr</p>
+<p>${font Microsoft YaHei:size=9}${color #F6E80C}WAN地址:${font Bitstream Charter:bold:size=9}${color #c0ff3e} $alignr${execi 3600 wget -O - <a target="_blank" rel="noopener" href="http://whatismyip.org/">http://whatismyip.org/</a> | tail}</p>
+<p>${font Microsoft YaHei:size=9}${color #F6E80C}IP地址:${font Bitstream Charter:bold:size=9}${color #c0ff3e} ${alignr} ${addr eth0}</p>
+<p>${downspeedgraph eth0 25,80 556B2F 9ACD32}${alignr}${upspeedgraph eth0 25,80 556B2F 9ACD32}</p>
+<p>${voffset -30}${font Microsoft YaHei:size=8}${color #F6E80C}down:${font Bitstream Charter:bold:size=9}${color white}${downspeed eth0}k/s${alignr}${font Microsoft YaHei:size=8}${color #F6E80C}up:${font Bitstream Charter:bold:size=9}${color white}${upspeed eth0}k/s</p>
+<p>${voffset 5}${font Microsoft YaHei:size=8}${color #F6E80C}Total:${font Bitstream Charter:bold:size=9}${color white}${totaldown eth0}${alignr}${font Microsoft YaHei:size=8}${color #F6E80C}Total:${font Bitstream Charter:bold:size=9}${color white}${totalup eth0}</p>
+<p>${color }$stippled_hr</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%9C%AA%E5%88%86%E7%B1%BB/" rel="tag"># 未分类</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/841776280/" rel="prev" title="gpg使用说明">
+      <i class="fa fa-chevron-left"></i> gpg使用说明
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/4056534827/" rel="next" title="compiz用法">
+      compiz用法 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZorroYe</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

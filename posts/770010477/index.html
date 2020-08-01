@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-yes.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-yes.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-yes.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false};
+  </script>
+
+  <meta name="description" content="对于 Linux 新手来说，由于对 Linux 平台上显卡驱动支持不是很了解，所以可能会在选择显卡品牌时无从下手。而 Ubuntu Gamer 上这篇文章，则用简明的语言阐述了 Nvidia ， AMD&#x2F;ATI 及 Intel 这三种最普遍的品牌显卡在 Linux 平台上的驱动现状，我简单翻译了一下，希望对你有所帮助。   　　－ Nvidia   　　除了提供最基本的仅支持 2D 的开源驱动">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[转载] A卡、N卡、还是 I 卡？">
+<meta property="og:url" content="http://yoursite.com/posts/770010477/index.html">
+<meta property="og:site_name" content="Ye&#39;s Blog">
+<meta property="og:description" content="对于 Linux 新手来说，由于对 Linux 平台上显卡驱动支持不是很了解，所以可能会在选择显卡品牌时无从下手。而 Ubuntu Gamer 上这篇文章，则用简明的语言阐述了 Nvidia ， AMD&#x2F;ATI 及 Intel 这三种最普遍的品牌显卡在 Linux 平台上的驱动现状，我简单翻译了一下，希望对你有所帮助。   　　－ Nvidia   　　除了提供最基本的仅支持 2D 的开源驱动">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2011-01-19T02:57:00.000Z">
+<meta property="article:modified_time" content="2020-08-01T06:28:03.873Z">
+<meta property="article:author" content="ZorroYe">
+<meta property="article:tag" content="未分类">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/posts/770010477/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>[转载] A卡、N卡、还是 I 卡？ | Ye's Blog</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?2b0dbd880dfaff3fde3fcb1beb61713d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Ye's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">勤解万难</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ZorroYe</p>
+  <div class="site-description" itemprop="description">升级认知，看透本质</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">367</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zorroye" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zorroye" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:439753096@qq.com" title="E-Mail → mailto:439753096@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/770010477/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [转载] A卡、N卡、还是 I 卡？
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2011-01-19 10:57:00" itemprop="dateCreated datePublished" datetime="2011-01-19T10:57:00+08:00">2011-01-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-01 14:28:03" itemprop="dateModified" datetime="2020-08-01T14:28:03+08:00">2020-08-01</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>　　对于 Linux 新手来说，由于对 Linux 平台上显卡驱动支持不是很了解，所以可能会在选择显卡品牌时无从下手。而 Ubuntu Gamer 上这篇文章，则用简明的语言阐述了 Nvidia ， AMD/ATI 及 Intel 这三种最普遍的品牌显卡在 Linux 平台上的驱动现状，我简单翻译了一下，希望对你有所帮助。  </p>
+<p>　　<strong>－ Nvidia</strong>  </p>
+<p>　　除了提供最基本的仅支持 2D 的开源驱动（用于各个发行版的内置驱动，现在已经被 Nouveau 驱动所取代）外，基本上 Nvidia 只提供闭源驱动。但闭源驱动的性能非常好，与 Windows 上的性能几乎差不多。而且 Nvidia 的驱动更新很频繁，有些会每月更新一次。而且他们还会使用 VDPAU 加速 API 来提供快速视频加速，这个加速 API 功能仅被当前最新的 Adobe Flash beta 支持。所以，如果你经常观看全屏高清视频的话，一块 Nvidia 显卡加上他们的驱动应该是最佳方案了。  </p>
+<p>　　但不幸的是，闭源的 Nvidia 也存在着不好的一面，主要一点是 Nvidia 至今（已经有好几年了）还不支持 Xrandr 协议，Xrandr 协议可以允许 X 来调整显示分辨率，或者扩展/克隆到外部显示器。如果你正在使用 Nvidia 显卡的话，这就是不能用 Ubuntu 自带的屏幕分辨率工具来调整分辨率的原因了。另外，有些软件需要依赖 Xrandr 的输出信息在显示器中进行定位，所以某些出错原因也是归纠于此。另一点就是 Nivida 的闭源驱动不支持内核模式设置 （ kernel mode setting – KMS) ，因此就无法提供高清晰的 Plymouth 启动显示画面（当然这个情况应该说存在于所有的闭源驱动中）。  </p>
+<p>　　在开源的 Nouveau 驱动项目方面，利用逆向工程开发出了支持 2D 和 3D 的 Nvidia 驱动，并取得了极大的进展。但与闭源的驱动相比，在性能上要相差很多，不过还是足以运行一些简单的游戏。而且还有一点有必要提醒的是，目前 Nvidia 方面也没有任何要帮助 Nouveau 项目的意图。  </p>
+<p>　　<strong>－ AMD/ATI</strong>  </p>
+<p>　　在 AMD 收购 ATI 之前，可以说在 Linux 上基本没有像样的 ATI 驱动。不过自从被 AMD 收购后，情况就变得大为不同。ATI 的闭源 Linux 驱动有了跨越式的发展，而且还支持 Xrandr 协议，这样你就可以完全使用 Ubuntu 内置分辨率调整工具了。而且在性能方面也非常好，也可以与 Wine 一起很好的工作。另外，AMD 也与 Canonical 共同合作，在每一个 Ubuntu 发行版中都会得到预发布的驱动。当然有一点与 Nividia 驱动相似的，那就是也不支持 KMS 。闭源的 AMD 驱动使用与 Nvidia 不同的视频 API ，而是唤作的 VA-API，不幸的是 Adobe 目前至今还没有支持它，所以基于 Flash 的高清视频受到一定的影响。另外与 Nvidia 相比欠缺的一点是，AMD 驱动需要花费更多的时间来支持新版内核及新的 X Server 版本，但对于 Ubuntu 用户来说并不是问题，因为它会默认搭载在 Ubuntu 发行版中。  </p>
+<p>　　在开源方面，AMD 也表现完美，不仅会发布卡的规格详情给开源社区，同时还聘请人员全职工作于开源驱动的开发。此驱动目前正在经历过渡到新的 Gallium3D 框架，但已接近完成，从现在起我们可以看到这些驱动的性能有了极大的改善。基本上，如果你拥有一块 AMD 卡的话，在 Ubuntu 上就可以用到 3D 加速功能。虽然性能也许不如闭源驱动，但如果你想安装闭源驱动的话，那也只是点一下鼠标的事情。所以说， AMD 在 Linux 驱动方面确实贡献卓越，大赞！  </p>
+<p>　　Update [2011.1.12] : 根据 Phoronix 的报道， VIA 的 KMS 支持代码已接近完成。  </p>
+<p>　　**－ Intel<br>**<br>　　可以说， Intel 是开源 Linux 图形卡驱动方面的王者，他们只发布 Linux 平台上的开源驱动，这也意味着你能体验到像 KMS 及 Xrandar 支持这样的所有功能。但 Intel 也并不完美，如果你拥有一块基于 GMA500 的卡的话，它基本上无法工作于 Ubuntu 上，因为这是英特尔购买了其他公司的芯片组后并更名了它，而且他们也不能为其开发开源驱动，虽然目前英特尔还在解决此问题。  </p>
+<p>　　Intel 的另外一个最大缺点是他们的硬件性能远远不如 AMD 和 Nvidia ，并且对于游戏支持也不够好。  </p>
+<p>　　<strong>－总结</strong>  </p>
+<p>　　如果对于你来说有开源驱动是非常重要的事，那么你可以用 Intel 或 AMD 的卡；如果你更关注性能，那么你可以用 AMD 或 Nvidia 的卡。总的来说， AMD/ATI 是更加前沿，更加值得推荐，因为他们在提供稳定开源驱动的同时，还提供了可靠快速的闭源驱动，堪称两全其美。  </p>
+<p>原文出处：<a target="_blank" rel="noopener" href="http://wowubuntu.com/nvidia-ati-intel.html">http://wowubuntu.com/nvidia-ati-intel.html</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%9C%AA%E5%88%86%E7%B1%BB/" rel="tag"># 未分类</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/3879864185/" rel="prev" title="SSD芯片">
+      <i class="fa fa-chevron-left"></i> SSD芯片
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/3674520218/" rel="next" title="技嘉主BIOS检测错误">
+      技嘉主BIOS检测错误 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZorroYe</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

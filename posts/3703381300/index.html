@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-yes.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-yes.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-yes.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false};
+  </script>
+
+  <meta name="description" content="平台配置    虚拟机：vmware workstation 9配置：    4核、1G内存、20G IDE硬盘(强烈建议用IDE硬盘)、软驱、IDE光驱    宿主版本：lfslivecd-x86-6.3-r2145.isoLFS目标版本：LFS 6.3包下载地址：http:&#x2F;&#x2F;ftp.lfs-matrix.net&#x2F;pub&#x2F;lfs&#x2F;lfs-packages&#x2F;lfs-packages-6.3.ta">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LFS制作-1、准备工作">
+<meta property="og:url" content="http://yoursite.com/posts/3703381300/index.html">
+<meta property="og:site_name" content="Ye&#39;s Blog">
+<meta property="og:description" content="平台配置    虚拟机：vmware workstation 9配置：    4核、1G内存、20G IDE硬盘(强烈建议用IDE硬盘)、软驱、IDE光驱    宿主版本：lfslivecd-x86-6.3-r2145.isoLFS目标版本：LFS 6.3包下载地址：http:&#x2F;&#x2F;ftp.lfs-matrix.net&#x2F;pub&#x2F;lfs&#x2F;lfs-packages&#x2F;lfs-packages-6.3.ta">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2012-10-22T01:45:00.000Z">
+<meta property="article:modified_time" content="2020-08-01T06:28:03.553Z">
+<meta property="article:author" content="ZorroYe">
+<meta property="article:tag" content="未分类">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/posts/3703381300/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>LFS制作-1、准备工作 | Ye's Blog</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?2b0dbd880dfaff3fde3fcb1beb61713d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Ye's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">勤解万难</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ZorroYe</p>
+  <div class="site-description" itemprop="description">升级认知，看透本质</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">367</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zorroye" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zorroye" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:439753096@qq.com" title="E-Mail → mailto:439753096@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/3703381300/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          LFS制作-1、准备工作
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2012-10-22 09:45:00" itemprop="dateCreated datePublished" datetime="2012-10-22T09:45:00+08:00">2012-10-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-01 14:28:03" itemprop="dateModified" datetime="2020-08-01T14:28:03+08:00">2020-08-01</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>平台配置  </p>
+<blockquote>
+<p>虚拟机：vmware workstation 9<br>配置：    4核、1G内存、20G IDE硬盘(强烈建议用IDE硬盘)、软驱、IDE光驱  </p>
+</blockquote>
+<p>宿主版本：lfslivecd-x86-6.3-r2145.iso<br>LFS目标版本：LFS 6.3<br>包下载地址：<a target="_blank" rel="noopener" href="http://ftp.lfs-matrix.net/pub/lfs/lfs-packages/lfs-packages-6.3.tar">http://ftp.lfs-matrix.net/pub/lfs/lfs-packages/lfs-packages-6.3.tar</a><br>操作方式：ssh<br>参考手册：  </p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://www.linuxfromscratch.org/lfs/view/6.3/">http://www.linuxfromscratch.org/lfs/view/6.3/</a><br><a target="_blank" rel="noopener" href="http://blog.chinaunix.net/uid-436750-id-2123580.html">http://blog.chinaunix.net/uid-436750-id-2123580.html</a><br>lfs6.2中文版  </p>
+</blockquote>
+<p>制作流程<br>宿主——————-&gt;临时系统———————&gt;目标系统  </p>
+<blockquote>
+<blockquote>
+<p>|                    |                                          |  </p>
+</blockquote>
+<p>  预工具链    kernel-header                     kernel-header<br>   binutils            glibc                                    glibc<br>     gcc              binutils                                binutils</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>gcc                                      gcc</p>
+</blockquote>
+<p>     其他工具                              其他工具</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>       kernel<br>  设置配置文件  </p>
+</blockquote>
+<p>        引导信息写入扇区  </p>
+<blockquote>
+<blockquote>
+<p>   |<br>重启  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>学习目的：  </p>
+<blockquote>
+<p>1、了解制作详细流程<br>2、读懂每条制作命令<br>3、学习linux是如何组织、构建起来的。<br>4、学习linux如何运作的<br>5、了解每个包的作用，及包含的命令和函数的作用，存放位置  </p>
+</blockquote>
+<p>其他说明：  </p>
+<blockquote>
+<p>1、强烈建议用IDE硬盘，SCSI有可能导致不识别，我编译核心后还是识别不了。<br>2、建议多编译几遍。<br>      我第一次编译的时候所有代码都是手动输入，而且还是按照孙海勇的那本书上输入的，花了整整2周时间。<br>      而按照LFS说明书手动输入，花了13个小时。而SSH连入操作的话，8小时就差不多了。  </p>
+</blockquote>
+<p>0、ssh连接  </p>
+<blockquote>
+<p>1、进livecd，passwd root<br>2、/etc/rc.d/init.d/sshd restart 即可使用ssh连接了  </p>
+</blockquote>
+<blockquote>
+<p>引自：<a target="_blank" rel="noopener" href="http://zouyi.ixiezi.com/2009/08/18/%E6%90%AD%E5%BB%BAlfs%E4%B9%8Bssh%E8%BF%9E%E6%8E%A5%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84livecd/">搭建LFS之ssh连接虚拟机的livecd</a></p>
+</blockquote>
+<p>-—————————————————————————————————<br>准备工作  </p>
+<blockquote>
+<p>分区  </p>
+<blockquote>
+<p>cfdisk<br>/dev/hda1，设置boot标志<br>dev/hda5  </p>
+</blockquote>
+<p>格式化  </p>
+<blockquote>
+<p>mke2fs -jv /dev/hda1<br>mkswap /dev/hda5  </p>
+</blockquote>
+<p>设置全局目录变量  </p>
+<blockquote>
+<p>export LFS=/mnt/lfs  </p>
+</blockquote>
+<p>新建并挂载目录  </p>
+<blockquote>
+<p>mkdir -pv $LFS<br>mkdir -pv $LFS/tools $LFS/sources  $LFS/build<br>mount -v -t ext3 /dev/hda1 $LFS<br>swapon -v /dev/hda5<br>cd $LFS<br>chmod a+wt tools sources build  </p>
+</blockquote>
+<p>下载软件包和补丁  </p>
+<blockquote>
+<p>cd $LFS/sources  </p>
+</blockquote>
+<blockquote>
+<p>wget <a target="_blank" rel="noopener" href="http://ftp.lfs-matrix.net/pub/lfs/lfs-packages/lfs-packages-6.3.tar">http://ftp.lfs-matrix.net/pub/lfs/lfs-packages/lfs-packages-6.3.tar</a><br>tar -xvf lfs-packages-6.3.tar<br>#<a target="_blank" rel="noopener" href="http://ftp.lfs-matrix.net/pub/lfs/lfs-packages/">http://ftp.lfs-matrix.net/pub/lfs/lfs-packages/</a> ，每个版本都有<br>#如果用wget-list下载  </p>
+<blockquote>
+<p>wget -i wget-list &amp;  </p>
+</blockquote>
+<blockquote>
+<p>#用正则表达式把下载列表和wget-list核对一下  </p>
+<blockquote>
+<p>#cat wget-list | sed ‘s/^.*\///g’ |sort  &gt; 1<br>#ls ./sources | sort &gt;2<br>#diff 1 2  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>最后的准备工作  </p>
+<blockquote>
+<p>ln -sv $LFS/tools /  </p>
+</blockquote>
+<blockquote>
+<p>groupadd lfs<br>useradd -s /bin/bash -g lfs -m -k /dev/null lfs  </p>
+</blockquote>
+<blockquote>
+<p>passwd lfs<br>chown -v lfs $LFS/tools $LFS/sources $LFS/build<br>su - lfs  </p>
+<blockquote>
+<p>cat &gt; ~/.bash_profile &lt;&lt; “EOF”<br><code>exec env -i HOME=$HOME TERM=$TERM PS1=&#39;\u:\w\$ &#39; /bin/bash</code><br>#不知道TERM变量什么用<br>EOF</p>
+</blockquote>
+<p>-——————–  </p>
+<blockquote>
+<p>cat &gt; ~/.bashrc &lt;&lt; “EOF”<br><code>set +h</code><br>#关闭bash的hash功能，hash是建hash表来记录命令的路径，以免每次都从PATH里搜索<br><code>umask 022</code><br><code>LFS=/mnt/lfs</code><br><code>LC_ALL=POSIX</code><br><code>PATH=/tools/bin:/bin:/usr/bin</code><br>#设置tool路径的话，每建好一个命令就能直接用，不需要再用宿主的命令<br><code>export LFS LC_ALL PATH</code><br>EOF  </p>
+</blockquote>
+<p>-———————  </p>
+<blockquote>
+<p>source ~/.bash_profile  </p>
+</blockquote>
+</blockquote>
+<p>备注：编译文件时使用“make -j4”来使编译时使用4个核心一起编译，编译目标系统时不建议用</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%9C%AA%E5%88%86%E7%B1%BB/" rel="tag"># 未分类</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/319038377/" rel="prev" title="LFS制作-概念、原理">
+      <i class="fa fa-chevron-left"></i> LFS制作-概念、原理
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/1578739451/" rel="next" title="LFS制作-2、预工具链">
+      LFS制作-2、预工具链 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZorroYe</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

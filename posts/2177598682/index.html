@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-yes.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-yes.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-yes.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false};
+  </script>
+
+  <meta name="description" content="1、安装lamp套装    sudo apt-get install apache2 libapache2-mod-php5 php5-mysql mysql-server php5-memcache php5-gd说明：php5-gd用于处理图片格式php5-memcache 用于把内存做缓存用    2、创建数据库、建用户等    nano mydb.sql      DROP TABLE I">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ubuntus 最佳方案 -4 LAMP">
+<meta property="og:url" content="http://yoursite.com/posts/2177598682/index.html">
+<meta property="og:site_name" content="Ye&#39;s Blog">
+<meta property="og:description" content="1、安装lamp套装    sudo apt-get install apache2 libapache2-mod-php5 php5-mysql mysql-server php5-memcache php5-gd说明：php5-gd用于处理图片格式php5-memcache 用于把内存做缓存用    2、创建数据库、建用户等    nano mydb.sql      DROP TABLE I">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://img1.ph.126.net/_YJiklBfcPvLaHGWFYHlsA==/2493586818696969731.jpg">
+<meta property="og:image" content="http://img2.ph.126.net/b-5dciHZHxuNErJeRiLVHw==/1074952936075702232.jpg">
+<meta property="article:published_time" content="2012-04-27T03:01:00.000Z">
+<meta property="article:modified_time" content="2020-08-01T06:28:03.662Z">
+<meta property="article:author" content="ZorroYe">
+<meta property="article:tag" content="未分类">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://img1.ph.126.net/_YJiklBfcPvLaHGWFYHlsA==/2493586818696969731.jpg">
+
+<link rel="canonical" href="http://yoursite.com/posts/2177598682/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>ubuntus 最佳方案 -4 LAMP | Ye's Blog</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?2b0dbd880dfaff3fde3fcb1beb61713d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Ye's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">勤解万难</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ZorroYe</p>
+  <div class="site-description" itemprop="description">升级认知，看透本质</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">367</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zorroye" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zorroye" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:439753096@qq.com" title="E-Mail → mailto:439753096@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/2177598682/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ubuntus 最佳方案 -4 LAMP
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2012-04-27 11:01:00" itemprop="dateCreated datePublished" datetime="2012-04-27T11:01:00+08:00">2012-04-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-01 14:28:03" itemprop="dateModified" datetime="2020-08-01T14:28:03+08:00">2020-08-01</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>1、安装lamp套装  </p>
+<blockquote>
+<p>sudo apt-get install apache2 libapache2-mod-php5 php5-mysql mysql-server php5-memcache php5-gd<br>说明：<br>php5-gd用于处理图片格式<br>php5-memcache 用于把内存做缓存用  </p>
+</blockquote>
+<p>2、创建数据库、建用户等  </p>
+<blockquote>
+<p>nano mydb.sql  </p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>DROP TABLE IF EXISTS `users`;<br>CREATE TABLE `users`(<br>  `uid` int(10) unsigned NOT NULL default ‘0’,<br>  `name` varchar(60) NOT NULL default ‘’,<br>  `pass` varchar(32) NOT NULL default ‘’,<br>  `mail` varchar(64) default ‘’,<br>  PRIMARY KEY (`uid`),<br>  UNIQUE KEY `name` (`name`)<br>);  </p>
+<p>INSERT INTO `users` (`uid`, `name`, `pass`, `mail`) VALUES<br>(1, ‘Hiweed’, MD5(‘passwdHiweed’), ‘hiweed@test.com’),<br>(2, ‘Ning’, MD5(‘passwdNing’), ‘ning@test.com’),<br>(3, ‘Guoce’, MD5(‘passwdGuoce’), ‘guoce@test.com’)  </p>
+</blockquote>
+<p>mysqladmin -uroot -p create mydb<br>mysql mydb -uroot -p &lt; mydb.sql<br>检查导入的数据是否正确<br>mysql mydb -uroot -p 然后输入密码<br>mysql&gt; select * from users;  </p>
+<p><img src="http://img1.ph.126.net/_YJiklBfcPvLaHGWFYHlsA==/2493586818696969731.jpg" alt="ubuntus 最佳方案 -4 - leaf - ------坚持雅操------" title="ubuntus 最佳方案 -4 - leaf - ------坚持雅操------"></p>
+<p> 建用户并设置权限<br>mysql&gt; GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, INDEX, ALTER ON mydb.* TO ‘abc’@’localhost’ IDENTIFIED BY ‘123456’;<br>Query OK, 0 rows affected (0.00 sec)  </p>
+<p>mysql&gt; flush privileges;    #刷新使之生效<br>Query OK, 0 rows affected (0.00 sec)  </p>
+<p>mysql&gt; exit<br>Bye  </p>
+</blockquote>
+<p>3、测试PHP  </p>
+<blockquote>
+<p>echo “<?php phpinfo(); ?>“  | sudo tee /var/www/<a target="_blank" rel="noopener" href="http://www.a.com/phpinfo.php">www.a.com/phpinfo.php</a>  </p>
+</blockquote>
+<blockquote>
+<p>装phpmyadmin<br>sudo apt-get install phpmyadmin<br>sudo ln -s /usr/share/phpmyadmin /var/www/<a target="_blank" rel="noopener" href="http://www.a.com/phpmyadmin">www.a.com/phpmyadmin</a>  </p>
+</blockquote>
+<p>4、建站实例drupal  </p>
+<blockquote>
+<p>1、下载drupal  </p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://drupal.org/node/3060/release?api%5C_version%5C%5B%5C%5D=87">http://drupal.org/node/3060/release?api\_version\[\]=87</a><br>按书上的，我下载的也是6.6版本<br>tar xvf drupal-6.6.tar.gz<br>sudo mv drupal-6.6/{*,.htaccess} /var/www/<a target="_blank" rel="noopener" href="http://www.a.com/">www.a.com</a>  </p>
+</blockquote>
+<p>2、建drupal数据库和用户  </p>
+<blockquote>
+<p>mysqladmin -uroot -p create drupal6  </p>
+</blockquote>
+<blockquote>
+<p>mysql -uroot -p  </p>
+</blockquote>
+<blockquote>
+<p>mysql&gt; GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, CREATE TEMPORARY TABLES, LOCK TABLES ON drupal6.* TO ‘drupaluser’@’localhost’ IDENTIFIED BY ‘123456’;<br>Query OK, 0 rows affected (0.01 sec)  </p>
+<p>mysql&gt; FLUSH PRIVILEGES;<br>Query OK, 0 rows affected (0.01 sec)  </p>
+<p>mysql&gt; \q<br>Bye  </p>
+</blockquote>
+<p>3、开启clean url功能  </p>
+<blockquote>
+<p>sudo nano /etc/apache2/sites-available/<a target="_blank" rel="noopener" href="http://www.a.com/">www.a.com</a><br>把&lt;Direectory /var/www/<a target="_blank" rel="noopener" href="http://www.a.com/&gt;">www.a.com/&gt;</a> 下面的<br>allowoverride none  改为allowoverride all  </p>
+</blockquote>
+<p>4、配置drupal  </p>
+<blockquote>
+<p>第二步 要更改权限<br>sudo chmod o+w /var/www/<a target="_blank" rel="noopener" href="http://www.a.com/sites/default">www.a.com/sites/default</a><br>sudo chmod o+w /var/www/<a target="_blank" rel="noopener" href="http://www.a.com/sites/default/settings.php">www.a.com/sites/default/settings.php</a><br>第五步 再把权限改回来<br>sudo chmod o-w /var/www/<a target="_blank" rel="noopener" href="http://www.a.com/sites/default">www.a.com/sites/default</a><br>sudo chmod o-w /var/www/<a target="_blank" rel="noopener" href="http://www.a.com/sites/default/settings.php">www.a.com/sites/default/settings.php</a>  </p>
+<p>下载中文模块<br><a target="_blank" rel="noopener" href="http://drupal.org/node/265348">http://drupal.org/node/265348</a>  </p>
+</blockquote>
+</blockquote>
+<p>5、建wordpress  </p>
+<blockquote>
+<p>1、建wordpress数据库和用户  </p>
+<blockquote>
+<p>mysqladmin -uroot -p create wordpress  </p>
+</blockquote>
+<blockquote>
+<p>mysql -uroot -p  </p>
+</blockquote>
+<p>mysql&gt; GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, CREATE TEMPORARY TABLES, LOCK TABLES ON wordpress.* TO ‘wordpress’@’localhost’ IDENTIFIED BY ‘123456’;<br>Query OK, 0 rows affected (0.01 sec)  </p>
+<p>mysql&gt; FLUSH PRIVILEGES;<br>Query OK, 0 rows affected (0.01 sec)  </p>
+<p>mysql&gt; \q<br>Bye  </p>
+<p>2、改所有者<br>sudo chown -R www-data:www-data /var/www/wordpress  </p>
+<p>3、然后下一步下一步即可  </p>
+<p>附、更改上传文件的大小限制<br>sudo gedit /etc/php5/apache2/php.ini<br>更改  </p>
+<blockquote>
+<p>post_max_size=200M<br>file_uploads=On<br>upload_max_filesize=100M  </p>
+</blockquote>
+<p><img src="http://img2.ph.126.net/b-5dciHZHxuNErJeRiLVHw==/1074952936075702232.jpg" alt="ubuntus 最佳方案 -4 LAMP - leaf - ------坚持雅操------" title="ubuntus 最佳方案 -4 LAMP - leaf - ------坚持雅操------"></p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%9C%AA%E5%88%86%E7%B1%BB/" rel="tag"># 未分类</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/2254503815/" rel="prev" title="ubuntus 最佳方案  3-apache.conf">
+      <i class="fa fa-chevron-left"></i> ubuntus 最佳方案  3-apache.conf
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/3424829500/" rel="next" title="ubuntus 最佳方案 3-基于单IP的多虚拟主机">
+      ubuntus 最佳方案 3-基于单IP的多虚拟主机 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZorroYe</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

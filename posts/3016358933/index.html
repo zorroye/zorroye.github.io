@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-yes.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-yes.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-yes.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false};
+  </script>
+
+  <meta name="description" content="&#x2F;etc&#x2F;hosts:127.0.0.1 ywz.leaf.com ywz localhost &#x2F;etc&#x2F;krb5.conf [libdefaults] default_realm &#x3D; LEAF.COM # The following krb5.conf variables are only for MIT Kerberos. krb4_config &#x3D; &#x2F;etc&#x2F;krb.conf krb4_re">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ubuntu10.04加入到win2003域 相关配置文件">
+<meta property="og:url" content="http://yoursite.com/posts/3016358933/index.html">
+<meta property="og:site_name" content="Ye&#39;s Blog">
+<meta property="og:description" content="&#x2F;etc&#x2F;hosts:127.0.0.1 ywz.leaf.com ywz localhost &#x2F;etc&#x2F;krb5.conf [libdefaults] default_realm &#x3D; LEAF.COM # The following krb5.conf variables are only for MIT Kerberos. krb4_config &#x3D; &#x2F;etc&#x2F;krb.conf krb4_re">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2011-05-17T02:06:00.000Z">
+<meta property="article:modified_time" content="2020-08-01T06:28:03.631Z">
+<meta property="article:author" content="ZorroYe">
+<meta property="article:tag" content="未分类">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/posts/3016358933/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>ubuntu10.04加入到win2003域 相关配置文件 | Ye's Blog</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?2b0dbd880dfaff3fde3fcb1beb61713d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Ye's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">勤解万难</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#default-tgs-enctypes-des3-hmac-sha1"><span class="nav-number">1.</span> <span class="nav-text">default_tgs_enctypes &#x3D; des3-hmac-sha1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#default-tkt-enctypes-des3-hmac-sha1"><span class="nav-number">2.</span> <span class="nav-text">default_tkt_enctypes &#x3D; des3-hmac-sha1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#permitted-enctypes-des3-hmac-sha1"><span class="nav-number">3.</span> <span class="nav-text">permitted_enctypes &#x3D; des3-hmac-sha1</span></a></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ZorroYe</p>
+  <div class="site-description" itemprop="description">升级认知，看透本质</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">367</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zorroye" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zorroye" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:439753096@qq.com" title="E-Mail → mailto:439753096@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/3016358933/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ubuntu10.04加入到win2003域 相关配置文件
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2011-05-17 10:06:00" itemprop="dateCreated datePublished" datetime="2011-05-17T10:06:00+08:00">2011-05-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-01 14:28:03" itemprop="dateModified" datetime="2020-08-01T14:28:03+08:00">2020-08-01</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>/etc/hosts:127.0.0.1 ywz.leaf.com ywz localhost</p>
+<p>/etc/krb5.conf</p>
+<p>[libdefaults]</p>
+<p>default_realm = LEAF.COM</p>
+<p># The following krb5.conf variables are only for MIT Kerberos.</p>
+<p>krb4_config = /etc/krb.conf</p>
+<p>krb4_realms = /etc/krb.realms</p>
+<p>kdc_timesync = 1</p>
+<p>ccache_type = 4</p>
+<p>forwardable = true</p>
+<p>proxiable = true</p>
+<p># The following encryption type specification will be used by MIT Kerberos</p>
+<p># if uncommented.  In general, the defaults in the MIT Kerberos code are</p>
+<p># correct and overriding these specifications only serves to disable new</p>
+<p># encryption types as they are added, creating interoperability problems.</p>
+<p>#</p>
+<p># Thie only time when you might need to uncomment these lines and change</p>
+<p># the enctypes is if you have local software that will break on ticket</p>
+<p># caches containing ticket encryption types it doesn’t know about (such as</p>
+<p># old versions of Sun Java).</p>
+<h1 id="default-tgs-enctypes-des3-hmac-sha1"><a href="#default-tgs-enctypes-des3-hmac-sha1" class="headerlink" title="default_tgs_enctypes = des3-hmac-sha1"></a>default_tgs_enctypes = des3-hmac-sha1</h1><h1 id="default-tkt-enctypes-des3-hmac-sha1"><a href="#default-tkt-enctypes-des3-hmac-sha1" class="headerlink" title="default_tkt_enctypes = des3-hmac-sha1"></a>default_tkt_enctypes = des3-hmac-sha1</h1><h1 id="permitted-enctypes-des3-hmac-sha1"><a href="#permitted-enctypes-des3-hmac-sha1" class="headerlink" title="permitted_enctypes = des3-hmac-sha1"></a>permitted_enctypes = des3-hmac-sha1</h1><p># The following libdefaults parameters are only for Heimdal Kerberos.</p>
+<p>v4_instance_resolve = false</p>
+<p>v4_name_convert = {</p>
+<p>host = {</p>
+<p>rcmd = host</p>
+<p>ftp = ftp</p>
+<p>}</p>
+<p>plain = {</p>
+<p>something = something-else</p>
+<p>}</p>
+<p>}</p>
+<p>fcc-mit-ticketflags = true</p>
+<p>default_tgs_enctypes = RC4-HMAC DES-CBC-MD5 DES-CBC-CRC</p>
+<p>default_tkt_enctypes = RC4-HMAC DES-CBC-MD5 DES-CBC-CRC</p>
+<p>preferred_enctypes = RC4-HMAC DES-CBC-MD5 DES-CBC-CRC</p>
+<p>dns_lookup_kdc = true</p>
+<p>[realms]</p>
+<p>ATHENA.MIT.EDU = {</p>
+<p>kdc = kerberos.mit.edu:88</p>
+<p>kdc = kerberos-1.mit.edu:88</p>
+<p>kdc = kerberos-2.mit.edu:88</p>
+<p>admin_server = kerberos.mit.edu</p>
+<p>default_domain = mit.edu</p>
+<p>}</p>
+<p>MEDIA-LAB.MIT.EDU = {</p>
+<p>kdc = kerberos.media.mit.edu</p>
+<p>admin_server = kerberos.media.mit.edu</p>
+<p>}</p>
+<p>ZONE.MIT.EDU = {</p>
+<p>kdc = casio.mit.edu</p>
+<p>kdc = seiko.mit.edu</p>
+<p>admin_server = casio.mit.edu</p>
+<p>}</p>
+<p>MOOF.MIT.EDU = {</p>
+<p>kdc = three-headed-dogcow.mit.edu:88</p>
+<p>kdc = three-headed-dogcow-1.mit.edu:88</p>
+<p>admin_server = three-headed-dogcow.mit.edu</p>
+<p>}</p>
+<p>CSAIL.MIT.EDU = {</p>
+<p>kdc = kerberos-1.csail.mit.edu</p>
+<p>kdc = kerberos-2.csail.mit.edu</p>
+<p>admin_server = kerberos.csail.mit.edu</p>
+<p>default_domain = csail.mit.edu</p>
+<p>krb524_server = krb524.csail.mit.edu</p>
+<p>}</p>
+<p>IHTFP.ORG = {</p>
+<p>kdc = kerberos.ihtfp.org</p>
+<p>admin_server = kerberos.ihtfp.org</p>
+<p>}</p>
+<p>GNU.ORG = {</p>
+<p>kdc = kerberos.gnu.org</p>
+<p>kdc = kerberos-2.gnu.org</p>
+<p>kdc = kerberos-3.gnu.org</p>
+<p>admin_server = kerberos.gnu.org</p>
+<p>}</p>
+<p>1TS.ORG = {</p>
+<p>kdc = kerberos.1ts.org</p>
+<p>admin_server = kerberos.1ts.org</p>
+<p>}</p>
+<p>GRATUITOUS.ORG = {</p>
+<p>kdc = kerberos.gratuitous.org</p>
+<p>admin_server = kerberos.gratuitous.org</p>
+<p>}</p>
+<p>DOOMCOM.ORG = {</p>
+<p>kdc = kerberos.doomcom.org</p>
+<p>admin_server = kerberos.doomcom.org</p>
+<p>}</p>
+<p>ANDREW.CMU.EDU = {</p>
+<p>kdc = vice28.fs.andrew.cmu.edu</p>
+<p>kdc = vice2.fs.andrew.cmu.edu</p>
+<p>kdc = vice11.fs.andrew.cmu.edu</p>
+<p>kdc = vice12.fs.andrew.cmu.edu</p>
+<p>admin_server = vice28.fs.andrew.cmu.edu</p>
+<p>default_domain = andrew.cmu.edu</p>
+<p>}</p>
+<p>CS.CMU.EDU = {</p>
+<p>kdc = kerberos.cs.cmu.edu</p>
+<p>kdc = kerberos-2.srv.cs.cmu.edu</p>
+<p>admin_server = kerberos.cs.cmu.edu</p>
+<p>}</p>
+<p>DEMENTIA.ORG = {</p>
+<p>kdc = kerberos.dementia.org</p>
+<p>kdc = kerberos2.dementia.org</p>
+<p>admin_server = kerberos.dementia.org</p>
+<p>}</p>
+<p>stanford.edu = {</p>
+<p>kdc = krb5auth1.stanford.edu</p>
+<p>kdc = krb5auth2.stanford.edu</p>
+<p>kdc = krb5auth3.stanford.edu</p>
+<p>master_kdc = krb5auth1.stanford.edu</p>
+<p>admin_server = krb5-admin.stanford.edu</p>
+<p>default_domain = stanford.edu</p>
+<p>}</p>
+<p>LEAF.COM = {</p>
+<p>auth_to_local = RULE:[1:$0\$1](^LEAF\.COM\\.*)s/^LEAF\.COM/LEAF/</p>
+<p>auth_to_local = RULE:[1:$0\$1](^LEAF\.COM\\.*)s/^LEAF\.COM/LEAF/</p>
+<p>auth_to_local = DEFAULT</p>
+<p>}</p>
+<p>[domain_realm]</p>
+<p>.mit.edu = ATHENA.MIT.EDU</p>
+<p>mit.edu = ATHENA.MIT.EDU</p>
+<p>.media.mit.edu = MEDIA-LAB.MIT.EDU</p>
+<p>media.mit.edu = MEDIA-LAB.MIT.EDU</p>
+<p>.csail.mit.edu = CSAIL.MIT.EDU</p>
+<p>csail.mit.edu = CSAIL.MIT.EDU</p>
+<p>.whoi.edu = ATHENA.MIT.EDU</p>
+<p>whoi.edu = ATHENA.MIT.EDU</p>
+<p>.stanford.edu = stanford.edu</p>
+<p>.slac.stanford.edu = SLAC.STANFORD.EDU</p>
+<p>.LEAF.com = LEAF.COM</p>
+<p>[login]</p>
+<p>krb4_convert = true</p>
+<p>krb4_get_tickets = false</p>
+<p>[appdefaults]</p>
+<p>pam = {</p>
+<p>   mappings = LEAF\\(.*) $1@LEAF.COM</p>
+<p>   forwardable = true</p>
+<p>   validate = true</p>
+<p>}</p>
+<p>httpd = {</p>
+<p>   mappings = LEAF\\(.*) $1@LEAF.COM</p>
+<p>   reverse_mappings = (.*)@LEAF\.COM LEAF\$1</p>
+<p>}</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%9C%AA%E5%88%86%E7%B1%BB/" rel="tag"># 未分类</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/380620447/" rel="prev" title="ocs-agent 安装过程">
+      <i class="fa fa-chevron-left"></i> ocs-agent 安装过程
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/4236291604/" rel="next" title="grub2设置等待时间、设置修改密码">
+      grub2设置等待时间、设置修改密码 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZorroYe</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

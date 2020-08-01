@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-yes.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-yes.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-yes.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  
+  <link rel="stylesheet" href="/lib/animate-css/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false};
+  </script>
+
+  <meta name="description" content="本章主要介绍怎么用cisco   cisco存储介质    ROM：    存放POST自检程序 (相当于BIOS)存放bootstrap          (相当于linux的grub，一个启动程序)   ROM监控程序，微型IOS(相当于WINPE)    NVRAM：    16位软件寄存器(相当于设置启动顺序)存放配置文件    闪存：    保存CISCO IOS (相当于电脑硬盘)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CCNA第五章 管理cisco网络">
+<meta property="og:url" content="http://yoursite.com/posts/3113480854/index.html">
+<meta property="og:site_name" content="Ye&#39;s Blog">
+<meta property="og:description" content="本章主要介绍怎么用cisco   cisco存储介质    ROM：    存放POST自检程序 (相当于BIOS)存放bootstrap          (相当于linux的grub，一个启动程序)   ROM监控程序，微型IOS(相当于WINPE)    NVRAM：    16位软件寄存器(相当于设置启动顺序)存放配置文件    闪存：    保存CISCO IOS (相当于电脑硬盘)">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2012-08-30T07:45:00.000Z">
+<meta property="article:modified_time" content="2020-08-01T06:28:03.490Z">
+<meta property="article:author" content="ZorroYe">
+<meta property="article:tag" content="未分类">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/posts/3113480854/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>CCNA第五章 管理cisco网络 | Ye's Blog</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?2b0dbd880dfaff3fde3fcb1beb61713d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <main class="main">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+        <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Ye's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">勤解万难</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">ZorroYe</p>
+  <div class="site-description" itemprop="description">升级认知，看透本质</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">367</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/zorroye" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;zorroye" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:439753096@qq.com" title="E-Mail → mailto:439753096@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </section>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </header>
+
+      
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div id="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+      <div class="main-inner">
+        
+
+        <div class="content post posts-expand">
+          
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/posts/3113480854/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          CCNA第五章 管理cisco网络
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2012-08-30 15:45:00" itemprop="dateCreated datePublished" datetime="2012-08-30T15:45:00+08:00">2012-08-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-01 14:28:03" itemprop="dateModified" datetime="2020-08-01T14:28:03+08:00">2020-08-01</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>本章主要介绍怎么用cisco  </p>
+<p>cisco存储介质  </p>
+<blockquote>
+<p>ROM：  </p>
+<blockquote>
+<p>存放POST自检程序 (相当于BIOS)<br>存放bootstrap          (相当于linux的grub，一个启动程序)</p>
+</blockquote>
+<blockquote>
+<p>ROM监控程序，微型IOS(相当于WINPE)  </p>
+</blockquote>
+<p>NVRAM：  </p>
+<blockquote>
+<p>16位软件寄存器(相当于设置启动顺序)<br>存放配置文件  </p>
+</blockquote>
+<p>闪存：  </p>
+<blockquote>
+<p>保存CISCO IOS (相当于电脑硬盘)  </p>
+</blockquote>
+<p>RAM：  </p>
+<blockquote>
+<p>内存(相当于电脑内存)  </p>
+</blockquote>
+</blockquote>
+<p>cisco的启动顺序  </p>
+<blockquote>
+<p>-&gt;POST自检<br>-&gt;启动bootstrap<br>-&gt;bootstrap调用16位寄存器设置<br>-&gt;bootstrap载入闪存中的IOS/TFTP的IOS/ROM上的微型IOS  </p>
+</blockquote>
+<blockquote>
+<p>-&gt;cisco ios 调用NVRAM上的配置文件  </p>
+</blockquote>
+<p>CDP cisco发现协议  </p>
+<blockquote>
+<p>只能看到直连cisco设备<br>绘制拓扑图非常方便<br>不用啥设置，基本上show一下啥都清楚了  </p>
+</blockquote>
+<p>恢复口令  </p>
+<blockquote>
+</blockquote>
+<p>debug命令  </p>
+<blockquote>
+<p>检查全面，但是消耗巨大，严重降低性能。<br>#debug all<br>#no debug all  </p>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>主要内容：  </p>
+<blockquote>
+<p>启动过程  </p>
+</blockquote>
+<blockquote>
+<p>恢复口令<br>CDP<br>hosts/DNS名称解析设置  </p>
+</blockquote>
+<p>1、路由器启动详细过程  </p>
+<blockquote>
+<p>思科路由器的启动过程和电脑类似<br>首先，开机自检，开机自检程序存在ROM中。  </p>
+<blockquote>
+<p>ROM存了  |post自检程序  </p>
+<blockquote>
+<blockquote>
+<p>|ROM监控程序<br>|bootstrap，用于加载IOS，IOS相当于linux的内核；bootstrap相当于grub<br>|微型IOS，相当于WINPE  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>第二，由bootstrap加载IOS到RAM中  </p>
+<blockquote>
+<p>IOS存放在flash中，flash相当于硬盘<br>RAM就是内存，这个过程和加载linux内核是一样的  </p>
+</blockquote>
+<p>第三，加载配置文件  </p>
+<blockquote>
+<p>加载配置文件就相当于linux中的init程序的操作<br>配置文件存放在NVRAM中，NVRAM中还存放配置寄存器  </p>
+<blockquote>
+<p>配置寄存器的作用和linux下的inittab差不多<br>inittab可以使linux启动命令行界面或图形界面<br>而配置寄存器可以使IOS加载配置或不加载配置  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>补充：<br>CISCO IFS就是对flash的操作，flash就相当于硬盘  </p>
+</blockquote>
+<blockquote>
+<p>而路由协议啥的就是应用程序  </p>
+</blockquote>
+<p>2、恢复口令  </p>
+<blockquote>
+<p>1、开路由器后马上按ctrl+pause|break键，进入ROM监控模式<br>2、设置寄存器&gt;confreg 0x2142<br>3、重启路由器&gt;reset<br>4、修改密码  </p>
+<blockquote>
+<p>copy startup-config running-config<br>config terminal<br>enable secret 123<br>copy running-config startup-config<br>config-register 0x2102  </p>
+</blockquote>
+</blockquote>
+<p>3、思科CDP  </p>
+<blockquote>
+<p>就是查看直连设备IP、端口、IOS版本等<br>cdp有2个参数  </p>
+<blockquote>
+<p>#show cdp  </p>
+</blockquote>
+<blockquote>
+<p>(config)#cdp holdtime 180<br>(config)#cdp timer 60  </p>
+</blockquote>
+<p>cdp相关命令  </p>
+<blockquote>
+<p>(config)#no cdp run 完全关闭cdp<br>(config-if)#no cdp enable 关闭某个端口的cdp  </p>
+<p>#show cdp neighbor<br>#show cdp neighbor detail<br>#show cdp entry * protocols<br>#show cdp entry * version<br>#show cdp traffic<br>#show cdp interface (显示接口的CDP状态)  </p>
+</blockquote>
+</blockquote>
+<p>4、利用dns解析主机表  </p>
+<blockquote>
+<p>前提是网络上有DNS服务器<br>ip domain-lookup<br>ip name-server 192.168.1.1<br>ip domain-name 123.com  </p>
+<p>直接自己输入：<br>ip host R1 10.2.2.2  相当于在hosts文件里面写主机表  </p>
+</blockquote>
+<p>5、对远程连接的操作  </p>
+<blockquote>
+<p>telnet 10.1.1.1<br>本地的操作  </p>
+<blockquote>
+<p>show sessions<br>disconnect 2  </p>
+</blockquote>
+<p>远程设备上的操作  </p>
+<blockquote>
+<p>show users<br>exit  /  chlar line 2  </p>
+</blockquote>
+</blockquote>
+<p>其他摘录  </p>
+<blockquote>
+<p>boot system flash rom ftp tftp  </p>
+<p>show processes 相当于进程管理器  </p>
+<p>debug all  </p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%9C%AA%E5%88%86%E7%B1%BB/" rel="tag"># 未分类</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/529402642/" rel="prev" title="CCNA第四章 CISCO IOS">
+      <i class="fa fa-chevron-left"></i> CCNA第四章 CISCO IOS
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/2583200111/" rel="next" title="公司买了IBM设备+金蝶EAS">
+      公司买了IBM设备+金蝶EAS <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+        </div>
+        
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZorroYe</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
