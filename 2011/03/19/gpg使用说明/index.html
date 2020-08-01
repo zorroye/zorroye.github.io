@@ -22,15 +22,15 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false};
   </script>
 
-  <meta name="description" content="转载自：http:&#x2F;&#x2F;www.alexgao.com&#x2F;2009&#x2F;01&#x2F;24&#x2F;gpg&#x2F;   第一部分：生成、传播、作废 1、生成密钥对：  gpg –gen-key  信息：solar (solar000)  &amp;#115;&amp;#111;&amp;#x6c;&amp;#97;&amp;#114;&amp;#49;&amp;#50;&amp;#51;&amp;#x40;&amp;#x73;&amp;#111;&amp;#x6c;&amp;#x61;&amp;#114;&amp;#x2e;&amp;#x63;&amp;#x6">
+  <meta name="description" content="转载自：http:&#x2F;&#x2F;www.alexgao.com&#x2F;2009&#x2F;01&#x2F;24&#x2F;gpg&#x2F;   第一部分：生成、传播、作废 1、生成密钥对：  gpg –gen-key  信息：solar (solar000)  &amp;#115;&amp;#111;&amp;#x6c;&amp;#97;&amp;#114;&amp;#49;&amp;#50;&amp;#x33;&amp;#64;&amp;#115;&amp;#x6f;&amp;#108;&amp;#97;&amp;#x72;&amp;#46;&amp;#x63;&amp;#111;">
 <meta property="og:type" content="article">
 <meta property="og:title" content="gpg使用说明">
 <meta property="og:url" content="http://yoursite.com/2011/03/19/gpg%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E/index.html">
 <meta property="og:site_name" content="Ye&#39;s Blog">
-<meta property="og:description" content="转载自：http:&#x2F;&#x2F;www.alexgao.com&#x2F;2009&#x2F;01&#x2F;24&#x2F;gpg&#x2F;   第一部分：生成、传播、作废 1、生成密钥对：  gpg –gen-key  信息：solar (solar000)  &amp;#115;&amp;#111;&amp;#x6c;&amp;#97;&amp;#114;&amp;#49;&amp;#50;&amp;#51;&amp;#x40;&amp;#x73;&amp;#111;&amp;#x6c;&amp;#x61;&amp;#114;&amp;#x2e;&amp;#x63;&amp;#x6">
+<meta property="og:description" content="转载自：http:&#x2F;&#x2F;www.alexgao.com&#x2F;2009&#x2F;01&#x2F;24&#x2F;gpg&#x2F;   第一部分：生成、传播、作废 1、生成密钥对：  gpg –gen-key  信息：solar (solar000)  &amp;#115;&amp;#111;&amp;#x6c;&amp;#97;&amp;#114;&amp;#49;&amp;#50;&amp;#x33;&amp;#64;&amp;#115;&amp;#x6f;&amp;#108;&amp;#97;&amp;#x72;&amp;#46;&amp;#x63;&amp;#111;">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2011-03-19T06:46:00.000Z">
-<meta property="article:modified_time" content="2020-07-31T14:35:49.665Z">
+<meta property="article:modified_time" content="2020-07-31T14:35:49.000Z">
 <meta property="article:author" content="ZorroYe">
 <meta property="article:tag" content="未分类">
 <meta name="twitter:card" content="summary">
@@ -321,7 +321,7 @@
 <p><strong>第一部分：生成、传播、作废</strong></p>
 <p><strong>1、生成密钥对：</strong></p>
 <p> <strong>gpg –gen-key</strong></p>
-<p> <strong>信息：solar (solar000)  <a href="mailto:&#115;&#111;&#x6c;&#97;&#114;&#49;&#50;&#51;&#x40;&#x73;&#111;&#x6c;&#x61;&#114;&#x2e;&#x63;&#x6f;&#x6d;">&#115;&#111;&#x6c;&#97;&#114;&#49;&#50;&#51;&#x40;&#x73;&#111;&#x6c;&#x61;&#114;&#x2e;&#x63;&#x6f;&#x6d;</a></strong></p>
+<p> <strong>信息：solar (solar000)  <a href="mailto:&#115;&#111;&#x6c;&#97;&#114;&#49;&#50;&#x33;&#64;&#115;&#x6f;&#108;&#97;&#x72;&#46;&#x63;&#111;&#x6d;">&#115;&#111;&#x6c;&#97;&#114;&#49;&#50;&#x33;&#64;&#115;&#x6f;&#108;&#97;&#x72;&#46;&#x63;&#111;&#x6d;</a></strong></p>
 <p> <strong>密钥ID：538E9DA1</strong> </p>
 <p><strong>2、上传下载公钥：(给别人用)</strong></p>
 <p> <strong>gpg –keyserver hkp://keys.gnupg.net –send-keys 538E9DA1   #上传</strong></p>
@@ -344,8 +344,8 @@
 <p><strong>解密：gpg -o test -d test.gpg</strong></p>
 <p><strong>第四部分：删除密钥</strong></p>
 <p><strong>0、作废公钥：gpg –keyserver hkp://keys.gnupg.net –send-keys</strong> <strong>538E9DA1</strong></p>
-<p><strong>1、删除私钥：gpg –delete-secret-keys <a href="mailto:&#x73;&#x6f;&#108;&#97;&#x72;&#49;&#50;&#x33;&#x40;&#115;&#x6f;&#108;&#97;&#114;&#x2e;&#99;&#x6f;&#x6d;">&#x73;&#x6f;&#108;&#97;&#x72;&#49;&#50;&#x33;&#x40;&#115;&#x6f;&#108;&#97;&#114;&#x2e;&#99;&#x6f;&#x6d;</a></strong></p>
-<p><strong>2、删除公钥：gpg –delete-keys <a href="mailto:&#115;&#x6f;&#x6c;&#97;&#114;&#x31;&#50;&#51;&#x40;&#x73;&#111;&#108;&#x61;&#x72;&#x2e;&#99;&#x6f;&#109;">&#115;&#x6f;&#x6c;&#97;&#114;&#x31;&#50;&#51;&#x40;&#x73;&#111;&#108;&#x61;&#x72;&#x2e;&#99;&#x6f;&#109;</a></strong></p>
+<p><strong>1、删除私钥：gpg –delete-secret-keys <a href="mailto:&#x73;&#111;&#x6c;&#97;&#114;&#x31;&#x32;&#x33;&#x40;&#x73;&#111;&#x6c;&#97;&#114;&#46;&#x63;&#x6f;&#x6d;">&#x73;&#111;&#x6c;&#97;&#114;&#x31;&#x32;&#x33;&#x40;&#x73;&#111;&#x6c;&#97;&#114;&#46;&#x63;&#x6f;&#x6d;</a></strong></p>
+<p><strong>2、删除公钥：gpg –delete-keys <a href="mailto:&#115;&#111;&#108;&#97;&#114;&#x31;&#50;&#51;&#64;&#115;&#x6f;&#108;&#97;&#114;&#x2e;&#x63;&#111;&#x6d;">&#115;&#111;&#108;&#97;&#114;&#x31;&#50;&#51;&#64;&#115;&#x6f;&#108;&#97;&#114;&#x2e;&#x63;&#111;&#x6d;</a></strong></p>
 
     </div>
 
