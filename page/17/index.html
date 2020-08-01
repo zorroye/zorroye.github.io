@@ -19,7 +19,7 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
   <meta name="description" content="升级认知，看透本质">
@@ -102,7 +102,6 @@
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
     <div class="headband"></div>
-
     <main class="main">
       <header class="header" itemscope itemtype="http://schema.org/WPHeader">
         <div class="header-inner"><div class="site-brand-container">
@@ -126,6 +125,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -174,11 +174,38 @@
     <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
           
@@ -240,6 +267,10 @@
 
 
       </section>
+        <div class="back-to-top animated">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
     </div>
   </aside>
   <div id="sidebar-dimmer"></div>
@@ -248,10 +279,6 @@
       </header>
 
       
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
   <div class="reading-progress-bar"></div>
   <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
@@ -302,7 +329,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-01 15:43:16" itemprop="dateModified" datetime="2020-08-01T15:43:16+08:00">2020-08-01</time>
+                <time title="修改时间：2020-08-01 17:03:26" itemprop="dateModified" datetime="2020-08-01T17:03:26+08:00">2020-08-01</time>
               </span>
 
           
@@ -390,7 +417,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-01 15:43:16" itemprop="dateModified" datetime="2020-08-01T15:43:16+08:00">2020-08-01</time>
+                <time title="修改时间：2020-08-01 17:03:26" itemprop="dateModified" datetime="2020-08-01T17:03:26+08:00">2020-08-01</time>
               </span>
 
           
@@ -508,7 +535,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-01 15:43:16" itemprop="dateModified" datetime="2020-08-01T15:43:16+08:00">2020-08-01</time>
+                <time title="修改时间：2020-08-01 17:03:26" itemprop="dateModified" datetime="2020-08-01T17:03:26+08:00">2020-08-01</time>
               </span>
 
           
@@ -546,7 +573,7 @@
 </blockquote>
 <p>4、宿主开终端，用ssh连接进光盘系统  </p>
 <blockquote>
-<p>ssh <a href="mailto:&#114;&#111;&#x6f;&#116;&#x40;&#49;&#55;&#50;&#46;&#49;&#54;&#x2e;&#x34;&#51;&#x2e;&#49;&#x34;&#x32;">&#114;&#111;&#x6f;&#116;&#x40;&#49;&#55;&#50;&#46;&#49;&#54;&#x2e;&#x34;&#51;&#x2e;&#49;&#x34;&#x32;</a><br>#dhcp获取的IP地址是172.16.43.142  </p>
+<p>ssh <a href="mailto:&#114;&#111;&#111;&#116;&#64;&#49;&#x37;&#50;&#46;&#49;&#54;&#x2e;&#52;&#x33;&#x2e;&#49;&#x34;&#x32;">&#114;&#111;&#111;&#116;&#64;&#49;&#x37;&#50;&#46;&#49;&#54;&#x2e;&#52;&#x33;&#x2e;&#49;&#x34;&#x32;</a><br>#dhcp获取的IP地址是172.16.43.142  </p>
 </blockquote>
 <p>5、分区、格式化、挂载  </p>
 <blockquote>
@@ -836,7 +863,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-01 15:43:16" itemprop="dateModified" datetime="2020-08-01T15:43:16+08:00">2020-08-01</time>
+                <time title="修改时间：2020-08-01 17:03:26" itemprop="dateModified" datetime="2020-08-01T17:03:26+08:00">2020-08-01</time>
               </span>
 
           
@@ -958,7 +985,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-01 15:43:16" itemprop="dateModified" datetime="2020-08-01T15:43:16+08:00">2020-08-01</time>
+                <time title="修改时间：2020-08-01 17:03:26" itemprop="dateModified" datetime="2020-08-01T17:03:26+08:00">2020-08-01</time>
               </span>
 
           
@@ -1024,7 +1051,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-01 15:43:16" itemprop="dateModified" datetime="2020-08-01T15:43:16+08:00">2020-08-01</time>
+                <time title="修改时间：2020-08-01 17:03:26" itemprop="dateModified" datetime="2020-08-01T17:03:26+08:00">2020-08-01</time>
               </span>
 
           
@@ -1161,7 +1188,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-01 15:43:16" itemprop="dateModified" datetime="2020-08-01T15:43:16+08:00">2020-08-01</time>
+                <time title="修改时间：2020-08-01 17:03:26" itemprop="dateModified" datetime="2020-08-01T17:03:26+08:00">2020-08-01</time>
               </span>
 
           
@@ -1295,7 +1322,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-01 15:43:16" itemprop="dateModified" datetime="2020-08-01T15:43:16+08:00">2020-08-01</time>
+                <time title="修改时间：2020-08-01 17:03:26" itemprop="dateModified" datetime="2020-08-01T17:03:26+08:00">2020-08-01</time>
               </span>
 
           
@@ -1432,7 +1459,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-01 15:43:16" itemprop="dateModified" datetime="2020-08-01T15:43:16+08:00">2020-08-01</time>
+                <time title="修改时间：2020-08-01 17:03:26" itemprop="dateModified" datetime="2020-08-01T17:03:26+08:00">2020-08-01</time>
               </span>
 
           
@@ -1592,7 +1619,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-01 15:43:16" itemprop="dateModified" datetime="2020-08-01T15:43:16+08:00">2020-08-01</time>
+                <time title="修改时间：2020-08-01 17:03:26" itemprop="dateModified" datetime="2020-08-01T17:03:26+08:00">2020-08-01</time>
               </span>
 
           
@@ -1681,7 +1708,7 @@
 <p><img src="http://img5.ph.126.net/o2X5cqUGPM-55d7RzY6DfQ==/623185598455173235.png" alt="物理层 - leaf - ------坚持雅操------" title="物理层 - leaf - ------坚持雅操------"></p>
 </blockquote>
 </blockquote>
-<p>图转自：<a href="mailto:&#120;&#x69;&#101;&#x78;&#x69;&#x72;&#x65;&#110;&#x40;&#116;&#115;&#x69;&#x6e;&#x67;&#x68;&#x75;&#97;&#46;&#x6f;&#x72;&#103;&#46;&#x63;&#110;">&#120;&#x69;&#101;&#x78;&#x69;&#x72;&#x65;&#110;&#x40;&#116;&#115;&#x69;&#x6e;&#x67;&#x68;&#x75;&#97;&#46;&#x6f;&#x72;&#103;&#46;&#x63;&#110;</a>的回复。</p>
+<p>图转自：<a href="mailto:&#x78;&#105;&#101;&#120;&#105;&#x72;&#101;&#110;&#64;&#116;&#x73;&#105;&#x6e;&#103;&#104;&#117;&#97;&#x2e;&#x6f;&#114;&#103;&#x2e;&#x63;&#110;">&#x78;&#105;&#101;&#120;&#105;&#x72;&#101;&#110;&#64;&#116;&#x73;&#105;&#x6e;&#103;&#104;&#117;&#97;&#x2e;&#x6f;&#114;&#103;&#x2e;&#x63;&#110;</a>的回复。</p>
 
       
     </div>
@@ -1780,6 +1807,10 @@
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 

@@ -19,7 +19,7 @@
 
 <script class="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Gemini","version":"8.0.0-rc.4","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
   </script>
 
   <meta name="description" content="系统使用：ubuntu-8.04.4-server-i386.iso   1、文件目录&#x2F;sys：用于存放系统信息     2、&#x2F;etc&#x2F;fstab      sudo blkid  查看分区uuid   3、lvm  逻辑卷管理器     硬盘上面建lvm，lvm上面建分区。易于扩容和备份等   4、tasksel  用于快速安装服务套件            5、更改语系       查看当前语">
@@ -38,7 +38,7 @@
 <meta property="og:image" content="http://img8.ph.126.net/XNEalyrGgPBGQtUW3fdrig==/1275081644516690278.jpg">
 <meta property="og:image" content="http://img0.ph.126.net/HeI2Igi3XztxiaNamKlQYQ==/2655434930305746040.jpg">
 <meta property="article:published_time" content="2012-04-17T07:17:00.000Z">
-<meta property="article:modified_time" content="2020-08-01T07:43:16.389Z">
+<meta property="article:modified_time" content="2020-08-01T09:03:26.868Z">
 <meta property="article:author" content="ZorroYe">
 <meta property="article:tag" content="未分类">
 <meta name="twitter:card" content="summary">
@@ -114,7 +114,6 @@
 <body itemscope itemtype="http://schema.org/WebPage">
   <div class="container use-motion">
     <div class="headband"></div>
-
     <main class="main">
       <header class="header" itemscope itemtype="http://schema.org/WPHeader">
         <div class="header-inner"><div class="site-brand-container">
@@ -138,6 +137,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -186,11 +186,38 @@
     <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
           
@@ -252,6 +279,10 @@
 
 
       </section>
+        <div class="back-to-top animated">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
     </div>
   </aside>
   <div id="sidebar-dimmer"></div>
@@ -260,10 +291,6 @@
       </header>
 
       
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
   <div class="reading-progress-bar"></div>
   <a role="button" class="book-mark-link book-mark-link-fixed"></a>
 
@@ -314,7 +341,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-01 15:43:16" itemprop="dateModified" datetime="2020-08-01T15:43:16+08:00">2020-08-01</time>
+                <time title="修改时间：2020-08-01 17:03:26" itemprop="dateModified" datetime="2020-08-01T17:03:26+08:00">2020-08-01</time>
               </span>
 
           
@@ -343,7 +370,7 @@
 <p>9、服务的启动和停止<br> update-rc.d  apache defaults    设置默认启动<br>         update-rc.d  apache purge        不自动启动  </p>
 <p>10、网络配置<br>                /etc/network/interfaces   网卡及IP地址配置文件<br>                <img src="http://img2.ph.126.net/1WnTuBHmsufWHtDGPaKQ3w==/1299569967490523612.jpg" alt="ubuntus 最佳方案 -2 - leaf - ------坚持雅操------" title="ubuntus 最佳方案 -2 - leaf - ------坚持雅操------"><br>      重启网络<br>                 /etc/init.d/networking restart       <br>      DNS配置文件<br>                 /etc/resolv.conf<br>                 <img src="http://img2.ph.126.net/dp58g5iEd6j07JkpRHcuQQ==/2759580671688692722.jpg" alt="ubuntus 最佳方案 -2 - leaf - ------坚持雅操------" title="ubuntus 最佳方案 -2 - leaf - ------坚持雅操------"><br>       hosts文件<br>                 /etc/hosts   </p>
 <p>11、时间同步（每天同步一次）<br>       sudo nano /etc/cron.daily/timeupdate<br>          添加： ntpdate ntp.ubuntu.com<br>                     关于ntp servers，访问：<a target="_blank" rel="noopener" href="http://tf.nist.gov/tf-cgi/servers.cgi">http://tf.nist.gov/tf-cgi/servers.cgi</a><br>       sudo chmod 755 /etc/cron.daily/timeupdate  </p>
-<p>12、远程管理ubuntus<br>       —服务器上安装ssh-s<br>           sudo apt-get install openssh-server<br>                 ssh配置文件：/etc/ssh/sshd_config<br>       —客户端远程登录服务器<br>           ssh <a href="mailto:&#x78;&#x78;&#x78;&#x40;&#x31;&#x37;&#x32;&#46;&#x31;&#x36;&#x2e;&#x34;&#51;&#x2e;&#x31;&#x34;&#48;">&#x78;&#x78;&#x78;&#x40;&#x31;&#x37;&#x32;&#46;&#x31;&#x36;&#x2e;&#x34;&#51;&#x2e;&#x31;&#x34;&#48;</a>    然后输入xxx的密码(xxx为服务器的用户名)  </p>
+<p>12、远程管理ubuntus<br>       —服务器上安装ssh-s<br>           sudo apt-get install openssh-server<br>                 ssh配置文件：/etc/ssh/sshd_config<br>       —客户端远程登录服务器<br>           ssh <a href="mailto:&#120;&#120;&#120;&#64;&#49;&#x37;&#x32;&#46;&#49;&#x36;&#46;&#x34;&#x33;&#46;&#49;&#52;&#48;">&#120;&#120;&#120;&#64;&#49;&#x37;&#x32;&#46;&#49;&#x36;&#46;&#x34;&#x33;&#46;&#49;&#52;&#48;</a>    然后输入xxx的密码(xxx为服务器的用户名)  </p>
 <p>        <img src="http://img8.ph.126.net/XNEalyrGgPBGQtUW3fdrig==/1275081644516690278.jpg" alt="ubuntus 最佳方案 -2 - leaf - ------坚持雅操------" title="ubuntus 最佳方案 -2 - leaf - ------坚持雅操------"></p>
 <p> </p>
 <p>        查看那些人登录到本机：who<br>        踢出用户：<br>               ps -ef | grep pts/0<br>               kill -9 5593<br>        <img src="http://img0.ph.126.net/HeI2Igi3XztxiaNamKlQYQ==/2655434930305746040.jpg" alt="ubuntus 最佳方案 -2 - leaf - ------坚持雅操------" title="ubuntus 最佳方案 -2 - leaf - ------坚持雅操------"></p>
@@ -457,6 +484,10 @@
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 
