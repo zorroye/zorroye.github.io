@@ -244,20 +244,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">366</span>
+          <span class="site-state-item-count">282</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">66</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">58</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -303,7 +303,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2270870435/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/522471707/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -319,7 +319,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/2270870435/" class="post-title-link" itemprop="url">驾照期满换证流程</a>
+            <a href="/posts/522471707/" class="post-title-link" itemprop="url">FC4 rc.sysinit启动过程</a>
         </h2>
 
         <div class="post-meta">
@@ -329,15 +329,28 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2015-04-02 11:54:00" itemprop="dateCreated datePublished" datetime="2015-04-02T11:54:00+08:00">2015-04-02</time>
+              <time title="创建时间：2014-11-25 13:48:00" itemprop="dateCreated datePublished" datetime="2014-11-25T13:48:00+08:00">2014-11-25</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:52" itemprop="dateModified" datetime="2020-08-04T09:51:52+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
+                </span>
+            </span>
 
           
 
@@ -348,13 +361,58 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>1、去交警大队车管所</p>
-<p>2、交15块钱拍照费，交12块钱体检费。然后拍照（两张一寸照），体检（查色盲和视力）</p>
-<p>3、体检完毕拿到体检报告单，把住址，联系号码等写全，然后取票去办驾照</p>
-<p>4、办驾照除会出示驾照业务受理凭证，拿凭证去交10块钱，凭证上盖章。</p>
-<p>5、拿盖好章的凭证去取驾照。</p>
-<p>我第一个拍的队，半个小时搞定。办理的是10年的证噢<del>~</del></p>
-<p>注：没到期的拍照省内都可以办，到期后的拍照只能跑原先发证的车管所办理。</p>
+          <p>设置3个变量HOSTNAME,HOSTTYPE,unamer</p>
+<p>运行. /etc/sysconfig/network</p>
+<p>挂载/proc，加载usb模块，加载usb设备，挂载/sys</p>
+<p>运行. /etc/init.d/functions</p>
+<p>检查SELinux状态</p>
+<p>显示欢迎字幕：welcome to red hat …</p>
+<p>设置控制台的日志级别</p>
+<p>设置codline #ro root=LABEL=/ rhgb quiet</p>
+<p>初始化硬件，</p>
+<p>加载ide，scsi，network，audio等模块</p>
+<p>加载 /etc/sysconfig/modules/ 下的模块 #空</p>
+<p>加载 /etc/rc.modules 下设置的模块 #空 </p>
+<p>———开始图形化启动界面———</p>
+<p>挂载/dev/pts</p>
+<p>配置内核参数</p>
+<p>设置系统时钟</p>
+<p>设置hostname</p>
+<p>加载acpi模块</p>
+<p>设置zfcp</p>
+<p>设置RAID</p>
+<p>LVM2初始化</p>
+<p>需要的话卸载initrd</p>
+<p>需要的话更新quota</p>
+<p>以读写模式从新挂载/</p>
+<p>清理SELinux</p>
+<p>清理mtab</p>
+<p>删除mtab的临时文件</p>
+<p>把加载的文件系统写入到/etc/mtab下 / /proc /sys /dev/pts /proc/bus/usb</p>
+<p>挂载其他文件系统如smbfs等</p>
+<p>启动磁盘配额</p>
+<p>检查是否有必要设置SElinux？？？  Check to see if a full relabel is needed</p>
+<p>开始图形化启动界面</p>
+<p>初始化随机数</p>
+<p>需要的话从新配置电脑，</p>
+<p>从新读取/etc/sysconfig/network,hostname,</p>
+<p>删除/目录下的隐藏文件</p>
+<p>删除/var/lock/* /var/run/* 下的文件</p>
+<p>删除/var/lib/rpm/__db*</p>
+<p>删除/var/gdm/.gdmfifo</p>
+<p>从新设置pam权限</p>
+<p>清理utmp/wtmp</p>
+<p>清理/tmp</p>
+<p>新建/tmp/.ICE-unix</p>
+<p>启用交换分区</p>
+<p>挂载/proc/sys/fs/binfmt_misc</p>
+<p>运行/etc/rc.serial</p>
+<p>需要的话加载ide-cd  ide-scsi模块</p>
+<p>配置网络？？？ Boot time profiles. Yes, this should be somewhere else.</p>
+<p>——-内核已可用，模块已加载完——</p>
+<p>启动记录卸载/var/log/dmesg下</p>
+<p>create the crash indicator flag to warn on crashes, offer fsck with timeout</p>
+<p>结束rc.sysinit。</p>
 
       
     </div>
@@ -374,7 +432,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2348587197/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/941525438/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -390,7 +448,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/2348587197/" class="post-title-link" itemprop="url">树莓派B+ 操作摄像头</a>
+            <a href="/posts/941525438/" class="post-title-link" itemprop="url">FC4 实体机的/etc/rc.d/rc.sysinit</a>
         </h2>
 
         <div class="post-meta">
@@ -400,15 +458,28 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2015-03-16 10:47:00" itemprop="dateCreated datePublished" datetime="2015-03-16T10:47:00+08:00">2015-03-16</time>
+              <time title="创建时间：2014-11-25 11:40:00" itemprop="dateCreated datePublished" datetime="2014-11-25T11:40:00+08:00">2014-11-25</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:52" itemprop="dateModified" datetime="2020-08-04T09:51:52+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
+                </span>
+            </span>
 
           
 
@@ -419,928 +490,968 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>1、开启树莓派的摄像头功能</p>
-<blockquote>
-<p>sudo raspi-config</p>
-</blockquote>
-<blockquote>
-<p>重启</p>
-</blockquote>
-<p>2、安装相关软件</p>
-<blockquote>
-<p>sudo apt-get install luvcview</p>
-</blockquote>
-<blockquote>
-<p>sudo apt-get install python-opencv python-scipy python-numpy python-pip</p>
-</blockquote>
-<blockquote>
-<p>sudo pip install <a target="_blank" rel="noopener" href="https://github.com/ingenuitas/SimpleCV/zipball/master">https://github.com/ingenuitas/SimpleCV/zipball/master</a></p>
-</blockquote>
-<blockquote>
-</blockquote>
-<p>3、测试SimpleCV库</p>
-<blockquote>
-<p>python</p>
-</blockquote>
-<blockquote>
-<p>Python 2.7.3 (default, Mar 18 2014, 05:13:23)</p>
-<p>[GCC 4.6.3] on linux2</p>
-<p>Type “help”, “copyright”, “credits” or “license” for more information.</p>
-<p>&gt;&gt;&gt;import SimpleCV</p>
-<p>&gt;&gt;&gt;</p>
-</blockquote>
-<p>4、用摄像头保存一张图片</p>
-<blockquote>
-<p>from SimpleCV import Camera,Display<br>from time import sleep  </p>
-<p>myCamera = Camera(prop_set={“width”:320,”height”:240})  </p>
-<p>frame = myCamera.getImage()<br>frame.save(“camera-output.jpg”)</p>
-</blockquote>
-<blockquote>
-<p><img src="http://img2.ph.126.net/M95LVRZPOdHpdmovl9kuyg==/6608866426911394034.jpg" alt="树莓派B+ 操作摄像头 - leaf - ------坚持雅操------" title="树莓派B+ 操作摄像头 - leaf - ------坚持雅操------"></p>
+          <p>#!/bin/bash</p>
+<p>#</p>
+<p># /etc/rc.d/rc.sysinit - run once at boot time</p>
+<p>#</p>
+<p># Taken in part from Miquel van Smoorenburg’s bcheckrc.</p>
+<p>#</p>
+<p>HOSTNAME=`/bin/hostname`</p>
+<p>HOSTTYPE=`uname -m`</p>
+<p>unamer=`uname -r`</p>
+<p>if [ -f /etc/sysconfig/network ]; then</p>
+<p>    . /etc/sysconfig/network</p>
+<p>fi</p>
+<p>if [ -z “$HOSTNAME” -o “$HOSTNAME” = “(none)” ]; then</p>
+<p>    HOSTNAME=localhost</p>
+<p>fi</p>
+<p># Mount /proc and /sys (done here so volume labels can work with fsck)</p>
+<p>mount -n -t proc /proc /proc</p>
+<p>if [ ! -d /proc/bus/usb ]; then</p>
+<p>modprobe usbcore &gt;/dev/null 2&gt;&amp;1 &amp;&amp; mount -n -t usbfs /proc/bus/usb /proc/bus/usb</p>
+<p>else</p>
+<p>mount -n -t usbfs /proc/bus/usb /proc/bus/usb</p>
+<p>fi</p>
+<p>mount -n -t sysfs /sys /sys &gt;/dev/null 2&gt;&amp;1</p>
+<p>. /etc/init.d/functions</p>
+<p># Check SELinux status</p>
+<p>selinuxfs=`LC_ALL=C awk ‘/ selinuxfs / { print $2 }’ /proc/mounts`</p>
+<p>SELINUX=</p>
+<p>if [ -n “$selinuxfs” ] &amp;&amp; [ “`cat /proc/self/attr/current`“ != “kernel” ]; then</p>
+<p>if [ -r $selinuxfs/enforce ] ; then</p>
+<p>SELINUX=`cat $selinuxfs/enforce`</p>
+<p>else</p>
+<p># assume enforcing if you can’t read it</p>
+<p>SELINUX=1</p>
+<p>fi</p>
+<p>fi</p>
+<p>if [ -n “$SELINUX” -a -x /sbin/restorecon ] &amp;&amp; LC_ALL=C fgrep -q “ /dev “ /proc/mounts ; then</p>
+<p>/sbin/restorecon  -R /dev 2&gt;/dev/null</p>
+<p>fi</p>
+<p>disable_selinux() {</p>
+<p>echo “*** Warning – SELinux is active”</p>
+<p>echo “*** Disabling security enforcement for system recovery.”</p>
+<p>echo “*** Run ‘setenforce 1’ to reenable.”</p>
+<p>echo “0” &gt; $selinuxfs/enforce</p>
+<p>}</p>
+<p>relabel_selinux() {</p>
+<p>    if [ -x /usr/bin/rhgb-client ] &amp;&amp; /usr/bin/rhgb-client –ping ; then</p>
+<p>chvt 1</p>
+<p>    fi</p>
+<p>    echo “</p>
+<p>         *** Warning – SELinux relabel is required. ***</p>
+<p>*** Disabling security enforcement.         ***</p>
+<p>*** Relabeling could take a very long time, ***</p>
+<p>*** depending on file system size.          ***</p>
+<p>“</p>
+<p>    echo “0” &gt; $selinuxfs/enforce</p>
+<p>    /sbin/fixfiles -f -F relabel &gt; /dev/null 2&gt;&amp;1 </p>
+<p>    rm -f  /.autorelabel </p>
+<p>    echo “*** Enabling security enforcement.         ***“</p>
+<p>    echo $SELINUX &gt; $selinuxfs/enforce</p>
+<p>    if [ -x /usr/bin/rhgb-client ] &amp;&amp; /usr/bin/rhgb-client –ping ; then</p>
+<p>chvt 8</p>
+<p>    fi</p>
+<p>}</p>
+<p>if [ “$HOSTTYPE” != “s390” -a “$HOSTTYPE” != “s390x” ]; then</p>
+<p>  last=0</p>
+<p>  for i in `LC_ALL=C grep ‘^[0-9].*respawn:/sbin/mingetty’ /etc/inittab | sed ‘s/^.* tty\([0-9][0-9]*\).*/\1/g’`; do</p>
+<p>        &gt; /dev/tty$i</p>
+<p>        last=$i</p>
+<p>  done</p>
+<p>  if [ $last -gt 0 ]; then</p>
+<p>       &gt; /dev/tty$((last+1))</p>
+<p>       &gt; /dev/tty$((last+2))</p>
+<p>  fi</p>
+<p>fi</p>
+<p>if [ “$CONSOLETYPE” = “vt” -a -x /sbin/setsysfont ]; then</p>
+<p>   echo -n “Setting default font ($SYSFONT): “</p>
+<p>   /sbin/setsysfont</p>
+<p>   if [ $? -eq 0 ]; then</p>
+<p>      success</p>
+<p>   else</p>
+<p>      failure</p>
+<p>   fi</p>
+<p>   echo ; echo</p>
+<p>fi</p>
+<p># Print a text banner.</p>
+<p>echo -en $”\t\tWelcome to “</p>
+<p>if LC_ALL=C fgrep -q “Red Hat” /etc/redhat-release ; then </p>
+<p> [ “$BOOTUP” = “color” ] &amp;&amp; echo -en “\\033[0;31m”</p>
+<p> echo -en “Red Hat”</p>
+<p> [ “$BOOTUP” = “color” ] &amp;&amp; echo -en “\\033[0;39m”</p>
+<p> PRODUCT=`sed “s/Red Hat \(.*\) release.*/\1/“ /etc/redhat-release`</p>
+<p> echo “ $PRODUCT”</p>
+<p>elif LC_ALL=C fgrep -q “Fedora” /etc/redhat-release ; then </p>
+<p> [ “$BOOTUP” = “color” ] &amp;&amp; echo -en “\\033[0;31m”</p>
+<p> echo -en “Fedora”</p>
+<p> [ “$BOOTUP” = “color” ] &amp;&amp; echo -en “\\033[0;39m”</p>
+<p> PRODUCT=`sed “s/Fedora \(.*\) release.*/\1/“ /etc/redhat-release`</p>
+<p> echo “ $PRODUCT”</p>
+<p>else</p>
+<p> PRODUCT=`sed “s/ release.*//g” /etc/redhat-release`</p>
+<p> echo “$PRODUCT”</p>
+<p>fi</p>
+<p>if [ “$PROMPT” != “no” ]; then</p>
+<p> echo -en $”\t\tPress ‘I’ to enter interactive startup.”</p>
+<p> echo</p>
+<p>fi</p>
+<p># Fix console loglevel</p>
+<p>if [ -n “$LOGLEVEL” ]; then</p>
+<p>/bin/dmesg -n $LOGLEVEL</p>
+<p>fi</p>
+<p>[ -x /sbin/start_udev ] &amp;&amp; /sbin/start_udev</p>
+<p># Only read this once.</p>
+<p>cmdline=$(cat /proc/cmdline)</p>
+<p># Initialize hardware</p>
+<p>if [ -f /proc/sys/kernel/modprobe ]; then</p>
+<p>   if ! strstr “$cmdline” nomodules &amp;&amp; [ -f /proc/modules ] ; then</p>
+<p>       sysctl -w kernel.modprobe=”/sbin/modprobe” &gt;/dev/null 2&gt;&amp;1</p>
+<p>       sysctl -w kernel.hotplug=”/sbin/udevsend” &gt;/dev/null 2&gt;&amp;1</p>
+<p>   else</p>
+<p>       # We used to set this to NULL, but that causes ‘failed to exec’ messages”</p>
+<p>       sysctl -w kernel.modprobe=”/bin/true” &gt;/dev/null 2&gt;&amp;1</p>
+<p>       sysctl -w kernel.hotplug=”/bin/true” &gt;/dev/null 2&gt;&amp;1</p>
+<p>   fi</p>
+<p>fi</p>
+<p>echo -n $”Initializing hardware… “</p>
+<p>ide=””</p>
+<p>scsi=””</p>
+<p>network=””</p>
+<p>audio=””</p>
+<p>other=””</p>
+<p>eval `kmodule -d | while read devtype mod ; do</p>
+<p>case “$devtype” in</p>
+<p>“IDE”)ide=”$ide $mod”</p>
+<p>  echo “ide=\“$ide”\“;;</p>
+<p>“SCSI”) scsi=”$scsi $mod”</p>
+<p>  echo “scsi=\“$scsi”\“;;</p>
+<p>“NETWORK”) network=”$network $mod”</p>
+<p>  echo “network=\“$network”\“;;</p>
+<p>“AUDIO”) audio=”$audio $mod”</p>
+<p>  echo “audio=\“$audio”\“;;</p>
+<p>*) other=”$other $mod”</p>
+<p>  echo “other=\“$other”\“;;</p>
+<p>esac</p>
+<p>done`</p>
+<p>load_module () {</p>
+<p>LC_ALL=C fgrep -xq “$1” /etc/hotplug/blacklist 2&gt;/dev/null || modprobe $1 &gt;/dev/null 2&gt;&amp;1</p>
+<p>}</p>
+<p># IDE</p>
+<p>for module in $ide ; do</p>
+<p>load_module $module</p>
+<p>done</p>
+<p># SCSI</p>
+<p>for module in `/sbin/modprobe -c | LC_ALL=C awk ‘/^alias[[:space:]]+scsi_hostadapter[0-9]*[[:space:]]/ { print $3 }’` $scsi; do</p>
+<p>load_module $module</p>
+<p>done</p>
+<p>load_module floppy</p>
+<p>echo -n $” storage”</p>
+<p># Network</p>
+<p>pushd /etc/sysconfig/network-scripts &gt;/dev/null 2&gt;&amp;1</p>
+<p>interfaces=`ls ifcfg* | LC_ALL=C egrep -v ‘(ifcfg-lo|:|rpmsave|rpmorig|rpmnew)’ | \</p>
+<p>            LC_ALL=C egrep -v ‘(~|\.bak)$’ | \</p>
+<p>            LC_ALL=C egrep ‘ifcfg-[A-Za-z0-9\._-]+$’ | \</p>
+<p>   sed ‘s/^ifcfg-//g’ |</p>
+<p>   sed ‘s/[0-9]/ &amp;/‘ | LC_ALL=C sort -k 1,1 -k 2n | sed ‘s/ //‘`</p>
+<p>for i in $interfaces ; do</p>
+<p>eval $(LC_ALL=C fgrep “DEVICE=” ifcfg-$i)</p>
+<p>load_module $DEVICE</p>
+<p>done</p>
+<p>popd &gt;/dev/null 2&gt;&amp;1</p>
+<p>for module in $network ; do</p>
+<p>load_module $module</p>
+<p>done</p>
+<p>echo -n $” network”</p>
+<p># Sound</p>
+<p>for module in `/sbin/modprobe -c | LC_ALL=C awk ‘/^alias[[:space:]]+snd-card-[[:digit:]]+[[:space:]]/ { print $3 }’` $audio; do</p>
+<p>load_module $module</p>
+<p>done</p>
+<p>echo -n $” audio”</p>
+<p># Everything else (duck and cover)</p>
+<p>for module in $other ; do</p>
+<p>load_module $module</p>
+<p>done</p>
+<p>echo -n $” done”</p>
+<p>success</p>
+<p>echo</p>
+<p># Load other user-defined modules</p>
+<p>for file in /etc/sysconfig/modules/*.modules ; do</p>
+<p>  [ -x $file ] &amp;&amp; $file</p>
+<p>done</p>
+<p># Load modules (for backward compatibility with VARs)</p>
+<p>if [ -f /etc/rc.modules ]; then</p>
+<p>/etc/rc.modules</p>
+<p>fi</p>
+<p># Start the graphical boot, if necessary; /usr may not be mounted yet, so we</p>
+<p># may have to do this again after mounting</p>
+<p>RHGB_STARTED=0</p>
+<p>mount -n /dev/pts</p>
+<p>if strstr “$cmdline” rhgb &amp;&amp; ! strstr “$cmdline” early-login &amp;&amp; [ “$BOOTUP” = “color” -a “$GRAPHICAL” = “yes” -a -x /usr/bin/rhgb ]; then</p>
+<p>   LC_MESSAGES= /usr/bin/rhgb</p>
+<p>   RHGB_STARTED=1</p>
+<p>fi</p>
+<p># Configure kernel parameters</p>
+<p>update_boot_stage RCkernelparam</p>
+<p>sysctl -e -p /etc/sysctl.conf &gt;/dev/null 2&gt;&amp;1</p>
+<p># Set the system clock.</p>
+<p>update_boot_stage RCclock</p>
+<p>ARC=0</p>
+<p>SRM=0</p>
+<p>UTC=0</p>
+<p>if [ -f /etc/sysconfig/clock ]; then</p>
+<p>   . /etc/sysconfig/clock</p>
+<p>   # convert old style clock config to new values</p>
+<p>   if [ “${CLOCKMODE}” = “GMT” ]; then</p>
+<p>      UTC=true</p>
+<p>   elif [ “${CLOCKMODE}” = “ARC” ]; then</p>
+<p>      ARC=true</p>
+<p>   fi</p>
+<p>fi</p>
+<p>CLOCKDEF=””</p>
+<p>CLOCKFLAGS=”$CLOCKFLAGS –hctosys”</p>
+<p>case “$UTC” in</p>
+<p>    yes|true)CLOCKFLAGS=”$CLOCKFLAGS –utc”</p>
+<p>CLOCKDEF=”$CLOCKDEF (utc)” ;;</p>
+<p>    no|false)CLOCKFLAGS=”$CLOCKFLAGS –localtime”</p>
+<p>CLOCKDEF=”$CLOCKDEF (localtime)” ;;</p>
+<p>esac</p>
+<p>case “$ARC” in</p>
+<p>    yes|true)CLOCKFLAGS=”$CLOCKFLAGS –arc”</p>
+<p>CLOCKDEF=”$CLOCKDEF (arc)” ;;</p>
+<p>esac</p>
+<p>case “$SRM” in</p>
+<p>    yes|true)CLOCKFLAGS=”$CLOCKFLAGS –srm”</p>
+<p>CLOCKDEF=”$CLOCKDEF (srm)” ;;</p>
+<p>esac</p>
+<p>/sbin/hwclock $CLOCKFLAGS</p>
+<p>action $”Setting clock $CLOCKDEF: `date`“ /bin/true</p>
+<p>if [ “$CONSOLETYPE” = “vt” -a -x /bin/loadkeys ]; then</p>
+<p> KEYTABLE=</p>
+<p> KEYMAP=</p>
+<p> if [ -f /etc/sysconfig/console/default.kmap ]; then</p>
+<p>  KEYMAP=/etc/sysconfig/console/default.kmap</p>
+<p> else</p>
+<p>  if [ -f /etc/sysconfig/keyboard ]; then</p>
+<p>    . /etc/sysconfig/keyboard</p>
+<p>  fi</p>
+<p>  if [ -n “$KEYTABLE” -a -d “/lib/kbd/keymaps” ]; then</p>
+<p>     KEYMAP=”$KEYTABLE.map”</p>
+<p>  fi</p>
+<p> fi</p>
+<p> if [ -n “$KEYMAP” ]; then </p>
+<p>  if [ -n “$KEYTABLE” ]; then</p>
+<p>    echo -n $”Loading default keymap ($KEYTABLE): “</p>
+<p>  else</p>
+<p>    echo -n $”Loading default keymap: “</p>
+<p>  fi</p>
+<p>  loadkeys -u $KEYMAP &lt; /dev/tty0 &gt; /dev/tty0 2&gt;/dev/null &amp;&amp; \</p>
+<p>     success $”Loading default keymap” || failure $”Loading default keymap”</p>
+<p>  echo</p>
+<p> fi</p>
+<p>fi</p>
+<p># Set the hostname.</p>
+<p>update_boot_stage RChostname</p>
+<p>action $”Setting hostname ${HOSTNAME}: “ hostname ${HOSTNAME}</p>
+<p># Initialiaze ACPI bits</p>
+<p>if [ -d /proc/acpi ]; then</p>
+<p>   for module in /lib/modules/$unamer/kernel/drivers/acpi/* ; do</p>
+<p>      insmod $module &gt;/dev/null 2&gt;&amp;1</p>
+<p>   done</p>
+<p>fi</p>
+<p># configure all zfcp (scsi over fibrechannel) devices before trying to mount them</p>
+<p># zfcpconf.sh exists only on mainframe</p>
+<p>[ -x /sbin/zfcpconf.sh ] &amp;&amp; /sbin/zfcpconf.sh</p>
+<p># RAID setup</p>
+<p>update_boot_stage RCraid</p>
+<p>echo “raidautorun /dev/md0” | nash –quiet</p>
+<p>if [ -f /etc/mdadm.conf ]; then</p>
+<p>    /sbin/mdadm -A -s</p>
+<p>fi</p>
+<p># LVM2 initialization</p>
+<p>if [ -x /sbin/lvm.static ]; then</p>
+<p>    if ! LC_ALL=C fgrep -q “device-mapper” /proc/devices 2&gt;/dev/null ; then</p>
+<p>modprobe dm-mod &gt;/dev/null 2&gt;&amp;1</p>
+<p>    fi</p>
+<p>    echo “mkdmnod” | /sbin/nash –quiet &gt;/dev/null 2&gt;&amp;1</p>
+<p>    [ -n “$SELINUX” ] &amp;&amp; restorecon /dev/mapper/control &gt;/dev/null 2&gt;&amp;1</p>
+<p>    if [ -c /dev/mapper/control -a -x /sbin/lvm.static ]; then</p>
+<p>if /sbin/lvm.static vgscan –mknodes –ignorelockingfailure &gt; /dev/null 2&gt;&amp;1 ; then</p>
+<p>   action $”Setting up Logical Volume Management:” /sbin/lvm.static vgchange -a y –ignorelockingfailure</p>
+<p>fi</p>
+<p>    fi</p>
+<p>fi</p>
+<p>if [ -f /fastboot ] || strstr “$cmdline” fastboot ; then</p>
+<p>fastboot=yes</p>
+<p>fi</p>
+<p>if [ -f /fsckoptions ]; then</p>
+<p>fsckoptions=`cat /fsckoptions`</p>
+<p>fi</p>
+<p>if [ -f /forcefsck ] || strstr “$cmdline” forcefsck ; then</p>
+<p>fsckoptions=”-f $fsckoptions”</p>
+<p>elif [ -f /.autofsck ]; then</p>
+<p>[ -f /etc/sysconfig/autofsck ] &amp;&amp; . /etc/sysconfig/autofsck</p>
+<p>if [ “$AUTOFSCK_DEF_CHECK” = “yes” ]; then</p>
+<p>AUTOFSCK_OPT=”$AUTOFSCK_OPT -f”</p>
+<p>fi</p>
+<p>fsckoptions=”$AUTOFSCK_OPT $fsckoptions”</p>
+<p>fi</p>
+<p>if [ “$BOOTUP” = “color” ]; then</p>
+<p>fsckoptions=”-C $fsckoptions”</p>
+<p>else</p>
+<p>fsckoptions=”-V $fsckoptions”</p>
+<p>fi</p>
+<p>if [ -f /etc/sysconfig/readonly-root ]; then</p>
+<p>    . /etc/sysconfig/readonly-root</p>
+<p>    if [ “$READONLY” = “yes” ]; then</p>
+<p>        # Call rc.readonly to set up magic stuff needed for readonly root</p>
+<p>        . /etc/rc.readonly</p>
+<p>    fi</p>
+<p>fi</p>
+<p>_RUN_QUOTACHECK=0</p>
+<p>if [ -z “$fastboot” -a “$READONLY” != “yes” ]; then</p>
+<p>        STRING=$”Checking filesystems”</p>
+<p>echo $STRING</p>
+<p>if [ “${RHGB_STARTED}” != “0” -a -w /etc/rhgb/temp/rhgb-console ]; then</p>
+<p>fsck -T -A -a $fsckoptions &gt; /etc/rhgb/temp/rhgb-console</p>
+<p>else</p>
+<p>fsck -T -A -a $fsckoptions</p>
+<p>fi</p>
+<p>rc=$?</p>
+<p>if [ “$rc” -eq “0” ]; then</p>
+<p>success “$STRING”</p>
+<p>echo</p>
+<p>elif [ “$rc” -eq “1” ]; then</p>
+<p>       passed “$STRING”</p>
+<p>echo</p>
+<p>elif [ “$rc” -eq “2” -o “$rc” -eq “3” ]; then </p>
+<p>echo $”Unmounting file systems”</p>
+<p>umount -a</p>
+<p>mount -n -o remount,ro /</p>
+<p>echo $”Automatic reboot in progress.”</p>
+<p>reboot -f</p>
+<p>        fi</p>
+<p>        # A return of 4 or higher means there were serious problems.</p>
+<p>if [ $rc -gt 1 ]; then</p>
+<p>       if [ -x /usr/bin/rhgb-client ] &amp;&amp; /usr/bin/rhgb-client –ping ; then</p>
+<p>   chvt 1</p>
+<p>fi</p>
+<p>failure “$STRING”</p>
+<p>echo</p>
+<p>echo</p>
+<p>echo $”*** An error occurred during the file system check.”</p>
+<p>echo $”*** Dropping you to a shell; the system will reboot”</p>
+<p>echo $”*** when you leave the shell.”</p>
+<p>                str=$”(Repair filesystem)”</p>
+<p>PS1=”$str \# # “; export PS1</p>
+<p>[ “$SELINUX” = “1” ] &amp;&amp; disable_selinux</p>
+<p>sulogin</p>
+<p>echo $”Unmounting file systems”</p>
+<p>umount -a</p>
+<p>mount -n -o remount,ro /</p>
+<p>echo $”Automatic reboot in progress.”</p>
+<p>reboot -f</p>
+<p>elif [ “$rc” -eq “1” ]; then</p>
+<p>_RUN_QUOTACHECK=1</p>
+<p>fi</p>
+<p>if [ -f /.autofsck -a -x /usr/bin/rhgb-client ] &amp;&amp; /usr/bin/rhgb-client –ping ; then</p>
+<p>chvt 8</p>
+<p>    fi</p>
+<p>fi</p>
+<p># Unmount the initrd, if necessary</p>
+<p>if LC_ALL=C fgrep -q /initrd /proc/mounts &amp;&amp; ! LC_ALL=C fgrep -q /initrd/loopfs /proc/mounts ; then</p>
+<p>   umount /initrd</p>
+<p>   /sbin/blockdev –flushbufs /dev/ram0 &gt;/dev/null 2&gt;&amp;1</p>
+<p>fi</p>
+<p># Update quotas if necessary</p>
+<p>if [ X”$_RUN_QUOTACHECK” = X1 -a -x /sbin/quotacheck ]; then</p>
+<p>if [ -x /sbin/convertquota ]; then</p>
+<p>   # try to convert old quotas</p>
+<p>   for mountpt in `LC_ALL=C awk ‘$4 ~ /quota/{print $2}’ /etc/mtab` ; do</p>
+<p>if [ -f “$mountpt/quota.user” ]; then</p>
+<p>   action $”Converting old user quota files: “ \</p>
+<p>   /sbin/convertquota -u $mountpt &amp;&amp; \</p>
+<p>rm -f $mountpt/quota.user</p>
+<p>fi</p>
+<p>if [ -f “$mountpt/quota.group” ]; then</p>
+<p>   action $”Converting old group quota files: “ \</p>
+<p>   /sbin/convertquota -g $mountpt &amp;&amp; \</p>
+<p>rm -f $mountpt/quota.group</p>
+<p>fi</p>
+<p>   done</p>
+<p>fi</p>
+<p>action $”Checking local filesystem quotas: “ /sbin/quotacheck -aRnug</p>
+<p>fi</p>
+<p># Remount the root filesystem read-write.</p>
+<p>update_boot_stage RCmountfs</p>
+<p>state=`LC_ALL=C awk ‘/ \/ / &amp;&amp; ($3 !~ /rootfs/) { print $4 }’ /proc/mounts`</p>
+<p>[ “$state” != “rw” -a “$READONLY” != “yes” ] &amp;&amp; \</p>
+<p>  action $”Remounting root filesystem in read-write mode: “ mount -n -o remount,rw /</p>
+<p># Clean up SELinux labels</p>
+<p>if [ -n “$SELINUX” ]; then</p>
+<p>   for file in /etc/mtab /etc/ld.so.cache ; do</p>
+<p>   [ -r $file ] &amp;&amp; restorecon $file  &gt;/dev/null 2&gt;&amp;1</p>
+<p>   done</p>
+<p>fi</p>
+<p># Clear mtab</p>
+<p>(&gt; /etc/mtab) &amp;&gt; /dev/null</p>
+<p># Remove stale backups</p>
+<p>rm -f /etc/mtab~ /etc/mtab~~</p>
+<p># Enter mounted filesystems into /etc/mtab</p>
+<p>mount -f /</p>
+<p>mount -f /proc &gt;/dev/null 2&gt;&amp;1</p>
+<p>mount -f /sys &gt;/dev/null 2&gt;&amp;1</p>
+<p>mount -f /dev/pts &gt;/dev/null 2&gt;&amp;1</p>
+<p>mount -f /proc/bus/usb &gt;/dev/null 2&gt;&amp;1</p>
+<p># Mount all other filesystems (except for NFS and /proc, which is already</p>
+<p># mounted). Contrary to standard usage,</p>
+<p># filesystems are NOT unmounted in single user mode.</p>
+<p>action $”Mounting local filesystems: “ mount -a -t nonfs,nfs4,smbfs,ncpfs,cifs,gfs -O no_netdev</p>
+<p>if [ -x /sbin/quotaon ]; then</p>
+<p>    action $”Enabling local filesystem quotas: “ /sbin/quotaon -aug</p>
+<p>fi</p>
+<p># Check to see if a full relabel is needed</p>
+<p>if [ -n “$SELINUX” ]; then </p>
+<p>    if [ -f /.autorelabel ] || strstr “$cmdline” autorelabel ; then</p>
+<p>relabel_selinux</p>
+<p>    fi</p>
+<p>else</p>
+<p>    if [ -d /etc/selinux ]; then</p>
+<p>        [ -f /.autorelabel ] || touch /.autorelabel</p>
+<p>    fi</p>
+<p>fi</p>
+<p># Start the graphical boot, if necessary and not done yet.</p>
+<p>if strstr “$cmdline” rhgb &amp;&amp; ! strstr “$cmdline” early-login &amp;&amp; [ “$RHGB_STARTED” -eq 0 -a “$BOOTUP” = “color” -a “$GRAPHICAL” = “yes” -a -x /usr/bin/rhgb ]; then</p>
+<p>   LC_MESSAGES= /usr/bin/rhgb</p>
+<p>   RHGB_STARTED=1</p>
+<p>fi</p>
+<p># Initialize pseudo-random number generator</p>
+<p>if [ -f “/var/lib/random-seed” ]; then</p>
+<p>cat /var/lib/random-seed &gt; /dev/urandom</p>
+<p>else</p>
+<p>touch /var/lib/random-seed</p>
+<p>fi</p>
+<p>chmod 600 /var/lib/random-seed</p>
+<p>dd if=/dev/urandom of=/var/lib/random-seed count=1 bs=512 2&gt;/dev/null</p>
+<p># Use the hardware RNG to seed the entropy pool, if available</p>
+<p>#[ -x /sbin/rngd -a -c /dev/hw_random ] &amp;&amp; rngd</p>
+<p># Configure machine if necessary.</p>
+<p>if [ -f /.unconfigured ]; then</p>
+<p>    if [ -x /usr/bin/rhgb-client ] &amp;&amp; /usr/bin/rhgb-client –ping ; then</p>
+<p>chvt 1</p>
+<p>    fi</p>
+<p>    if [ -x /usr/bin/system-config-keyboard ]; then</p>
+<p>/usr/bin/system-config-keyboard</p>
+<p>    fi</p>
+<p>    if [ -x /usr/bin/passwd ]; then </p>
+<p>        /usr/bin/passwd root</p>
+<p>    fi</p>
+<p>    if [ -x /usr/sbin/netconfig ]; then</p>
+<p>/usr/sbin/netconfig</p>
+<p>    fi</p>
+<p>    if [ -x /usr/sbin/timeconfig ]; then</p>
+<p>/usr/sbin/timeconfig</p>
+<p>    fi</p>
+<p>    if [ -x /usr/sbin/authconfig ]; then</p>
+<p>/usr/sbin/authconfig –nostart</p>
+<p>    fi</p>
+<p>    if [ -x /usr/sbin/ntsysv ]; then</p>
+<p>/usr/sbin/ntsysv –level 35</p>
+<p>    fi</p>
+<p>    # Reread in network configuration data.</p>
+<p>    if [ -f /etc/sysconfig/network ]; then</p>
+<p>. /etc/sysconfig/network</p>
+<p># Reset the hostname.</p>
+<p>action $”Resetting hostname ${HOSTNAME}: “ hostname ${HOSTNAME}</p>
+<p>    fi</p>
+<p>    rm -f /.unconfigured</p>
+<p>    if [ -x /usr/bin/rhgb-client ] &amp;&amp; /usr/bin/rhgb-client –ping ; then</p>
+<p>chvt 8</p>
+<p>    fi</p>
+<p>fi</p>
+<p># Clean out /.</p>
+<p>rm -f /fastboot /fsckoptions /forcefsck /.autofsck /halt /poweroff &amp;&gt; /dev/null</p>
+<p># Do we need (w|u)tmpx files? We don’t set them up, but the sysadmin might…</p>
+<p>_NEED_XFILES=</p>
+<p>[ -f /var/run/utmpx -o -f /var/log/wtmpx ] &amp;&amp; _NEED_XFILES=1</p>
+<p># Clean up /var.  I’d use find, but /usr may not be mounted.</p>
+<p>for afile in /var/lock/* /var/run/* ; do</p>
+<p>if [ -d “$afile” ]; then</p>
+<p>  case “$afile” in</p>
+<p>*/news|*/mon);;</p>
+<p>*/sudo)rm -f $afile/*/* ;;</p>
+<p>*/vmware)rm -rf $afile/*/* ;;</p>
+<p>*/samba)rm -rf $afile/*/* ;;</p>
+<p>*/screen)rm -rf $afile/* ;;</p>
+<p>*)rm -f $afile/* ;;</p>
+<p>  esac</p>
+<p>else</p>
+<p>  rm -f $afile</p>
+<p>fi</p>
+<p>done</p>
+<p>rm -f /var/lib/rpm/__db* &amp;&gt; /dev/null</p>
+<p>rm -f /var/gdm/.gdmfifo &amp;&gt; /dev/null</p>
+<p># Reset pam_console permissions</p>
+<p>[ -x /sbin/pam_console_apply ] &amp;&amp; /sbin/pam_console_apply -r</p>
+<p>{</p>
+<p># Clean up utmp/wtmp</p>
+<p>&gt; /var/run/utmp</p>
+<p>touch /var/log/wtmp</p>
+<p>chgrp utmp /var/run/utmp /var/log/wtmp</p>
+<p>chmod 0664 /var/run/utmp /var/log/wtmp</p>
+<p>if [ -n “$_NEED_XFILES” ]; then</p>
+<p>  &gt; /var/run/utmpx</p>
+<p>  touch /var/log/wtmpx</p>
+<p>  chgrp utmp /var/run/utmpx /var/log/wtmpx</p>
+<p>  chmod 0664 /var/run/utmpx /var/log/wtmpx</p>
+<p>fi</p>
+<p># Clean up various /tmp bits</p>
+<p>[ -n “$SELINUX” ] &amp;&amp; restorecon /tmp</p>
+<p>rm -f /tmp/.X*-lock /tmp/.lock.* /tmp/.gdm_socket /tmp/.s.PGSQL.*</p>
+<p>rm -rf /tmp/.X*-unix /tmp/.ICE-unix /tmp/.font-unix /tmp/hsperfdata_* \</p>
+<p>       /tmp/kde-* /tmp/ksocket-* /tmp/mc-* /tmp/mcop-* /tmp/orbit-*  \</p>
+<p>       /tmp/scrollkeeper-*  /tmp/ssh-*</p>
+<p># Make ICE directory</p>
+<p>mkdir -m 1777 -p /tmp/.ICE-unix &gt;/dev/null 2&gt;&amp;1</p>
+<p>chown root:root /tmp/.ICE-unix</p>
+<p>[ -n “$SELINUX” ] &amp;&amp; restorecon /tmp/.ICE-unix &gt;/dev/null 2&gt;&amp;1</p>
+<p># Start up swapping.</p>
+<p>update_boot_stage RCswap</p>
+<p>action $”Enabling swap space: “ swapon -a -e</p>
+<p># Set up binfmt_misc</p>
+<p>/bin/mount -t binfmt_misc none /proc/sys/fs/binfmt_misc &gt; /dev/null 2&gt;&amp;1</p>
+<p># Initialize the serial ports.</p>
+<p>if [ -f /etc/rc.serial ]; then</p>
+<p>. /etc/rc.serial</p>
+<p>fi</p>
+<p># If they asked for ide-scsi, load it</p>
+<p>if strstr “$cmdline” ide-scsi ; then</p>
+<p>modprobe ide-cd &gt;/dev/null 2&gt;&amp;1</p>
+<p>modprobe ide-scsi &gt;/dev/null 2&gt;&amp;1</p>
+<p>fi</p>
+<p># Boot time profiles. Yes, this should be somewhere else.</p>
+<p>if [ -x /usr/sbin/system-config-network-cmd ]; then</p>
+<p>  if strstr “$cmdline” netprofile= ; then</p>
+<p>    for arg in $cmdline ; do</p>
+<p>        if [ “${arg##netprofile=}” != “${arg}” ]; then</p>
+<p>   /usr/sbin/system-config-network-cmd –profile ${arg##netprofile=}</p>
+<p>        fi</p>
+<p>    done</p>
+<p>  fi</p>
+<p>fi</p>
+<p># Now that we have all of our basic modules loaded and the kernel going,</p>
+<p># let’s dump the syslog ring somewhere so we can find it later</p>
+<p>dmesg -s 131072 &gt; /var/log/dmesg</p>
+<p># create the crash indicator flag to warn on crashes, offer fsck with timeout</p>
+<p>touch /.autofsck &amp;&gt; /dev/null</p>
+<p>kill -TERM `/sbin/pidof getkey` &gt;/dev/null 2&gt;&amp;1</p>
+<p>} &amp;</p>
+<p>if strstr “$cmdline” confirm ; then</p>
+<p>touch /var/run/confirm</p>
+<p>fi</p>
+<p>if [ “$PROMPT” != “no” ]; then</p>
+<p>/sbin/getkey i &amp;&amp; touch /var/run/confirm</p>
+<p>fi</p>
+<p>wait</p>
+<p># Let rhgb know that we’re leaving rc.sysinit</p>
+<p>if [ -x /usr/bin/rhgb-client ] &amp;&amp; /usr/bin/rhgb-client –ping ; then</p>
+<p>    /usr/bin/rhgb-client –sysinit</p>
+<p>fi</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3755962332/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/3755962332/" class="post-title-link" itemprop="url">【转载】issh 连 IPAD</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2014-11-14 11:37:00" itemprop="dateCreated datePublished" datetime="2014-11-14T11:37:00+08:00">2014-11-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ios/" itemprop="url" rel="index"><span itemprop="name">Ios</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ios/issh/" itemprop="url" rel="index"><span itemprop="name">issh</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>设置端口：22的话会提示 operation not permitted</p>
+<p>0、ipad 用cydia安装openssh，nano</p>
+<p>1、ipad，电脑要同一网段</p>
+<p>2、电脑用ssh连接ipad （默认密码alpine）</p>
+<ol start="3">
+<li>備份兩個設定檔 (/etc/service, /Library/LaunchDaemons/com.openssh.sshd.plist)</li>
+</ol>
+<p>        cp /etc/service ~/</p>
+<p>        cp /Library/LaunchDaemons/com.openssh.sshd.plist ~/</p>
+<ol start="4">
+<li>更改設定檔</li>
+</ol>
+<p>     說明：把內鍵 ssh port 從 22 改到 50000 (假設)，其實 50000以上的port都可以</p>
+<p>   a)     echo ‘pttssh 50000/tcp #Secure sshd port’ &gt;&gt; /etc/services</p>
+<p>   b)     用喜好的軟體(vim, nano)編輯</p>
+<p>          nano /Library/LaunchDaemons/com.openssh.sshd.plist</p>
+<p>          尋找 <string>ssh</string></p>
+<p>          會有兩個位置 (Sockets/Listeners/Bonjour, SockServiceName)（ipad只有Sock一处）</p>
+<p>          改為 <string>pttssh</string></p>
+<ol start="5">
+<li>儲存後 reboot</li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1535462288/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/1535462288/" class="post-title-link" itemprop="url">[转载]快速理解Docker - 容器级虚拟化解决方案</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2014-09-15 16:06:00" itemprop="dateCreated datePublished" datetime="2014-09-15T16:06:00+08:00">2014-09-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Virtualization/" itemprop="url" rel="index"><span itemprop="name">Virtualization</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Virtualization/docker/" itemprop="url" rel="index"><span itemprop="name">docker</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><a target="_blank" rel="noopener" href="http://blog.csdn.net/colorant/article/details/20608157">http://blog.csdn.net/colorant/article/details/20608157</a>  </p>
+<p>其他:</p>
+<p>docker用户指南  </p>
+<p><a target="_blank" rel="noopener" href="http://www.widuu.com/chinese/_docker/userguide/README.html">http://www.widuu.com/chinese\_docker/userguide/README.html</a>  </p>
+<p>是什么</p>
+<p>简单的说Docker是一个构建在LXC之上的,基于进程容器(Processcontainer)的轻量级VM解决方案</p>
+<p>拿现实世界中货物的运输作类比,为了解决各种型号规格尺寸的货物在各种运输工具上进行运输的问题,我们发明了集装箱</p>
+<p><img src="http://img2.ph.126.net/z8sb7loU42BTjg2aaQpjPQ==/6608641027027329422.png" alt="[转载]快速理解Docker - 容器级虚拟化解决方案 - leaf - ------坚持雅操------" title="[转载]快速理解Docker - 容器级虚拟化解决方案 - leaf - ------坚持雅操------"></p>
 <p> </p>
-</blockquote>
-<p>5、人脸检测</p>
-<blockquote>
-<p>from SimpleCV import Camera,Display<br>from time import sleep  </p>
-<p>myCamera = Camera(prop_set={“width”:320,”height”:240})  </p>
-<p>myDisplay = Display(resolution=(320,240))  </p>
-<p>while not myDisplay.isDone():<br>frame = myCamera.getImage()<br>faces = frame.findHaarFeatures(‘face’)<br>if faces:<br>for face in faces:<br>print “Face at: “ + str(face.coordinates())<br>else:<br>print “No faces detected.”<br>frame.save(myDisplay)<br>sleep(.1)  </p>
-<p><img src="http://img2.ph.126.net/IaHfSsP6KyeRAZZHRoJBSw==/2453335897027967291.png" alt="树莓派B+ 操作摄像头 - leaf - ------坚持雅操------" title="树莓派B+ 操作摄像头 - leaf - ------坚持雅操------"></p>
+<p>Docker的初衷也就是将各种应用程序和他们所依赖的运行环境打包成标准的container/image,进而发布到不同的平台上运行</p>
+<p><img src="http://img2.ph.126.net/eTbtT_pQbARMS5PlNNaYUA==/6608415627144727628.png" alt="[转载]快速理解Docker - 容器级虚拟化解决方案 - leaf - ------坚持雅操------" title="[转载]快速理解Docker - 容器级虚拟化解决方案 - leaf - ------坚持雅操------"></p>
 <p> </p>
-</blockquote>
-<p>6、监控</p>
-<blockquote>
-<p>1、安装抓图软件sudo apt-get install fswebcam</p>
-<p>2、Yeelink注册，并添加设备和传感器。（不交钱是公开的）</p>
-<p>3、linux新建脚本</p>
-<p>sudo fswebcam -d /dev/video0 -r 320x240 –bottom-banner –title “RaspberryPi @ Yeelink” –no-timestamp /home/pi/yeelink.jpg<br>curl –request POST –data-binary @”/home/pi/yeelink.jpg” –header “U-ApiKey:***********************“ <a target="_blank" rel="noopener" href="http://api.yeelink.net/v1.0/device//*/*/*/*/*/sensor//*/*/*/*/*/photos">http://api.yeelink.net/v1.0/device/\*\*\*\*\*/sensor/\*\*\*\*\*/photos</a>  </p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>u-apikey：在yeelink的用户的账户这里找</p>
-</blockquote>
-<blockquote>
-<p>后面的地址在传感器这里找</p>
-</blockquote>
-<p>4、加入到crontab</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>crontab -e</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>*/1 * * * * /home/pi/yeelink.sh</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p><img src="http://img0.ph.126.net/x3SH3AJYpeb967AyqmO8Mw==/3363063021841550211.png" alt="树莓派B+ 操作摄像头 - leaf - ------坚持雅操------" title="树莓派B+ 操作摄像头 - leaf - ------坚持雅操------"></p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/4154792531/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/4154792531/" class="post-title-link" itemprop="url">树莓派 B+ 连接到隐藏的无线网络</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2015-03-07 11:24:00" itemprop="dateCreated datePublished" datetime="2015-03-07T11:24:00+08:00">2015-03-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:52" itemprop="dateModified" datetime="2020-08-04T09:51:52+08:00">2020-08-04</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>pi@YRPI ~ $ cat /etc/network/interfaces</p>
-<p>auto lo</p>
-<p>iface lo inet loopback</p>
-<p>iface eth0 inet static</p>
-<p>address 192.168.1.16</p>
-<p>netmask 255.255.255.0</p>
-<p>gateway 192.168.1.1</p>
-<p>auto wlan0</p>
-<p>allow-hotplug wlan0</p>
-<p>iface wlan0 inet static</p>
-<p>address 192.168.1.17</p>
-<p>netmask 255.255.255.0</p>
-<p>gateway 192.168.1.1</p>
-<p>wpa-scan-ssid 1                #这个设置成1 可以连接到隐藏的网络</p>
-<p>wpa-ap-scan 1                  #这个设置成1 可以连接到隐藏的网络</p>
-<p>wpa-ssid “HELLO”</p>
-<p>wpa-psk “123456”</p>
-<p>#wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf</p>
-<p>iface default inet dhcp</p>
-<p>auto wlan0<br>allow-hotplug wlan0<br>iface wlan0 inet dhcp<br>   wpa-scan-ssid 1<br>   wpa-ap-scan 1<br>   wpa-key-mgmt WPA-PSK<br>   wpa-proto RSN WPA<br>   wpa-pairwise CCMP TKIP<br>   wpa-group CCMP TKIP<br>   wpa-ssid “My Secret SSID”<br>   wpa-psk “My SSID PSK”</p>
-<p>修复断线问题。设置无线网卡不节能。</p>
-<blockquote>
-<p>lsmod</p>
-<blockquote>
-<p>8192cu                550797  0</p>
-</blockquote>
-<blockquote>
-</blockquote>
-<p>创建sudo nano /etc/modprobe.d/8192cu.conf</p>
-<p># Disable power saving</p>
-<p>options 8192cu rtw_power_mgnt=0 rtw_enusbss=1 rtw_ips_mode=1</p>
-</blockquote>
-<p>相关命令</p>
-<blockquote>
-<p>iwconfig wlan0    查看无线接口状态</p>
-<p>iwlist wlan0 scan    扫描无线网络</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="http://www.geekfan.net/8776/">http://www.geekfan.net/8776/</a></p>
-<p><a target="_blank" rel="noopener" href="http://www.dafinga.net/2013/01/how-to-setup-raspberry-pi-with-hidden.html">http://www.dafinga.net/2013/01/how-to-setup-raspberry-pi-with-hidden.html</a>     需要翻墙</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/43200443/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/43200443/" class="post-title-link" itemprop="url">树莓派 GPIO引脚定义</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2015-03-07 11:16:00" itemprop="dateCreated datePublished" datetime="2015-03-07T11:16:00+08:00">2015-03-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:52" itemprop="dateModified" datetime="2020-08-04T09:51:52+08:00">2020-08-04</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><a target="_blank" rel="noopener" href="http://pi.gadgetoid.com/pinout">http://pi.gadgetoid.com/pinout</a></p>
-<p>每个接口都有说明哦</p>
-<p>树莓派B+</p>
-<p><img src="http://img0.ph.126.net/5wA-N9e9ZmJRCc-zYWf9kw==/3118461266995395390.png" alt="树莓派B+ GPIO引脚定义 - leaf - ------坚持雅操------" title="树莓派B+ GPIO引脚定义 - leaf - ------坚持雅操------"></p>
-<p> </p>
-<p>树莓派2 B+</p>
-<p><img src="http://img2.ph.126.net/JnO60RLbCb4r-UhbuObgJA==/6619373360026755635.jpg" alt="树莓派 GPIO引脚定义 - leaf - ------勤解万难------" title="树莓派 GPIO引脚定义 - leaf - ------勤解万难------"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/690818048/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/690818048/" class="post-title-link" itemprop="url">树莓派B+ 配置openwrt桥接模式</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2015-02-11 13:49:00" itemprop="dateCreated datePublished" datetime="2015-02-11T13:49:00+08:00">2015-02-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:52" itemprop="dateModified" datetime="2020-08-04T09:51:52+08:00">2020-08-04</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>实现：桥接模式，无线AP，迅雷远程</p>
-<p>硬件：树莓派B+，8188cus无线网卡，AX88772A有线网卡，其他</p>
-<p>1、下载并刷入tf卡，远程连接等</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="http://downloads.openwrt.org/snapshots/trunk/brcm2708/generic/openwrt-brcm2708-sdcard-vfat-ext4.img">http://downloads.openwrt.org/snapshots/trunk/brcm2708/generic/openwrt-brcm2708-sdcard-vfat-ext4.img</a></p>
-</blockquote>
-<p>2、安装驱动</p>
-<blockquote>
-<p>opkg update</p>
-<p>opkg install kmod-rtl8192cu                               #无线网卡驱动</p>
-<p>opkg install kmod-usb-net kmod-usb-net-asix  #有线网卡驱动</p>
-</blockquote>
-<p>3、安装软件</p>
-<blockquote>
-<p>opkg update</p>
-<p>opkg install luci luci-i18n-base-zh-cn</p>
-<p>opkg install usbutils ip </p>
-<p>opkg install kmod-usb-core kmod-usb-uhci kmod-usb-ohci kmod-usb2</p>
-<p>opkg install hostapd wireless-tools                #无线AP必备</p>
-</blockquote>
-<p>4、配置</p>
-<blockquote>
-<p>无线</p>
-<p>wifi detect &gt; /etc/config/wireless</p>
-<p>vi /etc/config/wireless</p>
-<p>config wifi-device ‘radio0’</p>
-<p>        option type ‘mac80211’</p>
-<p>        option channel ‘11’</p>
-<p>        option hwmode ‘11g’</p>
-<p>        option path ‘platform/bcm2708_usb/usb1/1-1/1-1.2/1-1.2:1.0’</p>
-<p>        option htmode ‘HT20’</p>
-<p>config wifi-iface</p>
-<p>        option device ‘radio0’</p>
-<p>        option network ‘lan’</p>
-<p>        option mode ‘ap’ </p>
-<p>        option ssid ‘OpenWrt’</p>
-<p>        option disabled ‘0’                #是否广播ssid</p>
-<p>        option encryption ‘none’#加密模式</p>
-</blockquote>
-<blockquote>
-<p>网络</p>
-<p>config interface ‘loopback’</p>
-<p>        option ifname ‘lo’</p>
-<p>        option proto ‘static’</p>
-<p>        option ipaddr ‘127.0.0.1’</p>
-<p>        option netmask ‘255.0.0.0’</p>
-<p>config interface ‘lan’</p>
-<p>        option proto ‘dhcp’                #可设置为其他，设置IP是为了树莓派能上网</p>
-<p>        option type ‘bridge’</p>
-<p>        option ifname ‘eth0 eth1’</p>
-<p>config alias                                   #设置树莓派管理地址，找了好久终于搞定管理地址</p>
-<p>        option interface ‘lan’</p>
-<p>        option proto ‘static’</p>
-<p>        option ipaddr ‘192.168.1.3’</p>
-<p>        option netmask ‘255.255.255.0’</p>
-<p>config globals ‘globals’</p>
-<p>        option ula_prefix ‘fd40:132b:9a10::/48’</p>
-</blockquote>
-<p><img src="http://img0.ph.126.net/ekuUkBkj24IdK_dB6e-pcQ==/6619470117049688565.png" alt="树莓派B+ 配置openwrt桥接模式 - leaf - ------坚持雅操------" title="树莓派B+ 配置openwrt桥接模式 - leaf - ------坚持雅操------"></p>
-<p><img src="http://img1.ph.126.net/QQYYOx2xnTewZQZCYaS-jQ==/3113394717414550858.png" alt="树莓派B+ 配置openwrt桥接模式 - leaf - ------坚持雅操------" title="树莓派B+ 配置openwrt桥接模式 - leaf - ------坚持雅操------"> </p>
-<p><img src="http://img0.ph.126.net/S21VuiewLa6mZVfTyIPm1g==/3113676192391261497.png" alt="树莓派B+ 配置openwrt桥接模式 - leaf - ------坚持雅操------" title="树莓派B+ 配置openwrt桥接模式 - leaf - ------坚持雅操------"></p>
-<p> </p>
-<p>5、安装迅雷远程</p>
-<blockquote>
-</blockquote>
-<blockquote>
-</blockquote>
-<p>参考</p>
-<p><a target="_blank" rel="noopener" href="http://www.leiphone.com/news/201406/diy-a-smart-router-topic-openwrt.html">http://www.leiphone.com/news/201406/diy-a-smart-router-topic-openwrt.html</a></p>
-<p><a target="_blank" rel="noopener" href="http://blog.sina.com.cn/s/blog_40983e5e0102v6qt.html">http://blog.sina.com.cn/s/blog_40983e5e0102v6qt.html</a></p>
-<p><a target="_blank" rel="noopener" href="http://www.shuyz.com/install-openwrt-on-raspberry-as-a-wireless-router.html">http://www.shuyz.com/install-openwrt-on-raspberry-as-a-wireless-router.html</a></p>
-<p><a target="_blank" rel="noopener" href="http://www.tuicool.com/articles/rmmemif">http://www.tuicool.com/articles/rmmemif</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/796663220/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/796663220/" class="post-title-link" itemprop="url">buffalo 安装xware</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2015-01-21 21:19:00" itemprop="dateCreated datePublished" datetime="2015-01-21T21:19:00+08:00">2015-01-21</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:51" itemprop="dateModified" datetime="2020-08-04T09:51:51+08:00">2020-08-04</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>首先必须已root</p>
-<p>安装过程</p>
-<p>1、查buffalo cpu架构_指令集_c库类型</p>
-<blockquote>
-<p>我的是 arm_v5tel(v5l)_glibc</p>
-</blockquote>
-<blockquote>
-<p><img src="http://img2.ph.126.net/uKY8dKq7LBVr4tyOOAbEjw==/6630390466535784962.png" alt="buffalo 安装xware - leaf - ------坚持雅操------" title="buffalo 安装xware - leaf - ------坚持雅操------"></p>
-</blockquote>
-<p>2、去迅雷下载相应的软件  </p>
-<blockquote>
-<p>我的是Xware1.0.31_armel_v5te_glibc.zip </p>
-</blockquote>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="http://luyou.xunlei.com/thread-12545-1-1.html?%5C_t=1421842121">http://luyou.xunlei.com/thread-12545-1-1.html?\_t=1421842121</a></p>
-</blockquote>
-<p>3、安装</p>
-<blockquote>
-<p>我放在/opt下面</p>
-<p>先解压，</p>
-<p>然后运行目录下的portal文件，</p>
-<p>把运行后得到的激活码输入到迅雷远程下载里面</p>
-<p>设置一下下载目录即可</p>
-</blockquote>
-<p>4、随系统自启动</p>
-<blockquote>
-<p>我这款是linux系统，所以在/etc/init.d里面建一下链接即可</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>echo ‘/opt/xware/portal’ &gt;/etc/init.d/xunleiyuancheng.sh</p>
-</blockquote>
-<blockquote>
-<p>chmod 755 /etc/init.d/xunleiyuancheng.sh</p>
-</blockquote>
-<blockquote>
-<p>ln -s /etc/init.d/xunleiyuancheng.sh /etc/rc.d/sysinit.d/S99xunleiyuancheng.sh</p>
-</blockquote>
-<blockquote>
-<p>chmod 777 /etc/rc.d/sysinit.d/S99xunleiyuancheng.sh</p>
-</blockquote>
-</blockquote>
-<p><img src="http://img2.ph.126.net/YH452L67KxUXZYl8aqrV0w==/3363907446770522960.png" alt="buffalo 安装xware - leaf - ------坚持雅操------" title="buffalo 安装xware - leaf - ------坚持雅操------"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2521641173/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/2521641173/" class="post-title-link" itemprop="url">安装黑群晖DS3615xs的DSM5.1-5055，并洗白！</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2015-01-21 12:21:00" itemprop="dateCreated datePublished" datetime="2015-01-21T12:21:00+08:00">2015-01-21</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:52" itemprop="dateModified" datetime="2020-08-04T09:51:52+08:00">2020-08-04</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>我的D2550主机确实挺鸡肋的，不过就看你怎么利用啦，哈哈</p>
-<p>参考：<a target="_blank" rel="noopener" href="http://www.gebi1.com/forum.php">http://www.gebi1.com/forum.php</a></p>
-<p>一、准备工作</p>
-<blockquote>
-<p>0、一台主机，一个u盘</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>我的是梅捷YS-D2550-MD，U盘是闪迪酷豆8G U盘</p>
-<p><img src="http://img0.ph.126.net/YRKztPKlGLj8Y58HLYLeBw==/6630502616722864530.jpg" alt="安装黑群晖DS3615xs的DSM5.1-5055，并洗白！ - leaf - ------勤解万难------" title="安装黑群晖DS3615xs的DSM5.1-5055，并洗白！ - leaf - ------勤解万难------"></p>
-</blockquote>
-<p>1、下载改MAC工具，更改MAC。我的是8111E（此步骤非必须，洗白用）</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>群晖的网卡都是001132开头的，所以我们需要更改网卡MAC地址。</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="http://support.icafe8.com/technologynews/focus/1347.html">http://support.icafe8.com/technologynews/focus/1347.html</a></p>
-<p>1、查看网卡型号</p>
-<p>我进ubuntu，输入lspci，提示是REV 06。根据对应型号</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>8111B：PCI\VEN_10EC&amp;DEV_8168&amp;REV_01</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>8111C：PCI\VEN_10EC&amp;DEV_8168&amp;REV_02</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>8111D：PCI\VEN_10EC&amp;DEV_8168&amp;REV_03</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>8111DP/DL：PCI\VEN_10EC&amp;DEV_8168&amp;REV_04</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p><strong>8111E：PCI\VEN_10EC&amp;DEV_8168&amp;REV_06</strong></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>8111F：PCI\VEN_10EC&amp;DEV_8168&amp;REV_07</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>8111ES：PCI\VEN_10EC&amp;DEV_8168&amp;REV_08</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>2、找到对应更改网卡MAC的PG8168程序。进DOS并更改MAC地址</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>PG8168 /V</p>
-<p><img src="http://img2.ph.126.net/99RfhmSAGmAFB3xxrqWqcw==/6630269520257772854.jpg" alt="安装黑群晖DS3615xs的DSM5.1-5055，并洗白！ - leaf - ------勤解万难------" title="安装黑群晖DS3615xs的DSM5.1-5055，并洗白！ - leaf - ------勤解万难------"></p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>PG8168 /nodeid 001132******</p>
-</blockquote>
-<blockquote>
-<p><img src="http://img1.ph.126.net/l5MLVQAOATQEuE8-XVfdnw==/6630147474467091814.jpg" alt="安装黑群晖DS3615xs的DSM5.1-5055，并洗白！ - leaf - ------勤解万难------" title="安装黑群晖DS3615xs的DSM5.1-5055，并洗白！ - leaf - ------勤解万难------"></p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>3、主板跳线，设置可网络唤醒。（我的主板需要跳线，有些BIOS改一下即可）</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p><img src="http://img1.ph.126.net/qPRIT5p8UAdIgXCfp4Oz9A==/6630699429304595770.jpg" alt="安装黑群晖DS3615xs的DSM5.1-5055，并洗白！ - leaf - ------勤解万难------" title="安装黑群晖DS3615xs的DSM5.1-5055，并洗白！ - leaf - ------勤解万难------"></p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-</blockquote>
-<blockquote>
-<p>2、下载XPEnoboot（<a target="_blank" rel="noopener" href="http://xpenology.me/xpenoboot-5-1-5055-1-released/">http://xpenology.me/xpenoboot-5-1-5055-1-released/</a>）</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>由于google被墙，下载需要科学上网软件，</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>3、下载群晖系统</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="http://download.synology.com/download/DSM/5.1/5055/">http://download.synology.com/download/DSM/5.1/5055/</a></p>
-</blockquote>
-<p>4、用CheckUDisk查看u盘的vid和pid</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p><img src="http://img0.ph.126.net/XJ06CeSgvl8MabSixYpF2g==/2815031242101262143.png" alt="安装黑群晖DS3615xs的DSM5.1-5055 - leaf - ------勤解万难------" title="安装黑群晖DS3615xs的DSM5.1-5055 - leaf - ------勤解万难------"></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>5、下载win32diskimager 并将img镜像写入到U盘</p>
-<blockquote>
-<p><img src="http://img0.ph.126.net/sa6C-7PfpVZhArVof8Uzxw==/1121959257186692010.png" alt="安装黑群晖DS3615xs的DSM5.1-5055 - leaf - ------勤解万难------" title="安装黑群晖DS3615xs的DSM5.1-5055 - leaf - ------勤解万难------"></p>
-</blockquote>
-<p>6、更改syslinux.cfg文件</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>一个是mac地址，一个是sn码，还有vid，pid</p>
-<p><img src="http://img1.ph.126.net/0_ut3eDO-N-coOgVoYnFBg==/6630824773630156489.png" alt="安装黑群晖DS3615xs的DSM5.1-5055 - leaf - ------勤解万难------" title="安装黑群晖DS3615xs的DSM5.1-5055 - leaf - ------勤解万难------"></p>
-</blockquote>
-</blockquote>
-<blockquote>
-</blockquote>
-<blockquote>
-<p>7、下载群晖安装助手</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.synology.com/zh-cn/">https://www.synology.com/zh-cn/</a></p>
-</blockquote>
-<p>8、再找一台电脑用于控制</p>
-<p>9、一个局域网内</p>
-</blockquote>
-<p>二、安装过程</p>
-<blockquote>
-<p>备注：电脑A用于做群晖NAS，电脑B用于控制</p>
-</blockquote>
-<blockquote>
-<p>1、制作启动U盘</p>
-<p>2、U盘启动电脑A，选择XPEnoboot（install/upgrade）进入</p>
-<p>3、电脑B上开启群晖助手，扫描出电脑A，右击电脑A安装DSM，安装完DSM后电脑A会重启</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p><img src="http://img2.ph.126.net/YH96IbTFnbTR304nCijXAg==/6630065011095008615.png" alt="安装黑群晖DS3615xs的DSM5.1-5055，并洗白！ - leaf - ------勤解万难------" title="安装黑群晖DS3615xs的DSM5.1-5055，并洗白！ - leaf - ------勤解万难------"></p>
-<p> </p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p><img src="http://img1.ph.126.net/wYPVnPAdVeVbUvczG2EFiw==/6619285399096399753.png" alt="安装黑群晖DS3615xs的DSM5.1-5055 - leaf - ------勤解万难------" title="安装黑群晖DS3615xs的DSM5.1-5055 - leaf - ------勤解万难------"></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>4、电脑A重启还是用U盘引导，选择XPEnoboot进入</p>
-<p>5、电脑B的群晖助手再运行几分钟就会提示已安装完成</p>
-</blockquote>
-<blockquote>
-<p>6、电脑B打开网页，输入<a target="_blank" rel="noopener" href="http://192.168.1.111:5000/webman/index.cgi">http://IP:5000/webman/index.cgi</a> 即可进行操作了</p>
-</blockquote>
-<p>三、其他  </p>
-<blockquote>
-<p>可以使用群晖的MYDS、DDNS、远程唤醒等功能。</p>
-<p>系统只能做重要更新不能做版本更新。</p>
-</blockquote>
-<p><img src="http://img2.ph.126.net/zPMqR6v9FP06ECgUKevFQQ==/6630710424420779201.png" alt="安装黑群晖DS3615xs的DSM5.1-5055 - leaf - ------勤解万难------" title="安装黑群晖DS3615xs的DSM5.1-5055 - leaf - ------勤解万难------"></p>
-<p><img src="http://img1.ph.126.net/SJvGaFHxv29hPKxqPG85dg==/6608914805423067703.png" alt="安装黑群晖DS3615xs的DSM5.1-5055 - leaf - ------勤解万难------" title="安装黑群晖DS3615xs的DSM5.1-5055 - leaf - ------勤解万难------"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/286580975/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/286580975/" class="post-title-link" itemprop="url">各平台科学上网合集</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2015-01-01 22:59:00" itemprop="dateCreated datePublished" datetime="2015-01-01T22:59:00+08:00">2015-01-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:52" itemprop="dateModified" datetime="2020-08-04T09:51:52+08:00">2020-08-04</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>goagent，hoststools，shadowsocks，VPN都是全平台通用的。还有个讯600VPN，每次注册能用1个月</p>
-<blockquote>
-<p>windows下我用goagent，shadowsocks比较多，</p>
-<p>linux下我用hoststools（huhamhire-hosts）比较多</p>
-<p>macosx下我只用shadowsocks  （看youtube很流畅）</p>
-<blockquote>
-</blockquote>
-<p>android下不二选择，fqroute2</p>
-<blockquote>
-</blockquote>
-<p>ios下我用易联和shadowsocks</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/179208481/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/179208481/" class="post-title-link" itemprop="url">基础补充8：X window</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2014-12-13 09:34:00" itemprop="dateCreated datePublished" datetime="2014-12-13T09:34:00+08:00">2014-12-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:52" itemprop="dateModified" datetime="2020-08-04T09:51:52+08:00">2020-08-04</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>1、只开X server 。一片黑屏，鼠标可以动  </p>
-<blockquote>
-<p>X :1&amp;  </p>
-<p><img src="http://img1.ph.126.net/DewYm4SOrcTGz8A4WqtyCA==/6619130367956356525.jpg" alt="基础补充8：X window - leaf - ------坚持雅操------" title="基础补充8：X window - leaf - ------坚持雅操------"></p>
+<p>从理论上说这一概念并不新鲜,各种虚拟机Image也起着类似的作用</p>
+<p>Docker container和普通的虚拟机Image相比,最大的区别是它并不包含操作系统内核.</p>
 <p>   </p>
-</blockquote>
-<p>2、开X client 。屏幕左上角有终端输入界面，但是没有窗口,不能移动  </p>
-<blockquote>
-<p>xterm -display ：1&amp;  </p>
-<p><img src="http://img0.ph.126.net/FId_qUF5cLsqT31gHlh5-Q==/887490601669063227.jpg" alt="基础补充8：X window - leaf - ------坚持雅操------" title="基础补充8：X window - leaf - ------坚持雅操------"></p>
-<p>   </p>
-</blockquote>
-<p>3、开窗口管理器，twm或者metacity 。有窗口，还可以移动  </p>
-<blockquote>
-<p>twm -display :1 -f /etc/X11/twm/system.twmrc &amp;<br>或者<br>metacity -display :1&amp;  </p>
-<p><img src="http://img2.ph.126.net/jwi6o_qmZj1nSWmxpMCstQ==/145241088082979159.jpg" alt="基础补充8：X window - leaf - ------坚持雅操------" title="基础补充8：X window - leaf - ------坚持雅操------"></p>
+<p><img src="http://img1.ph.126.net/CXoaOka-9j2ea9B9I_K0RA==/6608886218120322808.png" alt="[转载]快速理解Docker - 容器级虚拟化解决方案 - leaf - ------坚持雅操------" title="[转载]快速理解Docker - 容器级虚拟化解决方案 - leaf - ------坚持雅操------"></p>
 <p> </p>
-<p><img src="http://img1.ph.126.net/vgEWzw9txT0xb9imd50knA==/887490601669063228.jpg" alt="基础补充8：X window - leaf - ------坚持雅操------" title="基础补充8：X window - leaf - ------坚持雅操------"></p>
-<p>   </p>
-</blockquote>
-<p>4、Widget   图形库  </p>
-<blockquote>
-<p>包括gtk+ 和QT 。窗口的颜色，按钮，图案啥的都需要图形库的支持  </p>
-</blockquote>
-<p>5、Display Manager  </p>
-<blockquote>
-<p>提供登陆界面和 会话协议XDMCP  </p>
-</blockquote>
-<p>6、Desktop Manager  </p>
-<blockquote>
-<p>包括gnome、KDE等 。<br>是以上的集合，然后再加上自行开发的界面。  </p>
-</blockquote>
-<p>init5和startx的区别  </p>
-<blockquote>
-<p>init 5  </p>
-</blockquote>
-<p><img src="http://img1.ph.126.net/U-DEBwBEJ4tm1B-mvJrwtg==/2206200867558479713.png" alt="基础补充8：X window - leaf - ------坚持雅操------" title="基础补充8：X window - leaf - ------坚持雅操------">  </p>
-<blockquote>
-<p>startx  </p>
-</blockquote>
+<p>普通虚拟机将整个操作系统运行在虚拟的硬件平台上,进而提供完整的运行环境供应用程序运行,而Docker则直接在宿主平台上加载运行应用程序.本质上他在底层使用LXC启动一个Linux Container,通过cgroup等机制对不同的container内运行的应用程序进行隔离,权限管理和quota分配等</p>
+<p>每个container拥有自己独立的各种命名空间(亦即资源)包括:</p>
+<p> PID进程, MNT文件系统, NET网络, IPC, UTS主机名等</p>
+<p> <strong>与**</strong>LXC**<strong>有什么不同</strong></p>
+<p>基本上你可以认为目前的Docker是LXC的一个高级封装,提供了各种辅助工具和标准接口方便你使用LXC,你可以依靠LXC和各种脚本实现与docker类似的功能，就像你不使用APT/yum等工具也可以自己搞定软件包安装一样，你使用他们的关键原因是方便易用！</p>
+<p>实际使用中，你一般不用关心底层LXC的细节,同时也不排将来docker实现基于非LXC方案的可能性</p>
+<p>在LXC的基础上, Docker额外提供的Feature包括：标准统一的打包部署运行方案，历史版本控制， Image的重用，Image共享发布等等</p>
+<p><strong>Container**</strong>构建方案**</p>
+<p>除了LXC，Docker的核心思想就体现在它的运行容器构建方案上</p>
+<p><img src="http://img0.ph.126.net/eXtQagb1L5uBGARuybnwwQ==/6619114974793163385.png" alt="[转载]快速理解Docker - 容器级虚拟化解决方案 - leaf - ------坚持雅操------" title="[转载]快速理解Docker - 容器级虚拟化解决方案 - leaf - ------坚持雅操------"></p>
 <p> </p>
-<p><img src="http://img0.ph.126.net/SfJv_fMGdbtlnwy2Pc1KjQ==/3261169080270047412.png" alt="基础补充8：X window - leaf - ------坚持雅操------" title="基础补充8：X window - leaf - ------坚持雅操------"></p>
-<p>   </p>
+<p>为了最大化重用Image，加快运行速度，减少内存和磁盘footprint, Docker container运行时所构造的运行环境，实际上是由具有依赖关系的多个Layer组成的。例如一个apache的运行环境可能是在基础的rootfs image的基础上，叠加了包含例如Emacs等各种工具的image，再叠加包含apache及其相关依赖library的image，这些image由AUFS文件系统加载合并到统一路径中，以只读的方式存在，最后再叠加加载一层可写的空白的Layer用作记录对当前运行环境所作的修改。</p>
+<p>有了层级化的Image做基础，理想中，不同的APP就可以既可能的共用底层文件系统，相关依赖工具等，同一个APP的不同实例也可以实现共用绝大多数数据，进而以copy on write的形式维护自己的那一份修改过的数据等</p>
+<p>历史和生态环境</p>
+<p>Docker项目从启动到现在不过一年多时间，发展势头还是很迅猛的</p>
+<p>2013.01做为dotcloud内部项目开始启动</p>
+<p>2013.03.27正式作为public项目发布</p>
+<p>2014.1被BLACK DUCK评选为2013年10大开源新项目“TOP 10 OPEN SOURCE ROOKIE OF THE YEAR”</p>
+<p>目前的状态 ( 2014.3 )</p>
+<p>Docker 0.8.1</p>
+<p>10000+ github stars(top 50)</p>
+<p>350+ contributors</p>
+<p>1500+ fork</p>
+<p><img src="http://img1.ph.126.net/5jnIDzPs61Bgt2koJe_xTQ==/6619476714118700914.jpeg" alt="[转载]快速理解Docker - 容器级虚拟化解决方案 - leaf - ------坚持雅操------" title="[转载]快速理解Docker - 容器级虚拟化解决方案 - leaf - ------坚持雅操------"></p>
+<p> </p>
+<p>具体应用方面，可以看到百度至少在2013年10月份就已经成功使用Docker支持其BAE平台的Paas服务</p>
+<p>安装运行和使用</p>
+<p>Docker虽然是号称build once， runeverywhere。但是实际上还是受其引擎依赖关系的限制的，目前的版本具体来说对系统要求：</p>
+<ul>
+<li>Linux Kernel 3.8+</li>
+<li>LXCsupport</li>
+<li>64bitOS</li>
+<li>AUFS</li>
+</ul>
+<p>以上要求，以ubuntu为例，需要12.04配合 3.8kernel升级，或者 ubuntu 13.04+</p>
+<p>在ubuntu12.04上，基本安装步骤如下</p>
+<p>sudoapt-get update sudo apt-get install linux-image-generic-lts-raringlinux-headers-generic-lts-raring</p>
+<p>sudoapt-key adv –keyserver keyserver.ubuntu.com –recv-keys36A1D7869245C8950F966E92D8576A8BA88D21E9</p>
+<p>sudosh -c “echo deb <a target="_blank" rel="noopener" href="http://get.docker.io/ubuntu">http://get.docker.io/ubuntu</a>docker main\ &gt; /etc/apt/sources.list.d/docker.list”</p>
+<p>sudoapt-get update</p>
+<p>sudoapt-get install lxc-docker</p>
+<p>如果你在安装之前想要先体验一下docker的基本操作命令等的话，可以尝试一下这个在线的live教程<a target="_blank" rel="noopener" href="https://www.docker.io/gettingstarted/#h_tutorial">https://www.docker.io/gettingstarted/#h_tutorial</a></p>
+<p>常用命令</p>
+<p>分类列一下常用的CLI命令</p>
+<ul>
+<li>仓库相关</li>
+</ul>
+<p>search/ pull / push / login etc.</p>
+<p>例：docker pull ubuntu从仓库下载ubuntuimage</p>
+<ul>
+<li>Images操作相关</li>
+</ul>
+<p>images/ rmi / build / export  / import / save /load etc.</p>
+<p>例：docker images -t以树形结构列出当前本地Image</p>
+<ul>
+<li>运行相关</li>
+</ul>
+<p>run / start / stop / restart / attach /kill etc.</p>
+<p>docker run -i -t ubuntu /bin/bash 启动ubuntu image，并交互式的运行shell</p>
+<ul>
+<li>杂项</li>
+</ul>
+<p>Docker diff  / commit</p>
+<p>Dockerinfo / ps / inspect / port / logs / top / history etc.</p>
+<p>具体docker命令的使用参见<a target="_blank" rel="noopener" href="http://docs.docker.io/en/latest/reference/commandline/">http://docs.docker.io/en/latest/reference/commandline/</a></p>
+<p>常见问题</p>
+<ul>
+<li>使用Non root用户</li>
+</ul>
+<p>目前版本的docker由于使用Socket进行通讯，因此需要root用户权限 sudo xxx，或者将需要使用Dockerclient的用户加入docker用户组</p>
+<p>sudogpasswd -a ${USER} docker</p>
+<ul>
+<li>网络相关问题</li>
+</ul>
+<p>当你在网关背后需要通过代理连接docker的index数据库时，可以手动加上http_proxy环境变量来启动dockerdaemon</p>
+<p>HTTP_PROXY=<a target="_blank" rel="noopener" href="http://proxy/_server:port">http://proxy\_server:port</a> docker -d &amp;</p>
+<p>更好的做法是修改/etc/default/docker ( on ubuntu ),添加exporthttp_proxy=proxy_server:port</p>
+<p>同样，docker container如果无法自动正确的从host环境中获得DNS的配置，则需要手动指定DNS服务器地址，这可以通过 docker -run –dns=xxx 来实现，也可以修改/etc/default/docker添加例如DOCKER_OPTS=”-dns 8.8.8.8”</p>
+<ul>
+<li>特权模式</li>
+</ul>
+<p>在正常情况下在container内部你没有权限操作device设备，而当前版本中，container内部部分文件例如/etc/hosts;/etc/hostname; /etc/resolve.conf等文件是动态通过mount动态以只读的形式加载上来的，理论上说你应该找到合适的方法去保证这些自动生成并加载的文件的正确性 (例如通过--dns设置 resolve.conf )，但是如果由于特殊原因你需要手动修改，那么你可以通过特权模式启动 docker client ： docker run –privileged，然后你可以卸载这些文件，自己再创建新的版本</p>
+<ul>
+<li>过多的层级依赖关系</li>
+</ul>
+<p>以Layer的方式实现APP和相关library的cheap reuse和fast update是Docker的关键所在，不过受目前AUFS文件系统的限制，默认Layer的层级最多只能达到127（曾经只有42），在实际使用中有多种情况可能导致你的container的层级关系快速增长到这个极限值，撇开这么多layer叠加以后AUFS的效率不谈，更多情况下是你无法再更新构建你的image了</p>
+<ol>
+<li>使用Dockerfile构建Image时，每条指令都会给最终的Image增加一层layer依赖关系.</li>
+<li>以修改，提交，再修改再提交的方式不停的调整，更新你的Image</li>
+<li>从仓库中下载的别人的Image已经包含众多的层级依赖关系，而你需要进一步更新以创建你自己的版本</li>
+</ol>
+<p>前两者在一定程度上还是你自己可能把控的，最后一种情况就没办法了。这个问题最终必将影响Docker的实际可用性，目前的解决方案包括：</p>
+<ul>
+<li>使用Dockerfile时,尽可能合并多个操作：例如使用 “&amp;&amp;” 或 “;”合并运行多个shell命令；将多个shell命令写成脚本，在dockerfile中添加并运行这个脚本</li>
+<li>通过Export再Import Image，丢弃所有历史信息和依赖关系，创建一个全新的image</li>
+</ul>
+<p>将来可能的解决方案包括：</p>
+<ul>
+<li>在Dockerfile中添加对多步操作的合并提交的支持</li>
+<li>外部的image Flat工具的支持，目标是能够保留历史信息等</li>
+<li>非AUFS的其它Storage解决方案</li>
+</ul>
+<p>Future development</p>
+<p>虽然Docker目前默认使用LXC和AUFS，但是Docker的核心思想本身，并不强制绑定这两者，0.8版本已经可以使用BTRFS，而整个Docker框架也改成了插件式的架构，便于添加替换各个功能模块</p>
+<p><img src="http://img2.ph.126.net/EA-pQxpo2Gr5sAmgsNlEzg==/6619206234258267968.png" alt="[转载]快速理解Docker - 容器级虚拟化解决方案 - leaf - ------坚持雅操------" title="[转载]快速理解Docker - 容器级虚拟化解决方案 - leaf - ------坚持雅操------"></p>
+<p> </p>
+<p>例如更多的Storage方案的支持，规避AUFS当前的问题，除了LXC以外更多的虚拟化方案等</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/150377324/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/150377324/" class="post-title-link" itemprop="url">msi EX465安装MACOSX 网卡驱动</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2014-08-22 20:59:00" itemprop="dateCreated datePublished" datetime="2014-08-22T20:59:00+08:00">2014-08-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hackintosh/" itemprop="url" rel="index"><span itemprop="name">Hackintosh</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hackintosh/ex465/" itemprop="url" rel="index"><span itemprop="name">ex465</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>msi有线网卡是sis 191，无解</p>
+<p>无线网卡是雷凌2870 usb的，可以安装雷凌驱动，其他都好，就是不能上app store</p>
+<p>前几天网购了AR9380 （￥49元，还能接受）。直接免驱，但还是进不了app store。</p>
+<p>原因：进app store的条件是有线网卡必须是en0，无线网卡必须是en1。</p>
+<p>由于我的有线无解，导致装的无线变成en0了。下面就是解决这个问题的</p>
+<p>解决思路是：1、虚拟一个有线网卡  2、把网卡名称对调一个</p>
 <blockquote>
-<p>init 5 是启动prefdm，然后通过gdm启动X server。进gnome会话后还要开启Xsession登陆界面<br>startx 是启动xinit来启动X server，然后直接进gnome会话  </p>
+<p>解决第一个问题</p>
 </blockquote>
 <blockquote>
+<p>下载nullEthernet.kext并安装，然后dsdt打补丁或者加ssdt 。（这些下载里面都有）</p>
+<p><a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/viewthread-1505728-1-1.html">http://bbs.pcbeta.com/viewthread-1505728-1-1.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://bitbucket.org/RehabMan/os-x-null-ethernet/downloads">https://bitbucket.org/RehabMan/os-x-null-ethernet/downloads</a></p>
+<p>这样重启之后，无线变成en0，有线变成en1了。我们需要对调一个</p>
+<p>解决第二个问题</p>
+<p>删除：<br>/Library/Preferences/SystemConfiguration/NetworkInterfaces.plist<br>/Library/Preferences/SystemConfiguration/preferences.plist<br>重启搞定。</p>
+<p><img src="http://img1.ph.126.net/pdp-y8SVeeJTqQ3kxlGDFA==/6608870824957417795.png" alt="msi EX465安装MACOSX 网卡驱动 - leaf - ------坚持雅操------" title="msi EX465安装MACOSX 网卡驱动 - leaf - ------坚持雅操------"></p>
+<p> </p>
 </blockquote>
 
       
@@ -1361,7 +1472,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1267475429/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/872591790/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1377,7 +1488,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/1267475429/" class="post-title-link" itemprop="url">基础补充7：FC4安装Geforce MX 420驱动</a>
+            <a href="/posts/872591790/" class="post-title-link" itemprop="url">[转载] lubuntu自动登录(lxde)</a>
         </h2>
 
         <div class="post-meta">
@@ -1387,15 +1498,28 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2014-12-02 14:59:00" itemprop="dateCreated datePublished" datetime="2014-12-02T14:59:00+08:00">2014-12-02</time>
+              <time title="创建时间：2014-08-13 16:27:00" itemprop="dateCreated datePublished" datetime="2014-08-13T16:27:00+08:00">2014-08-13</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:52" itemprop="dateModified" datetime="2020-08-04T09:51:52+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/Q-A/" itemprop="url" rel="index"><span itemprop="name">Q&A</span></a>
+                </span>
+            </span>
 
           
 
@@ -1406,38 +1530,406 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>0、安装编译环境。  </p>
+          <p>1. /etc/lxdm/default.conf</p>
 <blockquote>
-<p>主要是安装kernel-src ，kernel-devel ，gcc , glibc , ncurse 等。  </p>
+<p>sudo vi /etc/lxdm/default.conf</p>
+<p>autologin=username</p>
 </blockquote>
-<p>1、下载nvidia驱动  </p>
+<p>2./etc/lightdm/lightdm.conf</p>
 <blockquote>
-<p><a target="_blank" rel="noopener" href="http://www.nvidia.cn/object/unix-cn.html">http://www.nvidia.cn/object/unix-cn.html</a><br>我下载的是NVIDIA-Linux-x86-96.43.23-pkg1.run。已经加了x权限了。  </p>
+<p>sudo vi /etc/lightdm/lightdm.conf </p>
+<p>[SeatDefaults]</p>
+<p>autologin-user=username</p>
+<p>autologin-user-timeout=0</p>
+<p>greeter-session=lightdm-gtk-greeter</p>
+<p>user-session=Lubuntu</p>
 </blockquote>
-<p>2、进 init 3环境  </p>
+<p>转载自：<a target="_blank" rel="noopener" href="http://www.cnblogs.com/xiangzi888/archive/2012/06/20/2557093.html">http://www.cnblogs.com/xiangzi888/archive/2012/06/20/2557093.html</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/4111776144/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/4111776144/" class="post-title-link" itemprop="url">移动GPU 浮点运算比较</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2014-07-18 21:57:00" itemprop="dateCreated datePublished" datetime="2014-07-18T21:57:00+08:00">2014-07-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hardware/" itemprop="url" rel="index"><span itemprop="name">Hardware</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hardware/GPU/" itemprop="url" rel="index"><span itemprop="name">GPU</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>默认300MH下  </p>
+<p>ipad2/iphone4S     PowerVR SGX543MP2           19.2GFLOPS<br>RK3288                  Mali-T760（4 ShaderCore）   21.6GFLOPS<br>iphone5                  PowerVR SGX543MP3            28.8GFLOPS<br>ipad3                       PowerVR SGX543MP4            38.4GFLOPS<br>全志A80T               PowerVR G6230                        38.4GFLOPS<br>骁龙600                  Adreno 320                                  38.4GFLOPS<br>骁龙800／801       Adreno 330                                  76.8GFLOPS<br>ipad4                       PowerVR SGX554MP4             76.8GFLOPS<br>iphone5s（A7）   PowerVR G6430                         76.8GFLOPS<br>Iphone6？？          PowerVR GX6650                    115.2GFLOPS<br>小米平板                 NVIDIA K1                                 115.2GFLOPS<br> 骁龙805                 Adreno 420                                115.2GFLOPS  </p>
+<p><a target="_blank" rel="noopener" href="http://bbs.imp3.net/thread-11142812-1-1.html">http://bbs.imp3.net/thread-11142812-1-1.html</a><br><a target="_blank" rel="noopener" href="http://www.leiphone.com/5s-g6430.html">http://www.leiphone.com/5s-g6430.html</a><br><a target="_blank" rel="noopener" href="http://news.mydrivers.com/1/293/293965.htm">http://news.mydrivers.com/1/293/293965.htm</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/4072456105/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/4072456105/" class="post-title-link" itemprop="url">ubuntu14.04 X64安装Dota2</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2014-07-15 13:42:00" itemprop="dateCreated datePublished" datetime="2014-07-15T13:42:00+08:00">2014-07-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/Q-A/" itemprop="url" rel="index"><span itemprop="name">Q&A</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>1、<a target="_blank" rel="noopener" href="http://store.steampowered.com/about/">http://store.steampowered.com/about/</a>  下载steam<br>2、注册 steam账号<br>3、<a target="_blank" rel="noopener" href="http://www.dota2.com.cn/">http://www.dota2.com.cn/</a>   注册dota2账号<br>4、将steam设置为中文   view-setting-interface  里面设置为中文<br>5、打开浏览器(如火狐)，输入 steam://run/570  按确定。提示使用什么软件打开  </p>
 <blockquote>
-<p>nano /etc/inittab     </p>
-<p>　　id:5:initdefault:   把5改为3  </p>
+<p>然后选择/usr/bin/steam  打开  (选那个脚本的)  </p>
 </blockquote>
-<p>3、安装nvidia驱动  </p>
+<p>6、下载dota2 下载  </p>
+<p><img src="http://img0.ph.126.net/WZVwUzltG-6mYrIVdepzZA==/3682255645429244871.png" alt="ubuntu14.04 X64安装Dota2 - leaf - ------坚持雅操------" title="ubuntu14.04 X64安装Dota2 - leaf - ------坚持雅操------">  </p>
+<p>7、还有终端输入.export LC_CTYPE=”en_US.UTF-8” &amp;&amp; steam 不然好像是无法在steam在输入  </p>
+<p>参考：<a target="_blank" rel="noopener" href="http://tieba.baidu.com/p/3139011858#">http://tieba.baidu.com/p/3139011858#</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/4161376860/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/4161376860/" class="post-title-link" itemprop="url">玩网众无盘</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2014-02-28 17:18:00" itemprop="dateCreated datePublished" datetime="2014-02-28T17:18:00+08:00">2014-02-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hardware/" itemprop="url" rel="index"><span itemprop="name">Hardware</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hardware/%E6%97%A0%E7%9B%98/" itemprop="url" rel="index"><span itemprop="name">无盘</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>网吧服务器的带机量：  </p>
 <blockquote>
-<p>sh NVIDIA-Linux-x86-96.43.23-pkg1.run<br>然后点配置xorg.conf文件。 或者运行 nvidia-xconfig 也可以  </p>
+<p>1、CPU处理速度：这个跟带机量应该密切相关<br>2、内存容量：越，测试用。大越好，当虚拟盘。1XGB/s<br>3、硬盘速度：选用PCI-E接口的，直接到千兆了 1GB/s。SAN也是不错的选择。<br>4、网络速度：千兆是必须的<br>其他就加负载均衡，高可用等。  </p>
 </blockquote>
-<p>4、进init 5 环境  </p>
 <blockquote>
-<p>改 /etc/inittab  </p>
+<p>瓶颈就是硬盘速度。看你读写缓存速度。  </p>
+</blockquote>
+<p>搭建就按说明书上的搭建就好了，用的是破解版的启动服务器。<br>网众是linux系统的，所以比较稳定。  </p>
+<p><img src="http://img2.ph.126.net/lnM8u6x6m22FRJG2n5y9Rw==/3242310256830412532.png" alt="玩网众无盘 - leaf - ------坚持雅操------" title="玩网众无盘 - leaf - ------坚持雅操------"></p>
+<p> </p>
+<p><img src="http://img2.ph.126.net/V_DjrEVBbLX_9NdhwbuGzA==/848365579906058585.png" alt="玩网众无盘 - leaf - ------坚持雅操------" title="玩网众无盘 - leaf - ------坚持雅操------"></p>
+<p>ubuntu下安装：<br>1、sudo apt-get install dialog<br>2、chmod a+x nxp.run<br>3、sh nxp.run  </p>
+<p>数据管理器   nxpiomgr<br>启动管理器   nxpbootmgr  </p>
+<p>字体支持方面不太好，还得研究研究。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/4265064830/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/4265064830/" class="post-title-link" itemprop="url">通过PXE安装系统</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2014-02-18 15:28:00" itemprop="dateCreated datePublished" datetime="2014-02-18T15:28:00+08:00">2014-02-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hardware/" itemprop="url" rel="index"><span itemprop="name">Hardware</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hardware/%E6%97%A0%E7%9B%98/" itemprop="url" rel="index"><span itemprop="name">无盘</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>PXE整个安装的过程是这样的：</p>
+<p>PXE网卡启动 =&gt; </p>
+<p>DHCP获得IP地址 =&gt; </p>
+<p>从TFTP上下载 pxelinux.0、vmlinuz、initr.img 等 =&gt; </p>
+<p>引导系统进入安装步骤 =&gt; </p>
+<p>通过PEX linux 下载ks.cfg文件并跟据ks.cfg自动化安装系统 =&gt; 完成。</p>
+<p>windows下软件有</p>
 <blockquote>
-<p>id:3:initdefault:   把3改为5</p>
+<p>TFTPD32</p>
 </blockquote>
-</blockquote>
-<p>5、遇到的问题（问题才开始）  </p>
 <blockquote>
-<p>（EE） failed to initialize GLX Extension<br>1、看/var/log/Xorg.0.log ，模块的存放地址没有问题(/usr/X11R6/xorg/modules)<br>2、init 3，然后modprobe nvidia 能加载nvidia，startx正常。说明驱动安装没有问题。<br>3、感觉应该是图形启动之前模块还没加载，导致这个问题。  </p>
+<p>深度网吧GHOST辅助工具服务端</p>
+</blockquote>
 <blockquote>
-<p>做法是在电脑开机加载模块的时候添加显卡模块。<br>cd /etc/sysconfig/modules/<br>nano nvidia.modules<br>加入 /sbin/modprobe nvidia 保存。  </p>
 </blockquote>
-<p>进度条的时候白屏死机<br>进/etc/X11/xorg.conf   设置成16位色  </p>
+<blockquote>
 </blockquote>
+<p>linux下详细配置</p>
+<blockquote>
+<p>需要的文件有</p>
+<p>isolinux：安装光盘里有</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>vmlinuz</p>
+</blockquote>
+<blockquote>
+<p>initrd.img</p>
+</blockquote>
+<blockquote>
+<p>isolinux.cfg</p>
+<p>vesamenu.c32</p>
+</blockquote>
+<blockquote>
+<p>splash.jpg</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>syslinux：<a target="_blank" rel="noopener" href="http://www.syslinux.org/wiki/index.php/Download">http://www.syslinux.org/wiki/index.php/Download</a></p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>pxelinux.0</p>
+<p>vesamenu.c32 (可选用，二选一)</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>系统安装盘</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="http://zhumeng8337797.blog.163.com/blog/static/100768914201121383022804/">http://zhumeng8337797.blog.163.com/blog/static/100768914201121383022804/</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.ipcpu.com/2010/12/linux-pxe/">http://www.ipcpu.com/2010/12/linux-pxe/</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.kernel.org/pub/linux/utils/boot/syslinux/">www.kernel.org/pub/linux/utils/boot/syslinux/</a></p>
 
       
     </div>
@@ -1456,7 +1948,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/37/">37</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 

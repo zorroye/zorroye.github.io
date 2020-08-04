@@ -244,20 +244,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">366</span>
+          <span class="site-state-item-count">282</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">66</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">58</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -303,7 +303,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1940906119/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/4109131716/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -319,7 +319,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/1940906119/" class="post-title-link" itemprop="url">关于维护</a>
+            <a href="/posts/4109131716/" class="post-title-link" itemprop="url">CCNA第六章 静态路由、默认路由、RIPv2</a>
         </h2>
 
         <div class="post-meta">
@@ -329,15 +329,28 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2012-10-08 10:33:00" itemprop="dateCreated datePublished" datetime="2012-10-08T10:33:00+08:00">2012-10-08</time>
+              <time title="创建时间：2012-09-10 11:08:00" itemprop="dateCreated datePublished" datetime="2012-09-10T11:08:00+08:00">2012-09-10</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:52" itemprop="dateModified" datetime="2020-08-04T09:51:52+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Network/" itemprop="url" rel="index"><span itemprop="name">Network</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Network/cisco/" itemprop="url" rel="index"><span itemprop="name">cisco</span></a>
+                </span>
+            </span>
 
           
 
@@ -348,10 +361,110 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>一直的方向：  </p>
+          <p>路由详细过程</p>
+<p>静态路由</p>
 <blockquote>
-<p>电脑的事情尽量让电脑自己解决，就是自动化的解决。编程、写脚本，下软件，反正自己要做的，就是想出让电脑自动解决的办法。如数据备份、轮替等这些电脑都能做，就看你有没有能力让电脑去做。  </p>
-<p>问题的处理：首先要精通每个步骤和原理，只有这样，才能知道哪个步骤出错了和从那个点入手、用什么知识去解决问题。这些都是基础，基础扎实了就可以处理很多问题。做项目，也是原理和实际结合的东西。</p>
+<p>(config)#ip route 目标网段 子网掩码 下一路由接口 管理距离AD</p>
+<p>(config)#ip route 10.0.0.0 255.0.0.0 192.168.1.10 150</p>
+<p>-——-[R1]-192.168.1.1———–192.168.1.10-[R2]—–10.0.0.0——– </p>
+<p>AD越小越好越可信，直连为0</p>
+</blockquote>
+<p>默认路由</p>
+<blockquote>
+<p>只有1条出去的道路才能用默认路由</p>
+<p>(config)#ip route     0.0.0.0    0.0.0.0             10.1.11.1</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>所有的IP，所有的子网掩码 下一路由接口地址</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>RIP</p>
+<blockquote>
+<p>对相同开销的链路直接实现负载均衡，最多6条</p>
+<p>RIPv2组播整个路由表到相邻路由器上</p>
+<p>防路由回路：</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>最大跳计数15，</p>
+</blockquote>
+<blockquote>
+<p>水平分割(不像接收方向发送网段信息)，</p>
+</blockquote>
+<blockquote>
+<p>路由中毒(对故障网段设置最大跳为16)，</p>
+</blockquote>
+<blockquote>
+<p>保持关闭(设置定时，一段时间内不能恢复)</p>
+</blockquote>
+<p>(config)#router rip</p>
+<p>(config-router)#network 10.0.0.0</p>
+<p>(config-router)#version 2</p>
+</blockquote>
+<p>一个星期没看了。。。唉，三天打鱼，两天撒网  </p>
+<p>摘录  </p>
+<blockquote>
+<p>发送destination unreachable 只可能是出故障(接口被关闭)的那个路由器。这可以判断哪个位置出故障  </p>
+<p>show ip route  </p>
+<blockquote>
+<p>C:直接连接<br>S：静态路由<br>R：rip<br>O：ospf  </p>
+</blockquote>
+<p>防止路由环路  </p>
+<blockquote>
+<p>最大跳数限制<br>水平分割          发来的信息不能发回原路<br>路由中毒          一旦设置为16，将通告所有这条路由信息<br>保持关闭         设置定时器，一定时间内改不了  </p>
+</blockquote>
+</blockquote>
+<p>无线路由配置  </p>
+<blockquote>
+<p>(config)#int dot11radio 0/3/0<br>(config-if)#ip address 10.1.8.1 255.255.255.0<br>(config-if)#ssid test<br>(config-if-ssid)#guest-mode                       指此接口将广播这个ssid，若要隐藏就不要设置<br>(config-if-ssid)#authentication open<br>(config-if-ssid)#infrastructure-ssid             指此接口可以与其他接入点进行通信<br>(config-if-ssid)#no shutdown<br>(config-if-ssid)#exit<br>(config-if)#exit  </p>
+<p>(config)#ip dhcp pool test  </p>
+<p>(dhcp-config)#network 10.1.8.0 255.255.255.0</p>
+<p>(dhcp-config)#default-router 10.1.8.1</p>
+<p>(dhcp-config)#exit</p>
+<p>(config)#ip dhcp excluded-address 10.1.8.1</p>
+<p>扩展，如设置无线密码等查看 <a target="_blank" rel="noopener" href="http://wan118.sinaapp.com/?p=115">多vlan的AP配置</a>  </p>
+</blockquote>
+<p>无线AP配置  </p>
+<blockquote>
+<p>(config)#int bvi 1<br>(config-if)#ip address 10.1.1.2 255.255.255.0<br>(config-if)#no shutdown<br>(config-if)#exit<br>(config)#ip default-gateway 10.1.1.1  </p>
+<p>(config)#ip dhcp pool test2  </p>
+<p>(dhcp-config)#network 10.1.1.0 255.255.255.0</p>
+<p>(dhcp-config)#default-router 10.1.1.1</p>
+<p>(dhcp-config)#exit</p>
+<p>(config)#ip dhcp excluded-address 10.1.1.1</p>
+<p>(config)#ip dhcp excluded-address 10.1.1.2</p>
+</blockquote>
+<p>静态路由命令  </p>
+<blockquote>
+<p>(config)#ip route 172.16.3.0       255.255.255.0           192.168.2.4                               150  </p>
+</blockquote>
+<blockquote>
+<p>             下一个网段         子网掩码         通往下一网段的接口IP地址        管理距离，可有可无  </p>
+</blockquote>
+<p>默认路由命令  </p>
+<blockquote>
+<p>(config)#ip route 0.0.0.0 0.0.0.0 217.124.6.1<br>或者       ip default-network 217.124.6.0  </p>
+</blockquote>
+<p>RIP  </p>
+<blockquote>
+<p>(config)#router rip<br>(config-router)#network 10.0.0.0<br>(config-router)#passive-interface s0/0    s0/0不能向外发送rip信息，但是能接收<br>(config-router)#version 2  </p>
+</blockquote>
+<p>查看、验证、出错命令  </p>
+<blockquote>
+<p>show ip route<br>show ip protocols  </p>
+<p>debug ip rip  </p>
+<blockquote>
+<p>debug查看的时候就看进来有哪些信息，出去有哪些信息，就能画出网络图，然后再除错<br>另外一般多是远程连路由器的，所以要输入命令 #terminal monitor 不然看不到debug信息的  </p>
+</blockquote>
+</blockquote>
+<blockquote>
 </blockquote>
 
       
@@ -372,7 +485,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/326245325/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/4056244143/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -388,7 +501,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/326245325/" class="post-title-link" itemprop="url">LFS中使用rpm有关问题</a>
+            <a href="/posts/4056244143/" class="post-title-link" itemprop="url">鸟哥服务器第四章</a>
         </h2>
 
         <div class="post-meta">
@@ -398,15 +511,28 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2012-10-07 10:13:00" itemprop="dateCreated datePublished" datetime="2012-10-07T10:13:00+08:00">2012-10-07</time>
+              <time title="创建时间：2012-09-09 14:55:00" itemprop="dateCreated datePublished" datetime="2012-09-09T14:55:00+08:00">2012-09-09</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:51" itemprop="dateModified" datetime="2020-08-04T09:51:51+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
+                </span>
+            </span>
 
           
 
@@ -417,9 +543,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>转载：<br><a target="_blank" rel="noopener" href="http://www.linuxfromscratch.org/hints/downloads/files/rpm.txt">http://www.linuxfromscratch.org/hints/downloads/files/rpm.txt</a><br><a target="_blank" rel="noopener" href="http://hi.baidu.com/manbuzhe2009/item/94ba0f2af1bff4c6ee10f139">http://hi.baidu.com/manbuzhe2009/item/94ba0f2af1bff4c6ee10f139</a><br><a target="_blank" rel="noopener" href="http://zhidao.baidu.com/question/101700893.html&__bd_tkn__=6ea61a343c69dc25571ba779eca42cf6bd1388fd8078338d51fed8133ea5c69d362ad36bb4bcda3b39bb3949f6bbe47087ac3af56e60b1f4e7eb6015795cfc359d67a1f15d0f03de01252778dc32be0a4a739e7e0a2fba88a03f37087d2e372ecf6f7f323cb5a8a8e97d89accbdc8d02ce3226fe4faa">百度知道</a>  </p>
-<p>LFS虽然能安装rpm之类的包管理软件，但是由于建LFS是源码建的，所以rpm数据库中就不包含这些源码建的包，<br>这就导致用软件包管理系统在安装软件包的时候，会因为依赖关系不足而无法安装。  </p>
-<p>做好临时系统后直接勇rpm或者deb进行制作目标系统不知道是不是可以做出含包管理软件的目标系统</p>
+          <p>第三章没什么内容，略</p>
 
       
     </div>
@@ -439,7 +563,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3250989039/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/200730008/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -455,7 +579,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/3250989039/" class="post-title-link" itemprop="url">鸟哥基础第二十六章</a>
+            <a href="/posts/200730008/" class="post-title-link" itemprop="url">鸟哥服务器第二章</a>
         </h2>
 
         <div class="post-meta">
@@ -465,15 +589,28 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2012-10-06 19:37:00" itemprop="dateCreated datePublished" datetime="2012-10-06T19:37:00+08:00">2012-10-06</time>
+              <time title="创建时间：2012-09-09 14:54:00" itemprop="dateCreated datePublished" datetime="2012-09-09T14:54:00+08:00">2012-09-09</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:52" itemprop="dateModified" datetime="2020-08-04T09:51:52+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
+                </span>
+            </span>
 
           
 
@@ -484,192 +621,57 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>编译核心最重要的目的是为了系统的稳定。  </p>
-<p>编译核心需要的软件：核心源码src、核心开发套件kernel-devel、gcc、make工具等  </p>
-<p>cd /usr/src/kernels/2.6.11-1.1369_FC4smp-i686<br>make menuconfig<br>对于已经编译过，但是要加新内容，可以使用make oldconfig   #必须要有.config文件  </p>
-<p><img src="http://img9.ph.126.net/3b59c79c6H3tDr7JStHc9A==/6597183016355275109.jpg" alt="鸟哥基础第二十六章 - leaf - ------坚持雅操------" title="鸟哥基础第二十六章 - leaf - ------坚持雅操------"></p>
-<p> <br>make clean<br>make bzImage         #制作核心<br>make modules         #制作模块  </p>
-<p>#安装模块到/lib/modules<br>mv /lib/modules/2.6.* /lib/modules/2.6.*.old<br>make modules_install       </p>
-<p>#安装核心<br>cp /usr/src/…./bzImage           /boot/vmlinuz-….<br>cp /usr/src/…./System.map     /boot/System.map…  </p>
-<p>修改grub菜单</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2764598326/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/2764598326/" class="post-title-link" itemprop="url">鸟哥基础第二十五章</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2012-10-06 19:36:00" itemprop="dateCreated datePublished" datetime="2012-10-06T19:36:00+08:00">2012-10-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:52" itemprop="dateModified" datetime="2020-08-04T09:51:52+08:00">2020-08-04</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>查看电脑状态  </p>
+          <p>摘录：  </p>
 <blockquote>
-<p>lspci<br>iostat  </p>
+<p>帧和MTU  </p>
 <blockquote>
-<p>iostat -c 2 3   #2秒检测CPU使用率一次，共检测3次<br>iostat -d 2 3  ##2秒检测硬盘读写一次，共检测3次</p>
+<p>以太网帧最大容量是1518B，所以网络层要设置MTU，防止数据包过大<br>jumbo frame:用于千兆以太网，容量9000B-64000B，还没有获IEEE认可  </p>
 </blockquote>
-<p>lm_sensors  </p>
+<p>lo网段  </p>
 <blockquote>
-<p>命令：/usr/local/bin/sensors  </p>
-<blockquote>
-<p> /usr/local/sbin/sensors-detect  </p>
+<p>用于测试系统内部循环的网段，即使没网卡也一样存在<br>127.0.0.1  </p>
 </blockquote>
-<p>配置：/etc/sensors3.conf、/etc/sensors.d  </p>
-</blockquote>
-</blockquote>
-<p>setup功能  </p>
+<p>观察主机的路由信息：route -n  </p>
 <blockquote>
-<p>相当于系统安装时每个步骤的设置，包含nvsysv  </p>
-<p><img src="http://img9.ph.126.net/dk1_2oq3vP4wmw-3zP7Adw==/6598253940679164369.jpg" alt="鸟哥基础第二十五章 - leaf - ------坚持雅操------" title="鸟哥基础第二十五章 - leaf - ------坚持雅操------"></p>
-<p>   </p>
-</blockquote>
-<p>cups架构打印机  </p>
-<blockquote>
-<p>通过网页设置的很方便<br>linux对postscript打印格式支持最好  </p>
-<blockquote>
-<p>PPD:：用于支持postscript，放在/usr/share/cups/model  </p>
-</blockquote>
-<p>联机模式：  </p>
-<blockquote>
-<p>socket模式：socket://IP:9100<br>LPD   模式：打印机名称LPT1/LPT2<br>IPP    模式：ipp://IP:631/printername<br>smb   模式：smb://user:passwd@IP/printername  </p>
-</blockquote>
-</blockquote>
-<p>LVM  </p>
-<blockquote>
-<p>作用：产生一个大磁盘，并且扩容方便<br>概念：  </p>
-<blockquote>
-<p>前奏：fdisk将磁盘ID改为8e</p>
+<p><img src="http://img4.ph.126.net/-pTyYO0ZJbt0u3eJ2duS4w==/2563955562875174134.jpg" alt="鸟哥服务器第二章 - leaf - ------坚持雅操------" title="鸟哥服务器第二章 - leaf - ------坚持雅操------"></p>
+<p> </p>
 </blockquote>
 <blockquote>
-<p>PV：   physical volume  </p>
+<p>U：代表该路由可用<br>G：代表该网段通过路由转发<br>子网掩码：0.0.0.0 就是默认路由的意思  </p>
 <blockquote>
-<p>  主要用于标示磁盘用于LVM  </p>
-</blockquote>
-<p>VG：   volume group  </p>
-<blockquote>
-<p>  相当于把PV集合起来当作一个硬盘，该硬盘没有分过区、没格式化过  </p>
-</blockquote>
-<blockquote>
-<p>  PE：physcial extend  </p>
-<blockquote>
-<p>用于设置VG的块大小，相当于硬盘的块大小<br>默认：4M  </p>
-</blockquote>
-</blockquote>
-<p>LV：   logical volume  </p>
-<blockquote>
-<p>  相当于分区，对LVM磁盘分区  </p>
-</blockquote>
-<p>后续：格式化和挂载  </p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>操作：  </p>
-<blockquote>
-<p>前奏：  </p>
-<blockquote>
-<p>fdisk /dev/hdb —&gt; /dev/hdb1，/dev/hdb2 —&gt; 8e  </p>
-</blockquote>
-<blockquote>
-<p>partprobe                      #让分区表立刻生效  </p>
-</blockquote>
-<p>PV：  </p>
-<blockquote>
-<p>pvcreate /dev/hdb1<br>pvcreate /dev/hdb2<br>pvcreate /dev/hdb3<br>pvscan                         #搜索pv分区并显示出来<br>pvdisplay                     #显示pv分区详细信息<br>                                    #pvremove 删除pv分区  </p>
-</blockquote>
-<p>VG：  </p>
-<blockquote>
-<p>vgcreate vg /dev/hdb1/dev/hdb2<br>vgscan<br>vgdisplay<br>                                    #vgextend vg /dev/hdb3   增加额外的PV<br>                                    #vgreduce vg /dev/hdb3   删除PV<br>                                    #vgremove vg                   删除VG<br>                                    #vgchange -a n vg            设置vg不可用  </p>
-</blockquote>
-<p>LV：  </p>
-<blockquote>
-<p>lvcreate -L 10G -n lv1 vg                                       #相当于分区  </p>
-</blockquote>
-<blockquote>
-<p>lvcreate -L 15G -n lv2 vg         </p>
-</blockquote>
-<blockquote>
-<p>lvscan<br>lvdisplay<br>                                                                             #lvremove 删除lv分区  </p>
-</blockquote>
-<p>格式化  </p>
-<blockquote>
-<p>mkfs.ext3 /dev/vg/lv1<br>mkfs.ext3 /dev/vg/lv2  </p>
-</blockquote>
-<p>挂载  </p>
-<blockquote>
-<p>mkdir /media/lvm1<br>mount …..<br>fstab  </p>
-</blockquote>
-<p>加大LVM磁盘  </p>
-<blockquote>
-<p>vgexteng vg /dev/hdb3<br>lvextend -L +10G /dev/vg/lv1                               #lvreduce 减少lv容量  </p>
-</blockquote>
-<blockquote>
-<p>umount /media/lvm1<br>resize2fs -f /dev/vg/lv1                                         #更新lv磁盘信息，也就是更新超级块信息  </p>
-</blockquote>
-<blockquote>
-<p>mount …..  </p>
+<p>0.0.0.0 192.168.3.1 0.0.0.0 就是所有地址都通过192.168.3.1转发<br>相当于 (config)#ip route 0.0.0.0 0.0.0.0 192.168.3.1  </p>
 </blockquote>
 </blockquote>
 </blockquote>
-<p>磁盘阵列  </p>
 <blockquote>
-<p>nas：提供存储服务的一台电脑<br>san：一台存储设备(相当于很大容量的硬盘)，通过光纤和电脑主机直接相连<br>iscsi：IP网络存储，相当于设置了IP地址的san，然后是通过网络设备相连的，  </p>
+<p>TCP表头代码位（code）说明：控制标志码  </p>
 <blockquote>
-<p>连接方式：san群-路由器|—-交换机—-|电脑</p>
+<p>SYN=1 请求建立连接  </p>
+<blockquote>
+<p>而序列号（sequence Number）：为数据包的序号  </p>
 </blockquote>
+<p>ACK=1 为响应数据包  </p>
+<blockquote>
+<p>而确认应答号（acknowledge Number）：为确认应答的序号  </p>
+</blockquote>
+<p>FIN=1 为请求中断连接<br>RST=1为强制断线，且发送端已断线<br>其他<br>URG=1 为紧急数据包，要紧急处理<br>PSH=1 为立即发送缓冲区的数据包，而不要等到满了再发  </p>
+<p>三次握手：  </p>
+<blockquote>
+<p><img src="http://img5.ph.126.net/kXLgIx0zEkCe_efyx1pQfg==/6597952674493174955.jpg" alt="鸟哥服务器第二章 - leaf - ------坚持雅操------" title="鸟哥服务器第二章 - leaf - ------坚持雅操------"></p>
+<p> </p>
+</blockquote>
+<p>发送序号就是sequence Number，对应TCP表头第二排<br>确认序号就是acknowledge Number，对应TCP表头第3排<br>标志位就是code，对应TCP表头第四行的代码位  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>防火墙的原理就是分析表头，再进行规则设置  </p>
+</blockquote>
+<blockquote>
+<p>DNS设置文件：/etc/resolv.conf  直接写DNS就可以了，如60.191.134.196  </p>
+</blockquote>
+<p>相关网站  </p>
+<blockquote>
+<p>协议网站 http：//<a target="_blank" rel="noopener" href="http://www.rfc-editor.org/">www.rfc-editor.org</a><br>酷学园 <a target="_blank" rel="noopener" href="http://phorum.study-area.org/">http://phorum.study-area.org</a></p>
 </blockquote>
 
       
@@ -690,7 +692,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3411454321/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1004538176/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -706,7 +708,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/3411454321/" class="post-title-link" itemprop="url">鸟哥基础第二十四章</a>
+            <a href="/posts/1004538176/" class="post-title-link" itemprop="url">鸟哥服务器第一章</a>
         </h2>
 
         <div class="post-meta">
@@ -716,15 +718,28 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2012-10-06 19:35:00" itemprop="dateCreated datePublished" datetime="2012-10-06T19:35:00+08:00">2012-10-06</time>
+              <time title="创建时间：2012-09-08 13:34:00" itemprop="dateCreated datePublished" datetime="2012-09-08T13:34:00+08:00">2012-09-08</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:52" itemprop="dateModified" datetime="2020-08-04T09:51:52+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
+                </span>
+            </span>
 
           
 
@@ -735,47 +750,34 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>概念：  </p>
+          <p>架站的能力：  </p>
 <blockquote>
-<p>X客户端，窗口管理器(gnome、KDE)————-X服务器————用户  </p>
+<p>网络基础、硬件基础<br>架站<br>调试、除错<br>安全、备份  </p>
+</blockquote>
+<p>摘录：<br>1、磁盘配额quota  </p>
 <blockquote>
-<p>X服务器：负责驱动硬件：控制显示设备(显卡、显示器)，接受鼠标键盘的输入信息等<br>X客户端：负责产生画面，并告诉X服务器如何显示<br>窗口管理器：增强Xclient的绘制能力，使之更好的显示窗口、按钮、菜单、鼠标等<br>#用户和Xserver打交道—–&gt;Xserver把用户的动作告诉Xclient—–&gt;<br>#—–&gt;Xclient负责告诉Xserver如何显示—–&gt;Xserver调用显卡驱动等把画面显示出来。  </p>
+<p>配额针对整个分区，所以需要有不同的2种服务配额，就需要划分2个分区  </p>
 </blockquote>
-</blockquote>
-<p>startx<br>实际启动X的程序是xinit<br>X客户端：                /usr/X11R6/bin/xterm      #X虚拟终端<br>X客户端脚本：         /etc/X11/xinit/xinitrc<br>X服务器：                /usr/X11R6/bin/X<br>X服务器脚本：         /etc/X11/xinit/xserverrc    #默认不存在<br>X服务器设置文件： /etc/X11/xorg.conf<br>X服务器监听端口：  6000                               #可以有多个端口监听不同的X客户端的显示命令<br>                                                                       #如vnc时有本地的和远程的Xclient，都告诉X服务器如何显示<br>                                                                       #X服务器可启动很多，第二个就是tty8了  </p>
-<p>xinit   xterm -geometry +1+1 -n login    -display :0                  –         X           :0<br>         客户端                                        第0号显示界面                       服务器   第0号界面  </p>
+<p>2、samba  </p>
 <blockquote>
-<p>whereis startx  </p>
+<p>samba的原理是利用 netbios over tcp/ip  。netbios是无法夸网段的。  </p>
+</blockquote>
+<p>3、tarball安装  </p>
 <blockquote>
-<p>startx: /usr/X11R6/bin/startx /usr/bin/X11/startx  </p>
+<p>用tarball装软件，要升级的话需要先删除旧版本再安装  </p>
 </blockquote>
-<p>diff /usr/X11R6/bin/startx /usr/bin/X11/startx  </p>
+<p>4、启动相关  </p>
 <blockquote>
-<p>无  </p>
+<p>stand alone服务的设置文件放在/etc/init.d/里面<br>super daemon服务的设置文件放在/etc/xinetd.d里面  </p>
 </blockquote>
-<p>cat startx | egrep -v “^#|^$”  </p>
+<p>5、安全性  </p>
 <blockquote>
-<p>userclientrc=$HOME/.xinitrc<br>userserverrc=$HOME/.xserverrc<br>sysclientrc=/etc/X11/xinit/xinitrc<br>sysserverrc=/etc/X11/xinit/xserverrc<br>defaultclient=/usr/X11R6/bin/xterm<br>defaultserver=/usr/X11R6/bin/X<br>defaultclientargs=””<br>defaultserverargs=””<br>clientargs=””<br>serverargs=””<br>…………….  </p>
+<p>/etc/login.defa设置密码规则<br>/etc/security/limits.conf设置用户权限<br>pam模块提供额外的密码验证<br>还有/etc/hosts.allow 、防火墙设置、打补丁等设置安全性  </p>
 </blockquote>
-<p>/etc/X11/xinit/xinitrc  </p>
-<blockquote>
-<p>会打开/etc/X11/xinit/Xclients，该文件会调用/etc/sysconfig/desktop，里面设置开启gnome<br>如果没有其他窗口管理器，则会打开/usr/X11R6/bin/twm  </p>
-</blockquote>
-</blockquote>
+<p>6、查看日志文件和数据备份  </p>
 <blockquote>
 </blockquote>
-<p>XFS：字体服务器  </p>
 <blockquote>
-<p>作用：为本机或远程Xclient提供字体。  </p>
-</blockquote>
-<blockquote>
-<p>命令：/usr/X11R6/bin/xfs、/usr/bin/X11/xfs  </p>
-</blockquote>
-<blockquote>
-<p>启动程序：/etc/init.d/xfs<br>设置文件：/etc/X11/fs/config  </p>
-<blockquote>
-<p># 下面是设置字体存放的位置，xfs会搜索这些目录<br>catalogue = /usr/X11R6/lib/X11/fonts/misc:unscaled,<br>        /usr/X11R6/lib/X11/fonts/75dpi:unscaled,<br>        /usr/X11R6/lib/X11/fonts/100dpi:unscaled,<br>        /usr/X11R6/lib/X11/fonts/Type1,<br>        /usr/share/fonts/default/Type1,<br>        ,<br>        /usr/share/fonts/chinese/TrueType  </p>
-</blockquote>
 </blockquote>
 
       
@@ -796,7 +798,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2088480788/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3113480854/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -812,7 +814,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/2088480788/" class="post-title-link" itemprop="url">鸟哥基础第二十三章</a>
+            <a href="/posts/3113480854/" class="post-title-link" itemprop="url">CCNA第五章 管理cisco网络</a>
         </h2>
 
         <div class="post-meta">
@@ -822,15 +824,28 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2012-10-06 09:52:00" itemprop="dateCreated datePublished" datetime="2012-10-06T09:52:00+08:00">2012-10-06</time>
+              <time title="创建时间：2012-08-30 15:45:00" itemprop="dateCreated datePublished" datetime="2012-08-30T15:45:00+08:00">2012-08-30</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:52" itemprop="dateModified" datetime="2020-08-04T09:51:52+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Network/" itemprop="url" rel="index"><span itemprop="name">Network</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Network/cisco/" itemprop="url" rel="index"><span itemprop="name">cisco</span></a>
+                </span>
+            </span>
 
           
 
@@ -841,22 +856,128 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>备份用到的就是脚本+crond  </p>
-<p>备份用到的服务：crontd<br>备份的命令：tar、dd、cpio、dump等  </p>
-<p>远程备份脚本  </p>
+          <p>本章主要介绍怎么用cisco  </p>
+<p>cisco存储介质  </p>
 <blockquote>
-<p>host=”192.168.1.100”<br>id=”username”<br>pw=”passwd”  </p>
-<p>basedir=”本机目录”<br>remodir=“远程目录”  </p>
-<p>filename=“backup.tar”  </p>
-<p>cd $basedir<br>tar -cvf $filename *  </p>
-<p>#ftp到$host，并记录日志，输入EOC时结束连接  </p>
-<p>ftp -n “$host” &gt; “$basedir”/“$filename”.log 2&gt;&amp;1 &lt;&lt;EOC      <br>user  $id  $pw<br>binary<br>cd $remodir<br>put $filename<br>bye<br>EOC</p>
+<p>ROM：  </p>
+<blockquote>
+<p>存放POST自检程序 (相当于BIOS)<br>存放bootstrap          (相当于linux的grub，一个启动程序)</p>
+</blockquote>
+<blockquote>
+<p>ROM监控程序，微型IOS(相当于WINPE)  </p>
+</blockquote>
+<p>NVRAM：  </p>
+<blockquote>
+<p>16位软件寄存器(相当于设置启动顺序)<br>存放配置文件  </p>
+</blockquote>
+<p>闪存：  </p>
+<blockquote>
+<p>保存CISCO IOS (相当于电脑硬盘)  </p>
+</blockquote>
+<p>RAM：  </p>
+<blockquote>
+<p>内存(相当于电脑内存)  </p>
+</blockquote>
+</blockquote>
+<p>cisco的启动顺序  </p>
+<blockquote>
+<p>-&gt;POST自检<br>-&gt;启动bootstrap<br>-&gt;bootstrap调用16位寄存器设置<br>-&gt;bootstrap载入闪存中的IOS/TFTP的IOS/ROM上的微型IOS  </p>
+</blockquote>
+<blockquote>
+<p>-&gt;cisco ios 调用NVRAM上的配置文件  </p>
+</blockquote>
+<p>CDP cisco发现协议  </p>
+<blockquote>
+<p>只能看到直连cisco设备<br>绘制拓扑图非常方便<br>不用啥设置，基本上show一下啥都清楚了  </p>
+</blockquote>
+<p>恢复口令  </p>
+<blockquote>
+</blockquote>
+<p>debug命令  </p>
+<blockquote>
+<p>检查全面，但是消耗巨大，严重降低性能。<br>#debug all<br>#no debug all  </p>
 </blockquote>
 <blockquote>
 </blockquote>
-<p>crontab  </p>
+<p>主要内容：  </p>
 <blockquote>
-<p>30 2 * * * root   /…./ftp-backup.sh</p>
+<p>启动过程  </p>
+</blockquote>
+<blockquote>
+<p>恢复口令<br>CDP<br>hosts/DNS名称解析设置  </p>
+</blockquote>
+<p>1、路由器启动详细过程  </p>
+<blockquote>
+<p>思科路由器的启动过程和电脑类似<br>首先，开机自检，开机自检程序存在ROM中。  </p>
+<blockquote>
+<p>ROM存了  |post自检程序  </p>
+<blockquote>
+<blockquote>
+<p>|ROM监控程序<br>|bootstrap，用于加载IOS，IOS相当于linux的内核；bootstrap相当于grub<br>|微型IOS，相当于WINPE  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>第二，由bootstrap加载IOS到RAM中  </p>
+<blockquote>
+<p>IOS存放在flash中，flash相当于硬盘<br>RAM就是内存，这个过程和加载linux内核是一样的  </p>
+</blockquote>
+<p>第三，加载配置文件  </p>
+<blockquote>
+<p>加载配置文件就相当于linux中的init程序的操作<br>配置文件存放在NVRAM中，NVRAM中还存放配置寄存器  </p>
+<blockquote>
+<p>配置寄存器的作用和linux下的inittab差不多<br>inittab可以使linux启动命令行界面或图形界面<br>而配置寄存器可以使IOS加载配置或不加载配置  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>补充：<br>CISCO IFS就是对flash的操作，flash就相当于硬盘  </p>
+</blockquote>
+<blockquote>
+<p>而路由协议啥的就是应用程序  </p>
+</blockquote>
+<p>2、恢复口令  </p>
+<blockquote>
+<p>1、开路由器后马上按ctrl+pause|break键，进入ROM监控模式<br>2、设置寄存器&gt;confreg 0x2142<br>3、重启路由器&gt;reset<br>4、修改密码  </p>
+<blockquote>
+<p>copy startup-config running-config<br>config terminal<br>enable secret 123<br>copy running-config startup-config<br>config-register 0x2102  </p>
+</blockquote>
+</blockquote>
+<p>3、思科CDP  </p>
+<blockquote>
+<p>就是查看直连设备IP、端口、IOS版本等<br>cdp有2个参数  </p>
+<blockquote>
+<p>#show cdp  </p>
+</blockquote>
+<blockquote>
+<p>(config)#cdp holdtime 180<br>(config)#cdp timer 60  </p>
+</blockquote>
+<p>cdp相关命令  </p>
+<blockquote>
+<p>(config)#no cdp run 完全关闭cdp<br>(config-if)#no cdp enable 关闭某个端口的cdp  </p>
+<p>#show cdp neighbor<br>#show cdp neighbor detail<br>#show cdp entry * protocols<br>#show cdp entry * version<br>#show cdp traffic<br>#show cdp interface (显示接口的CDP状态)  </p>
+</blockquote>
+</blockquote>
+<p>4、利用dns解析主机表  </p>
+<blockquote>
+<p>前提是网络上有DNS服务器<br>ip domain-lookup<br>ip name-server 192.168.1.1<br>ip domain-name 123.com  </p>
+<p>直接自己输入：<br>ip host R1 10.2.2.2  相当于在hosts文件里面写主机表  </p>
+</blockquote>
+<p>5、对远程连接的操作  </p>
+<blockquote>
+<p>telnet 10.1.1.1<br>本地的操作  </p>
+<blockquote>
+<p>show sessions<br>disconnect 2  </p>
+</blockquote>
+<p>远程设备上的操作  </p>
+<blockquote>
+<p>show users<br>exit  /  chlar line 2  </p>
+</blockquote>
+</blockquote>
+<p>其他摘录  </p>
+<blockquote>
+<p>boot system flash rom ftp tftp  </p>
+<p>show processes 相当于进程管理器  </p>
+<p>debug all  </p>
 </blockquote>
 
       
@@ -877,7 +998,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/828707654/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/529402642/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -893,7 +1014,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/828707654/" class="post-title-link" itemprop="url">鸟哥基础第二十二章</a>
+            <a href="/posts/529402642/" class="post-title-link" itemprop="url">CCNA第四章 CISCO IOS</a>
         </h2>
 
         <div class="post-meta">
@@ -903,15 +1024,28 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2012-10-06 09:31:00" itemprop="dateCreated datePublished" datetime="2012-10-06T09:31:00+08:00">2012-10-06</time>
+              <time title="创建时间：2012-08-28 16:17:00" itemprop="dateCreated datePublished" datetime="2012-08-28T16:17:00+08:00">2012-08-28</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:52" itemprop="dateModified" datetime="2020-08-04T09:51:52+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Network/" itemprop="url" rel="index"><span itemprop="name">Network</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Network/cisco/" itemprop="url" rel="index"><span itemprop="name">cisco</span></a>
+                </span>
+            </span>
 
           
 
@@ -922,192 +1056,101 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>重点是日志的设置和轮换  </p>
-<p>1、log默认存放位置  </p>
+          <p>本章主要介绍怎么进cisco  </p>
+<p>cisco安全层次  </p>
 <blockquote>
-<p>/var/log/secure             #访问系统数据的记录<br>/var/log/wtmp               #登录者的信息<br>/var/log/messages       #系统错误的信息<br>/var/log/boot.log          #系统开机和服务启动时的信息<br>/var/log/mail             <br>/var/log/maillog<br>/var/log/cron                 #cron的内容<br>/var/log/samba             #网络服务的信息<br>等等  </p>
-</blockquote>
-<p>2、syslogd  </p>
+<p>普通模式-特权模式-编辑模式。<br>跟vim有点像，  </p>
 <blockquote>
-<p>程序：/sbin/syslogd<br>程序配置：/etc/syslog.conf<br>启动脚本：/etc/init.d/syslog<br>启动脚本配置：/etc/sysconfig/syslog  </p>
-<p>/etc/syslog.conf<br>cat /etc/syslog.conf | egrep -v “^#|^$”  </p>
-<blockquote>
-<p>*.info;mail.none;authpriv.none;cron.none                /var/log/messages<br>authpriv.*                                                                 /var/log/secure<br>mail.*                                                                       -/var/log/maillog<br>cron.*                                                                       /var/log/cron<br>*.emerg                                                                      *<br>uucp,news.crit                                                         /var/log/spooler<br>local7.*                                                                    /var/log/boot.log  </p>
-<p>服务名称.信息等级                                                  log存放位置<br>服务名称  </p>
-<blockquote>
-<p>auth、authpriv：认证有关的记录<br>cron：                例行性有关信息<br>daemon:             守护程序相关信息<br>kern：                核心相关信息<br>syslog：             syslog本身相关信息  </p>
-</blockquote>
-<p>分隔符  </p>
-<blockquote>
-<p>.                          比后面的信息等级相同的或更高的都记录下来<br>.=                        等于后面的信息等级的记录下来<br>.！                      除了后面的信息等级，其他等级都记录下来  </p>
-</blockquote>
-<p>信息等级(从低到高)  </p>
-<blockquote>
-<p>info                      基本信息<br>notice<br>warn/warning     一般都记录这个及以上的信息<br>error/err<br>crit<br>alert<br>panic/emerg       该等级意味着系统快死机了  </p>
-</blockquote>
-<p>log存放位置  </p>
-<blockquote>
-<p>@192.168.1.100      存放到远程网络<br>*                               显示出来给所有在线的人看  </p>
+<p>普通模式就相当于进入vim的时候你可以浏览文档<br>特权模式就相当于vim可以操作dd，wq之类的<br>编辑模式就相当于按下insert之类的命令之后可以开始编辑  </p>
 </blockquote>
 </blockquote>
+<p>cisco的配置文档结构  </p>
+<blockquote>
+<p>结构就是全局+各个具体项<br>设置用户名，设置路由协议，acl之类的就是全局配置<br>进入各个接口，进入各个line就是具体项配置。  </p>
 </blockquote>
-<p>3、logrotate  </p>
+<p>主要内容：  </p>
 <blockquote>
-<p>logrotate只是一个程序，它靠cron帮助每日运行。  </p>
+<p>设置密码<br>设置SSH<br>其他常用命令  </p>
 </blockquote>
+<p>1、设置口令  </p>
 <blockquote>
-<p>rpm -ql logrotate  </p>
+<p>登录口令：包括aux、console、vty等口令，就是连接路由器的时候要输入的口令  </p>
+<blockquote>
+<p>(config)#line vty 0 4<br>(config-line)#password 123<br>(config-line)#login  </p>
 </blockquote>
+<p>特权口令：就是输入 routrer&gt;enable 后要输入的口令  </p>
 <blockquote>
-<p>程序：/usr/sbin/logrotate<br>配置：/etc/logrotate.conf、/etc/logrotate.d<br>cron：/etc/cron.daily/logrotate  </p>
-</blockquote>
-<blockquote>
-<p>/etc/logrotate.conf<br>cat /etc/logrotate.conf | egrep -v “^#|^$”  </p>
-<blockquote>
-<p>weekly                                    每周一次<br>rotate 4                                   存4个备份<br>create                                     建新文件来记录<br>include /etc/logrotate.d           包含该目录下的轮替设置，自定义的都可以写在这里，数据库轮替也可以用<br>/var/log/wtmp {                        针对登录时的用户状态进行记录的文件，进行轮替<br>    monthly                               记录用户ID，登录时间等等<br>    create 0664 root utmp<br>    rotate 1<br>}<br>/var/log/btmp {<br>    missingok<br>    monthly<br>    create 0600 root utmp<br>    rotate 1<br>#蓝色部分是要logrotate的内容，并且做了如何logrotate的设置。  </p>
-</blockquote>
-<p>/etc/logrotate.d/admin  </p>
-<blockquote>
-<p>/var/log/admin.log {  </p>
-<blockquote>
-<p>monthly<br>size=10M                            #大于10M自动轮替<br>rotate 5<br>sharedscripts  </p>
-<blockquote>
-<p>prerotate                      #轮替前做的事  </p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>/usr/bin/chattr -a /var/log/admin.log  </p>
-</blockquote>
-</blockquote>
-<p>endrotate<br>sharedscripts        </p>
-<blockquote>
-<p>postrotate                    #轮替后做的事         </p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>/usr/bin/killall -HUP syslogd<br>/usr/bin/chattr +a /var/log/admin.log  </p>
-</blockquote>
-</blockquote>
-<p>endrotate  </p>
-</blockquote>
+<p>(config)#enable password 123  / enable secret 123  </p>
 </blockquote>
 </blockquote>
 <blockquote>
-<p>logrotate命令  </p>
+<p>其他：  </p>
 <blockquote>
-<p>logrotate -v /etc/logrotate.d/admin   查看轮替的运行情况<br>logrotate -f /etc/logrotate.d/admin    强制进行轮替，立刻进行  </p>
+<p>不设置登录口令  </p>
+<blockquote>
+<p>(config)#line vty 0 4<br>(config-line)#no login  </p>
+</blockquote>
+<p>控制台的相关设置  </p>
+<blockquote>
+<p>(config-line)#logging synchronous   阻止控制台信息的显示<br>(config-line)#exec-timeout 0 0         设置无操作时的退出时间  </p>
+</blockquote>
+<p>加密配置中的密码  </p>
+<blockquote>
+<p>(config)#service password-encryption  </p>
+</blockquote>
+<p>对接口进行描述  </p>
+<blockquote>
+<p>(config-if)#description ******  </p>
 </blockquote>
 </blockquote>
-<p>其他命令  </p>
-<blockquote>
-<p>sudo last /var/log/wtmp <br>sudo lastlog  </p>
 </blockquote>
-<p>附专题：数据库的轮替  </p>
+<p>2、SSH加密通信  </p>
 <blockquote>
-<p><a target="_blank" rel="noopener" href="http://islandlinux.org/howto/automated-mysql-backups">http://islandlinux.org/howto/automated-mysql-backups</a><br><a target="_blank" rel="noopener" href="http://www.cslog.cn/Content/logrotate-mysql-automated-backu/">http://www.cslog.cn/Content/logrotate-mysql-automated-backu/</a>     #这里有些写错了</p>
+<p>(config)#hostname rt                         先设置主机名<br>(config)#ip domain-name rt.com       再设置域名<br>(config)#crypto key generate rsa general-keys modulus 1024   这里用rsa加密，密钥位数1024<br>(config)#ip ssh time-out 60                        自动断开时间60秒<br>(config)#ip ssh authentication-retries 3      密码错误重试3次<br>(config)#transport input ssh telnet              应用到ssh和telnet  </p>
 </blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/24379294/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/24379294/" class="post-title-link" itemprop="url">鸟哥基础第二十一章</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2012-10-05 19:22:00" itemprop="dateCreated datePublished" datetime="2012-10-05T19:22:00+08:00">2012-10-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:52" itemprop="dateModified" datetime="2020-08-04T09:51:52+08:00">2020-08-04</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>系统本身的服务，由ps、top等查看、管理；提供外部的网络服务，由netstat等查看、管理。<br>十七章是系统服务，而下面的都是网络服务，  </p>
-<p>独立程序  </p>
+<p>3、开启路由器的http/https服务  </p>
 <blockquote>
-<p>独立启动，常驻内存<br>位置：/etc/init.d<br>启动：service atd start  </p>
+<p>略 p185  </p>
 </blockquote>
-<p>守护程序  </p>
+<p>4、其他  </p>
 <blockquote>
-<p>由xinetd负责管理和启动，用到的时候才启动，不触发时不占内存<br>inetd本身没有访问控制能力，全靠TCP_wrapper控制(/etc/host.allow、/etc/host.deny)<br>xinetd本身内置了访问控制能力<br>位置：/etc/xinetd.d<br>配置：/etc/xinetd.conf            <br>-————————————————————————————-<br>service rsync<br>{<br>        disable = yes                               #服务失效<br>        socket_type     = stream              #使用tcp流<br>        wait            = no                           #由于是tcp，所以只能是nowait<br>        user            = root<br>        server          = /usr/bin/rsync<br>        server_args     = –daemon         #传递给/usr/bin/rsync的参数 ：rsync –daemon<br>        log_on_failure  += USERID         #记录日志时额外再记录：userid。<br>        #如添加only_from / no_access = 192.168.1.0 /24 即可控制访问来源<br>}<br>-—————————————————————————————  </p>
+<p>登录特权模式 router&gt;enable                          当前用户模式：查看统计信息等  </p>
+<blockquote>
+<p>#show history                                       查看历史命令<br>#show terminal                                     查看终端设置  </p>
+<blockquote>
+<p>#terminal history size 25              修改历史命令行数  </p>
 </blockquote>
-<p>端口号文件  </p>
-<blockquote>
-<p>/etc/services<br>相关服务的端口如果services里面没有列出来，则服务不能使用。<br>先通过netstat -tunlp查看开了哪些端口，<br>再和/etc/services对照一下就知道开启了什么服务<br>再通过关闭程序：sudo /etc/init.d/*  stop 关闭程序  </p>
+<p>#show version                                      查看ios版本  </p>
+<p>show interface f0/1                               查看接口配置<br>show ip interface                                  查看接口的IP配置<br>show ip interface brief                          查看接口的详细状态    <br>show protocols                                     查看1、2层状态<br>show controllers                                   查看接口DCE、DTE      </p>
+<p>#erase startup-config                           删除启动配置<br>#copy running-config startup-config     保存<br>#reload  (重启)                                     重新加载配置  </p>
 </blockquote>
-<p>服务的启动和关闭(只针对独立启动的服务)  </p>
+<p>登录全局模式router#configure terminal         当前特权模式：可查看/修改配置，查询路由表等  </p>
 <blockquote>
-<p>ntsysv ：这个是redhat及衍生版本才有的功能  </p>
-<blockquote>
+<p>(config)#hostname rt                             更改主机名<br>(config)#banner motd ! *********** !         banner 横幅 ，就是登录或者离开系统时的提示  </p>
 </blockquote>
-<p>chkconfig  </p>
+<p>登录功能模式router(config)#interface fastEthernet 0/0     当前全局模式，可改主机名、时钟等</p>
+</blockquote>
 <blockquote>
-<p>chkconfig –list ：查看各项服务的状态<br>chkconfig –level 345 atd on  </p>
 <blockquote>
-<p>level：表示运行等级<br>atd：该名称必须是/etc/init.d里面包含的<br>on：on或者off  </p>
+<p>(config-if)#ip address 192.168.1.2 255.255.255.0<br>(config-if)#ip address 192.168.2.2 255.255.255.0 secondary<br>                                                              一般不会用到，同一个端口设置第二个子网地址  </p>
 </blockquote>
 </blockquote>
-<p>其他：<br>/etc/rc.d/rc.local：里面添加删除  </p>
 <blockquote>
+<p>interface s0/0  </p>
+<blockquote>
+<p>(config-if)#clock rate 1000000<br>(config-if)#bandwidth 100000</p>
 </blockquote>
 </blockquote>
-<p>TCP_Wrappers  </p>
+<p>5、除错  </p>
 <blockquote>
-<p>/etc/hosts.allow、/etc/hosts.deny<br>守护程序管理的服务，由xinetd代理，由TCP_wrapper管理。当然防火墙也对访问进行限制。  </p>
-<blockquote>
-<p>以上2个文件都是/usr/sbin/tcpd的设置文件<br>/usr/sbin/tcpd的用处就是分析进入系统的TCP包，并进行限制  </p>
+<p>serial0/0 is up,line protocol is down <br>正常的话物理层和数据链路层都应该是up，如果数据链路层down的话考虑时钟等，这种问题一般出现在串口上  </p>
 </blockquote>
-<p>格式：  </p>
 <blockquote>
-<p>in.telnetd:ALL：加在allow里表示允许进出，加在deny里表示禁止进出<br>in.telnetd:ALL：spawn …|| …||….   后面接操作指令  </p>
+<p>错误提示  </p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>%incomplete command                            一行命令没输完整<br>%invalid input detected at ‘^’ marker        输入错误<br>%ambiguous command                            产生歧义，命令不唯一</p>
 </blockquote>
 </blockquote>
 
@@ -1129,7 +1172,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/537343388/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2993408280/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1145,7 +1188,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/537343388/" class="post-title-link" itemprop="url">鸟哥基础第二十章</a>
+            <a href="/posts/2993408280/" class="post-title-link" itemprop="url">CCNA第三章 子网</a>
         </h2>
 
         <div class="post-meta">
@@ -1155,15 +1198,28 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2012-10-05 18:48:00" itemprop="dateCreated datePublished" datetime="2012-10-05T18:48:00+08:00">2012-10-05</time>
+              <time title="创建时间：2012-08-27 11:19:00" itemprop="dateCreated datePublished" datetime="2012-08-27T11:19:00+08:00">2012-08-27</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:52" itemprop="dateModified" datetime="2020-08-04T09:51:52+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Network/" itemprop="url" rel="index"><span itemprop="name">Network</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Network/cisco/" itemprop="url" rel="index"><span itemprop="name">cisco</span></a>
+                </span>
+            </span>
 
           
 
@@ -1174,79 +1230,177 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>RPM命令  </p>
+          <p>vlsm是为了节省ip地址，达到减少网络流量，有利于汇总的目的<br>支持vlsm的就是无类路由，有类指的是abc类<br>IP寻址除错  </p>
 <blockquote>
-<p>1、rpm包名称  </p>
-<blockquote>
-<p>*.i386.rpm：适用于所有x86平台<br>*.noarch.rpm：没有硬件上的限制，一般就是文本文件  </p>
+<p>ping 127.0.0.1 不通  是协议问题<br>ping本机地址不通    是网卡问题  </p>
 </blockquote>
-<p>2、rpm安装目录  </p>
+<p>子网  </p>
 <blockquote>
-<p>/etc<br>/usr/bin<br>/usr/lib<br>/usr/share/doc<br>/usr/share/man<br>/var/lib/rpm                                      #为系统安装的rpm包信息记录  </p>
-</blockquote>
-<p>3、rpm命令  </p>
+<p>掩码只能到/30，因为需要1个IP表示网段，1个IP表示广播地址  </p>
+<p>/29 知道块地址就好算了  </p>
 <blockquote>
-<p>安装  </p>
-<blockquote>
-<p>rpm -i                                       #install<br>其他参数  </p>
-<blockquote>
-<p>rpm -i *.rpm –force         #强制安装<br>rpm -i *.rpm –test           #只测试能否安装到电脑里  </p>
+<p>主机数量：32-29=3—&gt;2^3=8—&gt;8-2=6<br>子网数量：29-24=5—&gt;2^5=32  或者   256/8=32<br>子网掩码：/29：32-29=3—&gt;2^3=8—&gt;256-8=248<br>反码计算：/29：32-29=3—&gt;2^3=8—&gt;8-1=7  </p>
 </blockquote>
 </blockquote>
-<p>升级  </p>
+<p>变长子网掩码(VLSM)  </p>
 <blockquote>
-<p>rpm -U *.rpm                           #有该软件则升级，没有该软件则安装<br>rpm -F *.rpm                           #有该软件则升级，没有该软件则不安装</p>
+<p>主要是为了更好的提高网络效率，节省IP资源，用于无类路由协议  </p>
 </blockquote>
-<p>卸载  </p>
+<p>汇总：用于精简路由表  </p>
+<p>IP寻址除错  </p>
 <blockquote>
-<p>rpm -e                                       #erase  </p>
+<p>ping 127.0.0.1 不通  是协议问题<br>ping本机地址不通    是网卡问题  </p>
 </blockquote>
-<p>重建数据库  </p>
+<p>摘录<br>(config)#ip subnet-zero</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1805198217/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/1805198217/" class="post-title-link" itemprop="url">CCNA第二章 TCP/IP简介</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2012-08-24 14:59:00" itemprop="dateCreated datePublished" datetime="2012-08-24T14:59:00+08:00">2012-08-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Network/" itemprop="url" rel="index"><span itemprop="name">Network</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Network/cisco/" itemprop="url" rel="index"><span itemprop="name">cisco</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>TCP标志位：  </p>
 <blockquote>
-<p>rpm –rebuilddb                         #重建后的信息都写在/var/lib/rpm里面  </p>
+<p>URG 紧急指针，告诉接收<strong>TCP</strong>模块紧要指针域指着紧要数据<br>ACK 置1时表示确认号（1为合法，为0的时候表示数据段不包含确认信息，确认号被忽略。<br>PSH 置1时请求的数据段在接收方得到后就可直接送到应用程序，而不必等到缓冲区满时才传送。<br>RST 置1时重建连接。如果接收到RST位时候，通常发生了某些错误。<br>SYN 置1时用来发起一个连接。<br>FIN 置1时表示发端完成发送任务。用来释放连接，表明发送方已经没有数据发送了。  </p>
 </blockquote>
-<p>查询(很重要)                                      #查询都是在/var/lib/rpm里面查询的  </p>
+<p>TCP建立连接的3次握手，断开连接的4次握手  </p>
 <blockquote>
-<p>rpm -q  openldap                         #query              查询有没有安装过这个rpm软件<br>rpm -qa                                        #all                  列出所有系统中安装的rpm软件             <br>rpm -qi openldap                          #information   查询rpm软件的信息<br>rpm -ql openldap(重要)                 #list                列出这个rpm软件安装在哪些地方，方便配置、删除等<br>rpm -qc openldap                         #configure      只列出rpm软件配置文件所在位置<br>rpm -qd openldap                         #document       查看rpm软件的帮助文档<br>rpm -qR openldap                         #required       列出rpm软件相关的依赖文件，如函数库等<br>rpm -qf  /etc/openldap/ldap.conf   #file                列出该文件属于哪个rpm软件里面的<br>rpm -qp[licdf]  wmx.i686.rpm         #package       查看rpm安装包的相关信息  </p>
+<p><img src="http://img2.ph.126.net/QNcHRiKnmfp0TzEeZ_gRLg==/6630304704628997765.jpg" alt="CCNA第二章 TCP/IP简介 - leaf - ------勤解万难------" title="CCNA第二章 TCP/IP简介 - leaf - ------勤解万难------">           <img src="http://img0.ph.126.net/P3y0JdiKWn0cXs6lcryJ_g==/6631427306003121585.jpg" alt="CCNA第二章 TCP/IP简介 - leaf - ------勤解万难------" title="CCNA第二章 TCP/IP简介 - leaf - ------勤解万难------">   </p>
 </blockquote>
-<p>rpm验证  </p>
+<p>TCP，UDP的校验是对整个数据段的校验。  </p>
+<p>虽然三层以下都是不可靠的，但是由于TCP上层就是数据流了，<br>所以TCP层设置了排序，校验，窗口等机制，可保证数据可靠。  </p>
+<p>IP层将世界编织成了统一的网。  </p>
+<p>二层广播，三层广播<br>二层广播 FF:FF:FF:FF:FF:FF<br>三层广播 255.255.255.255  </p>
+<p>DOD模型  </p>
 <blockquote>
-<p>rpm -V openldap                            #verify            验证该软件里的文件有没有被改动过<br>S.5….T  c /etc/openldap/ldap.conf  </p>
-<blockquote>
-<p>SM5DLUGT，没有改动过的话用.表示  </p>
-<blockquote>
-<p>S：size        容量是否改变<br>M：mode     文件类型或权限有没有被改变<br>5：md5     <br>D：device     设备名称有没有被改变过<br>L：link           链接文件的属性有没有被改变<br>U：user        u有没有被改变<br>G：group      g有没有被改变<br>T：mtime      建立时间有没有被改变  </p>
-</blockquote>
-</blockquote>
+<p>过程/应用层：Application  </p>
 </blockquote>
 <blockquote>
 <blockquote>
-<p>c：配置文件<br>d：文档<br>l：授权文件<br>r：自述文件  </p>
-</blockquote>
-</blockquote>
-<p>rpm数字签名  </p>
-</blockquote>
-</blockquote>
-<p>SRPM  </p>
+<p>应用层协议，非软件。  </p>
 <blockquote>
-<p>srpm目录  </p>
+<p>snmp是通过轮询来获取设备数据：  </p>
 <blockquote>
-<p>/usr/src/redhat/SPEC                 #存放配置文件<br>/usr/src/redhat/SOURCE            #存放源文件<br>/usr/src/redhat/BUILD                #存放编译时的暂存文件，编译时就是再这个目录下进行的<br>/usr/src/redhat/RPMS                #编译好后，会放到这个文件夹中  </p>
+<p>设备正常：接收基线；<br>设备故障：接收陷阱(有陷阱，数据别过来)  </p>
+</blockquote>
+<p>dhcp：发送2、3层广播  </p>
+</blockquote>
+</blockquote>
+<p>主机到主机层：Host-to-host  </p>
+<blockquote>
+<p><strong>TCP、UDP数据段格式很重要</strong>  </p>
+</blockquote>
+<blockquote>
+<p>端口号：  </p>
+<blockquote>
+<p>用于和上层的通信<br>打开多个网页用到端口号，PAT用的也是端口号  </p>
+</blockquote>
+<blockquote>
+<p>0-1023特殊用，1024-65535 自定义<br>TCP：smtp：   25 、http： 80、dns：53<br>UDP：snmp：161、dhcp：67、dns：53  </p>
+</blockquote>
+</blockquote>
+<p>因特网层：Internet  </p>
+<blockquote>
+<p><strong>IP报头格式很重要</strong><br>协议号：  </p>
+<blockquote>
+<p>用来确认IP数据包中数据的用途，并将数据提交给该协议使用<br>协议可以定义上层协议和本层协议(网络层协议)  </p>
+</blockquote>
+<blockquote>
+<p>ICMP ：   1<br>TCP：      6<br>UDP：    17<br>IPv6：    41<br>EIGRP：88<br>OSPF： 89<br>STP：  118  </p>
 </blockquote>
 </blockquote>
 <blockquote>
+<p>ICMP、ARP、RARP、IP多属于这层<br>ICMP先封装到IP再封装到帧，ARP直接封装到帧  </p>
 <blockquote>
+<p>ARP发送2层广播<br>ARP：       IP-&gt; MAC<br>RARP：     MAC-&gt;IP<br>代理ARP：解决网关坏了之后的数据发送问题(相当于备用网关)  </p>
+</blockquote>
+</blockquote>
+<p>网络接入层：Network access  </p>
+<blockquote>
+</blockquote>
 <blockquote>
 </blockquote>
 </blockquote>
-<p>相关命令  </p>
+<p>DHCP寻址过程  </p>
 <blockquote>
-<p>cd /usr/src/redhat/SPEC<br>rpmbulid -bb *.spec                    #编译成rpm文件<br>rpmbulid -ba *.spec                    #打包成srpm文件  </p>
+<p>客户机发送2层、3层广播<br>由于目的端口：67，路由器将此请求发送到DHCP服务器<br>DHCP服务器发送IP地址给客户机  </p>
+<blockquote>
+<p>注：DHCP使用udp进行连接  </p>
 </blockquote>
 </blockquote>
-<p>扩展：dpkg  </p>
+<p>IP地址  </p>
 <blockquote>
-<p>dpkg数据库：/var/lib/dpkg<br>安装：dpkg -i<br>卸载：dpkg -r<br>查询：<br>dpkg -s             相当于rpm -qi<br>dpkg -L             相当于rpm -ql<br>dpkg -l              相当于rpm -qa  </p>
+<p>A类：0<br>B类：10<br>C类：110<br>D类：1110</p>
 </blockquote>
 
       
@@ -1267,7 +1421,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1553022911/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3226235221/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1283,7 +1437,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/1553022911/" class="post-title-link" itemprop="url">鸟哥基础第十九章</a>
+            <a href="/posts/3226235221/" class="post-title-link" itemprop="url">CCNA 第一章 网际互连</a>
         </h2>
 
         <div class="post-meta">
@@ -1293,15 +1447,28 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2012-10-05 13:39:00" itemprop="dateCreated datePublished" datetime="2012-10-05T13:39:00+08:00">2012-10-05</time>
+              <time title="创建时间：2012-08-24 13:43:00" itemprop="dateCreated datePublished" datetime="2012-08-24T13:43:00+08:00">2012-08-24</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:52" itemprop="dateModified" datetime="2020-08-04T09:51:52+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Network/" itemprop="url" rel="index"><span itemprop="name">Network</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Network/cisco/" itemprop="url" rel="index"><span itemprop="name">cisco</span></a>
+                </span>
+            </span>
 
           
 
@@ -1312,92 +1479,166 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>函数库：  </p>
+          <p>关于冲突域：全双工也是一个冲突域，只是永远不会有冲突而已。<br>TCP的窗口：是通过计算字节数来量化大小的<br>二层流控和四层流控区别：  </p>
 <blockquote>
-<p>静态函数库：*.a<br>动态函数库：*.so  </p>
+<p>四层流控是为了保障可靠性做出的流控<br>二层流控是为了避免撑爆缓存而做的流控  </p>
 </blockquote>
+<p>隧道技术  </p>
 <blockquote>
-<p>存放位置：  </p>
-<blockquote>
-<p>/lib<br>/usr/lib<br>/lib/modules/`uname -r` #这里是核心函数库  </p>
+<p>这些都是二层技术，将一种帧封装到其他类型的帧当中，即是隧道技术  </p>
 </blockquote>
-<p>相关操作  </p>
+<p>OSI模型<br>应用层：  </p>
 <blockquote>
-<p>1、ld.so.conf  </p>
-<blockquote>
-<p>/etc/ld.so.cache<br>/etc/ld.so.conf             #就写着要包含/etc/ld.so.conf.d下的所有.conf文件<br>/etc/ld.so.conf.d          #写着要加载的动态函数库目录，只能加载整个目录  </p>
+<p>应用层是指协议而非程序，如ftp协议，http协议等<br>应用层就像一个shell，shell之上的软件都需要shell才能工作，但是哪些软件不是shell  </p>
 </blockquote>
+<p>表示层：  </p>
+<blockquote>
+<p>将数据转换为通用格式。  </p>
 </blockquote>
+<p>会话层：  </p>
 <blockquote>
-<p>2、ldconfig  </p>
-<blockquote>
-<p>ldconfig                       #将/etc/ld.so.conf.d里面包含的函数库目录全部读入内存中  </p>
+<p>提供通信方式  </p>
 </blockquote>
+<p>传输层：  </p>
 <blockquote>
-<p>ldconfig -p                   #查看当前读入到内存中的函数库  </p>
-</blockquote>
-<p>3、ldd  </p>
+<p>传输层提供：确认、排序、流量控制  </p>
 <blockquote>
-<p>ldd /usr/bin/make        #查看该命令所包含的动态函数库<br>ldd -v /usr/bin/make    #详细查看该命令所包含的动态函数库<br>ldd /lib/libc.so.6           #也可以查看与某个函数库相关的函数库  </p>
-</blockquote>
-<p>4、安装  </p>
-<blockquote>
-<p>缺什么就装什么  </p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>tarball编译：C语言源码：*.c ———&gt;目标文件*.o————-&gt;执行文件  </p>
-<blockquote>
-<p>1、configure  建立makefile文件  </p>
-<blockquote>
-<p>参数：–help  </p>
-<blockquote>
-<p> –prefix<br><a target="_blank" rel="noopener" href="http://hi.baidu.com/issweight/item/f9d1b49da703d0df7a7f01c2">#查看 configure参数</a>  </p>
-</blockquote>
-</blockquote>
-<p>2、make clean  </p>
-<blockquote>
-<p>清除*.o文件<br>由于make一次后，编译过的*.o在下次make时不会再编译，所以先清除好重新编译  </p>
-</blockquote>
-<p>3、make  </p>
-<blockquote>
-<p>gcc语法  </p>
-<blockquote>
-<p>gcc -c hello.c                   #编译成目标文件：hello.o<br>gcc -o hello  hello.o         #编译成执行文件：hello<br>其他参数：<br>gcc -O -c hello.c              #优化编译<br>gcc -Wall -o hello.c          #产生相信编译过程信息<br>gcc abc.c -lm -L/usr/lib -I/usr/include  </p>
-<blockquote>
-<p>#-l：加入某个函数库<br>#m：libm.so：加入这个函数库<br>#-L：函数库的地址<br>#-I：源码位置  </p>
-</blockquote>
-</blockquote>
-<p>makefile语法规则  </p>
-<blockquote>
+<p>流量控制的作用：防止接收主机的缓冲区溢出<br>流量控制的方法：缓冲、窗口机制、拥塞避免。  </p>
 </blockquote>
 </blockquote>
 <blockquote>
-<p>make参数  </p>
+<p>TCP/UDP对整个数据段进行校验，所以可以保证数据传之前和到达后的数据是一致的<br>数据是从上往下封装的，所以虽然网络层是不可靠的，但是传到目的地的数据能保证是可靠的  </p>
+</blockquote>
+<p>网络层：  </p>
 <blockquote>
-<p>CFLAGS=”-Wall” make    #同gcc -Wall  </p>
-</blockquote>
-</blockquote>
-<p>4、make install  </p>
+<p>网络层提供的是不可靠的传输，而且不对数据进行校验，所以不能保证数据在IP层的时候没有出错  </p>
 <blockquote>
-<p>其实就是把编译好的文件放到相关目录下  </p>
+<p>路由器分割广播域是因为路由器丢弃广播包<br>分割广播域的方法：路由器、vlan  </p>
 </blockquote>
-<p>5、在/etc/man.config中添加man文件地址  </p>
+</blockquote>
+<p>数据链路层：  </p>
+<blockquote>
+<p>提供数据的物理传输，并处理出错通知、网络拓扑、流量控制  </p>
+<blockquote>
+<p>使用硬件寻址(二层广播:MAC广播)  </p>
+</blockquote>
+<blockquote>
+<p>数据链路层通过ARQ协议实现流量控制  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>LLC的工作就是识别网络层协议，<br>EII已经对网络层协议进行了标记，所以就用不到LLC层  </p>
+</blockquote>
+<p>桥接是软件实现的，交换是硬件实现的  </p>
+</blockquote>
+<p>交换机转发速度比路由器快是因为路由器对每个包多要拆帧再封装，而交换机不拆，直接转发  </p>
+</blockquote>
+<p>物理层：  </p>
+<blockquote>
+<p>收发比特流，主要是对线路等的要求  </p>
+<blockquote>
+<p>串扰：电磁干扰</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>关于MII接口：由于频率跟不上，所以就增加线路来提高传输  </p>
+</blockquote>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://baike.baidu.com/view/229282.htm#7">MII以4位半字节方式传送数据双向传输，时钟速率25MHz。其工作速率可达100Mb/s</a>  </p>
+</blockquote>
 <blockquote>
 </blockquote>
-<p>6、升级  </p>
+<p>以太网是对物理层和数据链路层的规范  </p>
 <blockquote>
-<p>patch -p 0 &lt; patch文件                #p 0 表示去掉几个/，如/home/a/b/c   p4 就是c<br>编译安装  </p>
+<p>冲突域是发数据之前要发csma/cd进行检测</p>
 </blockquote>
-<p>7、软件的删除  </p>
 <blockquote>
-<p>将目录下的相关文件删除即可，看一下install到哪里就到哪里删除  </p>
+<p>最早是用集线器，要用到CSMA/CD，现在用交换机，一个冲突域就一个主机，用不到CSMA/CD  </p>
 </blockquote>
-</blockquote>
-<p>其他命令  </p>
+<p>其他摘要  </p>
 <blockquote>
-<p>md5sum ：算md5码</p>
+<p>度量：metric：用于衡量网络的距离<br>隧道技术：将帧封装到不同类型的帧<br>PDU：就是加在数据前面或后面的报头、报尾</p>
 </blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1007263798/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/1007263798/" class="post-title-link" itemprop="url">无线路由器做无线AP用</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2012-08-10 09:09:00" itemprop="dateCreated datePublished" datetime="2012-08-10T09:09:00+08:00">2012-08-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hardware/" itemprop="url" rel="index"><span itemprop="name">Hardware</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hardware/tplink/" itemprop="url" rel="index"><span itemprop="name">tplink</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>1、关闭dhcp功能<br>2、wan口设置为动态获取<br>3、lan口设置为同一网段的IP地址<br>4、所有网线接在lan口上</p>
 
       
     </div>
@@ -1416,7 +1657,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/19/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/37/">37</a><a class="extend next" rel="next" href="/page/21/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/19/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/19/">19</a><span class="page-number current">20</span><a class="page-number" href="/page/21/">21</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/21/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 

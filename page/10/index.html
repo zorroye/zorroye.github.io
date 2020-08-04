@@ -244,20 +244,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">366</span>
+          <span class="site-state-item-count">282</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">66</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">58</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -303,7 +303,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/4161376860/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/633176423/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -319,7 +319,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/4161376860/" class="post-title-link" itemprop="url">玩网众无盘</a>
+            <a href="/posts/633176423/" class="post-title-link" itemprop="url">1、计算机概述</a>
         </h2>
 
         <div class="post-meta">
@@ -329,15 +329,28 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2014-02-28 17:18:00" itemprop="dateCreated datePublished" datetime="2014-02-28T17:18:00+08:00">2014-02-28</time>
+              <time title="创建时间：2013-09-29 17:13:00" itemprop="dateCreated datePublished" datetime="2013-09-29T17:13:00+08:00">2013-09-29</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:52" itemprop="dateModified" datetime="2020-08-04T09:51:52+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hardware/" itemprop="url" rel="index"><span itemprop="name">Hardware</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hardware/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">基础</span></a>
+                </span>
+            </span>
 
           
 
@@ -348,20 +361,93 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>网吧服务器的带机量：  </p>
+          <p>CPU的组成：</p>
 <blockquote>
-<p>1、CPU处理速度：这个跟带机量应该密切相关<br>2、内存容量：越，测试用。大越好，当虚拟盘。1XGB/s<br>3、硬盘速度：选用PCI-E接口的，直接到千兆了 1GB/s。SAN也是不错的选择。<br>4、网络速度：千兆是必须的<br>其他就加负载均衡，高可用等。  </p>
+<p>执行单元</p>
+<p>程序计数器（PC）：确定在内存的那一段开始计数</p>
+<p>指令寄存器（IR）：存放正要被执行的指令</p>
 </blockquote>
 <blockquote>
-<p>瓶颈就是硬盘速度。看你读写缓存速度。  </p>
+<p>存储器地址寄存器：确定下一次要读/写的存储器地址</p>
 </blockquote>
-<p>搭建就按说明书上的搭建就好了，用的是破解版的启动服务器。<br>网众是linux系统的，所以比较稳定。  </p>
-<p><img src="http://img2.ph.126.net/lnM8u6x6m22FRJG2n5y9Rw==/3242310256830412532.png" alt="玩网众无盘 - leaf - ------坚持雅操------" title="玩网众无盘 - leaf - ------坚持雅操------"></p>
-<p> </p>
-<p><img src="http://img2.ph.126.net/V_DjrEVBbLX_9NdhwbuGzA==/848365579906058585.png" alt="玩网众无盘 - leaf - ------坚持雅操------" title="玩网众无盘 - leaf - ------坚持雅操------"></p>
-<p>ubuntu下安装：<br>1、sudo apt-get install dialog<br>2、chmod a+x nxp.run<br>3、sh nxp.run  </p>
-<p>数据管理器   nxpiomgr<br>启动管理器   nxpbootmgr  </p>
-<p>字体支持方面不太好，还得研究研究。</p>
+<blockquote>
+<p>储存器缓冲寄存器：存放读出的/要被写入存储器的数据</p>
+</blockquote>
+<blockquote>
+<p>I/O地址寄存器：确定一个I/O设备</p>
+</blockquote>
+<blockquote>
+<p>I/O缓冲寄存器：存放读出的/要被写入I/O的数据</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>中断：</p>
+<blockquote>
+<p>1、中断是为了提高效率而引入的机制。</p>
+<p>由于CPU比I/O设备快很多，如果CPU一直等的话会浪费很多CPU时间。</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>中断可以让I/O设备运行期间，允许CPU去做其他事，这样就提高了CPU的利用率</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>2、中断的时候，CPU会把在执行的所有数据存到内存指定处，结束中断再调出来</p>
+</blockquote>
+<blockquote>
+<p>3、多个中断处理：</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>1、不允许多个中断，只能一个一个来</p>
+</blockquote>
+<blockquote>
+<p>2、定义中断优先级，允许高优先级打断低优先</p>
+</blockquote>
+</blockquote>
+<p>存储的层次结构：</p>
+<blockquote>
+<p>存储器的结构是：寄存器，一级缓存，二级缓存，三级缓存，内存</p>
+<p>这里：复制一块数据副本供CPU读取，如没有要用的数据，则顺序读入下一块数据</p>
+<p>层次结构的原理是：利用了局部性原理，来提高命中率</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>空间局部性：一旦一个存储单元中的一个指令被访问，那么它附近的单元也将很快被访问</p>
+</blockquote>
+<blockquote>
+<p>时间局部性：一旦一个指令被执行了，则在不久的将来，它可能再被执行</p>
+</blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>DMA：</p>
+<blockquote>
+<p>就是处理I/O传送的工作，解放CPU在数据传送过程中的监管工作。</p>
+</blockquote>
+<blockquote>
+<p>CPU的影响：</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>在开始传送和结束传送需要CPU参与</p>
+</blockquote>
+<blockquote>
+<p>CPU用总线的时候，需要等待DMA传送一个bit的时间</p>
+</blockquote>
+<blockquote>
+</blockquote>
+</blockquote>
+<p>SMP和多核处理器</p>
+<blockquote>
+<p>SMP是多个CPU。SMP的每个CPU也可以是多核处理器</p>
+<p>而多核处理器是一个CPU，里面有多个CPU核心。</p>
+<p>使用SMP的好处是，一个CPU挂了，另一个还可以用；另外就是提高速度。</p>
+</blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+</blockquote>
 
       
     </div>
@@ -381,7 +467,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/4265064830/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3484049872/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -397,7 +483,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/4265064830/" class="post-title-link" itemprop="url">通过PXE安装系统</a>
+            <a href="/posts/3484049872/" class="post-title-link" itemprop="url">linux学习计划</a>
         </h2>
 
         <div class="post-meta">
@@ -407,15 +493,28 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2014-02-18 15:28:00" itemprop="dateCreated datePublished" datetime="2014-02-18T15:28:00+08:00">2014-02-18</time>
+              <time title="创建时间：2013-09-13 17:45:00" itemprop="dateCreated datePublished" datetime="2013-09-13T17:45:00+08:00">2013-09-13</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:52" itemprop="dateModified" datetime="2020-08-04T09:51:52+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/Q-A/" itemprop="url" rel="index"><span itemprop="name">Q&A</span></a>
+                </span>
+            </span>
 
           
 
@@ -426,58 +525,96 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>PXE整个安装的过程是这样的：</p>
-<p>PXE网卡启动 =&gt; </p>
-<p>DHCP获得IP地址 =&gt; </p>
-<p>从TFTP上下载 pxelinux.0、vmlinuz、initr.img 等 =&gt; </p>
-<p>引导系统进入安装步骤 =&gt; </p>
-<p>通过PEX linux 下载ks.cfg文件并跟据ks.cfg自动化安装系统 =&gt; 完成。</p>
-<p>windows下软件有</p>
+          <p>目标：linux网络编程方向发展</p>
+<p>基础：</p>
 <blockquote>
-<p>TFTPD32</p>
+<p>学习目标：  </p>
+<blockquote>
+<p>学习计算机的基础知识、学习linux的使用和管理  </p>
+</blockquote>
+<p>学习内容：  </p>
+<blockquote>
+<p>学习微机原理、计算机网络、操作系统等基础知识<br>掌握日常命令，习惯linux环境，利用好lman、howto等学习工具  </p>
 </blockquote>
 <blockquote>
-<p>深度网吧GHOST辅助工具服务端</p>
-</blockquote>
-<blockquote>
-</blockquote>
-<blockquote>
-</blockquote>
-<p>linux下详细配置</p>
-<blockquote>
-<p>需要的文件有</p>
-<p>isolinux：安装光盘里有</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>vmlinuz</p>
-</blockquote>
-<blockquote>
-<p>initrd.img</p>
-</blockquote>
-<blockquote>
-<p>isolinux.cfg</p>
-<p>vesamenu.c32</p>
-</blockquote>
-<blockquote>
-<p>splash.jpg</p>
+<p>积累用户管理和系统管理等经验  </p>
 </blockquote>
 </blockquote>
 <blockquote>
-<p>syslinux：<a target="_blank" rel="noopener" href="http://www.syslinux.org/wiki/index.php/Download">http://www.syslinux.org/wiki/index.php/Download</a></p>
+<p>书本推荐：  </p>
 </blockquote>
 <blockquote>
 <blockquote>
-<p>pxelinux.0</p>
-<p>vesamenu.c32 (可选用，二选一)</p>
+<p>操作系统——精髓与设计原理  </p>
 </blockquote>
 </blockquote>
 <blockquote>
-<p>系统安装盘</p>
+<blockquote>
+<p>计算机网络(谢希仁)<br>微机原理  </p>
 </blockquote>
-<p><a target="_blank" rel="noopener" href="http://zhumeng8337797.blog.163.com/blog/static/100768914201121383022804/">http://zhumeng8337797.blog.163.com/blog/static/100768914201121383022804/</a></p>
-<p><a target="_blank" rel="noopener" href="http://www.ipcpu.com/2010/12/linux-pxe/">http://www.ipcpu.com/2010/12/linux-pxe/</a></p>
-<p><a target="_blank" rel="noopener" href="http://www.kernel.org/pub/linux/utils/boot/syslinux/">www.kernel.org/pub/linux/utils/boot/syslinux/</a></p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>鸟哥的私房菜</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>HOWTO<br>MAN手册  </p>
+</blockquote>
+</blockquote>
+<p>进阶：  </p>
+<blockquote>
+<p>学习目标：  </p>
+<blockquote>
+<p>学习编程和软件制作原理，积累linux下开发经验。  </p>
+</blockquote>
+<p>学习内容：  </p>
+<blockquote>
+<p>学习C语言，学习bash脚本<br>了解编译、汇编、链接、调试等原理<br>了解Gcc，make，gdb等<br>学习开发工具的使用  </p>
+</blockquote>
+<p>书目推荐：  </p>
+<blockquote>
+<p>C程序设计(谭浩强)<br>shell编程(卧龙小三)<br>计算机专业英语<br>advanced linux programming<br>advanced bash sripting guide  </p>
+</blockquote>
+</blockquote>
+<p>高级  </p>
+<blockquote>
+<p>学习目标：  </p>
+<blockquote>
+<p>掌握linux系统编程  </p>
+</blockquote>
+<p>学习内容：  </p>
+<blockquote>
+<p>学习linux API<br>学习linux系统编程，<br>学习linux内核代码。  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>书本推荐：  </p>
+<blockquote>
+<p>APUE(unix环境高级编程)  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>linux kernel development<br>understanding the linux kernel(深入理解linux内核)<br>linux device drivers(linux设备驱动程序)<br>professional linux kernel architecture(深入linux内核架构)<br>the art of unix programming  </p>
+</blockquote>
+</blockquote>
+<p>应用：  </p>
+<blockquote>
+<p>网络方向：  </p>
+<blockquote>
+<p>服务器软件和并发程序编写，驱动开发的话直接可以写了。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>书本推荐：</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>APUE<br>Linux Pthread POSIX多线程 编程指南<br>unix网络编程 卷一、卷二<br>TCP/IP网络详解 卷一、卷二、卷三</p>
+</blockquote>
+</blockquote>
 
       
     </div>
@@ -497,7 +634,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3794223921/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3884163245/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -513,7 +650,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/3794223921/" class="post-title-link" itemprop="url">手机/平板当遥控器控制XBMC等软件(猫范TV)</a>
+            <a href="/posts/3884163245/" class="post-title-link" itemprop="url">SSD相关知识</a>
         </h2>
 
         <div class="post-meta">
@@ -523,15 +660,28 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2014-02-07 01:00:00" itemprop="dateCreated datePublished" datetime="2014-02-07T01:00:00+08:00">2014-02-07</time>
+              <time title="创建时间：2013-08-01 17:30:00" itemprop="dateCreated datePublished" datetime="2013-08-01T17:30:00+08:00">2013-08-01</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:52" itemprop="dateModified" datetime="2020-08-04T09:51:52+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hardware/" itemprop="url" rel="index"><span itemprop="name">Hardware</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hardware/%E5%AD%98%E5%82%A8/" itemprop="url" rel="index"><span itemprop="name">存储</span></a>
+                </span>
+            </span>
 
           
 
@@ -542,518 +692,659 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>家有HTPC一台，一直忘装xbmc软件，晚上终于记着装上了。我选了猫范TV<br>装了感觉鼠标点点太麻烦了。找了好久终于让我找到几款满意的软件  </p>
-<p>0、猫范TV的网络设置  </p>
+          <p>SSD的组成：主控芯片，缓存，闪存</p>
+<p>1、主控芯片</p>
 <blockquote>
-<p>手机、HTPC需同一网段。  </p>
+<p><img src="http://img1.ph.126.net/PBRdzfUehbZ9lET3Tgr-cw==/6597671199518593636.jpg" alt="SSD相关知识 - leaf - ------坚持雅操------" title="SSD相关知识 - leaf - ------坚持雅操------"></p>
 </blockquote>
 <blockquote>
-<p><img src="http://img1.ph.126.net/zG7b_hn_BrruYBXDKZYzCQ==/2270377162248464779.jpg" alt="手机/平板 控制 类XBMC软件(猫范TV) - leaf - ------坚持雅操------" title="手机/平板 控制 类XBMC软件(猫范TV) - leaf - ------坚持雅操------"></p>
+</blockquote>
+<blockquote>
+<p>sandforce：</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>使用压缩算法。</p>
+</blockquote>
+<blockquote>
+<p>特点是兼容性好，次品闪存也兼容，所以就导致质量参差不齐。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>一般金士顿、威刚啥的都用它。sf2281</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>marvell：</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>使用非压缩算法。</p>
+<p>特点：性能突出且稳定，在NADA出现问题后能够恢复数据</p>
+<p>一般浦科特、闪迪、美光都用他。9187、9175</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>参考：</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://ssd.zol.com.cn/368/3683027.html">http://ssd.zol.com.cn/368/3683027.html</a></p>
+</blockquote>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://www.pcpop.com/doc/0/674/674480_all.shtml">http://www.pcpop.com/doc/0/674/674480_all.shtml</a></p>
+</blockquote>
+</blockquote>
+<p>2、缓存</p>
+<blockquote>
+<p>缓存一般就是DDR2的和DDR3的。容量一般64m及以上。</p>
+<p>缓存能有效提高速度。</p>
+</blockquote>
+<p>3、闪存</p>
+<blockquote>
+<p><img src="http://img2.ph.126.net/CGfP5pKJrW-gPi3kRTTDPQ==/1915155741639394541.png" alt="SSD相关知识 - leaf - ------坚持雅操------" title="SSD相关知识 - leaf - ------坚持雅操------"></p>
 <p> </p>
 </blockquote>
-<p>1、official xmbc remote  </p>
 <blockquote>
-<p><a target="_blank" rel="noopener" href="http://code.google.com/p/android-xbmcremote/">http://code.google.com/p/android-xbmcremote/</a>  </p>
+<blockquote>
+<p>onfi标准：</p>
+</blockquote>
 </blockquote>
 <blockquote>
-<p>软件4M多，填写好IP和端口即可，端口号是8800。<br>XBMC里面可以添加账号密码，猫范TV好像不行  </p>
-<p><img src="http://img0.ph.126.net/TGFD9lEejl1JTQb6KOertA==/4891472145377930376.png" alt="手机/平板 控制 类XBMC软件(猫范TV) - leaf - ------坚持雅操------" title="手机/平板 控制 类XBMC软件(猫范TV) - leaf - ------坚持雅操------"><br>连接好之后的界面  </p>
-<p><img src="http://img2.ph.126.net/noB3HJrV1lB_20bRBFbKLA==/716635290805683152.png" alt="手机/平板 控制 类XBMC软件(猫范TV) - leaf - ------坚持雅操------" title="手机/平板 控制 类XBMC软件(猫范TV) - leaf - ------坚持雅操------"><br>播放电影的控制界面  </p>
-<p><img src="http://img0.ph.126.net/qRd4EynsCltNkN8jKtrefw==/1071856711414379676.png" alt="手机/平板 控制 类XBMC软件(猫范TV) - leaf - ------坚持雅操------" title="手机/平板 控制 类XBMC软件(猫范TV) - leaf - ------坚持雅操------"></p>
-<p>    </p>
-</blockquote>
-<p>2、boxee  </p>
 <blockquote>
-<p>这个操作很简单，跟猫范TV的遥控器有点象  </p>
-<p><img src="http://img0.ph.126.net/sEdBjddzLbkWzF87Dv478w==/832602981210435720.png" alt="手机/平板 控制 类XBMC软件(猫范TV) - leaf - ------坚持雅操------" title="手机/平板 控制 类XBMC软件(猫范TV) - leaf - ------坚持雅操------"></p>
+<blockquote>
+<p>这个标准里面的2.0有个异步模式，是掉速的一个原因。</p>
+<p>使用异步模式是为了保护缺陷闪存，使得其能用的更久。但其速度50MB/S不如机械硬盘快</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>toggle标准：</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>参考：<a target="_blank" rel="noopener" href="http://ssd.zol.com.cn/350/3507628.html">http://ssd.zol.com.cn/350/3507628.html</a></p>
+</blockquote>
+<p>其他参数：</p>
+<blockquote>
+<p>1、4K对齐</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>现在硬盘的扇区都是4096B了，所以格式化的最小单位也设置为4096B。这样就算对齐了。</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>2、AHCI模式</p>
+<p>3、SATA3.0</p>
+</blockquote>
+<p>本人笔记本SISM672DX+SIS968：</p>
+<blockquote>
+<p>1、不支持双通道,已加了2G内存</p>
+<p>2、不支持AHCI模式</p>
+<p>3、支持FSB800MHZ以上的CPU：我已升级至P8700</p>
+</blockquote>
+<p>坑爹啊！想升级SSD都升不了</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3236162305/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/3236162305/" class="post-title-link" itemprop="url">ubuntu10.04 VPN客户端设置</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2013-06-14 12:24:00" itemprop="dateCreated datePublished" datetime="2013-06-14T12:24:00+08:00">2013-06-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/Q-A/" itemprop="url" rel="index"><span itemprop="name">Q&A</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>1、输入IP地址，帐号，密码  </p>
+<p><img src="http://img2.ph.126.net/BNZ3eDvvUGhb86GSaoz0hw==/6597804240425422604.png" alt="ubuntu10.04 VPN客户端设置 - leaf - ------坚持雅操------" title="ubuntu10.04 VPN客户端设置 - leaf - ------坚持雅操------"></p>
+<p> <br>2、<br>去勾：EAP<br>打勾：use point-to-point encryption(MPPE)  </p>
+<p><img src="http://img0.ph.126.net/hYkZRVA0QkhNRZO-M5xaOA==/6597408416239959615.png" alt="ubuntu10.04 VPN客户端设置 - leaf - ------坚持雅操------" title="ubuntu10.04 VPN客户端设置 - leaf - ------坚持雅操------"></p>
+<p> <br>即可</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2087554151/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/2087554151/" class="post-title-link" itemprop="url">2、安装MYSQL</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2013-04-17 10:42:00" itemprop="dateCreated datePublished" datetime="2013-04-17T10:42:00+08:00">2013-04-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Database/" itemprop="url" rel="index"><span itemprop="name">Database</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Database/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><img src="http://img1.ph.126.net/VubMu0xT4WjNt626stNtYQ==/6597662403425101030.png" alt="2、安装MYSQL - leaf - ------坚持雅操------" title="2、安装MYSQL - leaf - ------坚持雅操------">  </p>
+<p>mysql：安装文件<br>MYSQLStartup：开机启动软件<br>mysql-workbench-gpl：图形管理工具  </p>
+<blockquote>
+</blockquote>
+<p>相关设置：  </p>
+<blockquote>
+<p>1、添加PATH参数：(同linux)</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>echo “export PATH=$PATH:/usr/local/mysql/bin” &gt;&gt; .bash_profile</p>
+</blockquote>
+<p>2、添加root密码</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>sudo mysqladmin -u root password “123456”</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>3、登陆</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>mysql -h 127.0.0.1 -u root -p</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p><img src="http://img2.ph.126.net/sEv40uenQWEd3iO-2enZhA==/6597778951657646825.png" alt="2、安装MYSQL - leaf - ------坚持雅操------" title="2、安装MYSQL - leaf - ------坚持雅操------"></p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1608323361/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/1608323361/" class="post-title-link" itemprop="url">1、数据库理论基础</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2013-04-16 15:17:00" itemprop="dateCreated datePublished" datetime="2013-04-16T15:17:00+08:00">2013-04-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Database/" itemprop="url" rel="index"><span itemprop="name">Database</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Database/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">基础</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>数据库技术</p>
+<blockquote>
+<p>-数据库系统</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>数据库</p>
+</blockquote>
+<blockquote>
+<p>数据库管理系统</p>
+</blockquote>
+<blockquote>
+<p>应用开发工具</p>
+</blockquote>
+<blockquote>
+<p>应用系统</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>-SQL语言</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>数据定义语言DDL：定义数据类型</p>
+</blockquote>
+<blockquote>
+<p>数据操纵语言DML：更改、查询数据</p>
+</blockquote>
+<blockquote>
+<p>数据控制语言DCL：设置用户访问权限</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>-数据库访问技术</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>ODBC：安装Connector/ODBC驱动</p>
+</blockquote>
+<blockquote>
+<p>JDBC： 安装Connector/J驱动</p>
+</blockquote>
+<blockquote>
+<p>ADO.NET：安装Connector/Net驱动</p>
+</blockquote>
+<blockquote>
+<p>PHP模块：mysqli接口</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>Python：安装Connector/Python驱动</p>
+</blockquote>
+</blockquote>
+<p>关系数据库范式</p>
+<blockquote>
+<p>第一范式：没有重复字段，每个字段不能再拆分。唯一和最基层的元素</p>
+<p><a target="_blank" rel="noopener" href="http://baike.baidu.com/view/402020.htm">http://baike.baidu.com/view/402020.htm</a></p>
+<p><a target="_blank" rel="noopener" href="http://zikao.b2cedu.com/200701/zikao_325513.shtml">http://zikao.b2cedu.com/200701/zikao_325513.shtml</a></p>
+</blockquote>
+<blockquote>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3557292529/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/3557292529/" class="post-title-link" itemprop="url">基础补充5：虚拟技术</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2013-04-11 11:01:00" itemprop="dateCreated datePublished" datetime="2013-04-11T11:01:00+08:00">2013-04-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>一：硬件层虚拟化技术：  </p>
+<blockquote>
+<p>intel：VT-X、VT-D<br>amd：AMD-V、HT<br>需要BIOS开启  </p>
+</blockquote>
+<p>二：实现虚拟的核心技术：  </p>
+<blockquote>
+<p><strong>VMM/Hypervisor</strong>：硬件和用户之间的仿真接口</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><img src="http://img0.ph.126.net/YX2W5DTE54514hXoXqE9Og==/6597449098168650300.jpg" alt="基础补充5：虚拟技术 - leaf - ------坚持雅操------" title="基础补充5：虚拟技术 - leaf - ------坚持雅操------"></p>
+</blockquote>
+<p> <br>对应虚拟技术的实例：  </p>
+<blockquote>
+<p><img src="http://img1.ph.126.net/zStYTwbUiIibgz1ostAHHA==/6598124198308483141.png" alt="基础补充5：虚拟技术 - leaf - ------坚持雅操------" title="基础补充5：虚拟技术 - leaf - ------坚持雅操------"></p>
 <p>   </p>
 </blockquote>
-<p>3、airjoy乐享  </p>
-<blockquote>
-<p>这个是ariport功能，非上面2个软件的功能。感觉还可以不过我没用过<br><a target="_blank" rel="noopener" href="http://www.airjoy.cn/">http://www.airjoy.cn/</a>  </p>
 </blockquote>
+<p>三：当前主流虚拟技术：  </p>
 <blockquote>
+<p>1、xen：       提供仿真接口来调用实体硬件<br>-———上：半虚拟化———–<br>-———下：全虚拟化———–<br>2、vmware：虚拟全部硬件<br>3、kvm：      通过提供核心模块，来使用实体硬件<br>4、openVZ  </p>
 </blockquote>
-<p>参考：  </p>
+<p>xen和vmware的区别：  </p>
 <blockquote>
-<p><a target="_blank" rel="noopener" href="http://www.linuxidc.com/Linux/2011-07/38166.htm">http://www.linuxidc.com/Linux/2011-07/38166.htm</a>  </p>
+<p><img src="http://img0.ph.126.net/CHSaLmPcx-0xfkWLSZmXWw==/6597322654331553177.jpg" alt="基础补充5：虚拟技术 - leaf - ------坚持雅操------" title="基础补充5：虚拟技术 - leaf - ------坚持雅操------">  </p>
 </blockquote>
+<p>kvm：  </p>
 <blockquote>
-<p><a target="_blank" rel="noopener" href="http://blog.sina.com.cn/s/blog/_6f7901490101c4of.html">http://blog.sina.com.cn/s/blog\_6f7901490101c4of.html</a>  </p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/298306700/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/298306700/" class="post-title-link" itemprop="url">buffalo nas 设置web服务器</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2014-02-05 16:31:00" itemprop="dateCreated datePublished" datetime="2014-02-05T16:31:00+08:00">2014-02-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:51" itemprop="dateModified" datetime="2020-08-04T09:51:51+08:00">2020-08-04</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>1、新建文件夹：</p>
-<p>ph/leaf</p>
-<p>ph/data</p>
-<p>2、进管理界面开启web和mysql服务，并选择相关文件夹</p>
-<p>web 选ph/leaf ，端口设置8080</p>
-<p>mysql 选ph/data</p>
-<p>这时：</p>
-<p>ph/leaf下多出htdocs文件夹</p>
-<p>ph/data下多出相关文件</p>
-<p>3、点打开phpmyadmin，账号：admin 密码 password 进入</p>
-<p>添加数据库：leaf</p>
-<p>添加管理该数据库的账号密码</p>
-<p>4、下载wordpress，解压放入 ph/leaf/htdocs/ 下</p>
-<p>5、浏览器打开 192.168.3.6：8080/wp-admin/install.php 配置一下即可</p>
-<p>搞定</p>
-<p><img src="http://img2.ph.126.net/-_hee80LfIuYEbJKKWuRHA==/57139420372759511.png" alt="buffalo nas 设置web服务器 - leaf - ------坚持雅操------" title="buffalo nas 设置web服务器 - leaf - ------坚持雅操------"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3073781033/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/3073781033/" class="post-title-link" itemprop="url">root nas :  buffalo LS-WVL</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2014-02-04 20:19:00" itemprop="dateCreated datePublished" datetime="2014-02-04T20:19:00+08:00">2014-02-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:51" itemprop="dateModified" datetime="2020-08-04T09:51:51+08:00">2020-08-04</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><img src="http://img0.ph.126.net/BWHcgE8BPLbb463K2lF4NA==/4791267053669049027.png" alt="root nas :  buffalo LS-WVL - leaf - ------坚持雅操------" title="root nas :  buffalo LS-WVL - leaf - ------坚持雅操------"></p>
-<p>2011年就买了，半年后跌价到600多块钱了，伤心。。。</p>
-<p>我买了2个500G希捷硬盘做RAID1模式。当时硬盘才270光景，后来硬盘涨了100多 赚了！</p>
-<p>今天有幸看了篇文章，决定试试root<br>参考资料：</p>
-<p><a target="_blank" rel="noopener" href="http://i.592.net/?post=360">http://i.592.net/?post=360</a></p>
-<p>#这篇介绍非常详细了</p>
-<p><a target="_blank" rel="noopener" href="http://buffalo.nas-central.org/wiki/Category:LS-WXL#LinkStation\_Duo\_.28LS-WXL.29">http://buffalo.nas-central.org/wiki/Category:LS-WXL#LinkStation\_Duo\_.28LS-WXL.29</a></p>
-<p>#这篇是指导教材</p>
-<p><a target="_blank" rel="noopener" href="http://downloads.buffalo.nas-central.org/TOOLS/ALL/_LS/_KB/_ARM9/ACP/_COMMANDER/">http://downloads.buffalo.nas-central.org/TOOLS/ALL\_LS\_KB\_ARM9/ACP\_COMMANDER/</a></p>
-<p>#这里下载软件：acp_commander.jar</p>
-<p>过程：</p>
-<p>打开终端，依次输入代码即可</p>
-<p>备注：</p>
-<blockquote>
-<p>我的IP地址是192.168.3.6</p>
-</blockquote>
-<blockquote>
-<p>我的网页登陆密码是：mima</p>
-<p>我将root密码改为：123456</p>
-</blockquote>
-<p>java -jar acp_commander.jar -t 192.168.3.6 -ip 192.168.3.6 -pw mima -c “ls /“</p>
-<p>#使用ls 命令列出目录，以证明使用mima可以登陆</p>
-<p>java -jar acp_commander.jar -t 192.168.3.6 -ip 192.168.3.6 -pw mima -c “(echo 123456;echo 123456)|passwd”</p>
-<p>#将root密码改为123456</p>
-<p>java -jar acp_commander.jar -t 192.168.3.6 -ip 192.168.3.6 -pw mima -c “sed -i ‘s/UsePAM yes/UsePAM no/g’ /etc/sshd_config”</p>
-<p>#关掉PAM，用sed -i ‘s///g’ 将yes改为no</p>
-<p>java -jar acp_commander.jar -t 192.168.3.6 -ip 192.168.3.6 -pw mima -c “sed -i ‘s/PermitRootLogin no/PermitRootLogin yes/g’ /etc/sshd_config”</p>
-<p>#允许root使用ssh登陆</p>
-<p>java -jar acp_commander.jar -t 192.168.3.6 -ip 192.168.3.6 -pw mima -c “/etc/init.d/sshd.sh restart”</p>
-<p>#重启sshd服务</p>
-<p>-—————————————</p>
-<p>我的配置如下：</p>
-<p>Processor: Feroceon 88FR131 rev 1 (v5l)</p>
-<p>BogoMIPS: 598.01</p>
-<p>MemTotal:         117496 kB</p>
-<p>-—————————————</p>
-<p>安装ipkg包管理器</p>
-<p>cd /tmp</p>
-<p>wget <a target="_blank" rel="noopener" href="http://ipkg.nslu2-linux.org/feeds/optware/cs05q3armel/cross/stable/teraprov2-bootstrap/_1.2-7/_arm.xsh">http://ipkg.nslu2-linux.org/feeds/optware/cs05q3armel/cross/stable/teraprov2-bootstrap\_1.2-7\_arm.xsh</a></p>
-<p>sh ./teraprov2-bootstrap_1.2-7_arm.xsh</p>
-<p>vi /opt/etc/ipkg.conf </p>
-<p>添加</p>
-<p>src cs08q1 <a target="_blank" rel="noopener" href="http://ipkg.nslu2-linux.org/feeds/optware/cs08q1armel/cross/stable/">http://ipkg.nslu2-linux.org/feeds/optware/cs08q1armel/cross/stable/</a></p>
-<p># src cs08q1-unstable <a target="_blank" rel="noopener" href="http://ipkg.nslu2-linux.org/feeds/optware/cs08q1armel/cross/unstable/">http://ipkg.nslu2-linux.org/feeds/optware/cs08q1armel/cross/unstable/</a></p>
-<p>保存 :wq</p>
-<p>更新： ipkg update</p>
-<p>安装NFS</p>
-<p>ipkg install e2fslibs</p>
-<p>ipkg install portmap</p>
-<p>cd /mnt/array1</p>
-<p>wget <a target="_blank" rel="noopener" href="http://downloads.buffalo.nas-central.org/Users/kenatonline/NFSKernel/nfstools.tar.gz">http://downloads.buffalo.nas-central.org/Users/kenatonline/NFSKernel/nfstools.tar.gz</a></p>
-<p>cd /</p>
-<p>tar xvzf /mnt/array1/nfstools.tar.gz</p>
-<p>配置好/etc/exports</p>
-<p>然后</p>
-<p>cd /opt/etc/init.d</p>
-<p>./S55portmap start</p>
-<p>./S99nfs start</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1973501180/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/1973501180/" class="post-title-link" itemprop="url">ubuntu12.04 安装kvm</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2014-01-07 15:15:00" itemprop="dateCreated datePublished" datetime="2014-01-07T15:15:00+08:00">2014-01-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:51" itemprop="dateModified" datetime="2020-08-04T09:51:51+08:00">2020-08-04</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>笔记本原先是T4500，一直用不了kvm。前段时间换成P8700了，终于有机会试验一下了。<br>因我使用net模式就够用了，所以就没设置/etc/network/interfaces 文件  </p>
-<p>参考：<br><a target="_blank" rel="noopener" href="http://blog.csdn.net/chdhust/article/details/7690119">http://blog.csdn.net/chdhust/article/details/7690119</a><br><a target="_blank" rel="noopener" href="http://blog.csdn.net/sheismylife/article/category/1256795">http://blog.csdn.net/sheismylife/article/category/1256795</a>  </p>
-<p>命令如下;<br>0、BIOS开启虚拟化，我的没有这个选项，但是能用<br>1、检查CPU是否支持虚拟化  </p>
-<blockquote>
-<p>egrep ‘(vmx|svm)’ –color=always /proc/cpuinfo  </p>
-</blockquote>
-<blockquote>
-</blockquote>
-<p>2、安装相关软件  </p>
-<blockquote>
-<p>apt-get install ubuntu-virt-server python-vm-builder kvm-ipxe virt-manager  </p>
-</blockquote>
-<p>3、将当前root用户加入到kvm和libvirtd组  </p>
-<blockquote>
-<p>adduser `id -un` libvirtd<br>adduser `id-un` kvm  </p>
-</blockquote>
-<p>4、注销并重新登录，检查相关服务是否已开启  </p>
-<blockquote>
-<p>virsh -c qemu:///system list  </p>
-<blockquote>
-<p> Id 名称               状态<br>-———————————  </p>
-</blockquote>
-<p>lsmod | grep kvm  </p>
-<blockquote>
-<p>kvm_intel             137888  0<br>kvm                   422160  1 kvm_intel  </p>
-</blockquote>
-<p>service libvirt-bin status  </p>
-<blockquote>
-<p>service libvirt-bin status<br>libvirt-bin start/running, process 13309  </p>
-</blockquote>
-</blockquote>
-<p>管理器界面  </p>
-<blockquote>
-<p><img src="http://img0.ph.126.net/G6LQVX0IqLkYjN5Q_y9mNw==/1374442311378353604.png" alt="ubuntu12.04 安装kvm - leaf - ------坚持雅操------" title="ubuntu12.04 安装kvm - leaf - ------坚持雅操------"></p>
-</blockquote>
-<p>5、新建/删除存储池  </p>
-<blockquote>
-<p>1、virsh pool-define-as kvm-disk –type dir –target /home/ywz/5Soft/kvm/       建存储池<br>2、virsh pool-start kvm-disk                设置状态为活动<br>3、virsh pool-autostart kvm-disk        设置为自动开始<br>-——————————<br>1、virsh pool-destroy default              设置状态为不活跃<br>2、virsh pool-undefine default            删除存储池  </p>
-</blockquote>
-<p>6、使用virtio模式  </p>
-<blockquote>
-<p>我的电脑使用这个模式没有啥感觉，可能是我的笔记本本身无法设置achi的缘故吧<br>针对XP系统，安装的时候按F6直接加载软驱的驱动安装即可  </p>
-<p>使用vmvga，安装vmware显卡驱动。</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3687094808/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/3687094808/" class="post-title-link" itemprop="url">msi EX465安装MACOSX 其他</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2013-12-11 12:28:00" itemprop="dateCreated datePublished" datetime="2013-12-11T12:28:00+08:00">2013-12-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:51" itemprop="dateModified" datetime="2020-08-04T09:51:51+08:00">2020-08-04</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>PCI configuration begin</p>
-<blockquote>
-<p>测试：替换AppleACPIPlatform 和 IOPCIFamily</p>
-<p>10.6 3-7 可行，10.6.8不可用</p>
-<p>10.7 dp1可行， dp2-4不可用</p>
-<p>10.7                     0-5 不可用</p>
-<p>10.8                  dp1-4不可用</p>
-<p>10.8                     0-2 不可用</p>
-</blockquote>
-<p>电池驱动</p>
-<blockquote>
-<p>直接用AppleACPIBatteryManager.kext 即可</p>
-<p><a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/forum.php?mod=viewthread&amp;tid=1038183">http://bbs.pcbeta.com/forum.php?mod=viewthread&amp;tid=1038183</a></p>
-</blockquote>
-<blockquote>
-<p><img src="http://img1.ph.126.net/LTYvusqdY-kXe1evuGR9zg==/4938478466488554991.jpg" alt="msi EX465安装MACOSX 其他 - leaf - ------坚持雅操------" title="msi EX465安装MACOSX 其他 - leaf - ------坚持雅操------"></p>
-<p><img src="http://img0.ph.126.net/Z9aGs6n4SDMrLFQtvDhH1A==/1689694285294383846.jpg" alt="msi EX465安装MACOSX 其他 - leaf - ------坚持雅操------" title="msi EX465安装MACOSX 其他 - leaf - ------坚持雅操------"></p>
-</blockquote>
-<p>触摸板</p>
-<blockquote>
-<p>我的触摸板是synaptics touchpad6.2 版本的</p>
-<p>下载以下版本应该都可以，我还不怎么会用。</p>
-<p><img src="http://img0.ph.126.net/_DpcAlGdRoiYNzN5I0yhKA==/6597899897937354807.jpg" alt="msi EX465安装MACOSX 其他 - leaf - ------坚持雅操------" title="msi EX465安装MACOSX 其他 - leaf - ------坚持雅操------"></p>
+<p><img src="http://img0.ph.126.net/JCB2a1r16DZ7H_1GB1t6dw==/6597235792914302622.jpg" alt="基础补充5：虚拟技术 - leaf - ------坚持雅操------" title="基础补充5：虚拟技术 - leaf - ------坚持雅操------"></p>
 <p> </p>
 </blockquote>
 <blockquote>
-<p><a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/forum.php?mod=viewthread&amp;tid=1399288">http://bbs.pcbeta.com/forum.php?mod=viewthread&amp;tid=1399288</a></p>
-<p><a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/forum.php?mod=viewthread&amp;tid=1104482">http://bbs.pcbeta.com/forum.php?mod=viewthread&amp;tid=1104482</a></p>
-<p><a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/viewthread-1260111-1-1.html">http://bbs.pcbeta.com/viewthread-1260111-1-1.html</a></p>
-<p><a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/viewthread-1155823-2-1.html">http://bbs.pcbeta.com/viewthread-1155823-2-1.html</a></p>
+<p>   </p>
+</blockquote>
+<p>参考：<br><a target="_blank" rel="noopener" href="http://vps.gl/vps/29.html">http://vps.gl/vps/29.html</a><br><a target="_blank" rel="noopener" href="http://bbs.lampbrother.net/read-htm-tid-121607.html">http://bbs.lampbrother.net/read-htm-tid-121607.html</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2835944266/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/2835944266/" class="post-title-link" itemprop="url">基础补充4：ACPI</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2013-04-11 09:31:00" itemprop="dateCreated datePublished" datetime="2013-04-11T09:31:00+08:00">2013-04-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>ACPI:由BIOS、硬件、操作系统共同支持来实现的  </p>
+<blockquote>
+<p><img src="http://img2.ph.126.net/Gpm_QaMIKP4DnkJXZW3caA==/3032611399098946130.jpg" alt="基础补充4：ACPI - leaf - ------坚持雅操------" title="基础补充4：ACPI - leaf - ------坚持雅操------"></p>
+<p>   </p>
+</blockquote>
+<p>ACPI的功能：略  </p>
+<blockquote>
+<p>IRQ的数目是通过ACPI来实现扩充的。  </p>
+</blockquote>
+<p>ACPI的各个状态  </p>
+<blockquote>
+<p>G0(正常)—————–G1(睡眠)—————-G2(可网络唤醒等关机状态)———G3(关机)<br>|S0                              |S1-S4                        |S5<br>|C/D/P State</p>
 </blockquote>
 <blockquote>
-<p>键盘位</p>
-<p><img src="http://img0.ph.126.net/Wqgaujby7h6L1XjfKpCAHA==/1384856885516706702.jpg" alt="msi EX465安装MACOSX 其他 - leaf - ------坚持雅操------" title="msi EX465安装MACOSX 其他 - leaf - ------坚持雅操------"></p>
-<p> </p>
-<p> </p>
-</blockquote>
-<p>亮度</p>
+<p>S State：  </p>
 <blockquote>
-<p><a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/viewthread-825117-1-3.html">http://bbs.pcbeta.com/viewthread-825117-1-3.html</a></p>
-</blockquote>
+<p>cat /proc/acpi/sleep  </p>
 <blockquote>
-<p><a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/forum.php?mod=viewthread&amp;tid=889877">http://bbs.pcbeta.com/forum.php?mod=viewthread&amp;tid=889877</a></p>
+<p>S0 S3 S4 S5  </p>
+</blockquote>
+<p>-————————  </p>
 </blockquote>
 <blockquote>
-<p><a target="_blank" rel="noopener" href="http://dell.benyouhui.it168.com/thread-4533070-1-1.html">http://dell.benyouhui.it168.com/thread-4533070-1-1.html</a></p>
+<p>S0：正常状态<br>S3：待机状态：STR：当前状态存储到内存，未关机<br>S4：休眠状态：STD：当前状态存储到硬盘并关机，从新开机后回到关机前的状态<br>S5：关机状态：包含G2、G3  </p>
 </blockquote>
+<p>C State：调CPU的状态，如CPU的电压，暂停CPU执行的指令  </p>
 <blockquote>
-<p>我的按FN+方向键就能调亮度，只是没有亮度图标</p>
+<p>cat /proc/acpi/processor/CPU0/power  </p>
 </blockquote>
+<p>D State：调设备的用电量：屏幕亮度，空闲时关闭网卡等  </p>
+<p>P State：调CPU的频率  </p>
 <blockquote>
-<p>dsdt搜索Device (PWRB)，在其上面加上代码即可。</p>
-</blockquote>
+<p>cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies  </p>
 <blockquote>
-<blockquote>
-<p>Device (PNLF)</p>
-</blockquote>
-<blockquote>
-<p>{</p>
+<p>2900000 2200000 1700000 800000  </p>
 </blockquote>
 </blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>Name (_HID, EisaId (“APP0002”))</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>Name (_CID, “backlight”)</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>Name (_UID, 0x0A)</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>Name (_STA, 0x0B)</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>}</p>
-</blockquote>
-<p><img src="http://img0.ph.126.net/NOcTcpmWJMOj1-E6vVcjZw==/4844184349290525828.jpg" alt="msi EX465安装MACOSX 其他 - leaf - ------坚持雅操------" title="msi EX465安装MACOSX 其他 - leaf - ------坚持雅操------"></p>
-<p> </p>
-<p>亮度保存</p>
-<p>1、nvram -x -p &gt; /Extra/nvram.plist</p>
-<p>2、复制rc.shutdown.local放到/etc下 (需要显示隐藏文件)</p>
-</blockquote>
-<blockquote>
-<p> 复制com.delta.nvram.set.plist放到/Library/launchDaemons/下 </p>
-<p>3、修复权限</p>
-<p>01.sudo chown 0:0 /Library/LaunchDaemons/com.delta.nvram.set.plist</p>
-<p>02.sudo chown 0:0 /private/etc/rc.shutdown.local</p>
-<p>备注：感觉还是上下键方便，亮度保存没试过。</p>
 </blockquote>
 
       
@@ -1074,7 +1365,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3100805840/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/695420585/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1090,7 +1381,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/3100805840/" class="post-title-link" itemprop="url">msi EX465安装MACOSX 声卡驱动</a>
+            <a href="/posts/695420585/" class="post-title-link" itemprop="url">基础补充3：initrd.img里的init和/etc/rc.sysinit</a>
         </h2>
 
         <div class="post-meta">
@@ -1100,15 +1391,28 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2013-12-09 14:16:00" itemprop="dateCreated datePublished" datetime="2013-12-09T14:16:00+08:00">2013-12-09</time>
+              <time title="创建时间：2013-04-09 15:52:00" itemprop="dateCreated datePublished" datetime="2013-04-09T15:52:00+08:00">2013-04-09</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:51" itemprop="dateModified" datetime="2020-08-04T09:51:51+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
+                </span>
+            </span>
 
           
 
@@ -1119,748 +1423,43 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>本篇没有成功，只记录过程。</p>
-<p><a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/viewthread.php?tid=623626&highlight=+%EF%BF%BD%EF%BF%BD%EF%BF%BD%EF%BF%BD">http://bbs.pcbeta.com/viewthread.php?tid=623626&amp;highlight=%2B%D7%CF%C3%D7</a></p>
-<p><a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/viewthread-1017396-1-1.html">http://bbs.pcbeta.com/viewthread-1017396-1-1.html</a></p>
-<p>步骤如下：</p>
-<p>1、提取声卡原始信息</p>
-<p>2、摘取相关信息</p>
-<p>3、得出 pin config，pathmap等数据</p>
-<p>4、更改相关文件，对applehda打补丁</p>
-<p>5、dsdt.aml文件更改</p>
-<p>一、提取声卡信息</p>
+          <p>了解这两个文件对以后制作LFS很有帮助。  </p>
+<p>1、调出initrd.img 里的init文件  </p>
 <blockquote>
-<p>进ubuntu，使用root权限</p>
-<p>cat /proc/asound/card0/codec#？ &gt; Codec.txt</p>
-</blockquote>
-<p>二、摘取 Address、Node、Pin Default 这三个数值</p>
-<p>Codec: Realtek ALC662 rev1</p>
-<p>Address: 0</p>
-<p>Vendor Id: 0x10ec0662</p>
-<p>0x14  0x0121141f: [Jack] HP Out at Ext Rear    Black          0x0c         OUT HP                 耳麦接口</p>
-<p>0x18  0x01a11c20: [Jack] Mic at Ext Rear          Black         0x0e         IN VREF_80            麦克风接口</p>
-<p>0x19  0x99a3092f: [Fixed] Mic at Int ATAPI         Unknown   0X0c* 0x0e   IN VREF_80        电脑麦克风</p>
-<p>0x1b  0x99130110: [Fixed] Speaker at Int ATAPI Unknown   0x0c 0X0e*   OUT VREF_HIZ   电脑扬声器</p>
-<blockquote>
-<p>按下图更换位置</p>
-</blockquote>
-<blockquote>
-<p><img src="http://img2.ph.126.net/GqH0lWiPCpSwkKmbW0yy7Q==/1837750123043916662.jpg" alt="msi EX465安装MACOSX 声卡驱动 - leaf - ------坚持雅操------" title="msi EX465安装MACOSX 声卡驱动 - leaf - ------坚持雅操------"></p>
-</blockquote>
-<p>0x14 1f 14 21 01 [Jack] HP Out at Ext Rear Black    0x0c OUT HP 耳麦接口</p>
-<p>0x18 20 1c a1 01 [Jack] Mic at Ext Rear Black    0x0e IN VREF_80 麦克风接口</p>
-<p>0x19 2f 09 a3 99 [Fixed] Mic at Int ATAPI Unknown 0X0c* 0x0e IN VREF_80 电脑麦克风</p>
-<p>0x1b 10 01 13 99 [Fixed] Speaker at Int ATAPI Unknown 0x0c 0X0e* OUT VREF_HIZ 电脑扬声器</p>
-<p>备注：其他接口由于是N/A，所以全部加屏蔽即可</p>
-<p>三-一、ConfigData</p>
-<blockquote>
-<p>第一位代表关联的设备(仅针对多声道)</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>HP是5</p>
-</blockquote>
-<blockquote>
-<p>外置麦克风按line in设置： 2</p>
-</blockquote>
-<blockquote>
-<p>内置麦克风按mic设置：1</p>
-</blockquote>
-<blockquote>
-<p>扬声器按intspeaker设置：4</p>
-</blockquote>
-<p>第二位设置声道有关</p>
-<p>这边全部设置为0</p>
-</blockquote>
-<p>第三位代表接口颜色</p>
-<p>black 1 unknown 0</p>
-<p>1</p>
-<p>1</p>
-<p>0</p>
-<p>0</p>
-<blockquote>
-<p>第四位设置是否侦测插口</p>
-</blockquote>
-<p>侦测 0  不侦测 1</p>
-<p>0</p>
-<p>0</p>
-<p>1</p>
-<p>1</p>
-<p>第五位表示设备类型</p>
-<p>HP2</p>
-<p>line in8</p>
-<p>mica</p>
-<p>扬声器1</p>
-<p>第六位表示连接类型</p>
-<p>笔记本保持原样</p>
-<p>1</p>
-<p>1</p>
-<p>3</p>
-<p>3</p>
-<p>第七位表示是否有插孔和插孔位置</p>
-<p>外接 0 内置 9</p>
-<p>0</p>
-<p>0</p>
-<p>9</p>
-<p>9</p>
-<p>第八位表示插口所在位置</p>
-<p>内置和屏蔽 0 其余为1</p>
-<p>1</p>
-<p>1</p>
-<p>0</p>
-<p>0</p>
-<p>得出</p>
-<p>1450 10 21 01</p>
-<p>1820 10 81 01</p>
-<p> 1910 01 a3 90</p>
-<p>1b40 01 13 90</p>
-<p>屏蔽代码 f0 00 00 40</p>
-<p>按下图整理出最终数据。因有EAPD，加入代码01470c02</p>
-<blockquote>
-<p><img src="http://img1.ph.126.net/4_V10ARmiHyjLIlgcun-YA==/1994531685072004159.jpg" alt="msi EX465安装MACOSX 声卡驱动 - leaf - ------坚持雅操------" title="msi EX465安装MACOSX 声卡驱动 - leaf - ------坚持雅操------"></p>
-</blockquote>
-<p>01471c50 01471d10 01471e21 01471f01 01571cf0 01571d00 01571e00 01571f40 01671cf0 01671d00 01671e00 01671f40 01871c20 01871d10 01871e81 01871f01 01971c10 01971d01 01971ea3 01971f90 01a71cf0 01a71d00 01a71e00 01a71f40 01b71c40 01b71d01 01b71e13 01b71f90 01c71cf0 01c71d00 01c71e00 01c71f40 01d71cf0 01d71d00 01d71e00 01d71f40 01e71cf0 01e71d00 01e71e00 01e71f40 01470c02<br> 备注：需要一行写完，不能有回车</p>
-<p>三-二、PathMap</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/viewthread-613358-1-1.html">http://bbs.pcbeta.com/viewthread-613358-1-1.html</a></p>
-</blockquote>
-<blockquote>
-<p><img src="http://img1.ph.126.net/l06WX7v8qTr75TuNKC2P_w==/6597629418076920580.jpg" alt="msi EX465安装MACOSX 声卡驱动 - leaf - ------坚持雅操------" title="msi EX465安装MACOSX 声卡驱动 - leaf - ------坚持雅操------"></p>
-<p>原则：输入是从后往前推断节点，输出是从前往后推</p>
-<p>下载工具graphviz，codecgraph</p>
-<p>运行命令   ./codecgraph codec.txt ，然后用AI导出png图片</p>
-<p><img src="http://img1.ph.126.net/uJcIWiNYKGMqIpSjIOuF2w==/3016848800485121575.png" alt="msi EX465安装MACOSX 声卡驱动 - leaf - ------坚持雅操------" title="msi EX465安装MACOSX 声卡驱动 - leaf - ------坚持雅操------"></p>
-<p> 可以很清楚的看出节点图，按codec图找也是差不多的。</p>
-<p>140c02</p>
-<p>092218</p>
-<p>082319</p>
-<p>1b0e04</p>
-</blockquote>
-<p>四、更改相关文件</p>
-<p>更改的文件包括AppleHDAHardwareConfigDriver.kext/Contents下面的Info.plist、layout86.xml、Platforms.xml、applehda打补丁。</p>
-<p>其中applehda打补丁</p>
-<p>可以下载PATCHHDA打，或者用0XDE将885改成662即可</p>
-<p>sudo perl -pi -e ‘s|\x85\x08\xec\x10|\x62\x06\xec\x10|g’ /System/Library/Extensions/AppleHDA.kext/Contents/MacOS/AppleHDA</p>
-<blockquote>
-</blockquote>
-<p>五、dsdt.aml文件修改</p>
-<p>用voodoohda，然后查看在哪个节点，我的是HDA，</p>
-<p>然后改HDA这个节点，将HDA改成HDEF(有2处)</p>
-<p>用IDSDT生成dsdt代码，然后再改</p>
-<p>dsdt代码如下：method部分</p>
-<pre><code>        Device (HDEF)            &#123;                Name (\_ADR, 0x000F0000)                Method (\_DSM, 4, NotSerialized)                &#123;                    Store (Package (0x08)                        &#123;                            &quot;codec-id&quot;,                             Buffer (0x04)                            &#123;                                0x62, 0x06, 0xEC, 0x10                            &#125;,                             &quot;layout-id&quot;,                             Buffer (0x04)                            &#123;                                0x96, 0x02, 0x00, 0x00                            &#125;,                             &quot;device-type&quot;,                             Buffer (0x0F)                            &#123;                                &quot;Realtek ALC662&quot;                            &#125;,                             &quot;PinConfigurations&quot;,                             Buffer (Zero) &#123;&#125;                        &#125;, Local0)                    DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))                    Return (Local0)                &#125;</code></pre>
-<blockquote>
-</blockquote>
-<p>六、关于pinconfigurations</p>
-<p>dsdt 改pinconfigurations 可以在系统信息里面显示声卡信息。具体更改如下</p>
-<p>         “PinConfigurations”, </p>
-<p> Buffer (0x28) </p>
-<p> {0x50, 0x10, 0x21, 0x01, 0xF0, 0x00, 0x00, 0x40, </p>
-<p>0xF0, 0x00, 0x00, 0x40, 0x20, 0x10, 0x81, 0x01, </p>
-<p>0x10, 0x01, 0xA3, 0x90, 0xF0, 0x00, 0x00, 0x40, </p>
-<p>0x40, 0x01, 0x13, 0x90, 0xF0, 0x00, 0x00, 0x40, </p>
-<p>0xF0, 0x00, 0x00, 0x40, 0xF0, 0x00, 0x00, 0x40 }</p>
-<p>备注：代码就是上面得出的代码</p>
-<p>显示如下</p>
-<p><img src="http://img0.ph.126.net/K64uUlyS4T_yY8_kyZFrWw==/860750478881228391.jpg" alt="msi EX465安装MACOSX 声卡驱动 - leaf - ------坚持雅操------" title="msi EX465安装MACOSX 声卡驱动 - leaf - ------坚持雅操------"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2873657863/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/2873657863/" class="post-title-link" itemprop="url">msi EX465安装MACOSX ACPI</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2013-12-08 18:02:00" itemprop="dateCreated datePublished" datetime="2013-12-08T18:02:00+08:00">2013-12-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:51" itemprop="dateModified" datetime="2020-08-04T09:51:51+08:00">2020-08-04</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/forum.php?mod=viewthread&amp;tid=1098975">http://bbs.pcbeta.com/forum.php?mod=viewthread&amp;tid=1098975</a></p>
-<p><a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/viewthread-594984-1-5.html">http://bbs.pcbeta.com/viewthread-594984-1-5.html</a></p>
-<p>一、原生电源管理</p>
-<p>1、加载AppleHPET</p>
-<blockquote>
-<p>搜索PNP0103</p>
-<p>我的代码</p>
-</blockquote>
-<p>                Device (HPET)</p>
-<p>                {</p>
-<p>                    Name (_HID, EisaId (“PNP0103”))</p>
-<p>                    Name (ATT3, ResourceTemplate ()</p>
-<p>                    {</p>
-<p>                        IRQNoFlags ()</p>
-<p>                            {0}</p>
-<p>                        IRQNoFlags ()</p>
-<p>                            {8}</p>
-<p>                        Memory32Fixed (ReadOnly,</p>
-<p>                            0xFED00000,         // Address Base</p>
-<p>                            0x00000400,         // Address Length</p>
-<p>                            )</p>
-<p>                    })</p>
-<p>                    Name (ATT4, ResourceTemplate ()</p>
-<p>                    {</p>
-<p>                    })</p>
-<p>                    Method (_CRS, 0, NotSerialized)</p>
-<p>                    {</p>
-<p>                        If (LEqual (HPFL (), One))</p>
-<p>                        {</p>
-<p>                            Return (ATT4)</p>
-<p>                        }</p>
-<p>                        Else</p>
-<p>                        {</p>
-<p>                            Return (ATT3)</p>
-<p>                        }</p>
-<p>                    }</p>
-<p>                    Method (_STA, 0, NotSerialized)</p>
-<p>                    {</p>
-<p>                        If (LEqual (HPFL (), One))</p>
-<p>                        {</p>
-<p>                            Return (0x0A)</p>
-<p>                        }</p>
-<p>                        Else</p>
-<p>                        {</p>
-<p>                            Return (0x0F)</p>
-<p>                        }</p>
-<p>                    }</p>
-<p>                }</p>
-<blockquote>
-<p>改为</p>
-</blockquote>
-<p>                Device (HPET)</p>
-<p>                {</p>
-<p>                    Name (_HID, EisaId (“PNP0103”))</p>
-<p>                    Name (ATT3, ResourceTemplate ()</p>
-<p>                    {</p>
-<p>                        IRQNoFlags ()</p>
-<p>                            {0}</p>
-<p>                        IRQNoFlags ()</p>
-<p>                            {8}</p>
-<p>                        Memory32Fixed (ReadOnly,</p>
-<p>                            0xFED00000,         // Address Base</p>
-<p>                            0x00000400,         // Address Length</p>
-<p>                            )</p>
-<p>                    })</p>
-<p>                    Method (_CRS, 0, NotSerialized)</p>
-<p>                    {</p>
-<p>                        Return (ATT3)</p>
-<p>                    }</p>
-<p>                    Method (_STA, 0, NotSerialized)</p>
-<p>                    {</p>
-<p>                        Return (0x0F)</p>
-<p>                    }</p>
-<p>                }</p>
-<blockquote>
-<p>重启后应该已加载AppleHPET</p>
-</blockquote>
-<p>2、加载AppleLPC</p>
-<blockquote>
-<p>搜索：Name (_ADR, 0x00020000)</p>
-<p>一、在Device前加入以下代码</p>
-</blockquote>
-<p>                Method (_DSM, 4, NotSerialized)</p>
-<p>                {</p>
-<p>                    Store (Package (0x08)</p>
-<p>                        {</p>
-<p>                            “device-id”,</p>
-<p>                            Buffer (0x04)</p>
-<p>                            {</p>
-<p>                                 0xAC, 0x0A, 0x00, 0x00</p>
-<p>                            },</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p> “vendor-id”, </p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>                            Buffer (0x04)</p>
-<p>                            {</p>
-<p>                                0xDE, 0x10, 0x00, 0x00</p>
-<p>                            }, </p>
-<p>                            “IOName”, </p>
-<p>                            Buffer (0x0D)</p>
-<p>                            {</p>
-<p>                                “pci10de,aac”</p>
-<p>                            }, </p>
-<p>                            “name”, </p>
-<p>                            Buffer (0x0D)</p>
-<p>                            {</p>
-<p>                                “pci10de,aac”</p>
-<p>                            }</p>
-<p>                        }, Local0)</p>
-<p>                    DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))</p>
-<p>                    Return (Local0)</p>
-<blockquote>
-<p>二、在dsdt头部的method模块前面加入以下代码</p>
-<p>备注：不加会出现DTGP错误</p>
-</blockquote>
-<blockquote>
-<p>    Method (DTGP, 5, NotSerialized)</p>
-<p>    {</p>
-<p>        If (LEqual (Arg0, Buffer (0x10)</p>
-<p>                {</p>
-<p>                    /* 0000 */   0xC6, 0xB7, 0xB5, 0xA0, 0x18, 0x13, 0x1C, 0x44,</p>
-<p>                    /* 0008 */   0xB0, 0xC9, 0xFE, 0x69, 0x5E, 0xAF, 0x94, 0x9B</p>
-<p>                }))</p>
-<p>        {</p>
-<p>            If (LEqual (Arg1, One))</p>
-<p>            {</p>
-<p>                If (LEqual (Arg2, Zero))</p>
-<p>                {</p>
-<p>                    Store (Buffer (One)</p>
-<p>                        {</p>
-<p>                             0x03</p>
-<p>                        }, Arg4)</p>
-<p>                    Return (One)</p>
-<p>                }</p>
-<p>                If (LEqual (Arg2, One))</p>
-<p>                {</p>
-<p>                    Return (One)</p>
-<p>                }</p>
-<p>            }</p>
-<p>        }</p>
-<p>        Store (Buffer (One)</p>
-<p>            {</p>
-<p>                 0x00</p>
-<p>            }, Arg4)</p>
-<p>        Return (Zero)</p>
-<p>    }</p>
-<p>重启应该已加载AppleLPC.kext </p>
-<p>仿冒的是10de;nVidia Corporation;0aac;MCP79 LPC Bridge;Bridge;ISA bridge</p>
-</blockquote>
-<p>3、更改相关kext</p>
-<blockquote>
-<p>打开最新fakesmc，</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>修改相关参数</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>Contents下新建文件夹PlugIns，放入相关kext。然后把fakesmc加入/S/L/E下</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>删除Nullintercpumanagement.kext </p>
-<p>重启 即可加载原生驱动了。</p>
-</blockquote>
-<p><img src="http://img1.ph.126.net/CUsEg0mdRS_8A1hiuHBwJQ==/6608250700398870511.jpg" alt="msi EX465安装MACOSX ACPI - leaf - ------坚持雅操------" title="msi EX465安装MACOSX ACPI - leaf - ------坚持雅操------"></p>
-<p> </p>
-<p> 二、CPU降频</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/viewthread-1071634-1-1.html">http://bbs.pcbeta.com/viewthread-1071634-1-1.html</a></p>
-</blockquote>
-<blockquote>
-<p>我不添加SSDT也有2档降频。所以我直接加档位即可。</p>
-</blockquote>
-<blockquote>
-<p>1、提取SSDT，并放入/Extra下面</p>
-</blockquote>
-<blockquote>
-<p>2、变色龙勾选Drop SSDT</p>
-</blockquote>
-<blockquote>
-<p>3、安装相关kext和工具查看CPU能变的频率</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>安装VoodooMonitor.kext、VoodooPState.kext</p>
-</blockquote>
-<blockquote>
-<p>打开Voodoomonitor.app 来查看所有的频率</p>
-</blockquote>
-<blockquote>
-<p>记录如下：</p>
-</blockquote>
-<blockquote>
-<p>十进制16进制control值</p>
-</blockquote>
-<blockquote>
-<p>2546  &gt;09F2491F</p>
-</blockquote>
-<blockquote>
-<p>2412096C091E</p>
-</blockquote>
-<blockquote>
-<p>227808E6481D</p>
-</blockquote>
-<blockquote>
-<p>21440860081C</p>
-</blockquote>
-<blockquote>
-<p>201007DA471B</p>
-</blockquote>
-<blockquote>
-<p>18760754071A</p>
-</blockquote>
-<blockquote>
-<p>174206CE4619</p>
-</blockquote>
-<blockquote>
-<p>160806480617</p>
-</blockquote>
-<p>4、按电压和频率倍数算出大致的使用电量</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>十六进制算出电量电压外频倍数</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>88b8   &lt;35000  =1100  X31</p>
-</blockquote>
-<blockquote>
-<p>76E430436108728</p>
-</blockquote>
-<blockquote>
-<p>6D2E27950107526</p>
-</blockquote>
-<blockquote>
-<p>639025488106224</p>
-</blockquote>
-<blockquote>
-<p>5A3C23100105022</p>
-</blockquote>
-<blockquote>
-<p>510420740103720</p>
-</blockquote>
-<blockquote>
-<p>481218450102518</p>
-</blockquote>
-<blockquote>
-<p>3E8016000100016</p>
-</blockquote>
-<blockquote>
-</blockquote>
-<p>5、改有PSS代码的那个SSDT文件，我的是SSDT-1.aml</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>Name (_PSS, Package (0x08)</p>
-</blockquote>
-<blockquote>
-<p>        {</p>
-</blockquote>
-<blockquote>
-<p>            Package (0x06)</p>
-</blockquote>
-<blockquote>
-<p>            {</p>
-</blockquote>
-<blockquote>
-<p>                0x000009F2, </p>
-</blockquote>
-<blockquote>
-<p>                0x000088B8, </p>
-</blockquote>
+<p>mv initrd.img initrd.gz<br>gunzip initrd.gz<br>cpio -id &lt; initrd 就能看到了  </p>
+<p><img src="http://img2.ph.126.net/m66GHfFX_CgNhzDRGsQc0Q==/2232096565415793248.png" alt="基础补充3：initrd.img里的init和/etc/rc.sysinit - leaf - ------坚持雅操------" title="基础补充3：initrd.img里的init和/etc/rc.sysinit - leaf - ------坚持雅操------"></p>
+<p> <br>-————————–FC4 init内容—————————–<br>#———开启nash用于执行以下内容，nash同bash，比较小巧。#!是固定格式。—–</p>
 <blockquote>
-<p>                0x0000000A, </p>
+<p>#!/bin/nash        </p>
 </blockquote>
+<p>#——加载3目录。initrd里面已经有这3个“空”目录了，加载到内存中供kernel使用 ——–<br>#——这3个目录里的文件将由kernel产生<br>#—–需要注意的是/目录是由kernel产生的，而不是initrd提供的。<br>#—–procfs和sysfs是内核层的文件，除了内核，其他都改不了。用于存储硬件和进程相关信息。<br>#—–/dev文件 以tmpfs文件系统来存储<br>#—–tmpfs是建立在内存中的，刚开机由于没有实体设备被加载，所有产生的信息都存在内存中。  </p>
 <blockquote>
-<p>                0x0000000A, </p>
+<p>mount -t proc /proc /proc<br>setquiet<br>echo Mounted /proc filesystem<br>echo Mounting sysfs<br>mount -t sysfs /sys /sys<br>echo Creating /dev<br>mount -o mode=0755 -t tmpfs /dev /dev  </p>
 </blockquote>
+<p>#———建立设备文件，console用于显示，null和zero起到垃圾桶的作用 ————-<br>#——mknod 主要是建b c  </p>
 <blockquote>
-<p>                0x0000491F,</p>
+<p>mknod /dev/console c 5 1<br>mknod /dev/null c 1 3<br>mknod /dev/zero c 1 5  </p>
 </blockquote>
+<p>#———————建立伪终端目录、临时暂存—————————–<br>#—–/dev/pts 给ssh和xterm用。<br>#—-/dev/shm 用于提供暂存<br>#—-udev用于动态的管理设备文件，特别是热插拔的设备。改善/dev的问题<br>#—-udev配合/sysfs使用。  </p>
 <blockquote>
-<p>                0x0000491F</p>
+<p>mkdir /dev/pts<br>mkdir /dev/shm<br>echo Starting udev<br>/sbin/udevstart          #自动从/sys中找到热插拔设备<br>echo -n “/sbin/hotplug” &gt; /proc/sys/kernel/hotplug  </p>
 </blockquote>
+<p>#——–加载模块——-  </p>
 <blockquote>
-<p>            }, </p>
+<p>echo “Loading jbd.ko module”<br>insmod /lib/jbd.ko<br>echo “Loading ext3.ko module”<br>insmod /lib/ext3.ko  </p>
 </blockquote>
+<p>#—–mkrootdev 主要是把grub.conf里面的 root (hd0,0) 的路径先建立好。<br>#—–将找到的root路径：/dev/root  挂载到initrd的/sysroot下<br>#——然后用switchroot到该目录。正式切到硬盘操作系统的环境中。switchroot同chroot  </p>
 <blockquote>
-<p>            Package (0x06)</p>
+<p>/sbin/udevstart<br>echo Creating root device<br>mkrootdev /dev/root<br>echo Mounting root filesystem<br>mount -o defaults –ro -t ext3 /dev/root /sysroot<br>echo Switching to new root<br>switchroot –movedev /sysroot  </p>
 </blockquote>
-<blockquote>
-<p>            {</p>
-</blockquote>
-<blockquote>
-<p>                0x0000096C, </p>
-</blockquote>
-<blockquote>
-<p>                0x000076E4,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000000A, </p>
-</blockquote>
-<blockquote>
-<p>                0x0000000A, </p>
-</blockquote>
-<blockquote>
-<p>                0x0000091E, </p>
-</blockquote>
-<blockquote>
-<p>                0x0000091E</p>
-</blockquote>
-<blockquote>
-<p>            }, </p>
-</blockquote>
-<blockquote>
-<p>            Package (0x06)</p>
-</blockquote>
-<blockquote>
-<p>            {</p>
-</blockquote>
-<blockquote>
-<p>                0x000008E6,</p>
-</blockquote>
-<blockquote>
-<p>                0x00006D2E,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000000A,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000000A,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000481D,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000481D</p>
-</blockquote>
-<blockquote>
-<p>            }, </p>
-</blockquote>
-<blockquote>
-<p>            Package (0x06)</p>
-</blockquote>
-<blockquote>
-<p>            {</p>
-</blockquote>
-<blockquote>
-<p>                0x00000860,</p>
-</blockquote>
-<blockquote>
-<p>                0x00006390,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000000A,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000000A,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000081C,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000081C</p>
-</blockquote>
-<blockquote>
-<p>            }, </p>
-</blockquote>
-<blockquote>
-<p>            Package (0x06)</p>
-</blockquote>
-<blockquote>
-<p>            {</p>
-</blockquote>
-<blockquote>
-<p>                0x000007DA,</p>
-</blockquote>
-<blockquote>
-<p>                0x00005A3C,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000000A,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000000A,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000471B,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000471B</p>
-</blockquote>
-<blockquote>
-<p>            }, </p>
-</blockquote>
-<blockquote>
-<p>            Package (0x06)</p>
-</blockquote>
-<blockquote>
-<p>            {</p>
-</blockquote>
-<blockquote>
-<p>                0x00000754,</p>
-</blockquote>
-<blockquote>
-<p>                0x00005104,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000000A,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000000A,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000071A,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000071A</p>
-</blockquote>
-<blockquote>
-<p>            }, </p>
-</blockquote>
-<blockquote>
-<p>            Package (0x06)</p>
-</blockquote>
-<blockquote>
-<p>            {</p>
-</blockquote>
-<blockquote>
-<p>                0x000006CE,</p>
-</blockquote>
-<blockquote>
-<p>                0x00004812,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000000A,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000000A,</p>
-</blockquote>
-<blockquote>
-<p>                0x00004619,</p>
-</blockquote>
-<blockquote>
-<p>                0x00004619</p>
-</blockquote>
-<blockquote>
-<p>            }, </p>
-</blockquote>
-<blockquote>
-<p>            Package (0x06)</p>
-</blockquote>
-<blockquote>
-<p>            {</p>
-</blockquote>
-<blockquote>
-<p>                0x00000648,</p>
-</blockquote>
-<blockquote>
-<p>                0x00003E80,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000000A,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000000A,</p>
-</blockquote>
-<blockquote>
-<p>                0x00000617,</p>
-</blockquote>
-<blockquote>
-<p>                0x00000617</p>
-</blockquote>
-<blockquote>
-<p>            }</p>
-</blockquote>
-<blockquote>
-<p>        })</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>备注：</p>
-</blockquote>
-<blockquote>
-<p>1、有中间频率，但是不会稳在中间频率。你动几下就能看到中间频率。</p>
-</blockquote>
-<blockquote>
-<p>2、也可以直接在DSDT里面添加代码即可。参见<a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1098975">第一个地址</a></p>
 </blockquote>
+<p>2、/etc/rc.sysinit  </p>
 <blockquote>
+<p>设置3个变量    HOSTNAME,HOSTTYPE,unamer  </p>
 </blockquote>
-<p>三、关机断电</p>
 <blockquote>
-<p><a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/viewthread-900017-1-1.html">http://bbs.pcbeta.com/viewthread-900017-1-1.html</a></p>
-<p>搜索Method (_PTS, 1, NotSerialized) 只要在里面添加Else和一对｛｝即可</p>
-<p>    Method (_PTS, 1, NotSerialized)</p>
-<p>    {</p>
-<p>        If (LEqual (Arg0, 0x05))</p>
-<p>        {</p>
-<p>            Store (Zero, SLPE)</p>
-<p>            Sleep (0x10)</p>
-<p>        }</p>
-<p>        Else</p>
-<p> {</p>
-<p>            Store (Arg0, DBG8)</p>
-<p>            PTS (Arg0)</p>
-<p>            Store (Zero, Index (WAKP, Zero))</p>
-<p>            Store (Zero, Index (WAKP, One))</p>
-<p>            If (LAnd (LEqual (Arg0, 0x04), LEqual (OSFL (), 0x02)))</p>
-<p>            {</p>
-<p>                Sleep (0x0BB8)</p>
-<p>            }</p>
-<p>            Store (ASSB, WSSB)</p>
-<p>            Store (AOTB, WOTB)</p>
-<p>            Store (AAXB, WAXB)</p>
-<p>            Store (Arg0, ASSB)</p>
-<p>            Store (OSFL (), AOTB)</p>
-<p>            Store (Zero, AAXB)</p>
-<p>        }</p>
-<p>    }</p>
-<p>备注：因USB问题导致无法重启和睡眠，正在解决中。。。</p>
+<p>/etc/sysconfig/network                   设置网络状态<br>HOSTNAME=localhost                  HOSTNAME变量设值<br>mount -n -t proc /proc /proc            挂载/proc<br>/proc/bus/usb                                   检查USB设备文件所需的目录<br>mount -n -t sysfs /sys /sys &gt;/dev/null 2&gt;&amp;1    挂载/sys<br>. /etc/init.d/functions                         设置环境变量<br>设置SELINUX<br>打印welcome to<br>/bin/dmesg                                         设置系统能够记录的等级，当前设置值是1<br>/sbin/start_udev                                 开启udev机制，/etc/udev下所有规则可套用<br>cat /proc/cmdline                              读取grub.conf vmlinuz这一行<br>/proc/sys/kernel/modprobe             加载各硬件模块<br>mount -n /dev/pts                             产生一个tty接口<br>sysctl -e -p /etc/sysctl.conf &gt;/dev/null 2&gt;&amp;1    加载sysctl.conf 设置值<br>/etc/sysconfig/clock                         设置时间种类，如UTC<br>/sbin/hwclock                                   设置系统时间<br>设置hostname<br>/proc/acpi                                          开启ACPI功能<br>/sbin/zfcpconf.sh                               scsi相关<br>/etc/mdadm.conf                               raid相关<br>/sbin/lvm.static                                  LVM相关<br>. /etc/sysconfig/readonly-root           以只读方式挂载文件系统<br>mount -n -o remount,rw /                  以可读可写方式挂载根目录<br>清空SElinux表<br>(&gt; /etc/mtab) &amp;&gt; /dev/null                 清空/etc/mtab<br>从新挂载系统目录<br>/usr/bin/rhgb                                       加载图形开机画面背景，并显示开机进度条<br>进行系统初始设置<br>清除相关文件<br>mkdir -m 1777 -p /tmp/.ICE-unix &gt;/dev/null 2&gt;&amp;1 设定X window所要使用的目录<br>swapon -a -e                                       开启swap交换空间<br>/usr/sbin/system-config-network-cmd        设置网络<br>dmesg -s 131072 &gt; /var/log/dmesg        写入dmesg信息<br>touch /.autofsck &amp;&gt; /dev/null                    建立.autofsck文件，判断是否正常启动还是非正常断电<br>/usr/bin/rhgb-client –sysinit                      告知系统要离开这个脚本了，继续则转到inittab脚本     </p>
 </blockquote>
-<p>四、睡眠</p>
 <blockquote>
 </blockquote>
 
@@ -1882,7 +1481,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3670975691/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1588026503/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1898,7 +1497,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/3670975691/" class="post-title-link" itemprop="url">msi EX465安装MACOSX 显卡驱动</a>
+            <a href="/posts/1588026503/" class="post-title-link" itemprop="url">基础补充2：bootloader和GRUB</a>
         </h2>
 
         <div class="post-meta">
@@ -1908,15 +1507,28 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2013-12-08 13:49:00" itemprop="dateCreated datePublished" datetime="2013-12-08T13:49:00+08:00">2013-12-08</time>
+              <time title="创建时间：2013-04-09 10:49:00" itemprop="dateCreated datePublished" datetime="2013-04-09T10:49:00+08:00">2013-04-09</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:51" itemprop="dateModified" datetime="2020-08-04T09:51:51+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
+                </span>
+            </span>
 
           
 
@@ -1927,317 +1539,20 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>原理：</p>
+          <p>磁道结构：<br>bootloader-partition table-magic number —stage1.5—分区(boot sector(512B)+存储区域)<br>|&lt;—————MBR————————-&gt;|  </p>
+<p>bootloader功能：stage1  </p>
 <blockquote>
-<p>dsdt让系统知道有这个显卡</p>
-<p>FB告诉系统该显卡是如何处理信号的。</p>
+<p>加载扇区：各扇区之间切换<br>加载核心：通过stage1.5—读取stage2—配置文件—核心  </p>
 </blockquote>
-<p>我是按这帖子做的：ATI 5系和6系显卡驱动&amp;修改FB探讨</p>
-<p>具体步骤：</p>
-<p>1、查看显卡信息。</p>
+<p>GRUB：  </p>
 <blockquote>
-<p>GPU-Z可以查看</p>
-</blockquote>
-<p>2、将ID加入到ATI5000Controller.kext和AMDRadeonAccelerator.kext中</p>
-<blockquote>
-<p>5470m的ID里面有，所以不需要添加</p>
-</blockquote>
-<p>3、提取rom，修改你的接口信息</p>
-<blockquote>
-<p>1、rom提取用aida64提取</p>
-<p>2、用radeon_bios_decode和redsock_bios_decoder提取显卡信息</p>
-<p>./radeon_bios_decode &lt; 1002_68E0.rom</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>ATOM BIOS Rom:</p>
-</blockquote>
-<blockquote>
-<p>        SubsystemVendorID: 0x1462 SubsystemID: 0x1043       </p>
-</blockquote>
-<blockquote>
-<p>        IOBaseAddress: 0xd800                                            </p>
-</blockquote>
-<blockquote>
-<p>        Filename: BR35393.012</p>
-</blockquote>
-<blockquote>
-<p>        BIOS Bootup Message:</p>
-</blockquote>
-<blockquote>
-<p>MSI MS1455 PARK S3 LP DDR3 64Mx16 512MB                                    </p>
-</blockquote>
-<blockquote>
-<p>PCI ID: 1002:68e0</p>
-</blockquote>
-<blockquote>
-<p>Connector at index 0</p>
-</blockquote>
-<blockquote>
-<p>        Type [@offset 44904]: LVDS (7)</p>
-</blockquote>
-<blockquote>
-<p>        Encoder [@offset 44908]: INTERNAL_UNIPHY (0x1e)</p>
-</blockquote>
-<blockquote>
-<p>        i2cid [@offset 44960]: 0x90, OSX senseid: 0x1</p>
-</blockquote>
-<blockquote>
-<p>Connector at index 1</p>
-</blockquote>
-<blockquote>
-<p>        Type [@offset 44914]: VGA (1)</p>
-</blockquote>
-<blockquote>
-<p>        Encoder [@offset 44918]: INTERNAL_KLDSCP_DAC1 (0x15)</p>
-</blockquote>
-<blockquote>
-<p>        i2cid [@offset 44983]: 0x97, OSX senseid: 0x8</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>./redsock_bios_decoder &lt; 1002_68E0.rom</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>BR35393.012 :</p>
-</blockquote>
-<blockquote>
-<p>MSI MS1455 PARK S3 LP DDR3 64Mx16 512MB                                    </p>
-</blockquote>
-<blockquote>
-<p>Subsystem Vendor ID: 1462</p>
-</blockquote>
-<blockquote>
-<p>       Subsystem ID: 1043</p>
-</blockquote>
-<blockquote>
-<p>Object Header Structure Size: 140</p>
-</blockquote>
-<blockquote>
-<p>Connector Object Table Offset: 2a</p>
-</blockquote>
-<blockquote>
-<p>Router Object Table Offset: 0</p>
-</blockquote>
-<blockquote>
-<p>Encoder Object Table Offset: 6c</p>
-</blockquote>
-<blockquote>
-<p>Display Path Table Offset: 12</p>
-</blockquote>
-<blockquote>
-<p>Connector Object Id [14] which is [LVDS]</p>
-</blockquote>
-<blockquote>
-<p>        encoder obj id [0x1e] which is [INTERNAL_UNIPHY (osx txmit 0x10 [duallink 0x0] enc 0x0)] linkb: false</p>
-</blockquote>
-<blockquote>
-<p>Connector Object Id [5] which is [VGA]</p>
-</blockquote>
-<blockquote>
-<p>        encoder obj id [0x15] which is [INTERNAL_KLDSCP_DAC1 (osx txmit 0x00 enc 0x10?)] linkb: false</p>
-</blockquote>
-<p>提取的信息如下：</p>
-</blockquote>
-<blockquote>
-<p>         txmit       enc      senseid</p>
-<p>LVDS      10          00        01</p>
-<p>VGA       00          10        08</p>
-<p>LVDS前面部分</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>02 00 00 00 40 00 00 00 09 01 00 00</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>VGA前面部分</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>10 00 00 00 10 00 00 00 00 01 00 00</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>得到参数：</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>LVDS 02 00 00 00 40 00 00 00 09 01 00 00 10 00 00 01</p>
-</blockquote>
-<blockquote>
-<p>VGA  10 00 00 00 10 00 00 00 00 01 00 00 00 10 01 08</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>#紫色表示显示输出顺序，00表示最优先输出</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>整理得到最终参数</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>0200000040000000090100001000000110000000100000000001000000100108</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>3、我们选用Zonalis参数</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>我把5系列的参数基本上都试了一遍，最后才试到这个6接口的参数，坑爹啊！</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>000400000406000000710000200106060004000004060000007100001000050500040000040600000071000021030204000400000406000000710000110201030004000004060000007100002205040200040000040600000071000012040301</p>
-</blockquote>
-<blockquote>
-<p>我的只有2个接口，其他全部用0替代得到</p>
-</blockquote>
-<blockquote>
-<p>020000004000000009010000100000011000000010000000000100000010010800000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>4、我们更改ATI5000Contrller.kext&gt;Contents&gt;MacOS&gt; ATI5000Contrller</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>用0XED打开，选16进制，搜索Zonalis参数，替换为下面的参数，保存即可</p>
-</blockquote>
-</blockquote>
-<p>4、笔记本A卡，且senseid为07</p>
-<blockquote>
-<p>这一步就是改EDID，识别显示器用的，本LVDS接口是01，所以跳过<br>edid只是解决花屏或显示器识别问题，能正常进入桌面，说明edid暂时没什么问题。  </p>
-</blockquote>
-<p>5、加载你修改的FB</p>
+<p>MBR和stage1的区别  </p>
+<p><img src="http://img1.ph.126.net/GQptpHNR7E4qcoZgLTaSaA==/6597161026123611847.png" alt="基础补充2：bootloader和GRUB - leaf - ------坚持雅操------" title="基础补充2：bootloader和GRUB - leaf - ------坚持雅操------">  </p>
+<p>配置文件-核心加载方式<br>链接加载  </p>
 <blockquote>
-<p>这一步就是改dsdt.aml。用DSDTSE修改</p>
-<p>1、用IDSDT将dsdt和rom信息写在一起</p>
-<p>2、更改相关参数</p>
+<p>rootnoverify (hd0,0)   指定bootloader所在分区<br>chainloader +1           指定为第一个扇区  </p>
 </blockquote>
-<blockquote>
-<blockquote>
-<p>ATY后面原参数是Motmot。然后搜索Motmot，替换为Zonalis </p>
-</blockquote>
-<blockquote>
-<p>再搜索ATY，往下拉，将@0,name，@1,name的ATY,Display-A、ATY,Display-B</p>
-</blockquote>
-<blockquote>
-<p>之类的改为ATY,Zonalis。</p>
-</blockquote>
-<blockquote>
-<p>将@0,name，@1,name，device_type 的 Buffer（xxx）里面的数字删掉</p>
-</blockquote>
-<blockquote>
-<p>备注：我只有两个接口，所以只到@1,name</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>3、点编译，生成新dsdt.aml。放入/Extra下面即可</p>
-</blockquote>
-<p>6、重启查看已QE</p>
-<blockquote>
-<p><img src="http://img0.ph.126.net/9oQ4gEe614K_IX4ZZx3SAg==/1983835635956987556.jpg" alt="msi EX465安装MACOSX 显卡驱动 - leaf - ------坚持雅操------" title="msi EX465安装MACOSX 显卡驱动 - leaf - ------坚持雅操------"></p>
-</blockquote>
-<blockquote>
-<p><img src="http://img2.ph.126.net/ow1qdSInakYScXDN6dzkFg==/2074470578457543017.jpg" alt="msi EX465安装MACOSX 显卡驱动 - leaf - ------坚持雅操------" title="msi EX465安装MACOSX 显卡驱动 - leaf - ------坚持雅操------"></p>
 </blockquote>
-<p>附：我改过的参数整理。</p>
-<p>Aticonfig: Douc</p>
-<p>ConnectorInfo count in decimal: 2</p>
-<p>Disk offset in decimal 165856</p>
-<p>    02  00  00  00  00  05  00  00  09  03  00  00  21  03  02  02</p>
-<p>    00  04  00  00  04  02  00  00  00  03  00  00  11  02  01  01</p>
-<p>0200000000050000090300002103020200040000040200000003000011020101</p>
-<p>Aticonfig: Langur</p>
-<p>ConnectorInfo count in decimal: 3</p>
-<p>Disk offset in decimal 165904</p>
-<p>    00  04  00  00  04  06  00  00  00  01  00  00  21  03  04  02</p>
-<p>    00  04  00  00  04  06  00  00  00  01  00  00  11  02  01  01</p>
-<p>    04  00  00  00  14  02  00  00  00  01  00  00  02  04  05  03</p>
-<p>000400000406000000010000210304020004000004060000000100001102010104000000140200000001000002040503</p>
-<p>Aticonfig: Hoolock</p>
-<p>ConnectorInfo count in decimal: 3</p>
-<p>Disk offset in decimal 166176</p>
-<p>    00  04  00  00  04  06  00  00  00  01  00  00  21  03  05  01</p>
-<p>    00  04  00  00  04  06  00  00  00  01  00  00  11  02  04  02</p>
-<p>    04  00  00  00  14  02  00  00  00  01  00  00  02  04  01  03</p>
-<p>000400000406000000010000210305010004000004060000000100001102040204000000140200000001000002040103</p>
-<p>Aticonfig: Baboon</p>
-<p>ConnectorInfo count in decimal: 3</p>
-<p>Disk offset in decimal 166288</p>
-<p>    04  00  00  00  14  00  00  00  00  01  00  00  01  02  01  03</p>
-<p>    00  08  00  00  00  02  00  00  00  71  00  00  22  05  02  01</p>
-<p>    10  00  00  00  10  00  00  00  00  01  00  00  00  10  00  02</p>
-<p>040000001400000000010000010201030008000000020000007100002205020110000000100000000001000000100002</p>
-<p>Aticonfig: Eulemur</p>
-<p>ConnectorInfo count in decimal: 3</p>
-<p>Disk offset in decimal 166336</p>
-<p>    04  00  00  00  14  00  00  00  00  01  00  00  01  02  01  04</p>
-<p>    00  08  00  00  00  02  00  00  00  71  00  00  12  04  04  02</p>
-<p>    10  00  00  00  10  00  00  00  00  00  00  00  00  10  00  01</p>
-<p>040000001400000000010000010201040008000000020000007100001204040210000000100000000000000000100001</p>
-<p>Aticonfig: Galago</p>
-<p>ConnectorInfo count in decimal: 2</p>
-<p>Disk offset in decimal 166384</p>
-<p>    02  00  00  00  00  01  00  00  09  03  00  00  21  03  02  02</p>
-<p>    00  04  00  00  04  06  00  00  00  73  00  00  11  02  01  01</p>
-<p>0200000000010000090300002103020200040000040600000073000011020101</p>
-<p>Aticonfig: Colobus</p>
-<p>ConnectorInfo count in decimal: 2</p>
-<p>Disk offset in decimal 166432</p>
-<p>    02  00  00  00  00  01  00  00  09  03  00  00  21  03  02  02</p>
-<p>    00  04  00  00  04  06  00  00  00  73  00  00  11  02  01  01</p>
-<p>0200000000010000090300002103020200040000040600000073000011020101</p>
-<p>Aticonfig: Mangabey</p>
-<p>ConnectorInfo count in decimal: 2</p>
-<p>Disk offset in decimal 166480</p>
-<p>    02  00  00  00  40  00  00  00  09  01  00  00  00  00  00  03</p>
-<p>    00  04  00  00  04  06  00  00  00  73  00  00  11  02  01  01</p>
-<p>0200000040000000090100000000000300040000040600000073000011020101</p>
-<p>Aticonfig: Orangutan</p>
-<p>ConnectorInfo count in decimal: 2</p>
-<p>Disk offset in decimal 166608</p>
-<p>    02  00  00  00  40  00  00  00  09  01  00  00  00  00  00  05</p>
-<p>    00  04  00  00  04  06  00  00  00  73  00  00  11  02  01  01</p>
-<p>0200000040000000090100000000000500040000040600000073000011020101</p>
-<p>Personality: Nomascus</p>
-<p>ConnectorInfo count in decimal: 4</p>
-<p>Disk offset in decimal 169072</p>
-<p>    02  00  00  00  40  00  00  00  09  01  00  00  00  00  00  05</p>
-<p>    02  00  00  00  00  01  00  00  09  03  00  00  12  04  03  03</p>
-<p>    00  04  00  00  04  06  00  00  00  73  00  00  11  02  01  01</p>
-<p>    00  04  00  00  04  07  00  00  00  73  00  00  21  03  02  02</p>
-<p>02000000400000000901000000000005020000000001000009030000120403030004000004060000007300001102010100040000040700000073000021030202</p>
-<p>Personality: Vervet</p>
-<p>ConnectorInfo count in decimal: 4</p>
-<p>Disk offset in decimal 168752</p>
-<p>    00  04  00  00  00  04  00  00  00  71  00  00  12  04  04  02</p>
-<p>    04  00  00  00  14  00  00  00  00  71  00  00  01  12  01  04</p>
-<p>    00  02  00  00  14  00  00  00  00  71  00  00  00  00  06  03</p>
-<p>    00  08  00  00  00  02  00  00  00  71  00  00  22  05  05  01</p>
-<p>00040000000400000071000012040402040000001400000000710000011201040002000014000000007100000000060300080000000200000071000022050501</p>
-<p>Personality: Alouatta</p>
-<p>ConnectorInfo count in decimal: 4</p>
-<p>Disk offset in decimal 168640</p>
-<p>    02  00  00  00  00  01  00  00  09  01  00  00  12  04  03  03</p>
-<p>    00  04  00  00  04  06  00  00  00  71  00  00  11  02  01  01</p>
-<p>    00  04  00  00  04  06  00  00  00  71  00  00  21  03  02  02</p>
-<p>    00  04  00  00  04  06  00  00  00  71  00  00  22  05  04  04</p>
-<p>02000000000100000901000012040303000400000406000000710000110201010004000004060000007100002103020200040000040600000071000022050404</p>
-<p>Personality: Uakari</p>
-<p>ConnectorInfo count in decimal: 4</p>
-<p>Disk offset in decimal 168480</p>
-<p>    00  04  00  00  00  04  00  00  00  71  00  00  12  04  04  01</p>
-<p>    04  00  00  00  14  00  00  00  00  71  00  00  01  12  01  03</p>
-<p>    00  02  00  00  14  00  00  00  00  71  00  00  00  00  06  05</p>
-<p>    00  08  00  00  00  02  00  00  00  71  00  00  22  05  05  04</p>
-<p>00040000000400000071000012040401040000001400000000710000011201030002000014000000007100000000060500080000000200000071000022050504</p>
 
       
     </div>
@@ -2256,7 +1571,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/37/">37</a><a class="extend next" rel="next" href="/page/11/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/9/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/11/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 

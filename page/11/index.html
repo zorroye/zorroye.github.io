@@ -244,20 +244,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">366</span>
+          <span class="site-state-item-count">282</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">66</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">58</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -303,7 +303,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1858804712/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3472081138/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -319,7 +319,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/1858804712/" class="post-title-link" itemprop="url">msi EX465安装MACOSX 系统安装</a>
+            <a href="/posts/3472081138/" class="post-title-link" itemprop="url">基础补充1：BIOS</a>
         </h2>
 
         <div class="post-meta">
@@ -329,627 +329,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2013-12-08 13:35:00" itemprop="dateCreated datePublished" datetime="2013-12-08T13:35:00+08:00">2013-12-08</time>
+              <time title="创建时间：2013-04-05 16:16:00" itemprop="dateCreated datePublished" datetime="2013-04-05T16:16:00+08:00">2013-04-05</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:51" itemprop="dateModified" datetime="2020-08-04T09:51:51+08:00">2020-08-04</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>备注：显卡方法适用10.9.5以下，不适合10.10。</p>
-<p>电脑配置如下：</p>
-<blockquote>
-<p>处理器英特尔 酷睿2 双核 P8700 @ 2.53GHz 笔记本处理器</p>
-<p>主板微星 MS-1455 (矽统 672DX)+ SIS968</p>
-<p>内存4 GB ( 海力士 DDR2 800MHz / 金泰克 DDR2 800MHz )</p>
-<p>硬盘希捷 ST500LT012-9WS142 ( 500 GB / 5400 转/分 )</p>
-<p>硬盘西数 WDC WD3200BEVT-22A23T0 ( 320 GB / 5400 转/分 )</p>
-<p>硬盘日立 ( 500 GB / 5400 转/分 )</p>
-<p>显卡ATI Mobility Radeon HD 5470  ( 1 GB / 微星 )</p>
-<p>显示器三星 SEC3050 ( 14.7 英寸 )</p>
-<p>声卡瑞昱 ALC662 @ 矽统 Azalia Audio Controller</p>
-<p>网卡矽统 191 100/10 Ethernet Adapter / 微星</p>
-<p>无线网卡雷凌 RT2870</p>
-<p>蓝牙motolola</p>
-<p>USBPNY 8G</p>
-</blockquote>
-<p>0、硬件准备工作：</p>
-<blockquote>
-<p>1、因BIOS无法设置AHCI，导致无法U盘安装，只能硬盘安装</p>
-<p>2、我准备了3个硬盘，分别用来安装winxp，macosx，ubuntu。</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>2.1、win盘分出10G的FAT32盘，制作安装盘。后用DiskGenius将FAT32的OC改为AF</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>3、笔记本我把光驱位拆了，装了一块用于安装macosx的硬盘</p>
-<p>4、我要安装的是单系统，所以安装盘做在winxp这块硬盘的第二个主分区上</p>
-<p>5、U盘和winxp安装变色龙都可以引导</p>
-</blockquote>
-<p>1、软件准备工作：  </p>
-<blockquote>
-<p>SIS芯片需要专用KEXT，AppleVIAATA.kext.for.sis.SATA 就这一个即可</p>
-<p>无法U盘安装，会提示still waiting for root device错误。只能硬盘分出一个区做安装盘。</p>
-<p>win版变色龙启动有时候会提示：NullCPUPowerManagement.kext::start。重启重引导即可。</p>
-<p>需要使用参数npci=0x2000 -v ,不然会卡在PCI configure begin</p>
-<p>做WIN+MAC的话需要将MAC分区设置为逻辑分区，做主分区会导致无法选取分区。</p>
-<p>将BIOS的Legacy USB support设置为Disable。不然会提示</p>
-<p>Echi controller unable to take control from bios (这个在新版已不需要设置)</p>
-<p>准备的kext有这些：</p>
-<p>NullCPUPowerManagement.kext</p>
-<p>OpenHaltRestart.kext</p>
-<p>ElliottForceLegacyRTC.kext</p>
-<p>PlatformUUID.kext</p>
-<p>AppleVIAATA.kext.for.sis.SATA</p>
-<p>FakeSMC.kext</p>
-<p>AppleACPIPS2Nub.kext</p>
-<p>ApplePS2Controller.kext</p>
-<p>放入安装盘的/Extra/Extensions下。另/Extra下不需要smbios和com文件</p>
-<p>不需要删除CPUPowerManagement.kext</p>
-</blockquote>
-<p>2、系统安装：  </p>
-<blockquote>
-<p>1、U盘引导或win版变色龙引导，输入npci=0x2000 -v -x -f启动。</p>
-<p>2、系统安装非常顺利，20多分钟搞定。</p>
-<p>3、然后进windows，</p>
-<p>将上面的KEXT放入MAC系统的/System/Library/Extensions</p>
-<p>将myfix放入/usr/sbin/下</p>
-<p>4、重启，输入npci=0x2000 -v -x -f -s进单用户模式</p>
-<p>用myfix修复权限，重启，输入npci=0x2000 -v 即可进入系统。</p>
-</blockquote>
-<p>这时电脑的状态是显卡，声卡，网卡都没驱动。  </p>
-<blockquote>
-</blockquote>
-<p>3、安装变色龙实现自启动</p>
-<blockquote>
-<p>由于硬盘是4K的，重启后有这个提示：boot0 ERROR</p>
-</blockquote>
-<blockquote>
-<p>安装ubuntu盘，进ubuntu</p>
-</blockquote>
-<blockquote>
-<p>下载boot1h文件：<a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/viewthread-971434-1-1.html">http://bbs.pcbeta.com/viewthread-971434-1-1.html</a></p>
-<p>切换到root权限：sudo su</p>
-<p>输入</p>
-<p>dd if=/media/MACOSX/Extra/boot1h of=/dev/sdb2 bs=4096</p>
-<p>#                    mac分区卷标                               安装在第二个分区</p>
-</blockquote>
-<blockquote>
-<p><img src="http://img2.ph.126.net/gbQbtznL-OLI296DJFiclA==/1956251088239247869.png" alt="msi EX465安装MACOSX 系统安装 - leaf - ------坚持雅操------" title="msi EX465安装MACOSX 系统安装 - leaf - ------坚持雅操------"></p>
-</blockquote>
-<p>4、安装驱动</p>
-<blockquote>
-<p>网卡：</p>
-<p>将BIOS的Legacy USB support设置为Disable。</p>
-<p>安装雷凌原版驱动即可</p>
-<p>建议购买原装无线网卡，AR9380。</p>
-</blockquote>
-<blockquote>
-<p>声卡：</p>
-</blockquote>
-<blockquote>
-<p>移除APPLEHDA，加入VoodooHDA即可。仿冒驱动还在研究中。。。。</p>
-</blockquote>
-<blockquote>
-<p>显卡驱动见后篇。</p>
-</blockquote>
-<p>5、DSDT提取和修改</p>
-<blockquote>
-<p>win、linux、MAC下导出的DSDT文件应该都是一样的。</p>
-<p>使用DSDTEditor导出和除错。</p>
-<p>ubuntu下:</p>
-<p>sudo apt-get install acpidump iasl</p>
-<p>sudo acpidump -t DSDT -b &gt; dsdt.aml</p>
-<p><a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/viewthread-1133482-1-1.html">http://bbs.pcbeta.com/viewthread-1133482-1-1.html</a></p>
-<p>修改方面，我碰到3个方面的错误</p>
-<p>Not all control paths return a value (XXX)</p>
-<p>解决：Return (Zero)</p>
-<p>Possible operator timeout is ignored</p>
-<p>解决：将 Acquire (MUT0, 0x0FFF)或者Acquire (MUTE, 0x03E8) 的参数修改为 0xFFFF</p>
-<p>还个就是删除 _  即可</p>
-<p>然后保存为dsdt.aml，放入/Extra下，然后编辑org，加入dsdt.aml的路径即可</p>
-</blockquote>
-<p>本篇到此结束，下篇就是显卡驱动。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2122020267/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/2122020267/" class="post-title-link" itemprop="url">[转载]机械键盘摘录</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2013-10-25 12:57:00" itemprop="dateCreated datePublished" datetime="2013-10-25T12:57:00+08:00">2013-10-25</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:52" itemprop="dateModified" datetime="2020-08-04T09:51:52+08:00">2020-08-04</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>转载自：<a target="_blank" rel="noopener" href="http://mouse.zol.com.cn/405/4058211_all.html#p4070989">http://mouse.zol.com.cn/405/4058211_all.html#p4070989</a></p>
-<p><a target="_blank" rel="noopener" href="http://mouse.zol.com.cn/405/4058211_all.html#p4070989">  
-</a>我们目前最为常见的机械轴有四种，分为是黑轴、茶轴、青轴以及红轴。</p>
-<p><strong>黑轴</strong></p>
-<blockquote>
-<p><img src="http://img1.ph.126.net/EZ5mwwJxkQCFqdW1BOWE8A==/1476617727924211858.jpg" alt="[转载]机械键盘摘录 - leaf - ------坚持雅操------" title="[转载]机械键盘摘录 - leaf - ------坚持雅操------"></p>
-</blockquote>
-<p> <strong>段落感最不明显，声音最小，与青轴形成鲜明对比，直上直下，下压1.5mm即可触发。无论你想得到急速或舒缓的输入，黑轴都能自如应对，打字游戏都适合，但是由于触发键程短，压力克数较大，所以在游戏中有上佳的表现。 黑轴机械键盘单个轴使用寿命长达5000万次(其他为2000万次)。</strong></p>
-<p><strong>茶轴</strong></p>
-<blockquote>
-<p><img src="http://img1.ph.126.net/H006rUsyhZvW4GEFlM8Lww==/6597828429681505504.jpg" alt="[转载]机械键盘摘录 - leaf - ------坚持雅操------" title="[转载]机械键盘摘录 - leaf - ------坚持雅操------"></p>
-</blockquote>
-<p> <strong>相比青轴，茶轴的段落感要弱很多，而对比黑轴，又不是直上直下的感觉，2mm即可触发，属于比较奢侈的机械轴。有人将其比喻为 Cherry的秋天，结合了青轴与黑轴的特点，很容易被大众所接受。</strong></p>
-<p><strong>青轴</strong></p>
-<blockquote>
-<p><img src="http://img2.ph.126.net/t53MPjhVrQCenNCu0uXFbQ==/3889702703264896031.jpg" alt="[转载]机械键盘摘录 - leaf - ------坚持雅操------" title="[转载]机械键盘摘录 - leaf - ------坚持雅操------"></p>
-</blockquote>
-<p>  段落感最强、青轴的噪声最大，机械感最强，是<a target="_blank" rel="noopener" href="http://detail.zol.com.cn/keyboard/p11947/">机械键盘</a>的代表轴，需下压2.4mm才可触发，打字节奏感十足，但是声音较大，比较吵 , 压力克数为60g。</p>
-<p><strong>红轴</strong></p>
-<blockquote>
-<p><img src="http://img0.ph.126.net/keZgjL8FyU63cqbkSGREnw==/6598106606123228022.jpg" alt="[转载]机械键盘摘录 - leaf - ------坚持雅操------" title="[转载]机械键盘摘录 - leaf - ------坚持雅操------"></p>
-</blockquote>
-<p> 　　与黑轴相似。但压力克数比黑轴小，起35，终60（黑轴起点为40）。是08年出的新轴。手感比较轻盈。敲击时没有段落感，直上直下，触发键程也同为2.0mm，敲击时更加轻松，能很好兼顾游戏和打字的使用需求。 目前只有Cherry原厂的黑白两色产品。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3098168392/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/3098168392/" class="post-title-link" itemprop="url">对云计算的了解</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2013-10-12 21:49:00" itemprop="dateCreated datePublished" datetime="2013-10-12T21:49:00+08:00">2013-10-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:52" itemprop="dateModified" datetime="2020-08-04T09:51:52+08:00">2020-08-04</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>云计算要提供的功能：  </p>
-<blockquote>
-<p>提供资料存储和共享：无时无刻、全平台实现数据共享。<br>提供计算能力：如网站托管、科学计算。<br>提供各种应用：个人和企业级的软件都由云计算提供。而不是个人电脑上安装软件实现。  </p>
-</blockquote>
-<p>目的：  </p>
-<blockquote>
-<p>对wintel釜底抽薪。所有工作都搬到云平台，可以最大限度的摆脱wintel的束缚。  </p>
-</blockquote>
-<blockquote>
-<p>方便用户、节省用户开支等。如不用买昂贵的设备了。  </p>
-</blockquote>
-<p>基础：  </p>
-<blockquote>
-<p>首先就是云平台的构建：  </p>
-<blockquote>
-<p>硬件：数据中心。<br>软件：对数据的存储和管理。这些都是核心技术。<br>接入方便。  </p>
-</blockquote>
-<p>然后就是带宽。<br>第三就是安全。</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3360955934/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/3360955934/" class="post-title-link" itemprop="url">金融行业的一些概念</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2013-10-05 21:52:00" itemprop="dateCreated datePublished" datetime="2013-10-05T21:52:00+08:00">2013-10-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:52" itemprop="dateModified" datetime="2020-08-04T09:51:52+08:00">2020-08-04</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>风险投资基金：  </p>
-<blockquote>
-<p>以参股的方式给创业者的公司注入资金。靠创业的公司升值盈利<br>风投不用抵押和偿还。  </p>
-</blockquote>
-<p>天使投资人/天使投资社  </p>
-<blockquote>
-<p>一个或几个人组成的小组进行风险投资。  </p>
-<p>融资：每次融资都是以稀释股权的方式来筹措资金。  </p>
-<blockquote>
-<p>比如A公司价值100W，然后由4个人组成，则每个人的股权都为25%，  </p>
-</blockquote>
-<blockquote>
-<p>现：天使投资人投了25W进来，则原先的每个人的股权就变为20%。公司的总价值则为125W  </p>
-</blockquote>
-</blockquote>
-<p>私募基金：  </p>
-<blockquote>
-<p>收购状况不良的上市公司，重整后从新上市或出售盈利  </p>
-</blockquote>
-<p>商业银行：  </p>
-<blockquote>
-<p>储蓄和商业贷款为主  </p>
-</blockquote>
-<p>投资银行：  </p>
-<blockquote>
-<p>买卖证券、拆封和合并上市公司等，给个人和机构财产管理等。<br>如IPO就是投资投行做的。  </p>
-</blockquote>
-<p>共同基金公司：  </p>
-<blockquote>
-<p>管理公共财产进行投资等。如养老金的管理  </p>
-</blockquote>
-<p>对冲基金公司：  </p>
-<blockquote>
-<p>炒作股票、期货等赚钱。如做多、做空操作。  </p>
-</blockquote>
-<p>评级机构：  </p>
-<blockquote>
-<p>对债务等的预测和评价。  </p>
-</blockquote>
-<blockquote>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3294078858/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/3294078858/" class="post-title-link" itemprop="url">浪潮之巅2摘录</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2013-10-01 23:39:00" itemprop="dateCreated datePublished" datetime="2013-10-01T23:39:00+08:00">2013-10-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:52" itemprop="dateModified" datetime="2020-08-04T09:51:52+08:00">2020-08-04</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>1、往往一个公司的创始人的理念和企业文化决定了公司的前途和命运。  </p>
-<blockquote>
-<p>苹果是第一个推出微机的公司，也是第一个推出图形界面的公司，但在这两个方面，最终都变成小众化了。<br>我们通过企业管理层和企业氛围，基本上就能判断一个公司的前景。  </p>
-</blockquote>
-<p>2、一个产品，光有好的理念和设计是不够的，还需要有好的时机。  </p>
-<blockquote>
-<p>微软很早就推出过平板，却由于硬件跟不上而没有成功。  </p>
-</blockquote>
-<p>3、IT行业的规律  </p>
-<blockquote>
-<p>摩尔定律，反摩尔定律，安迪-比尔定律<br>摩尔定律：18个月内，计算机集成度会翻一番<br>反摩尔定律：18个月后，卖同样的产品，价格降一半。<br>安迪-比尔定律：通过软件的更新，带动硬件产业的发展。<br>这里说明两个问题：<br>如果硬件不快速发展，就会没利润；<br>如果我们不需要软件的新功能，或者我们够用了，硬件产业就会萧条；  </p>
-</blockquote>
-<p>4、服务行业  </p>
-<blockquote>
-<p>其实所有的高收入服务行业都是高附加值的。<br>如果仅仅只是做饭洗衣服，也许就没几个钱；如果能做可口的饭菜，身价马上就高了。这就是附加值。  </p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3235427895/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/3235427895/" class="post-title-link" itemprop="url">关于仙童八叛徒(转)</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2013-10-01 19:16:00" itemprop="dateCreated datePublished" datetime="2013-10-01T19:16:00+08:00">2013-10-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:52" itemprop="dateModified" datetime="2020-08-04T09:51:52+08:00">2020-08-04</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>许多电脑史学家都认为，要想了解美国硅谷的发展史，就必须了解早期的仙童半导体公司<br>。这家公司，曾经是世界上最大、最富创新精神和最令人振奋的半导体生产企业，为硅谷<br>的成长奠定了坚实的基础。更重要的是，这家公司还为硅谷孕育了成千上万的技术人才和<br>管理人才，它不愧是电子、电脑业界的“西点军校”，是名符其实的“人才摇篮”。一批又一批精英人才从这里出走和创业，书写了硅谷一段辉煌的历史；然而，正因为人才的大量流失，也造成了这家公司历经坎坷的商海沉浮。  </p>
-<p>仙童半导体创立于1957年，这段史实必须从两条线索讲起。1955年，成就了“本世纪最伟大发明”的“晶体管之父”的肖克利（W.Shockley）博士，离开贝尔实验室返回故乡圣克拉拉，创建“肖克利半导体实验室”。这一喜讯，正中特曼教授为硅谷网罗天下英才之下怀： 有了肖克利这棵“梧桐树” ，何愁引不到成群的“凤凰”来？  </p>
-<p>电子电脑界焦急地关注着肖克利的行踪。 据说，300年前当牛顿宣布准备在他的故乡建一所工厂时，全世界的物理学界也是如此心态。不久，因仰慕“晶体管之父”的大名，求职信像雪片般飞到肖克利办公桌上。第二年，八位年轻的科学家从美国东部陆续到达硅谷，加盟肖克利实验室。他们是：诺依斯（N. Noyce）、摩尔（R.Moore）、布兰克（J.Blank）、克莱尔（E.Kliner）、赫尔尼（J.Hoerni）、拉斯特（J.Last）、罗伯茨（S.Boberts）和格里尼克（V.Grinich）。他们的年龄都在30岁以下，风华正茂，学有所成，处在创造能力的巅峰。他们之中，有获得过双博士学位者，有来自大公司的工程师，有著名大学的研究员和教授，这是当年美国西部从未有过的英才大集合。  </p>
-<p>29岁的诺依斯是八人之中的长者，是“投奔”肖克利最坚定的一位。当他飞抵旧金山后所做的第一件事，就是倾囊为自己购下一所住所，决定永久性定居，根本就没有考虑到工作环境、条件和待遇。其他七位青年，来硅谷的经历与诺依斯大抵相似。可惜，肖克利是天才的科学家，却缺乏经营能力；他雄心勃勃，但对管理一窍不通。特曼曾评论说：“肖克利在才华横溢的年轻人眼里是非常有吸引力的人物，但他们又很难跟他共事。”一年之中，实验室没有研制出任何象样的产品。八位青年瞒着肖克利开始计划出走。在诺依斯带领下，他们向肖克利递交了辞职书。肖克利怒不可遏地骂他们是“八叛逆”（The Traitorous Eight）。青年人面面相觑，但还是义无反顾离开了他们的“伯乐”。不过，后来就连肖克利本人也改口把他们称为“八个天才的叛逆”。在硅谷许多著作中，“八叛逆”的照片与惠普的车库照片，具有同样的历史价值。  </p>
-<p>“八叛逆”找到了一家地处美国纽约的摄影器材公司来支持他们创业，这家公司名称为Fairchild，音译“费尔柴尔德”，但通常意译为“仙童”。仙童摄影器材公司的前身是谢尔曼·费尔柴尔德（S. Fairchild）1920年创办的航空摄影公司。费尔柴尔德不仅是企业家，也是发明家。他的发明主要在航空领域，包括密封舱飞机、折叠机翼等等。由于产品非常畅销，他在1936年将公司一分为二，其中，生产照相机和电子设备的就是仙童摄影器材公司。<br> <br>当“八叛逆”向他寻求合作的时候，已经60多岁的费尔柴尔德先生仅仅提供了3600美元的种子基金， 要求他们开发和生产商业半导体器件， 并享有两年的购买特权。于是，“八叛逆”创办的企业被正式命名为仙童半导体公司，“仙童”之首自然是诺依斯。<br> <br>1957年10月，仙童半导体公司仍然在硅谷嘹望山查尔斯顿路租下一间小屋，距离肖克利实验室和距离当初惠普公司的汽车库差不多远。“仙童”们商议要制造一种双扩散基型晶体管，以便用硅来取代传统的锗材料，这是他们在肖克利实验室尚未完成却又不受肖克利重视的项目。 费尔柴尔德摄影器材公司答应提供财力，总额为150万美元。诺依斯给伙伴们分了工，由赫尔尼和摩尔负责研究新的扩散工艺，而他自己则与拉斯特一起专攻平面照相技术。  </p>
-<p>1958年1月， IBM公司给了他们第一张订单，订购100个硅晶体管，用于该公司电脑的存储器。 到1958年底，“八叛逆”的小小公司已经拥有50万销售额和100名员工，依靠技术创新优势，一举成为硅谷成长最快的公司。  </p>
-<p>仙童半导体公司在诺依斯精心运筹下，业务迅速地发展，同时，一整套制造晶体管的平面处理技术也日趋成熟。天才科学家赫尔尼是众“仙童”中的佼佼者，他像变魔术一般把硅表面的氧化层挤压到最大限度。仙童公司制造晶体管的方法也与众不同，他们首先把具有半导体性质的杂质扩散到高纯度硅片上，然而在掩模上绘好晶体管结构，用照相制版的方法缩小，将结构显影在硅片表面氧化层，再用光刻法去掉不需要的部分。<br> <br>扩散、掩模、照相、光刻……，整个过程叫做平面处理技术，它标志着硅晶体管批量生产的一大飞跃，也仿佛为“仙童”们打开了一扇奇妙的大门，使他们看到了一个无底的深渊：用这种方法既然能做一个晶体管，为什么不能做它几十个、几百个，乃至成千上万呢？  </p>
-<p>1959年1月23日，诺依斯在日记里详细地记录了这一闪光的设想。<br> <br>1959年2月，德克萨斯仪器公司（TI）工程师基尔比（J.kilby）申请第一个集成电路发明专利的消息传来，诺依斯十分震惊。他当即召集“八叛逆”商议对策。基尔比在TI公司面临的难题，比如在硅片上进行两次扩散和导线互相连接等等，正是仙童半导体公司的拿手好戏。诺依斯提出：可以用蒸发沉积金属的方法代替热焊接导线，这是解决元件相互连接的最好途径。仙童半导体公司开始奋起疾追。 1959年7月30日，他们也向美国专利局申请了专利。为争夺集成电路的发明权，两家公司开始旷日持久的争执。1966年，基尔比和诺依斯同时被富兰克林学会授予巴兰丁奖章，基尔比被誉为“第一块集成电路的发明家”而诺依斯被誉为“提出了适合于工业生产的集成电路理论”的人。1969年，法院最后的判决下达，也从法律上实际承认了集成电路是一项同时的发明。  </p>
-<p>1960年，仙童半导体公司取得进一步的发展和成功。由于发明集成电路使它的名声大振， 母公司费尔柴尔德摄影器材公司决定以300万美元购买其股权，“八叛逆”每人拥有了价值25万美元的股票。1964年，仙童半导体公司创始人之一摩尔博士，以三页纸的短小篇幅，发表了一个奇特的定律。摩尔天才地预言说道，集成电路上能被集成的晶体管数目，将会以每18个月翻一番的速度稳定增长，并在今后数十年内保持着这种势头。摩尔所作的这个预言，因后来集成电路的发展而得以证明，并在较长时期保持了它的有效性，被人誉为“摩尔定律”，成为新兴电子电脑产业的“第一定律”。<br> <br>60年代的仙童半导体公司进入了它的黄金时期。 到1967年，公司营业额已接近2亿美元，在当时可以说是天文数字。据那一年进入该公司的虞有澄博士（现英特尔公司华裔副总裁）回忆说：“进入仙童公司，就等于跨进了硅谷半导体工业的大门。”然而，也就是在这一时期，仙童公司也开始孕育着危机。母公司总经理不断把利润转移到东海岸，去支持费尔柴尔德摄影器材公司的盈利水平。目睹母公司的不公平，“八叛逆”中的赫尔尼、罗伯茨和克莱尔首先负气出走，成立了阿内尔科公司。据说，赫尔尼后来创办的新公司达12家之多。随后，“八叛逆”另一成员格拉斯也带着几个人脱离仙童创办西格奈蒂克斯半导体公司。从此，纷纷涌进仙童的大批人才精英，又纷纷出走自行创业。<br> <br>正如苹果公司乔布斯形象比喻的那样：“仙童半导体公司就象个成熟了的蒲公英，你一吹它，这种创业精神的种子就随风四处飘扬了。”脱离仙童半导体创办公司者之中，较有名气的是查尔斯·斯波克（C.Sporck）和杰里·桑德斯（J. Sanders）。斯波克曾一度担任过仙童半导体公司总经理，1967年出走后，来到国民半导体公司（NSC） 担任CEO。他大刀阔斧地推行改革，把NSC从康涅狄格州迁到了硅谷， 使它从一家亏损企业快速成长为全球第6大半导体厂商。桑德斯则是仙童半导体公司销售部主任，1969年，他带着7位仙童员工创办高级微型仪器公司（AMD），这家公司目前已经是仅次于英特尔公司的微处理器生产厂商，K6、K6-2等微处理器产品畅销全世界。  </p>
-<p>1968年，“八叛逆”中的最后两位诺依斯和摩尔，也带着葛罗夫（A. Grove）脱离仙童公司自立门户， 他们创办的公司就是大名鼎鼎的英特尔（Intel）。虽然告别了仙童，“八叛逆”仍然约定时间在一起聚会，最近的一次是1997年，8人之中只有6人还健在。似乎要高扬“八叛逆”的“叛逃”精神，一批又一批“仙童”夺路而出，掀起了巨大的创业热潮。对此，80年代初出版的著名畅销书《硅谷热》（Silicon Valley Fever）写到：“硅谷大约70家半导体公司的半数，是仙童公司的直接或间接后裔。在仙童公司供职是进入遍布于硅谷各地的半导体业的途径。1969年在森尼维尔举行的一次半导体工程师大会上， 400位与会者中，未曾在仙童公司工作过的还不到24人。”从这个意义上讲，说仙童半导体公司是“硅谷人才摇篮”毫不为过。<br> <br>人才大量流失是硅谷发展的“福音”，给仙童半导体带来的却是一场灾难。从1965年到1968年， 公司销售额不断滑坡，还不足1.2亿美元，连续两年没有赢利。人们都清楚地意识到，它再也不是“淘气孩子们创造的奇迹”了。  </p>
-<p>为了找人接替诺依斯的工作， 谢尔曼·费尔柴尔德以硅谷历史上最高的待遇——3年100万美元薪金外加60万美元股票， 从摩托罗拉公司请来莱斯特·霍根博士，亡羊补牢，以显示其“求贤若渴”的姿态。霍根不是一位无能的总经理， 曾经给摩托罗拉公司带来过重大转机。在执政仙童6年期限内，他尽了最大的努力，使公司销售额增加了两倍。然而，仙童半导体公司的灵魂人物已经离去，它的崩溃不过是时间迟早问题。1974年，无力回天的霍根，把权柄交给36岁的科里根， 而他的继任者却在二三年内，让这家公司从半导体行业的第2位，迅速跌落到第6位。  </p>
-<p>70年代末，科里根终于发现，挽救仙童半导体公司的最好途径是把它卖掉。几经周折，他最终选定了一家拥有21亿美元资产的施拉姆伯格（Schlumberger）公司，尽管这是一家法国公司，而且是经营石油服务业的公司。1979年夏季，曾经是美国最优秀的企业仙童半导体公司被法国外资接管，售价3亿5千万美元，在硅谷内外造成极大的轰动。<br> <br>外资似乎也不能给日益衰败的仙童半导体注入活力，虽然施拉姆伯格公司招聘到一批研究人工智能的人才，原本可以让仙童快速进入机器人生产领域，但他们没有这样做。实际上，在继续亏损后，仙童又被用原价的三分之一转卖给另一家美国公司，买主正是原仙童总经理斯波克管理的国民半导体公司（NSC），仙童半导体品牌一度寿终正寝。1996年，国民半导体公司把原仙童公司总部迁往缅因州，并恢复了“仙童半导体”的老名字。但是，拥有员工6500人的“硅谷人才摇篮”却不得不退出了硅谷。  </p>
-<p>早在1962年，仙童半导体公司就在缅因州建立了研制和制造晶体管的生产线，在加州，在犹他州，甚至在南韩和马来西亚都有其分部，在半导体器件领域仍有较强的实力，主要研制和生产半导体存储器设备。总部迁至缅因州南波特兰后，公司领导力图重振雄风，可是，命运多舛的“仙童”，1997年3月被国民半导体公司以5.5亿的价格再次出售，原因不言而喻——国民半导体公司以同样的价格买下了全球第三大微处理器制造商Cyrix， 试图与Intel和AMD争夺PC机半导体市场。<br> <br>被人买来卖去的滋味肯定不好受，仙童半导体现任CEO和总裁克尔克·庞德（K.Pond）希望对公司实施战略性的重组。庞德曾就学于阿肯色大学电子工程系，并获得宾夕法尼亚工商管理硕士（MBA） 。自1968年加入仙童半导体公司以来，先后在许多部门担任要职，1994年起就是仙童半导体的主要领导人。好在这次出资收购的是一家风险资本公司，仙童半导体公司终于具有中立的身份。庞德兴奋地说，这次转变将有利于开发仙童的内部价值，可以让我们自主发展，成为拥有多种产品供应的半导体企业。果不其然，庞德旗下的仙童半导体连续做出了惊人之举，它也开始了企业收购：当年11月， 仙童半导体斥资1.2亿，买下了年收入7000万的Raytheon公司半导体分部；1998年12月，仙童再次斥资4.55亿，跨国购并了南韩三星公司属下一个制造特殊芯片的半导体工厂。这次收购将使仙童制造的半导体产品更适合于电视、录像机和音频设备，大踏步地向消费电子制造业挺进。  </p>
-<p>作为支撑硅谷崛起的“神话”，仙童半导体公司走过了一段辉煌而曲折的历程，成功与失败都因人才而致，正所谓“成也萧何，败也萧何”。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/633176423/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/633176423/" class="post-title-link" itemprop="url">1、计算机概述</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2013-09-29 17:13:00" itemprop="dateCreated datePublished" datetime="2013-09-29T17:13:00+08:00">2013-09-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:51" itemprop="dateModified" datetime="2020-08-04T09:51:51+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -957,11 +344,11 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%A1%AC%E4%BB%B6/" itemprop="url" rel="index"><span itemprop="name">硬件</span></a>
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%A1%AC%E4%BB%B6/%E6%A6%82%E5%BF%B5/" itemprop="url" rel="index"><span itemprop="name">概念</span></a>
+                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
                 </span>
             </span>
 
@@ -974,91 +361,23 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>CPU的组成：</p>
+          <p>BIOS启动过程：<br>开机<br>-&gt;cpu运行<br> -&gt;CPU通过北桥找到bios程序<br>  -&gt;bios解压自身到内存中<br>   -&gt;bios检查个硬件信息并唤醒<br>    -&gt;bios读取南桥的cmos信息<br>      -&gt;bios把信息整合成smbios表<br>       -&gt;屏幕显示信息（按del键可进bios界面）<br>        -&gt;post自检<br>         -&gt;POST将临时硬件(USB)写入SMBIOS<br>          -&gt;BIOS将MBR中的stage1加载到内存中  </p>
 <blockquote>
-<p>执行单元</p>
-<p>程序计数器（PC）：确定在内存的那一段开始计数</p>
-<p>指令寄存器（IR）：存放正要被执行的指令</p>
-</blockquote>
+<p>  -&gt;stage1读取stage1.5以识别文件系统<br>   -&gt;stage1读取stage2<br>    -&gt;stage2读取/boot/grub/grub.conf 并提供选择界面<br>     -&gt;将kernel载入到内存中<br>      -&gt;kernel在内存中建立rootfs空间，将initrd载入到rootfs中<br>       -&gt;按intird里面的init执行相关操作（详谈）  </p>
 <blockquote>
-<p>存储器地址寄存器：确定下一次要读/写的存储器地址</p>
-</blockquote>
-<blockquote>
-<p>储存器缓冲寄存器：存放读出的/要被写入存储器的数据</p>
-</blockquote>
-<blockquote>
-<p>I/O地址寄存器：确定一个I/O设备</p>
-</blockquote>
-<blockquote>
-<p>I/O缓冲寄存器：存放读出的/要被写入I/O的数据</p>
-</blockquote>
-<blockquote>
-</blockquote>
-<p>中断：</p>
-<blockquote>
-<p>1、中断是为了提高效率而引入的机制。</p>
-<p>由于CPU比I/O设备快很多，如果CPU一直等的话会浪费很多CPU时间。</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>中断可以让I/O设备运行期间，允许CPU去做其他事，这样就提高了CPU的利用率</p>
+<p>-&gt;kernel chroot到硬盘的文件系统中 （详谈）<br> -&gt;执行/etc/inittab<br>  -&gt;显示登陆界面  </p>
 </blockquote>
 </blockquote>
+<p>备注：其实黑苹果很重要的部分就是改SMBIOS信息。dsdt就有这个功能  </p>
+<p>BIOS功能：  </p>
 <blockquote>
-<p>2、中断的时候，CPU会把在执行的所有数据存到内存指定处，结束中断再调出来</p>
+<p>自检所有芯片，并通知芯片启动<br>记录设定值到CMOS中<br>分配IRQ(中断处理)<br>加载引导程序  </p>
 </blockquote>
+<p>其他：  </p>
 <blockquote>
-<p>3、多个中断处理：</p>
-</blockquote>
+<p>linux下通过dmidecode导出SMBIOS  </p>
 <blockquote>
-<blockquote>
-<p>1、不允许多个中断，只能一个一个来</p>
-</blockquote>
-<blockquote>
-<p>2、定义中断优先级，允许高优先级打断低优先</p>
-</blockquote>
-</blockquote>
-<p>存储的层次结构：</p>
-<blockquote>
-<p>存储器的结构是：寄存器，一级缓存，二级缓存，三级缓存，内存</p>
-<p>这里：复制一块数据副本供CPU读取，如没有要用的数据，则顺序读入下一块数据</p>
-<p>层次结构的原理是：利用了局部性原理，来提高命中率</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>空间局部性：一旦一个存储单元中的一个指令被访问，那么它附近的单元也将很快被访问</p>
-</blockquote>
-<blockquote>
-<p>时间局部性：一旦一个指令被执行了，则在不久的将来，它可能再被执行</p>
-</blockquote>
-</blockquote>
-<blockquote>
-</blockquote>
-<p>DMA：</p>
-<blockquote>
-<p>就是处理I/O传送的工作，解放CPU在数据传送过程中的监管工作。</p>
-</blockquote>
-<blockquote>
-<p>CPU的影响：</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>在开始传送和结束传送需要CPU参与</p>
-</blockquote>
-<blockquote>
-<p>CPU用总线的时候，需要等待DMA传送一个bit的时间</p>
-</blockquote>
-<blockquote>
-</blockquote>
-</blockquote>
-<p>SMP和多核处理器</p>
-<blockquote>
-<p>SMP是多个CPU。SMP的每个CPU也可以是多核处理器</p>
-<p>而多核处理器是一个CPU，里面有多个CPU核心。</p>
-<p>使用SMP的好处是，一个CPU挂了，另一个还可以用；另外就是提高速度。</p>
-</blockquote>
-<blockquote>
-<blockquote>
+<p>type 0：BIOS Information<br>type 1：System Information 指机型<br>type 2：Base Board Information<br>type 3：Chassis Information<br>type 4：Processor Information<br>type 7：Cache Information   CPU高速缓存信息<br>type 8：Port Connector Information<br>type 9：System Slot Information<br>type 13：BIOS Language Information<br>type 15：System Event Log<br>type 16：Physical Memory Array<br>type 17：Memory Device<br>type 19：Memory Array Mapped Address  </p>
 </blockquote>
 </blockquote>
 
@@ -1080,7 +399,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2703845722/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1736323804/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1096,7 +415,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/2703845722/" class="post-title-link" itemprop="url">攒机知识1-微机发展历史</a>
+            <a href="/posts/1736323804/" class="post-title-link" itemprop="url">8、修改FakeSMC</a>
         </h2>
 
         <div class="post-meta">
@@ -1106,15 +425,28 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2013-09-19 15:01:00" itemprop="dateCreated datePublished" datetime="2013-09-19T15:01:00+08:00">2013-09-19</time>
+              <time title="创建时间：2013-03-20 22:50:00" itemprop="dateCreated datePublished" datetime="2013-03-20T22:50:00+08:00">2013-03-20</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:52" itemprop="dateModified" datetime="2020-08-04T09:51:52+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hackintosh/" itemprop="url" rel="index"><span itemprop="name">Hackintosh</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hackintosh/%E5%AE%89%E8%A3%85/" itemprop="url" rel="index"><span itemprop="name">安装</span></a>
+                </span>
+            </span>
 
           
 
@@ -1125,51 +457,17 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>1946    第一台电子计算机诞生  </p>
+          <p>FakeSMC文件设置的机型必须与smbios.plist相对应  </p>
+<p><img src="http://img1.ph.126.net/F37VbXMBZhbqtXX_AOEqSw==/6598098909540862129.png" alt="8、修改FakeSMC - leaf - ------坚持雅操------" title="8、修改FakeSMC - leaf - ------坚持雅操------"></p>
+<p> <br>REV值设定：<br>        MacPro3,1                1.25f4        ASUPAAAE<br>        MacPro4,1                1.39f5        ATkPAAAF<br>        MacPro5,1                1.39f11        ATkPAAAR<br>        iMac8,1                1.30f1        ATAPAAAB<br>        iMac9,1                1.45f0        AUUPAAAA<br>        iMac10,1                1.53f13        AVMPAAAT<br>        iMac11,1                1.54f36        AVQPAAA2<br>        iMac12,1                1.72f5        AXIPAAAF   <br>        MacBookPro5,1        1.33f8        ATMPAAAI<br>        MacBookPro5,1        1.33f8        ATMPAAAI<br>        MacBookPro6,1        1.58f16        AVgPAAAW<br>        MacBookPro7,1        1.62f6        AWIPAAAG<br>        MacBookPro8,1        1.68f96        AWgPAACW  </p>
+<p>smc-compatible值设定：<br>        MacPro3,1                smc-napa<br>        MacPro4,1                smc-thurley<br>        MacPro5,1                smc-thurley<br>        iMac9,1                smc-napa<br>        iMac10,1                smc-mcp<br>        iMac11,1                smc-piketon<br>        iMac12,1                smc-huronriver   <br>        MacBookPro5,1        smc-mcp<br>        MacBookPro5,5        smc-mcp<br>        MacBookPro6,1        smc-piketon<br>        MacBookPro7,1        smc-mcp<br>        MacBookPro8,1        smc-huronriver  </p>
+<p>tjmax值设定：  </p>
 <blockquote>
-<p><img src="http://img1.ph.126.net/wPLKA31vk02FjZpirwJsjw==/6597730573146590104.jpg" alt="攒机知识1-微机发展历史 - leaf - ------坚持雅操------" title="攒机知识1-微机发展历史 - leaf - ------坚持雅操------"></p>
+<p>通过aida64extreme查看，CPU最高工作温度  </p>
 </blockquote>
-<p> 1956    IBM发明第一块硬盘  </p>
+<p>参考：  </p>
 <blockquote>
-<p><img src="http://img1.ph.126.net/s8y8MGLP2Wt0RJizBqgUZQ==/2245325889320924743.jpg" alt="攒机知识1-微机发展历史 - leaf - ------坚持雅操------" title="攒机知识1-微机发展历史 - leaf - ------坚持雅操------"></p>
-</blockquote>
-<p>60年代    IBM发明内存DRAM芯片  </p>
-<p>1969年   UNIX系统诞生  </p>
-<blockquote>
-<p><img src="http://img2.ph.126.net/gFmqAfQGtDRCbnn1ASuFlg==/3905746776937405523.jpg" alt="攒机知识1-微机发展历史 - leaf - ------坚持雅操------" title="攒机知识1-微机发展历史 - leaf - ------坚持雅操------"></p>
-</blockquote>
-<p>1973年   施乐开发出出图形接口与鼠标  </p>
-<p>1976年   第一款个人电脑 apple I  </p>
-<blockquote>
-<p><img src="http://img2.ph.126.net/In7r1NyvyzXOm4N1WfRCww==/3860429305686910466.jpg" alt="攒机知识1-微机发展历史 - leaf - ------坚持雅操------" title="攒机知识1-微机发展历史 - leaf - ------坚持雅操------">  </p>
-</blockquote>
-<p>1978年   IBM PC诞生(我们现在用的电脑都源于此)  </p>
-<blockquote>
-<p><img src="http://img1.ph.126.net/GshbJTii1-7D4La-OlE86A==/1580763469224964876.jpg" alt="攒机知识1-微机发展历史 - leaf - ------坚持雅操------" title="攒机知识1-微机发展历史 - leaf - ------坚持雅操------"><br>使用INTEL的8086处理器，1980年开始使用微软购买的DOS系统  </p>
-</blockquote>
-<p>80年代    IBM发明第一块独立显卡  </p>
-<p>1984年   苹果推出第一款带图形界面和鼠标的电脑  </p>
-<blockquote>
-<p><img src="http://img1.ph.126.net/UlcnYMWft8raaytBDOOjXA==/6597627219053581807.jpg" alt="攒机知识1-微机发展历史 - leaf - ------坚持雅操------" title="攒机知识1-微机发展历史 - leaf - ------坚持雅操------"></p>
-<p> </p>
-</blockquote>
-<p>1990年    微软推出有图形界面的win3.0系统  </p>
-<blockquote>
-<p><img src="http://img2.ph.126.net/ZAZEqEFvR5kP43630ATjZw==/61361545022933438.jpg" alt="攒机知识1-微机发展历史 - leaf - ------坚持雅操------" title="攒机知识1-微机发展历史 - leaf - ------坚持雅操------"></p>
-<p> </p>
-</blockquote>
-<p>1991年    光驱诞生  </p>
-<p>1991年    linux系统诞生  </p>
-<blockquote>
-<p><img src="http://img1.ph.126.net/c7RikRs9I4DQNJbuA4QZuQ==/6598082416867156315.jpg" alt="攒机知识1-微机发展历史 - leaf - ------坚持雅操------" title="攒机知识1-微机发展历史 - leaf - ------坚持雅操------">  </p>
-</blockquote>
-<p>1995年    3DFX发布第一块3D独立显卡  </p>
-<blockquote>
-<p><img src="http://img1.ph.126.net/hjt5bi_tp5l0NfWM5PlziA==/2206200867558327592.jpg" alt="攒机知识1-微机发展历史 - leaf - ------坚持雅操------" title="攒机知识1-微机发展历史 - leaf - ------坚持雅操------"></p>
-</blockquote>
-<p> <br>2010年    苹果发布ipad  </p>
-<blockquote>
-<p><img src="http://img1.ph.126.net/hW8Qhzj8kfTGraEfrMz0tA==/1500824575921239721.jpg" alt="攒机知识1-微机发展历史 - leaf - ------坚持雅操------" title="攒机知识1-微机发展历史 - leaf - ------坚持雅操------"></p>
+<p><a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/viewthread-799385-1-1.html">http://bbs.pcbeta.com/viewthread-799385-1-1.html</a><br><a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/viewthread-973896-1-1.html">http://bbs.pcbeta.com/viewthread-973896-1-1.html</a></p>
 </blockquote>
 
       
@@ -1190,7 +488,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/62874872/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2385987775/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1206,7 +504,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/62874872/" class="post-title-link" itemprop="url">程序设计准则</a>
+            <a href="/posts/2385987775/" class="post-title-link" itemprop="url">6、修改KEXT</a>
         </h2>
 
         <div class="post-meta">
@@ -1216,15 +514,28 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2013-09-17 19:41:00" itemprop="dateCreated datePublished" datetime="2013-09-17T19:41:00+08:00">2013-09-17</time>
+              <time title="创建时间：2013-03-20 22:40:00" itemprop="dateCreated datePublished" datetime="2013-03-20T22:40:00+08:00">2013-03-20</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:52" itemprop="dateModified" datetime="2020-08-04T09:51:52+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hackintosh/" itemprop="url" rel="index"><span itemprop="name">Hackintosh</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hackintosh/%E5%AE%89%E8%A3%85/" itemprop="url" rel="index"><span itemprop="name">安装</span></a>
+                </span>
+            </span>
 
           
 
@@ -1235,23 +546,47 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>转自：linux/unix设计思想  </p>
-<p>1、小即是美                   #做的简洁，模块化，小型化</p>
-<p>2、做好一件事               #每个程序注重一件事，做到专一。</p>
-<p>3、尽早建立原型           #设定要实现的最重要的唯一功能</p>
-<p>4、注重移植，其次才是效率           #高移植可以免去重新编写的麻烦，提高程序员的效率。软件的效率可以由硬件弥补</p>
-<p>5、采用纯文本存数据                     #</p>
-<p>6、软件的杠杆效应                        #充分利用已有的代码。(拿来主义)</p>
-<p>7、学习shell脚本来提高杠杆效应   #shell脚本来自动化管理</p>
-<p>8、避免强制性用户界面                 #</p>
-<p>9、每个程序都是过滤器                 #所有程序都只是处理数据，不能创造数据。</p>
-<p>编程原则：</p>
-<p>1、首先建立原型，制定目标</p>
-<p>2、程序做的小、精、可移植、功能专一、模块化</p>
-<p>3、善于利用别人的代码</p>
-<p>4、充分考虑可移植，包括程序和数据</p>
-<p>5、善于利用shell脚本提高效率</p>
-<p>6、只考虑程序要实现的功能，不考虑用户拿去做什么</p>
+          <p>驱动ATI显卡的一般步骤  </p>
+<blockquote>
+<p>1、确认你的显卡ID，可以通过win下的GPU-Z确定  </p>
+</blockquote>
+<blockquote>
+<p>2、添加ID到相关kext里的Info.plist里面<br>3、提取rom修改你的接口信息<br>4、修改ATIx000Contrller.kext&gt;Contents&gt;MacOS&gt; ATIx000Contrller文件 (解决输出问题)<br>5、加载你修改的FB</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>第2步说明：  </p>
+<blockquote>
+<p>ATI显卡必备驱动<br>　　ATI4600Controller.kext （加入ID）<br>　　ATIFramebuffer.kext<br>　　ATISupport.kext<br>　　ATIRadeonX2000.kext （确认有ID）<br>　　ATIRadeonX2000GA.plugin<br>　　ATIRadeonX2000GLDriver.bundle<br>　　ATIRadeonX2000VADriver.bundle  </p>
+</blockquote>
+<blockquote>
+<p>参考：<br><a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/viewthread-1017396-1-1.html">Thinkpad E40 ML 完善过程分享</a><br><a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/viewthread-1196057-1-1.html">ThinkPad E40黑苹果折腾大结局</a>  </p>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>第4步说明：  </p>
+<blockquote>
+<p>各接口代码前端：  </p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>LVDS：02 00 00 00 40 00 00 00 09 01 00 00<br>HDMI：00 08 00 00 04 02 00 00 00 71 00 00<br>VGA： 10 00 00 00 10 00 00 00 00 01 00 00<br>DVI：   04 00 00 00 14 02 00 00 00 01 00 00<br>DP：    00 04 00 00 04 06 00 00 00 71 00 00  </p>
+</blockquote>
+<p>后端：  </p>
+<blockquote>
+<p>txmit enc hotplugin senseid 还有8位  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>代码生成器：  </p>
+<blockquote>
+<p>BuildFramebuffer.app  </p>
+</blockquote>
+<p>参考：  </p>
+</blockquote>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/viewthread-1060313-1-1.html">ATI 5系和6系显卡驱动&amp;修改FB探讨</a><br><a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/viewthread-991835-1-1.html">从零开始完美玩转苹果ATI驱动+QE/CI+多屏</a> ：这篇讲原理，不懂可以看下面<br><a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/viewthread-937823-1-1.html">可以驱动所有ATI 4330</a>  </p>
+</blockquote>
 
       
     </div>
@@ -1271,7 +606,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3484049872/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1528618337/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1287,7 +622,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/3484049872/" class="post-title-link" itemprop="url">linux学习计划</a>
+            <a href="/posts/1528618337/" class="post-title-link" itemprop="url">7、修改DSDT.aml</a>
         </h2>
 
         <div class="post-meta">
@@ -1297,15 +632,28 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2013-09-13 17:45:00" itemprop="dateCreated datePublished" datetime="2013-09-13T17:45:00+08:00">2013-09-13</time>
+              <time title="创建时间：2013-03-20 22:40:00" itemprop="dateCreated datePublished" datetime="2013-03-20T22:40:00+08:00">2013-03-20</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:51" itemprop="dateModified" datetime="2020-08-04T09:51:51+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hackintosh/" itemprop="url" rel="index"><span itemprop="name">Hackintosh</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hackintosh/%E5%AE%89%E8%A3%85/" itemprop="url" rel="index"><span itemprop="name">安装</span></a>
+                </span>
+            </span>
 
           
 
@@ -1316,96 +664,806 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>目标：linux网络编程方向发展</p>
-<p>基础：</p>
+          <p>-————————————————————————<br>DSDT.aml其实就是BIOS的SMBIOS文件。非SMBIOS.plist<br>-————————————————————————  </p>
+<p>一、导出DSDT、rom、SSDT等文件  </p>
 <blockquote>
-<p>学习目标：  </p>
-<blockquote>
-<p>学习计算机的基础知识、学习linux的使用和管理  </p>
+<p><img src="http://img0.ph.126.net/Hkeiwfr8E2D2xJrDqtVT9Q==/6597780051168992133.jpg" alt="7、修改DSDT.aml - leaf - ------坚持雅操------" title="7、修改DSDT.aml - leaf - ------坚持雅操------">  </p>
+<p> <img src="http://img0.ph.126.net/tmoDqi_-R75xXbrSFGmAFQ==/6597540357634133052.jpg" alt="7、修改DSDT.aml - leaf - ------坚持雅操------" title="7、修改DSDT.aml - leaf - ------坚持雅操------"><br>1、ACPI tool 可以导出DSDT.bin 和多个SSDT.bin。我们直接把后缀改位aml即可<br>2、video debug可以调出：显卡.rom  </p>
 </blockquote>
-<p>学习内容：  </p>
+<p>二、修改DSDT.aml  </p>
 <blockquote>
-<p>学习微机原理、计算机网络、操作系统等基础知识<br>掌握日常命令，习惯linux环境，利用好lman、howto等学习工具  </p>
-</blockquote>
+<p>我一般直接用这个软件修复，也可以使用DSDTFixer先修复，再用DSDT_editor修复<br>1、点open打开DSDT.aml文件  </p>
 <blockquote>
-<p>积累用户管理和系统管理等经验  </p>
+<p>备注：DSDT_editor也可以直接导出DSDT的原始文件。  </p>
 </blockquote>
-</blockquote>
-<blockquote>
-<p>书本推荐：  </p>
+<p><img src="http://img2.ph.126.net/bReZkoDf67zj1mwdF2AXDA==/6597947176936422335.jpg" alt="7、修改DSDT.aml - leaf - ------坚持雅操------" title="7、修改DSDT.aml - leaf - ------坚持雅操------"></p>
+<p> 打开后显示如下：  </p>
 </blockquote>
 <blockquote>
+<p><img src="http://img2.ph.126.net/CdLWiuHPi2jp10c3b4S3FA==/6597929584750368650.jpg" alt="7、修改DSDT.aml - leaf - ------坚持雅操------" title="7、修改DSDT.aml - leaf - ------坚持雅操------"></p>
+<p>2、 先自动修复,点fixerrors  </p>
+<p><img src="http://img0.ph.126.net/qDKCGKFcOn21ltMW0v7mAA==/6597716279494574346.jpg" alt="7、修改DSDT.aml - leaf - ------坚持雅操------" title="7、修改DSDT.aml - leaf - ------坚持雅操------"></p>
+<p> 3、我碰到了3种警告  </p>
 <blockquote>
-<p>操作系统——精髓与设计原理  </p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>计算机网络(谢希仁)<br>微机原理  </p>
-</blockquote>
+<p>1&gt; 把 _T_0  替换为T_0即可<br>2&gt;Possible operator timeout is ignored  </p>
 </blockquote>
 <blockquote>
 <blockquote>
-<p>鸟哥的私房菜</p>
+<p>将 Acquire (MUTE, 0x03E8)改为Acquire (MUTE, 0xFFFF)</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>3&gt;not all control paths return a value (SIOS)  </p>
+<blockquote>
+<p>最下面的}之前插入一行，添加 Return (Zero)</p>
+</blockquote>
+</blockquote>
+<p>    错误修复参考：<a target="_blank" rel="noopener" href="http://roderickvincent.com/post/2012-03-11/40031714899">http://roderickvincent.com/post/2012-03-11/40031714899</a>  </p>
+<p>4、打补丁，DSDT_editor里面包含很多补丁了。</p>
+<p><img src="http://img2.ph.126.net/kQqqjra1PrQ6IowItxIRIw==/6597538158610877708.jpg" alt="7、修改DSDT.aml - leaf - ------坚持雅操------" title="7、修改DSDT.aml - leaf - ------坚持雅操------"></p>
+<p>   </p>
+<p>5、手动添加修改信息<br>通过IORegisryExplorer看接口信息，然后在DSDT_editor里面找到位置进行更改  </p>
+<p><img src="http://img1.ph.126.net/9kwWBagc4x_BMCE_AQNNpQ==/6597754762401552568.jpg" alt="7、修改DSDT.aml - leaf - ------坚持雅操------" title="7、修改DSDT.aml - leaf - ------坚持雅操------"></p>
+<p>参考：<a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/viewthread-1020621-1-1.html">http://bbs.pcbeta.com/viewthread-1020621-1-1.html</a>  </p>
+<p>6、导出aml文件即完成DSDT.aml  </p>
+</blockquote>
+<p>三、添加显卡信息、声卡信息  </p>
+<blockquote>
+<p>用iDSDT导入DSDT.aml 和显卡.rom文件，声卡coder信息<br>iDSDT会自动帮我们导出aml文件。  </p>
+<p><img src="http://img1.ph.126.net/AdfJVcEiujL8f2M1158a2Q==/6597292967517383413.jpg" alt="7、修改DSDT.aml - leaf - ------坚持雅操------" title="7、修改DSDT.aml - leaf - ------坚持雅操------"></p>
+<p>注意：iDSDT导出来的文件是放在桌面上的，若名字相同导出来的aml文件就没用了  </p>
+<p>推荐：<br><a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/viewthread.php?tid=832974">http://bbs.pcbeta.com/viewthread.php?tid=832974</a><br><a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/viewthread-826965-1-1.html">http://bbs.pcbeta.com/viewthread-826965-1-1.html</a>  </p>
+</blockquote>
+<p>四、修改SSDT.aml  </p>
+<blockquote>
+<p>用DSDT_editor文件修复好即可。导出aml文件  </p>
+</blockquote>
+<p>五、将这些文件放入/Extra文件夹下，配置变色龙添加文件地址即可。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3260580697/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/3260580697/" class="post-title-link" itemprop="url">5、系统安装记录</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2013-03-20 22:39:00" itemprop="dateCreated datePublished" datetime="2013-03-20T22:39:00+08:00">2013-03-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hackintosh/" itemprop="url" rel="index"><span itemprop="name">Hackintosh</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hackintosh/%E5%AE%89%E8%A3%85/" itemprop="url" rel="index"><span itemprop="name">安装</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>1、制作安装盘  </p>
+<p>2、修改安装盘  </p>
+<blockquote>
+<p>镜像盘制作好之后，我们直接把安装会碰到的问题提前解决掉(win下操作)  </p>
+<blockquote>
+<p>一、根目录下建文件夹/Extra/Extensions，放入以下驱动：  </p>
+<blockquote>
+<p>FakeSMC.kext，一定要2.5版本。系统运行正常后，可再换新版本以获得其他功能<br>NullCPUPowerManagement.kext<br>AppleACPIPS2Nub.kext<br>ApplePS2Controller.kext<br>/usr/sbin/myfix        用于修复权限  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>二：移出/System/Library/Extensions/目录下的文件：  </p>
+<blockquote>
+<p>AppleIntelCPUPowerManagementClient.kext<br>AppleIntelCPUPowerManagement.kext<br>IOBluetoothFamily.kext<br>IOBluetoothHIDDriver.kext<br>备注：其实有些主板是支持原声ACPI驱动的  </p>
+<blockquote>
+<p>  移出是为了防止进不了安装界面  </p>
+</blockquote>
+</blockquote>
+<p>三、可选  </p>
+<blockquote>
+<p>删除S/L/E/AppleGraphicsControl.kext/Contents/PlugIns/ApplePolicyControl.kext  </p>
+</blockquote>
+<blockquote>
+<p>删除/System/Library/Coreservices/PlatformSupport.plist<br>删除S/L/E/AppleHDA.kext  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>3、安装  </p>
+<blockquote>
+<p>安装应该不会出现什么问题，如出现白屏也不要马上重启，只要硬盘闪着红灯都是在安装的<br>安装完成后，终端下将/E/E下面的kext放入/S/L/E下面  </p>
+</blockquote>
+<p>4、重启  </p>
+<blockquote>
+<p>用U盘引导进入，进入的时候也许会出现五国<br>参考远景的五国解决：<a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/viewthread-863656-1-1.html">http://bbs.pcbeta.com/viewthread-863656-1-1.html</a>  </p>
+</blockquote>
+<p>5、第一次进系统  </p>
+<blockquote>
+<p>1、把/Extra/Extensions下面的kext都复制到/S/L/E下面去<br>2、安装变色龙引导<br>备注：DSMOS has arrived是正常的，正常启动都有这句，一般到这句就快进桌面了。  </p>
+</blockquote>
+<p>6、重启，使用参数-v-x  -f  进入   (选择盘符界面直接输入即可)  </p>
+<blockquote>
+<p>如遇到五国，参考远景的五国解决<br>参数说明：  </p>
+<blockquote>
+<p>-v：Verbose模式，即调试模式。该模式显示所有启动日志，用于查找错误。<br>-x：安全模式，加载全部kext以解决兼容性问题。<br>-s：单用户模式<br>-f ：启动时修复磁盘，一般在更换过kext后第一次重启时使用。  </p>
+</blockquote>
+<p>备注：  </p>
+<blockquote>
+<p>变色龙选择启动盘的时候直接输入即可  </p>
+</blockquote>
+</blockquote>
+<p>7、驱动的安装  </p>
+<blockquote>
+<p>1、网卡驱动：一般论坛会提供pkg文件，安装上即可</p>
+</blockquote>
+<blockquote>
+<p>2、声卡驱动：使用MultiBeast把声卡驱动安装上，也可以使用万能声卡<br>3、显卡驱动：  </p>
+<blockquote>
+<p>修改kext，并用kext wizard安装和修复权限。<br>创建DSDT.aml (可选)  </p>
+</blockquote>
+<p>4、完善驱动功能<br>备注：  </p>
+<blockquote>
+<p>mac驱动是被动加载，识别了会自动添加驱动，不识别就安装不了。  </p>
+</blockquote>
+</blockquote>
+<p>8、添加其他功能</p>
+<blockquote>
+<p>新版FakeSMC：可以自动降频，检测风扇转速，温度等。<br>添加SSDT.aml：节能有关。<br>完善DSDT.aml文件。<br>创建org.apple.Boot.plist、SMBIOS：用Chameleon Wizard添加。</p>
+</blockquote>
+<p>效果图如下：<img src="http://img0.ph.126.net/sIfZQDOR10BlGEZpyJHAFQ==/6598234149471041607.jpg" alt="3、黑苹果安装记录 - leaf - ------坚持雅操------" title="5、系统安装记录 - leaf - ------坚持雅操------"></p>
+<p><img src="http://img0.ph.126.net/NarArQbQtjLg3DNoK5n2VQ==/6598285826517552612.jpg" alt="3、黑苹果安装记录 - leaf - ------坚持雅操------" title="5、系统安装记录 - leaf - ------坚持雅操------"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/185197236/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/185197236/" class="post-title-link" itemprop="url">4、制作U盘引导盘、镜像盘</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2013-03-20 21:39:00" itemprop="dateCreated datePublished" datetime="2013-03-20T21:39:00+08:00">2013-03-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hackintosh/" itemprop="url" rel="index"><span itemprop="name">Hackintosh</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hackintosh/%E5%AE%89%E8%A3%85/" itemprop="url" rel="index"><span itemprop="name">安装</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>-——————————————————————————————–<br>说明：以下都是windows下制作。我用了2个U盘，一个做引导，一个做镜像<br>-——————————————————————————————–<br><strong>一：制作U盘引导盘</strong>  </p>
+<blockquote>
+<p>0、格式化U盘为FAT32<br>1、启动bootice.EXE<br>2、点选第二个按钮：应该是主引导记录  </p>
+<p><img src="http://img1.ph.126.net/endDUBAcyw6iFCptzr1SGg==/6597721777052643871.png" alt="制作U盘引导盘 - leaf - ------坚持雅操------" title="4、制作U盘引导盘、镜像盘 - leaf - ------坚持雅操------"></p>
+<p> <br>3、选择GRUB4DOS，然后点安装/配置  </p>
+</blockquote>
+<blockquote>
+<p><img src="http://img1.ph.126.net/o8snrXk8Hsdw4KOCfO1RdQ==/6598105506610529377.png" alt="制作U盘引导盘 - leaf - ------坚持雅操------" title="4、制作U盘引导盘、镜像盘 - leaf - ------坚持雅操------"></p>
+</blockquote>
+<blockquote>
+<p>4、写入磁盘  </p>
+<p><img src="http://img1.ph.126.net/7rLPXIoM2PKieVAGW_2DFA==/6597712980959617657.png" alt="制作U盘引导盘 - leaf - ------坚持雅操------" title="4、制作U盘引导盘、镜像盘 - leaf - ------坚持雅操------"></p>
+</blockquote>
+<p>   </p>
+<blockquote>
+<p>5、复制文件到U盘即可  </p>
+<p><img src="http://img1.ph.126.net/KkcYUKqPdVBI7wjyLs1qUQ==/6598270433354694421.png" alt="制作U盘引导盘 - leaf - ------坚持雅操------" title="4、制作U盘引导盘、镜像盘 - leaf - ------坚持雅操------"></p>
+</blockquote>
+<blockquote>
+<p> 6、更新<br>如出了最新版，可将iso文件复制进U盘替换掉即可  </p>
+</blockquote>
+<p><strong>二：制作镜像盘</strong>  </p>
+<blockquote>
+<p>1、U盘格式化为exfat格式<br>2、选择镜像文件，选择U盘，取消下面的3个勾，然后点开始即可<br><img src="http://img0.ph.126.net/8TED0RQh7T_pLQm31SNF8g==/6597970266680595363.jpg" alt="2、制作U盘引导盘、镜像盘 - leaf - ------坚持雅操------" title="4、制作U盘引导盘、镜像盘 - leaf - ------坚持雅操------">  </p>
+</blockquote>
+<blockquote>
+<p>注意：如果不能写入，可以不格式化U盘，只分配盘符。</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3969467101/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/3969467101/" class="post-title-link" itemprop="url">3、相关工具、kext说明</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2013-03-20 21:30:00" itemprop="dateCreated datePublished" datetime="2013-03-20T21:30:00+08:00">2013-03-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hackintosh/" itemprop="url" rel="index"><span itemprop="name">Hackintosh</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hackintosh/%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">原理</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>下载地址：<a target="_blank" rel="noopener" href="http://pan.baidu.com/share/link?shareid=436698&amp;uk=336411764">http://pan.baidu.com/share/link?shareid=436698&amp;uk=336411764</a><br>按照制作过程列出<br>-————————–<br>1、制作启动盘工具  </p>
+<blockquote>
+<p>DiskGenius：用于分区、格式化<br>BOOTICE：制作引导盘，用来引导mac镜像<br>硬盘安装助手：制作镜像盘，用来将mac镜像写入U盘，使U盘成为安装盘<br>Mac Drive：windows下读写HFS分区，用于修改镜像盘。<br>HFSExploer：也是windows下读写HFS分区，用于修改镜像盘。</p>
+</blockquote>
+<p>2、修改镜像  </p>
+<blockquote>
+<p>NullCPUPowerManagement.kext  关闭ACPI电源管理的驱动<br>AppleACPIPS2Nub.kext                用于支持PS2的鼠标键盘<br>ApplePS2Controller.kext               用于支持PS2的鼠标键盘<br>FakeSMC.kext（2.5版）<br>-——<br>myfix：用于修复文件权限<br>-————–<br>安装过程要增删kext，在win下操作的话win下的读写工具就用上了。  </p>
+</blockquote>
+<p>3、第一次进系统  </p>
+<blockquote>
+<p>Chameleon_2.2svn_r2187_trunk.pkg 变色龙引导工具，使硬盘自己引导启动<br>把/E/E下的kext拷到/S/L/E下  </p>
+</blockquote>
+<p>4、安装驱动工具  </p>
+<blockquote>
+<p>一般工具  </p>
+<blockquote>
+<p>MultiBeast ：一些工具和驱动集合<br>System Info.app 检查系统驱动了那些硬件，加载了那些kext<br>ShowAllFiles.app：查看隐藏文件<br>Chameleon Wizard ：创建org.apple.Boot.plist、SMBIOS等  </p>
+</blockquote>
+<p>Kext工具  </p>
+<blockquote>
+<p>Kext Wizard ：安装kext驱动工具<br>ATI Tools ：导出端口参数的工具<br>HexEdit ：修改端口参数的工具<br>PlistEditPro：修改plist文件的工具  </p>
+</blockquote>
+<p>DSDT相关工具  </p>
+<blockquote>
+<p>aida64extreme：导出主板和gpu的SMBIOS工具<br>IORegistryExplorer：查看系统加载的kext工具<br>DSDTFixer.app ：修复原始aml文件  </p>
+</blockquote>
+<blockquote>
+<p>DSDT_Editor：编辑、修复、导出DSDT.AML工具<br>iDSDT：添加显卡、声卡信息到aml文件。(亦可手动添加)  </p>
+</blockquote>
+</blockquote>
+<p>5、查看日志  </p>
+<blockquote>
+<p>bdmesg：查看变色龙的运行日志<br>Chameleon Wizard：也内置了bdmesg，也可以很方便的查看<br>dmesg：查看mac启动记录<br>控制台：点kernel.log</p>
+</blockquote>
+<p>KEXT说明<br>-——————  </p>
+<blockquote>
+<p>FakeSMC.kext：                              黑苹果必要kext，模拟苹果设备<br>NullCPUPowerManagement.kext     禁用电源管理的kext<br>AppleACPIPS2Nub.kext                   PS2键盘鼠标驱动<br>ApplePS2Controller.kext                   PS2键盘鼠标驱动<br>-—————————<br>AppleIntelPIIXATA.kext　　　Intel免AHCI专用kext<br>AppleATIATA.kext　　　　　AMD芯片组专用kext(2009.12.30)<br>AppleATIPATA.kext　　　　  AMD芯片组专用kext<br>AppleNForceATA.kext　　　 NForce芯片组专用kext<br>AppleVIAATA.kext　　　　　VIA芯片组专用kext<br>JMicronATA.kext　　　　　  JMicron芯片组专用kext<br>AppleVIAATA.kext.for.sis　　SIS芯片组专用kext<br>-————————–<br>ElliottForceLegacyRTC.kext或者LegacyAppleRTC.kext   防止主板BIOS的CMOS重置（2选1，不可共用）<br>OpenHaltRestart.kext或者EvOreboot.kext              解决重启/关机时遇到无法断电问题（2选1，不可共用）<br>PlatformUUID.kext　　　　　解决Unable to determine UUID for host. Error : 35的问题<br>AppleACPIPlatform.kext         据说能解决：DSMOS has arrived错误<br>待续。。。。  </p>
+</blockquote>
+<p>推荐网站  </p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://www.osx86.net/">http://www.osx86.net/</a>  </p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1407524629/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/1407524629/" class="post-title-link" itemprop="url">2、mac启动过程</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2013-03-20 20:46:00" itemprop="dateCreated datePublished" datetime="2013-03-20T20:46:00+08:00">2013-03-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hackintosh/" itemprop="url" rel="index"><span itemprop="name">Hackintosh</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hackintosh/%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">原理</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>白苹果的启动<br>-——————-  </p>
+<blockquote>
+<p>UEFI自检—–&gt;  </p>
+<blockquote>
+<p>SMC芯片验证和识别信息——–&gt;  </p>
+<blockquote>
+<p>mac启动  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>黑苹果的启动<br>-——————-  </p>
+<blockquote>
+<p>UEFI自检—–&gt;  </p>
+<blockquote>
+<p>变色龙引导—–&gt;  </p>
+<blockquote>
+<p>变色龙读取配置文件org.apple.Boot.plist—–&gt;  </p>
+<blockquote>
+<p>解压核心—&gt;  </p>
+</blockquote>
 </blockquote>
 </blockquote>
 <blockquote>
 <blockquote>
-<p>HOWTO<br>MAN手册  </p>
+<blockquote>
+<blockquote>
+<p>变色龙读取DSDT.aml——-&gt;<br>变色龙调用SMBIOS添加机型信息——-&gt;  </p>
 </blockquote>
 </blockquote>
-<p>进阶：  </p>
-<blockquote>
-<p>学习目标：  </p>
-<blockquote>
-<p>学习编程和软件制作原理，积累linux下开发经验。  </p>
-</blockquote>
-<p>学习内容：  </p>
-<blockquote>
-<p>学习C语言，学习bash脚本<br>了解编译、汇编、链接、调试等原理<br>了解Gcc，make，gdb等<br>学习开发工具的使用  </p>
-</blockquote>
-<p>书目推荐：  </p>
-<blockquote>
-<p>C程序设计(谭浩强)<br>shell编程(卧龙小三)<br>计算机专业英语<br>advanced linux programming<br>advanced bash sripting guide  </p>
-</blockquote>
-</blockquote>
-<p>高级  </p>
-<blockquote>
-<p>学习目标：  </p>
-<blockquote>
-<p>掌握linux系统编程  </p>
-</blockquote>
-<p>学习内容：  </p>
-<blockquote>
-<p>学习linux API<br>学习linux系统编程，<br>学习linux内核代码。  </p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>书本推荐：  </p>
-<blockquote>
-<p>APUE(unix环境高级编程)  </p>
 </blockquote>
 </blockquote>
 <blockquote>
 <blockquote>
-<p>linux kernel development<br>understanding the linux kernel(深入理解linux内核)<br>linux device drivers(linux设备驱动程序)<br>professional linux kernel architecture(深入linux内核架构)<br>the art of unix programming  </p>
-</blockquote>
-</blockquote>
-<p>应用：  </p>
 <blockquote>
-<p>网络方向：  </p>
 <blockquote>
-<p>服务器软件和并发程序编写，驱动开发的话直接可以写了。</p>
+<p>变色龙调用FakeSMC添加模拟的BIOS信息和硬件信息—–&gt;  </p>
 </blockquote>
 </blockquote>
 <blockquote>
-<p>书本推荐：</p>
+<blockquote>
+<blockquote>
+<p>变色龙调用DSDT.aml并添加硬件信息—&gt;  </p>
+<blockquote>
+<p>变色龙调用SSDT.aml并应用——&gt;  </p>
+<blockquote>
+<p>核心加载模块———&gt;  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
 </blockquote>
 <blockquote>
 <blockquote>
-<p>APUE<br>Linux Pthread POSIX多线程 编程指南<br>unix网络编程 卷一、卷二<br>TCP/IP网络详解 卷一、卷二、卷三</p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>mac启动  </p>
 </blockquote>
 </blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>#这里我们可以看到，我们直接修改FakeSMC就可以使mac识别，如果不改FakeSMC则可以添加DSDT等使mac识别  </p>
+<p>附变色龙引导log<br>-——————-<br>Chameleon 2.2svn (svn-r2187) [2013-02-21 13:57:37]<br>msr(383): platform_info 60011f00<br>msr(387): flex_ratio 00000000<br>Sticking with [BCLK: 103Mhz, Bus-Ratio: 310]<br>CPU: Brand String:             Intel(R) Core(TM) i3-2100 CPU @ 3.10GHz<br>CPU: Vendor/Family/ExtFamily:  0x756e6547/0x6/0x0<br>CPU: Model/ExtModel/Stepping:  0x2a/0x2/0x7<br>CPU: MaxCoef/CurrCoef:         0x0/0x1f<br>CPU: MaxDiv/CurrDiv:           0x0/0x0<br>CPU: TSCFreq:                  3193MHz<br>CPU: FSBFreq:                  103MHz<br>CPU: CPUFreq:                  3193MHz<br>CPU: NoCores/NoThreads:        2/4<br>CPU: Features:                 0x000002ff<br>Attempting to read GPT<br>Read GPT<br>Reading GPT partition 1, type C12A7328-F81F-11D2-BA4B-00A0C93EC93B<br>Reading GPT partition 2, type 48465300-0000-11AA-AA11-00306543ECAC<br>Read HFS+ file: [hd(0,2)/System/Library/CoreServices/SystemVersion.plist] 478 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/org.chameleon.Boot.plist] 476 bytes.<br>Module ‘Symbols.dylib’ by ‘Chameleon’ Loaded.<br>    Description: Chameleon symbols for linking<br>    Version: 0<br>    Compat:  0<br>Read HFS+ file: [hd(0,2)/Extra/modules/klibc.dylib] 44252 bytes.<br>Module ‘klibc.dylib’ by ‘Unknown’ Loaded.<br>    Description:<br>    Version: 0<br>    Compat:  0<br>Read HFS+ file: [hd(0,2)/Extra/modules/uClibcxx.dylib] 77808 bytes.<br>Module ‘uClibcxx.dylib’ by ‘Unknown’ Loaded.<br>    Description:<br>    Version: 0<br>    Compat:  0<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/theme.plist] 2787 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/background.png] 160 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/logo.png] 9791 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_generic.png] 30749 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_generic_o.png] 31641 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsplus.png] 33224 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsplus_o.png] 34030 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsplus_ml.png] 29768 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsplus_ml_o.png] 30578 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsplus_lion.png] 28223 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsplus_lion_o.png] 28963 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsplus_sl.png] 29902 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsplus_sl_o.png] 30684 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsplus_leo.png] 28892 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsplus_leo_o.png] 29666 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsplus_tiger.png] 28400 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsplus_tiger_o.png] 29157 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsraid.png] 33806 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsraid_o.png] 34633 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsraid_ml.png] 30436 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsraid_ml_o.png] 31257 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsraid_lion.png] 28949 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsraid_lion_o.png] 29725 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsraid_sl.png] 30605 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsraid_sl_o.png] 31378 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsraid_leo.png] 29649 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsraid_leo_o.png] 30429 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsraid_tiger.png] 29104 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_hfsraid_tiger_o.png] 29917 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_ext3.png] 33010 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_ext3_o.png] 33943 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_freebsd.png] 27264 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_freebsd_o.png] 28018 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_openbsd.png] 28850 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_openbsd_o.png] 29596 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_befs.png] 27817 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_befs_o.png] 28529 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_fat.png] 32113 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_fat_o.png] 33007 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_ntfs.png] 34190 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_ntfs_o.png] 34992 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_cdrom.png] 31453 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_cdrom_o.png] 31312 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_selection.png] 148 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_scroll_prev.png] 3995 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/device_scroll_next.png] 3898 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/menu_boot.png] 137 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/menu_verbose.png] 137 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/menu_ignore_caches.png] 137 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/menu_single_user.png] 137 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/menu_memory_info.png] 136 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/menu_video_info.png] 136 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/menu_help.png] 136 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/menu_verbose_disabled.png] 135 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/menu_ignore_caches_disabled.png] 135 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/menu_single_user_disabled.png] 135 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/menu_selection.png] 158 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/progress_bar.png] 292 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/progress_bar_background.png] 139 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/text_scroll_prev.png] 562 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/text_scroll_next.png] 557 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/font_console.png] 2931 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/Themes/Default/font_small.png] 3371 bytes.<br>Read HFS+ file: [hd(0,2)/Library/Preferences/SystemConfiguration/com.apple.Boot.plist] 232 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/org.chameleon.Boot.plist] 476 bytes.<br>Loading Darwin 10.8<br>No Kernel Cache File ‘/System/Library/Caches/com.apple.kext.caches/Startup/kernelcache’ found<br>Loading kernel /mach_kernel<br>Read HFS+ file: [hd(0,2)/mach_kernel] 4096 bytes.<br>Read HFS+ file: [hd(0,2)/mach_kernel] 8188064 bytes.<br>Read HFS+ file: [hd(0,2)/Extra/dadt.aml] 102813 bytes.<br>Using PCI-Root-UID value: 0<br>LAN Controller [10ec:8168] :: PciRoot(0x0)/Pci(0x1c,0x2)/Pci(0x0,0x0)<br>Setting up lan keys<br>Read HFS+ file: [hd(0,2)/Extra/SMBios.plist] 687 bytes.<br>SMBus CmdReg: 0x3<br>Scanning SMBus [8086:1c22], mmio: 0xfe604004, ioport: 0xf040, hostc: 0x1<br>SPD[0] (size): 146 @0x50<br>Slot: 0 Type 24 2048MB (DDR3 SDRAM) 1333MHz Vendor=Apacer Technology<br>      PartNo=78.A1GC6.9LZ SerialNo=02010212<br>SPD[0] (size): 255 @0x51<br>SPD[0] (size): 146 @0x52<br>Slot: 2 Type 24 2048MB (DDR3 SDRAM) 1333MHz Vendor=Apacer Technology<br>      PartNo=78.A1GC6.9LZ SerialNo=02010212<br>SPD[0] (size): 255 @0x53<br>SPD[0] (size): 255 @0x54<br>SPD[0] (size): 255 @0x55<br>SPD[0] (size): 255 @0x56<br>SPD[0] (size): 255 @0x57<br>CPU is Intel(R) Core(TM) i3-2100 CPU @ 3.10GHz, family 0x6, model 0x2a  </p>
+<p>Type: 0, Length: 24, Handle: 0x0<br>BIOSInformation:<br>    vendor: Apple Inc.<br>    version: IM121.88Z.0047.B0A.1104221555<br>    releaseDate: 04/22/11  </p>
+<p>Type: 1, Length: 27, Handle: 0x1<br>SystemInformation:<br>    manufacturer: Apple Inc.<br>    productName: iMac12,1<br>    version: 1.0<br>    serialNumber: C02JL367DHJT<br>    uuid: 4093C112-8064-E011-816C-F46D0423CA64<br>    wakeupReason: 0x6<br>    skuNumber: To be filled by O.E.M.<br>    family: iMac  </p>
+<p>Type: 2, Length: 15, Handle: 0x2<br>BaseBoard:<br>    manufacturer: Apple Inc.<br>    product: Mac-942B5BF58194151B<br>    version: Rev x.0x<br>    serialNumber: 109424350001705<br>    assetTagNumber: To be filled by O.E.M.<br>    locationInChassis: To be filled by O.E.M.<br>    boardType: 0xA  </p>
+<p>Type: 3, Length: 21, Handle: 0x3<br>SystemEnclosure:<br>    manufacturer: Chassis Manufacture<br>    type: 3<br>    version: Chassis Version<br>    serialNumber: Chassis Serial Number<br>    assetTagNumber: Asset-1234567890  </p>
+<p>Type: 4, Length: 42, Handle: 0x4<br>ProcessorInformation:<br>    socketDesignation: LGA1155<br>    processorType: 3<br>    processorFamily: 0xBF<br>    manufacturer: Intel<br>    processorID: 0x206A7<br>    processorVersion: Intel(R) Core(TM) i3-2100 CPU @ 3.10GHz<br>    externalClock: 0MHz<br>    maximumClock: 3193MHz<br>    currentClock: 3223MHz<br>    serialNumber: To Be Filled By O.E.M.<br>    assetTag: To Be Filled By O.E.M.<br>    partNumber: To Be Filled By O.E.M.  </p>
+<p>Type: 7, Length: 19, Handle: 0x5<br>Type: 7, Length: 19, Handle: 0x6<br>Type: 7, Length: 19, Handle: 0x7<br>Type: 8, Length: 9, Handle: 0x8<br>Type: 8, Length: 9, Handle: 0x9<br>Type: 8, Length: 9, Handle: 0xa<br>Type: 8, Length: 9, Handle: 0xb<br>Type: 8, Length: 9, Handle: 0xc<br>Type: 8, Length: 9, Handle: 0xd<br>Type: 8, Length: 9, Handle: 0xe<br>Type: 8, Length: 9, Handle: 0xf<br>Type: 8, Length: 9, Handle: 0x10<br>Type: 8, Length: 9, Handle: 0x11<br>Type: 8, Length: 9, Handle: 0x12<br>Type: 8, Length: 9, Handle: 0x13<br>Type: 8, Length: 9, Handle: 0x14<br>Type: 8, Length: 9, Handle: 0x15<br>Type: 8, Length: 9, Handle: 0x16<br>Type: 8, Length: 9, Handle: 0x17<br>Type: 8, Length: 9, Handle: 0x18<br>Type: 8, Length: 9, Handle: 0x19<br>Type: 8, Length: 9, Handle: 0x1a<br>Type: 9, Length: 17, Handle: 0x1b<br>Type: 9, Length: 17, Handle: 0x1c<br>Type: 9, Length: 17, Handle: 0x1d<br>Type: 9, Length: 17, Handle: 0x1e<br>Type: 10, Length: 6, Handle: 0x1f<br>Type: 11, Length: 5, Handle: 0x20<br>Type: 12, Length: 5, Handle: 0x21<br>Type: 16, Length: 15, Handle: 0x22<br>Type: 18, Length: 23, Handle: 0x23<br>Type: 19, Length: 15, Handle: 0x24<br>Type: 17, Length: 28, Handle: 0x25<br>MemoryDevice:<br>    deviceLocator: DIMM0<br>    bankLocator: BANK0<br>    memoryType: DDR3<br>    memorySpeed: 1333MHz<br>    manufacturer: Apacer Technology<br>    serialNumber: 02010212<br>    assetTag: AssetTagNum0<br>    partNumber: 78.A1GC6.9LZ  </p>
+<p>Type: 18, Length: 23, Handle: 0x26<br>Type: 20, Length: 19, Handle: 0x27<br>Type: 17, Length: 28, Handle: 0x28<br>MemoryDevice:<br>    deviceLocator: DIMM1<br>    bankLocator: BANK1<br>    memoryType: DDR3<br>    memorySpeed: 1333MHz<br>    manufacturer: Apacer Technology<br>    serialNumber: 02010212<br>    assetTag: AssetTagNum1<br>    partNumber: 78.A1GC6.9LZ  </p>
+<p>Type: 18, Length: 23, Handle: 0x29<br>Type: 20, Length: 19, Handle: 0x2a<br>Type: 32, Length: 20, Handle: 0x2b<br>Type: 34, Length: 11, Handle: 0x2c<br>Type: 26, Length: 22, Handle: 0x2d<br>Type: 36, Length: 16, Handle: 0x2e<br>Type: 35, Length: 11, Handle: 0x2f<br>Type: 28, Length: 22, Handle: 0x30<br>Type: 36, Length: 16, Handle: 0x31<br>Type: 35, Length: 11, Handle: 0x32<br>Type: 27, Length: 14, Handle: 0x33<br>Type: 36, Length: 16, Handle: 0x34<br>Type: 35, Length: 11, Handle: 0x35<br>Type: 27, Length: 14, Handle: 0x36<br>Type: 36, Length: 16, Handle: 0x37<br>Type: 35, Length: 11, Handle: 0x38<br>Type: 29, Length: 22, Handle: 0x39<br>Type: 36, Length: 16, Handle: 0x3a<br>Type: 35, Length: 11, Handle: 0x3b<br>Type: 39, Length: 22, Handle: 0x3c<br>Type: 34, Length: 16, Handle: 0x3d<br>Type: 26, Length: 22, Handle: 0x3e<br>Type: 36, Length: 16, Handle: 0x3f<br>Type: 35, Length: 11, Handle: 0x40<br>Type: 26, Length: 22, Handle: 0x41<br>Type: 36, Length: 16, Handle: 0x42<br>Type: 35, Length: 11, Handle: 0x43<br>Type: 28, Length: 22, Handle: 0x44<br>Type: 36, Length: 16, Handle: 0x45<br>Type: 35, Length: 11, Handle: 0x46<br>Type: 27, Length: 14, Handle: 0x47<br>Type: 36, Length: 16, Handle: 0x48<br>Type: 35, Length: 11, Handle: 0x49<br>Type: 28, Length: 22, Handle: 0x4a<br>Type: 36, Length: 16, Handle: 0x4b<br>Type: 35, Length: 11, Handle: 0x4c<br>Type: 27, Length: 14, Handle: 0x4d<br>Type: 36, Length: 16, Handle: 0x4e<br>Type: 35, Length: 11, Handle: 0x4f<br>Type: 29, Length: 22, Handle: 0x50<br>Type: 36, Length: 16, Handle: 0x51<br>Type: 35, Length: 11, Handle: 0x52<br>Type: 29, Length: 22, Handle: 0x53<br>Type: 36, Length: 16, Handle: 0x54<br>Type: 35, Length: 11, Handle: 0x55<br>Type: 39, Length: 22, Handle: 0x56<br>Type: 41, Length: 11, Handle: 0x57<br>Type: 41, Length: 11, Handle: 0x58<br>Type: 41, Length: 11, Handle: 0x59<br>Type: 139, Length: 94, Handle: 0x5a<br>Type: 13, Length: 22, Handle: 0x5b<br>Type: 131, Length: 6, Handle: 0x5b<br>AppleProcessorType:<br>    ProcessorType: 0x901  </p>
+<p>Type: 127, Length: 4, Handle: 0x5c  </p>
+<p>Customizing SystemID with : 4093c112-8064-e011-816c-f46d0423ca64<br>Read HFS+ file: [hd(0,2)/Extra/dadt.aml] 102813 bytes.<br>ACPI table not found: SSDT.aml<br>FADT: Using custom DSDT!<br>FADT: Using custom DSDT!<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/Accusys6xxxx.kext/Contents/Info.plist] 2409 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/acfs.kext/Contents/Info.plist] 1319 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/acfsctl.kext/Contents/Info.plist] 1197 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/ALF.kext/Contents/Info.plist] 1659 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AMDRadeonAccelerator.kext/Contents/Info.plist] 15314 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/Apple16X50Serial.kext/Contents/Info.plist] 2047 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/Apple16X50Serial.kext/Contents/PlugIns/Apple16X50ACPI.kext/Contents/Info.plist] 1912 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/Apple_iSight.kext/Contents/Info.plist] 2033 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleACPIPlatform.kext/Contents/Info.plist] 3715 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleACPIPlatform.kext/Contents/PlugIns/AppleACPIButtons.kext/Contents/Info.plist] 2964 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleACPIPlatform.kext/Contents/PlugIns/AppleACPIEC.kext/Contents/Info.plist] 2141 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleAHCIPort.kext/Contents/Info.plist] 6744 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleAPIC.kext/Contents/Info.plist] 1818 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleAVBAudio.kext/Contents/Info.plist] 2306 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleAVBAudio.kext/Contents/PlugIns/AppleAVBAudioPlugin.kext/Contents/Info.plist] 2459 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleBacklight.kext/Contents/Info.plist] 17087 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleBacklightExpert.kext/Info.plist] 1923 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleBluetoothMultitouch.kext/Contents/Info.plist] 56598 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleBMC.kext/Contents/Info.plist] 2140 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleEFIRuntime.kext/Contents/Info.plist] 2077 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleEFIRuntime.kext/Contents/PlugIns/AppleEFINVRAM.kext/Contents/Info.plist] 2073 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleFileSystemDriver.kext/Contents/Info.plist] 3067 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleFSCompressionTypeDataless.kext/Contents/Info.plist] 2405 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleFSCompressionTypeZlib.kext/Contents/Info.plist] 2379 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleFWAudio.kext/Contents/Info.plist] 7590 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleGraphicsControl.kext/Contents/Info.plist] 2024 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleGraphicsControl.kext/Contents/PlugIns/AppleMuxControl.kext/Contents/Info.plist] 13227 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleGraphicsControl.kext/Contents/PlugIns/ApplePolicyControl.kext/Contents/Info.plist] 2557 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleGraphicsPowerManagement.kext/Contents/Info.plist] 79681 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleHDA.kext/Contents/Info.plist] 3213 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleHDA.kext/Contents/PlugIns/AppleHDAController.kext/Contents/Info.plist] 4807 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleHDA.kext/Contents/PlugIns/AppleHDAHardwareConfigDriver.kext/Contents/Info.plist] 12558 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleHDA.kext/Contents/PlugIns/AppleMikeyDriver.kext/Contents/Info.plist] 2207 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleHDA.kext/Contents/PlugIns/DspFuncLib.kext/Contents/Info.plist] 1859 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleHDA.kext/Contents/PlugIns/IOHDAFamily.kext/Contents/Info.plist] 1995 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleHIDKeyboard.kext/Contents/Info.plist] 41939 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleHIDKeyboard.kext/Contents/PlugIns/AppleBluetoothHIDKeyboard.kext/Contents/Info.plist] 45724 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleHIDKeyboard.kext/Contents/PlugIns/AppleUSBHIDKeyboard.kext/Contents/Info.plist] 14763 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleHIDMouse.kext/Contents/Info.plist] 1606 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleHIDMouse.kext/Contents/PlugIns/AppleBluetoothHIDMouse.kext/Contents/Info.plist] 17736 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleHIDMouse.kext/Contents/PlugIns/AppleUSBHIDMouse.kext/Contents/Info.plist] 10106 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleHPET.kext/Contents/Info.plist] 1985 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleHWSensor.kext/Contents/Info.plist] 2265 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleIRController.kext/Contents/Info.plist] 5668 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleKeyStore.kext/Contents/Info.plist] 2245 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleKeyswitch.kext/Contents/Info.plist] 2720 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleLPC.kext/Contents/Info.plist] 4043 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleLSIFusionMPT.kext/Contents/Info.plist] 4038 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleMatch.kext/Contents/Info.plist] 1411 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleMCCSControl.kext/Contents/Info.plist] 3525 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleMCEDriver.kext/Contents/Info.plist] 1800 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleMCP89RootPortPM.kext/Contents/Info.plist] 2117 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleMikeyHIDDriver.kext/Contents/Info.plist] 1972 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleMobileDevice.kext/Contents/Info.plist] 3618 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleMultitouchDriver.kext/Contents/Info.plist] 1695 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/ApplePlatformEnabler.kext/Contents/Info.plist] 1857 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleRAID.kext/Contents/Info.plist] 2294 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleRAIDCard.kext/Contents/Info.plist] 4292 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleRTC.kext/Contents/Info.plist] 1969 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleSDXC.kext/Contents/Info.plist] 2915 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleSEP.kext/Contents/Info.plist] 2970 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleSmartBatteryManager.kext/Contents/Info.plist] 2063 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleSMBIOS.kext/Contents/Info.plist] 1929 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleSMBusController.kext/Contents/Info.plist] 2912 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleSMBusPCI.kext/Contents/Info.plist] 1999 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleSMC.kext/Contents/Info.plist] 1940 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleSMCLMU.kext/Contents/Info.plist] 2053 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleSRP.kext/Contents/Info.plist] 1352 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/Info.plist] 1159 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/AppleATAPIStorage.kext/Contents/Info.plist] 3097 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/AppleFireWireStorage.kext/Contents/Info.plist] 2619 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/AppleHollywood.kext/Contents/Info.plist] 16755 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/AppleMemorexCDROMDriver.kext/Contents/Info.plist] 2314 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/AppleUSBCardReader.kext/Contents/Info.plist] 5123 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/AppleUSBODD.kext/Contents/Info.plist] 2620 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/AppleXserveRAID.kext/Contents/Info.plist] 2495 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/CanonEOS1D.kext/Contents/Info.plist] 2727 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/FireWireStorageDeviceSpecifics.kext/Contents/Info.plist] 7367 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/FWPreferredProtocolSpeed.kext/Contents/Info.plist] 2775 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/initioFWBridge.kext/Contents/Info.plist] 2703 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/IOFireWireSerialBusProtocolSansPhysicalUnit.kext/Contents/Info.plist] 2757 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/LSI-FW-500.kext/Contents/Info.plist] 3865 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/MaxTranserSizeOverrideDriver.kext/Contents/Info.plist] 3088 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/MKE-LF-D211A.kext/Contents/Info.plist] 2844 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/MKE-SR-8171.kext/Contents/Info.plist] 2261 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/OxfordSemiconductor.kext/Contents/Info.plist] 2719 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/PioneerSuperDrive.kext/Contents/Info.plist] 2208 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/PlasmonUDO.kext/Contents/Info.plist] 2218 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/PreventMediaMountDriver.kext/Contents/Info.plist] 2693 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/QPSQueFire.kext/Contents/Info.plist] 2661 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/SanyoIDShot.kext/Contents/Info.plist] 2798 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/SonyXDCAMDriver.kext/Contents/Info.plist] 2698 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/StorageLynx.kext/Contents/Info.plist] 2565 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/UFIWriteProtectedMediaDriver.kext/Contents/Info.plist] 3108 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/USBStorageDeviceSpecifics.kext/Contents/Info.plist] 112471 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleStorageDrivers.kext/Contents/PlugIns/WriteProtectedMediaDriver.kext/Contents/Info.plist] 6905 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleThunderboltDPAdapters.kext/Contents/Info.plist] 1289 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleThunderboltDPAdapters.kext/Contents/PlugIns/AppleThunderboltDPAdapterFamily.kext/Contents/Info.plist] 1867 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleThunderboltDPAdapters.kext/Contents/PlugIns/AppleThunderboltDPInAdapter.kext/Contents/Info.plist] 2396 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleThunderboltDPAdapters.kext/Contents/PlugIns/AppleThunderboltDPOutAdapter.kext/Contents/Info.plist] 2485 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleThunderboltEDMService.kext/Contents/Info.plist] 1296 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleThunderboltEDMService.kext/Contents/PlugIns/AppleThunderboltEDMSink.kext/Contents/Info.plist] 2557 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleThunderboltEDMService.kext/Contents/PlugIns/AppleThunderboltEDMSource.kext/Contents/Info.plist] 2509 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleThunderboltNHI.kext/Contents/Info.plist] 2392 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleThunderboltPCIAdapters.kext/Contents/Info.plist] 1350 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleThunderboltPCIAdapters.kext/Contents/PlugIns/AppleThunderboltPCIDownAdapter.kext/Contents/Info.plist] 2207 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleThunderboltPCIAdapters.kext/Contents/PlugIns/AppleThunderboltPCIUpAdapter.kext/Contents/Info.plist] 2281 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleThunderboltUTDM.kext/Contents/Info.plist] 2914 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleTyMCEDriver.kext/Contents/Info.plist] 2301 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleUpstreamUserClient.kext/Contents/Info.plist] 2238 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleUSBAudio.kext/Contents/Info.plist] 4033 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleUSBDisplays.kext/Contents/Info.plist] 26094 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleUSBEthernetHost.kext/Contents/Info.plist] 2693 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleUSBMultitouch.kext/Contents/Info.plist] 386012 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleUSBTopCase.kext/Contents/Info.plist] 1523 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCButtons.kext/Contents/Info.plist] 87849 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyboard.kext/Contents/Info.plist] 53670 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTCKeyEventDriver.kext/Contents/Info.plist] 127228 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleUSBTopCase.kext/Contents/PlugIns/AppleUSBTrackpad.kext/Contents/Info.plist] 40192 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleWWANAutoEject.kext/Contents/Info.plist] 4296 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AppleXsanFilter.kext/Contents/Info.plist] 2258 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/ArcMSR.kext/Contents/Info.plist] 2803 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/ATI4600Controller.kext/Contents/Info.plist] 2037 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/ATIFramebuffer.kext/Contents/Info.plist] 22576 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/ATIRadeonX2000.kext/Contents/Info.plist] 3532 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/ATISupport.kext/Contents/Info.plist] 2030 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/ATTOCelerityFC.kext/Contents/Info.plist] 3046 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/ATTOCelerityFC8.kext/Contents/Info.plist] 3000 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/ATTOExpressPCI4.kext/Contents/Info.plist] 2487 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/ATTOExpressSASHBA.kext/Contents/Info.plist] 2945 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/ATTOExpressSASHBA2.kext/Contents/Info.plist] 3018 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/ATTOExpressSASHBA3.kext/Contents/Info.plist] 2893 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/ATTOExpressSASRAID.kext/Contents/Info.plist] 2955 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/ATTOExpressSASRAID2.kext/Contents/Info.plist] 3028 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/AudioAUUC.kext/Info.plist] 2194 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/autofs.kext/Contents/Info.plist] 1740 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/BJUSBLoad.kext/Contents/Info.plist] 125615 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/BootCache.kext/Contents/Info.plist] 2093 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/CalDigitHDProDrv.kext/Contents/Info.plist] 2364 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/cd9660.kext/Contents/Info.plist] 1666 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/cddafs.kext/Contents/Info.plist] 1587 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/CellPhoneHelper.kext/Contents/Info.plist] 100096 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/corecrypto.kext/Contents/Info.plist] 1978 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/CoreStorage.kext/Contents/Info.plist] 3004 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/CoreStorage.kext/Contents/PlugIns/CoreStorageFsck.kext/Contents/Info.plist] 2419 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/Dont Steal Mac OS X.kext/Contents/Info.plist] 2453 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/EVOenabler.kext/Contents/Info.plist] 101757 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/exfat.kext/Contents/Info.plist] 1637 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/FakeSMC.kext/Contents/Info.plist] 2452 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/GeForce.kext/Contents/Info.plist] 2335 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/HDAEnabler1.kext/Contents/Info.plist] 1953 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/HighPointIOP.kext/Contents/Info.plist] 3180 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/HighPointRR.kext/Contents/Info.plist] 4538 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IO80211Family.kext/Contents/Info.plist] 1869 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IO80211Family.kext/Contents/PlugIns/AirPortAtheros40.kext/Contents/Info.plist] 2545 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IO80211Family.kext/Contents/PlugIns/AirPortBrcm4331.kext/Contents/Info.plist] 2480 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IO80211Family.kext/Contents/PlugIns/AppleAirPortBrcm43224.kext/Contents/Info.plist] 2827 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IO80211Family.kext/Contents/PlugIns/IO80211NetBooter.kext/Contents/Info.plist] 2013 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOAcceleratorFamily.kext/Contents/Info.plist] 1876 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOACPIFamily.kext/Contents/Info.plist] 1678 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOAHCIFamily.kext/Contents/Info.plist] 1603 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOAHCIFamily.kext/Contents/PlugIns/IOAHCIBlockStorage.kext/Contents/Info.plist] 2180 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOAHCIFamily.kext/Contents/PlugIns/IOAHCISerialATAPI.kext/Contents/Info.plist] 2429 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOATAFamily.kext/Contents/Info.plist] 1641 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOATAFamily.kext/Contents/PlugIns/AppleIntelPIIXATA.kext/Contents/Info.plist] 6218 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOATAFamily.kext/Contents/PlugIns/IOATABlockStorage.kext/Contents/Info.plist] 2120 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOATAFamily.kext/Contents/PlugIns/IOATAPIProtocolTransport.kext/Contents/Info.plist] 2493 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOAudioFamily.kext/Contents/Info.plist] 1753 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOAVBFamily.kext/Contents/Info.plist] 2355 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOAVBFamily.kext/Contents/PlugIns/IOAVBDiscoveryPlugin.kext/Contents/Info.plist] 2719 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOAVBFamily.kext/Contents/PlugIns/IOAVBPlugin.kext/Contents/Info.plist] 4867 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOAVBFamily.kext/Contents/PlugIns/IOMRPPlugin.kext/Contents/Info.plist] 5578 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOBDStorageFamily.kext/Contents/Info.plist] 2578 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOBluetoothFamily.kext/Contents/PlugIns/IOBluetoothUSBDFU.kext/Contents/Info.plist] 8250 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOCDStorageFamily.kext/Contents/Info.plist] 3079 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IODVDStorageFamily.kext/Contents/Info.plist] 2525 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOFireWireAVC.kext/Contents/Info.plist] 3968 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOFireWireFamily.kext/Contents/Info.plist] 2368 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOFireWireFamily.kext/Contents/PlugIns/AppleFWOHCI.kext/Contents/Info.plist] 2835 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOFireWireIP.kext/Contents/Info.plist] 2110 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOFireWireIP.kext/Contents/PlugIns/IOFireWireIPPrivate.kext/Contents/Info.plist] 2554 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOFireWireSBP2.kext/Contents/Info.plist] 2875 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOFireWireSerialBusProtocolTransport.kext/Contents/Info.plist] 2643 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOGraphicsFamily.kext/Info.plist] 3289 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOHDIXController.kext/Contents/Info.plist] 2253 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOHDIXController.kext/Contents/PlugIns/AppleDiskImagesCryptoEncoding.kext/Contents/Info.plist] 2548 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOHDIXController.kext/Contents/PlugIns/AppleDiskImagesFileBackingStore.kext/Contents/Info.plist] 2325 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOHDIXController.kext/Contents/PlugIns/AppleDiskImagesHTTPBackingStore.kext/Contents/Info.plist] 2322 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOHDIXController.kext/Contents/PlugIns/AppleDiskImagesKernelBacked.kext/Contents/Info.plist] 2558 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOHDIXController.kext/Contents/PlugIns/AppleDiskImagesPartitionBackingStore.kext/Contents/Info.plist] 2549 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOHDIXController.kext/Contents/PlugIns/AppleDiskImagesRAMBackingStore.kext/Contents/Info.plist] 2307 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOHDIXController.kext/Contents/PlugIns/AppleDiskImagesReadWriteDiskImage.kext/Contents/Info.plist] 2291 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOHDIXController.kext/Contents/PlugIns/AppleDiskImagesSparseDiskImage.kext/Contents/Info.plist] 2273 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOHDIXController.kext/Contents/PlugIns/AppleDiskImagesUDIFDiskImage.kext/Contents/Info.plist] 2573 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOHIDFamily.kext/Contents/Info.plist] 2839 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDEventDriver.kext/Contents/Info.plist] 2420 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDEventDriverSafeBoot.kext/Contents/Info.plist] 11673 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDSystem.kext/Contents/Info.plist] 1787 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOHIDFamily.kext/Contents/PlugIns/IOHIDUserClient.kext/Contents/Info.plist] 4016 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IONDRVSupport.kext/Info.plist] 3073 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IONetworkingFamily.kext/Contents/Info.plist] 2529 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IONetworkingFamily.kext/Contents/PlugIns/AppleBCM5701Ethernet.kext/Contents/Info.plist] 4168 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IONetworkingFamily.kext/Contents/PlugIns/AppleIntel8254XEthernet.kext/Contents/Info.plist] 3180 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IONetworkingFamily.kext/Contents/PlugIns/AppleRTL8169Ethernet.kext/Contents/Info.plist] 4309 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IONetworkingFamily.kext/Contents/PlugIns/AppleUSBEthernet.kext/Contents/Info.plist] 5309 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IONetworkingFamily.kext/Contents/PlugIns/AppleUSBGigEthernet.kext/Contents/Info.plist] 4984 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IONetworkingFamily.kext/Contents/PlugIns/AppleYukon2.kext/Contents/Info.plist] 23266 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IONetworkingFamily.kext/Contents/PlugIns/Intel82574L.kext/Contents/Info.plist] 3147 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IONetworkingFamily.kext/Contents/PlugIns/IOEthernetAVBController.kext/Contents/Info.plist] 1738 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IONetworkingFamily.kext/Contents/PlugIns/nvenet.kext/Contents/Info.plist] 2431 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOPCIFamily.kext/Info.plist] 2780 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/Info.plist] 1866 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/PlugIns/ACPI_SMC_PlatformPlugin.kext/Contents/Info.plist] 2642 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/PlugIns/AppleSMCPDRC.kext/Contents/Info.plist] 2170 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/PlugIns/IOPlatformPluginLegacy.kext/Contents/Info.plist] 1941 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/PlugIns/X86PlatformPlugin.kext/Contents/Info.plist] 2811 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOPlatformPluginFamily.kext/Contents/PlugIns/X86PlatformShim.kext/Contents/Info.plist] 2132 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOSCSIArchitectureModelFamily.kext/Contents/Info.plist] 2471 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOSCSIArchitectureModelFamily.kext/Contents/PlugIns/IOSCSIBlockCommandsDevice.kext/Contents/Info.plist] 2573 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOSCSIArchitectureModelFamily.kext/Contents/PlugIns/IOSCSIMultimediaCommandsDevice.kext/Contents/Info.plist] 2446 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOSCSIArchitectureModelFamily.kext/Contents/PlugIns/IOSCSIReducedBlockCommandsDevice.kext/Contents/Info.plist] 2238 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOSCSIArchitectureModelFamily.kext/Contents/PlugIns/SCSITaskUserClient.kext/Contents/Info.plist] 4960 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOSCSIParallelFamily.kext/Contents/Info.plist] 1712 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOSerialFamily.kext/Contents/Info.plist] 2542 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOSerialFamily.kext/Contents/PlugIns/AppleUSBIrDA.kext/Contents/Info.plist] 2229 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOSerialFamily.kext/Contents/PlugIns/AppleWWANSupport.kext/Contents/Info.plist] 4960 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOSerialFamily.kext/Contents/PlugIns/AppleWWANSupport1.kext/Contents/Info.plist] 7486 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOSerialFamily.kext/Contents/PlugIns/AppleWWANSupport2.kext/Contents/Info.plist] 2201 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOSMBusFamily.kext/Contents/Info.plist] 1491 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOStorageFamily.kext/Contents/Info.plist] 5912 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOStreamFamily.kext/Contents/Info.plist] 1398 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOStreamFamily.kext/Contents/PlugIns/IOStreamUserClient.kext/Contents/Info.plist] 1984 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOSurface.kext/Contents/Info.plist] 2181 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOThunderboltFamily.kext/Contents/Info.plist] 1709 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOTimeSyncFamily.kext/Contents/Info.plist] 1748 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOTimeSyncFamily.kext/Contents/PlugIns/IO8021ASPlugin.kext/Contents/Info.plist] 2841 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBAttachedSCSI.kext/Contents/Info.plist] 2955 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/Info.plist] 1797 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBCDC.kext/Contents/Info.plist] 15650 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBCDCACMControl.kext/Contents/Info.plist] 1976 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBCDCACMData.kext/Contents/Info.plist] 9481 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBCDCDMM.kext/Contents/Info.plist] 1984 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBCDCECMControl.kext/Contents/Info.plist] 2049 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBCDCECMData.kext/Contents/Info.plist] 3311 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBCDCEEM.kext/Contents/Info.plist] 2013 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBCDCWCM.kext/Contents/Info.plist] 1916 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBEHCI.kext/Contents/Info.plist] 2266 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBHub.kext/Contents/Info.plist] 2388 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBMergeNub.kext/Contents/Info.plist] 54239 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBOHCI.kext/Contents/Info.plist] 2201 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBOpticalMouse.kext/Contents/Info.plist] 6821 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBUHCI.kext/Contents/Info.plist] 2219 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBVideoSupport.kext/Contents/Info.plist] 5461 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/AppleUSBXHCI.kext/Contents/Info.plist] 2279 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/IOUSBCompositeDriver.kext/Contents/Info.plist] 3267 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/IOUSBHIDDriver.kext/Contents/Info.plist] 2308 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/IOUSBHIDDriverSafeBoot.kext/Contents/Info.plist] 5318 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBFamily.kext/Contents/PlugIns/IOUSBUserClient.kext/Contents/Info.plist] 3504 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUSBMassStorageClass.kext/Contents/Info.plist] 6148 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOUserEthernet.kext/Contents/Info.plist] 3093 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOVideoFamily.kext/Contents/Info.plist] 1462 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/IOVideoFamily.kext/Contents/PlugIns/IOVideoDeviceUserClient.kext/Contents/Info.plist] 2209 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/iPodDriver.kext/Contents/Info.plist] 3937 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/iPodDriver.kext/Contents/PlugIns/iPodSBCDriver.kext/Contents/Info.plist] 2995 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/JMicronATA.kext/Contents/Info.plist] 2231 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/mcxalr.kext/Contents/Info.plist] 1324 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/msdosfs.kext/Contents/Info.plist] 1504 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/ntfs.kext/Contents/Info.plist] 1630 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/NullCPUPowerManagement.kext/Contents/Info.plist] 1498 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/NVDAGF100Hal.kext/Contents/Info.plist] 2375 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/NVDAGK100Hal.kext/Contents/Info.plist] 1879 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/NVDANV50Hal.kext/Contents/Info.plist] 2427 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/NVDAResman.kext/Contents/Info.plist] 2607 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/NVSMU.kext/Contents/Info.plist] 1977 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/OSvKernDSPLib.kext/Contents/Info.plist] 1356 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/PPP.kext/Contents/Info.plist] 1742 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/PromiseSTEX.kext/Contents/Info.plist] 2494 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/Quarantine.kext/Contents/Info.plist] 1870 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/RadeonHD.kext/Contents/Info.plist] 2561 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/RealtekRTL81xx.kext/Contents/Info.plist] 1969 bytes.  </p>
+<blockquote>
+<p>…………………………………………………………………….  </p>
+</blockquote>
+<p>Read HFS+ file: [hd(0,2)/System/Library/Extensions/EVOenabler.kext/Contents/MacOS/EVOenabler] 4096 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/EVOenabler.kext/Contents/MacOS/EVOenabler] 36264 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/FakeSMC.kext/Contents/MacOS/fakesmc] 4096 bytes.<br>Read HFS+ file: [hd(0,2)/System/Library/Extensions/FakeSMC.kext/Contents/MacOS/fakesmc] 55992 bytes.  </p>
+<blockquote>
+<p>…………………………………………………………………….  </p>
+</blockquote>
+<p>Starting Darwin x86_64<br>Boot Args: boot-uuid=4159DDB1-8659-378A-8D3C-C8366B8B54EF rd=*uuid -v</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/348685666/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/348685666/" class="post-title-link" itemprop="url">1、基础概念，文件说明</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2013-03-20 20:19:00" itemprop="dateCreated datePublished" datetime="2013-03-20T20:19:00+08:00">2013-03-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hackintosh/" itemprop="url" rel="index"><span itemprop="name">Hackintosh</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hackintosh/%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">原理</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>SMC芯片<br>-———————-  </p>
+<blockquote>
+<p>用来认证是否为苹果电脑的芯片。  </p>
+</blockquote>
+<p>VendorID、DeviceID<br>-————————-  </p>
+<blockquote>
+<p>系统中的每个设备都有他的VendorID（厂商ID）和DevieID（设备ID）  </p>
+</blockquote>
+<p>内核缓存<br>-———————  </p>
+<blockquote>
+<p>内核缓存可以加快启动速度，它使内核不用一个一个的加载驱动，所以启动速度快  </p>
+<p>重建缓存<br>安装了新的kext要重建缓存，如果不重建缓存，新kext将无效  </p>
+</blockquote>
+<p>KEXT<br>-———————-  </p>
+<blockquote>
+<p>Kext是Kernel extension（内核拓展）的缩写，相当于Win下的驱动，linux的模块<br>通常是在/System/Library/Extensions目录下  </p>
+</blockquote>
+<p>QE/CI<br>-———————-  </p>
+<blockquote>
+<p>Quartz Extreme and Core Image。Mac系统里两种用来保证显卡加速的技术<br>作用：<br>没有开启QE/CI时，CPU是唯一承担全部运算任务的组件。<br>你将不能观赏高清电影例如DVD，DivX，而且系统运行将变得迟缓</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>-———————————————  </p>
+<blockquote>
+<blockquote>
+<p>黑苹果相关  </p>
+</blockquote>
+</blockquote>
+<p>-——————————————–<br>引导软件：  </p>
+<blockquote>
+<p>HJMAC、XPC、变色龙、CLover。这些都是引导软件，选一种使用即可  </p>
+</blockquote>
+<p>org.apple.Boot.plist：变色龙配置文件  </p>
+<p>DSDT.aml<br>-———————-  </p>
+<blockquote>
+<p>提供硬件配置信息,为mac自动加载驱动做准备。<br>要通过变色龙加载，即写入org.apple.Boot.plist  </p>
+</blockquote>
+<blockquote>
+<p>.aml<br>ACPI Machine Language：ACPI机器语言，后缀为.aml<br>当从系统中提取出DSDT以及其他ACPI表时，为该格式  </p>
+<p>.dsl<br>要修改的话，DSDT需要先反编译成.dsl文件才能修改<br>DSDT_editor可以加载aml文件，它直接反编译了  </p>
+</blockquote>
+<p>smbios.plist  </p>
+<blockquote>
+<p>提供机型信息来设定机型，设定什么机型mac就按照什么机型去管理电脑。<br>根据CPU的类型来挑选一个模板（IntelCPU）<br>要通过变色龙加载，即写入org.apple.Boot.plist</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>Fakesmc.kext  </p>
+<blockquote>
+<p>模拟smc芯片的驱动，必备。<br>FakeSMC文件设置的机型必须与smbios.plist相对应  </p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/4063874116/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/4063874116/" class="post-title-link" itemprop="url">[转载]Mac OS X 系统启动过程</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2013-03-13 08:21:00" itemprop="dateCreated datePublished" datetime="2013-03-13T08:21:00+08:00">2013-03-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hackintosh/" itemprop="url" rel="index"><span itemprop="name">Hackintosh</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hackintosh/%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">原理</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>转自：<a target="_blank" rel="noopener" href="http://nbbbs.zol.com.cn/24/544_237379.html">http://nbbbs.zol.com.cn/24/544_237379.html</a><br>文章是07年的，有点旧  </p>
+<p>启动过程：<br>1、 电源开启。<br>2、 执行固件中的代码。<br>3、 收集硬件信息并初始硬件。<br>4、 选择启动项（通常是选择 OS ，但有时会选择硬件测试等类似情况。）。用户可能会被提示进行启动选择。<br>5、 控制权交给 /System/Library/CoreServices/BootX （启动引导器）。 BootX 载入内核并描绘 OS 标识（如有）。BootX 尝试载入先前缓存的设备驱动列表（根据 /usr/sbin/kextcache 进行创建或更新）。缓存的类型为 mkext 且为多内核扩展包含了信息词典（info dictionaries）与二进制文件。注意：如果 mkext 缓存丢失或损坏，BootX 将在 /System/Library/Extensions 中搜索当前方案中所需要的扩展（由该扩展包中 Info.plist 文件的 OSBundleRequired 属性值进行决定。）<br>6、 执行内核中的 init 例程。决定要启动之系统的根设备。从此刻起，将不再使用固件中的程序。<br>7、 由内核初始各种 Mach/BSD 数据结构。<br>8、 初始 I/O （输入输出）设备。<br>9、 内核开始运行 /sbin/mach_init ，Mach 服务命名（引导程序）后台。mach_init 为服务名和要准备访问其它服务所用的 Mach 端口提供映射。<br>到这步时，启动开始转为用户等级：<br>10、 mach_init 开始 /sbin/init，传统的 BSD 初始化（init）进程。初始化将决定运行等级，并运行 /etc/rc.boot （设置让机器能够运行单用户－single user 模式）。<br>在此步中，将执行： rc.boot 与其它 rc 脚本源程序 /etc/rc.common，一个包含实用功能的 shell 脚本，如 CheckForNetwork() （检查如网络已启动）， GetPID(), purgedir() （仅删除目录内容， 而非结构），等。<br>11、 rc.boot 会显示要启动的类型（多用户，安全模式，光驱，网络等等）。网络启动的情况下（ sysctl 的变量 kern.netboot 将会为何种情况而设之为 1 ），其将用一个启动参数来运行 /etc/rc.netboot 。<br>/etc/rc.netboot 会处理网络启动的参数特征。例如:执行网络和（如有）本地挂载。其还会呼叫 /usr/bin/nbst 来关联当作根设备使用的磁盘镜像到一个影子文件（shadow file）。此方法是将那个希望处于本地存储器的文件（磁盘）重定向写入到影子文件。<br>12、 rc.boot 会在必须进行文件系统一致性检查（file system consistency check， fsck）时，显示图形。单用户模式和用光盘启动时不会运行 fsck。安全模式启动时总会运行 fsck。rc.boot 也会处理 fsck 的返回状态。<br>13、 如果 rc.boot 成功退出， /etc/rc 多用户启动脚本将会运行。如果正在从一个光驱启动，脚本将切换到 /etc/rc.cdrom （安装）。<br>14、 /etc/rc 挂载本地文件系统 (HFS+、HFS、UFS、/dev/fd、/.vol)，确保目录 /private/var/tmp 存在，然后运行 /etc/rc.installer_cleanup 如果有（重启前，会由安装器离开）。<br>15、 /etc/rc.cleanup 运行。其将“清理”一定数量的 Unix 与 Mac 特殊目录/文件。<br>16、 启动缓存 （BootCache）开始。<br>17、 各种 sysctl 变量被设置（如：vnodes 的最大值、System V IPC 等）。如果 /etc/sysctl.conf 已存在 (在 Mac OS X Server 中为 /etc/sysctl-macosxserver.conf)，它将读取和设置 sysctl 变量为已包含在其中的。<br>18、 syslogd 开始。<br>19、 创建机器检查符号文件（Mach symbol file）。<br>20、 /etc/rc 开始 kextd 后台进程，用来从内核或委托进程 （client processes）加载所需的内核扩展。<br>21、 /usr/libexec/register_mach_bootstrap_servers 将运行以加载包含在 /etc/mach_init.d 中的各种 Mach 引导程序所基于的服务。<br>22、 portmap 与 netinfo 开始。<br>23、 如 /System/Library/Extensions.mkext 旧于 /System/Library/Extensions， /etc/rc 将删除已存在的 mkext 并创建一个新的（不存在时，会创建）。<br>24、 /etc/rc 启动 /usr/sbin/update，一个后台程序，用来频繁地清空磁盘上的互联网文件系统缓存。<br>25、 /etc/rc 启动虚拟内存系统。 设置 /private/var/vm 为一个交换目录。/sbin/dynamic_pager 以适当的参数启动（交换文件名路径模板、已创建的交换文件大小、当创建额外交换文件或删除已存在文件时，指定高、低水平的警报切换开关。）<br>26、 /etc/rc 启动 /usr/libexec/fix_prebinding 以修复错误地预连编二进制文件 （prebound binaries）<br>27、 /etc/rc 执行 /etc/rc.cleanup 以清除并重置文件与设备。<br>28、 /etc/rc 最后将启动 /sbin/SystemStarter ，处理启动项从下列位置： /System/Library/StartupItems 与 /Library/StartupItems。一个启动项是一个程序、一个 shell 脚本、匹配一个文件夹名的名称。文件夹包含一个属性列表文件含有一些配对的关键值，如： Deion、Provides、Requires、 OrderPreference、启动与停止信息等等。您可以运行 SystemStarter -n -D 以作为根用户 (root) 来进行程序打印调试与从属信息（不包含现在已经在运行的任何项目）。<br>29、 CoreGraphics 启动开始 Apple 类型服务后台(ATSServer) 和 Window 服务器 (WindowServer)。<br>默认下，loginwindow 程序 (loginwindow.app 位于 /System/Library/CoreServices 目录下) 已为控制设备执行。如果您不想运行到图形登录，可以修改 /etc/ttys 中相关的行。</p>
 
       
     </div>
@@ -1424,7 +1482,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/10/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/37/">37</a><a class="extend next" rel="next" href="/page/12/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/10/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/12/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 

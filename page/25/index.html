@@ -244,20 +244,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">366</span>
+          <span class="site-state-item-count">282</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">66</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">58</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -303,7 +303,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/542090570/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/607051261/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -319,7 +319,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/542090570/" class="post-title-link" itemprop="url">excle超链接被限制</a>
+            <a href="/posts/607051261/" class="post-title-link" itemprop="url">ubuntu10.04 安装 OCS Inventory + GLPI</a>
         </h2>
 
         <div class="post-meta">
@@ -329,15 +329,28 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2012-06-19 13:43:00" itemprop="dateCreated datePublished" datetime="2012-06-19T13:43:00+08:00">2012-06-19</time>
+              <time title="创建时间：2011-05-03 12:00:00" itemprop="dateCreated datePublished" datetime="2011-05-03T12:00:00+08:00">2011-05-03</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:51" itemprop="dateModified" datetime="2020-08-04T09:51:51+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/server/" itemprop="url" rel="index"><span itemprop="name">server</span></a>
+                </span>
+            </span>
 
           
 
@@ -348,12 +361,98 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>问题：由于本机的限制,该操作已被取消。请于系统管理员联系  </p>
-<p>解决方法：<br>1、在Excel中选择“工具→自动更正”，单击“键入时自动套用格式”选项卡，勾选“Internet 及网络路径替换为超级链接”复选框（如果已勾选，则取消之）。  </p>
-<p>其他可能设置<br>2、在Excel中选择 工具- 选项-编辑-请求制动更新链接处有没打勾  </p>
-<p>3、检查IE是否系统默认浏览器，如果不是，进入IE的“Internet 属性”－》“程序”选项卡中，勾选“检查IE是否默认浏览器”，并点击“重置web设置”。  </p>
-<p>引自：<br><a target="_blank" rel="noopener" href="http://zhidao.baidu.com/question/244737746.html">http://zhidao.baidu.com/question/244737746.html</a>  </p>
-<p><a target="_blank" rel="noopener" href="http://blog.sina.com.cn/s/blog/_49f78a4b01008hox.html">http://blog.sina.com.cn/s/blog\_49f78a4b01008hox.html</a></p>
+          <p>1、ocs ：IT设备<strong>配置</strong>管理</p>
+<p>2、glpi ：IT设备<strong>资产</strong>管理</p>
+<p>-———————————————————————————————————————————-</p>
+<p>方法一：编译安装</p>
+<p>安装服务端</p>
+<p>1、sudo apt-get install apache2 apache2-doc </p>
+<p>     sudo su -c ‘ echo ServerName 127.0.1.1 &gt;&gt; /etc/apache2/apache2.conf’</p>
+<p>     sudo /etc/init.d/apache2 reload</p>
+<p>2、sudo apt-get install mysql-server</p>
+<p>3、sudo apt-get install php5 php5-cgi php5-cli php5-dev php5-gd php5-mysql libapache2-mod-php5 </p>
+<p>4、sudo apt-get install \</p>
+<p>     dmidecode nmap perl libapache-dbi-perl libapache2-mod-perl2 libcompress-zlib-perl       \</p>
+<p>     libcrypt-ssleay-perl libdbd-mysql-perl libdbi-perl libdigest-md5-perl libmodule-install-perl  \</p>
+<p>     libnet-cups-perl libnet-ip-perl libnet-snmp-perl libnet-ssleay-perl libnmap-parser-perl        \</p>
+<p>     libphp-pclzip libproc-daemon-perl libproc-pid-file-perl libsoap-lite-perl libwww-perl            \</p>
+<p>     libxml-simple-perl</p>
+<p>       #安装perl相关，另外nmblookup已经有了</p>
+<p>5、安装zip</p>
+<p>     sudo apt-get install libpcre3 libpcre3-dev</p>
+<p>     <a target="_blank" rel="noopener" href="http://pecl.php.net/package/zip">下载zip</a> </p>
+<p>     tar -xvf zip-1.10.2.tgz</p>
+<p>     cd zip-1.10.2</p>
+<p>     phpize</p>
+<p>     ./configure</p>
+<p>     make</p>
+<p>     sudo make install </p>
+<p>6、安装 XML-Entities</p>
+<p>     wget <a target="_blank" rel="noopener" href="http://mirror.osqdu.org/CPAN/authors/id/S/SI/SIXTEASE/XML-Entities-1.0000.tar.gz">http://mirror.osqdu.org/CPAN/authors/id/S/SI/SIXTEASE/XML-Entities-1.0000.tar.gz</a></p>
+<p>      tar -xvf XML-Entities-1.0000.tar.gz</p>
+<p>      cd XML-Entities</p>
+<p>      perl Makefile.PL</p>
+<p>      make</p>
+<p>      sudo make install</p>
+<p>      或者</p>
+<p>       cpan -i XML:Entities</p>
+<p>7、安装OCS</p>
+<p>      wget \</p>
+<p>      <a target="_blank" rel="noopener" href="http://launchpad.net/ocsinventory-server/stable-2.0/2.0rc4/+download/OCSNG/_UNIX/_SERVER-2.0rc4.tar.gz">http://launchpad.net/ocsinventory-server/stable-2.0/2.0rc4/+download/OCSNG\_UNIX\_SERVER-2.0rc4.tar.gz</a></p>
+<p>      tar -xvf OCSNG_UNIX_SERVER-2.0rc4.tar.gz</p>
+<p>      cd OCSNG_UNIX_SERVER-2.0rc4</p>
+<p>      sudo sh ./setup.sh  #默认到底</p>
+<p>8、sudo /etc/init.d/apache2 restart</p>
+<p>9、浏览器打开：</p>
+<p>     <a target="_blank" rel="noopener" href="http://127.0.0.1/ocsreports">http://127.0.0.1/ocsreports</a></p>
+<p>     login MYSQL:                root</p>
+<p>     Mot de passe MYSQL:   密码</p>
+<p>     Nom de la base donnée: 要创建的数据库名，默认即可</p>
+<p>     MYSQL HostName:        localhost</p>
+<p>     <a target="_blank" rel="noopener" href="http://127.0.0.1/ocsreports/index.php">http://127.0.0.1/ocsreports/index.php</a></p>
+<p>     admin：admin</p>
+<p>10、sudo rm /usr/share/ocsinventory-reports/ocsreports/install.php</p>
+<p>     重设admin密码</p>
+<p>     重设ocs数据库的连接密码</p>
+<p>           1、改ocs的密码</p>
+<p>           2、改/usr/share/ocsinventory-reports/ocsreports/dbconfig.inc.php里面的代码</p>
+<p>-—————————————————-</p>
+<p>安装客户端</p>
+<p>wget \</p>
+<p>      <a target="_blank" rel="noopener" href="http://launchpad.net/ocsinventory-unix-agent/stable-2.0/2.0rc4/+download/Ocsinventory-Agent-2.0rc4.tar.gz">http://launchpad.net/ocsinventory-unix-agent/stable-2.0/2.0rc4/+download/Ocsinventory-Agent-2.0rc4.tar.gz</a></p>
+<p>      tar -xvf Ocsinventory-Agent-2.0rc4.tar.gz</p>
+<p>      cd Ocsinventory-Agent-2.0rc4</p>
+<p>      perl Makefile.PL</p>
+<p>      make</p>
+<p>      sudo make install   #要设置server的计算机名，其他默认即可</p>
+<p>-———————————————————————————————————————————–</p>
+<p>方法二：apt-get安装</p>
+<p>1、安装ampp，同方法一：1、2、3</p>
+<p>2、安装perl插件，同方法一：4、5、6</p>
+<p>3、sudo apt-get install ocsinventory-server  ocsinventory-reports  </p>
+<p> #设置mysql的密码，设置ocs数据库的密码</p>
+<p>4、sudo apt-get install ocsinventory-agent</p>
+<p>5、sudo  dpkg-reconfigure ocsinventory-agent </p>
+<p>6、sudo ocsinventory-agent</p>
+<p>-———————————————————————————————————————————–<br>中文化：<br>暂无<br>-———————————————————————————————————————————–  </p>
+<p>GLPI安装：</p>
+<p>tar -xvf glpi-0.78.4.tar.gz</p>
+<p>sudo mv glpi /var/www</p>
+<p>cd /var/www</p>
+<p>sudo chown -R www-data:www-data glpi</p>
+<p><a target="_blank" rel="noopener" href="http://localhost/glpi">http://localhost/glpi</a> 设置</p>
+<p>-————————————————————————————————————————————</p>
+<p>参考：</p>
+<p>1、扩展阅读：<a target="_blank" rel="noopener" href="http://ossbox.net/open-source-IT-Asset-Mgmt">开源IT资产管理</a></p>
+<p>-—————————————————–</p>
+<p>1、<a target="_blank" rel="noopener" href="http://doc.ubuntu-fr.org/ocs_inventory%7C#installation_du_client_linux">OCS Inventory</a></p>
+<p><a target="_blank" rel="noopener" href="http://doc.ubuntu-fr.org/ocs_inventory%7C#installation_du_client_linux"></a>2、<a target="_blank" rel="noopener" href="http://wiki.ocsinventory-ng.org/index.php/Documentation:Main">OCS Inventory NG 2.x Documentation</a>  </p>
+<p>2、<a target="_blank" rel="noopener" href="http://www.itpub.net/thread-1321323-1-1.html">IT Inventory and Resource Management with OCS Inventory NG 1.02.pdf</a></p>
+<p>3、<a target="_blank" rel="noopener" href="http://zhjack.blog.163.com/blog/static/143149200810702324478/">Ubuntu下安装 OCS Inventory 电脑资产管理系统</a></p>
+<p>4、<a target="_blank" rel="noopener" href="http://viong.blog.51cto.com/844766/503694">(三)开源IT资产管理系统–&gt;OCS（unix）客户端代理安装</a></p>
+<p>5、<a target="_blank" rel="noopener" href="http://hi.baidu.com/kan_jian/blog/item/ae5c5a3411e64e3c5bb5f59f.html">这几天在装ocs inventory</a></p>
+<p>-—————————————————-</p>
+<p>1、<a target="_blank" rel="noopener" href="http://www.glpi-project.org/wiki/doku.php?id=en:manual:admin:0_index">GLPI Administration Manual</a><br>2、<a target="_blank" rel="noopener" href="http://viong.blog.51cto.com/844766/503735">(四)开源IT资产管理系统–&gt;部署GLPI与OCS数据同步</a></p>
 
       
     </div>
@@ -373,7 +472,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2200098253/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2125441215/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -389,7 +488,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/2200098253/" class="post-title-link" itemprop="url">winxp下安装字体</a>
+            <a href="/posts/2125441215/" class="post-title-link" itemprop="url">ubuntu10.04 安装 itdb 1.1</a>
         </h2>
 
         <div class="post-meta">
@@ -399,15 +498,28 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2012-06-14 14:37:00" itemprop="dateCreated datePublished" datetime="2012-06-14T14:37:00+08:00">2012-06-14</time>
+              <time title="创建时间：2011-04-28 15:07:00" itemprop="dateCreated datePublished" datetime="2011-04-28T15:07:00+08:00">2011-04-28</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:52" itemprop="dateModified" datetime="2020-08-04T09:51:52+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/server/" itemprop="url" rel="index"><span itemprop="name">server</span></a>
+                </span>
+            </span>
 
           
 
@@ -418,11 +530,32 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>系统原先是win7，后来装了winxp。<br>重装之前把win7的字体全部复制出来了 ，然后装好后进winpe把字体复制回去了，<br>结果复制进去的字体一个多找不到  </p>
-<p>解决方法：<br><a target="_blank" rel="noopener" href="http://wenku.baidu.com/view/9772b5c18bd63186bcebbcb9.html">http://wenku.baidu.com/view/9772b5c18bd63186bcebbcb9.html</a>  </p>
-<p>1、cmd下输入 attrib +s +c c:\windows\fonts  </p>
-<p>2、c:\windows\fonts\desktop.ini下写入<br>[.ShellClassInfo]<br>UICLSID ={BD84B380 -8CA2 -1069 -ABID -08000948F534}  </p>
-<p>里面的第三种是文件被病毒破坏<br>c:\windows\system32\fontext.dll</p>
+          <p>itdb:IT资产库存管理软件 <a target="_blank" rel="noopener" href="http://www.sivann.gr/software/itdb/">http://www.sivann.gr/software/itdb/</a></p>
+<p>可以全部导出为xls格式，亦可导出数据库等，除了英文，其他多挺好用的</p>
+<p>0、sudo apt-get install apache2 libapache2-mod-php5 php5-sqlite sqlite3</p>
+<p>1、 tar -xvf itdb-1.1.tar.gz</p>
+<p> sudo mv itdb /var/www</p>
+<p>2、cd /var/www/itdb</p>
+<p> sudo mv pure.db itdb.db</p>
+<p>3、sudo cp /etc/apache2/sites-available/default /etc/apache2/sites-available/itdb</p>
+<p> sudo nano /etc/apache2/sites-available/itdb</p>
+<p> 1&gt;修改DocumentRoot /var/www             为 DocumentRoot /var/www/itdb</p>
+<p> 2&gt;修改&lt;DocumentRoot /var/www&gt;         为 &lt;DocumentRoot /var/www/itdb&gt;</p>
+<p> 3&gt;修改Error /var/log/apache2/error.log 为 Error /var/log/apache2/error-itdb.log</p>
+<p> 4&gt; 修改CustomLog /var/log/apache2/access.log combined 为</p>
+<p> CustomLog /var/log/apache2/access-itdb.log combined</p>
+<p> sudo a2dissite default &amp;&amp; sudo a2ensite itdb</p>
+<p> sudo /etc/init.d/apache2 restart</p>
+<p>4、cd /var/www/itdb</p>
+<p> sudo chown www-data itdb.db </p>
+<p> sudo chmod u+w itdb.db </p>
+<p>5、cd /var/www</p>
+<p> sudo chown www-data itdb</p>
+<p> sudo chmod u+w itdb</p>
+<p> sudo chown www-data /var/www/itdb/files/</p>
+<p> sudo chmod u+w /var/www/itdb/files/</p>
+<p>6、sudo nano conf.php 修改公司名、公司logo等</p>
+<p>访问：<a target="_blank" rel="noopener" href="http://localhost/">http://localhost</a></p>
 
       
     </div>
@@ -442,7 +575,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3846105662/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/4056534827/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -458,7 +591,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/3846105662/" class="post-title-link" itemprop="url">ubuntus 最佳方案 -8 squidGuard</a>
+            <a href="/posts/4056534827/" class="post-title-link" itemprop="url">compiz用法</a>
         </h2>
 
         <div class="post-meta">
@@ -468,15 +601,28 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2012-05-29 15:04:00" itemprop="dateCreated datePublished" datetime="2012-05-29T15:04:00+08:00">2012-05-29</time>
+              <time title="创建时间：2011-03-25 08:30:00" itemprop="dateCreated datePublished" datetime="2011-03-25T08:30:00+08:00">2011-03-25</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:51" itemprop="dateModified" datetime="2020-08-04T09:51:51+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/Q-A/" itemprop="url" rel="index"><span itemprop="name">Q&A</span></a>
+                </span>
+            </span>
 
           
 
@@ -487,11 +633,16 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>安装<br>sudo apt-get install squid<br>sudo apt-get install squidguard  </p>
-<p>正向代理：<br>反向代理：对外表现为WEB服务器，但是数据不在代理服务器上，从而增加安全性<br>透明代理：代理服务器做网关，从而不用去设置浏览器  </p>
-<p>ACL规则、语法等该书没多少介绍，有机会最好专门读一下  </p>
-<p>关于squidguard<br>专门的访问控制插件，功能很强大  </p>
-<p>建议这一章还是读专门的书比较好</p>
+          <p>Ctrl+Alt+鼠标左键：将各虚拟桌面变成正立方体的四个面<br>Ctrl+Alt+左方向键：滚动正立方体以切换至左方虚拟桌面<br>Ctrl+Alt+右方向键：滚动正立方体以切换至右方虚拟桌面<br>Alt+Tab              ：切换至同一个桌面的下个窗口</p>
+<p>Win+Tab             ：绚丽的窗口切换效果</p>
+<p>Win+E                ：平铺排列虚拟桌面</p>
+<p>Win+W               ：平铺窗口</p>
+<p>Win+鼠标滚轮      ：放大或者缩小屏幕<br>Alt+鼠标滚轮        ：改变窗口的透明度  </p>
+<p>Win+鼠标左键             ：截图</p>
+<p>CTRL+ALT+D             ：显示桌面  </p>
+<p>参考：</p>
+<p><a target="_blank" rel="noopener" href="http://wiki.compiz.org/CommonKeyboardShortcuts">http://wiki.compiz.org/CommonKeyboardShortcuts</a></p>
+<p><a target="_blank" rel="noopener" href="http://ulyssesonline.com/2007/10/25/compiz-fusion-keyboard-shortcuts/">http://ulyssesonline.com/2007/10/25/compiz-fusion-keyboard-shortcuts/</a></p>
 
       
     </div>
@@ -511,7 +662,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/813387320/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/77642516/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -527,7 +678,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/813387320/" class="post-title-link" itemprop="url">母亲节</a>
+            <a href="/posts/77642516/" class="post-title-link" itemprop="url">CONKY配置</a>
         </h2>
 
         <div class="post-meta">
@@ -537,15 +688,28 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2012-05-17 11:51:00" itemprop="dateCreated datePublished" datetime="2012-05-17T11:51:00+08:00">2012-05-17</time>
+              <time title="创建时间：2011-03-19 15:35:00" itemprop="dateCreated datePublished" datetime="2011-03-19T15:35:00+08:00">2011-03-19</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:52" itemprop="dateModified" datetime="2020-08-04T09:51:52+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/Q-A/" itemprop="url" rel="index"><span itemprop="name">Q&A</span></a>
+                </span>
+            </span>
 
           
 
@@ -556,7 +720,136 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><img src="http://img0.ph.126.net/Fbjdh05ezirl-CfMUCI6Bw==/2602799109660461860.gif" alt="母亲节 - leaf - ------坚持雅操------" title="母亲节 - leaf - ------坚持雅操------"></p>
+          <p><img src="http://img128.ph.126.net/B6XKezhP09_iTUMhkmgO3A==/1621858815808469013.jpg" alt="CONKY配置 - leaf - ------坚持雅操------" title="CONKY配置 - leaf - ------坚持雅操------"></p>
+<p> 备注：有几个字体要下载的  </p>
+<p>#<a target="_blank" rel="noopener" href="http://conky.sourceforge.net/docs.html">http://conky.sourceforge.net/docs.html</a></p>
+<p>#<a target="_blank" rel="noopener" href="http://forum.ubuntu.org.cn/viewtopic.php?f=33&amp;t=173214">http://forum.ubuntu.org.cn/viewtopic.php?f=33&amp;t=173214</a></p>
+<p>#全局设置—————————————————————————</p>
+<p>cpu_avg_samples         1   #监控几个CPU状况</p>
+<p>net_avg_samples         1   #监控几个网络状况</p>
+<p>double_buffer         yes   #双倍缓存，用Ubuntu，不想看闪屏就这样写</p>
+<p>no_buffers            yes   #使用内存缓冲区</p>
+<p>update_interval       1.0   #定时更新时间,以秒为单位，Conky需要定时读取系统状态</p>
+<p>total_run_times         0   #开起来之后一直运行</p>
+<p>background            yes   #是否嵌入桌面</p>
+<p>override_utf8_locale  yes   #强制用UTF8解码，谁都不想看乱码</p>
+<p>out_to_console         no   #是否将Conky出错情况输出到终端</p>
+<p>minimum_size        170 5   #设定Conky的长宽，最小宽度为170像素，最小高度为5像素</p>
+<p>maximum_width         170   #设定Conky的长宽，最大宽度为170像素</p>
+<p>default_shade_color   black #默认底纹颜色和边框的颜色底纹</p>
+<p>default_outline_color white #默认轮廓色</p>
+<p>use_xft                yes  #指示conky用x字体，这样才能调用你安装的字体</p>
+<p>xftalpha               0.1  #Alpha of Xft font  ??</p>
+<p>xftfont Bitstream Charter:bold:size=9  #定义默认字体</p>
+<p>default_color        white  #定义默认字体颜色</p>
+<p>uppercase               no  #如果值设为“yes”则所有输出的文字都变成大写字母</p>
+<p>use_spacer            none  #???</p>
+<p>#全局设置—————————————————————————</p>
+<p>#窗体设置—————————————————————————</p>
+<p>own_window              yes  #自己的窗口，这样可以不闪</p>
+<p>own_window_transparent  yes  #背景透明</p>
+<p>own_window_type    override  #不受WM控制</p>
+<p>own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager  </p>
+<p>    #不装饰窗口（我们定义了他是个独立的窗口），</p>
+<p>    #永远在根窗口上（也就是屏幕），</p>
+<p>    #粘滞起来（不能让他乱跑）</p>
+<p>    #无视一切1，无视一切2</p>
+<p>#窗体设置—————————————————————————</p>
+<p>#边框设置—————————————————————————</p>
+<p>draw_borders            no   #不要边框，当然个人喜好 </p>
+<p>border_margin            0   #边框宽度 0</p>
+<p>draw_graph_borders      no   #不要边框图标      </p>
+<p>draw_shades             no   #字体绘制阴影</p>
+<p>draw_outline            no   #不要下划线</p>
+<p>#边框设置—————————————————————————</p>
+<p>#位置设置—————————————————————————</p>
+<p>#alignment        top_left   #设置最开始的位置</p>
+<p>#alignment      top_middle</p>
+<p>alignment        top_right        </p>
+<p>#alignment     bottom_left</p>
+<p>#alignment   bottom_middle</p>
+<p>#alignment    bottom_right</p>
+<p>#alignment            none</p>
+<p>gap_x                    0   #相对屏幕边界的位置调横向位移，这里是相对屏幕右上方调位置</p>
+<p>gap_y                   26   #相对屏幕边界的位置调纵向位移，这里是相对屏幕右上方调位置</p>
+<p>#位置设置—————————————————————————</p>
+<p>###——功能模块备份——###</p>
+<p>#图表显示硬盘实时读写状况————————————————————–</p>
+<p>#${color }Disk Read:${alignr}${color}$diskio_read</p>
+<p>#${color}${diskiograph_read /dev/sda 10,160 000000 ffffff}</p>
+<p>#${color }Disk Write:${alignr}${color}$diskio_write</p>
+<p>#${color}${diskiograph_write /dev/sda 10,160 000000 ffffff}</p>
+<p>#显示显卡型号————————————————————————</p>
+<p>#Video Card: ${color #cdc8b1}${execi 20 glxinfo | grep “OpenGL renderer” | cut -c 25-39}</p>
+<p>#GPUtemp:${execi 20 nvidia-settings -q gpucoretemp | grep “Attribute” | cut -d” “ -f6 | cut -c -2} °C</p>
+<p>#nvidia-settings -q gpucoretemp</p>
+<p>#显示系统信息————————————————————————</p>
+<p>#${font Microsoft YaHei:size=10}${color #F6E80C}主机:${font Bitstream Charter:bold:size=9}${color #c0ff3e} $alignr$nodename</p>
+<p>#${font Microsoft YaHei:size=10}${color #F6E80C}用户: ${font Bitstream Charter:bold:size=9}${color #c0ff3e} $alignr${execi 9999 whoami}</p>
+<p>###——功能模块备份——###</p>
+<p>#${font}:设字体</p>
+<p>#${color}:设字体颜色</p>
+<p>#${offset}:横向偏移，+向右</p>
+<p>#${voffset}：纵向偏移，+向下</p>
+<p>#${execi}:运行外部命令</p>
+<p>#功能设置—————————————————————————-</p>
+<p>TEXT</p>
+<p>${color }$stippled_hr</p>
+<p>${font Bitstream Charter:bold:size=10}${color #F6E80C}${execi 3600 python ~/.conky-rc/conkyForecast.py –location=CHXX0044 –datatype=CN}</p>
+<p>${font Weather:size=44}${color gold}${offset 16}${execi 3600 python ~/.conky-rc/conkyForecast.py –location=CHXX0044 –datatype=WF}</p>
+<p>${font Microsoft YaHei:bold:size=9}${color #ffe7ba}${voffset -96}${offset 90}${execi 3600 python ~/.conky-rc/conkyForecast.py –location=CHXX0044 –datatype=CC}</p>
+<p>${font Bitstream Charter:bold:size=9}${color #ffe7ba}${offset 90}${execi 3600 python ~/.conky-rc/conkyForecast.py –location=CHXX0044 –datatype=HT}</p>
+<p>${font Bitstream Charter:bold:size=9}${color #ffe7ba}${offset 90}${execi 3600 python ~/.conky-rc/conkyForecast.py –location=CHXX0044 –datatype=WS}${font Arrows:size=10}${execi 3600 python ~/.conky-rc/conkyForecast.py –location=CHXX0044 –datatype=BF}</p>
+<p>${font Microsoft YaHei:size=9}${color #ffe7ba}${offset 12}白天时间: ${color #ffe7ba}${execi 3600 python ~/.conky-rc/conkyForecast.py –location=CHXX0044 –datatype=SR}-${execi 3600 python ~/.conky-rc/conkyForecast.py –location=CHXX0044 –datatype=SS}</p>
+<p>${font Microsoft YaHei:bold:size=9}${color #F6E80C}${offset 15}${execi 3600 python ~/.conky-rc/conkyForecast.py –location=CHXX0044 –datatype=DW –startday=1 –endday=4 –spaces=3 –shortweekday}</p>
+<p>${font Weather:size=26}${color white}${offset 16}${execi 3600 python ~/.conky-rc/conkyForecast.py –location=CHXX0044 –datatype=WF –startday=1 –endday=4 –spaces=0}</p>
+<p>${font Weather:size=16}${color white}${voffset -20}z${font}:${color white}${execi 3600 python ~/.conky-rc/conkyForecast.py –location=CHXX0044 –datatype=HT –startday=1 –endday=4 –spaces=5}</p>
+<p>${font Weather:size=16}${color white}i${font}:${color white}${execi 3600 python ~/.conky-rc/conkyForecast.py –location=CHXX0044 –datatype=PC –startday=1 –endday=4 –spaces=4}</p>
+<p>${font Weather:size=16}${color white}v${font}:${color white}${execi 3600 python ~/.conky-rc/conkyForecast.py –location=CHXX0044 –datatype=WS –startday=1 –endday=4 –spaces=1}</p>
+<p>${font Arrows:size=10}${color gold}${voffset -15}${offset 38}${execi 3600 python ~/.conky-rc/conkyForecast.py –location=CHXX0044 –datatype=BF –startday=1 –endday=1 –spaces=0}${offset 27}${execi 3600 python ~/.conky-rc/conkyForecast.py –location=CHXX0044 –datatype=BF –startday=2 –endday=2 –spaces=0}${offset 30}${execi 3600 python ~/.conky-rc/conkyForecast.py –location=CHXX0044 –datatype=BF –startday=3 –endday=3 –spaces=0}${offset 22}${execi 3600 python ~/.conky-rc/conkyForecast.py –location=CHXX0044 –datatype=BF –startday=4 –endday=4 –spaces=0}${font}${color}</p>
+<p>${stippled_hr 1}</p>
+<p>${font Microsoft YaHei:size=9}${color #F6E80C}系统: ${font Bitstream Charter:bold:size=9}${color #c0ff3e} $alignr${execi 99999 lsb_release -d -s -c | tr -s “\n” “ “}</p>
+<p>${font Microsoft YaHei:size=9}${color #F6E80C}内核: ${font Bitstream Charter:bold:size=9}${color #c0ff3e}$alignr$kernel</p>
+<p>${font Microsoft YaHei:size=9}${color #F6E80C}用时: ${font Bitstream Charter:bold:size=9}${color #c0ff3e}$alignr$uptime</p>
+<p>${color }$stippled_hr</p>
+<p>${font Microsoft YaHei:size=9}${color #F6E80C}CPU温度:${font Bitstream Charter:bold:size=9}${color #c0ff3e}$alignr${acpitemp}°C</p>
+<p>${color white}CPU us:$alignr${color } $cpu% </p>
+<p>${cpubar 4}</p>
+<p>${color white}MEM:${color} $mem/$memmax$alignr$memperc%</p>
+<p>${membar 4}</p>
+<p>${color white}SWAP:${color} $swap/$swapmax$alignr$swapperc%</p>
+<p>${swapbar 4}</p>
+<p>${color }$stippled_hr</p>
+<p>${font Microsoft YaHei:size=9}${color #F6E80C}进程:${font Bitstream Charter:bold:size=9}${color #c0ff3e}$alignr$processes  ($running_processes running)</p>
+<p>${color #ffe7ba}Top Processes$alignr   CPU%  MEM%$color</p>
+<p>${top name 1}${color #FB0808}$alignr${top cpu 1}   ${top mem 1}$color</p>
+<p>${top name 2}${color #F6620C}$alignr${top cpu 2}   ${top mem 2}$color</p>
+<p>${top name 3}${color #F6E80C}$alignr${top cpu 3}   ${top mem 3}$color</p>
+<p>${top name 4}${color #08CB2F}$alignr${top cpu 4}   ${top mem 4}$color</p>
+<p>${top name 5}${color #0DBCCE}$alignr${top cpu 5}   ${top mem 5}$color</p>
+<p>${top name 6}${color #2758CF}$alignr${top cpu 6}   ${top mem 6}$color</p>
+<p>${top name 7}${color #8A11CB}$alignr${top cpu 6}   ${top mem 7}$color</p>
+<p>${color }$stippled_hr</p>
+<p>${font Microsoft YaHei:size=9}${color #F6E80C}硬盘温度:${font Bitstream Charter:bold:size=9}${color #c0ff3e}$alignr${hddtemp /dev/sda}°C</p>
+<p>${color white}Boot: ${alignr}${fs_free /boot} / ${fs_size /boot}</p>
+<p>${fs_bar 4 /boot}</p>
+<p>Root: ${alignr}${fs_free /} / ${fs_size /}</p>
+<p>${fs_bar 4 /}</p>
+<p>Home: ${alignr}${fs_free /home} / ${fs_size /home}</p>
+<p>${fs_bar 4 /home}</p>
+<p>Usr: ${alignr}${fs_free /usr} / ${fs_size /usr}</p>
+<p>${fs_bar 4 /usr}</p>
+<p>Var: ${alignr}${fs_free /var} / ${fs_size /var}</p>
+<p>${fs_bar 4 /var}</p>
+<p>Tmp: ${alignr}${fs_free /tmp} / ${fs_size /tmp}</p>
+<p>${fs_bar 4 /tmp}</p>
+<p>${color }$stippled_hr</p>
+<p>${font Microsoft YaHei:size=9}${color #F6E80C}WAN地址:${font Bitstream Charter:bold:size=9}${color #c0ff3e} $alignr${execi 3600 wget -O - <a target="_blank" rel="noopener" href="http://whatismyip.org/">http://whatismyip.org/</a> | tail}</p>
+<p>${font Microsoft YaHei:size=9}${color #F6E80C}IP地址:${font Bitstream Charter:bold:size=9}${color #c0ff3e} ${alignr} ${addr eth0}</p>
+<p>${downspeedgraph eth0 25,80 556B2F 9ACD32}${alignr}${upspeedgraph eth0 25,80 556B2F 9ACD32}</p>
+<p>${voffset -30}${font Microsoft YaHei:size=8}${color #F6E80C}down:${font Bitstream Charter:bold:size=9}${color white}${downspeed eth0}k/s${alignr}${font Microsoft YaHei:size=8}${color #F6E80C}up:${font Bitstream Charter:bold:size=9}${color white}${upspeed eth0}k/s</p>
+<p>${voffset 5}${font Microsoft YaHei:size=8}${color #F6E80C}Total:${font Bitstream Charter:bold:size=9}${color white}${totaldown eth0}${alignr}${font Microsoft YaHei:size=8}${color #F6E80C}Total:${font Bitstream Charter:bold:size=9}${color white}${totalup eth0}</p>
+<p>${color }$stippled_hr</p>
 
       
     </div>
@@ -576,7 +869,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1047953347/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/841776280/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -592,7 +885,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/1047953347/" class="post-title-link" itemprop="url">网站备案信息被注销</a>
+            <a href="/posts/841776280/" class="post-title-link" itemprop="url">gpg使用说明</a>
         </h2>
 
         <div class="post-meta">
@@ -602,15 +895,28 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2012-05-17 09:43:00" itemprop="dateCreated datePublished" datetime="2012-05-17T09:43:00+08:00">2012-05-17</time>
+              <time title="创建时间：2011-03-19 14:46:00" itemprop="dateCreated datePublished" datetime="2011-03-19T14:46:00+08:00">2011-03-19</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:52" itemprop="dateModified" datetime="2020-08-04T09:51:52+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
+                </span>
+            </span>
 
           
 
@@ -621,15 +927,35 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>原因：网站存放地点和公司地点不一致，不在同一个区域内  </p>
-<p>步骤：<br>1、 &lt; – page margin cm pre font-family p margin-bottom cm –&gt;–&lt;登录 <a target="_blank" rel="noopener" href="http://118.85.193.10/">http://118.85.193.10</a>  </p>
-<blockquote>
-<p>填写：单位名称、营业执照号码、企业法人身份证、域名、联系人等  </p>
-</blockquote>
-<p>2、网上审核通过后去备案中心提交资料。  </p>
-<blockquote>
-<p>提交真实性核验单(一式三份)、营业执照复印件、企业法人身份证复印件、经办人身份证复印件</p>
-</blockquote>
+          <p>转载自：<a target="_blank" rel="noopener" href="http://www.alexgao.com/2009/01/24/gpg/">http://www.alexgao.com/2009/01/24/gpg/</a>  </p>
+<p><strong>第一部分：生成、传播、作废</strong></p>
+<p><strong>1、生成密钥对：</strong></p>
+<p> <strong>gpg –gen-key</strong></p>
+<p> <strong>信息：solar (solar000)  <a href="mailto:&#x73;&#x6f;&#108;&#97;&#114;&#x31;&#x32;&#51;&#64;&#x73;&#x6f;&#108;&#97;&#114;&#46;&#x63;&#111;&#x6d;">&#x73;&#x6f;&#108;&#97;&#114;&#x31;&#x32;&#51;&#64;&#x73;&#x6f;&#108;&#97;&#114;&#46;&#x63;&#111;&#x6d;</a></strong></p>
+<p> <strong>密钥ID：538E9DA1</strong> </p>
+<p><strong>2、上传下载公钥：(给别人用)</strong></p>
+<p> <strong>gpg –keyserver hkp://keys.gnupg.net –send-keys 538E9DA1   #上传</strong></p>
+<p>  <strong>**gpg –keyserver</strong> hkp://keys.gnupg.net –recv** <strong>538E9DA1              #下载</strong></p>
+<p><strong>3、生成公钥回收证书： (用于作废密钥)</strong></p>
+<p> <strong>1、生成回收证书：    gpg –output revoke.asc –gen-revoke 538E9DA1</strong></p>
+<p> <strong>2、上传到服务器上：gpg –keyserver hkp://keys.gnupg.net –send-keys 538E9DA1</strong> </p>
+<p><strong>第二部分：导入导出</strong></p>
+<p><strong>1、导出公钥：gpg -o solar-pubkey –export 538E9DA1</strong></p>
+<p><strong>2、导出私钥：gpg -o solar-subkey –export-secret-keys 538E9DA1</strong></p>
+<p><strong>3、使用人导入公钥：gpg –import solar-pubkey</strong></p>
+<p><strong>4、查看是否已经导入公钥：gpg –list-keys</strong></p>
+<p><strong>第三部分：加密解密</strong></p>
+<p><strong>1、加密： gpg -o test.gpg -er solar test</strong></p>
+<p><strong>2、解密：gpg -o test -d test.gpg</strong></p>
+<p><strong>3、签名+加密：gpg -o test.sig -ser solar test</strong></p>
+<p><strong>4、待续。。</strong></p>
+<p><strong>对称加解密：</strong></p>
+<p><strong>加密：gpg -o test.gpg -c test</strong></p>
+<p><strong>解密：gpg -o test -d test.gpg</strong></p>
+<p><strong>第四部分：删除密钥</strong></p>
+<p><strong>0、作废公钥：gpg –keyserver hkp://keys.gnupg.net –send-keys</strong> <strong>538E9DA1</strong></p>
+<p><strong>1、删除私钥：gpg –delete-secret-keys <a href="mailto:&#115;&#111;&#108;&#97;&#114;&#49;&#50;&#x33;&#x40;&#x73;&#x6f;&#108;&#97;&#114;&#x2e;&#x63;&#111;&#109;">&#115;&#111;&#108;&#97;&#114;&#49;&#50;&#x33;&#x40;&#x73;&#x6f;&#108;&#97;&#114;&#x2e;&#x63;&#111;&#109;</a></strong></p>
+<p><strong>2、删除公钥：gpg –delete-keys <a href="mailto:&#115;&#111;&#x6c;&#97;&#x72;&#x31;&#50;&#x33;&#x40;&#x73;&#111;&#x6c;&#x61;&#114;&#46;&#99;&#x6f;&#109;">&#115;&#111;&#x6c;&#97;&#x72;&#x31;&#50;&#x33;&#x40;&#x73;&#111;&#x6c;&#x61;&#114;&#46;&#99;&#x6f;&#109;</a></strong></p>
 
       
     </div>
@@ -649,7 +975,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3112374975/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3009292535/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -665,7 +991,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/3112374975/" class="post-title-link" itemprop="url">人事档案代理期已过</a>
+            <a href="/posts/3009292535/" class="post-title-link" itemprop="url">CHDK 安装及使用</a>
         </h2>
 
         <div class="post-meta">
@@ -675,15 +1001,28 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2012-05-17 09:37:00" itemprop="dateCreated datePublished" datetime="2012-05-17T09:37:00+08:00">2012-05-17</time>
+              <time title="创建时间：2011-03-19 09:56:00" itemprop="dateCreated datePublished" datetime="2011-03-19T09:56:00+08:00">2011-03-19</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:52" itemprop="dateModified" datetime="2020-08-04T09:51:52+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/Q-A/" itemprop="url" rel="index"><span itemprop="name">Q&A</span></a>
+                </span>
+            </span>
 
           
 
@@ -694,7 +1033,9 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>电话：86118043<br>费用：￥180元/年</p>
+          <p>待续。。。</p>
+<p><a target="_blank" rel="noopener" href="http://www.alexgao.com/2008/05/27/chdk/">http://www.alexgao.com/2008/05/27/chdk/</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.alexgao.com/2008/05/27/chdk/"></a><a target="_blank" rel="noopener" href="http://scratchpad.wikia.com/wiki/CHDK">http://scratchpad.wikia.com/wiki/CHDK</a></p>
 
       
     </div>
@@ -714,7 +1055,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3679287795/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/492604514/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -730,7 +1071,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/3679287795/" class="post-title-link" itemprop="url">[转载]打开电脑桌面上的图片文件很慢 解决办法</a>
+            <a href="/posts/492604514/" class="post-title-link" itemprop="url">ubuntu10.04 squid配置</a>
         </h2>
 
         <div class="post-meta">
@@ -740,15 +1081,28 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2012-05-12 16:15:00" itemprop="dateCreated datePublished" datetime="2012-05-12T16:15:00+08:00">2012-05-12</time>
+              <time title="创建时间：2011-03-11 11:11:00" itemprop="dateCreated datePublished" datetime="2011-03-11T11:11:00+08:00">2011-03-11</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:52" itemprop="dateModified" datetime="2020-08-04T09:51:52+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/server/" itemprop="url" rel="index"><span itemprop="name">server</span></a>
+                </span>
+            </span>
 
           
 
@@ -759,13 +1113,108 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><a target="_blank" rel="noopener" href="http://hi.baidu.com/muz32/blog/item/0ae6dbffe552fea2b801a04e.html">http://hi.baidu.com/muz32/blog/item/0ae6dbffe552fea2b801a04e.html</a>  </p>
-<p>电脑桌面上的图片打开很慢？</p>
-<p>可能我们会遇到这样的情况，电脑桌面上的图片文件打开很慢，但是如果把这个文件拷贝到文件夹里面或者放在磁盘根目录下，就可以正常的打开。</p>
-<p>网上很多人的建议是用系统优化一类的软件，比如用windows优化大师优化系统，或是说桌面图标太多，再有的就是要求重装系统等等。</p>
-<p>如果尝试上述方法，可能只有重装系统是能解决问题的</p>
-<p>其实并不是系统有问题的原因，实际原因是桌面上至少有一个快捷方式是无效的。</p>
-<p>特别是加入内部局域网的用户，这种情况会时有发生，原因是原先的快捷方式可能是网络不通，因为目标计算机更改IP或者计算机名等，使得快捷方式变成了无效路径，删除无效的快捷方式，问题就能解决了。</p>
+          <p>1、开放防火墙端口</p>
+<p>2、配置squid.conf</p>
+<p>acl all src all</p>
+<p>acl manager proto cache_object</p>
+<p>acl localhost src 127.0.0.1/32</p>
+<p>acl to_localhost dst 127.0.0.0/8 0.0.0.0/32</p>
+<p>acl localnet src 10.0.0.0/8 # RFC1918 possible internal network</p>
+<p>acl localnet src 172.16.0.0/12 # RFC1918 possible internal network</p>
+<p>acl localnet src 192.168.0.0/16 # RFC1918 possible internal network</p>
+<p>acl SSL_ports port 443 # https</p>
+<p>acl SSL_ports port 563 # snews</p>
+<p>acl SSL_ports port 873 # rsync</p>
+<p>acl Safe_ports port 80 # http</p>
+<p>acl Safe_ports port 21 # ftp</p>
+<p>acl Safe_ports port 443 # https</p>
+<p>acl Safe_ports port 70 # gopher</p>
+<p>acl Safe_ports port 210 # wais</p>
+<p>acl Safe_ports port 1025-65535 # unregistered ports</p>
+<p>acl Safe_ports port 280 # http-mgmt</p>
+<p>acl Safe_ports port 488 # gss-http</p>
+<p>acl Safe_ports port 591 # filemaker</p>
+<p>acl Safe_ports port 777 # multiling http</p>
+<p>acl Safe_ports port 631 # cups</p>
+<p>acl Safe_ports port 873 # rsync</p>
+<p>acl Safe_ports port 901 # SWAT</p>
+<p>acl purge method PURGE</p>
+<p>acl CONNECT method CONNECT</p>
+<p>#abcgc persons——————————-</p>
+<p>acl jcx arp 00:24:1D:88:58:28</p>
+<p>acl brw arp 00:1E:8C:AE:05:77</p>
+<p>acl lxx arp 6C:F0:49:A0:0E:89</p>
+<p>acl yy  arp 6C:F0:49:78:36:AF</p>
+<p>acl hwt arp 00:22:19:06:B8:8B</p>
+<p>acl hhb arp 00:24:1D:DE:04:12</p>
+<p>acl jzd arp 00:22:19:06:B8:4D</p>
+<p>acl js  arp 6C:F0:49:08:92:1C</p>
+<p>acl lw  arp 00:07:E9:D9:17:AA</p>
+<p>acl pjc arp 00:1A:A0:8F:71:BE</p>
+<p>acl zjm arp 6C:F0:49:81:B3:FB</p>
+<p>acl chh arp 00:24:1D:88:64:7E</p>
+<p>#acl lwm arp</p>
+<p>#acl slm arp</p>
+<p>acl abc arp 00:1B:FC:2B:F7:C0</p>
+<p>#active —————————————-</p>
+<p>acl worktime time M T W H F 7:30-9:30 13:00-15:00</p>
+<p>#control——————————————-</p>
+<p>http_access allow jcx</p>
+<p>http_access allow hwt</p>
+<p>http_access allow js</p>
+<p>http_access allow lw</p>
+<p>http_access allow zjm</p>
+<p>http_access allow abc</p>
+<p>http_access deny !worktime</p>
+<p>http_access allow brw</p>
+<p>http_access allow lxx</p>
+<p>##http_access allow yy </p>
+<p>##http_access allow hhb</p>
+<p>http_access allow jzd</p>
+<p>http_access allow pjc</p>
+<p>http_access allow chh</p>
+<p>##http_access allow lwm</p>
+<p>##http_access allow slm</p>
+<p>#http_access allow abc </p>
+<p>#—————————————————</p>
+<p>http_access allow manager localhost</p>
+<p>http_access deny manager</p>
+<p>http_access allow purge localhost</p>
+<p>http_access deny purge</p>
+<p>http_access deny !Safe_ports</p>
+<p>http_access deny CONNECT !SSL_ports</p>
+<p>http_access allow localhost</p>
+<p>http_access deny all</p>
+<p>icp_access allow localnet</p>
+<p>icp_access deny all</p>
+<p>http_port 3128</p>
+<p>#———————————————</p>
+<p>cache_mem 64 MB</p>
+<p>cache_swap_low 80</p>
+<p>cache_swap_high 85</p>
+<p>maximum_object_size 32768 KB</p>
+<p>#maxium_object_size_in_memory 8KB</p>
+<p>cache_dir ufs /var/spool/squid 4096 64 1024</p>
+<p>cache_effective_user proxy</p>
+<p>cache_effective_group proxy</p>
+<p>cache_mgr <a href="mailto:&#97;&#98;&#99;&#64;&#x31;&#x36;&#51;&#x2e;&#99;&#x6f;&#x6d;">&#97;&#98;&#99;&#64;&#x31;&#x36;&#51;&#x2e;&#99;&#x6f;&#x6d;</a></p>
+<p>#———————————————</p>
+<p>hierarchy_stoplist cgi-bin ?</p>
+<p>access_log /var/log/squid/access.log squid</p>
+<p>refresh_pattern ^ftp: 1440 20% 10080</p>
+<p>refresh_pattern ^gopher: 1440 0% 1440</p>
+<p>refresh_pattern -i (/cgi-bin/|\?) 0 0% 0</p>
+<p>refresh_pattern (Release|Package(.gz)*)$ 0 20% 2880</p>
+<p>refresh_pattern . 0 20% 4320</p>
+<p>acl shoutcast rep_header X-HTTP09-First-Line ^ICY.[0-9]</p>
+<p>upgrade_http0.9 deny shoutcast</p>
+<p>acl apache rep_header Server ^Apache</p>
+<p>broken_vary_encoding allow apache</p>
+<p>extension_methods REPORT MERGE MKACTIVITY CHECKOUT</p>
+<p>hosts_file /etc/hosts</p>
+<p>coredump_dir /var/spool/squid</p>
+<p>visible_hostname abcproxy</p>
+<p>3、改/var/spool/squid的用户名、用户组为proxy</p>
 
       
     </div>
@@ -785,7 +1234,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3407126661/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/230208873/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -801,7 +1250,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/3407126661/" class="post-title-link" itemprop="url">第五章实验：cisco路由器存取配置，ios等</a>
+            <a href="/posts/230208873/" class="post-title-link" itemprop="url">打印机删除不了正在打印的文档</a>
         </h2>
 
         <div class="post-meta">
@@ -811,15 +1260,28 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2012-05-09 17:22:00" itemprop="dateCreated datePublished" datetime="2012-05-09T17:22:00+08:00">2012-05-09</time>
+              <time title="创建时间：2011-02-17 13:40:00" itemprop="dateCreated datePublished" datetime="2011-02-17T13:40:00+08:00">2011-02-17</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:52" itemprop="dateModified" datetime="2020-08-04T09:51:52+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Windows/Q-A/" itemprop="url" rel="index"><span itemprop="name">Q&A</span></a>
+                </span>
+            </span>
 
           
 
@@ -830,39 +1292,12 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>环境：  </p>
-<blockquote>
-<p>gns3，vmware做tftp服务器<br>R0 F0/0 ：172.16.43.150<br>vmware：172.16.43.141  </p>
-<p><img src="http://img4.ph.126.net/PZ83qiwlo5aNsQA26bgQFA==/1552897446530188234.jpg" alt="第五章实验：cisco路由器存取配置，ios等 - leaf - ------坚持雅操------" title="第五章实验：cisco路由器存取配置，ios等 - leaf - ------坚持雅操------"></p>
-</blockquote>
-<p> <br>1、组建tftp服务器：  </p>
-<blockquote>
-<p>cisco-tftp-server 下载：<a target="_blank" rel="noopener" href="http://www.onlinedown.net/soft/33433.htm">http://www.onlinedown.net/soft/33433.htm</a>  </p>
-</blockquote>
-<blockquote>
-<p>开启后测试一下：tftp -i 172.16.43.141 get 1.txt  </p>
-</blockquote>
-<blockquote>
-<p>tftp内存放有 c3660-i-mz.122-40a.bin  </p>
-</blockquote>
-<p>2、gns3设置  </p>
-<blockquote>
-<p>云设置在上一篇已经介绍过了<br>对R0的设置：  </p>
-<blockquote>
-<p>en<br>configure terminal<br>interface f0/0<br>no shutdown<br>ip address 172.16.43.150 255.255.255.0<br>end<br>copy running-config startup-config<br>erase flash:  </p>
-<p><img src="http://img3.ph.126.net/AG9aehE4lTwLKiu2mF9TGQ==/617274623943966983.jpg" alt="第五章实验：cisco路由器存取配置，ios等 - leaf - ------坚持雅操------" title="第五章实验：cisco路由器存取配置，ios等 - leaf - ------坚持雅操------"></p>
-<p>   </p>
-</blockquote>
-</blockquote>
-<p>3、验证是否连通  </p>
-<p>4、开始存取命令  </p>
-<blockquote>
-<p>copy tftp flash：  </p>
-<p><img src="http://img7.ph.126.net/jKEJfSX8GpJcMOTLa9zGsA==/3099883918531950267.jpg" alt="第五章实验：cisco路由器存取配置，ios等 - leaf - ------坚持雅操------" title="第五章实验：cisco路由器存取配置，ios等 - leaf - ------坚持雅操------"></p>
-<p> <br>copy startup-config tftp  </p>
-<p><img src="http://img5.ph.126.net/wy-hxzpcuSbh_6Gnv_KSZQ==/2568177687525529385.jpg" alt="第五章实验：cisco路由器存取配置，ios等 - leaf - ------坚持雅操------" title="第五章实验：cisco路由器存取配置，ios等 - leaf - ------坚持雅操------"></p>
-<p>   </p>
-</blockquote>
+          <p>依次点击“开始”→“控制面板”→“性能和维护”→“管理工具”→“服务”→“Print Spooler”.  </p>
+<p>　　点击左侧 “停止此服务” ，停止打印机服务.  </p>
+<p>　　依次点击“开始”→“运行”，在“运行”窗口的命令行中输入 ：spool 。点击“确认”按钮，打开“spool”文件夹；  </p>
+<p>　　在“spool” 文件夹中，双击打开“PRINTERS”文件夹；  </p>
+<p>　　删除“PRINTERS”文件夹中的所有文件；  </p>
+<p>　　回到“服务”窗口，点击左侧“启动此服务”，重新启动打印服务。</p>
 
       
     </div>
@@ -882,7 +1317,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2281735761/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/378322779/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -898,7 +1333,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/2281735761/" class="post-title-link" itemprop="url">ubuntu使用gns3里面的云</a>
+            <a href="/posts/378322779/" class="post-title-link" itemprop="url">【转载】笔记本变身无线AP共享攻略</a>
         </h2>
 
         <div class="post-meta">
@@ -908,15 +1343,28 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2012-05-09 15:46:00" itemprop="dateCreated datePublished" datetime="2012-05-09T15:46:00+08:00">2012-05-09</time>
+              <time title="创建时间：2011-02-12 15:30:00" itemprop="dateCreated datePublished" datetime="2011-02-12T15:30:00+08:00">2011-02-12</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:51" itemprop="dateModified" datetime="2020-08-04T09:51:51+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hardware/" itemprop="url" rel="index"><span itemprop="name">Hardware</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hardware/%E7%AC%94%E8%AE%B0%E6%9C%AC/" itemprop="url" rel="index"><span itemprop="name">笔记本</span></a>
+                </span>
+            </span>
 
           
 
@@ -927,32 +1375,14 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><img src="http://img3.ph.126.net/i9rtzE1JV_dBxKRttmg4KA==/2724677774576652283.jpg" alt="ubuntu使用gns3里面的云 - leaf - ------坚持雅操------" title="ubuntu使用gns3里面的云 - leaf - ------坚持雅操------"></p>
-<p> <br>说明：只对vmet8 进行说明<br>环境：  </p>
-<blockquote>
-<p>vmet8 ：172.16.43.0网段  </p>
-</blockquote>
-<blockquote>
-<p>vmware虚拟机IP：172.16.43.141  </p>
-</blockquote>
-<blockquote>
-<p>R3 IP：                  172.16.43.150  </p>
-</blockquote>
-<p>注：linux需要用 sudo gns3 来启动  </p>
-<p>1、云设置:  </p>
-<blockquote>
-<p>双击云，然后添加vmet8 即可  </p>
-<p><img src="http://img6.ph.126.net/9P-rRwHWyfXioyqu2NWeeg==/3095098843927878076.jpg" alt="ubuntu使用gns3里面的云 - leaf - ------坚持雅操------" title="ubuntu使用gns3里面的云 - leaf - ------坚持雅操------"></p>
-<p>   </p>
-</blockquote>
-<p>2、添加R3，连接云和R3，开启云和R3  </p>
-<p>3、设置R3 IP地址，开启f1/0端口  </p>
-<p>4、能相互ping通～～  </p>
-<blockquote>
-<p><img src="http://img0.ph.126.net/ekc1qTjFfcN9oJd6Ws5r6g==/3093972944021031640.jpg" alt="ubuntu使用gns3里面的云 - leaf - ------坚持雅操------" title="ubuntu使用gns3里面的云 - leaf - ------坚持雅操------"></p>
+          <p><img src="http://img242.ph.126.net/tW1P7idSHA0Pr4ZPuLWfnA==/2131328523654614126.jpg" alt="【转载】笔记本变身无线AP共享攻略 - leaf - ------坚持雅操------" title="【转载】笔记本变身无线AP共享攻略 - leaf - ------坚持雅操------"></p>
+<p><img src="http://img612.ph.126.net/4T7DKTzPXDxCkzcPKgy-Iw==/1975109911580428973.jpg" alt="【转载】笔记本变身无线AP共享攻略 - leaf - ------坚持雅操------" title="【转载】笔记本变身无线AP共享攻略 - leaf - ------坚持雅操------"></p>
 <p> </p>
-<p><img src="http://img2.ph.126.net/YdHqigKX3OIgmqdo99ep4A==/109493765957949262.jpg" alt="ubuntu使用gns3里面的云 - leaf - ------坚持雅操------" title="ubuntu使用gns3里面的云 - leaf - ------坚持雅操------"></p>
-</blockquote>
+<p><img src="http://img612.ph.126.net/v0fsxal8ZVCE8o4ANb_Mig==/1975109911580428982.jpg" alt="【转载】笔记本变身无线AP共享攻略 - leaf - ------坚持雅操------" title="【转载】笔记本变身无线AP共享攻略 - leaf - ------坚持雅操------"></p>
+<p> </p>
+<p><img src="http://img541.ph.126.net/bz7GN9eyh8F6YxjMybFKAA==/2600828784807681801.jpg" alt="【转载】笔记本变身无线AP共享攻略 - leaf - ------坚持雅操------" title="【转载】笔记本变身无线AP共享攻略 - leaf - ------坚持雅操------"></p>
+<p> </p>
+<p><img src="http://img541.ph.126.net/8vjeuDXjLfKBzFjoAD6KlQ==/2600828784807681809.jpg" alt="【转载】笔记本变身无线AP共享攻略 - leaf - ------坚持雅操------" title="【转载】笔记本变身无线AP共享攻略 - leaf - ------坚持雅操------"></p>
 
       
     </div>
@@ -972,7 +1402,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/4095644910/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3133175435/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -988,7 +1418,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/4095644910/" class="post-title-link" itemprop="url">第五章实验：恢复口令</a>
+            <a href="/posts/3133175435/" class="post-title-link" itemprop="url">DELL电脑问题</a>
         </h2>
 
         <div class="post-meta">
@@ -998,15 +1428,28 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2012-05-08 14:35:00" itemprop="dateCreated datePublished" datetime="2012-05-08T14:35:00+08:00">2012-05-08</time>
+              <time title="创建时间：2011-02-12 11:07:00" itemprop="dateCreated datePublished" datetime="2011-02-12T11:07:00+08:00">2011-02-12</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 09:51:52" itemprop="dateModified" datetime="2020-08-04T09:51:52+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 13:16:53" itemprop="dateModified" datetime="2020-08-04T13:16:53+08:00">2020-08-04</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hardware/" itemprop="url" rel="index"><span itemprop="name">Hardware</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hardware/%E6%9C%8D%E5%8A%A1%E5%99%A8/" itemprop="url" rel="index"><span itemprop="name">服务器</span></a>
+                </span>
+            </span>
 
           
 
@@ -1017,47 +1460,12 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>主要是配置寄存器的用途和使用方法<br>使用packettracer 5.0 进行的实验  </p>
-<p><img src="http://img4.ph.126.net/KXTO1yEhsmxmbObjyC4ecg==/3083839844859442734.jpg" alt="第五章实验：恢复口令 - leaf - ------坚持雅操------" title="第五章实验：恢复口令 - leaf - ------坚持雅操------"></p>
-<p> 0、设置密码，以便清除  </p>
-<blockquote>
-<p>enable<br>configure terminal<br>enable password weo234f<br>end<br>copy running-config startup-config<br>show running-config  </p>
-<blockquote>
-<p><img src="http://img7.ph.126.net/skyICMDH7xSGX_WDSU6N-A==/2496683043441012237.jpg" alt="第五章实验：恢复口令 - leaf - ------坚持雅操------" title="第五章实验：恢复口令 - leaf - ------坚持雅操------"></p>
-</blockquote>
-<p> show version  </p>
-<blockquote>
-<p><img src="http://img7.ph.126.net/ypC6remz-qW7roRM0MXpMw==/2585629136081583707.jpg" alt="第五章实验：恢复口令 - leaf - ------坚持雅操------" title="第五章实验：恢复口令 - leaf - ------坚持雅操------"></p>
-</blockquote>
-<p> reload  </p>
-</blockquote>
-<p>1、进ROM监控模式，并进行设置  </p>
-<blockquote>
-<p>reload进行时 按 CTRL+break 进入   break键为F12右边的右边的右边的键  </p>
-<blockquote>
-<p><img src="http://img4.ph.126.net/sSkAD9_p1bFF7zfBKWhGvg==/41939771547202184.jpg" alt="第五章实验：恢复口令 - leaf - ------坚持雅操------" title="第五章实验：恢复口令 - leaf - ------坚持雅操------"></p>
-</blockquote>
-<p>confreg 0x2142  </p>
-<p> reset  </p>
-<blockquote>
-<p><img src="http://img8.ph.126.net/ndqrl2tPfw6HeAibvnTlGg==/1010776641385459288.jpg" alt="第五章实验：恢复口令 - leaf - ------坚持雅操------" title="第五章实验：恢复口令 - leaf - ------坚持雅操------"></p>
-</blockquote>
-<p> 系统自动重启，进系统后可看到 寄存器值为0X2142<br>en<br>show version  </p>
-<blockquote>
-<p><img src="http://img2.ph.126.net/EoI_PyKbdhJHOIlJ8nq64w==/2563674087898152402.jpg" alt="第五章实验：恢复口令 - leaf - ------坚持雅操------" title="第五章实验：恢复口令 - leaf - ------坚持雅操------"></p>
-</blockquote>
-</blockquote>
-<p> <br>2、进行清除密码，重设寄存器值等操作  </p>
-<blockquote>
-<p>copy startup-config running-config<br>configure terminal<br>enable password 123456<br>config-register 0x2102<br>end<br>copy running-config startup-config<br>sh version  </p>
-<p><img src="http://img3.ph.126.net/zI01jVwZroEYVcuKx1JD5Q==/1005147141851248773.jpg" alt="第五章实验：恢复口令 - leaf - ------坚持雅操------" title="第五章实验：恢复口令 - leaf - ------坚持雅操------"></p>
-<p>   </p>
-</blockquote>
-<blockquote>
-<p>reload  </p>
-</blockquote>
-<blockquote>
-</blockquote>
+          <p>dell台式电脑<br>1、电脑黑屏，指示灯1在亮，警报声 1长<br>             故障：检测不到内存  </p>
+<p>2、电脑黑屏，指示灯3、4亮，报警声<br>             故障：内存松动  </p>
+<p>3、显示IDE configure：说明正在初始化，等下即可  </p>
+<p>4、进度条满格却进不去，说明读取硬盘有问题，拔掉光驱硬盘线进去  </p>
+<p>5、到windows进度条后进不去：<br>           是BIOS设置问题，在RARD这一栏选ata即可(不要选achi)  </p>
+<p>dell笔记本<br>1、安装xp时蓝屏，显示0x0000007b<br>          -、bios设置为ata<br>          -、设置为achi，但要选择有sata驱动的安装光盘</p>
 
       
     </div>
@@ -1076,7 +1484,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/24/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><span class="page-number current">25</span><a class="page-number" href="/page/26/">26</a><span class="space">&hellip;</span><a class="page-number" href="/page/37/">37</a><a class="extend next" rel="next" href="/page/26/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/24/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/24/">24</a><span class="page-number current">25</span><a class="page-number" href="/page/26/">26</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/26/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
