@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-yes.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-yes.png">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
-  <meta name="google-site-verification" content="M_ma4MGD9CfcYr16eVjUk0URJBQ-FPG3_O7vhYzoF2E">
+  <meta name="google-site-verification" content="google12621f48345db2f9.html">
 
 <link rel="stylesheet" href="/css/main.css">
 
@@ -31,7 +31,7 @@
 <meta property="og:description" content="1、在客户端生成私钥：      sudo apt-get install ssh-client      ssh-keygen -t rsa            # (ssh-keygen -t rsa -C “my key”)                                             #生成密钥：包含公钥、私钥，存放在～&#x2F;.ssh&#x2F;  下">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2010-11-06T07:02:00.000Z">
-<meta property="article:modified_time" content="2020-08-04T06:44:13.230Z">
+<meta property="article:modified_time" content="2020-08-04T07:05:10.818Z">
 <meta property="article:author" content="ZorroYe">
 <meta property="article:tag" content="ubuntuserver">
 <meta name="twitter:card" content="summary">
@@ -339,7 +339,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 14:44:13" itemprop="dateModified" datetime="2020-08-04T14:44:13+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 15:05:10" itemprop="dateModified" datetime="2020-08-04T15:05:10+08:00">2020-08-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -361,7 +361,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>813</span>
+              <span>814</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -379,9 +379,9 @@
     
     <div class="post-body" itemprop="articleBody">
         <p>1、在客户端生成私钥：<br>      sudo apt-get install ssh-client<br>      ssh-keygen -t rsa            # (ssh-keygen -t rsa -C “my key”)<br>                                             #生成密钥：包含公钥、私钥，存放在～/.ssh/  下<br>                                             #提示输入密钥加密口令，而不是登录服务器的密码  </p>
-<p>2、将公钥复制到服务器上<br>     ssh-copy-id -i ~/.ssh/id_rsa.pub  <a href="mailto:&#x74;&#x65;&#115;&#x74;&#x40;&#x31;&#57;&#50;&#46;&#49;&#54;&#x38;&#46;&#49;&#x2e;&#49;&#48;">&#x74;&#x65;&#115;&#x74;&#x40;&#x31;&#57;&#50;&#46;&#49;&#54;&#x38;&#46;&#49;&#x2e;&#49;&#48;</a><br>     会提示要求你测试一下<br>     输入 ssh   <a href="mailto:&#116;&#x65;&#115;&#x74;&#64;&#x31;&#57;&#50;&#46;&#49;&#54;&#x38;&#x2e;&#49;&#x2e;&#49;&#48;">&#116;&#x65;&#115;&#x74;&#64;&#x31;&#57;&#50;&#46;&#49;&#54;&#x38;&#x2e;&#49;&#x2e;&#49;&#48;</a> 会提示你输入密钥的加密口令，输入后即可登录远程服务器  </p>
-<p>配置ssh<br>配置文件在 /etc/init.d/sshd_config<br>1、更改端口 将22 更改为其他端口 更改后以后登录的格式为  ssh <a href="mailto:&#x74;&#x65;&#115;&#116;&#64;&#x31;&#57;&#50;&#x2e;&#49;&#54;&#56;&#46;&#x31;&#46;&#x31;&#48;">&#x74;&#x65;&#115;&#116;&#64;&#x31;&#57;&#50;&#x2e;&#49;&#54;&#56;&#46;&#x31;&#46;&#x31;&#48;</a> -p 端口号<br>2、禁用密码登录，仅允许密钥登录<br>   PermitRootLogin no<br>   PasswordAuthentication no<br>   UsePAM no<br>  然后重启 ssh ：sudo /etc/init.d/ssh restart  </p>
-<p>其他：<br>1、修改密钥加密口令： ssh-keygen -p<br>2、限制scp占用的带宽： scp -l 256 <a href="mailto:&#x74;&#101;&#115;&#116;&#x40;&#49;&#x39;&#x32;&#x2e;&#49;&#x36;&#56;&#x2e;&#x31;&#x2e;&#49;&#48;">&#x74;&#101;&#115;&#116;&#x40;&#49;&#x39;&#x32;&#x2e;&#49;&#x36;&#56;&#x2e;&#x31;&#x2e;&#49;&#48;</a>:/ .       #256Kb/s</p>
+<p>2、将公钥复制到服务器上<br>     ssh-copy-id -i ~/.ssh/id_rsa.pub  <a href="mailto:&#x74;&#x65;&#115;&#116;&#x40;&#x31;&#x39;&#x32;&#46;&#x31;&#54;&#56;&#46;&#x31;&#46;&#x31;&#48;">&#x74;&#x65;&#115;&#116;&#x40;&#x31;&#x39;&#x32;&#46;&#x31;&#54;&#56;&#46;&#x31;&#46;&#x31;&#48;</a><br>     会提示要求你测试一下<br>     输入 ssh   <a href="mailto:&#x74;&#101;&#x73;&#x74;&#x40;&#49;&#57;&#x32;&#46;&#x31;&#54;&#56;&#46;&#49;&#x2e;&#x31;&#48;">&#x74;&#101;&#x73;&#x74;&#x40;&#49;&#57;&#x32;&#46;&#x31;&#54;&#56;&#46;&#49;&#x2e;&#x31;&#48;</a> 会提示你输入密钥的加密口令，输入后即可登录远程服务器  </p>
+<p>配置ssh<br>配置文件在 /etc/init.d/sshd_config<br>1、更改端口 将22 更改为其他端口 更改后以后登录的格式为  ssh <a href="mailto:&#116;&#101;&#115;&#116;&#64;&#49;&#57;&#x32;&#46;&#x31;&#x36;&#x38;&#46;&#49;&#46;&#x31;&#48;">&#116;&#101;&#115;&#116;&#64;&#49;&#57;&#x32;&#46;&#x31;&#x36;&#x38;&#46;&#49;&#46;&#x31;&#48;</a> -p 端口号<br>2、禁用密码登录，仅允许密钥登录<br>   PermitRootLogin no<br>   PasswordAuthentication no<br>   UsePAM no<br>  然后重启 ssh ：sudo /etc/init.d/ssh restart  </p>
+<p>其他：<br>1、修改密钥加密口令： ssh-keygen -p<br>2、限制scp占用的带宽： scp -l 256 <a href="mailto:&#116;&#x65;&#115;&#116;&#64;&#49;&#57;&#50;&#46;&#x31;&#54;&#x38;&#46;&#x31;&#x2e;&#49;&#48;">&#116;&#x65;&#115;&#116;&#64;&#49;&#57;&#50;&#46;&#x31;&#54;&#x38;&#46;&#x31;&#x2e;&#49;&#48;</a>:/ .       #256Kb/s</p>
 
     </div>
 
