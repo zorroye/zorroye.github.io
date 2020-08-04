@@ -1,0 +1,591 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Ye&#39;s Blog</title>
+  
+  <subtitle>勤解万难</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://zorroye.github.io/"/>
+  <updated>2020-08-04T07:29:34.550Z</updated>
+  <id>https://zorroye.github.io/</id>
+  
+  <author>
+    <name>ZorroYe</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>win2012域控分发exe文件</title>
+    <link href="https://zorroye.github.io/posts/2464779298/"/>
+    <id>https://zorroye.github.io/posts/2464779298/</id>
+    <published>2017-03-21T02:53:00.000Z</published>
+    <updated>2020-08-04T07:29:34.550Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;exe文件分发基本上就三种方式&lt;/p&gt;
+&lt;p&gt;1、用SCCM,LANDESK，ManageEngine Desktop Central等去更新部署&lt;/p&gt;
+&lt;p&gt;2、发布msi文件，或者用advanced installed 制作msi文件。（zap发布exe程序好像不能用
+      
+    
+    </summary>
+    
+    
+      <category term="Windows" scheme="https://zorroye.github.io/categories/Windows/"/>
+    
+      <category term="Q&amp;A" scheme="https://zorroye.github.io/categories/Windows/Q-A/"/>
+    
+    
+      <category term="Q&amp;A" scheme="https://zorroye.github.io/tags/Q-A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>dell R710 安装win2003</title>
+    <link href="https://zorroye.github.io/posts/3603248865/"/>
+    <id>https://zorroye.github.io/posts/3603248865/</id>
+    <published>2017-02-13T08:26:00.000Z</published>
+    <updated>2020-08-04T07:29:34.455Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;raid卡：6i&lt;/p&gt;
+&lt;p&gt;网卡BMC5709c&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://zh.community.dell.com/support/_forums/poweredge/f/279/t/2809&quot;&gt;http://zh.community.dell.
+      
+    
+    </summary>
+    
+    
+      <category term="Hardware" scheme="https://zorroye.github.io/categories/Hardware/"/>
+    
+      <category term="服务器" scheme="https://zorroye.github.io/categories/Hardware/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+    
+      <category term="服务器" scheme="https://zorroye.github.io/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>华为策略路由设置走双线</title>
+    <link href="https://zorroye.github.io/posts/4260766327/"/>
+    <id>https://zorroye.github.io/posts/4260766327/</id>
+    <published>2017-02-06T09:31:00.000Z</published>
+    <updated>2020-08-04T07:29:34.566Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;http://img0.ph.126.net/WM8JhC8ipC1sgiwPTkl0mQ==/6631930882328517807.png&quot; alt=&quot;华为策略路由设置走双线 - leaf - ------勤解万难------&quot; title=&quot;华为策
+      
+    
+    </summary>
+    
+    
+      <category term="Network" scheme="https://zorroye.github.io/categories/Network/"/>
+    
+      <category term="huawei" scheme="https://zorroye.github.io/categories/Network/huawei/"/>
+    
+    
+      <category term="huawei" scheme="https://zorroye.github.io/tags/huawei/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>让部分网段走移动网络</title>
+    <link href="https://zorroye.github.io/posts/3461743172/"/>
+    <id>https://zorroye.github.io/posts/3461743172/</id>
+    <published>2017-01-24T01:42:00.000Z</published>
+    <updated>2020-08-04T07:29:34.644Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;策略路由重定向数据流&lt;/p&gt;
+&lt;p&gt;acl name acl-tocmcc 3600  &lt;/p&gt;
+&lt;p&gt; rule 5 permit ip source 10.1.22.0 0.0.0.255 &lt;/p&gt;
+&lt;p&gt; rule 10 permit ip source 10.1.3
+      
+    
+    </summary>
+    
+    
+      <category term="Network" scheme="https://zorroye.github.io/categories/Network/"/>
+    
+      <category term="huawei" scheme="https://zorroye.github.io/categories/Network/huawei/"/>
+    
+    
+      <category term="huawei" scheme="https://zorroye.github.io/tags/huawei/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ddns绑定在双线的指定线路上</title>
+    <link href="https://zorroye.github.io/posts/2104355930/"/>
+    <id>https://zorroye.github.io/posts/2104355930/</id>
+    <published>2017-01-20T01:06:00.000Z</published>
+    <updated>2020-08-04T07:29:34.455Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;需求：&lt;/p&gt;
+&lt;p&gt;1、拉了一根电信20M pppoe拨号宽带和一根移动50M 静态IP。  &lt;/p&gt;
+&lt;p&gt;      双线接入后DDNS自动绑定在了移动IP上了，需要将DDNS解析到电信IP上面&lt;/p&gt;
+&lt;p&gt;2、用的DDNS是3322的，DNS服务器IP是membe
+      
+    
+    </summary>
+    
+    
+      <category term="Network" scheme="https://zorroye.github.io/categories/Network/"/>
+    
+      <category term="huawei" scheme="https://zorroye.github.io/categories/Network/huawei/"/>
+    
+    
+      <category term="huawei" scheme="https://zorroye.github.io/tags/huawei/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>win2008 R2 四网口绑定</title>
+    <link href="https://zorroye.github.io/posts/500960709/"/>
+    <id>https://zorroye.github.io/posts/500960709/</id>
+    <published>2017-01-11T05:59:00.000Z</published>
+    <updated>2020-08-04T07:29:34.534Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;参考&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://support.icafe8.com/technologynews/focus/1943.html&quot;&gt;http://support.icafe8.com/technologynews/focus/1943.html&lt;/a&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="Windows" scheme="https://zorroye.github.io/categories/Windows/"/>
+    
+      <category term="Q&amp;A" scheme="https://zorroye.github.io/categories/Windows/Q-A/"/>
+    
+    
+      <category term="Q&amp;A" scheme="https://zorroye.github.io/tags/Q-A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>树莓派3更改分辨率</title>
+    <link href="https://zorroye.github.io/posts/886412846/"/>
+    <id>https://zorroye.github.io/posts/886412846/</id>
+    <published>2016-11-25T05:59:00.000Z</published>
+    <updated>2020-08-04T07:29:34.612Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;刷好后，进SD卡，里面有个config文件，用notepad++打开&lt;/p&gt;
+&lt;p&gt;2个参数&lt;/p&gt;
+&lt;p&gt;hdmi_mode=82                                #1080p&lt;/p&gt;
+&lt;p&gt;hdmi_group=2             
+      
+    
+    </summary>
+    
+    
+      <category term="Hardware" scheme="https://zorroye.github.io/categories/Hardware/"/>
+    
+      <category term="树莓派" scheme="https://zorroye.github.io/categories/Hardware/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+    
+    
+      <category term="树莓派" scheme="https://zorroye.github.io/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>buffalo nas 安装kms服务器</title>
+    <link href="https://zorroye.github.io/posts/942033720/"/>
+    <id>https://zorroye.github.io/posts/942033720/</id>
+    <published>2016-11-08T01:29:00.000Z</published>
+    <updated>2020-08-04T07:29:34.439Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;buffalo必须先root&lt;/p&gt;
+&lt;p&gt;下载vlmcsd&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;vlmcsd-svn796-2015-07-18-Hotbird64.7z&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a href=&quot;http:
+      
+    
+    </summary>
+    
+    
+      <category term="Hardware" scheme="https://zorroye.github.io/categories/Hardware/"/>
+    
+      <category term="巴法络" scheme="https://zorroye.github.io/categories/Hardware/%E5%B7%B4%E6%B3%95%E7%BB%9C/"/>
+    
+    
+      <category term="巴法络" scheme="https://zorroye.github.io/tags/%E5%B7%B4%E6%B3%95%E7%BB%9C/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>华为设置管理网段</title>
+    <link href="https://zorroye.github.io/posts/867340037/"/>
+    <id>https://zorroye.github.io/posts/867340037/</id>
+    <published>2016-10-07T01:00:00.000Z</published>
+    <updated>2020-08-04T07:29:34.566Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;img src=&quot;http://img1.ph.126.net/gCjkxtw8xugDoXI-VWT8yw==/6631549351794629980.png&quot; alt=&quot;华为设置管理网段 - leaf - ------勤解万难------&quot; title=&quot;华为设置管理
+      
+    
+    </summary>
+    
+    
+      <category term="Network" scheme="https://zorroye.github.io/categories/Network/"/>
+    
+      <category term="huawei" scheme="https://zorroye.github.io/categories/Network/huawei/"/>
+    
+    
+      <category term="huawei" scheme="https://zorroye.github.io/tags/huawei/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ACL设置网段不能互访</title>
+    <link href="https://zorroye.github.io/posts/760246906/"/>
+    <id>https://zorroye.github.io/posts/760246906/</id>
+    <published>2016-09-28T09:32:00.000Z</published>
+    <updated>2020-08-04T07:29:34.439Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;vlan21&lt;/p&gt;
+&lt;p&gt;acl name acl-vlan21 3010&lt;/p&gt;
+&lt;p&gt;rule deny ip source 10.1.21.0 0.0.0.255 destination 10.1.22.0 0.0.0.255&lt;/p&gt;
+&lt;p&gt;rule deny ip
+      
+    
+    </summary>
+    
+    
+      <category term="Network" scheme="https://zorroye.github.io/categories/Network/"/>
+    
+      <category term="huawei" scheme="https://zorroye.github.io/categories/Network/huawei/"/>
+    
+    
+      <category term="huawei" scheme="https://zorroye.github.io/tags/huawei/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ACL设置单IP访问网段</title>
+    <link href="https://zorroye.github.io/posts/884278273/"/>
+    <id>https://zorroye.github.io/posts/884278273/</id>
+    <published>2016-09-28T09:31:00.000Z</published>
+    <updated>2020-08-04T07:29:34.439Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;acl 3005&lt;/p&gt;
+&lt;p&gt;rule permit ip source 10.1.11.0 0.0.0.255 destination 10.1.21.0 0.0.0.255&lt;/p&gt;
+&lt;p&gt;rule permit ip source 10.1.11.0 0.0.0.25
+      
+    
+    </summary>
+    
+    
+      <category term="Network" scheme="https://zorroye.github.io/categories/Network/"/>
+    
+      <category term="huawei" scheme="https://zorroye.github.io/categories/Network/huawei/"/>
+    
+    
+      <category term="huawei" scheme="https://zorroye.github.io/tags/huawei/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Eth-trunk 配置</title>
+    <link href="https://zorroye.github.io/posts/2739087025/"/>
+    <id>https://zorroye.github.io/posts/2739087025/</id>
+    <published>2016-09-24T06:56:00.000Z</published>
+    <updated>2020-08-04T07:29:34.455Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;二层eth-trunk配置&lt;/p&gt;
+&lt;p&gt;#switchA&lt;/p&gt;
+&lt;p&gt;#建eth-trunk端口&lt;br&gt;interface Eth-Trunk11  &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt; description GE19 GE20 s5720-S5700S48P&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="Network" scheme="https://zorroye.github.io/categories/Network/"/>
+    
+      <category term="huawei" scheme="https://zorroye.github.io/categories/Network/huawei/"/>
+    
+    
+      <category term="huawei" scheme="https://zorroye.github.io/tags/huawei/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>S5700忘记密码</title>
+    <link href="https://zorroye.github.io/posts/2492908723/"/>
+    <id>https://zorroye.github.io/posts/2492908723/</id>
+    <published>2016-09-12T03:09:00.000Z</published>
+    <updated>2020-08-04T07:29:34.502Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;接console口&lt;/p&gt;
+&lt;p&gt;交换机重启&lt;/p&gt;
+&lt;p&gt;按CTRL+B&lt;/p&gt;
+&lt;p&gt;密码 &lt;a href=&quot;mailto:&amp;#65;&amp;#100;&amp;#x6d;&amp;#x69;&amp;#x6e;&amp;#64;&amp;#104;&amp;#117;&amp;#x61;&amp;#119;&amp;#x65;&amp;#105;&amp;#4
+      
+    
+    </summary>
+    
+    
+      <category term="Network" scheme="https://zorroye.github.io/categories/Network/"/>
+    
+      <category term="huawei" scheme="https://zorroye.github.io/categories/Network/huawei/"/>
+    
+    
+      <category term="huawei" scheme="https://zorroye.github.io/tags/huawei/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>s5700配置ssh</title>
+    <link href="https://zorroye.github.io/posts/1177160713/"/>
+    <id>https://zorroye.github.io/posts/1177160713/</id>
+    <published>2016-09-11T17:17:00.000Z</published>
+    <updated>2020-08-04T07:29:34.502Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;建密钥对&lt;/p&gt;
+&lt;p&gt;dsa local-key-pair create&lt;/p&gt;
+&lt;p&gt;配置vty界面&lt;/p&gt;
+&lt;p&gt;user-interface vty 0 4&lt;/p&gt;
+&lt;p&gt;authentication-mode aaa&lt;/p&gt;
+&lt;p&gt;protocol inbound
+      
+    
+    </summary>
+    
+    
+      <category term="Network" scheme="https://zorroye.github.io/categories/Network/"/>
+    
+      <category term="huawei" scheme="https://zorroye.github.io/categories/Network/huawei/"/>
+    
+    
+      <category term="huawei" scheme="https://zorroye.github.io/tags/huawei/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>无线ap端口需要配置access模式</title>
+    <link href="https://zorroye.github.io/posts/2171983291/"/>
+    <id>https://zorroye.github.io/posts/2171983291/</id>
+    <published>2016-09-11T16:31:00.000Z</published>
+    <updated>2020-08-04T07:29:34.612Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;interface gigabitethernet 0/0/46&lt;br&gt;port link-type access&lt;br&gt;port default vlan 22  &lt;/p&gt;
+&lt;p&gt;trunk模式配置&lt;br&gt;interface gigabitethernet 0/0/46&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="Network" scheme="https://zorroye.github.io/categories/Network/"/>
+    
+      <category term="huawei" scheme="https://zorroye.github.io/categories/Network/huawei/"/>
+    
+    
+      <category term="huawei" scheme="https://zorroye.github.io/tags/huawei/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>s5700端口配ip地址</title>
+    <link href="https://zorroye.github.io/posts/1048826736/"/>
+    <id>https://zorroye.github.io/posts/1048826736/</id>
+    <published>2016-09-11T16:24:00.000Z</published>
+    <updated>2020-08-04T07:29:34.502Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;interface gigabitethernet 0/0/48&lt;br&gt;undo switchport&lt;br&gt;ip address 10.1.1.2 30  &lt;/p&gt;
+&lt;p&gt;三层eth-trunk配ip地址&lt;br&gt;interface eth-trunk 1&lt;br&gt;ip ad
+      
+    
+    </summary>
+    
+    
+      <category term="Network" scheme="https://zorroye.github.io/categories/Network/"/>
+    
+      <category term="huawei" scheme="https://zorroye.github.io/categories/Network/huawei/"/>
+    
+    
+      <category term="huawei" scheme="https://zorroye.github.io/tags/huawei/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>华为ar1220设置端口镜像</title>
+    <link href="https://zorroye.github.io/posts/3822660973/"/>
+    <id>https://zorroye.github.io/posts/3822660973/</id>
+    <published>2016-08-10T10:40:00.000Z</published>
+    <updated>2020-08-04T07:29:34.566Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;system-view&lt;/p&gt;
+&lt;p&gt;#设置观察端口&lt;/p&gt;
+&lt;p&gt;observe-port interface  GigabitEthernet 0/0/7&lt;/p&gt;
+&lt;p&gt;#设置要镜像的端口&lt;/p&gt;
+&lt;p&gt;interface GigabitEthernet 0/0/2&lt;/
+      
+    
+    </summary>
+    
+    
+      <category term="Network" scheme="https://zorroye.github.io/categories/Network/"/>
+    
+      <category term="huawei" scheme="https://zorroye.github.io/categories/Network/huawei/"/>
+    
+    
+      <category term="huawei" scheme="https://zorroye.github.io/tags/huawei/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>无法创建k/3中间层组件 请确认中间件配置</title>
+    <link href="https://zorroye.github.io/posts/2440562317/"/>
+    <id>https://zorroye.github.io/posts/2440562317/</id>
+    <published>2016-08-05T00:50:00.000Z</published>
+    <updated>2020-08-04T07:29:34.612Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;服务器上面有账号，客户端如果也用这个账号，然后用了不同的密码，会导致远程组件配置工具测试不成功。&lt;/p&gt;
+&lt;p&gt;解决方法：&lt;/p&gt;
+&lt;p&gt;客户端账号使用服务器上相关账号的相同密码&lt;/p&gt;
+&lt;p&gt;或者&lt;/p&gt;
+&lt;p&gt;客户端使用不同的账号进行登录&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="Services" scheme="https://zorroye.github.io/categories/Services/"/>
+    
+      <category term="金蝶" scheme="https://zorroye.github.io/categories/Services/%E9%87%91%E8%9D%B6/"/>
+    
+    
+      <category term="金蝶" scheme="https://zorroye.github.io/tags/%E9%87%91%E8%9D%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>win2012无法安装.net3.5</title>
+    <link href="https://zorroye.github.io/posts/3763007372/"/>
+    <id>https://zorroye.github.io/posts/3763007372/</id>
+    <published>2016-07-24T10:55:00.000Z</published>
+    <updated>2020-08-04T07:29:34.550Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;a href=&quot;https://www.baidu.com/s?ie=UTF-8&amp;amp;wd=win2012%E6%97%A0%E6%B3%95%E5%AE%89%E8%A3%85.net3.5&quot;&gt;https://www.baidu.com/s?ie=UTF-8&amp;amp
+      
+    
+    </summary>
+    
+    
+      <category term="Windows" scheme="https://zorroye.github.io/categories/Windows/"/>
+    
+      <category term="Q&amp;A" scheme="https://zorroye.github.io/categories/Windows/Q-A/"/>
+    
+    
+      <category term="Q&amp;A" scheme="https://zorroye.github.io/tags/Q-A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>易助8.0安装记录</title>
+    <link href="https://zorroye.github.io/posts/735809853/"/>
+    <id>https://zorroye.github.io/posts/735809853/</id>
+    <published>2016-07-24T10:53:00.000Z</published>
+    <updated>2020-08-04T07:29:34.612Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;1、安装sql2008&lt;/p&gt;
+&lt;p&gt;2、安装易助8.0&lt;br&gt;3、打开易助进行注册&lt;/p&gt;
+&lt;p&gt;4、sql2008上面把易助的数据库进行附加&lt;/p&gt;
+&lt;p&gt;搞定&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="Services" scheme="https://zorroye.github.io/categories/Services/"/>
+    
+      <category term="易助" scheme="https://zorroye.github.io/categories/Services/%E6%98%93%E5%8A%A9/"/>
+    
+    
+      <category term="易助" scheme="https://zorroye.github.io/tags/%E6%98%93%E5%8A%A9/"/>
+    
+  </entry>
+  
+</feed>
