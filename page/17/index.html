@@ -245,20 +245,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">282</span>
+          <span class="site-state-item-count">365</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">60</span>
+        <span class="site-state-item-count">72</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">57</span>
+        <span class="site-state-item-count">68</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -304,7 +304,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2285331920/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3933523040/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -320,7 +320,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/2285331920/" class="post-title-link" itemprop="url">ubuntu10.04安装nvidia官方驱动</a>
+            <a href="/posts/3933523040/" class="post-title-link" itemprop="url">gentoo安装：2xfce桌面</a>
         </h2>
 
         <div class="post-meta">
@@ -330,14 +330,629 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2012-10-10 14:57:00" itemprop="dateCreated datePublished" datetime="2012-10-10T14:57:00+08:00">2012-10-10</time>
+              <time title="创建时间：2012-11-30 16:40:00" itemprop="dateCreated datePublished" datetime="2012-11-30T16:40:00+08:00">2012-11-30</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/gentoo/" itemprop="url" rel="index"><span itemprop="name">gentoo</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>899</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>参考：<br><a target="_blank" rel="noopener" href="http://www.gentoo.org/doc/en/xorg-config.xml">http://www.gentoo.org/doc/en/xorg-config.xml</a><br><a target="_blank" rel="noopener" href="http://www.gentoo.org/doc/zh/_cn/xorg-config.xml">http://www.gentoo.org/doc/zh\_cn/xorg-config.xml</a><br><a target="_blank" rel="noopener" href="http://www.gentoo.org/doc/zh/_cn/xfce-config.xml">http://www.gentoo.org/doc/zh\_cn/xfce-config.xml</a><br><a target="_blank" rel="noopener" href="http://blog.csdn.net/fo1/_sky/article/details/6339910">http://blog.csdn.net/fo1\_sky/article/details/6339910</a><br>1、安装Xorg  </p>
+<blockquote>
+<p>nano -w /etc/portage/make.conf  </p>
+<blockquote>
+<p>INPUT_DEVICES=”keyboard mouse”<br>VIDEO_CARDS=”vmware”  </p>
+</blockquote>
+<p>emerge libdrm<br>emerge mesa<br>emerge –autounmask-write  xorg-x11<br>dispatch-conf<br>emerge xorg-x11  </p>
+</blockquote>
+<blockquote>
+<p>#要安装125个包<br>env-update<br>source /etc/profile<br>Xorg -configure<br>X -config /root/xorg.conf.new<br>cp /root/xorg.conf.new /etc/X11/xorg.conf<br>startx 进行测试  </p>
+</blockquote>
+<p>2、安装xfce  </p>
+<blockquote>
+<p>由于安装gnome出现问题解决不了，所以安装了xfce<br>libdiscid   rarian(包含在hal下) 这2个软件不知道怎么装。  </p>
+<p>USE=”-gnome -kde -minimal -qt4 branding dbus hal jpeg lock session startup-notification thunar X”<br>emerge thunar-volman<br>emerge python<br>emerge pambase<br>emerge -avt xfce4-meta<br>for x in plugdev cdrom cdrw usb ; do gpasswd -a leaf $x ; done<br>env-update &amp;&amp; source /etc/profile<br>echo “exec startxfce4” &gt; ~/.xinitrcemerge xf86-input-evdev  #解决鼠标动不了的问题<br>startx<br>后面的附加程序都没有装  </p>
+</blockquote>
+<p>界面如下：  </p>
+<blockquote>
+<p><img src="http://img3.ph.126.net/ybaTpHC0ug5NfXM9OjlNIQ==/6597557949819376093.jpg" alt="gentoo安装：2xfce桌面 - leaf - ------坚持雅操------" title="gentoo安装：2xfce桌面 - leaf - ------坚持雅操------">  </p>
+<p>对以后LFS装桌面有好处～。。。  </p>
+<p> </p>
+</blockquote>
+<blockquote>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3997419446/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/3997419446/" class="post-title-link" itemprop="url">MYSQL：1基础</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2012-11-29 14:12:00" itemprop="dateCreated datePublished" datetime="2012-11-29T14:12:00+08:00">2012-11-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Database/" itemprop="url" rel="index"><span itemprop="name">Database</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Database/mysql/" itemprop="url" rel="index"><span itemprop="name">mysql</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>514</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>数据库技术：  </p>
+<blockquote>
+<p>数据库系统  </p>
+<blockquote>
+<p>数据库<br>数据库管理系统<br>应用系统：使用数据库的软件<br>应用开发工具<br>数据库管理员  </p>
+</blockquote>
+<p>SQL语言  </p>
+<blockquote>
+<p>DDL：对数据库和表的操作<br>DML：对数据的操作<br>DCL：控制访问权限  </p>
+</blockquote>
+<p>数据库访问技术  </p>
+<blockquote>
+<p>ODBC<br>JDBC<br>ADO.NET<br>mysql模块和mysql接口<br>只有使用访问技术，sql语言才能起作用。  </p>
+</blockquote>
+</blockquote>
+<p>MYSQL数据类型：  </p>
+<blockquote>
+<p>整数类型  </p>
+<blockquote>
+<p>tinyint                 1B<br>smallint               2B<br>mediumint          3B<br>int                       4B<br>inteage               4B<br>bigint                  8B<br>#有符号数就是把一个字节中的最前面的数当符号使用，这样能表示的最大值就少了1半。  </p>
+</blockquote>
+<p>浮点数、定点数类型  </p>
+<blockquote>
+<p>float                   4B<br>double               8B<br>decimal(M+D)   M+2     #M是整数部分的长度，D是小数点部分的长度。  </p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>  #定点数默认M=10，D=0，<br>  #定点数使用字符串形式存储。数据精度高。  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>日期、时间类型  </p>
+<blockquote>
+<p>year                 1B         #4位范围：1901-2155   #2位字符串：2000-2069，1970-1999  </p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>  #2位数字：0000，2001-2069，1970-1999  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>date                 4B        <br>time                 3B<br>datetime          8B<br>timestamp       4B<br>#NOW()可以显示当前时间  </p>
+</blockquote>
+<p>字符串类型  </p>
+<blockquote>
+<p>char<br>varchar<br>text                             #用于存字符数据<br>enum<br>set  </p>
+</blockquote>
+<p>二进制类型</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3915535499/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/3915535499/" class="post-title-link" itemprop="url">gentoo安装：基本系统</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2012-11-28 12:20:00" itemprop="dateCreated datePublished" datetime="2012-11-28T12:20:00+08:00">2012-11-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/gentoo/" itemprop="url" rel="index"><span itemprop="name">gentoo</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>17 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>环境：<br>宿主：              CPU：amd 4核         内存：DDR3 8G           显卡GT8500<br>vmware 9 ：    CPU：2核                  内存：1G                     硬盘：30G<br>参考：<a target="_blank" rel="noopener" href="http://www.gentoo.org/doc/en/handbook/handbook-x86.xml">http://www.gentoo.org/doc/en/handbook/handbook-x86.xml</a><br>下载：<a target="_blank" rel="noopener" href="http://distfiles.gentoo.org/releases/x86/autobuilds/current-iso/install-x86-minimal-20120710.iso">http://distfiles.gentoo.org/releases/x86/autobuilds/current-iso/install-x86-minimal-20120710.iso</a>  </p>
+<p>1、进光盘系统  </p>
+<blockquote>
+<p>光盘启动<br>15秒内按F1，然后输入gentoo进系统  </p>
+</blockquote>
+<p>2、安装网卡驱动  </p>
+<blockquote>
+<p>ifconfig 只找到lo，没有eth0<br>查看设备：lspci  </p>
+<blockquote>
+<p>02:01.0 Ethernet controller: Advanced Micro Devices [AMD] 79c970 [PCnet32 LANCE] (rev 10)  </p>
+</blockquote>
+<p>查看模块：lsmod | grep net  </p>
+<blockquote>
+<p>pcnet32                23142  0  </p>
+</blockquote>
+<p>显然模块是有的，就是没加载<br>安装显卡驱动  </p>
+<blockquote>
+<p>net-setup eth0<br>按照提示选择即可  </p>
+</blockquote>
+</blockquote>
+<p>3、开启ssh  </p>
+<blockquote>
+<p>/etc/init.d/sshd start<br>passwd root  </p>
+</blockquote>
+<p>4、宿主开终端，用ssh连接进光盘系统  </p>
+<blockquote>
+<p>ssh <a href="mailto:&#114;&#111;&#x6f;&#116;&#64;&#x31;&#x37;&#x32;&#46;&#x31;&#54;&#x2e;&#52;&#x33;&#x2e;&#49;&#x34;&#50;">&#114;&#111;&#x6f;&#116;&#64;&#x31;&#x37;&#x32;&#46;&#x31;&#54;&#x2e;&#52;&#x33;&#x2e;&#49;&#x34;&#50;</a><br>#dhcp获取的IP地址是172.16.43.142  </p>
+</blockquote>
+<p>5、分区、格式化、挂载  </p>
+<blockquote>
+<p>分区  </p>
+<blockquote>
+<p>cfdisk<br>/dev/sda1     ext2           128M               Boot partition<br>/dev/sda2     (swap)     1024M               Swap partition<br>/dev/sda3     ext3     Rest of the disk      Root partition  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>建文件系统  </p>
+<blockquote>
+<p>mkfs.ext2 /dev/sda1<br>mkfs.ext3 /dev/sda3<br>mkswap /dev/sda2<br>swapon /dev/sda2  </p>
+</blockquote>
+<p>挂载文件系统  </p>
+<blockquote>
+<p>mount /dev/sda3 /mnt/gentoo                 #/mnt/gentoo文件夹本身就有<br>mkdir /mnt/gentoo/boot<br>mount /dev/sda1 /mnt/gentoo/boot  </p>
+</blockquote>
+</blockquote>
+<p>6、下载stage3和portage包  </p>
+<blockquote>
+<p>stage3已经将目标系统的环境全部建好了，就剩下一些软件、linux内核、grub没装了。  </p>
+</blockquote>
+<blockquote>
+<p>0、cd /mnt/gentoo<br>1、links <a target="_blank" rel="noopener" href="http://www.gentoo.org/main/en/mirrors.xml">http://www.gentoo.org/main/en/mirrors.xml</a>  </p>
+<blockquote>
+<p>#Enter：进入，按键D：下载    按键Q：退出  </p>
+</blockquote>
+<p>2、下载stage3  </p>
+<blockquote>
+<p>downloads-mirrors-6、Asia-China-sohu.inc(http)-releases/x86/autobuilds/20121016/stage3-i686-20121016.tar.bz2<br>#实际地址<br><a target="_blank" rel="noopener" href="http://mirrors.sohu.com/gentoo/releases/x86/autobuilds/20121016/stage3-i686-20121016.tar.bz2">http://mirrors.sohu.com/gentoo/releases/x86/autobuilds/20121016/stage3-i686-20121016.tar.bz2</a>  </p>
+</blockquote>
+<p>3、下载portage包  </p>
+<blockquote>
+<p>downloads-mirrors-6、Asia-China-sohu.inc(http)-snapshots/portage-latest.tar.bz2  </p>
+</blockquote>
+<blockquote>
+<p>#实际地址  </p>
+</blockquote>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://mirrors.sohu.com/gentoo/snapshots/portage-latest.tar.bz2">http://mirrors.sohu.com/gentoo/snapshots/portage-latest.tar.bz2</a>  </p>
+</blockquote>
+<p>4、解压  </p>
+<blockquote>
+<p>tar xvjpf stage3-i686-20121016.tar.bz2<br>tar xvjf /mnt/gentoo/portage-latest.tar.bz2 -C /mnt/gentoo/usr  </p>
+</blockquote>
+<blockquote>
+<p>#这里tar参数p：表示按原地址解压  </p>
+</blockquote>
+<p>这里，可以配置/mnt/gentoo/etc/portage/make.conf 来用多核一起编译软件  </p>
+<blockquote>
+<p>nano -w /mnt/gentoo/etc/portage/make.conf<br>MAKEOPTS=”-j2”  </p>
+</blockquote>
+</blockquote>
+<p>7、选源、选同步  </p>
+<blockquote>
+<p>选源<br>mirrorselect -i -o &gt;&gt; /mnt/gentoo/etc/portage/make.conf  </p>
+<blockquote>
+<p>#这里我选了3个  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>GENTOO_MIRRORS=”<a target="_blank" rel="noopener" href="http://mirrors.163.com/gentoo/">http://mirrors.163.com/gentoo/</a>  </p>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>  <a href="ftp://mirrors.sohu.com/gentoo/">ftp://mirrors.sohu.com/gentoo/</a><br>  <a target="_blank" rel="noopener" href="http://mirrors.sohu.com/gentoo/&quot;">http://mirrors.sohu.com/gentoo/&quot;</a>  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>选同步<br>mirrorselect -i -r -o &gt;&gt; /mnt/gentoo/etc/portage/make.conf  </p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>    SYNC=”rsync://rsync.cn.gentoo.org/gentoo-portage”  </p>
+</blockquote>
+</blockquote>
+<p>8、chroot  </p>
+<blockquote>
+<p>复制dns信息  </p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>cp -L /etc/resolv.conf /mnt/gentoo/etc/  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>加载必需的文件系统  </p>
+<blockquote>
+<p>mount -t proc none /mnt/gentoo/proc<br>mount –rbind /sys /mnt/gentoo/sys<br>mount –rbind /dev /mnt/gentoo/dev  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>chroot操作  </p>
+<blockquote>
+<p>chroot /mnt/gentoo /bin/bash<br>env-update<br>source /etc/profile<br>export PS1=”(chroot) $PS1”  </p>
+</blockquote>
+</blockquote>
+<p>9、更新portage树，保持安装软件的最新版  </p>
+<blockquote>
+<p>emerge –sync  </p>
+</blockquote>
+<blockquote>
+<p>如果有些软件包已经更新，则再运行emerge –oneshot portage 更新  </p>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>10、自定义安装模式  </p>
+<blockquote>
+<p>eselect profile list  </p>
+<blockquote>
+<p>Available profile symlink targets:<br>  [1]   default/linux/x86/10.0 *<br>  [2]   default/linux/x86/10.0/selinux<br>  [3]   default/linux/x86/10.0/desktop<br>  [4]   default/linux/x86/10.0/desktop/gnome<br>  [5]   default/linux/x86/10.0/desktop/kde<br>  [6]   default/linux/x86/10.0/developer<br>  [7]   default/linux/x86/10.0/server<br>  [8]   hardened/linux/x86<br>  [9]   hardened/linux/x86/selinux<br>  [10]  hardened/linux/uclibc/x86  </p>
+</blockquote>
+<p>eselect profile set 4<br>nano -w /etc/portage/make.conf  </p>
+<blockquote>
+<p>USE=”gtk gnome -qt4 -kde dvd alsa cdr”</p>
+</blockquote>
+<blockquote>
+<p>USE参数很重要，这里是自定义要安装的软件。  </p>
+</blockquote>
+<blockquote>
+<p>USE参数中文说明：<br><a target="_blank" rel="noopener" href="http://linux.chinaunix.net/techdoc/desktop/2007/10/20/970341.shtml">http://linux.chinaunix.net/techdoc/desktop/2007/10/20/970341.shtml</a>  </p>
+</blockquote>
+</blockquote>
+<p>11、安装内核  </p>
+<blockquote>
+<p>设置时区  </p>
+<blockquote>
+<p>cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime<br>echo “Asia/Shanghai” &gt; /etc/timezone  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>安装内核源码  </p>
+<blockquote>
+<p>emerge gentoo-sources<br>安装好后查看ls -l /usr/src/linux<br>会有内核源代码 Linux–&gt;Kernel 3.5.7-gentoo  </p>
+</blockquote>
+<p>自动安装内核  </p>
+<blockquote>
+<p>emerge genkernel                          #安装genkernel软件包<br>genkernel all<br>ls /boot/kernel* /boot/initramfs*       #查看是否已经有内核文件  </p>
+</blockquote>
+<p>手动添加内核模块  </p>
+<blockquote>
+<p>列：nano -w /etc/conf.d/modules<br>       modules_2_6=”3c59x”  </p>
+</blockquote>
+</blockquote>
+<p>12、设置配置文件  </p>
+<blockquote>
+<p>nano -w /etc/fstab  </p>
+<blockquote>
+<p>注释掉全部内容，然后添加<br>/dev/sda1   /boot        ext2    defaults,noatime     0 2<br>/dev/sda2   none         swap    sw                   0 0<br>/dev/sda3   /            ext3    noatime              0 1<br>/dev/cdrom  /mnt/cdrom   auto    noauto,user          0 0  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>#设置主机名<br>nano -w /etc/conf.d/hostname          </p>
+<blockquote>
+<p>hostname=”leaf”  </p>
+</blockquote>
+<p>#设置域里的计算机名和网络<br>nano -w /etc/conf.d/net  </p>
+<blockquote>
+<p>dns_domain_lo=”leafnet”<br>config_eth0=”dhcp”  </p>
+</blockquote>
+<p>#设置网络接口开机启动<br>cd /etc/init.d  </p>
+<blockquote>
+<p>ln -s net.lo net.eth0<br>rc-update add net.eth0 default   </p>
+</blockquote>
+<p>#设置hosts<br>nano -w /etc/hosts  </p>
+<blockquote>
+<p>127.0.0.1     leaf localhost  </p>
+</blockquote>
+<p>#设置root密码<br>passwd  </p>
+<p>#设置时钟<br>nano -w /etc/conf.d/hwclock  </p>
+<blockquote>
+<p>clock=”local”  </p>
+</blockquote>
+<p>#设置语言<br>locale -a<br>nano -w /etc/locale.gen  </p>
+<blockquote>
+<p>en_US.UTF-8 UTF-8  </p>
+</blockquote>
+<p>nano -w /etc/env.d/02locale  </p>
+<blockquote>
+<p>LANG=”en_US.UTF-8 UTF-8”<br>LC_COLLATE=”C”  </p>
+</blockquote>
+</blockquote>
+<p>13、安装系统工具  </p>
+<blockquote>
+<p>#log工具  </p>
+</blockquote>
+<blockquote>
+<p>emerge syslog-ng<br>rc-update add syslog-ng default  </p>
+</blockquote>
+<blockquote>
+<p>#cron  </p>
+</blockquote>
+<blockquote>
+<p>emerge vixie-cron<br>rc-update add vixie-cron default  </p>
+<p>#安装mlocate<br>emerge mlocate  </p>
+<p>#设置sshd服务开启启动<br>rc-update add sshd default<br>nano -w /etc/inittab  </p>
+<blockquote>
+<p>s0:12345:respawn:/sbin/agetty 9600 ttyS0 vt100<br>s1:12345:respawn:/sbin/agetty 9600 ttyS1 vt100  </p>
+</blockquote>
+<p>#安装dhcp客户端<br>emerge dhcpcd  </p>
+</blockquote>
+<p>14、安装GRUB  </p>
+<blockquote>
+<p>emerge grub</p>
+</blockquote>
+<blockquote>
+<p>nano -w /boot/grub/grub.conf  </p>
+<blockquote>
+<p>default 0<br>timeout 30<br>splashimage=(hd0,0)/boot/grub/splash.xpm.gz  </p>
+<p>title Gentoo Linux 3.3.7<br>root (hd0,0)<br>kernel /boot/kernel-genkernel-x86-3.5.7-gentoo root=/dev/sda3<br>initrd /boot/initramfs-genkernel-x86-3.5.7-gentoo  </p>
+</blockquote>
+<p>grep -v rootfs /proc/mounts &gt; /etc/mtab<br>grub-install –no-floppy /dev/sda<br>grub –no-floppy  </p>
+<blockquote>
+<p>root (hd0,0)<br>setup (hd0)<br>quit   </p>
+</blockquote>
+</blockquote>
+<p>15、重启，至此安装完成  </p>
+<blockquote>
+<p>exit<br>umount -l /mnt/gentoo/dev{/shm,/pts,}<br>umount -l /mnt/gentoo{/boot,/proc,}<br>reboot  </p>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>16、建普通账户和清理文件  </p>
+<blockquote>
+<p>建账户<br>useradd -m -G users,wheel,audio -s /bin/bash leaf<br>passwd leaf  </p>
+</blockquote>
+<blockquote>
+<p>清理文件<br>rm /stage3-i686-20121016.tar.bz2*<br>rm /portage-latest.tar.bz2*  </p>
+</blockquote>
+<p>备注：以上是gentoo基本系统，X window 等都没有安装。  </p>
+<p><img src="http://img3.ph.126.net/2zpvk_RktRS-X3t2soSQ4w==/6598189069493526073.jpg" alt="vmware安装gentoo - leaf - ------坚持雅操------" title="vmware安装gentoo - leaf - ------坚持雅操------"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2889213132/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/2889213132/" class="post-title-link" itemprop="url">[转载]linux下使用logrotate自动备份mysql数据库</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2012-11-23 10:12:00" itemprop="dateCreated datePublished" datetime="2012-11-23T10:12:00+08:00">2012-11-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:26" itemprop="dateModified" datetime="2020-08-04T15:44:26+08:00">2020-08-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -376,288 +991,63 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>系统：ubuntu10.04 x64<br>CPU：AMD Athlon(tm) II X4 635 Processor × 4<br>主板：AMD 870 (无板载显卡)<br>内存：DDR3-1333 8G<br>显卡：8500GT  </p>
-<p>1、安装环境  </p>
+          <p>原文：<a target="_blank" rel="noopener" href="http://islandlinux.org/howto/automated-mysql-backups">http://islandlinux.org/howto/automated-mysql-backups</a><br>参考：<a target="_blank" rel="noopener" href="http://www.cslog.cn/Content/logrotate-mysql-automated-backu/">http://www.cslog.cn/Content/logrotate-mysql-automated-backu/</a>  </p>
+<p>1、建备份账户  </p>
 <blockquote>
-<p>sudo apt-get install build-essential pkg-config linux-headers-$(uname -r)<br>下载驱动并设置权限 chmod a+x NVIDIA-Linux-x86_64-304.51.run  
-   </p>
-</blockquote>
-<p>2、删除已有的模块和软件  </p>
+<p>mysql -u root -p  </p>
 <blockquote>
-<p>移除旧的nvidia模块和组件  </p>
-<blockquote>
-<p>sudo apt-get –purge remove nvidia-glx nvidia-glx-legacy nvidia-glx-new nvidia-settings</p>
+<p>GRANT SELECT, LOCK TABLES ON *.* TO backup@localhost IDENTIFIED BY ‘bkup123’;<br>FLUSH PRIVILEGES;<br>EXIT；<br>#账户名：backup   密码：bkup123  </p>
 </blockquote>
 </blockquote>
+<p>2、建密码文件用于登录  </p>
 <blockquote>
-<p>检查无关的nvidia软件是否已被完全删除  </p>
+<p>touch .mysql.backup  </p>
 <blockquote>
-<p>dpkg -l | grep nvidia</p>
+<p>[client]<br>user=”backup”<br>password=”bkup123”  </p>
 </blockquote>
+<p>chmod 400 .mysql.backup  </p>
 </blockquote>
+<p>3、建备份脚本  </p>
 <blockquote>
-<p>删除这些软件  </p>
-<blockquote>
-<p>sudo aptitude purge $(dpkg -l | grep nvidia | awk ‘{print $2}’)  </p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>移除xorg-nv驱动  </p>
-<blockquote>
-<p>sudo apt-get –purge remove xserver-xorg-video-nv  </p>
-</blockquote>
-<p>禁用<code>nouveau   </code></p>
-<blockquote>
-<p><code>sudo gedit /etc/modprobe.d/blacklist.conf   添加blacklist nouveau   </code></p>
-</blockquote>
+<p>cd /usr/local/sbin  </p>
 </blockquote>
 <blockquote>
-<p>#总之就是将新立得里面所有的nvidia选项全删除，里面的jockey*这个不用删除没事。  </p>
+<p>sudo touch  backup_mysql.sh<br>sudo vi backup_mysql.sh  </p>
 </blockquote>
-<p>3、重启并安装  </p>
+<p>#!/bin/sh  </p>
+<h1 id=""><a href="#" class="headerlink" title=""></a></h1><p># written by Dallas Vogels 2008-10-01  </p>
+<h1 id="-1"><a href="#-1" class="headerlink" title=""></a></h1><p>export PATH=/bin:/usr/bin:/sbin:/usr/sbin  </p>
+<p>#将数据库备份到 /var/backups/mysql<br>OUTPUTDIR=”/var/backups/mysql”<br>OPTIONS=”–all –complete-insert –add-drop-table –extended-insert –quote-names”<br>#密码文件所在位置<br>CONFIG_FILE=”/home/solarit001/.mysql.backup”  </p>
+<p># check that backup dir exists<br>if [ ! -d $OUTPUTDIR ]; then<br>        mkdir $OUTPUTDIR<br>fi  </p>
+<p># get list of databases<br>DATABASES=`echo “SHOW DATABASES” | mysql –defaults-file=”$CONFIG_FILE” mysql`<br>#我这里的结果如下<br>#Database<br>#information_schema<br>#mysql<br>#wordpress  </p>
+<p> for DATABASE in $DATABASES; do  </p>
+<p>#备份名字为*.sql<br>  if [ “$DATABASE” != “Database” -a “$DATABASE” != “information_schema” ]; then<br>    # backup database<br>    mysqldump –defaults-file=”$CONFIG_FILE” $OPTIONS $DATABASE &gt; $OUTPUTDIR/$DATABASE.sql<br>  fi  </p>
+<p>done  </p>
+<p>exit 0  </p>
 <blockquote>
-<p>重启后按ctrl+alt+f1 ，进tty1，关闭gdm：sudo /etc/init.d/gdm stop<br>安装  </p>
-<blockquote>
-<p>sudo su<br>sh ./NVIDIA-Linux-x86_64-304.51.run<br>1、前面如果模块没有删除干净，装的时候会帮我们先卸载再安装的<br>2、/usr/lib/xorg/modules/extensions/libglx.so 会帮我们自动做符号连接，连接到同目录下面的libglx.so.304.51  </p>
+<p>sudo chmod 500 backup_mysql.sh  </p>
 </blockquote>
-<p>安装完后重启  </p>
+<p>4、创建logrotate文件  </p>
 <blockquote>
-<p>sudo reboot  </p>
+<p>cd /etc/logrotate.d<br>sudo touch mysql-backups<br>sudo vi mysql-backups  </p>
 </blockquote>
-</blockquote>
-<p>4、仍然碰到分辨率的问题  </p>
+<p>/var/backups/mysql/*.sql {<br>  daily<br>  copy<br>  missingok<br>  rotate 30<br>  compress<br>  notifempty<br>  create 640 root adm<br>  sharedscripts<br>  prerotate<br>    /usr/local/sbin/backup_mysql.sh  #备份之前先运行backup_mysql.sh<br>  endscript<br>}</p>
 <blockquote>
-<p> gtf 1152 864 60 -x  </p>
-<blockquote>
-<p>  # 1152x864 @ 60.00 Hz (GTF) <strong>hsync: 53.70 kHz; pclk: 81.62 MHz</strong><br>  Modeline “1152x864_60.00”  81.62  1152 1216 1336 1520  864 865 868 895  -HSync +Vsync  </p>
+<p>5、测试  </p>
 </blockquote>
-<p>sudo gedit /etc/X11/xorg.conf  </p>
 <blockquote>
-<p>Section “Monitor”<br>    Identifier     “Monitor0”<br>    VendorName     “Unknown”<br>    ModelName      “Unknown”<br>    HorizSync       28.0 - <strong>53.70</strong><br>    VertRefresh     43.0 - <strong>81.62</strong><br>    Option         “DPMS”<br>EndSection  </p>
-</blockquote>
-</blockquote>
-<p>参考：  </p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="http://www.5dlinux.com/article/1/2011/linux_42055.html">Ubuntu中安装NViDIA官方驱动</a>  </p>
-</blockquote>
-<p>效果  </p>
-<blockquote>
-<p><img src="http://img1.ph.126.net/SXMSsuyEqs9UR3TzM5dSmg==/30117822525904591.jpg" alt="ubuntu10.04安装nvidia官方驱动 - leaf - ------坚持雅操------" title="ubuntu10.04安装nvidia官方驱动 - leaf - ------坚持雅操------"></p>
-<p> </p>
+<p>sudo backup_mysql.sh<br>sudo logrotate -f /etc/logrotate.d/mysql-backups</p>
 </blockquote>
 <blockquote>
 </blockquote>
-<p>继续问题：  </p>
+<p>问题：<br>mysqldump: Got error: 1044: Access denied for user ‘backup’@’localhost’ to database ‘information_schema’<br>when using LOCK TABLES  </p>
+<p>解决：  </p>
 <blockquote>
-<p>问题1：firefox开2个页面，一个页面放视频，另一个开网页，看网页的这个页面会出现视频画面  </p>
+<p>1、加参数：–skip-lock-tables<br>2、不备份被锁定的数据库：  </p>
 <blockquote>
-<p><img src="http://img1.ph.126.net/YgLW2bK4xbMjpXSwbQRzlA==/6597256683634594001.jpg" alt="ubuntu10.04安装nvidia官方驱动 - leaf - ------坚持雅操------" title="ubuntu10.04安装nvidia官方驱动 - leaf - ------坚持雅操------">  </p>
+<p>if [ “$DATABASE” != “Database” -a “$DATABASE” != “information_schema” ]; then  </p>
 </blockquote>
-<p>问题2：firefox—帮助—故障排除信息：图像列表显示  </p>
-<blockquote>
-<p>适配器描述        Mesa Project – Software Rasterizer<br>厂商 ID              Mesa Project<br>设备 ID              Software Rasterizer<br>驱动程序版本    2.1 Mesa 7.7.1<br>WebGL 渲染器  因您的显卡驱动版本已屏蔽。尝试更新您的显卡驱动至版本 304.51 或更新版本。<br>GPU 加速窗口   0. 因您的显卡驱动版本已屏蔽。尝试更新您的显卡驱动至版本 304.51 或更新版本。  </p>
-</blockquote>
-<p>问题3：点外观—视频效果，开不起来说驱动没有装  </p>
-</blockquote>
-<p>解决方法：  </p>
-<blockquote>
-<p>20121206：终于找到原因了，我把nvidia模块关掉了竟然。。。。<br><code>查看 /etc/modprobe.d/blacklist.conf</code>。发现里面加入了 blacklist nvidiafb  </p>
-</blockquote>
-<blockquote>
-<p>删除blacklist nvidiafb，然后我又重装了驱动就好了，重装同步骤3  </p>
-</blockquote>
-<p>附：删除nvidia操作：<br>上面的步骤2无效，使用如下命令<br>sudo /usr/sbin/dkms remove -m nvidia -v 304.51 –all  </p>
-<p>参考：<a target="_blank" rel="noopener" href="http://www.mystone7.com/2012/05/20/ubuntu_install_nvidia/">http://www.mystone7.com/2012/05/20/ubuntu_install_nvidia/</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2095604229/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/2095604229/" class="post-title-link" itemprop="url">fedora17安装nvidia官方驱动</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2012-10-10 12:25:00" itemprop="dateCreated datePublished" datetime="2012-10-10T12:25:00+08:00">2012-10-10</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.5k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>5 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>版本：fedora17 x64位<br>CPU：AMD Athlon(tm) II X4 635 Processor × 4<br>主板：AMD 870 (无板载显卡)<br>内存：DDR3-1333 8G<br>显卡：8500GT  </p>
-<p>0、设置了sudoers、yum源  </p>
-<blockquote>
-<p>sudo gedit /etc/sudoers  </p>
-<blockquote>
-<p># User privilege specification<br>root    ALL=(ALL) ALL<br>加入   你的账户名   ALL=(ALL) ALL  </p>
-</blockquote>
-<p>yum源就加163的就好了  </p>
-<blockquote>
-<p>mirrors.163.com<br>点fedora使用帮助，里面有详细信息  </p>
-</blockquote>
-</blockquote>
-<p>1、安装相关编译包  </p>
-<blockquote>
-<p>gcc、make、kernel-devel、kernel-headers、dkms<br>sudo yum -y install gcc make dkms<br>kernel-devel和kernel-headers是从DVD安装光盘里找的<br>#也可以把kernel更新到最新版，再用yum下载kernel源码  </p>
-</blockquote>
-<p>2、相关设置  </p>
-<blockquote>
-<p>1、阻止nouveau模块的加载  </p>
-<blockquote>
-<p>sudo gedit /etc/modprobe.d/blacklist.conf<br>添加一行：blacklist nouveau  </p>
-</blockquote>
-<blockquote>
-<p>sudo gedit /boot/grub2/grub.cfg<br>在menuentry ‘Fedora Linux’ 这一段的linux    /boot/vmlinuz 这一行末尾rhgb quiet后面添加 nouveau.modeset=0  </p>
-</blockquote>
-<p>2、降低selinux级别  </p>
-<blockquote>
-<p>sudo setsebool -P allow_execstack on  </p>
-</blockquote>
-<p>3、下载nvidia官方驱动和设置权限  </p>
-<blockquote>
-<p>下载最新的就可以：NVIDIA-Linux-x86_64-304.51.run<br>chmod a+x NVIDIA-Linux-x86_64-304.51.run  </p>
-</blockquote>
-</blockquote>
-<p>3、操作  </p>
-<blockquote>
-<p>1、进文本模式  </p>
-<blockquote>
-<p>重启进菜单后-按e进编辑模式-找到rhgb quiet，输入 3   然后按F10启动  </p>
-</blockquote>
-<p>2、nvidia安装  </p>
-<blockquote>
-<p>sh ./NVIDIA-Linux-x86_64-304.51.run</p>
-</blockquote>
-<blockquote>
-<p>里面就是选accept，然后再要不要生成xorg.conf的时候按ok 就好了  </p>
-</blockquote>
-<p>3、设置分辨率  </p>
-<blockquote>
-<p>重启后发现分辨率只有640x480<br>1、查看频率  </p>
-<blockquote>
-<p>gtf 1280 1024 60  -x  </p>
-</blockquote>
-<p>  # 1280x1024 @ 60.00 Hz (GTF) <strong>hsync: 63.60 kHz; pclk: 108.88 MHz</strong><br>  Modeline “1280x1024_60.00”  108.88  1280 1360 1496 1712  1024 1025 1028 1060  -HSync +Vsync<br>2、设置频率  </p>
-</blockquote>
-<blockquote>
-<p>sudo gedit /etc/X11/xorg.conf  </p>
-<blockquote>
-<p>Section “Monitor”<br>    Identifier     “Monitor0”<br>    VendorName     “Unknown”<br>    ModelName      “Unknown”<br>    HorizSync       28.0 - <strong>63.60</strong><br>    VertRefresh     43.0 - <strong>108.88</strong><br>    Option         “DPMS”<br>EndSection  </p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>4、查看模块  </p>
-<blockquote>
-<p>lsmod  </p>
-<blockquote>
-<p>nvidia              11262717  40<br>nouveau               785691  0  </p>
-</blockquote>
-<p>modinfo nvidia  </p>
-<blockquote>
-<p>filename:       /lib/modules/3.3.4-5.fc17.x86_64/extra/nvidia.ko<br>alias:          char-major-195-*<br>version:        304.51<br>supported:      external<br>license:        NVIDIA</p>
-</blockquote>
-</blockquote>
-<p>后记  </p>
-<blockquote>
-<p>碰到的问题就是屏幕分辨率的问题，没碰到安装不了驱动的问题，也没有黑屏和蓝进度条的问题  </p>
-</blockquote>
-<blockquote>
-<blockquote>
-</blockquote>
-</blockquote>
-<p>参考：  </p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="http://www.2cto.com/os/201109/104395.html">fedora15安装nvidia官方驱动</a></p>
-</blockquote>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="http://www.xufangxi.cn/Linux/11.html">解决linux低分辨率</a><br><a target="_blank" rel="noopener" href="http://www.cnblogs.com/ZJoy/archive/2011/03/15/1984938.html">xorg.conf配置详解</a><br><a target="_blank" rel="noopener" href="http://hi.baidu.com/cxkipq/item/99a2229216b58736336eebc2">linux gtf和cvt命令</a>  </p>
-</blockquote>
-<blockquote>
-<blockquote>
-</blockquote>
-</blockquote>
-<p>效果  </p>
-<blockquote>
-<p><img src="http://img4.ph.126.net/DvYtJ6ZJGYgSLMun86veQg==/6598258338725711534.jpg" alt="fedora17安装nvidia官方驱动 - leaf - ------坚持雅操------" title="fedora17安装nvidia官方驱动 - leaf - ------坚持雅操------"></p>
-</blockquote>
-<blockquote>
-<p><img src="http://img7.ph.126.net/B1auivZnvejbCt67buGBDQ==/6597256683634379457.jpg" alt="fedora17安装nvidia官方驱动 - leaf - ------坚持雅操------" title="fedora17安装nvidia官方驱动 - leaf - ------坚持雅操------"></p>
-<p><img src="http://img5.ph.126.net/74zwresWU4eSY0k7iIXNOA==/2682175053093706855.jpg" alt="fedora17安装nvidia官方驱动 - leaf - ------坚持雅操------" title="fedora17安装nvidia官方驱动 - leaf - ------坚持雅操------"></p>
+<p>3、用root账户备份  </p>
 </blockquote>
 
       
@@ -678,7 +1068,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/326245325/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1788866578/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -694,7 +1084,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/326245325/" class="post-title-link" itemprop="url">LFS中使用rpm有关问题</a>
+            <a href="/posts/1788866578/" class="post-title-link" itemprop="url">excel编辑后保存自动出现TMP文件，且无法删除</a>
         </h2>
 
         <div class="post-meta">
@@ -704,14 +1094,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2012-10-07 10:13:00" itemprop="dateCreated datePublished" datetime="2012-10-07T10:13:00+08:00">2012-10-07</time>
+              <time title="创建时间：2012-11-20 14:18:00" itemprop="dateCreated datePublished" datetime="2012-11-20T14:18:00+08:00">2012-11-20</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -719,11 +1109,11 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                  <a href="/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/lfs/" itemprop="url" rel="index"><span itemprop="name">lfs</span></a>
+                  <a href="/categories/Windows/excel/" itemprop="url" rel="index"><span itemprop="name">excel</span></a>
                 </span>
             </span>
 
@@ -733,7 +1123,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>269</span>
+              <span>104</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -750,9 +1140,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>转载：<br><a target="_blank" rel="noopener" href="http://www.linuxfromscratch.org/hints/downloads/files/rpm.txt">http://www.linuxfromscratch.org/hints/downloads/files/rpm.txt</a><br><a target="_blank" rel="noopener" href="http://hi.baidu.com/manbuzhe2009/item/94ba0f2af1bff4c6ee10f139">http://hi.baidu.com/manbuzhe2009/item/94ba0f2af1bff4c6ee10f139</a><br><a target="_blank" rel="noopener" href="http://zhidao.baidu.com/question/101700893.html&__bd_tkn__=6ea61a343c69dc25571ba779eca42cf6bd1388fd8078338d51fed8133ea5c69d362ad36bb4bcda3b39bb3949f6bbe47087ac3af56e60b1f4e7eb6015795cfc359d67a1f15d0f03de01252778dc32be0a4a739e7e0a2fba88a03f37087d2e372ecf6f7f323cb5a8a8e97d89accbdc8d02ce3226fe4faa">百度知道</a>  </p>
-<p>LFS虽然能安装rpm之类的包管理软件，但是由于建LFS是源码建的，所以rpm数据库中就不包含这些源码建的包，<br>这就导致用软件包管理系统在安装软件包的时候，会因为依赖关系不足而无法安装。  </p>
-<p>做好临时系统后直接勇rpm或者deb进行制作目标系统不知道是不是可以做出含包管理软件的目标系统</p>
+          <p>每保存一次就出现一个tmp文件，而且不是隐藏文件，直接删除无法删除，用360解除占用，出现system占用文件的情况  </p>
+<p>解决：<br>这个跟杀毒软件有关系，那台电脑用的是360杀毒，关闭后tmp文件就消失了。保护过头了。</p>
 
       
     </div>
@@ -772,7 +1161,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3250989039/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2909402862/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -788,7 +1177,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/3250989039/" class="post-title-link" itemprop="url">鸟哥基础第二十六章</a>
+            <a href="/posts/2909402862/" class="post-title-link" itemprop="url">关于党代会选举常识</a>
         </h2>
 
         <div class="post-meta">
@@ -798,14 +1187,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2012-10-06 19:37:00" itemprop="dateCreated datePublished" datetime="2012-10-06T19:37:00+08:00">2012-10-06</time>
+              <time title="创建时间：2012-11-16 08:22:00" itemprop="dateCreated datePublished" datetime="2012-11-16T08:22:00+08:00">2012-11-16</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -813,11 +1202,11 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                  <a href="/categories/Live/" itemprop="url" rel="index"><span itemprop="name">Live</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
+                  <a href="/categories/Live/%E7%82%B9%E6%BB%B4/" itemprop="url" rel="index"><span itemprop="name">点滴</span></a>
                 </span>
             </span>
 
@@ -827,14 +1216,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>383</span>
+              <span>414</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -844,14 +1233,79 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>编译核心最重要的目的是为了系统的稳定。  </p>
-<p>编译核心需要的软件：核心源码src、核心开发套件kernel-devel、gcc、make工具等  </p>
-<p>cd /usr/src/kernels/2.6.11-1.1369_FC4smp-i686<br>make menuconfig<br>对于已经编译过，但是要加新内容，可以使用make oldconfig   #必须要有.config文件  </p>
-<p><img src="http://img9.ph.126.net/3b59c79c6H3tDr7JStHc9A==/6597183016355275109.jpg" alt="鸟哥基础第二十六章 - leaf - ------坚持雅操------" title="鸟哥基础第二十六章 - leaf - ------坚持雅操------"></p>
-<p> <br>make clean<br>make bzImage         #制作核心<br>make modules         #制作模块  </p>
-<p>#安装模块到/lib/modules<br>mv /lib/modules/2.6.* /lib/modules/2.6.*.old<br>make modules_install       </p>
-<p>#安装核心<br>cp /usr/src/…./bzImage           /boot/vmlinuz-….<br>cp /usr/src/…./System.map     /boot/System.map…  </p>
-<p>修改grub菜单</p>
+          <p>党代会任务：选三委  </p>
+<blockquote>
+<p>     大会主席团列名单               #安插自身势力</p>
+<blockquote>
+<blockquote>
+<p>|  </p>
+</blockquote>
+</blockquote>
+<p> 大会成员进行差额预选  </p>
+<blockquote>
+<blockquote>
+<p>|  </p>
+</blockquote>
+</blockquote>
+<p>大会主席团及常委确定名单      #安插自身势力  </p>
+<blockquote>
+<blockquote>
+<p>|  </p>
+</blockquote>
+</blockquote>
+<p> 大会成员进行投票选三委  </p>
+<blockquote>
+<blockquote>
+<p>|  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>  选举产生  </p>
+</blockquote>
+<p>       中央委员会委员<br>    中央委员会候补委员<br>中央纪律检查委员会委员  </p>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>|  </p>
+</blockquote>
+</blockquote>
+<p>第二天召开一中全会  </p>
+</blockquote>
+<p>一中全会：选政治局常委、总书记、书记处、中央军委  </p>
+<blockquote>
+<blockquote>
+<p>三委成员选举  </p>
+<blockquote>
+<p>|  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>  选举产生  </p>
+</blockquote>
+<blockquote>
+<p>政治局常委<br>   总书记<br>   书记处<br> 中央军委  </p>
+</blockquote>
+</blockquote>
+<p>一中全会：  </p>
+<blockquote>
+<p>党的全国代表大会结束后召开，选举中共中央总书记、中央政治局成员，决定中央其他部门成员。  </p>
+</blockquote>
+<p>二中全会：  </p>
+<blockquote>
+<p>次年的年初召开，布置国家主席、全国人大、国务院、全国政协、中央军委换届选举的人事安排。  </p>
+</blockquote>
+<p>三中至六中全会：  </p>
+<blockquote>
+<p>每年的第四季度召开一次全会，主要审议决定经济和社会发展、民主政治、党的建设、精神文明建设等事务。  </p>
+</blockquote>
+<p>七中全会：  </p>
+<blockquote>
+<p>在新的全国代表大会前夕召开，主要任务是为全国代表大会的召开做好准备工作。  </p>
+</blockquote>
+<p>习近平  父亲 习仲勋<br>李克强  父亲 李奉三                H人<br>张德江  父亲 张志毅                J人<br>俞正声  父亲 俞启威<br>刘云山  父亲<br>王岐山  父亲                      妻子姚明珊的父亲姚依林<br>张高丽  父亲</p>
 
       
     </div>
@@ -871,7 +1325,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2764598326/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/52321487/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -887,7 +1341,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/2764598326/" class="post-title-link" itemprop="url">鸟哥基础第二十五章</a>
+            <a href="/posts/52321487/" class="post-title-link" itemprop="url">广域网</a>
         </h2>
 
         <div class="post-meta">
@@ -897,14 +1351,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2012-10-06 19:36:00" itemprop="dateCreated datePublished" datetime="2012-10-06T19:36:00+08:00">2012-10-06</time>
+              <time title="创建时间：2012-11-13 14:19:00" itemprop="dateCreated datePublished" datetime="2012-11-13T14:19:00+08:00">2012-11-13</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -912,633 +1366,11 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                  <a href="/categories/Network/" itemprop="url" rel="index"><span itemprop="name">Network</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.3k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>5 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>查看电脑状态  </p>
-<blockquote>
-<p>lspci<br>iostat  </p>
-<blockquote>
-<p>iostat -c 2 3   #2秒检测CPU使用率一次，共检测3次<br>iostat -d 2 3  ##2秒检测硬盘读写一次，共检测3次</p>
-</blockquote>
-<p>lm_sensors  </p>
-<blockquote>
-<p>命令：/usr/local/bin/sensors  </p>
-<blockquote>
-<p> /usr/local/sbin/sensors-detect  </p>
-</blockquote>
-<p>配置：/etc/sensors3.conf、/etc/sensors.d  </p>
-</blockquote>
-</blockquote>
-<p>setup功能  </p>
-<blockquote>
-<p>相当于系统安装时每个步骤的设置，包含nvsysv  </p>
-<p><img src="http://img9.ph.126.net/dk1_2oq3vP4wmw-3zP7Adw==/6598253940679164369.jpg" alt="鸟哥基础第二十五章 - leaf - ------坚持雅操------" title="鸟哥基础第二十五章 - leaf - ------坚持雅操------"></p>
-<p>   </p>
-</blockquote>
-<p>cups架构打印机  </p>
-<blockquote>
-<p>通过网页设置的很方便<br>linux对postscript打印格式支持最好  </p>
-<blockquote>
-<p>PPD:：用于支持postscript，放在/usr/share/cups/model  </p>
-</blockquote>
-<p>联机模式：  </p>
-<blockquote>
-<p>socket模式：socket://IP:9100<br>LPD   模式：打印机名称LPT1/LPT2<br>IPP    模式：ipp://IP:631/printername<br>smb   模式：smb://user:passwd@IP/printername  </p>
-</blockquote>
-</blockquote>
-<p>LVM  </p>
-<blockquote>
-<p>作用：产生一个大磁盘，并且扩容方便<br>概念：  </p>
-<blockquote>
-<p>前奏：fdisk将磁盘ID改为8e</p>
-</blockquote>
-<blockquote>
-<p>PV：   physical volume  </p>
-<blockquote>
-<p>  主要用于标示磁盘用于LVM  </p>
-</blockquote>
-<p>VG：   volume group  </p>
-<blockquote>
-<p>  相当于把PV集合起来当作一个硬盘，该硬盘没有分过区、没格式化过  </p>
-</blockquote>
-<blockquote>
-<p>  PE：physcial extend  </p>
-<blockquote>
-<p>用于设置VG的块大小，相当于硬盘的块大小<br>默认：4M  </p>
-</blockquote>
-</blockquote>
-<p>LV：   logical volume  </p>
-<blockquote>
-<p>  相当于分区，对LVM磁盘分区  </p>
-</blockquote>
-<p>后续：格式化和挂载  </p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>操作：  </p>
-<blockquote>
-<p>前奏：  </p>
-<blockquote>
-<p>fdisk /dev/hdb —&gt; /dev/hdb1，/dev/hdb2 —&gt; 8e  </p>
-</blockquote>
-<blockquote>
-<p>partprobe                      #让分区表立刻生效  </p>
-</blockquote>
-<p>PV：  </p>
-<blockquote>
-<p>pvcreate /dev/hdb1<br>pvcreate /dev/hdb2<br>pvcreate /dev/hdb3<br>pvscan                         #搜索pv分区并显示出来<br>pvdisplay                     #显示pv分区详细信息<br>                                    #pvremove 删除pv分区  </p>
-</blockquote>
-<p>VG：  </p>
-<blockquote>
-<p>vgcreate vg /dev/hdb1/dev/hdb2<br>vgscan<br>vgdisplay<br>                                    #vgextend vg /dev/hdb3   增加额外的PV<br>                                    #vgreduce vg /dev/hdb3   删除PV<br>                                    #vgremove vg                   删除VG<br>                                    #vgchange -a n vg            设置vg不可用  </p>
-</blockquote>
-<p>LV：  </p>
-<blockquote>
-<p>lvcreate -L 10G -n lv1 vg                                       #相当于分区  </p>
-</blockquote>
-<blockquote>
-<p>lvcreate -L 15G -n lv2 vg         </p>
-</blockquote>
-<blockquote>
-<p>lvscan<br>lvdisplay<br>                                                                             #lvremove 删除lv分区  </p>
-</blockquote>
-<p>格式化  </p>
-<blockquote>
-<p>mkfs.ext3 /dev/vg/lv1<br>mkfs.ext3 /dev/vg/lv2  </p>
-</blockquote>
-<p>挂载  </p>
-<blockquote>
-<p>mkdir /media/lvm1<br>mount …..<br>fstab  </p>
-</blockquote>
-<p>加大LVM磁盘  </p>
-<blockquote>
-<p>vgexteng vg /dev/hdb3<br>lvextend -L +10G /dev/vg/lv1                               #lvreduce 减少lv容量  </p>
-</blockquote>
-<blockquote>
-<p>umount /media/lvm1<br>resize2fs -f /dev/vg/lv1                                         #更新lv磁盘信息，也就是更新超级块信息  </p>
-</blockquote>
-<blockquote>
-<p>mount …..  </p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>磁盘阵列  </p>
-<blockquote>
-<p>nas：提供存储服务的一台电脑<br>san：一台存储设备(相当于很大容量的硬盘)，通过光纤和电脑主机直接相连<br>iscsi：IP网络存储，相当于设置了IP地址的san，然后是通过网络设备相连的，  </p>
-<blockquote>
-<p>连接方式：san群-路由器|—-交换机—-|电脑</p>
-</blockquote>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3411454321/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/3411454321/" class="post-title-link" itemprop="url">鸟哥基础第二十四章</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2012-10-06 19:35:00" itemprop="dateCreated datePublished" datetime="2012-10-06T19:35:00+08:00">2012-10-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.4k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>5 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>概念：  </p>
-<blockquote>
-<p>X客户端，窗口管理器(gnome、KDE)————-X服务器————用户  </p>
-<blockquote>
-<p>X服务器：负责驱动硬件：控制显示设备(显卡、显示器)，接受鼠标键盘的输入信息等<br>X客户端：负责产生画面，并告诉X服务器如何显示<br>窗口管理器：增强Xclient的绘制能力，使之更好的显示窗口、按钮、菜单、鼠标等<br>#用户和Xserver打交道—–&gt;Xserver把用户的动作告诉Xclient—–&gt;<br>#—–&gt;Xclient负责告诉Xserver如何显示—–&gt;Xserver调用显卡驱动等把画面显示出来。  </p>
-</blockquote>
-</blockquote>
-<p>startx<br>实际启动X的程序是xinit<br>X客户端：                /usr/X11R6/bin/xterm      #X虚拟终端<br>X客户端脚本：         /etc/X11/xinit/xinitrc<br>X服务器：                /usr/X11R6/bin/X<br>X服务器脚本：         /etc/X11/xinit/xserverrc    #默认不存在<br>X服务器设置文件： /etc/X11/xorg.conf<br>X服务器监听端口：  6000                               #可以有多个端口监听不同的X客户端的显示命令<br>                                                                       #如vnc时有本地的和远程的Xclient，都告诉X服务器如何显示<br>                                                                       #X服务器可启动很多，第二个就是tty8了  </p>
-<p>xinit   xterm -geometry +1+1 -n login    -display :0                  –         X           :0<br>         客户端                                        第0号显示界面                       服务器   第0号界面  </p>
-<blockquote>
-<p>whereis startx  </p>
-<blockquote>
-<p>startx: /usr/X11R6/bin/startx /usr/bin/X11/startx  </p>
-</blockquote>
-<p>diff /usr/X11R6/bin/startx /usr/bin/X11/startx  </p>
-<blockquote>
-<p>无  </p>
-</blockquote>
-<p>cat startx | egrep -v “^#|^$”  </p>
-<blockquote>
-<p>userclientrc=$HOME/.xinitrc<br>userserverrc=$HOME/.xserverrc<br>sysclientrc=/etc/X11/xinit/xinitrc<br>sysserverrc=/etc/X11/xinit/xserverrc<br>defaultclient=/usr/X11R6/bin/xterm<br>defaultserver=/usr/X11R6/bin/X<br>defaultclientargs=””<br>defaultserverargs=””<br>clientargs=””<br>serverargs=””<br>…………….  </p>
-</blockquote>
-<p>/etc/X11/xinit/xinitrc  </p>
-<blockquote>
-<p>会打开/etc/X11/xinit/Xclients，该文件会调用/etc/sysconfig/desktop，里面设置开启gnome<br>如果没有其他窗口管理器，则会打开/usr/X11R6/bin/twm  </p>
-</blockquote>
-</blockquote>
-<blockquote>
-</blockquote>
-<p>XFS：字体服务器  </p>
-<blockquote>
-<p>作用：为本机或远程Xclient提供字体。  </p>
-</blockquote>
-<blockquote>
-<p>命令：/usr/X11R6/bin/xfs、/usr/bin/X11/xfs  </p>
-</blockquote>
-<blockquote>
-<p>启动程序：/etc/init.d/xfs<br>设置文件：/etc/X11/fs/config  </p>
-<blockquote>
-<p># 下面是设置字体存放的位置，xfs会搜索这些目录<br>catalogue = /usr/X11R6/lib/X11/fonts/misc:unscaled,<br>        /usr/X11R6/lib/X11/fonts/75dpi:unscaled,<br>        /usr/X11R6/lib/X11/fonts/100dpi:unscaled,<br>        /usr/X11R6/lib/X11/fonts/Type1,<br>        /usr/share/fonts/default/Type1,<br>        ,<br>        /usr/share/fonts/chinese/TrueType  </p>
-</blockquote>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2088480788/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/2088480788/" class="post-title-link" itemprop="url">鸟哥基础第二十三章</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2012-10-06 09:52:00" itemprop="dateCreated datePublished" datetime="2012-10-06T09:52:00+08:00">2012-10-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>347</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>备份用到的就是脚本+crond  </p>
-<p>备份用到的服务：crontd<br>备份的命令：tar、dd、cpio、dump等  </p>
-<p>远程备份脚本  </p>
-<blockquote>
-<p>host=”192.168.1.100”<br>id=”username”<br>pw=”passwd”  </p>
-<p>basedir=”本机目录”<br>remodir=“远程目录”  </p>
-<p>filename=“backup.tar”  </p>
-<p>cd $basedir<br>tar -cvf $filename *  </p>
-<p>#ftp到$host，并记录日志，输入EOC时结束连接  </p>
-<p>ftp -n “$host” &gt; “$basedir”/“$filename”.log 2&gt;&amp;1 &lt;&lt;EOC      <br>user  $id  $pw<br>binary<br>cd $remodir<br>put $filename<br>bye<br>EOC</p>
-</blockquote>
-<blockquote>
-</blockquote>
-<p>crontab  </p>
-<blockquote>
-<p>30 2 * * * root   /…./ftp-backup.sh</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/828707654/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/828707654/" class="post-title-link" itemprop="url">鸟哥基础第二十二章</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2012-10-06 09:31:00" itemprop="dateCreated datePublished" datetime="2012-10-06T09:31:00+08:00">2012-10-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.8k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>7 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>重点是日志的设置和轮换  </p>
-<p>1、log默认存放位置  </p>
-<blockquote>
-<p>/var/log/secure             #访问系统数据的记录<br>/var/log/wtmp               #登录者的信息<br>/var/log/messages       #系统错误的信息<br>/var/log/boot.log          #系统开机和服务启动时的信息<br>/var/log/mail             <br>/var/log/maillog<br>/var/log/cron                 #cron的内容<br>/var/log/samba             #网络服务的信息<br>等等  </p>
-</blockquote>
-<p>2、syslogd  </p>
-<blockquote>
-<p>程序：/sbin/syslogd<br>程序配置：/etc/syslog.conf<br>启动脚本：/etc/init.d/syslog<br>启动脚本配置：/etc/sysconfig/syslog  </p>
-<p>/etc/syslog.conf<br>cat /etc/syslog.conf | egrep -v “^#|^$”  </p>
-<blockquote>
-<p>*.info;mail.none;authpriv.none;cron.none                /var/log/messages<br>authpriv.*                                                                 /var/log/secure<br>mail.*                                                                       -/var/log/maillog<br>cron.*                                                                       /var/log/cron<br>*.emerg                                                                      *<br>uucp,news.crit                                                         /var/log/spooler<br>local7.*                                                                    /var/log/boot.log  </p>
-<p>服务名称.信息等级                                                  log存放位置<br>服务名称  </p>
-<blockquote>
-<p>auth、authpriv：认证有关的记录<br>cron：                例行性有关信息<br>daemon:             守护程序相关信息<br>kern：                核心相关信息<br>syslog：             syslog本身相关信息  </p>
-</blockquote>
-<p>分隔符  </p>
-<blockquote>
-<p>.                          比后面的信息等级相同的或更高的都记录下来<br>.=                        等于后面的信息等级的记录下来<br>.！                      除了后面的信息等级，其他等级都记录下来  </p>
-</blockquote>
-<p>信息等级(从低到高)  </p>
-<blockquote>
-<p>info                      基本信息<br>notice<br>warn/warning     一般都记录这个及以上的信息<br>error/err<br>crit<br>alert<br>panic/emerg       该等级意味着系统快死机了  </p>
-</blockquote>
-<p>log存放位置  </p>
-<blockquote>
-<p>@192.168.1.100      存放到远程网络<br>*                               显示出来给所有在线的人看  </p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>3、logrotate  </p>
-<blockquote>
-<p>logrotate只是一个程序，它靠cron帮助每日运行。  </p>
-</blockquote>
-<blockquote>
-<p>rpm -ql logrotate  </p>
-</blockquote>
-<blockquote>
-<p>程序：/usr/sbin/logrotate<br>配置：/etc/logrotate.conf、/etc/logrotate.d<br>cron：/etc/cron.daily/logrotate  </p>
-</blockquote>
-<blockquote>
-<p>/etc/logrotate.conf<br>cat /etc/logrotate.conf | egrep -v “^#|^$”  </p>
-<blockquote>
-<p>weekly                                    每周一次<br>rotate 4                                   存4个备份<br>create                                     建新文件来记录<br>include /etc/logrotate.d           包含该目录下的轮替设置，自定义的都可以写在这里，数据库轮替也可以用<br>/var/log/wtmp {                        针对登录时的用户状态进行记录的文件，进行轮替<br>    monthly                               记录用户ID，登录时间等等<br>    create 0664 root utmp<br>    rotate 1<br>}<br>/var/log/btmp {<br>    missingok<br>    monthly<br>    create 0600 root utmp<br>    rotate 1<br>#蓝色部分是要logrotate的内容，并且做了如何logrotate的设置。  </p>
-</blockquote>
-<p>/etc/logrotate.d/admin  </p>
-<blockquote>
-<p>/var/log/admin.log {  </p>
-<blockquote>
-<p>monthly<br>size=10M                            #大于10M自动轮替<br>rotate 5<br>sharedscripts  </p>
-<blockquote>
-<p>prerotate                      #轮替前做的事  </p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>/usr/bin/chattr -a /var/log/admin.log  </p>
-</blockquote>
-</blockquote>
-<p>endrotate<br>sharedscripts        </p>
-<blockquote>
-<p>postrotate                    #轮替后做的事         </p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>/usr/bin/killall -HUP syslogd<br>/usr/bin/chattr +a /var/log/admin.log  </p>
-</blockquote>
-</blockquote>
-<p>endrotate  </p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>logrotate命令  </p>
-<blockquote>
-<p>logrotate -v /etc/logrotate.d/admin   查看轮替的运行情况<br>logrotate -f /etc/logrotate.d/admin    强制进行轮替，立刻进行  </p>
-</blockquote>
-</blockquote>
-<p>其他命令  </p>
-<blockquote>
-<p>sudo last /var/log/wtmp <br>sudo lastlog  </p>
-</blockquote>
-<p>附专题：数据库的轮替  </p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="http://islandlinux.org/howto/automated-mysql-backups">http://islandlinux.org/howto/automated-mysql-backups</a><br><a target="_blank" rel="noopener" href="http://www.cslog.cn/Content/logrotate-mysql-automated-backu/">http://www.cslog.cn/Content/logrotate-mysql-automated-backu/</a>     #这里有些写错了</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/24379294/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/24379294/" class="post-title-link" itemprop="url">鸟哥基础第二十一章</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2012-10-05 19:22:00" itemprop="dateCreated datePublished" datetime="2012-10-05T19:22:00+08:00">2012-10-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
+                  <a href="/categories/Network/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">基础</span></a>
                 </span>
             </span>
 
@@ -1565,44 +1397,238 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>系统本身的服务，由ps、top等查看、管理；提供外部的网络服务，由netstat等查看、管理。<br>十七章是系统服务，而下面的都是网络服务，  </p>
-<p>独立程序  </p>
+          <p>互联网=广域网+局域网<br>广域网是一个单一的网络，它使用的是结点交换机连接路由器或主机。广域网不跨路由器，它和局域网通过路由器相连。  </p>
 <blockquote>
-<p>独立启动，常驻内存<br>位置：/etc/init.d<br>启动：service atd start  </p>
+<p>如连接2个主机，则只需使用MAC地址即可通信<br>如连接路由器，则使用网络层协议通信<br>注：结点交换机是3层交换机，不是路由器。  </p>
 </blockquote>
-<p>守护程序  </p>
+<p>广域网提供的服务  </p>
 <blockquote>
-<p>由xinetd负责管理和启动，用到的时候才启动，不触发时不占内存<br>inetd本身没有访问控制能力，全靠TCP_wrapper控制(/etc/host.allow、/etc/host.deny)<br>xinetd本身内置了访问控制能力<br>位置：/etc/xinetd.d<br>配置：/etc/xinetd.conf            <br>-————————————————————————————-<br>service rsync<br>{<br>        disable = yes                               #服务失效<br>        socket_type     = stream              #使用tcp流<br>        wait            = no                           #由于是tcp，所以只能是nowait<br>        user            = root<br>        server          = /usr/bin/rsync<br>        server_args     = –daemon         #传递给/usr/bin/rsync的参数 ：rsync –daemon<br>        log_on_failure  += USERID         #记录日志时额外再记录：userid。<br>        #如添加only_from / no_access = 192.168.1.0 /24 即可控制访问来源<br>}<br>-—————————————————————————————  </p>
+<p>数据报服务：主机承担流量控制和差错控制<br>虚电路服务：网络承担流量控制和差错控制  </p>
 </blockquote>
-<p>端口号文件  </p>
+<p>广域网处理的问题  </p>
 <blockquote>
-<p>/etc/services<br>相关服务的端口如果services里面没有列出来，则服务不能使用。<br>先通过netstat -tunlp查看开了哪些端口，<br>再和/etc/services对照一下就知道开启了什么服务<br>再通过关闭程序：sudo /etc/init.d/*  stop 关闭程序  </p>
+<p>分组转发机制  </p>
+<blockquote>
+<p>通过转发表(路由表)实现<br>转发表只包含：交换机编号，交换机端口编号  </p>
 </blockquote>
-<p>服务的启动和关闭(只针对独立启动的服务)  </p>
+<p>拥塞控制  </p>
 <blockquote>
-<p>ntsysv ：这个是redhat及衍生版本才有的功能  </p>
-<blockquote>
-</blockquote>
-<p>chkconfig  </p>
-<blockquote>
-<p>chkconfig –list ：查看各项服务的状态<br>chkconfig –level 345 atd on  </p>
-<blockquote>
-<p>level：表示运行等级<br>atd：该名称必须是/etc/init.d里面包含的<br>on：on或者off  </p>
+<p>死锁：网络吞吐量降为0，网络无法工作。<br>开环控制方法：设计网络时就将拥塞问题考虑周到。<br>闭环控制方法：通过网络监控，确定拥塞状况，再控制。  </p>
 </blockquote>
 </blockquote>
-<p>其他：<br>/etc/rc.d/rc.local：里面添加删除  </p>
+<p>广域网技术<br> 技术               传输媒体通信方式       数据链路层帧          特点<br> X25                         同步                     HDLC帧               分组层提供虚电路，复用，有流控，有差错控制；<br> 帧中继FR                同步                 类似HDLC帧            数据链路层提供虚电路，复用，无流控，有差错控制；<br> ATM                        同步                        信元                  ATM层提供虚通路，复用，有流控，有差错控制，但不使用。<br> 10Gb级以太网        异步                 802.3帧/EII帧           数据链路层无流控，有差错控制；  </p>
+<p>帧中继FR  </p>
 <blockquote>
+<p>帧格式：地址—-数据—-FCS  </p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>     2-4B                  2B  </p>
+</blockquote>
+<p>地址字段包含内容：  </p>
+<blockquote>
+<p>DLCI：  标记永久虚电路PVC，呼叫控制，管理信息<br>FECN：值为1，表示传输的同方向出现拥塞<br>BECN：值为1，表示传输的反方向出现拥塞<br>DE：     值为1，为低优先级帧，可丢弃，值为0，为高优先级帧，尽可能不丢弃  </p>
+</blockquote>
+<p>拥塞控制：  </p>
+<blockquote>
+<p>CIR：承诺的信息速率。<br>超出CIR的帧，DE=1，拥塞时会被丢弃<br>当FECN/BECN=1，表示拥塞，则丢弃DE=1的帧，  </p>
 </blockquote>
 </blockquote>
-<p>TCP_Wrappers  </p>
+<p>ATM<br>ATM的异步是指ATM信元异步的插入到同步的SDH比特流中。  </p>
 <blockquote>
-<p>/etc/hosts.allow、/etc/hosts.deny<br>守护程序管理的服务，由xinetd代理，由TCP_wrapper管理。当然防火墙也对访问进行限制。  </p>
+<p>ATM层次结构：  </p>
 <blockquote>
-<p>以上2个文件都是/usr/sbin/tcpd的设置文件<br>/usr/sbin/tcpd的用处就是分析进入系统的TCP包，并进行限制  </p>
+<p>AAL层  </p>
+<blockquote>
+<p>CS子层：使ATM系统能对不同的网络层协议提供服务。<br>SAR子层：将数据单元分为48B  </p>
 </blockquote>
-<p>格式：  </p>
+<p>ATM层：产生信元首部5B，信元的复用和分用功能，每经过一段ATM链路后VPI/VCI的数值转换<br>物理层  </p>
 <blockquote>
-<p>in.telnetd:ALL：加在allow里表示允许进出，加在deny里表示禁止进出<br>in.telnetd:ALL：spawn …|| …||….   后面接操作指令  </p>
+<p>TC子层：信元流和比特流的转换，异步的插入。<br>PMD子层：传输和接收比特流。  </p>
+</blockquote>
+</blockquote>
+<p>ATM帧格式：首部—-数据<br>首部的内容：GFC—VPI—VCI—PT—CLP—HEC    (ATM端点—–ATM交换机)  </p>
+<blockquote>
+<blockquote>
+<p>    VPI————VCI—PT—CLP—HEC   (ATM交换机—ATM交换机)  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>GFC：做流量控制用，不使用<br>VPI：虚通道<br>VCI：虚通路<br>PT：3bit，是否为用户数据信元，是否拥塞，是否为最后一个信元<br>CLP：与DE作用类似<br>HEC：对信元首部进行校验。由物理层实施。  </p>
+</blockquote>
+<p>注：  </p>
+<blockquote>
+<p>VPI/VCI每经过一段ATM链路就会转换数值，就像MAC帧通过路由器后MAC地址改变一样  </p>
+</blockquote>
+</blockquote>
+<p>关于复用技术:  </p>
+<blockquote>
+<p>数据链路层的复用属于逻辑链路的复用<br>物理层的复用技术属于传输链路的复用，提高传输通道的利用率。</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2396033729/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/2396033729/" class="post-title-link" itemprop="url">局域网</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2012-11-12 14:12:00" itemprop="dateCreated datePublished" datetime="2012-11-12T14:12:00+08:00">2012-11-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Network/" itemprop="url" rel="index"><span itemprop="name">Network</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Network/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">基础</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>826</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>局域网技术  </p>
+<blockquote>
+<p>802.3    以太网<br>802.4    令牌总线网<br>802.5    令牌环网，FDDI<br>802.12  100VG-AnyLAN<br>ANSI     HIPPI<br>802.1Q  虚拟局域网  </p>
+</blockquote>
+<p>以太网特点  </p>
+<blockquote>
+<p>以太网规范物理层和数据链路层的协议<br>以太网使用曼切斯特编码<br>以太网不对数据进行编号，所以没有流控，只有差错控制<br>以太网帧长：64-1518B，  </p>
+<blockquote>
+<p>64B是取10Mb/s以太网争用期发送的字节数<br>46-1500B是数据字段字节长度，  </p>
+</blockquote>
+</blockquote>
+<p>以太网标准  </p>
+<blockquote>
+<p>标准                 名称              速率         CSMA/CD           双工           备注<br>802.3         传统以太网      10Mb/s             支持            半双工        100m<br>802.3u       快速以太网    100Mb/s             支持        全/半双工        使用2对双绞线，100m<br>802.3z        G级以太网        1Gb/s             支持        全/半双工        使用4对双绞线，100m<br>802.3ae  10G级以太网      10Gb/s         不支持             全双工        异步传输<br>802.11       无线局域网  </p>
+<blockquote>
+<p>注：CSMA/CD只对半双工有效，CSMA/CD重发16次不成功则丢弃帧  </p>
+</blockquote>
+</blockquote>
+<p>以太网帧格式  </p>
+<blockquote>
+<p>MAC地址格式：<br>EII帧格式：     目的MAC地址—源MAC地址—类型———-数据————FCS  </p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>      6B                   6B            2B            46-1500B          4B  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>802.3帧格式：目的MAC地址—源MAC地址—长度/类型——-数据———FCS  </p>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>     6B                   6B            2B             46-1500B          4B</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>其中：802.3帧格式，数据里面包含LLC帧  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>LLC帧占用数据字段3个字节  </p>
+<blockquote>
+<p>DSAP：数据交给哪个协议<br>SSAP：数据从哪个协议过来<br>控制：  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>802.3ac 虚拟局域网以太网帧格式  </p>
+<blockquote>
+<p>目的MAC地址—源MAC地址—802.1Q标记-–类型—数据—FCS<br>802.1Q标记：4字节(32bit)  </p>
+<blockquote>
+<p>3bit—————–1bit———–12bit-———-16bit<br>用户优先级         CFI       VLAN标记号          VID  </p>
+</blockquote>
+</blockquote>
+<p>802.11 无线局域网  </p>
+<blockquote>
+<p>类型：有固定基站的(蜂窝移动电话)，无固定基站的(自组网络)<br>固定基站：  </p>
+<blockquote>
+<p>范围：ESS— BSS<br>连接：DS—–AP—–移动设备<br>一个AP建立的范围就是BSS，DS连接多个AP组合成ESS。  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>标准：<br>实现方法：FHSS、DSSS<br>使用协议：CSMA/CA  </p>
+</blockquote>
+<blockquote>
+<blockquote>
 </blockquote>
 </blockquote>
 
@@ -1624,7 +1650,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/537343388/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3368314941/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1640,7 +1666,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/537343388/" class="post-title-link" itemprop="url">鸟哥基础第二十章</a>
+            <a href="/posts/3368314941/" class="post-title-link" itemprop="url">数据链路层</a>
         </h2>
 
         <div class="post-meta">
@@ -1650,14 +1676,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2012-10-05 18:48:00" itemprop="dateCreated datePublished" datetime="2012-10-05T18:48:00+08:00">2012-10-05</time>
+              <time title="创建时间：2012-11-09 15:35:00" itemprop="dateCreated datePublished" datetime="2012-11-09T15:35:00+08:00">2012-11-09</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1665,11 +1691,11 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                  <a href="/categories/Network/" itemprop="url" rel="index"><span itemprop="name">Network</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
+                  <a href="/categories/Network/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">基础</span></a>
                 </span>
             </span>
 
@@ -1679,14 +1705,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.3k</span>
+              <span>957</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>5 分钟</span>
+              <span>3 分钟</span>
             </span>
 
         </div>
@@ -1696,80 +1722,271 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>RPM命令  </p>
+          <p>网卡：  </p>
 <blockquote>
-<p>1、rpm包名称  </p>
-<blockquote>
-<p>*.i386.rpm：适用于所有x86平台<br>*.noarch.rpm：没有硬件上的限制，一般就是文本文件  </p>
+<p>网卡上面有处理器和存储器。<br>网卡将计算机信息的并行传输，转为串行传输，发到网络上<br>网卡包含数据链路层+物理层的功能  </p>
 </blockquote>
-<p>2、rpm安装目录  </p>
+<p>数据链路层功能  </p>
 <blockquote>
-<p>/etc<br>/usr/bin<br>/usr/lib<br>/usr/share/doc<br>/usr/share/man<br>/var/lib/rpm                                      #为系统安装的rpm包信息记录  </p>
+<p>链路管理  </p>
+<blockquote>
+<p>链路的建立、维持和释放  </p>
 </blockquote>
-<p>3、rpm命令  </p>
+<p>帧定界  </p>
 <blockquote>
-<p>安装  </p>
-<blockquote>
-<p>rpm -i                                       #install<br>其他参数  </p>
-<blockquote>
-<p>rpm -i *.rpm –force         #强制安装<br>rpm -i *.rpm –test           #只测试能否安装到电脑里  </p>
+<p>用标志字段F来标记起始结束位置  </p>
 </blockquote>
+<p>流量控制  </p>
+<blockquote>
+<p>滑动窗口等技术实现  </p>
 </blockquote>
-<p>升级  </p>
+<p>差错控制  </p>
 <blockquote>
-<p>rpm -U *.rpm                           #有该软件则升级，没有该软件则安装<br>rpm -F *.rpm                           #有该软件则升级，没有该软件则不安装</p>
+<p>靠CRC检错，一般就是FCS  </p>
 </blockquote>
-<p>卸载  </p>
+<p>将数据和控制信息分开  </p>
 <blockquote>
-<p>rpm -e                                       #erase  </p>
+<p>使收方能区分控制信息和数据  </p>
 </blockquote>
-<p>重建数据库  </p>
+<p>透明传输  </p>
 <blockquote>
-<p>rpm –rebuilddb                         #重建后的信息都写在/var/lib/rpm里面  </p>
+<p>通过“零比特填充法”等技术使信息里不论包含何种bit组合都能够传输  </p>
 </blockquote>
-<p>查询(很重要)                                      #查询都是在/var/lib/rpm里面查询的  </p>
+<p>寻址  </p>
 <blockquote>
-<p>rpm -q  openldap                         #query              查询有没有安装过这个rpm软件<br>rpm -qa                                        #all                  列出所有系统中安装的rpm软件             <br>rpm -qi openldap                          #information   查询rpm软件的信息<br>rpm -ql openldap(重要)                 #list                列出这个rpm软件安装在哪些地方，方便配置、删除等<br>rpm -qc openldap                         #configure      只列出rpm软件配置文件所在位置<br>rpm -qd openldap                         #document       查看rpm软件的帮助文档<br>rpm -qR openldap                         #required       列出rpm软件相关的依赖文件，如函数库等<br>rpm -qf  /etc/openldap/ldap.conf   #file                列出该文件属于哪个rpm软件里面的<br>rpm -qp[licdf]  wmx.i686.rpm         #package       查看rpm安装包的相关信息  </p>
-</blockquote>
-<p>rpm验证  </p>
-<blockquote>
-<p>rpm -V openldap                            #verify            验证该软件里的文件有没有被改动过<br>S.5….T  c /etc/openldap/ldap.conf  </p>
-<blockquote>
-<p>SM5DLUGT，没有改动过的话用.表示  </p>
-<blockquote>
-<p>S：size        容量是否改变<br>M：mode     文件类型或权限有没有被改变<br>5：md5     <br>D：device     设备名称有没有被改变过<br>L：link           链接文件的属性有没有被改变<br>U：user        u有没有被改变<br>G：group      g有没有被改变<br>T：mtime      建立时间有没有被改变  </p>
+<p>MAC寻址  </p>
 </blockquote>
 </blockquote>
-</blockquote>
+<p>关于数据链路层和传输层都有流量控制协议  </p>
 <blockquote>
+<p>数据链路层保证每个帧都收到，而不丢失<br>但是其上层网络层不提供可靠服务，(如收到帧之后丢弃)<br>所以传输层又用流量控制保证数据包能够完整无误的接收  </p>
+</blockquote>
+<p>数据链路层流量控制协议  </p>
 <blockquote>
-<p>c：配置文件<br>d：文档<br>l：授权文件<br>r：自述文件  </p>
-</blockquote>
-</blockquote>
-<p>rpm数字签名  </p>
-</blockquote>
-</blockquote>
-<p>SRPM  </p>
+<p>停止等待协议：  </p>
 <blockquote>
-<p>srpm目录  </p>
-<blockquote>
-<p>/usr/src/redhat/SPEC                 #存放配置文件<br>/usr/src/redhat/SOURCE            #存放源文件<br>/usr/src/redhat/BUILD                #存放编译时的暂存文件，编译时就是再这个目录下进行的<br>/usr/src/redhat/RPMS                #编译好后，会放到这个文件夹中  </p>
+<p>为防止发送端发出的帧传输过程中有错误或者丢失，接收端每收到一个帧就回发确认帧<br>发送端会设置超时计时器，超时后自动重发帧<br>确认帧携带的是对n+1帧的请求。说明收到n帧，请求发n+1帧。  </p>
 </blockquote>
+<p>连续ARQ协议：automatic repeater quest 自动重传请求</p>
+<blockquote>
+<p>发送端多个帧一起发，然后等待确认，接收端一个帧一个帧的接收，并回复确认帧，<br>如有遗失，则从遗失的帧开始再重新发。<br>这里涉及到对帧的编码，发送窗口大小，接收窗口大小  </p>
+<blockquote>
+<p>对帧的编码用n=3个bit来编码，则能编8个帧<br>发送窗口最大 2^n-1   也就是7<br>接收窗口最大2^(n-1)  也就是4  </p>
 </blockquote>
-<blockquote>
-<blockquote>
+<p>这里还有一个协议：滑动窗口协议  </p>
 <blockquote>
 </blockquote>
 </blockquote>
-<p>相关命令  </p>
+<p>选择重传ARQ协议：  </p>
 <blockquote>
-<p>cd /usr/src/redhat/SPEC<br>rpmbulid -bb *.spec                    #编译成rpm文件<br>rpmbulid -ba *.spec                    #打包成srpm文件  </p>
+<p>发送端多个帧一起发，然后等待确认，接收端多个帧一起收，然后检查有无遗失，<br>有遗失则让发送端发遗失的帧，而不用再发遗失后面的已收到的帧  </p>
 </blockquote>
-</blockquote>
-<p>扩展：dpkg  </p>
 <blockquote>
-<p>dpkg数据库：/var/lib/dpkg<br>安装：dpkg -i<br>卸载：dpkg -r<br>查询：<br>dpkg -s             相当于rpm -qi<br>dpkg -L             相当于rpm -ql<br>dpkg -l              相当于rpm -qa  </p>
 </blockquote>
+</blockquote>
+<p>数据链路层帧结构  </p>
+<blockquote>
+<p>HDLC帧  </p>
+</blockquote>
+<blockquote>
+<p>帧结构：地址——–控制———信息———FCS  </p>
+<blockquote>
+<blockquote>
+<p>1B          1B                                  2B  </p>
+</blockquote>
+<p>控制字段3大类：信息帧、监督帧、无编码帧  </p>
+<blockquote>
+<p>信息帧：就是发送序号和确认序号等。<br>监督帧：用于ARQ协议，如发哪个帧，暂停发送帧，拒绝某个帧之后的帧  </p>
+<blockquote>
+<blockquote>
+<p>监督帧不含数据信息，长度48bit  </p>
+</blockquote>
+</blockquote>
+<p>无编码帧：控制作用  </p>
+</blockquote>
+</blockquote>
+<p>PPP帧<br>PPP 提供了不同网络层协议同时在同一链路传输的多路复用技术<br>如拨号连接就是用这个协议。<br>帧结构：地址——–控制———-协议———-信息———FCS  </p>
+<blockquote>
+<blockquote>
+<p>1B           1B               2B          &lt;=1500B          2B  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>地址：全1字段，由于是点到点，所以地址没什么用<br>控制：表示不使用序号，也就是没有流量控制功能。<br>协议：标记不同的协议。还有控制功能。  </p>
+</blockquote>
+<p>以太网帧  </p>
+<p>帧中继帧  </p>
+<p>ATM帧</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1697479347/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/1697479347/" class="post-title-link" itemprop="url">物理层</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2012-11-08 16:57:00" itemprop="dateCreated datePublished" datetime="2012-11-08T16:57:00+08:00">2012-11-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Network/" itemprop="url" rel="index"><span itemprop="name">Network</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Network/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">基础</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>1、传输媒体<br>传输媒体不属于物理层，就是一些导线，电磁波等。如双绞线、光纤、微波等<br>每种传输媒体，它的电磁波频谱是固定的，所以它的带宽也就固定。但在其上的传输速度还和信噪比有关  </p>
+<blockquote>
+<p>光纤：  </p>
+</blockquote>
+<blockquote>
+<p>多模光纤：光纤直径较粗，光在里面用全反射实现传输<br>单模光纤：光纤直径较细，只有一个光波长的大小，光在里面一直相前传播  </p>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>2、物理层<br>物理层的任务：如何在各种传输媒体上传输比特流。它规范了接口、电压、电压的意义、比特流帧的结构等  </p>
+<blockquote>
+<p>信道  </p>
+<blockquote>
+<p>向某个方向发送信息的传输媒体，如全双工就是2个信道，但是只有1条传输媒体  </p>
+</blockquote>
+<blockquote>
+<p>信道信息传输速率  </p>
+<blockquote>
+<p>理想状态：2W*码元的信息量     b/s    #W为带宽，单位hz  </p>
+<blockquote>
+<p>本公式的意义是可以提高每个码元的信息量来提高传输速率  </p>
+</blockquote>
+<p>受限状态：<strong>Wlog</strong>2**(1**+<strong>S/N</strong>)       b/s    #S/N为信噪比  </p>
+<blockquote>
+<p>本公式的意义是可以提高带宽和信噪比来提高传输速率  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>基带和宽带  </p>
+<blockquote>
+<p>基带：不时传一下数据<br>宽带：每时每刻多在传数据。利用信道复用技术提高传输效率  </p>
+</blockquote>
+<p>同步和异步通信  </p>
+<blockquote>
+<p>不论何种通信，都要先进行比特同步，然后进行帧界定。但是比特同步方式不同就产生2种通信。</p>
+</blockquote>
+<blockquote>
+<p>比特同步：接收端时钟已经调整到和发送端时钟完全一样<br>同步通信：收发双方不停地发送和接收连续的同步比特流用于时钟同步，然后可以随时发随时接收数据<br>异步通信：接收端时刻保持接收状态，发送端随时发送帧格式数据，帧前有前导用于比特同步  </p>
+</blockquote>
+<p>调制解调  </p>
+<blockquote>
+<p>调制解调的作用  </p>
+<blockquote>
+<p>1、数字信号和模拟信号的转换<br>2、为信道复用技术做准备  </p>
+</blockquote>
+<p>调制方法：调幅、调频、调相、还有3种的混合调制方法如正交调制(调幅+调相)<br>收发同步的问题：  </p>
+<blockquote>
+<p>同步传输：两端的时钟频率相等<br>异步传输：两边时钟频率不相等，但是为每个字节标记了一个起始和停止比特  </p>
+<blockquote>
+<p>注：以上两种时钟频率的采样点的移动都不能超过半个bit的宽度  </p>
+</blockquote>
+<p>同步问题是为了解决：  </p>
+<blockquote>
+<p>如何准确的接收数据的问题<br>例：发送频率1μm发一个数据，而接收频率是2μm收一个数据，则漏掉很多数据</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>信道复用技术  </p>
+<blockquote>
+<p>信道复用技术就是为了提高信道的利用率。对模拟信号和数字信号都可以进行复用<br>包含：频分、时分、统计时分、密集波分、码分多址CDMA等<br>关于E1：<br>就是利用正交调制，使一个码元携带8bit的信息，然后再利用时分复用技术进行传输的<br>E1=8bitX8000帧/sX32时隙=2.048x10^6 b/s  </p>
+<blockquote>
+<p>8：是一个码元携带的信息量<br>8000：是频率<br>32：是信道数  </p>
+</blockquote>
+<p>注：E1就是对数字信号的时分复用。  </p>
+</blockquote>
+<p>传输标准和接口标准  </p>
+<blockquote>
+<p>SDH为同步数字传输标准<br>RS232(如电脑上的串口)、RS449：是模拟通信上面的的接口标准</p>
+</blockquote>
+<p>传输系统  </p>
+<blockquote>
+<p>光波是波，所以传的就是模拟信号  </p>
+</blockquote>
+<blockquote>
+<p><img src="http://img5.ph.126.net/o2X5cqUGPM-55d7RzY6DfQ==/623185598455173235.png" alt="物理层 - leaf - ------坚持雅操------" title="物理层 - leaf - ------坚持雅操------"></p>
+</blockquote>
+</blockquote>
+<p>图转自：<a href="mailto:&#x78;&#x69;&#101;&#x78;&#105;&#x72;&#x65;&#110;&#64;&#116;&#115;&#105;&#x6e;&#x67;&#104;&#x75;&#x61;&#46;&#x6f;&#x72;&#103;&#x2e;&#x63;&#110;">&#x78;&#x69;&#101;&#x78;&#105;&#x72;&#x65;&#110;&#64;&#116;&#115;&#105;&#x6e;&#x67;&#104;&#x75;&#x61;&#46;&#x6f;&#x72;&#103;&#x2e;&#x63;&#110;</a>的回复。</p>
 
       
     </div>
@@ -1788,7 +2005,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/16/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><span class="page-number current">17</span><a class="page-number" href="/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/18/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/16/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/16/">16</a><span class="page-number current">17</span><a class="page-number" href="/page/18/">18</a><span class="space">&hellip;</span><a class="page-number" href="/page/37/">37</a><a class="extend next" rel="next" href="/page/18/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1839,12 +2056,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">399k</span>
+    <span title="站点总字数">447k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">24:11</span>
+    <span title="站点阅读时长">27:06</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

@@ -245,20 +245,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">282</span>
+          <span class="site-state-item-count">365</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">60</span>
+        <span class="site-state-item-count">72</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">57</span>
+        <span class="site-state-item-count">68</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -304,6 +304,589 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2474284125/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/2474284125/" class="post-title-link" itemprop="url">centos7最小化安装kvm</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-04-10 19:40:00" itemprop="dateCreated datePublished" datetime="2016-04-10T19:40:00+08:00">2016-04-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>765</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>1、升级到最新版  </p>
+<blockquote>
+<p>yum update -y  </p>
+</blockquote>
+<p>2、安装必要软件  </p>
+<blockquote>
+<p>yum install pciutils net-tools  </p>
+</blockquote>
+<p>3、安装kvm相关软件  </p>
+<blockquote>
+<p> yum install libvirt*<br>yum install ipxe-roms-qemu<br>yum install python-virtinst<br>yum install qemu-kvm<br>yum install virt-manager<br>yum install virt-viewer<br>yum install virt-top<br>yum install virt-what<br>yum install qemu-img<br>yum install virt-install<br>yum install libguest*  </p>
+</blockquote>
+<p>4、设置网络  </p>
+<blockquote>
+<p>nano /etc/sysctl.conf  </p>
+<blockquote>
+<p>net.ipv4.ip_forward = 1  </p>
+</blockquote>
+<p>cd /etc/sysconfig/network-scripts/  </p>
+<blockquote>
+<p>cp ifcfg-enp0s25 ifcfg-br0<br>nano ifcfg-br0  </p>
+<blockquote>
+<p>TYPE=”Bridge”<br>BOOTPROTO=”static”<br>DEFROUTE=”yes”<br>IPV4_FAILURE_FATAL=”no”<br>NAME=”br0”<br>UUID=”1eb3d327-b535-44d1-8558-b369c6db3a80”<br>DEVICE=”br0”<br>ONBOOT=”yes”<br>IPADDR=”192.168.3.128”<br>PREFIX=”24”<br>GATEWAY=”192.168.3.1”<br>DNS1=”192.168.3.1”  </p>
+</blockquote>
+<p>nano ifcfg-enp0s25  </p>
+<blockquote>
+<p>NAME=”enp0s25”<br>DEVICE=”enp0s25”<br>ONBOOT=”yes”<br>BRIDGE=br0  </p>
+</blockquote>
+</blockquote>
+<p>关闭SELINUX  </p>
+<blockquote>
+<p>nano /etc/selinux/config<br>SELINUX=disabled  </p>
+</blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>5、用virt-manager远程管理kvm虚拟机  </p>
+<blockquote>
+<p><img src="http://img2.ph.126.net/N4N0xNRH578sApZUEmfWKg==/6598296821694261878.png" alt="centos7最小化安装kvm - leaf - ------勤解万难------" title="centos7最小化安装kvm - leaf - ------勤解万难------"></p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3226075993/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/3226075993/" class="post-title-link" itemprop="url">kvm 安装 windows2008</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-04-10 13:39:00" itemprop="dateCreated datePublished" datetime="2016-04-10T13:39:00+08:00">2016-04-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Virtualization/" itemprop="url" rel="index"><span itemprop="name">Virtualization</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Virtualization/kvm/" itemprop="url" rel="index"><span itemprop="name">kvm</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>618</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>1、建镜像  </p>
+<blockquote>
+<p>qemu-img create -f qcow2 win2008.qcow2 -opreallocation=metadata 100G  </p>
+</blockquote>
+<p>2、建虚拟机  </p>
+<blockquote>
+<p>virt-install -n windows2008 -r 2048 –vcpus=2 –os-type=windows –accelerate -c /home/ywz/ISO/win2008.iso –disk path=/home/ywz/ISO/virtio-win.iso,device=cdrom –disk path=/home/ywz/ISO/windows2008.img,format=qcow2,bus=virtio –network bridge=virbr0 –vnc –vncport=5992 –vnclisten=0.0.0.0 –force –autostart<br>备注：<br>1、安装的时候直接装上virtio驱动。驱动我选的是viostor里面的驱动<br>virtio最新版本是0.1.113<br>2、取消boot分区方法<br>安装完virtio驱动后，显示出硬盘容量，这时候按shift+f10 出来命令行窗口<br>输入 diskpart<br>list disk<br>select disk 0<br>create partition primary<br>active<br>exit<br>exit<br>然后安装windows2008  </p>
+</blockquote>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://www.mamicode.com/info-detail-126255.html">http://www.mamicode.com/info-detail-126255.html</a>  </p>
+</blockquote>
+<p>3、windows激活问题  </p>
+<blockquote>
+<p>网上都是改BIOS之后激活的  </p>
+</blockquote>
+<blockquote>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3821662524/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/3821662524/" class="post-title-link" itemprop="url">金蝶安装问题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-03-24 11:06:00" itemprop="dateCreated datePublished" datetime="2016-03-24T11:06:00+08:00">2016-03-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:26" itemprop="dateModified" datetime="2020-08-04T15:44:26+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Windows/%E9%87%91%E8%9D%B6/" itemprop="url" rel="index"><span itemprop="name">金蝶</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>233</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>1、无法连接问题<br>2、  </p>
+<p>SQL Server 无法初始化 VIA 支持库 [QLVipl.dll]。这通常指示 VIA 支持库不存在或已损坏。请修复或禁用 VIA 网络协议。错误: 0x7e。  </p>
+<p>关掉via协议即可  </p>
+<p>错误代码:16389(4005H)<br>Source  :Microsoft OLE DB Provider for SQL Server<br>Detail  :[DBNETLIB][ConnectionOpen (Connect()).]SQL Server 不存在或拒绝访问。  </p>
+<p>打开账套，检查数据库服务器名称是否正确</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3877819662/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/3877819662/" class="post-title-link" itemprop="url">win2012 安装用友U8</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-03-21 19:15:00" itemprop="dateCreated datePublished" datetime="2016-03-21T19:15:00+08:00">2016-03-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Windows/Q-A/" itemprop="url" rel="index"><span itemprop="name">Q&A</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>709</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>0、安装IIS6，要全部勾选安装</p>
+<p>1、安装sql server 2005 (用友是这么要求的)</p>
+<p>2、安装用友U8</p>
+<blockquote>
+<p>安装没啥问题</p>
+<p>初始化数据库出了点问题</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>初始化存储过程出错，Microsoft OLE DB Provider for SQL Server  禁用执行 .NET Framework 代码。 设置 “clr enabled” 配置选项，然后重新启动</p>
+<p>打开 sql server management studio ，点新建查询，粘贴如下代码，</p>
+<p>exec sp_configure ‘show advanced options’, ‘1’;<br>go<br>reconfigure;<br>go<br>exec sp_configure ‘clr enabled’, ‘1’<br>go<br>reconfigure;<br>exec sp_configure ‘show advanced options’, ‘1’;<br>go</p>
+<p>然后重启即可解决。</p>
+</blockquote>
+<p>连接不上问题</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>1、防火墙放行或者关闭</p>
+<p>2、hosts文件里面添加对应关系</p>
+<p>3、设置sql server configuration manage 里面的 sql server 2005 网络配置里面的named pipes 和tcp/ip 两个都要启动</p>
+</blockquote>
+<blockquote>
+<p><img src="http://img1.ph.126.net/boOR48pV5iJGt15v2FBsbw==/6598159382740314310.png" alt="win2012 安装用友U8 - leaf - ------勤解万难------" title="win2012 安装用友U8 - leaf - ------勤解万难------"></p>
+</blockquote>
+<p>日期格式问题</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>这次主要是版本装错的问题，，，，</p>
+</blockquote>
+<blockquote>
+<p>日期更改就是将短日期改为 yyyy-M-d 即可。</p>
+</blockquote>
+</blockquote>
+<p>3、添加ISCSI盘</p>
+<blockquote>
+<p>由于管理员设置的策略，该磁盘处于脱机状态</p>
+<p>运行：cmd  </p>
+<p>输入：DISKPART  </p>
+<p>DISKPART&gt; san  </p>
+<p>DISKPART&gt; san policy=onlineall  </p>
+<p>DISKPART&gt;list disk  </p>
+<p>DISKPART&gt; select disk 1  </p>
+<p>DISKPART&gt;attributes disk clear readonly  </p>
+<p>DISKPART&gt;online disk</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/946913595/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/946913595/" class="post-title-link" itemprop="url">【转载】win2012安装sql server 2005</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-03-20 18:38:00" itemprop="dateCreated datePublished" datetime="2016-03-20T18:38:00+08:00">2016-03-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Database/" itemprop="url" rel="index"><span itemprop="name">Database</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Database/sqlserver/" itemprop="url" rel="index"><span itemprop="name">sqlserver</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>700</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><a target="_blank" rel="noopener" href="http://wenku.baidu.com/link?url=vKN0NLKyKOFX9R-di%5C_Co%5C_ilHg1VOP7siN731YSQ0WR0Vp7lWIrx3cbaqUS05MtAhG6jTC-RcVicNldy4wTgxJL2NxhLpP01FXqUBVh4nici">http://wenku.baidu.com/link?url=vKN0NLKyKOFX9R-di\_Co\_ilHg1VOP7siN731YSQ0WR0Vp7lWIrx3cbaqUS05MtAhG6jTC-RcVicNldy4wTgxJL2NxhLpP01FXqUBVh4nici</a></p>
+<p><a target="_blank" rel="noopener" href="http://tech.powereasy.net/Item.aspx?id=3681">http://tech.powereasy.net/Item.aspx?id=3681</a></p>
+<p>0、先安装.net framework 3.0 和IIS6全部勾选安装</p>
+<p>1、正常安装任一版本的SQL Server 2005.</p>
+<p>2、安装到SqlServer服务的时候提示启动服务失败，这里就是关键啦，</p>
+<p>下载本文的两个附件,里面是SP4（2005.90.5000.0）版本的sqlservr.exe和sqlos.dll。</p>
+<p>32位下载sqlservr32.rar，64位下载sqlservr64.rar。</p>
+<p>sqlservr32</p>
+<p>sqlservr64</p>
+<p>3、你的&lt;SQL Server 2005安装路径&gt;\binn，先备份下sqlservr.exe，</p>
+<p>然后把解压之后对应的 sqlservr.exe和sqlos.dll复制到里面覆盖原文件，</p>
+<p>例如“C:\Program Files\Microsoft SQL Server\MSSQL.1\MSSQL\Binn”。</p>
+<p>4、点击“重试”，安装继续，安装程序安装成功。</p>
+<p>5、安装完成之后，停止SQL Server服务，把备份的sqlservr.exe文件还原回去</p>
+<p>（否则SP4安装程序以为你已经应用过SP4补丁），然后立即打上SP4补丁。</p>
+<p>（在此之前不要运行SQL任何软件）</p>
+<p>6、安装完SP4补丁，SQL Server运行正常，教程完成。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2044991458/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -337,7 +920,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -461,7 +1044,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -568,7 +1151,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -661,7 +1244,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -773,7 +1356,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/398682109/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/355074636/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -789,7 +1372,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/398682109/" class="post-title-link" itemprop="url">macosx10.9.5 连接iscsi</a>
+            <a href="/posts/355074636/" class="post-title-link" itemprop="url">关于luns</a>
         </h2>
 
         <div class="post-meta">
@@ -799,14 +1382,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2016-02-05 22:32:00" itemprop="dateCreated datePublished" datetime="2016-02-05T22:32:00+08:00">2016-02-05</time>
+              <time title="创建时间：2016-02-06 11:39:00" itemprop="dateCreated datePublished" datetime="2016-02-06T11:39:00+08:00">2016-02-06</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -818,7 +1401,7 @@
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hardware/iscsi/" itemprop="url" rel="index"><span itemprop="name">iscsi</span></a>
+                  <a href="/categories/Hardware/luns/" itemprop="url" rel="index"><span itemprop="name">luns</span></a>
                 </span>
             </span>
 
@@ -828,7 +1411,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>24</span>
+              <span>31</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -845,574 +1428,9 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>用的软件是globalSAN。能实现相互chap</p>
-<p><img src="http://img0.ph.126.net/86FroLKoqR1AhaIOP4kfaQ==/6598106606181206565.png" alt="macosx10.9.5 连接iscsi - leaf - ------勤解万难------" title="macosx10.9.5 连接iscsi - leaf - ------勤解万难------"></p>
-<p> </p>
-<p><img src="http://img2.ph.126.net/QMRusFZn-RdZU25icJ1D6g==/6631260180238713515.png" alt="macosx10.9.5 连接iscsi - leaf - ------勤解万难------" title="macosx10.9.5 连接iscsi - leaf - ------勤解万难------"></p>
-<p> </p>
-<p><img src="http://img1.ph.126.net/zDC2UPnPQftl5bV68yTzLQ==/6631405315773575428.png" alt="macosx10.9.5 连接iscsi - leaf - ------勤解万难------" title="macosx10.9.5 连接iscsi - leaf - ------勤解万难------"></p>
-<p> </p>
-<p><img src="http://img1.ph.126.net/vfHLPYVTUkI_I-Q4jBz3Wg==/6631254682680574675.png" alt="macosx10.9.5 连接iscsi - leaf - ------勤解万难------" title="macosx10.9.5 连接iscsi - leaf - ------勤解万难------"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1821313599/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/1821313599/" class="post-title-link" itemprop="url">win10 ISCSI 双向CHAP认证</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2016-02-05 19:00:00" itemprop="dateCreated datePublished" datetime="2016-02-05T19:00:00+08:00">2016-02-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Windows/Q-A/" itemprop="url" rel="index"><span itemprop="name">Q&A</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>113</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>iscsi发现程序在控制面板-管理工具里面可以找到</p>
-<p>1、群晖iscsi设置</p>
-<p><img src="http://img2.ph.126.net/44I5GPifecLl602GRKBgQA==/4914834568445127989.png" alt="win10 ISCSI 双向CHAP认证 - leaf - ------勤解万难------" title="win10 ISCSI 双向CHAP认证 - leaf - ------勤解万难------"></p>
-<p> 2、win10设置</p>
-<blockquote>
-<p>在配置里设置名称和chap密码，chap密码必须是12个字的</p>
-</blockquote>
-<p><img src="http://img0.ph.126.net/DjbwrgYPr4NlrlSNo2yG6A==/6631422907960572528.png" alt="win10 ISCSI 双向CHAP认证 - leaf - ------勤解万难------" title="win10 ISCSI 双向CHAP认证 - leaf - ------勤解万难------"></p>
-<p> </p>
-<p>3、连接设置</p>
-<blockquote>
-<p>点发现，点连接，然后设置名称和密码，还有勾选相互身份认证</p>
-</blockquote>
-<p><img src="http://img1.ph.126.net/ANyONITAzBWEht8wvvb6_Q==/6598278129996094156.png" alt="win10 ISCSI 双向CHAP认证 - leaf - ------勤解万难------" title="win10 ISCSI 双向CHAP认证 - leaf - ------勤解万难------"></p>
-<p> 4、搞定</p>
-<p><img src="http://img0.ph.126.net/6lRvLSLycE0_dQcoIPSBeg==/6631231592937321393.png" alt="win10 ISCSI 双向CHAP认证 - leaf - ------勤解万难------" title="win10 ISCSI 双向CHAP认证 - leaf - ------勤解万难------"></p>
-<p> </p>
-<p><img src="http://img2.ph.126.net/i4joLFSBlhUqzkQP6KH6Fw==/6631318454355939167.png" alt="win10 ISCSI 双向CHAP认证 - leaf - ------勤解万难------" title="win10 ISCSI 双向CHAP认证 - leaf - ------勤解万难------"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1619304690/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/1619304690/" class="post-title-link" itemprop="url">一、存储技术类型</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2016-02-05 18:02:00" itemprop="dateCreated datePublished" datetime="2016-02-05T18:02:00+08:00">2016-02-05</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hardware/" itemprop="url" rel="index"><span itemprop="name">Hardware</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hardware/%E5%AD%98%E5%82%A8/" itemprop="url" rel="index"><span itemprop="name">存储</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>189</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><img src="http://img1.ph.126.net/FVNcjOaeEkm5Tfd8c9yY6Q==/6631317354843348292.png" alt="一、存储技术类型 - leaf - ------勤解万难------" title="一、存储技术类型 - leaf - ------勤解万难------"></p>
-<p> </p>
-<p>内置硬盘：</p>
-<blockquote>
-<p>在服务器内部。通过sata线直接连电脑主板上</p>
-</blockquote>
-<p>DAS：</p>
-<blockquote>
-<p>专门的存储设备，可以看成是移动硬盘。(不过应该没人愿意移动它)</p>
-<p>通过光纤(FC)、SCSI线等接连在服务器上。当硬盘用。</p>
-<p><img src="http://img1.ph.126.net/V-rrB0efP9ZWU3wwJBnmDA==/6631395420168925453.png" alt="一、存储技术类型 - leaf - ------勤解万难------" title="一、存储技术类型 - leaf - ------勤解万难------"> </p>
-</blockquote>
-<p>NAS：</p>
-<blockquote>
-<p>通过网络提供文件的共享服务。</p>
-<p>可看做一个文件夹。用来共享资料。</p>
-</blockquote>
-<blockquote>
-<p><img src="http://img1.ph.126.net/XYg_47DxYENLvLY23jbf9g==/6598240746599787331.png" alt="一、存储技术类型 - leaf - ------勤解万难------" title="一、存储技术类型 - leaf - ------勤解万难------"></p>
-<p> </p>
-</blockquote>
-<p>SAN：</p>
-<blockquote>
-<p>提供块级存储。可看做一块新硬盘。可以进行分区格式化。</p>
-</blockquote>
-<blockquote>
-<p>FC-SAN：通过光纤提供储存空间</p>
-<p>IP-SAN：通过以太网提供存储空间</p>
-<p><img src="http://img0.ph.126.net/y9ViEjyEfe9-4H0IC3OAew==/6598236348553276290.png" alt="一、存储技术类型 - leaf - ------勤解万难------" title="一、存储技术类型 - leaf - ------勤解万难------"></p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/810652655/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/810652655/" class="post-title-link" itemprop="url">U盘安装ESXI 6</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2016-01-27 09:33:00" itemprop="dateCreated datePublished" datetime="2016-01-27T09:33:00+08:00">2016-01-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Virtualization/" itemprop="url" rel="index"><span itemprop="name">Virtualization</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Virtualization/esxi/" itemprop="url" rel="index"><span itemprop="name">esxi</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>15</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>一、U盘制作  </p>
-<p><img src="http://img1.ph.126.net/t65RyWO6ecLjVKGHsfbZxQ==/1062005087147784037.png" alt="U盘安装ESXI 6 - leaf - ------勤解万难------" title="U盘安装ESXI 6 - leaf - ------勤解万难------"></p>
-<p> </p>
-<p><img src="http://img0.ph.126.net/-gQ0Z0RK-Q7DWur_SKvKrw==/2783224569733136829.png" alt="U盘安装ESXI 6 - leaf - ------勤解万难------" title="U盘安装ESXI 6 - leaf - ------勤解万难------"></p>
-<p> </p>
-<p><img src="http://img0.ph.126.net/Q8CW_LtAz6wtPcPRWH-CmA==/6598214358320531577.png" alt="U盘安装ESXI 6 - leaf - ------勤解万难------" title="U盘安装ESXI 6 - leaf - ------勤解万难------"></p>
-<p>二、esxi6 安装 </p>
-<p><img src="http://img2.ph.126.net/ddygF-_U_qPjUNWDxETegQ==/6619108377724573034.jpg" alt="U盘安装ESXI 6 - leaf - ------勤解万难------" title="U盘安装ESXI 6 - leaf - ------勤解万难------"></p>
-<p> </p>
-<p><img src="http://img1.ph.126.net/jdsZ6ahSLfabubfdWmyqnQ==/6619318384445479417.jpg" alt="U盘安装ESXI 6 - leaf - ------勤解万难------" title="U盘安装ESXI 6 - leaf - ------勤解万难------"></p>
-<p> </p>
-<p><img src="http://img2.ph.126.net/_kA6CX7vYcVtadQTi9S0YQ==/1059753287334112724.jpg" alt="U盘安装ESXI 6 - leaf - ------勤解万难------" title="U盘安装ESXI 6 - leaf - ------勤解万难------"></p>
-<p> </p>
-<p><img src="http://img2.ph.126.net/omjb7SvE5irl3imeqZBauA==/6608434318841873984.jpg" alt="U盘安装ESXI 6 - leaf - ------勤解万难------" title="U盘安装ESXI 6 - leaf - ------勤解万难------"></p>
-<p> </p>
-<p><img src="http://img1.ph.126.net/53AQFL8vfEcSvJ71dyK8ng==/6598198965157742920.jpg" alt="U盘安装ESXI 6 - leaf - ------勤解万难------" title="U盘安装ESXI 6 - leaf - ------勤解万难------"></p>
-<p> </p>
-<p><img src="http://img1.ph.126.net/XNj5WEm3EvRLjyFE0V8nkA==/6631233791959448065.jpg" alt="U盘安装ESXI 6 - leaf - ------勤解万难------" title="U盘安装ESXI 6 - leaf - ------勤解万难------"></p>
-<p> </p>
-<p><img src="http://img1.ph.126.net/QMHcPS6dALW3qBBfhw7uoQ==/2441513948006886049.jpg" alt="U盘安装ESXI 6 - leaf - ------勤解万难------" title="U盘安装ESXI 6 - leaf - ------勤解万难------"></p>
-<p> </p>
-<p><img src="http://img1.ph.126.net/RjgY5PoABqNiCoQ-xb0tyg==/6631361335308268702.jpg" alt="U盘安装ESXI 6 - leaf - ------勤解万难------" title="U盘安装ESXI 6 - leaf - ------勤解万难------"></p>
-<p> </p>
-<p><img src="http://img0.ph.126.net/QEUs_UDcbNDTBAZaYx1qGw==/6598240746599598519.jpg" alt="U盘安装ESXI 6 - leaf - ------勤解万难------" title="U盘安装ESXI 6 - leaf - ------勤解万难------"></p>
-<p> </p>
-<p><img src="http://img1.ph.126.net/to_hcCJXii_EvA-SAVkcww==/6630810479980925665.jpg" alt="U盘安装ESXI 6 - leaf - ------勤解万难------" title="U盘安装ESXI 6 - leaf - ------勤解万难------"></p>
-<p> </p>
-<p><img src="http://img0.ph.126.net/A_RATbLRWPlQAUP2rI0V2A==/6598169278343793459.jpg" alt="U盘安装ESXI 6 - leaf - ------勤解万难------" title="U盘安装ESXI 6 - leaf - ------勤解万难------"></p>
-<p> </p>
-<p><img src="http://img0.ph.126.net/gTE4yGTBU-BGBpDql6E2KA==/665125369985446191.jpg" alt="U盘安装ESXI 6 - leaf - ------勤解万难------" title="U盘安装ESXI 6 - leaf - ------勤解万难------"></p>
-<p> </p>
-<p><img src="http://img0.ph.126.net/lbNn4gJoU2KKeQedlJlgxg==/6598213258808903859.jpg" alt="U盘安装ESXI 6 - leaf - ------勤解万难------" title="U盘安装ESXI 6 - leaf - ------勤解万难------"></p>
-<p> </p>
-<p><img src="http://img2.ph.126.net/wh8uA8-WcQ-gzXV8mcE2kQ==/6619288697631528827.jpg" alt="U盘安装ESXI 6 - leaf - ------勤解万难------" title="U盘安装ESXI 6 - leaf - ------勤解万难------"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/4161650134/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/4161650134/" class="post-title-link" itemprop="url">申请了一个免费的阿里云虚拟主机</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2015-10-31 11:16:00" itemprop="dateCreated datePublished" datetime="2015-10-31T11:16:00+08:00">2015-10-31</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Cloud/" itemprop="url" rel="index"><span itemprop="name">Cloud</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Cloud/%E9%98%BF%E9%87%8C%E4%BA%91/" itemprop="url" rel="index"><span itemprop="name">阿里云</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>92</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>买了一个ywz.space域名。本来想买ywz.xyz的，可惜别人捷足先登了。。。  </p>
-<p>申请地址：<a target="_blank" rel="noopener" href="http://wanwang.aliyun.com/hosting/free/">http://wanwang.aliyun.com/hosting/free/</a><br>每天0点开始抢  </p>
-<p><img src="http://img0.ph.126.net/S8350ODqubBjrkq8w17EjQ==/6619306289817499122.png" alt="申请了一个阿里云免费虚拟主机 - leaf - ------勤解万难------" title="申请了一个阿里云免费虚拟主机 - leaf - ------勤解万难------"></p>
-<p> </p>
-<p><img src="http://img0.ph.126.net/wrRxivHFeEFnrVKAOcYKSQ==/1154047404531844092.png" alt="申请了一个阿里云免费虚拟主机 - leaf - ------勤解万难------" title="申请了一个阿里云免费虚拟主机 - leaf - ------勤解万难------"></p>
-<p> </p>
-<p><img src="http://img1.ph.126.net/LKtpQbq17938NSgjOYbz8Q==/6608808152795266033.png" alt="申请了一个阿里云免费虚拟主机 - leaf - ------勤解万难------" title="申请了一个阿里云免费虚拟主机 - leaf - ------勤解万难------"></p>
-<p> </p>
-<p><img src="http://img0.ph.126.net/GwUII9UXYWrQXSBrecK0mw==/975029319344203017.png" alt="申请了一个阿里云免费虚拟主机 - leaf - ------勤解万难------" title="申请了一个阿里云免费虚拟主机 - leaf - ------勤解万难------"></p>
-<p> </p>
-<p><img src="http://img0.ph.126.net/U2ypxViJH8uyOFKf1j7ksg==/6619563575538394239.png" alt="申请了一个阿里云免费虚拟主机 - leaf - ------勤解万难------" title="申请了一个阿里云免费虚拟主机 - leaf - ------勤解万难------"></p>
-<p> </p>
-<p><img src="http://img1.ph.126.net/e_9osl7dkcf92L5KJX9D0A==/6619436032189572817.png" alt="申请了一个阿里云免费虚拟主机 - leaf - ------勤解万难------" title="申请了一个阿里云免费虚拟主机 - leaf - ------勤解万难------"></p>
-<p> </p>
-<p><img src="http://img2.ph.126.net/lfnWq_0FfvPQsr94ZYmrUg==/6631318454351558021.png" alt="申请了一个阿里云免费虚拟主机 - leaf - ------勤解万难------" title="申请了一个阿里云免费虚拟主机 - leaf - ------勤解万难------"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1375113552/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/1375113552/" class="post-title-link" itemprop="url">linux 系统测试软件4枚</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2015-10-29 21:24:00" itemprop="dateCreated datePublished" datetime="2015-10-29T21:24:00+08:00">2015-10-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/Q-A/" itemprop="url" rel="index"><span itemprop="name">Q&A</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>162</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>cpuburn  测试cpu稳定性<br>sudo apt-get install cpuburn<br>burnP6 || echo $? &amp;    几核就开几个  </p>
-<p><img src="http://img1.ph.126.net/JwfOWt5VQwBlnfrOmDLJUw==/2435321498519146474.png" alt="linux 系统测试软件4枚 - leaf - ------勤解万难------" title="linux 系统测试软件4枚 - leaf - ------勤解万难------"></p>
-<p> <br>burnintest  拷机软件  免费试用30天  </p>
-<p><img src="http://img1.ph.126.net/iFcjHlm6YIxhUmfX206yqA==/6630750006840901435.png" alt="linux 系统测试软件4枚 - leaf - ------勤解万难------" title="linux 系统测试软件4枚 - leaf - ------勤解万难------"></p>
-<p> <br>iptop 流量监控工具<br>sudo apt-get install iptop  </p>
-<p><img src="http://img1.ph.126.net/7R2IJ6fgI8Ks6ZEkMrBNKQ==/6630889644817625518.png" alt="linux 系统测试软件4枚 - leaf - ------勤解万难------" title="linux 系统测试软件4枚 - leaf - ------勤解万难------"></p>
-<p> <br>流量监控工具iptraf (功能强大)<br>sudo apt-get install iptraf  </p>
-<p><img src="http://img1.ph.126.net/RGv0IA5WQCZEyMpDM8fo4w==/6631408614304992811.png" alt="linux 系统测试软件4枚 - leaf - ------勤解万难------" title="linux 系统测试软件4枚 - leaf - ------勤解万难------"></p>
+          <p>增加lun容量，会多出未分区的容量</p>
+<p>添加lun，会多出一个磁盘。</p>
+<p><img src="http://img0.ph.126.net/bdXEHrn7VrPLkCAF2A-Xqw==/6598219855878877965.png" alt="关于luns - leaf - ------勤解万难------" title="关于luns - leaf - ------勤解万难------"></p>
 
       
     </div>
@@ -1431,7 +1449,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/37/">37</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1482,12 +1500,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">399k</span>
+    <span title="站点总字数">447k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">24:11</span>
+    <span title="站点阅读时长">27:06</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

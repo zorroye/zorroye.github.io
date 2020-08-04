@@ -245,20 +245,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">282</span>
+          <span class="site-state-item-count">365</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">60</span>
+        <span class="site-state-item-count">72</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">57</span>
+        <span class="site-state-item-count">68</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -304,6 +304,1749 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/771146178/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/771146178/" class="post-title-link" itemprop="url">etc目录文件说明</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-06-01 10:42:00" itemprop="dateCreated datePublished" datetime="2015-06-01T10:42:00+08:00">2015-06-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>8 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>参考文档</p>
+<p><a target="_blank" rel="noopener" href="http://www.freedesktop.org/software/systemd/man/index.html">http://www.freedesktop.org/software/systemd/man/index.html</a></p>
+<p>/etc各文件用途</p>
+<p>adjtime设置同步时间</p>
+<p>alias设置别名</p>
+<p>anacrontab系统计划任务的扩展文件：在一个指定时间间隔错过后自动执行任务</p>
+<p><a target="_blank" rel="noopener" href="http://www.2cto.com/os/201208/146487.html">http://www.2cto.com/os/201208/146487.html</a></p>
+<p>asound.conf声卡设置文件，非必须</p>
+<p><a target="_blank" rel="noopener" href="http://blog.sina.com.cn/s/blog/_a04184c101010kry.html">http://blog.sina.com.cn/s/blog\_a04184c101010kry.html</a></p>
+<p>at.deny哪些人不能用at</p>
+<p>bashrcbash环境设置，如PS1，umask，</p>
+<p>chrony.conf时间同步配置文件</p>
+<p><a target="_blank" rel="noopener" href="http://os.51cto.com/art/201403/431692.htm">http://os.51cto.com/art/201403/431692.htm</a></p>
+<p>chrony.keys时间同步SHA码</p>
+<p>cron.deny哪些人不能用cron</p>
+<p><a target="_blank" rel="noopener" href="http://wuseven.blog.51cto.com/6237275/1098591">http://wuseven.blog.51cto.com/6237275/1098591</a></p>
+<p>crontab例行任务设置</p>
+<p>crypttab设置启动过程中的块设备的加密</p>
+<p><a target="_blank" rel="noopener" href="http://www.freedesktop.org/software/systemd/man/crypttab.html">http://www.freedesktop.org/software/systemd/man/crypttab.html</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.2cto.com/Article/201309/243900.html">http://www.2cto.com/Article/201309/243900.html</a></p>
+<p>csh.cshrccsh环境设置</p>
+<p>csh.login对启动环境的csh环境设置</p>
+<p>DIR_COLORS终端登录后的颜色设置</p>
+<p>DIR_COLORS.256color</p>
+<p>DIR_COLORS.lightbgcolor</p>
+<p>dnsmasqdns和dhcp配置工具</p>
+<p><a target="_blank" rel="noopener" href="http://www.thekelleys.org.uk/dnsmasq/doc.html">http://www.thekelleys.org.uk/dnsmasq/doc.html</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.freehao123.com/dnsmasq/">http://www.freehao123.com/dnsmasq/</a></p>
+<p>dracut.conf引导镜像配置文件</p>
+<p><a target="_blank" rel="noopener" href="http://www.360doc.com/content/13/0428/09/12139495/_281449877.shtml">http://www.360doc.com/content/13/0428/09/12139495\_281449877.shtml</a></p>
+<p>drirc未知</p>
+<p>dumpdates</p>
+<p>e2fsck.conf只针对事件错误的修复配置</p>
+<p>environment</p>
+<p>ethertypes以太网帧类型定义</p>
+<p>exports全局变量定义</p>
+<p>filesystems支持的文件系统</p>
+<p>fprintd.conf<a target="_blank" rel="noopener" href="http://www.freedesktop.org/wiki/Software/fprint/fprintd/">http://www.freedesktop.org/wiki/Software/fprint/fprintd/</a></p>
+<p>fatab默认挂载的文件系统</p>
+<p>fw_env.config内存地址配置</p>
+<p>GREP_COLORSgrep显示的颜色设置</p>
+<p>group系统组用户</p>
+<p>gshadow系统组用户密码</p>
+<p>host.conf设置主机名查询顺序</p>
+<p><a target="_blank" rel="noopener" href="http://lxsym.blog.51cto.com/1364623/311989">http://lxsym.blog.51cto.com/1364623/311989</a></p>
+<p><a target="_blank" rel="noopener" href="http://www.linuxidc.com/Linux/2010-10/28982.htm">http://www.linuxidc.com/Linux/2010-10/28982.htm</a></p>
+<p>hostname主机名</p>
+<p>hostsIP地址和主机名映射表</p>
+<p>hosts.allow网络服务允许列表</p>
+<p>hosts.deny网络服务禁止列表</p>
+<p>inittabinit配置文件，现已不需要</p>
+<p>inputrc键盘键符设置</p>
+<p>issue登录提示</p>
+<p>issue.net网络登录提示</p>
+<p>jwhois.confwhois客户端配置文件</p>
+<p><a target="_blank" rel="noopener" href="http://wuhongsheng.com/tag/conf/">http://wuhongsheng.com/tag/conf/</a></p>
+<p>krb5.confkerberos认证配置</p>
+<p><a target="_blank" rel="noopener" href="http://www.freebsd.org/doc/zh/_CN/books/handbook/kerberos5.html">http://www.freebsd.org/doc/zh\_CN/books/handbook/kerberos5.html</a></p>
+<p>ld.so.conf动态库文件配置</p>
+<p>lftp.conflftp配置文件</p>
+<p>libuser.conf</p>
+<p>localtime当前时间</p>
+<p>login.defs登录密码，uid，gid等设置</p>
+<p>logrotate.conf轮替设置</p>
+<p>machine-id<a target="_blank" rel="noopener" href="http://www.freedesktop.org/software/systemd/man/machine-id.html">http://www.freedesktop.org/software/systemd/man/machine-id.html</a></p>
+<p>magic</p>
+<p>mail.rcheirloom mail config</p>
+<p>mailcap</p>
+<p>man_db.confman文件路径设置</p>
+<p>mime.types一个mime类型说明文件</p>
+<p>mke2fs.conf默认的文件系统参数设置</p>
+<p>motd</p>
+<p>mtab默认加载的文件系统</p>
+<p>mtools.conf模拟许多MS-DOS的指令</p>
+<p>nanorcnano配置文件</p>
+<p>networks</p>
+<p>nsswitch.conf系统数据库和名称服务切换配置文件</p>
+<p>oddjobd.confoddjob daemon config</p>
+<p>os-release系统版本号</p>
+<p>passwd</p>
+<p>passwdqc.conf密码规则</p>
+<p>pidora-release</p>
+<p>pinforc</p>
+<p>prelink.conf</p>
+<p>printcapcups方面的配置文件</p>
+<p>profile系统环境设置</p>
+<p>protocols网络协议标识说明</p>
+<p>rc0-6.d启动项文件</p>
+<p>rearj.cfg压缩文件命令说明</p>
+<p>request-key.conf</p>
+<p>resolv.confdns设置</p>
+<p>rpcrpc相关服务说明</p>
+<p>rsyncd.conf同步配置文件</p>
+<p>rsyslog.confsyslog配置文件</p>
+<p>securetty终端配置</p>
+<p>services服务说明文件</p>
+<p>sestatus.confselinux状态工具配置</p>
+<p>shadow</p>
+<p>shellsshell列表</p>
+<p>sudoerssudo配置文件</p>
+<p>sysctl.conf内核参数设置文件</p>
+<p>updatedb.conflocate的db文件</p>
+<p>vconsole.conf</p>
+<p>wgetrcwget配置文件</p>
+<p>yum.confyum配置文件</p>
+<p>yumex.confyum配置文件</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/810151373/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/810151373/" class="post-title-link" itemprop="url">ubuntu14.04 server 安装keepalived</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-05-25 20:10:00" itemprop="dateCreated datePublished" datetime="2015-05-25T20:10:00+08:00">2015-05-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/server/" itemprop="url" rel="index"><span itemprop="name">server</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>6 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>keepalived功能就是实现VRRP协议，解决单点故障问题。</p>
+<p>参考：<br>keepalived权威指南<br>ubuntu server最佳方案2  </p>
+<p>设备：  </p>
+<blockquote>
+<p>树莓派2-1：Yrpi2-cryst，192.168.3.17，当MASTER<br>树莓派2-2：Yrpi2-black，192.168.3.18，当BACKUP<br>IP地址：192.168.3.16</p>
+</blockquote>
+<p>树莓派2-1 配置  </p>
+<blockquote>
+<p>/etc/hosts：192.168.3.17    Yrpi2-cryst</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>/etc/sysctl.conf  </p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>net.ipv4.ip_forward=1</p>
+</blockquote>
+<blockquote>
+<p>net.ipv4.ip_nonlocal_bind=1</p>
+</blockquote>
+<blockquote>
+<p>net.ipv4.tcp_fin_timeout=30</p>
+</blockquote>
+<blockquote>
+<p>net.ipv4.tcp_syncookies=1</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>sudo sysctl -p</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>/etc/keepalived/keepalived.conf<br>global_defs  {</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>notification_email {</p>
+</blockquote>
+<blockquote>
+<p><a href="mailto:&#x79;&#x77;&#122;&#x40;&#x6c;&#x65;&#x61;&#102;&#46;&#99;&#x6f;&#109;">&#x79;&#x77;&#122;&#x40;&#x6c;&#x65;&#x61;&#102;&#46;&#99;&#x6f;&#109;</a></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>}</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>notification_email_from <a href="mailto:&#51;&#x30;&#54;&#64;&#108;&#x65;&#x61;&#x66;&#46;&#x63;&#111;&#x6d;">&#51;&#x30;&#54;&#64;&#108;&#x65;&#x61;&#x66;&#46;&#x63;&#111;&#x6d;</a><br>smtp_server 127.0.0.1<br>smtp_connect_timeout 20<br>router_id Yrpi2-cryst       #机器标识<br>}  </p>
+<p>vrrp_script chk_haproxy {</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>script  “killall -0 haproxy”</p>
+</blockquote>
+<blockquote>
+<p>interval  2</p>
+</blockquote>
+<blockquote>
+<p>weight    2</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>}  </p>
+<p>#一个虚拟路由器包含多个物理的VRRP路由器<br>vrrp_instance VI_1 {        #VRRP路由器</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>state BACKUP</p>
+</blockquote>
+<blockquote>
+<p>smtp_alert               #启用email通知</p>
+</blockquote>
+<blockquote>
+<p>nopreempt               #设置非抢占式，只有设置为BKUP才能设置这个选项</p>
+</blockquote>
+<blockquote>
+<p>interface eth0           #要绑定的网卡</p>
+</blockquote>
+<blockquote>
+<p>virtual_router_id 51  #所属虚拟路由器</p>
+</blockquote>
+<blockquote>
+<p>priority 150              #通过优先级来设置MASTER，跟BACKUP相差要50以上</p>
+</blockquote>
+<blockquote>
+<p>advert_int 1             #每隔1s进行检测</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>#设置认证方式和密码<br>authentication {</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>auth_type PASS</p>
+</blockquote>
+<blockquote>
+<p>auth_pass Amitabha</p>
+</blockquote>
+<blockquote>
+<p>}</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>#设置共享的虚拟IP地址<br>virtual_ipaddress {</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>192.168.3.16</p>
+</blockquote>
+<blockquote>
+<p>}</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>#haproxy相关设置：故障检测<br>track_script {</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>chk_haproxy</p>
+</blockquote>
+<blockquote>
+<p>}</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>}</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>树莓派2-2 配置  </p>
+<blockquote>
+<p>/etc/hosts：192.168.3.18    Yrpi2-black</p>
+</blockquote>
+<blockquote>
+<p>/etc/sysctl.conf  </p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>net.ipv4.ip_forward=1</p>
+</blockquote>
+<blockquote>
+<p>net.ipv4.ip_nonlocal_bind=1</p>
+</blockquote>
+<blockquote>
+<p>net.ipv4.tcp_fin_timeout=30</p>
+</blockquote>
+<blockquote>
+<p>net.ipv4.tcp_syncookies=1</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>sudo sysctl -p</p>
+</blockquote>
+<blockquote>
+<p>/etc/keepalived/keepalived.conf</p>
+</blockquote>
+<blockquote>
+<p>global_defs  {<br>    notification_email {<br>        <a href="mailto:&#121;&#x77;&#122;&#64;&#x6c;&#x65;&#x61;&#102;&#x2e;&#99;&#111;&#x6d;">&#121;&#x77;&#122;&#64;&#x6c;&#x65;&#x61;&#102;&#x2e;&#99;&#111;&#x6d;</a><br>    }<br>    notification_email_from <a href="mailto:&#x33;&#48;&#54;&#64;&#108;&#x65;&#x61;&#102;&#x2e;&#99;&#x6f;&#x6d;">&#x33;&#48;&#54;&#64;&#108;&#x65;&#x61;&#102;&#x2e;&#99;&#x6f;&#x6d;</a><br>    smtp_server 127.0.0.1<br>    smtp_connect_timeout 20<br>    router_id Yrpi2-black<br>}  </p>
+<p>vrrp_script chk_haproxy {<br>    script  “killall -0 haproxy”<br>    interval  2<br>    weight    2<br>}  </p>
+<p>vrrp_instance VI_1 {<br>    state BACKUP<br>    smtp_alert<br>    interface eth0<br>    virtual_router_id 51<br>    priority 100<br>    advert_int 1<br>    authentication {<br>        auth_type PASS<br>        auth_pass Amitabha<br>    }<br>    virtual_ipaddress {<br>        192.168.3.20<br>    }<br>    track_script {<br>        chk_haproxy<br>    }<br>}</p>
+</blockquote>
+<p>效果  </p>
+<p><img src="http://img1.ph.126.net/jlfVjqg5EpRMYPOHRDgg1Q==/6630387168001870027.png" alt="ubuntu14.04 server 安装keepalived - leaf - ------勤解万难------" title="ubuntu14.04 server 安装keepalived - leaf - ------勤解万难------"></p>
+<p> </p>
+<p><img src="http://img2.ph.126.net/wLB5cRdbZZnQ8PuVnowjgw==/6630474029420464148.png" alt="ubuntu14.04 server 安装keepalived - leaf - ------勤解万难------" title="ubuntu14.04 server 安装keepalived - leaf - ------勤解万难------"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2368736414/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/2368736414/" class="post-title-link" itemprop="url">[转载]UBUNTU14.04 32bit 安装GNS3 1.3.3</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-05-23 10:06:00" itemprop="dateCreated datePublished" datetime="2015-05-23T10:06:00+08:00">2015-05-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:26" itemprop="dateModified" datetime="2020-08-04T15:44:26+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/Q-A/" itemprop="url" rel="index"><span itemprop="name">Q&A</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><a target="_blank" rel="noopener" href="http://www.bearmr.com/index.php/gns3-1-0-for-linux/">http://www.bearmr.com/index.php/gns3-1-0-for-linux/</a>  </p>
+<p>0、安装编译环境  </p>
+<blockquote>
+<p>sudo apt-get install build-essential libelf-dev uuid-dev libpcap-dev python3-dev python3-pyqt4  git  cmake  </p>
+</blockquote>
+<p>0、下载gns3 （仅用于编译插件，可不下）  </p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://github.com/GNS3/gns3-gui/releases/download/v1.3.3/GNS3-1.3.3.source.zip">https://github.com/GNS3/gns3-gui/releases/download/v1.3.3/GNS3-1.3.3.source.zip</a>  </p>
+</blockquote>
+<p>1、安装Dynamips (思科OS模拟器,下载的所有iou等都需要这个模拟器模拟)  </p>
+<blockquote>
+<p>git clone git://github.com/GNS3/dynamips.git<br>cd dynamips<br>mkdir build<br>cd build<br>cmake ..<br>make &amp;&amp; sudo make install  </p>
+</blockquote>
+<blockquote>
+<p>测试Dynamips<br>dynamips -H 7200  </p>
+</blockquote>
+<p>2、安装GNS3-server (gns3后台程序)  </p>
+<blockquote>
+<p>wget -Oez_setup.py <a target="_blank" rel="noopener" href="https://bootstrap.pypa.io/ez/_setup.py">https://bootstrap.pypa.io/ez\_setup.py</a><br>sudo python3 ez_setup.py<br>wget -O get-pip.py <a target="_blank" rel="noopener" href="https://bootstrap.pypa.io/get-pip.py">https://bootstrap.pypa.io/get-pip.py</a><br>sudo python3 get-pip.py  </p>
+</blockquote>
+<blockquote>
+<p>用pip命令或apt-get命令安装pyzmq、 tornado 、netifaces这3个依赖的库<br>sudo pip3 install pyzmq<br>sudo pip3 install tornado<br>sudo pip3 install netifaces  </p>
+</blockquote>
+<blockquote>
+<p>git clone git://github.com/GNS3/gns3-server.git<br>cd gns3-server/<br>sudo python3 setup.py install  </p>
+</blockquote>
+<blockquote>
+<p>测试GNS 3-Server  </p>
+</blockquote>
+<blockquote>
+<p>gns3server  </p>
+</blockquote>
+<p>3、安装gns3-gui (gns3界面)  </p>
+<blockquote>
+<p>git clone git://github.com/GNS3/gns3-gui.git<br>cd gns3-gui.git/<br>sudo python3 setup.py install  </p>
+</blockquote>
+<p>4、安装vpcs (虚拟pc机)  </p>
+<blockquote>
+<p>sh src/mk.sh i386 (第0步骤下载的程序目录)<br>将编译的文件拷到gns3目录  </p>
+</blockquote>
+<p>5、升级  </p>
+<blockquote>
+<p>pip3 install gns3-server==1.3.3     ==后面是版本号  </p>
+</blockquote>
+<p>6、运行GNS3  </p>
+<blockquote>
+<p>gns3  </p>
+</blockquote>
+<p>7、相关设置  </p>
+<blockquote>
+<p>下载CiscoIOUKeygen.py和编译好的iouyap  </p>
+<blockquote>
+<p>iouyap 是用来在 IOU 和 UDP, TAP 和Ethernet.之间做桥接的。  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>python3 CiscoIOUKeygen.py  </p>
+</blockquote>
+<blockquote>
+<p>新建iourc.txt，复制license和下一行进去  </p>
+</blockquote>
+<blockquote>
+<p>下载IOU/IOS 并安装  </p>
+</blockquote>
+<blockquote>
+<p><img src="http://img1.ph.126.net/2r7FulZfj_7UBol-puv0OA==/643733271755249902.png" alt="[转载]UBUNTU14.04 32bit 安装GNS3 1.3.3 - leaf - ------勤解万难------" title="[转载]UBUNTU14.04 32bit 安装GNS3 1.3.3 - leaf - ------勤解万难------"></p>
+<p><img src="http://img2.ph.126.net/1EAb_LGBwUUWHmZyRKadJA==/1172343278017882178.png" alt="[转载]UBUNTU14.04 32bit 安装GNS3 1.3.3 - leaf - ------勤解万难------" title="[转载]UBUNTU14.04 32bit 安装GNS3 1.3.3 - leaf - ------勤解万难------"></p>
+<p>  </p>
+<p><img src="http://img0.ph.126.net/VqehHsnYhAutTxCYl5Yaaw==/6619482211677763503.png" alt="[转载]UBUNTU14.04 32bit 安装GNS3 1.3.3 - leaf - ------勤解万难------" title="[转载]UBUNTU14.04 32bit 安装GNS3 1.3.3 - leaf - ------勤解万难------"></p>
+<p> </p>
+</blockquote>
+<p>8、安装相关工具<br>sudo apt-get install roxterm wireshark<br><img src="http://img0.ph.126.net/IKhsUkL3hVU3kSvSGpQqQw==/6630143076420477582.png" alt="[转载]UBUNTU14.04 32bit 安装GNS3 1.3.3 - leaf - ------勤解万难------" title="[转载]UBUNTU14.04 32bit 安装GNS3 1.3.3 - leaf - ------勤解万难------">  </p>
+<p>9、错误提示</p>
+<p>Server error from 127.0.0.1:8000: IOU2: The following shared library dependencies cannot be found for IOU image /home/ywz/5Soft/GNS3/images/IOU/i86bi-linux-l3-p-15.0a.bin: libcrypto.so.4</p>
+<p>解决  sudo ln -s /lib/i386-linux-gnu/libcrypto.so.1.0.0 /lib/i386-linux-gnu/libcrypto.so.4</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/4136471457/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/4136471457/" class="post-title-link" itemprop="url">UBUNTU14.04.3 x64安装记录</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-05-20 10:49:00" itemprop="dateCreated datePublished" datetime="2015-05-20T10:49:00+08:00">2015-05-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/Q-A/" itemprop="url" rel="index"><span itemprop="name">Q&A</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>11 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>零、安装</p>
+<blockquote>
+<p>用ultraiso或者unetbootin将系统iso文件写入到U盘，然后安装。</p>
+<p>我用的是uefi+gpt分区。<br>分了3个区100M的fat32分区，50G的root分区，其他归home分区<br>引导安装在100M的fat32分区上<br>最好先用gparted分区，不然会出现一些空白区域。</p>
+</blockquote>
+<p>一、安装驱动</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://wiki.cchtml.com/index.php/Ubuntu/_Trusty/_Installation/_Guide">http://wiki.cchtml.com/index.php/Ubuntu\_Trusty\_Installation\_Guide</a></p>
+<p>1、下载催化剂驱动</p>
+<p><a target="_blank" rel="noopener" href="http://support.amd.com/zh-cn/download/desktop?os=Linux+x86">http://support.amd.com/zh-cn/download/desktop?os=Linux+x86</a>  </p>
+</blockquote>
+<blockquote>
+<p>2、安装编译环境<br>sudo apt-get install cdbs dh-make dkms execstack dh-modaliases linux-headers-generic libqtgui4  </p>
+<p>3、制作安装包</p>
+<p>sudo sh amd-driver-installer-14.501.1003-x86.x86_64.run –buildpkg Ubuntu/trusty  </p>
+<p>4、安装和配置<br>sudo dpkg -i fglrx*.deb  </p>
+<p>sudo aticonfig –initial  -f  </p>
+<p>3、安装驱动<br>sudo apt-get install lib32gcc1<br>./amd-driver-installer-15.302-x86.x86_64.run  </p>
+<p>5、重启并检测<br><a target="_blank" rel="noopener" href="http://blog.csdn.net/tecn14/article/details/24554187">http://blog.csdn.net/tecn14/article/details/24554187</a><br>sudo reboot<br>ywz@Ynotebook:~$ lsmod | grep f  </p>
+<blockquote>
+<p>fglrx               15474688  290  </p>
+</blockquote>
+<p>ywz@Ynotebook:~$     fglrxinfo   </p>
+<blockquote>
+<p>display: :0  screen: 0<br>OpenGL vendor string: Advanced Micro Devices, Inc.<br>OpenGL renderer string: AMD Radeon HD 7700 Series  <br>OpenGL version string: 4.5.13416 Compatibility Profile Context 15.302  </p>
+</blockquote>
+<p>ywz@Ynotebook:~$      fgl_glxgears  </p>
+<blockquote>
+<p>Using GLX_SGIX_pbuffer<br>9469 frames in 5.0 seconds = 1893.800 FPS<br>10740 frames in 5.0 seconds = 2148.000 FPS<br>10810 frames in 5.0 seconds = 2162.000 FPS<br>10722 frames in 5.0 seconds = 2144.400 FPS<br>10749 frames in 5.0 seconds = 2149.800 FPS<br>10724 frames in 5.0 seconds = 2144.800 FPS<br>10132 frames in 5.0 seconds = 2026.400 FPS  </p>
+</blockquote>
+<p>6、更新<br>sudo apt-get remove –purge fglrx fglrx_* fglrx-amdcccle* fglrx-dev*<br>sudo reboot<br>sudo dpkg -i fglrx*.deb<br>sudo aticonfig –initial  </p>
+</blockquote>
+<p>二、设置</p>
+<blockquote>
+<p>1、更新源，下载163的就好了 mirrors.163.com</p>
+<p>2、关闭访客模式：</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>sudo sh -c ‘echo “allow-guest=false” &gt;&gt; /usr/share/lightdm/lightdm.conf.d/50-ubuntu.conf’</p>
+</blockquote>
+<blockquote>
+<p>sudo service lightdm restart</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>3、安装基础插件</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>sudo apt-get install nautilus-open-terminal  右键终端选项</p>
+<p>sudo apt-get install classicmenu-indicator   菜单栏</p>
+<p>sudo apt-get install p7zip-full                        7-zip</p>
+<p>sudo apt-get install ubuntu-restricted-extras 受限程序</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>4、下载安装搜狗输入法，安装极点五笔(可选)</p>
+</blockquote>
+<blockquote>
+<p>5、更换字体和壁纸  </p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>字体用华文黑体，华文细黑，monaco</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>sudo cp -a Galaxy.jpg /usr/share/backgrounds/</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>6、充分利用物理内存  </p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>sudo nano /etc/sysctl.conf</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>vm.swappiness=10</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>sudo sysctl -p</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>7、开机启动应用程序设置  </p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p><code>gnome-session-properties   </code></p>
+</blockquote>
+<p><code>8、安装经典界面   </code></p>
+<blockquote>
+<p><code>sudo apt-get install gnome-session-flashback</code><br><code>sudo apt-get install gnome-tweak-tool</code><br><code>sudo apt-get install compizconfig-settings-manager</code><br>右击面板然后按住Alt+Super(win)键，来定制面板<br>窗口按钮右置<br><code>gsettings set org.gnome.desktop.wm.preferences button-layout &#39;menu:minimize,maximize,close&#39;</code><br>其他详见<br><a target="_blank" rel="noopener" href="http://server.zol.com.cn/516/5169533.html">http://server.zol.com.cn/516/5169533.html</a></p>
+</blockquote>
+</blockquote>
+<p>三、增删软件  </p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://lvzejun.cn/2015/03/31/ubuntu-software/">http://lvzejun.cn/2015/03/31/ubuntu-software/</a>  </p>
+</blockquote>
+<blockquote>
+<p>办公  </p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>sudo apt-get remove libreoffice*</p>
+</blockquote>
+<blockquote>
+<p>wps office</p>
+</blockquote>
+<blockquote>
+<p>有道词典（ubuntu14.04.2可以安装）</p>
+</blockquote>
+<blockquote>
+<p>为知笔记</p>
+</blockquote>
+<blockquote>
+<p>sudo add-apt-repository ppa:wiznote-team</p>
+</blockquote>
+<blockquote>
+<p>sudo apt-get update</p>
+</blockquote>
+<blockquote>
+<p>sudo apt-get install wiznote  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>网络  </p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>sudo apt-get install skype</p>
+</blockquote>
+<blockquote>
+<p>google浏览器</p>
+</blockquote>
+<blockquote>
+<p>bcloud</p>
+</blockquote>
+<blockquote>
+<p>kuaipan</p>
+</blockquote>
+<blockquote>
+<p>xware-desktop<br>QQ<br><code>sudo apt-get install pidgin   sudo add-apt-repository ppa:lainme/pidgin-lwqq   sudo apt-get update   sudo apt-get install pidgin-lwqq</code>  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>影音  </p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>sudo apt-get install smplayer vlc</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>维护  </p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>sudo apt-get install backintime-gnome</p>
+</blockquote>
+<blockquote>
+<p>sudo apt-get install  unetbootin gparted<br>sudo apt-get install hwloc  </p>
+<blockquote>
+<p>效果 lstopo  </p>
+<p><img src="http://img1.ph.126.net/Q9xYz7DFE75j_gKSNAQSvQ==/6631360235796767896.png" alt="UBUNTU14.04.3 x64安装记录 - leaf - ------勤解万难------" title="UBUNTU14.04.3 x64安装记录 - leaf - ------勤解万难------"></p>
+<p>   </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>开发  </p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>JAVA</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>sudo add-apt-repository ppa:webupd8team/java</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>sudo apt-get update</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>sudo apt-get install oracle-java8-installer oracle-java8-set-default</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>sudo apt-get install geany</p>
+</blockquote>
+<blockquote>
+<p>wingide5</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>专项  </p>
+<blockquote>
+<p>gns3<br><a target="_blank" rel="noopener" href="https://beta.gns3.com/support/docs/">https://beta.gns3.com/support/docs/</a>  </p>
+<blockquote>
+<p>sudo add-apt-repository ppa:gns3/ppa<br>sudo apt-get update<br>sudo apt-get install gns3-gui<br>sudo dpkg –add-architecture i386<br>sudo apt-get install gns3-iou  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>kvm</p>
+</blockquote>
+<blockquote>
+<p>vmware</p>
+</blockquote>
+<blockquote>
+<p>lxc</p>
+</blockquote>
+<blockquote>
+<p>gns3</p>
+</blockquote>
+<blockquote>
+<p>arduino</p>
+</blockquote>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2372106058/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/2372106058/" class="post-title-link" itemprop="url">ubuntu14.04 安装kvm</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-05-19 23:50:00" itemprop="dateCreated datePublished" datetime="2015-05-19T23:50:00+08:00">2015-05-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Virtualization/" itemprop="url" rel="index"><span itemprop="name">Virtualization</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Virtualization/kvm/" itemprop="url" rel="index"><span itemprop="name">kvm</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>345</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>0、检查是否有kvm模块</p>
+<blockquote>
+<p>ls /dev 看看是否有kvm</p>
+</blockquote>
+<p>1、安装时遇到的问题</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://my.oschina.net/lhplj/blog/336313">http://my.oschina.net/lhplj/blog/336313</a></p>
+</blockquote>
+<blockquote>
+<p>sudo apt-get install openssh-server</p>
+<blockquote>
+<p>提示openssh-server : 依赖: openssh-client (= 1:6.6p1-2ubuntu1)</p>
+</blockquote>
+<p>安装 sudo apt-get install openssh-client=1:6.6p1-2ubuntu1</p>
+<p>sudo apt-get install openssh-server</p>
+</blockquote>
+<p>2、安装</p>
+<blockquote>
+<p>sudo apt-get install ubuntu-virt-server</p>
+<p>sudo apt-get install virtinst</p>
+<p>sudo apt-get install virt-manager (图形界面)</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1105892258/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/1105892258/" class="post-title-link" itemprop="url">树莓派2搭建双机并行计算环境</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-05-08 22:37:00" itemprop="dateCreated datePublished" datetime="2015-05-08T22:37:00+08:00">2015-05-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hardware/" itemprop="url" rel="index"><span itemprop="name">Hardware</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hardware/%E6%A0%91%E8%8E%93%E6%B4%BE/" itemprop="url" rel="index"><span itemprop="name">树莓派</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>677</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>0、准备材料</p>
+<blockquote>
+<p>2个树莓派2，刷ubuntu14.04，安装好编译环境</p>
+<p>地址：192.168.3.17，192.168.3.18</p>
+<p>下载MPICH2源码</p>
+</blockquote>
+<p>以下两个树莓派都要设置  </p>
+<p>1、安装相关软件</p>
+<blockquote>
+<p>sudo apt-get install gfortran</p>
+<p>sudo apt-get install mpich2</p>
+</blockquote>
+<blockquote>
+<p>解压源码，并编译example下的cpi.c</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>mpicc cpi.c -o cpi </p>
+</blockquote>
+</blockquote>
+<p>2、相关设置</p>
+<blockquote>
+<p>vi /etc/hosts 添加</p>
+<p>192.168.3.17Yrpi2-1</p>
+<p>192.168.3.18Yrpi2-2</p>
+</blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+<p>新建文件machinefile，添加</p>
+</blockquote>
+<blockquote>
+<p>192.168.3.17</p>
+</blockquote>
+<blockquote>
+<p>192.168.3.18</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>设置无密码登陆</p>
+</blockquote>
+<blockquote>
+<p>ssh-keygen -t rsa -C “ywz@ywz”</p>
+</blockquote>
+<blockquote>
+<p>cat ~/.ssh/id_rsa.pub | ssh <a href="mailto:&#x75;&#98;&#117;&#x6e;&#x74;&#117;&#x40;&#x31;&#57;&#x32;&#46;&#49;&#54;&#56;&#46;&#51;&#x2e;&#49;&#x38;">&#x75;&#98;&#117;&#x6e;&#x74;&#117;&#x40;&#x31;&#57;&#x32;&#46;&#49;&#54;&#56;&#46;&#51;&#x2e;&#49;&#x38;</a> “mkdir .ssh;cat &gt;&gt; .ssh/authorized_keys”</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>做下无密码登陆测试 ssh 192.168.3.18 看是否已经登陆Yrpi2-2</p>
+</blockquote>
+</blockquote>
+<p>测试</p>
+<blockquote>
+<p>mpiexec -f machinefile -n 4 ./cpi</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>Process 1 of 2 is on Yrpi2-2</p>
+<p>Process 0 of 2 is on Yrpi2-1</p>
+<p>pi is approximately 3.1415926544231318, Error is 0.0000000008333387</p>
+<p>wall clock time = 0.003329</p>
+</blockquote>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/201714586/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/201714586/" class="post-title-link" itemprop="url">UBUNTU14.04 server安装AWStats</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-05-08 11:11:00" itemprop="dateCreated datePublished" datetime="2015-05-08T11:11:00+08:00">2015-05-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/server/" itemprop="url" rel="index"><span itemprop="name">server</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>6 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>0、设置网站的log存放地址  </p>
+<blockquote>
+<p>cd /etc/apache2/sites-available</p>
+</blockquote>
+<blockquote>
+<p>sudo cp 000-default.conf blog.mytest.com.conf</p>
+<p>sudo nano blog.mytest.com.conf</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>DocumentRoot /var/www/blog.mytest.com</p>
+<p>ErrorLog ${APACHE_LOG_DIR}/error-blog.mytest.com.log</p>
+<p>CustomLog ${APACHE_LOG_DIR}/access-blog.mytest.com.log combined</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>sudo mkdir /var/www/blog.mytest.com</p>
+<p>echo “<h1>Amitabha</h1>“ | sudo tee /var/www/blog.mytest.com/index.html</p>
+<p>sudo a2dissite 000-default &amp;&amp; sudo a2ensite blog.mytest.com</p>
+<p>sudo service apache2 restart</p>
+</blockquote>
+<p>1、安装配置awstats</p>
+<blockquote>
+<p>sudo apt-get install awstats -y</p>
+</blockquote>
+<blockquote>
+<p>新建apache配置文件local-awstats.conf</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>sudo nano /etc/apache2/conf-available/local-awstats.conf</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>Alias /awstatsclasses “/usr/share/awstats/lib/“</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>Alias /awstats-icon/ “/usr/share/awstats/icon/“</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>Alias /awstatscss “/usr/share/doc/awstats/examples/css”</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>ScriptAlias /awstats/ /usr/lib/cgi-bin/</p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>启用配置文件</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>sudo a2enconf local-awstats</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>启用cgi模块</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>sudo  a2enmod cgi</p>
+</blockquote>
+<blockquote>
+<p>sudo service apache2 reload</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>为网站建立awstats配置文件，主要是指定网站的log地址</p>
+<p>cd /etc/awstats</p>
+<p>sudo cp awstats.conf     awstats.blog.mytest.com.conf</p>
+<p>sudo nano awstats.blog.mytest.com.conf</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>LogFile=”/var/log/apache2/access-blog.mytest.com.log”  </p>
+<p>SiteDomain=”blog.mytest.com”  </p>
+<p>HostAliases=”localhost 127.0.0.1 blog.mytest.com”</p>
+</blockquote>
+</blockquote>
+<p>3、运行awstats分析</p>
+<blockquote>
+<p>sudo chmod a+r /var/log/apache2/access-blog.mytest.com.log*</p>
+</blockquote>
+<blockquote>
+<p>sudo perl /usr/lib/cgi-bin/awstats.pl -update -config=blog.mytest.com</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>打开网页查看</p>
+</blockquote>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://blog.mytest.com/awstats/awstats.pl?config=blog.mytest.com">http://blog.mytest.com/awstats/awstats.pl?config=blog.mytest.com</a></p>
+</blockquote>
+<blockquote>
+<p><img src="http://img0.ph.126.net/zr0X7GYYlTWwGucgI-YRiw==/6630260724164504700.png" alt="UBUNTU SERVER14.04 安装AWStats - leaf - ------勤解万难------" title="UBUNTU SERVER14.04 安装AWStats - leaf - ------勤解万难------"></p>
+</blockquote>
+<p>4、awstats的cron任务</p>
+<blockquote>
+<p>MAILTO=root</p>
+<p>*/10 * * * * www-data [ -x /usr/share/awstats/tools/update.sh ] &amp;&amp; /usr/share/awstats/tools/update.sh</p>
+<p># Generate static reports:</p>
+<p>10 03 * * * www-data [ -x /usr/share/awstats/tools/buildstatic.sh ] &amp;&amp; /usr/share/awstats/tools/buildstatic.sh</p>
+</blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/565288185/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/565288185/" class="post-title-link" itemprop="url">raspberry pi 2 刷ubuntu14.04</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-05-04 13:05:00" itemprop="dateCreated datePublished" datetime="2015-05-04T13:05:00+08:00">2015-05-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hardware/" itemprop="url" rel="index"><span itemprop="name">Hardware</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hardware/%E6%A0%91%E8%8E%93%E6%B4%BE/" itemprop="url" rel="index"><span itemprop="name">树莓派</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>6 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><a target="_blank" rel="noopener" href="https://wiki.ubuntu.com/ARM/RaspberryPi">https://wiki.ubuntu.com/ARM/RaspberryPi</a>  </p>
+<p>1、下载镜像并解压<br>2、写入SD  </p>
+<blockquote>
+<p>sudo apt-get install bmap-tools<br>sudo bmaptool copy –bmap ubuntu-trusty.bmap ubuntu-trusty.img /dev/sdc  </p>
+</blockquote>
+<p>3、启动后扩容  </p>
+<blockquote>
+<p>sudo fdisk /dev/mmcblk0  </p>
+<blockquote>
+<p>Delete the second partition (d, 2),<br>then re-create it using the defaults (n, p, 2, enter, enter),<br>then write and exit (w).<br>Reboot the system, then:  </p>
+</blockquote>
+<p>sudo resize2fs /dev/mmcblk0p2<br>建交换分区<br>sudo apt-get install dphys-swapfile  </p>
+</blockquote>
+<p>4、安装桌面  </p>
+<blockquote>
+<p>sudo apt-get update<br><code>sudo apt-get install</code> xubuntu-desktop</p>
+</blockquote>
+<p>5、安装显卡驱动  </p>
+<blockquote>
+<p>sudo apt-get install xserver-xorg-video-fbturbo<br>nano /etc/X11/xorg.conf  </p>
+<blockquote>
+<p>Section “Device”<br>Identifier “Raspberry Pi FBDEV”<br>Driver “fbturbo”<br>Option “fbdev” “/dev/fb0”<br>Option “SwapbuffersWait” “true”<br>EndSection</p>
+</blockquote>
+<p>sudo apt-get install libraspberrypi-bin libraspberrypi-dev<br>sudo ln -s /usr /opt/vc<br>sudo apt-get install libraspberrypi-bin-nonfree  </p>
+</blockquote>
+<p>6、安装其他软件  </p>
+<blockquote>
+<p>sudo apt-get install openssh-server<br>sudo apt-get install vnc4server  </p>
+<blockquote>
+<p>#!/bin/sh  </p>
+<p># Uncomment the following two lines for normal desktop:<br># unset SESSION_MANAGER<br># exec /etc/X11/xinit/xinitrc  </p>
+<p>[ -x /etc/vnc/xstartup ] &amp;&amp; exec /etc/vnc/xstartup<br>[ -r $HOME/.Xresources ] &amp;&amp; xrdb $HOME/.Xresources<br>xsetroot -solid grey<br>vncconfig -iconic &amp;<br>#x-terminal-emulator -geometry 80x24+10+10 -ls -title “$VNCDESKTOP Desktop” &amp;<br>#x-window-manager &amp;  </p>
+<p>sesion-manager &amp; xfdesktop &amp; xfce4-panel &amp;<br>xfce4-menu-plugin &amp;<br>xfsettingsd &amp;<br>xfconfd &amp;<br>xfwm4 &amp;  </p>
+</blockquote>
+<p>sudo apt-get install hwloc  </p>
+<p><img src="http://img0.ph.126.net/yrbxBSz1CEeOkAoy1NSi4Q==/6631308558750619908.png" alt="raspberry pi 2 刷ubuntu14.04 - leaf - ------勤解万难------" title="raspberry pi 2 刷ubuntu14.04 - leaf - ------勤解万难------"></p>
+<p>   </p>
+</blockquote>
+<p>7、设置无线网络  </p>
+<blockquote>
+<p>我的无线网卡免驱  </p>
+<p>sudo nano /etc/network/interfaces  </p>
+<blockquote>
+<p>auto wlan0</p>
+<p>allow-hotplug wlan0<br>iface wlan0 inet dhcp  </p>
+<p>#iface wlan0 inet static  </p>
+<p>#address 192.168.1.17</p>
+<p>#netmask 255.255.255.0</p>
+<p>#gateway 192.168.1.1</p>
+<p>wpa-scan-ssid 1                #这个设置成1 可以连接到隐藏的网络</p>
+<p>wpa-ap-scan 1                  #这个设置成1 可以连接到隐藏的网络</p>
+<p>wpa-ssid “HELLO”</p>
+<p>wpa-psk “123456”</p>
+<p>#wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf</p>
+<p>iface default inet dhcp</p>
+</blockquote>
+<p>修复断线问题。设置无线网卡不节能。</p>
+<blockquote>
+<p>lsmod</p>
+<blockquote>
+<p>8192cu                550797  0</p>
+</blockquote>
+<p>创建sudo nano /etc/modprobe.d/8192cu.conf</p>
+<p># Disable power saving</p>
+<p>options 8192cu rtw_power_mgnt=0 rtw_enusbss=1 rtw_ips_mode=1</p>
+</blockquote>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1351290105/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/1351290105/" class="post-title-link" itemprop="url">Ubuntu 14.04 Server 使用lxc并访问外网</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2015-04-29 14:13:00" itemprop="dateCreated datePublished" datetime="2015-04-29T14:13:00+08:00">2015-04-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/server/" itemprop="url" rel="index"><span itemprop="name">server</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>1、安装</p>
+<blockquote>
+<p>sudo apt-get install lxc</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>2、配置网络</p>
+<blockquote>
+<p>设置宿主网络：创建桥接接口 sudo nano /etc/network/interfaces</p>
+</blockquote>
+<blockquote>
+<p>auto eth0</p>
+<p>iface eth0 inet manual</p>
+<p># The primary network interface</p>
+<p>auto br0</p>
+<p>iface br0 inet static</p>
+<p>address 192.168.1.20</p>
+<p>netmask 255.255.255.0</p>
+<p>gateway 192.168.1.1</p>
+<p>dns-nameservers 192.168.1.1</p>
+<p>bridge_portseth0</p>
+<p>bridge_stpoff</p>
+<p>bridge_maxwait0</p>
+<p>bridge_fd0</p>
+<p>说明：特权容器和普通容器选一个设置即可 不用全部设置。</p>
+<p>设置特权容器网络：sudo nano /etc/lxc/default.conf 接口由lxcbr0改为br0</p>
+<p>lxc.network.type = veth</p>
+<p>#lxc.network.link = lxcbr0</p>
+<p>lxc.network.link = br0</p>
+<p>lxc.network.flags = up</p>
+<p>lxc.network.hwaddr = 00:16:3e:xx:xx:xx</p>
+<p>设置普通容器网络：sudo nano /etc/lxc/lxc-usernet</p>
+<p># USERNAME TYPE BRIDGE COUNT</p>
+<p>ywz veth br0 2  #2表示有2个网络接口，也就是能开2个容器</p>
+</blockquote>
+<blockquote>
+<p> nano ~/.config/lxc/default.conf (用于普通容器连外网)</p>
+<p>lxc.id_map = u 0 100000 65536</p>
+<p>lxc.id_map = g 0 100000 65536</p>
+<p>lxc.network.type = veth</p>
+<p>lxc.network.link = br0</p>
+</blockquote>
+<blockquote>
+<p>/etc/default/lxc-net 可以设置LXC是否提供net网络。USE_LXC_BRIDGE </p>
+</blockquote>
+<p>3、创建容器和使用</p>
+<blockquote>
+<p>lxc-create –template download –name Y011</p>
+</blockquote>
+<blockquote>
+<p>特权容器存放位置  /var/lib/lxc</p>
+</blockquote>
+<blockquote>
+<p>普通容器存放位置~/.local/share/lxc</p>
+<p>设置固定IP：</p>
+<p> 在容器存放地址的/rootfs/etc/network/interfaces和/rootfs/etc/resolv.conf设置</p>
+</blockquote>
+<p>4、设置容器自启动</p>
+<blockquote>
+<p>~/.local/share/lxc/Y011/config 添加</p>
+<p>lxc.start.auto = 1</p>
+<p>lxc.start.delay = 5</p>
+<p>lxc.start.order = 100</p>
+<p>lxc.group = ubuntu</p>
+</blockquote>
+<p>5、限制内存容量</p>
+<blockquote>
+<p>~/.local/share/lxc/Y011/config 添加</p>
+<p>lxc.cgroup.memory.limit_in_bytes = 134217728</p>
+</blockquote>
+<p>6、克隆和快照</p>
+<blockquote>
+<p>lxc-clone -o Y011 -n Y012</p>
+<p>lxc-snapshot -n Y011</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/157253944/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -337,7 +2080,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -420,1344 +2163,10 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2348587197/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/2348587197/" class="post-title-link" itemprop="url">树莓派B+ 操作摄像头</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2015-03-16 10:47:00" itemprop="dateCreated datePublished" datetime="2015-03-16T10:47:00+08:00">2015-03-16</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hardware/" itemprop="url" rel="index"><span itemprop="name">Hardware</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hardware/%E6%A0%91%E8%8E%93%E6%B4%BE/" itemprop="url" rel="index"><span itemprop="name">树莓派</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.3k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>5 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>1、开启树莓派的摄像头功能</p>
-<blockquote>
-<p>sudo raspi-config</p>
-</blockquote>
-<blockquote>
-<p>重启</p>
-</blockquote>
-<p>2、安装相关软件</p>
-<blockquote>
-<p>sudo apt-get install luvcview</p>
-</blockquote>
-<blockquote>
-<p>sudo apt-get install python-opencv python-scipy python-numpy python-pip</p>
-</blockquote>
-<blockquote>
-<p>sudo pip install <a target="_blank" rel="noopener" href="https://github.com/ingenuitas/SimpleCV/zipball/master">https://github.com/ingenuitas/SimpleCV/zipball/master</a></p>
-</blockquote>
-<blockquote>
-</blockquote>
-<p>3、测试SimpleCV库</p>
-<blockquote>
-<p>python</p>
-</blockquote>
-<blockquote>
-<p>Python 2.7.3 (default, Mar 18 2014, 05:13:23)</p>
-<p>[GCC 4.6.3] on linux2</p>
-<p>Type “help”, “copyright”, “credits” or “license” for more information.</p>
-<p>&gt;&gt;&gt;import SimpleCV</p>
-<p>&gt;&gt;&gt;</p>
-</blockquote>
-<p>4、用摄像头保存一张图片</p>
-<blockquote>
-<p>from SimpleCV import Camera,Display<br>from time import sleep  </p>
-<p>myCamera = Camera(prop_set={“width”:320,”height”:240})  </p>
-<p>frame = myCamera.getImage()<br>frame.save(“camera-output.jpg”)</p>
-</blockquote>
-<blockquote>
-<p><img src="http://img2.ph.126.net/M95LVRZPOdHpdmovl9kuyg==/6608866426911394034.jpg" alt="树莓派B+ 操作摄像头 - leaf - ------坚持雅操------" title="树莓派B+ 操作摄像头 - leaf - ------坚持雅操------"></p>
-<p> </p>
-</blockquote>
-<p>5、人脸检测</p>
-<blockquote>
-<p>from SimpleCV import Camera,Display<br>from time import sleep  </p>
-<p>myCamera = Camera(prop_set={“width”:320,”height”:240})  </p>
-<p>myDisplay = Display(resolution=(320,240))  </p>
-<p>while not myDisplay.isDone():<br>frame = myCamera.getImage()<br>faces = frame.findHaarFeatures(‘face’)<br>if faces:<br>for face in faces:<br>print “Face at: “ + str(face.coordinates())<br>else:<br>print “No faces detected.”<br>frame.save(myDisplay)<br>sleep(.1)  </p>
-<p><img src="http://img2.ph.126.net/IaHfSsP6KyeRAZZHRoJBSw==/2453335897027967291.png" alt="树莓派B+ 操作摄像头 - leaf - ------坚持雅操------" title="树莓派B+ 操作摄像头 - leaf - ------坚持雅操------"></p>
-<p> </p>
-</blockquote>
-<p>6、监控</p>
-<blockquote>
-<p>1、安装抓图软件sudo apt-get install fswebcam</p>
-<p>2、Yeelink注册，并添加设备和传感器。（不交钱是公开的）</p>
-<p>3、linux新建脚本</p>
-<p>sudo fswebcam -d /dev/video0 -r 320x240 –bottom-banner –title “RaspberryPi @ Yeelink” –no-timestamp /home/pi/yeelink.jpg<br>curl –request POST –data-binary @”/home/pi/yeelink.jpg” –header “U-ApiKey:***********************“ <a target="_blank" rel="noopener" href="http://api.yeelink.net/v1.0/device//*/*/*/*/*/sensor//*/*/*/*/*/photos">http://api.yeelink.net/v1.0/device/\*\*\*\*\*/sensor/\*\*\*\*\*/photos</a>  </p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>u-apikey：在yeelink的用户的账户这里找</p>
-</blockquote>
-<blockquote>
-<p>后面的地址在传感器这里找</p>
-</blockquote>
-<p>4、加入到crontab</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>crontab -e</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>*/1 * * * * /home/pi/yeelink.sh</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p><img src="http://img0.ph.126.net/x3SH3AJYpeb967AyqmO8Mw==/3363063021841550211.png" alt="树莓派B+ 操作摄像头 - leaf - ------坚持雅操------" title="树莓派B+ 操作摄像头 - leaf - ------坚持雅操------"></p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/4154792531/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/4154792531/" class="post-title-link" itemprop="url">树莓派 B+ 连接到隐藏的无线网络</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2015-03-07 11:24:00" itemprop="dateCreated datePublished" datetime="2015-03-07T11:24:00+08:00">2015-03-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hardware/" itemprop="url" rel="index"><span itemprop="name">Hardware</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hardware/%E6%A0%91%E8%8E%93%E6%B4%BE/" itemprop="url" rel="index"><span itemprop="name">树莓派</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>878</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>pi@YRPI ~ $ cat /etc/network/interfaces</p>
-<p>auto lo</p>
-<p>iface lo inet loopback</p>
-<p>iface eth0 inet static</p>
-<p>address 192.168.1.16</p>
-<p>netmask 255.255.255.0</p>
-<p>gateway 192.168.1.1</p>
-<p>auto wlan0</p>
-<p>allow-hotplug wlan0</p>
-<p>iface wlan0 inet static</p>
-<p>address 192.168.1.17</p>
-<p>netmask 255.255.255.0</p>
-<p>gateway 192.168.1.1</p>
-<p>wpa-scan-ssid 1                #这个设置成1 可以连接到隐藏的网络</p>
-<p>wpa-ap-scan 1                  #这个设置成1 可以连接到隐藏的网络</p>
-<p>wpa-ssid “HELLO”</p>
-<p>wpa-psk “123456”</p>
-<p>#wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf</p>
-<p>iface default inet dhcp</p>
-<p>auto wlan0<br>allow-hotplug wlan0<br>iface wlan0 inet dhcp<br>   wpa-scan-ssid 1<br>   wpa-ap-scan 1<br>   wpa-key-mgmt WPA-PSK<br>   wpa-proto RSN WPA<br>   wpa-pairwise CCMP TKIP<br>   wpa-group CCMP TKIP<br>   wpa-ssid “My Secret SSID”<br>   wpa-psk “My SSID PSK”</p>
-<p>修复断线问题。设置无线网卡不节能。</p>
-<blockquote>
-<p>lsmod</p>
-<blockquote>
-<p>8192cu                550797  0</p>
-</blockquote>
-<blockquote>
-</blockquote>
-<p>创建sudo nano /etc/modprobe.d/8192cu.conf</p>
-<p># Disable power saving</p>
-<p>options 8192cu rtw_power_mgnt=0 rtw_enusbss=1 rtw_ips_mode=1</p>
-</blockquote>
-<p>相关命令</p>
-<blockquote>
-<p>iwconfig wlan0    查看无线接口状态</p>
-<p>iwlist wlan0 scan    扫描无线网络</p>
-</blockquote>
-<p><a target="_blank" rel="noopener" href="http://www.geekfan.net/8776/">http://www.geekfan.net/8776/</a></p>
-<p><a target="_blank" rel="noopener" href="http://www.dafinga.net/2013/01/how-to-setup-raspberry-pi-with-hidden.html">http://www.dafinga.net/2013/01/how-to-setup-raspberry-pi-with-hidden.html</a>     需要翻墙</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/43200443/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/43200443/" class="post-title-link" itemprop="url">树莓派 GPIO引脚定义</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2015-03-07 11:16:00" itemprop="dateCreated datePublished" datetime="2015-03-07T11:16:00+08:00">2015-03-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hardware/" itemprop="url" rel="index"><span itemprop="name">Hardware</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hardware/%E6%A0%91%E8%8E%93%E6%B4%BE/" itemprop="url" rel="index"><span itemprop="name">树莓派</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>50</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><a target="_blank" rel="noopener" href="http://pi.gadgetoid.com/pinout">http://pi.gadgetoid.com/pinout</a></p>
-<p>每个接口都有说明哦</p>
-<p>树莓派B+</p>
-<p><img src="http://img0.ph.126.net/5wA-N9e9ZmJRCc-zYWf9kw==/3118461266995395390.png" alt="树莓派B+ GPIO引脚定义 - leaf - ------坚持雅操------" title="树莓派B+ GPIO引脚定义 - leaf - ------坚持雅操------"></p>
-<p> </p>
-<p>树莓派2 B+</p>
-<p><img src="http://img2.ph.126.net/JnO60RLbCb4r-UhbuObgJA==/6619373360026755635.jpg" alt="树莓派 GPIO引脚定义 - leaf - ------勤解万难------" title="树莓派 GPIO引脚定义 - leaf - ------勤解万难------"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/690818048/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/690818048/" class="post-title-link" itemprop="url">树莓派B+ 配置openwrt桥接模式</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2015-02-11 13:49:00" itemprop="dateCreated datePublished" datetime="2015-02-11T13:49:00+08:00">2015-02-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hardware/" itemprop="url" rel="index"><span itemprop="name">Hardware</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hardware/%E6%A0%91%E8%8E%93%E6%B4%BE/" itemprop="url" rel="index"><span itemprop="name">树莓派</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.4k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>5 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>实现：桥接模式，无线AP，迅雷远程</p>
-<p>硬件：树莓派B+，8188cus无线网卡，AX88772A有线网卡，其他</p>
-<p>1、下载并刷入tf卡，远程连接等</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="http://downloads.openwrt.org/snapshots/trunk/brcm2708/generic/openwrt-brcm2708-sdcard-vfat-ext4.img">http://downloads.openwrt.org/snapshots/trunk/brcm2708/generic/openwrt-brcm2708-sdcard-vfat-ext4.img</a></p>
-</blockquote>
-<p>2、安装驱动</p>
-<blockquote>
-<p>opkg update</p>
-<p>opkg install kmod-rtl8192cu                               #无线网卡驱动</p>
-<p>opkg install kmod-usb-net kmod-usb-net-asix  #有线网卡驱动</p>
-</blockquote>
-<p>3、安装软件</p>
-<blockquote>
-<p>opkg update</p>
-<p>opkg install luci luci-i18n-base-zh-cn</p>
-<p>opkg install usbutils ip </p>
-<p>opkg install kmod-usb-core kmod-usb-uhci kmod-usb-ohci kmod-usb2</p>
-<p>opkg install hostapd wireless-tools                #无线AP必备</p>
-</blockquote>
-<p>4、配置</p>
-<blockquote>
-<p>无线</p>
-<p>wifi detect &gt; /etc/config/wireless</p>
-<p>vi /etc/config/wireless</p>
-<p>config wifi-device ‘radio0’</p>
-<p>        option type ‘mac80211’</p>
-<p>        option channel ‘11’</p>
-<p>        option hwmode ‘11g’</p>
-<p>        option path ‘platform/bcm2708_usb/usb1/1-1/1-1.2/1-1.2:1.0’</p>
-<p>        option htmode ‘HT20’</p>
-<p>config wifi-iface</p>
-<p>        option device ‘radio0’</p>
-<p>        option network ‘lan’</p>
-<p>        option mode ‘ap’ </p>
-<p>        option ssid ‘OpenWrt’</p>
-<p>        option disabled ‘0’                #是否广播ssid</p>
-<p>        option encryption ‘none’#加密模式</p>
-</blockquote>
-<blockquote>
-<p>网络</p>
-<p>config interface ‘loopback’</p>
-<p>        option ifname ‘lo’</p>
-<p>        option proto ‘static’</p>
-<p>        option ipaddr ‘127.0.0.1’</p>
-<p>        option netmask ‘255.0.0.0’</p>
-<p>config interface ‘lan’</p>
-<p>        option proto ‘dhcp’                #可设置为其他，设置IP是为了树莓派能上网</p>
-<p>        option type ‘bridge’</p>
-<p>        option ifname ‘eth0 eth1’</p>
-<p>config alias                                   #设置树莓派管理地址，找了好久终于搞定管理地址</p>
-<p>        option interface ‘lan’</p>
-<p>        option proto ‘static’</p>
-<p>        option ipaddr ‘192.168.1.3’</p>
-<p>        option netmask ‘255.255.255.0’</p>
-<p>config globals ‘globals’</p>
-<p>        option ula_prefix ‘fd40:132b:9a10::/48’</p>
-</blockquote>
-<p><img src="http://img0.ph.126.net/ekuUkBkj24IdK_dB6e-pcQ==/6619470117049688565.png" alt="树莓派B+ 配置openwrt桥接模式 - leaf - ------坚持雅操------" title="树莓派B+ 配置openwrt桥接模式 - leaf - ------坚持雅操------"></p>
-<p><img src="http://img1.ph.126.net/QQYYOx2xnTewZQZCYaS-jQ==/3113394717414550858.png" alt="树莓派B+ 配置openwrt桥接模式 - leaf - ------坚持雅操------" title="树莓派B+ 配置openwrt桥接模式 - leaf - ------坚持雅操------"> </p>
-<p><img src="http://img0.ph.126.net/S21VuiewLa6mZVfTyIPm1g==/3113676192391261497.png" alt="树莓派B+ 配置openwrt桥接模式 - leaf - ------坚持雅操------" title="树莓派B+ 配置openwrt桥接模式 - leaf - ------坚持雅操------"></p>
-<p> </p>
-<p>5、安装迅雷远程</p>
-<blockquote>
-</blockquote>
-<blockquote>
-</blockquote>
-<p>参考</p>
-<p><a target="_blank" rel="noopener" href="http://www.leiphone.com/news/201406/diy-a-smart-router-topic-openwrt.html">http://www.leiphone.com/news/201406/diy-a-smart-router-topic-openwrt.html</a></p>
-<p><a target="_blank" rel="noopener" href="http://blog.sina.com.cn/s/blog_40983e5e0102v6qt.html">http://blog.sina.com.cn/s/blog_40983e5e0102v6qt.html</a></p>
-<p><a target="_blank" rel="noopener" href="http://www.shuyz.com/install-openwrt-on-raspberry-as-a-wireless-router.html">http://www.shuyz.com/install-openwrt-on-raspberry-as-a-wireless-router.html</a></p>
-<p><a target="_blank" rel="noopener" href="http://www.tuicool.com/articles/rmmemif">http://www.tuicool.com/articles/rmmemif</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/796663220/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/796663220/" class="post-title-link" itemprop="url">buffalo 安装xware</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2015-01-21 21:19:00" itemprop="dateCreated datePublished" datetime="2015-01-21T21:19:00+08:00">2015-01-21</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hardware/" itemprop="url" rel="index"><span itemprop="name">Hardware</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hardware/%E5%B7%B4%E6%B3%95%E7%BB%9C/" itemprop="url" rel="index"><span itemprop="name">巴法络</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>494</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>首先必须已root</p>
-<p>安装过程</p>
-<p>1、查buffalo cpu架构_指令集_c库类型</p>
-<blockquote>
-<p>我的是 arm_v5tel(v5l)_glibc</p>
-</blockquote>
-<blockquote>
-<p><img src="http://img2.ph.126.net/uKY8dKq7LBVr4tyOOAbEjw==/6630390466535784962.png" alt="buffalo 安装xware - leaf - ------坚持雅操------" title="buffalo 安装xware - leaf - ------坚持雅操------"></p>
-</blockquote>
-<p>2、去迅雷下载相应的软件  </p>
-<blockquote>
-<p>我的是Xware1.0.31_armel_v5te_glibc.zip </p>
-</blockquote>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="http://luyou.xunlei.com/thread-12545-1-1.html?%5C_t=1421842121">http://luyou.xunlei.com/thread-12545-1-1.html?\_t=1421842121</a></p>
-</blockquote>
-<p>3、安装</p>
-<blockquote>
-<p>我放在/opt下面</p>
-<p>先解压，</p>
-<p>然后运行目录下的portal文件，</p>
-<p>把运行后得到的激活码输入到迅雷远程下载里面</p>
-<p>设置一下下载目录即可</p>
-</blockquote>
-<p>4、随系统自启动</p>
-<blockquote>
-<p>我这款是linux系统，所以在/etc/init.d里面建一下链接即可</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>echo ‘/opt/xware/portal’ &gt;/etc/init.d/xunleiyuancheng.sh</p>
-</blockquote>
-<blockquote>
-<p>chmod 755 /etc/init.d/xunleiyuancheng.sh</p>
-</blockquote>
-<blockquote>
-<p>ln -s /etc/init.d/xunleiyuancheng.sh /etc/rc.d/sysinit.d/S99xunleiyuancheng.sh</p>
-</blockquote>
-<blockquote>
-<p>chmod 777 /etc/rc.d/sysinit.d/S99xunleiyuancheng.sh</p>
-</blockquote>
-</blockquote>
-<p><img src="http://img2.ph.126.net/YH452L67KxUXZYl8aqrV0w==/3363907446770522960.png" alt="buffalo 安装xware - leaf - ------坚持雅操------" title="buffalo 安装xware - leaf - ------坚持雅操------"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2521641173/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/2521641173/" class="post-title-link" itemprop="url">安装黑群晖DS3615xs的DSM5.1-5055，并洗白！</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2015-01-21 12:21:00" itemprop="dateCreated datePublished" datetime="2015-01-21T12:21:00+08:00">2015-01-21</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hardware/" itemprop="url" rel="index"><span itemprop="name">Hardware</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hardware/%E9%BB%91%E7%BE%A4%E8%BE%89/" itemprop="url" rel="index"><span itemprop="name">黑群辉</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.3k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>5 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>我的D2550主机确实挺鸡肋的，不过就看你怎么利用啦，哈哈</p>
-<p>参考：<a target="_blank" rel="noopener" href="http://www.gebi1.com/forum.php">http://www.gebi1.com/forum.php</a></p>
-<p>一、准备工作</p>
-<blockquote>
-<p>0、一台主机，一个u盘</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>我的是梅捷YS-D2550-MD，U盘是闪迪酷豆8G U盘</p>
-<p><img src="http://img0.ph.126.net/YRKztPKlGLj8Y58HLYLeBw==/6630502616722864530.jpg" alt="安装黑群晖DS3615xs的DSM5.1-5055，并洗白！ - leaf - ------勤解万难------" title="安装黑群晖DS3615xs的DSM5.1-5055，并洗白！ - leaf - ------勤解万难------"></p>
-</blockquote>
-<p>1、下载改MAC工具，更改MAC。我的是8111E（此步骤非必须，洗白用）</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>群晖的网卡都是001132开头的，所以我们需要更改网卡MAC地址。</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="http://support.icafe8.com/technologynews/focus/1347.html">http://support.icafe8.com/technologynews/focus/1347.html</a></p>
-<p>1、查看网卡型号</p>
-<p>我进ubuntu，输入lspci，提示是REV 06。根据对应型号</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>8111B：PCI\VEN_10EC&amp;DEV_8168&amp;REV_01</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>8111C：PCI\VEN_10EC&amp;DEV_8168&amp;REV_02</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>8111D：PCI\VEN_10EC&amp;DEV_8168&amp;REV_03</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>8111DP/DL：PCI\VEN_10EC&amp;DEV_8168&amp;REV_04</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p><strong>8111E：PCI\VEN_10EC&amp;DEV_8168&amp;REV_06</strong></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>8111F：PCI\VEN_10EC&amp;DEV_8168&amp;REV_07</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>8111ES：PCI\VEN_10EC&amp;DEV_8168&amp;REV_08</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>2、找到对应更改网卡MAC的PG8168程序。进DOS并更改MAC地址</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>PG8168 /V</p>
-<p><img src="http://img2.ph.126.net/99RfhmSAGmAFB3xxrqWqcw==/6630269520257772854.jpg" alt="安装黑群晖DS3615xs的DSM5.1-5055，并洗白！ - leaf - ------勤解万难------" title="安装黑群晖DS3615xs的DSM5.1-5055，并洗白！ - leaf - ------勤解万难------"></p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>PG8168 /nodeid 001132******</p>
-</blockquote>
-<blockquote>
-<p><img src="http://img1.ph.126.net/l5MLVQAOATQEuE8-XVfdnw==/6630147474467091814.jpg" alt="安装黑群晖DS3615xs的DSM5.1-5055，并洗白！ - leaf - ------勤解万难------" title="安装黑群晖DS3615xs的DSM5.1-5055，并洗白！ - leaf - ------勤解万难------"></p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>3、主板跳线，设置可网络唤醒。（我的主板需要跳线，有些BIOS改一下即可）</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p><img src="http://img1.ph.126.net/qPRIT5p8UAdIgXCfp4Oz9A==/6630699429304595770.jpg" alt="安装黑群晖DS3615xs的DSM5.1-5055，并洗白！ - leaf - ------勤解万难------" title="安装黑群晖DS3615xs的DSM5.1-5055，并洗白！ - leaf - ------勤解万难------"></p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-</blockquote>
-<blockquote>
-<p>2、下载XPEnoboot（<a target="_blank" rel="noopener" href="http://xpenology.me/xpenoboot-5-1-5055-1-released/">http://xpenology.me/xpenoboot-5-1-5055-1-released/</a>）</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>由于google被墙，下载需要科学上网软件，</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>3、下载群晖系统</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="http://download.synology.com/download/DSM/5.1/5055/">http://download.synology.com/download/DSM/5.1/5055/</a></p>
-</blockquote>
-<p>4、用CheckUDisk查看u盘的vid和pid</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p><img src="http://img0.ph.126.net/XJ06CeSgvl8MabSixYpF2g==/2815031242101262143.png" alt="安装黑群晖DS3615xs的DSM5.1-5055 - leaf - ------勤解万难------" title="安装黑群晖DS3615xs的DSM5.1-5055 - leaf - ------勤解万难------"></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>5、下载win32diskimager 并将img镜像写入到U盘</p>
-<blockquote>
-<p><img src="http://img0.ph.126.net/sa6C-7PfpVZhArVof8Uzxw==/1121959257186692010.png" alt="安装黑群晖DS3615xs的DSM5.1-5055 - leaf - ------勤解万难------" title="安装黑群晖DS3615xs的DSM5.1-5055 - leaf - ------勤解万难------"></p>
-</blockquote>
-<p>6、更改syslinux.cfg文件</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>一个是mac地址，一个是sn码，还有vid，pid</p>
-<p><img src="http://img1.ph.126.net/0_ut3eDO-N-coOgVoYnFBg==/6630824773630156489.png" alt="安装黑群晖DS3615xs的DSM5.1-5055 - leaf - ------勤解万难------" title="安装黑群晖DS3615xs的DSM5.1-5055 - leaf - ------勤解万难------"></p>
-</blockquote>
-</blockquote>
-<blockquote>
-</blockquote>
-<blockquote>
-<p>7、下载群晖安装助手</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://www.synology.com/zh-cn/">https://www.synology.com/zh-cn/</a></p>
-</blockquote>
-<p>8、再找一台电脑用于控制</p>
-<p>9、一个局域网内</p>
-</blockquote>
-<p>二、安装过程</p>
-<blockquote>
-<p>备注：电脑A用于做群晖NAS，电脑B用于控制</p>
-</blockquote>
-<blockquote>
-<p>1、制作启动U盘</p>
-<p>2、U盘启动电脑A，选择XPEnoboot（install/upgrade）进入</p>
-<p>3、电脑B上开启群晖助手，扫描出电脑A，右击电脑A安装DSM，安装完DSM后电脑A会重启</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p><img src="http://img2.ph.126.net/YH96IbTFnbTR304nCijXAg==/6630065011095008615.png" alt="安装黑群晖DS3615xs的DSM5.1-5055，并洗白！ - leaf - ------勤解万难------" title="安装黑群晖DS3615xs的DSM5.1-5055，并洗白！ - leaf - ------勤解万难------"></p>
-<p> </p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p><img src="http://img1.ph.126.net/wYPVnPAdVeVbUvczG2EFiw==/6619285399096399753.png" alt="安装黑群晖DS3615xs的DSM5.1-5055 - leaf - ------勤解万难------" title="安装黑群晖DS3615xs的DSM5.1-5055 - leaf - ------勤解万难------"></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>4、电脑A重启还是用U盘引导，选择XPEnoboot进入</p>
-<p>5、电脑B的群晖助手再运行几分钟就会提示已安装完成</p>
-</blockquote>
-<blockquote>
-<p>6、电脑B打开网页，输入<a target="_blank" rel="noopener" href="http://192.168.1.111:5000/webman/index.cgi">http://IP:5000/webman/index.cgi</a> 即可进行操作了</p>
-</blockquote>
-<p>三、其他  </p>
-<blockquote>
-<p>可以使用群晖的MYDS、DDNS、远程唤醒等功能。</p>
-<p>系统只能做重要更新不能做版本更新。</p>
-</blockquote>
-<p><img src="http://img2.ph.126.net/zPMqR6v9FP06ECgUKevFQQ==/6630710424420779201.png" alt="安装黑群晖DS3615xs的DSM5.1-5055 - leaf - ------勤解万难------" title="安装黑群晖DS3615xs的DSM5.1-5055 - leaf - ------勤解万难------"></p>
-<p><img src="http://img1.ph.126.net/SJvGaFHxv29hPKxqPG85dg==/6608914805423067703.png" alt="安装黑群晖DS3615xs的DSM5.1-5055 - leaf - ------勤解万难------" title="安装黑群晖DS3615xs的DSM5.1-5055 - leaf - ------勤解万难------"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/179208481/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/179208481/" class="post-title-link" itemprop="url">基础补充8：X window</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2014-12-13 09:34:00" itemprop="dateCreated datePublished" datetime="2014-12-13T09:34:00+08:00">2014-12-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>431</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>1、只开X server 。一片黑屏，鼠标可以动  </p>
-<blockquote>
-<p>X :1&amp;  </p>
-<p><img src="http://img1.ph.126.net/DewYm4SOrcTGz8A4WqtyCA==/6619130367956356525.jpg" alt="基础补充8：X window - leaf - ------坚持雅操------" title="基础补充8：X window - leaf - ------坚持雅操------"></p>
-<p>   </p>
-</blockquote>
-<p>2、开X client 。屏幕左上角有终端输入界面，但是没有窗口,不能移动  </p>
-<blockquote>
-<p>xterm -display ：1&amp;  </p>
-<p><img src="http://img0.ph.126.net/FId_qUF5cLsqT31gHlh5-Q==/887490601669063227.jpg" alt="基础补充8：X window - leaf - ------坚持雅操------" title="基础补充8：X window - leaf - ------坚持雅操------"></p>
-<p>   </p>
-</blockquote>
-<p>3、开窗口管理器，twm或者metacity 。有窗口，还可以移动  </p>
-<blockquote>
-<p>twm -display :1 -f /etc/X11/twm/system.twmrc &amp;<br>或者<br>metacity -display :1&amp;  </p>
-<p><img src="http://img2.ph.126.net/jwi6o_qmZj1nSWmxpMCstQ==/145241088082979159.jpg" alt="基础补充8：X window - leaf - ------坚持雅操------" title="基础补充8：X window - leaf - ------坚持雅操------"></p>
-<p> </p>
-<p><img src="http://img1.ph.126.net/vgEWzw9txT0xb9imd50knA==/887490601669063228.jpg" alt="基础补充8：X window - leaf - ------坚持雅操------" title="基础补充8：X window - leaf - ------坚持雅操------"></p>
-<p>   </p>
-</blockquote>
-<p>4、Widget   图形库  </p>
-<blockquote>
-<p>包括gtk+ 和QT 。窗口的颜色，按钮，图案啥的都需要图形库的支持  </p>
-</blockquote>
-<p>5、Display Manager  </p>
-<blockquote>
-<p>提供登陆界面和 会话协议XDMCP  </p>
-</blockquote>
-<p>6、Desktop Manager  </p>
-<blockquote>
-<p>包括gnome、KDE等 。<br>是以上的集合，然后再加上自行开发的界面。  </p>
-</blockquote>
-<p>init5和startx的区别  </p>
-<blockquote>
-<p>init 5  </p>
-</blockquote>
-<p><img src="http://img1.ph.126.net/U-DEBwBEJ4tm1B-mvJrwtg==/2206200867558479713.png" alt="基础补充8：X window - leaf - ------坚持雅操------" title="基础补充8：X window - leaf - ------坚持雅操------">  </p>
-<blockquote>
-<p>startx  </p>
-</blockquote>
-<p> </p>
-<p><img src="http://img0.ph.126.net/SfJv_fMGdbtlnwy2Pc1KjQ==/3261169080270047412.png" alt="基础补充8：X window - leaf - ------坚持雅操------" title="基础补充8：X window - leaf - ------坚持雅操------"></p>
-<p>   </p>
-<blockquote>
-<p>init 5 是启动prefdm，然后通过gdm启动X server。进gnome会话后还要开启Xsession登陆界面<br>startx 是启动xinit来启动X server，然后直接进gnome会话  </p>
-</blockquote>
-<blockquote>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1267475429/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/1267475429/" class="post-title-link" itemprop="url">基础补充7：FC4安装Geforce MX 420驱动</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2014-12-02 14:59:00" itemprop="dateCreated datePublished" datetime="2014-12-02T14:59:00+08:00">2014-12-02</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>650</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>0、安装编译环境。  </p>
-<blockquote>
-<p>主要是安装kernel-src ，kernel-devel ，gcc , glibc , ncurse 等。  </p>
-</blockquote>
-<p>1、下载nvidia驱动  </p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="http://www.nvidia.cn/object/unix-cn.html">http://www.nvidia.cn/object/unix-cn.html</a><br>我下载的是NVIDIA-Linux-x86-96.43.23-pkg1.run。已经加了x权限了。  </p>
-</blockquote>
-<p>2、进 init 3环境  </p>
-<blockquote>
-<p>nano /etc/inittab     </p>
-<p>　　id:5:initdefault:   把5改为3  </p>
-</blockquote>
-<p>3、安装nvidia驱动  </p>
-<blockquote>
-<p>sh NVIDIA-Linux-x86-96.43.23-pkg1.run<br>然后点配置xorg.conf文件。 或者运行 nvidia-xconfig 也可以  </p>
-</blockquote>
-<p>4、进init 5 环境  </p>
-<blockquote>
-<p>改 /etc/inittab  </p>
-<blockquote>
-<p>id:3:initdefault:   把3改为5</p>
-</blockquote>
-</blockquote>
-<p>5、遇到的问题（问题才开始）  </p>
-<blockquote>
-<p>（EE） failed to initialize GLX Extension<br>1、看/var/log/Xorg.0.log ，模块的存放地址没有问题(/usr/X11R6/xorg/modules)<br>2、init 3，然后modprobe nvidia 能加载nvidia，startx正常。说明驱动安装没有问题。<br>3、感觉应该是图形启动之前模块还没加载，导致这个问题。  </p>
-<blockquote>
-<p>做法是在电脑开机加载模块的时候添加显卡模块。<br>cd /etc/sysconfig/modules/<br>nano nvidia.modules<br>加入 /sbin/modprobe nvidia 保存。  </p>
-</blockquote>
-<p>进度条的时候白屏死机<br>进/etc/X11/xorg.conf   设置成16位色  </p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2780110138/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/2780110138/" class="post-title-link" itemprop="url">基础补充6：fc4下编译核心</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2014-11-30 11:03:00" itemprop="dateCreated datePublished" datetime="2014-11-30T11:03:00+08:00">2014-11-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>363</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>1、安装kernel源码  </p>
-<blockquote>
-<p>rpm -ivh  kernel-2.6.11-1.1369_FC4.src.rpm  </p>
-</blockquote>
-<p>2、做编译环境  </p>
-<blockquote>
-<p>cd /usr/src/redhat/SPECS<br>grep ifarch kernel-2.6.spec<br>rpmbuild -bp –target=i686 kernel-2.6.spec  </p>
-</blockquote>
-<blockquote>
-<p>cd ../BUILD/kernel-2.6.11<br>cp /boot/config-2.6.11-1.1369.fc4  .config  </p>
-</blockquote>
-<p>3、编译  </p>
-<blockquote>
-<p>make oldconfig<br>make menuconfig<br>make  </p>
-</blockquote>
-<p>4、安装模块  </p>
-<blockquote>
-<p> 安装ntfs模块<br>cp /usr/src/redhat/BUILD/kernel/linux/fs/ntfs/ntfs.ko /lib/modules/2.6/kernel/fs/ntfs/<br>depmod -a  </p>
-<p>该模块只提供读的功能，不支持写</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/6/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><span class="page-number current">7</span><a class="page-number" href="/page/8/">8</a><span class="space">&hellip;</span><a class="page-number" href="/page/37/">37</a><a class="extend next" rel="next" href="/page/8/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1808,12 +2217,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">399k</span>
+    <span title="站点总字数">447k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">24:11</span>
+    <span title="站点阅读时长">27:06</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

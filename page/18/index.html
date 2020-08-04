@@ -245,20 +245,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">282</span>
+          <span class="site-state-item-count">365</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">60</span>
+        <span class="site-state-item-count">72</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">57</span>
+        <span class="site-state-item-count">68</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -304,7 +304,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1553022911/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/421653662/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -320,7 +320,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/1553022911/" class="post-title-link" itemprop="url">鸟哥基础第十九章</a>
+            <a href="/posts/421653662/" class="post-title-link" itemprop="url">ubuntu10.04安装64位ppstream</a>
         </h2>
 
         <div class="post-meta">
@@ -330,14 +330,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2012-10-05 13:39:00" itemprop="dateCreated datePublished" datetime="2012-10-05T13:39:00+08:00">2012-10-05</time>
+              <time title="创建时间：2012-11-08 11:19:00" itemprop="dateCreated datePublished" datetime="2012-11-08T11:19:00+08:00">2012-11-08</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -345,11 +345,11 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
+                  <a href="/categories/Ubuntu/Q-A/" itemprop="url" rel="index"><span itemprop="name">Q&A</span></a>
                 </span>
             </span>
 
@@ -359,14 +359,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>966</span>
+              <span>481</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -376,92 +376,17 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>函数库：  </p>
+          <p>参考：<br><a target="_blank" rel="noopener" href="http://hi.baidu.com/flashgive/item/6904fb09798fc1e5fe240d33">http://hi.baidu.com/flashgive/item/6904fb09798fc1e5fe240d33</a>  </p>
+<p>下载：<br><a target="_blank" rel="noopener" href="http://ppa.launchpad.net/cnav/ppa/ubuntu/pool/main/p/ppstream/ppstream/_1.0.0-3lucid2/_amd64.deb">http://ppa.launchpad.net/cnav/ppa/ubuntu/pool/main/p/ppstream/ppstream\_1.0.0-3lucid2\_amd64.deb</a><br><a target="_blank" rel="noopener" href="http://packages.ubuntu.com/zh-tw/lucid-updates/libphonon4">http://packages.ubuntu.com/zh-tw/lucid-updates/libphonon4</a>    下载32位版本的libphonon  </p>
+<p>安装  </p>
 <blockquote>
-<p>静态函数库：*.a<br>动态函数库：*.so  </p>
+<p>安装ppstream没有出现什么错误  </p>
 </blockquote>
+<p>运行  </p>
 <blockquote>
-<p>存放位置：  </p>
-<blockquote>
-<p>/lib<br>/usr/lib<br>/lib/modules/`uname -r` #这里是核心函数库  </p>
+<p>运行时提示缺少libphonon.so.4文件<br>1.1我找了下系统的库文件，发现/usr/lib/下面有libphonon.so.4<br>1.2做了链接 sudo ln -s /usr/lib/libphonon.so.4 /opt/pps/lib/libphonon.so.4<br>1.3需要32位版本的。<br>2.1下载了32位版本的libphonon<br>2.2解压后把libphonon.so.4.4.0复制为/opt/pps/lib/libphonon.so.4<br>2.3正常了  </p>
 </blockquote>
-<p>相关操作  </p>
-<blockquote>
-<p>1、ld.so.conf  </p>
-<blockquote>
-<p>/etc/ld.so.cache<br>/etc/ld.so.conf             #就写着要包含/etc/ld.so.conf.d下的所有.conf文件<br>/etc/ld.so.conf.d          #写着要加载的动态函数库目录，只能加载整个目录  </p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>2、ldconfig  </p>
-<blockquote>
-<p>ldconfig                       #将/etc/ld.so.conf.d里面包含的函数库目录全部读入内存中  </p>
-</blockquote>
-<blockquote>
-<p>ldconfig -p                   #查看当前读入到内存中的函数库  </p>
-</blockquote>
-<p>3、ldd  </p>
-<blockquote>
-<p>ldd /usr/bin/make        #查看该命令所包含的动态函数库<br>ldd -v /usr/bin/make    #详细查看该命令所包含的动态函数库<br>ldd /lib/libc.so.6           #也可以查看与某个函数库相关的函数库  </p>
-</blockquote>
-<p>4、安装  </p>
-<blockquote>
-<p>缺什么就装什么  </p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>tarball编译：C语言源码：*.c ———&gt;目标文件*.o————-&gt;执行文件  </p>
-<blockquote>
-<p>1、configure  建立makefile文件  </p>
-<blockquote>
-<p>参数：–help  </p>
-<blockquote>
-<p> –prefix<br><a target="_blank" rel="noopener" href="http://hi.baidu.com/issweight/item/f9d1b49da703d0df7a7f01c2">#查看 configure参数</a>  </p>
-</blockquote>
-</blockquote>
-<p>2、make clean  </p>
-<blockquote>
-<p>清除*.o文件<br>由于make一次后，编译过的*.o在下次make时不会再编译，所以先清除好重新编译  </p>
-</blockquote>
-<p>3、make  </p>
-<blockquote>
-<p>gcc语法  </p>
-<blockquote>
-<p>gcc -c hello.c                   #编译成目标文件：hello.o<br>gcc -o hello  hello.o         #编译成执行文件：hello<br>其他参数：<br>gcc -O -c hello.c              #优化编译<br>gcc -Wall -o hello.c          #产生相信编译过程信息<br>gcc abc.c -lm -L/usr/lib -I/usr/include  </p>
-<blockquote>
-<p>#-l：加入某个函数库<br>#m：libm.so：加入这个函数库<br>#-L：函数库的地址<br>#-I：源码位置  </p>
-</blockquote>
-</blockquote>
-<p>makefile语法规则  </p>
-<blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>make参数  </p>
-<blockquote>
-<p>CFLAGS=”-Wall” make    #同gcc -Wall  </p>
-</blockquote>
-</blockquote>
-<p>4、make install  </p>
-<blockquote>
-<p>其实就是把编译好的文件放到相关目录下  </p>
-</blockquote>
-<p>5、在/etc/man.config中添加man文件地址  </p>
-<blockquote>
-</blockquote>
-<p>6、升级  </p>
-<blockquote>
-<p>patch -p 0 &lt; patch文件                #p 0 表示去掉几个/，如/home/a/b/c   p4 就是c<br>编译安装  </p>
-</blockquote>
-<p>7、软件的删除  </p>
-<blockquote>
-<p>将目录下的相关文件删除即可，看一下install到哪里就到哪里删除  </p>
-</blockquote>
-</blockquote>
-<p>其他命令  </p>
-<blockquote>
-<p>md5sum ：算md5码</p>
-</blockquote>
+<p><img src="http://img9.ph.126.net/JfPH-3hX2qmGlGVh5kmQag==/6597818534074982489.jpg" alt="ubuntu10.04安装64位ppstream - leaf - ------坚持雅操------" title="ubuntu10.04安装64位ppstream - leaf - ------坚持雅操------"></p>
 
       
     </div>
@@ -481,7 +406,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3244904808/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3324366169/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -497,7 +422,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/3244904808/" class="post-title-link" itemprop="url">鸟哥基础第十八章-grub</a>
+            <a href="/posts/3324366169/" class="post-title-link" itemprop="url">概述</a>
         </h2>
 
         <div class="post-meta">
@@ -507,14 +432,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2012-10-01 07:34:00" itemprop="dateCreated datePublished" datetime="2012-10-01T07:34:00+08:00">2012-10-01</time>
+              <time title="创建时间：2012-11-07 11:09:00" itemprop="dateCreated datePublished" datetime="2012-11-07T11:09:00+08:00">2012-11-07</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -522,11 +447,11 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                  <a href="/categories/Network/" itemprop="url" rel="index"><span itemprop="name">Network</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
+                  <a href="/categories/Network/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">基础</span></a>
                 </span>
             </span>
 
@@ -536,14 +461,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
+              <span>359</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
+              <span>1 分钟</span>
             </span>
 
         </div>
@@ -553,212 +478,70 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>硬盘分区表结构：  </p>
+          <p>本书：计算机网络(第4版) 谢希仁编<br>原理清楚了，实现起来就容易了！  </p>
+<p>交换网：  </p>
 <blockquote>
-<p>主引导记录MBR  </p>
+<p>电路交换网：如电话系统。<br>报文交换网<br>分组交换网：采用存储转发技术。所有的分组转发的包都是有标记的。(标记的不一定就是序号)  </p>
 <blockquote>
-<p>bootlader：446B<br>DPT：64B<br>magic number：2B ______ 以上共512B  </p>
-</blockquote>
-<p>stage1.5：32K  </p>
-</blockquote>
 <blockquote>
-<p>分区1<br>分区2<br>分区3<br>分区4  </p>
-</blockquote>
-<p>GRUB  </p>
-<blockquote>
-<p>/boot/grub里面包含  </p>
-<blockquote>
-<p>引导程序：stage1、stage2</p>
-</blockquote>
-<blockquote>
-<p>启动设备信息：device.map  </p>
-</blockquote>
-<blockquote>
-<p>文件系统：iso9660、ufs、xfs、fat、jfs、e2fs等<br>启动选项：menu.lst 。menu.lst是指向grub.conf的<br>启动选项背景：splash.xpm.gz  </p>
-</blockquote>
-<p>grub.conf  </p>
-<blockquote>
-<p>cat grub.conf | egrep -v ‘^#|^$’<br>default=0                                                               #按菜单第一行启动：就是2.6…FC4smp<br>timeout=5                                                              #等待时间：5秒<br>splashimage=(hd0,0)/boot/grub/splash.xpm.gz    #背景图片<br>hiddenmenu                                                          #隐藏菜单<br>title Fedora Core (2.6.11-1.1369_FC4smp)<br>        root (hd0,0)                                                  <br>        kernel /boot/vmlinuz-2.6.11-1.1369_FC4smp ro root=LABEL=/ rhgb quiet<br>        initrd /boot/initrd-2.6.11-1.1369_FC4smp.img<br>title Fedora Core-up (2.6.11-1.1369_FC4)<br>        root (hd0,0)<br>        kernel /boot/vmlinuz-2.6.11-1.1369_FC4 ro root=LABEL=/ rhgb quiet<br>        initrd /boot/initrd-2.6.11-1.1369_FC4.img  </p>
-<blockquote>
-<p>说明：<br>root (hd0,0)                                                   </p>
-<blockquote>
-<p>#这里的root表示核心在哪个位置。也就是/boot在哪个位置  </p>
-</blockquote>
-<p>kernel /boot/vmlinuz-2.6.11-1.1369_FC4smp ro root=LABEL=/ rhgb quiet  </p>
-<blockquote>
-<p>#这里的root表示/分区在哪个位置。可以用root=/dev/sda1代替  </p>
-</blockquote>
-</blockquote>
-<blockquote>
-</blockquote>
-<p>其他选项;  </p>
-<blockquote>
-<p>unhide (hd0,1)            #显示/dev/hda2<br>hide (hd0,4)                #隐藏/dev/hda5<br>rootnoverify (hd0,0)    #不检查/dev/hda1<br>chainloader +1            #表示打开/dev/hda2的第一个扇区  </p>
-</blockquote>
-<blockquote>
-<p>makeactive                  #设置为活动分区  </p>
-</blockquote>
-</blockquote>
-<p>grub shell  </p>
-<blockquote>
-<p>grub 进入grub shell<br>help查看所有命令<br>root (hd0,0)：                 查找含有/boot的分区<br>find /boot/grub/stage1**+[tab]** ：查找是否存在stage1文件<br>setup (hd0) ：                 安装到MBR中<br>setup (hd0,0)：               安装到第一个分区的第一个扇区中</p>
-</blockquote>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1341421006/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/1341421006/" class="post-title-link" itemprop="url">鸟哥基础第十八章-内核模块</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2012-09-30 17:22:00" itemprop="dateCreated datePublished" datetime="2012-09-30T17:22:00+08:00">2012-09-30</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.6k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>6 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>模块：<br>模块就是一些能实现某些功能的目标文件，也就是.o文件。<br>模块只供内核使用。<br>模块不被连接成可执行文件是因为他的连接对象是正在运行的内核<br>模块存放位置/lib/modules<br>模块有很多功能，包括硬件驱动模块、加密模块、压缩算法模块、防火墙模块等  </p>
-<blockquote>
-<p>arch         #有关CPU等项目<br>crypto      #加密相关<br>drivers     #有关驱动，还有防火墙等<br>fs             #有关文件系统<br>lib            #zlib等一些函数库<br>net           #网络协议等<br>sound      #声卡驱动，音效等  </p>
-</blockquote>
-<p>模块的操作命令：lsmod、modinfo、insmod、rmmod、modprobe  </p>
-<blockquote>
-<p>lsmod：  </p>
-<blockquote>
-<p>nvidia              11259462  24<br>模块                占用空间   有24个其他模块用到nvidia  </p>
-</blockquote>
-<p>modinfo nvidia  </p>
-<blockquote>
-<p>查看模块信息  </p>
-</blockquote>
-<p>modprobe  </p>
-<blockquote>
-<p>找出所有跟nvidia有关的模块<br>modprobe -lt video | grep nvidia       </p>
-<blockquote>
-<p>kernel/drivers/video/backlight/mbp_nvidia_bl.ko<br>kernel/drivers/video/nvidia/nvidiafb.ko  </p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>modprobe通过调用modules.dep文件来解决模块依赖性问题<br>查看模块的依赖性。<br>grep nvidia /lib/modules/2.6.32-44-generic/modules.dep  </p>
-<blockquote>
-<p>kernel/drivers/video/backlight/mbp_nvidia_bl.ko:<br>kernel/drivers/video/nvidia/nvidiafb.ko: kernel/drivers/video/fb_ddc.ko<br>kernel/drivers/i2c/algos/i2c-algo-bit.ko kernel/drivers/video/vgastate.ko<br>updates/dkms/nvidia.ko:<br>#：表示后面的模块要先加载，也就是依赖性<br>我们可以看出加载nvidiafb.ko之前要先加载：  </p>
-<blockquote>
-<p>kernel/drivers/video/fb_ddc.ko<br>kernel/drivers/i2c/algos/i2c-algo-bit.ko<br>kernel/drivers/video/vgastate.ko  </p>
+<p>    后面的通信都是基于分组交换网构建。  </p>
 </blockquote>
 </blockquote>
 </blockquote>
-</blockquote>
-<p>模块参数设置：modprobe、/etc/modules.conf  </p>
+<p>广域网和局域网就是物理层和数据链路层的具体规范和应用。  </p>
+<p>计算机网络的主要性能指标：带宽、时延  </p>
 <blockquote>
-<p>/etc/modules.conf  </p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>options cx88_alsa index=-2    #给cx88_alsa模块一个参数：index=-2<br>alias eth0 pcnet32                  #pcnet32一个通用的名字：eth0  </p>
-</blockquote>
-<p>如 modprobe cx88_alsa index=-3 ，则modules.conf不起作用<br>modprobe设置的参数具有优先权<br>更改/etc/modules.conf文件后，需要使用modules-update来更新。  </p>
-</blockquote>
-<p>模块依赖性文件：modules.dep  </p>
-<blockquote>
-<p>modules.dep文件格式  </p>
+<p>带宽：</p>
 </blockquote>
 <blockquote>
 <blockquote>
-<p>kernel/drivers/video/nvidia/nvidiafb.ko: kernel/drivers/video/fb_ddc.ko  …  </p>
+<p>信号的频率，原指模拟信号的频带宽度。单位：Hz</p>
+</blockquote>
+<blockquote>
+<p>数字信号沿用带宽叫法，单位：b/s</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>注：通信领域和计算机领域，对k，m，g算法不一样</p>
 </blockquote>
 </blockquote>
 <blockquote>
-<p>modules.dep建立命令：depmod  </p>
 <blockquote>
-<p>depmod -a：更新模块依赖性文件modules.dep<br>depmod -A：扫描出新模块才更新<br>depmod -n：扫描后不写入modules.dep，而是输出到屏幕上<br>depmod -e：显示当前加载的模块中已不能用的  </p>
-</blockquote>
-</blockquote>
 <blockquote>
-<p>我们编译好模块后，放入/lib/modules/下面，然后depmod -a，新模块就记录到modules.dep下面了  </p>
+<p>通信单位    1k=10^3 b/s</p>
+</blockquote>
 </blockquote>
 <blockquote>
-<p>然后，加载的话：“modprobe 模块”即可。自动加载的话写入/etc/modprobe.conf<br>核心需要哪些模块的话也会主动去加载模块的。</p>
+<blockquote>
+<p>计算机单位1K=2^10 B  </p>
 </blockquote>
-<p>内核  </p>
-<p>内核是linux中唯一能访问硬件资源的软件<br>由于内核用不到很多功能，所以就做成模块，用的时候再调用。  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>时延：</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>处理时延：车辆排队等待进站的时间</p>
+</blockquote>
+<blockquote>
+<p>发送时延：车流从第一辆车进收费站高速到最后一辆进收费站的时间</p>
+</blockquote>
+<blockquote>
+<p>传播时延：车在高速上的时间</p>
+</blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>网络协议：网络中数据交换的规则、标准</p>
+<blockquote>
+<p>网络协议包含：语法、语义、时序： 时序是指协议实现的顺序</p>
+</blockquote>
 <blockquote>
 </blockquote>
 
@@ -780,7 +563,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3940253776/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3972551888/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -796,7 +579,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/3940253776/" class="post-title-link" itemprop="url">鸟哥基础第十八章-启动流程</a>
+            <a href="/posts/3972551888/" class="post-title-link" itemprop="url">十年一事无成</a>
         </h2>
 
         <div class="post-meta">
@@ -806,14 +589,273 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2012-09-29 21:46:00" itemprop="dateCreated datePublished" datetime="2012-09-29T21:46:00+08:00">2012-09-29</time>
+              <time title="创建时间：2012-11-05 09:11:00" itemprop="dateCreated datePublished" datetime="2012-11-05T09:11:00+08:00">2012-11-05</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Live/" itemprop="url" rel="index"><span itemprop="name">Live</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Live/%E7%82%B9%E6%BB%B4/" itemprop="url" rel="index"><span itemprop="name">点滴</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>48</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>2002年高中毕业，大学时没有确定学习方向，像个无头苍蝇乱学一气。到现在还在地面上爬行。。。。。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2161474433/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/2161474433/" class="post-title-link" itemprop="url">ubuntu14.04开启vnc服务</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2012-10-30 14:40:00" itemprop="dateCreated datePublished" datetime="2012-10-30T14:40:00+08:00">2012-10-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/server/" itemprop="url" rel="index"><span itemprop="name">server</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>11 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>参考：<a target="_blank" rel="noopener" href="http://broderick-tech.com/vncxstartup-files-ubuntu-14-04/">http://broderick-tech.com/vncxstartup-files-ubuntu-14-04/</a><br>ubuntu14.04操作：前面的步骤跟ubuntu10.04一样的，只需要改一改xstartup即可  </p>
+<p>#!/bin/sh<br>def<br>export XKL_XMODMAP_DISABLE=1<br>unset SESSION_MANAGER<br>unset DBUS_SESSION_BUS_ADDRESS  </p>
+<p>gnome-panel &amp;<br>gnome-settings-daemon &amp;<br>metacity &amp;<br>nautilus &amp;<br>gnome-terminal &amp;  </p>
+<p>效果  </p>
+<p><img src="http://img2.ph.126.net/5w9tvL6jeHMrOgSmaN2J_Q==/6598112103739446374.png" alt="ubuntu14.04开启vnc服务 - leaf - ------勤解万难------" title="ubuntu14.04开启vnc服务 - leaf - ------勤解万难------"></p>
+<p>   </p>
+<p>备注：一般我们都用ssh连接  </p>
+<p>实验配置：<br>服务器：ubuntu10.04 X86，win7<br>客户端：ubuntu10.04 X64  </p>
+<p>客户端：  </p>
+<blockquote>
+<p>安装命令：sudo apt-get install vncviewer<br>连接命令：vncviewer  172.16.43.135:1    #连入ubuntu  </p>
+<blockquote>
+<blockquote>
+<p>vncviewer  172.16.43.135       #连入win7  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>win7服务端：  </p>
+<blockquote>
+<p>加密选项：设置为：更喜欢打开<br>这是为了防止：No configured security type is supported by 3.3 viewer  </p>
+</blockquote>
+<p>ubuntu服务器端：  </p>
+<blockquote>
+<p>安装：sudo apt-get install vnc4server  </p>
+</blockquote>
+<blockquote>
+<p>当前用户输入：  </p>
+<blockquote>
+<p>vnc4server  :1<br>输入密码  </p>
+</blockquote>
+<p>会建立.vnc目录：passwd  xstartup  ywz-desktop:1.log  ywz-desktop:1.pid  </p>
+</blockquote>
+<blockquote>
+<p>xstartup默认配置如下：  </p>
+</blockquote>
+<blockquote>
+<p>#!/bin/sh<br># Uncomment the following two lines for normal desktop:<br># unset SESSION_MANAGER<br># exec /etc/X11/xinit/xinitrc<br>[ -x /etc/vnc/xstartup ] &amp;&amp; exec /etc/vnc/xstartup<br>[ -r $HOME/.Xresources ] &amp;&amp; xrdb $HOME/.Xresources<br>xsetroot -solid grey<br>vncconfig -iconic &amp;<br>x-terminal-emulator -geometry 80x24+10+10 -ls -title “$VNCDESKTOP Desktop” &amp;<br>x-window-manager &amp;</p>
+</blockquote>
+<p>1、修改配置：  </p>
+<blockquote>
+<p>修改配置的目的：能进图形界面，而不是字符界面<br>也为了解决：could not acquire name on session bus  </p>
+</blockquote>
+<blockquote>
+<p>#!/bin/sh<br># Uncomment the following two lines for normal desktop:<br>unset SESSION_MANAGER<br>exec /etc/X11/xinit/xinitrc<br>[ -x /etc/vnc/xstartup ] &amp;&amp; exec /etc/vnc/xstartup<br>[ -r $HOME/.Xresources ] &amp;&amp; xrdb $HOME/.Xresources<br>#xsetroot -solid grey<br>#vncconfig -iconic &amp;<br>#x-terminal-emulator -geometry 80x24+10+10 -ls -title “$VNCDESKTOP Desktop” &amp;<br>#x-window-manager &amp;</p>
+</blockquote>
+<p>2、修改/etc/X11/xinit/xinitrc权限：sudo chmod a+x /etc/X11/xinit/xinitrc<br>3、设置防火墙：  </p>
+<blockquote>
+<p>netstat -tunlp  </p>
+<blockquote>
+<p>tcp        0      0 0.0.0.0:6001            0.0.0.0:*               LISTEN      5080/Xvnc4           <br>tcp6      0     0 :::5901                      :::*                        LISTEN      5080/Xvnc4    </p>
+</blockquote>
+<p>sudo ufw allow from 172.16.43.100 to any port 5901  </p>
+</blockquote>
+<p>4、然后重启vnc4server  </p>
+<blockquote>
+<p>vnc4server -kill :1<br>vnc4server :1      #:1表示开启第一个界面  </p>
+</blockquote>
+<p>5、开机自启动vnc服务<br>sudo gedit  /etc/init.d/vncserver  </p>
+<blockquote>
+<p>`#!/bin/sh -e  </p>
+<h3 id="BEGIN-INIT-INFO"><a href="#BEGIN-INIT-INFO" class="headerlink" title="BEGIN INIT INFO"></a>BEGIN INIT INFO</h3><h1 id="Provides-vncserver"><a href="#Provides-vncserver" class="headerlink" title="Provides:          vncserver"></a>Provides:          vncserver</h1><h1 id="Required-Start-networking"><a href="#Required-Start-networking" class="headerlink" title="Required-Start:    networking"></a>Required-Start:    networking</h1><h1 id="Default-Start-3-4-5"><a href="#Default-Start-3-4-5" class="headerlink" title="Default-Start:     3 4 5"></a>Default-Start:     3 4 5</h1><h1 id="Default-Stop-0-6"><a href="#Default-Stop-0-6" class="headerlink" title="Default-Stop:      0 6"></a>Default-Stop:      0 6</h1><h3 id="END-INIT-INFO"><a href="#END-INIT-INFO" class="headerlink" title="END INIT INFO`"></a>END INIT INFO`</h3><p><code>PATH=&quot;$PATH:/usr/X11R6/bin/&quot;</code></p>
+<p><code># The Username:Group that will run VNC   export USER=&quot;使用哪个账户来远程连接&quot;   #$&#123;RUNAS&#125;</code></p>
+<p><code># The display that VNC will use   DISPLAY=&quot;1&quot;</code></p>
+<p><code># Color depth (between 8 and 32)   DEPTH=&quot;24&quot;</code></p>
+<p><code># The Desktop geometry to use.   #GEOMETRY=&quot;&lt;WIDTH&gt;x&lt;HEIGHT&gt;&quot;   GEOMETRY=&quot;800x600&quot;   #GEOMETRY=&quot;1024x768&quot;   #GEOMETRY=&quot;1280x1024&quot;</code></p>
+<p><code># The name that the VNC Desktop will have.   NAME=&quot;vnc-server&quot;</code></p>
+<p><code>OPTIONS=&quot;-name $&#123;NAME&#125; -depth $&#123;DEPTH&#125; -geometry $&#123;GEOMETRY&#125; :$&#123;DISPLAY&#125;&quot;</code></p>
+<p><code>. /lib/lsb/init-functions</code></p>
+<p><code>case &quot;$1&quot; in   start)   log_action_begin_msg &quot;Starting vncserver for user &#39;$&#123;USER&#125;&#39; on localhost:$&#123;DISPLAY&#125;&quot;   su $&#123;USER&#125; -c &quot;/usr/bin/vnc4server $&#123;OPTIONS&#125;&quot;   ;;</code></p>
+<p><code>stop)   log_action_begin_msg &quot;Stoping vncserver for user &#39;$&#123;USER&#125;&#39; on localhost:$&#123;DISPLAY&#125;&quot;   su $&#123;USER&#125; -c &quot;/usr/bin/vnc4server -kill :$&#123;DISPLAY&#125;&quot;   ;;</code></p>
+<p><code>restart)   $0 stop   $0 start   ;;   esac</code></p>
+<p><code>exit 0</code></p>
+</blockquote>
+<p><code>sudo chmod +x /etc/init.d/vncserver   ``sudo update-rc.d vncserver defaults</code>  </p>
+<p>参考：<br><a target="_blank" rel="noopener" href="http://www.linuxidc.com/Linux/2011-10/46228.htm">http://www.linuxidc.com/Linux/2011-10/46228.htm</a><br><a target="_blank" rel="noopener" href="http://www.abdevelopment.ca/blog/start-vnc-server-ubuntu-boot">http://www.abdevelopment.ca/blog/start-vnc-server-ubuntu-boot</a>  </p>
+<p><img src="http://img8.ph.126.net/s4wmt5pmV-QYi5ZwIq8wvg==/6597163225146148528.jpg" alt="ubuntu开启vnc服务 - leaf - ------坚持雅操------" title="ubuntu开启vnc服务 - leaf - ------坚持雅操------"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/768145412/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/768145412/" class="post-title-link" itemprop="url">BLFS-1:补充软件</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2012-10-26 12:55:00" itemprop="dateCreated datePublished" datetime="2012-10-26T12:55:00+08:00">2012-10-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -825,7 +867,7 @@
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
+                  <a href="/categories/Linux/lfs/" itemprop="url" rel="index"><span itemprop="name">lfs</span></a>
                 </span>
             </span>
 
@@ -835,7 +877,709 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.8k</span>
+              <span>1.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>7 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>没有wget，下载很不方便，没有openssh，所有代码都要自己输很不方便，所以安装<br>1、wget  </p>
+<blockquote>
+<p>cd /root/sources<br>ftp ftp.gnu.org  </p>
+<blockquote>
+<p>用户名：anonymous  </p>
+</blockquote>
+<blockquote>
+<p>cd gnu<br>cd wget<br>get wget-1.11.1.tar.bz2  </p>
+</blockquote>
+<p>bye<br>cd ../build<br>tar -xvf ../sources/wget-1.11.1.tar.bz2<br>cd wget-1.11.1  </p>
+<blockquote>
+<p>./configure –prefix=/usr –sysconfdir=/etc<br>make &amp;&amp; make install  </p>
+</blockquote>
+<p>cd ..  </p>
+</blockquote>
+<p>2、gdbm  </p>
+<blockquote>
+<p>按孙海勇的书装了这个。  </p>
+</blockquote>
+<blockquote>
+<p>wget <a href="ftp://ftp.gnu.org/gnu/gdbm/gdbm-1.8.3.tar.gz">ftp://ftp.gnu.org/gnu/gdbm/gdbm-1.8.3.tar.gz</a><br>vi /etc/passwd  </p>
+<blockquote>
+<p>bin:x:2:2:bin:/bin:/bin/sh  </p>
+</blockquote>
+<p>./configure –prefix=/usr<br>make &amp;&amp; make install<br>make install-compat  </p>
+</blockquote>
+<p>3、openssl  </p>
+<blockquote>
+<p>wget <a target="_blank" rel="noopener" href="http://www.openssl.org/source/openssl-0.9.8l.tar.gz">http://www.openssl.org/source/openssl-0.9.8l.tar.gz</a><br>wget <a target="_blank" rel="noopener" href="http://www.linuxfromscratch.org/patches/downloads/openssl/openssl-0.9.8l-fix/_manpages-1.patch">http://www.linuxfromscratch.org/patches/downloads/openssl/openssl-0.9.8l-fix\_manpages-1.patch</a>  </p>
+</blockquote>
+<blockquote>
+<p>./config –prefix=/usr \  </p>
+<blockquote>
+<p>--openssldir=/etc/ssl shared zlib-dynamic  </p>
+</blockquote>
+<p>make<br>make test<br>make MANDIR=/usr/share/man install<br>install -v -d -m755 /usr/share/doc/openssl-0.9.8l<br>cp -v -r doc/{HOWTO,README,*.{txt,html,gif}} /usr/share/doc/openssl-0.9.8l  </p>
+</blockquote>
+<p>4、openssh  </p>
+<blockquote>
+<p>安装<br>openssh需要openssl和  </p>
+</blockquote>
+<blockquote>
+<p>wget <a target="_blank" rel="noopener" href="http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-5.3p1.tar.gz">http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-5.3p1.tar.gz</a>    #要大写<br>install -v -m700 -d /var/lib/sshd<br>chown -v root:sys /var/lib/sshd<br>groupadd -g 50 sshd<br>useradd -c ‘sshd PrivSep’ -d /var/lib/sshd -g sshd \  </p>
+<blockquote>
+<p>-s /bin/false -u 50 sshd  </p>
+</blockquote>
+<p>sed -i.orig ‘s@-lcrypto@/usr/lib/libcrypto.a -ldl@’ configure<br>./configure –prefix=/usr –sysconfdir=/etc/ssh \  </p>
+<blockquote>
+<p>--datadir=/usr/share/sshd \<br>--libexecdir=/usr/lib/openssh –with-md5-passwords \<br>--with-privsep-path=/var/lib/sshd  </p>
+</blockquote>
+<p>make<br>make install<br>install -v -m755 -d /usr/share/doc/openssh-5.3p1<br>install -v -m644 INSTALL LICENCE OVERVIEW README* WARNING.RNG /usr/share/doc/openssh-5.3p1<br>配置<br>从livedcd里面拷过来就好了<br>从livedcd启动，位置：/etc/rc.d/init.d/sshd<br>添加系统启动自启动<br>cd /etc/rc.d/init.d &amp;&amp;<br>ln -sf ../init.d/sshd ../rc0.d/K30sshd &amp;&amp;<br>ln -sf ../init.d/sshd ../rc1.d/K30sshd &amp;&amp;<br>ln -sf ../init.d/sshd ../rc2.d/K30sshd &amp;&amp;<br>ln -sf ../init.d/sshd ../rc3.d/S30sshd &amp;&amp;<br>ln -sf ../init.d/sshd ../rc4.d/S30sshd &amp;&amp;<br>ln -sf ../init.d/sshd ../rc5.d/S30sshd &amp;&amp;<br>ln -sf ../init.d/sshd ../rc6.d/K30sshd  </p>
+</blockquote>
+<p><img src="http://img9.ph.126.net/3LjXwKiwwVW1LWjdc4IFZg==/1647754513681411459.jpg" alt="BLFS-1:安装wget、ssh等软件 - leaf - ------坚持雅操------" title="BLFS-1:安装wget、ssh等软件 - leaf - ------坚持雅操------"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3062845074/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/3062845074/" class="post-title-link" itemprop="url">LFS制作-5、完成制作</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2012-10-25 16:40:00" itemprop="dateCreated datePublished" datetime="2012-10-25T16:40:00+08:00">2012-10-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/lfs/" itemprop="url" rel="index"><span itemprop="name">lfs</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>1、chroot</p>
+<p>chroot “$LFS” /usr/bin/env -i \</p>
+<p>    HOME=/root TERM=”$TERM” PS1=’\u:\w\$ ‘ \</p>
+<p>    PATH=/bin:/usr/bin:/sbin:/usr/sbin \</p>
+<p>    /bin/bash –login</p>
+<p>2、配置系统脚本</p>
+<p>LFS-Bootscripts-6.3 </p>
+<blockquote>
+<p>包含一套在 LFS 系统启动和关闭时的启动和停止脚本</p>
+<p>脚本：halt、reboot、ifup、ifdown、udev、</p>
+</blockquote>
+<p>cat &gt; /etc/sysconfig/clock &lt;&lt; “EOF”</p>
+<blockquote>
+<p>UTC=0</p>
+</blockquote>
+<p>EOF</p>
+<p>cat &gt; /etc/inputrc &lt;&lt; “EOF”</p>
+<p>cat &gt; /etc/profile &lt;&lt; “EOF”</p>
+<blockquote>
+<p>export LANG=en_US.UTF-8</p>
+<p>export INPUTRC=/etc/inputrc<br>alias ls=”ls –color”  </p>
+<p>export PS1=’\u:\w\$’</p>
+</blockquote>
+<p>EOF</p>
+<p>echo “HOSTNAME=leaf” &gt; /etc/sysconfig/network</p>
+<p>cat &gt; /etc/hosts &lt;&lt; “EOF”</p>
+<blockquote>
+<p>127.0.0.1 leaf localhost</p>
+</blockquote>
+<p>EOF</p>
+<p>cd /etc/sysconfig/network-devices</p>
+<p>mkdir -v ifconfig.eth0</p>
+<p>cat &gt; ifconfig.eth0/ipv4 &lt;&lt; “EOF”</p>
+<blockquote>
+<p>ONBOOT=yes</p>
+<p>SERVICE=ipv4-static</p>
+<p>IP=172.16.43.100</p>
+<p>GATEWAY=172.16.43.2</p>
+<p>PREFIX=24</p>
+<p>BROADCAST=172.16.43.255</p>
+</blockquote>
+<p>EOF</p>
+<p>cat &gt; /etc/resolv.conf &lt;&lt; “EOF”</p>
+<blockquote>
+<p>nameserver 172.16.43.2 </p>
+</blockquote>
+<p>EOF</p>
+<p>cat &gt; /etc/fstab &lt;&lt; “EOF”</p>
+<p>3、安装核心</p>
+<p>Linux-2.6.22.5 </p>
+<p>make mrproper</p>
+<p>make menuconfig  #参考孙海勇的设置</p>
+<p>make</p>
+<p>make modules_install</p>
+<p>cp -v arch/i386/boot/bzImage /boot/lfskernel-2.6.22.5</p>
+<p>cp -v System.map /boot/System.map-2.6.22.5</p>
+<p>cp -v .config /boot/config-2.6.22.5</p>
+<p>install -d /usr/share/doc/linux-2.6.22.5</p>
+<p>cp -r Documentation/* /usr/share/doc/linux-2.6.22.5</p>
+<p>4、stage写入MBR</p>
+<p>配置了软驱</p>
+<p>dd if=/boot/grub/stage1 of=/dev/fd0 bs=512 count=1</p>
+<p>dd if=/boot/grub/stage2 of=/dev/fd0 bs=512 seek=1</p>
+<p>grub</p>
+<blockquote>
+<p>root (hd0,0)</p>
+<p>setup (hd0)</p>
+</blockquote>
+<p>quit</p>
+<p>cat &gt; /boot/grub/menu.lst &lt;&lt; “EOF”</p>
+<p>mkdir -v /etc/grub</p>
+<p>ln -sv /boot/grub/menu.lst /etc/grub</p>
+<p>5、完成制作</p>
+<p>echo 6.3 &gt; /etc/lfs-release</p>
+<p>sync</p>
+<p>reboot</p>
+<p>制作完毕！：-)</p>
+<p><img src="http://img2.ph.126.net/aXVFRIrHp03lrh9b3NOsRQ==/6597672299028385782.jpg" alt="LFS制作-5、完成制作 - leaf - ------坚持雅操------" title="LFS制作-5、完成制作 - leaf - ------坚持雅操------"></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2307134587/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/2307134587/" class="post-title-link" itemprop="url">LFS制作-4、目标系统-3必要程序</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2012-10-25 16:31:00" itemprop="dateCreated datePublished" datetime="2012-10-25T16:31:00+08:00">2012-10-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/lfs/" itemprop="url" rel="index"><span itemprop="name">lfs</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>11k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>42 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Berkeley DB-4.5.20</p>
+<blockquote>
+<p>包含一些程序和工具，供其他的一些程序来在做数据库相关函数时调用<br>-—————-<br>patch -Np1 -i ../db-4.5.20-fixes-1.patch<br>cd build_unix<br>../dist/configure –prefix=/usr –enable-compat185 –enable-cxx<br>make<br>make docdir=/usr/share/doc/db-4.5.20 install<br>chown -Rv root:root /usr/share/doc/db-4.5.20  </p>
+</blockquote>
+<p>Sed-4.1.5</p>
+<blockquote>
+<p>sed编辑器<br>-—————<br>./configure –prefix=/usr –bindir=/bin –enable-html<br>make<br>make install  </p>
+</blockquote>
+<p>E2fsprogs-1.40.2</p>
+<blockquote>
+<p>提供用于 ext2 文件系统的工具。它还支持 ext3 日志文件系统</p>
+<p>包含命令：chattr、lsattr、mkfs、fsck等<br>-————–<br>sed -i -e ‘s@/bin/rm@/tools&amp;@’ lib/blkid/test_probe.in<br>mkdir -v build<br>cd build<br>../configure –prefix=/usr –with-root-prefix=”” \<br>    –enable-elf-shlibs<br>make<br>make install<br>make<br>make install-libs  </p>
+</blockquote>
+<p>Coreutils-6.9</p>
+<blockquote>
+<p>包括一套显示、设置基本系统属性的工具</p>
+<p>包含命令：chroot、chown、cp、dd、dir、env、ln、ls、mkdir、mv、rm、seq、tee、touch、tty等</p>
+<p>安装位置/usr，移动命令到/bin 、/sbin下<br>-———————–<br>patch -Np1 -i ../coreutils-6.9-uname-1.patch<br>patch -Np1 -i ../coreutils-6.9-suppress_uptime_kill_su-1.patch<br>patch -Np1 -i ../coreutils-6.9-i18n-1.patch<br>chmod +x tests/sort/sort-mb-tests<br>./configure –prefix=/usr<br>make<br>make install<br>mv -v /usr/bin/{cat,chgrp,chmod,chown,cp,date,dd,df,echo} /bin<br>mv -v /usr/bin/{false,hostname,ln,ls,mkdir,mknod,mv,pwd,readlink,rm} /bin<br>mv -v /usr/bin/{rmdir,stty,sync,true,uname} /bin<br>mv -v /usr/bin/chroot /usr/sbin<br>mv -v /usr/bin/{head,sleep,nice} /bin  </p>
+</blockquote>
+<p>Iana-Etc-2.20</p>
+<blockquote>
+<p>提供了网络服务和协议的数据</p>
+<p>安装文件：/etc/protocols, /etc/services<br>-———————-<br>make<br>make install  </p>
+</blockquote>
+<p>M4-1.4.10</p>
+<blockquote>
+<p>宏处理器<br>-——————–<br>./configure –prefix=/usr<br>make<br>make install  </p>
+</blockquote>
+<p>Bison-2.3</p>
+<blockquote>
+<p>语法分析程序生成器</p>
+<p>命令：bison、yacc<br>-———————<br>./configure –prefix=/usr<br>echo ‘#define YYENABLE_NLS 1’ &gt;&gt; config.h<br>make<br>make install  </p>
+</blockquote>
+<p>Ncurses-5.6</p>
+<blockquote>
+<p>提供字符终端处理库，包括面板和菜单</p>
+<p>命令：clear、reset等<br>-———————-<br>patch -Np1 -i ../ncurses-5.6-coverity_fixes-1.patch<br>./configure –prefix=/usr –with-shared –without-debug –enable-widec<br>make<br>make install<br>chmod -v 644 /usr/lib/libncurses++w.a<br>mv -v /usr/lib/libncursesw.so.5* /lib<br>ln -sfv ../../lib/libncursesw.so.5 /usr/lib/libncursesw.so<br>for lib in curses ncurses form panel menu ; do \<br>    rm -vf /usr/lib/lib${lib}.so ; \<br>    echo “INPUT(-l${lib}w)” &gt;/usr/lib/lib${lib}.so ; \<br>    ln -sfv lib${lib}w.a /usr/lib/lib${lib}.a ; \<br>done<br>ln -sfv libncurses++w.a /usr/lib/libncurses++.a<br>rm -vf /usr/lib/libcursesw.so<br>echo “INPUT(-lncursesw)” &gt;/usr/lib/libcursesw.so<br>ln -sfv libncurses.so /usr/lib/libcurses.so<br>ln -sfv libncursesw.a /usr/lib/libcursesw.a<br>ln -sfv libncurses.a /usr/lib/libcurses.a  </p>
+</blockquote>
+<p>Procps-3.2.7</p>
+<blockquote>
+<p>用于监视系统进程的程序</p>
+<p>命令：free、top、ps、uptime、kill等<br>-———————<br>make<br>make install  </p>
+</blockquote>
+<p>Libtool-1.5.24</p>
+<blockquote>
+<p>通用库支持脚本，将使用动态库的复杂性隐藏在统一的、可移植的接口中<br>-——————–<br>./configure –prefix=/usr<br>make<br>make install  </p>
+</blockquote>
+<p>Perl-5.8.8</p>
+<blockquote>
+<p>编程语言，各编程语言转换等用处<br>-—————-<br>echo “127.0.0.1 localhost leaf” &gt; /etc/hosts<br>./configure.gnu –prefix=/usr \<br>    -Dman1dir=/usr/share/man/man1 \<br>    -Dman3dir=/usr/share/man/man3 \<br>    -Dpager=”/usr/bin/less -isR”<br>make<br>make install  </p>
+</blockquote>
+<p>Readline-5.2</p>
+<blockquote>
+<p>提供命令行编辑和历史纪录功能的库集合<br>-——————–<br>sed -i ‘/MV.*old/d’ Makefile.in<br>sed -i ‘/{OLDSUFF}/c:’ support/shlib-install<br>patch -Np1 -i ../readline-5.2-fixes-3.patch<br>./configure –prefix=/usr –libdir=/lib<br>make SHLIB_LIBS=-lncurses<br>make install<br>mv -v /lib/lib{readline,history}.a /usr/lib<br>rm -v /lib/lib{readline,history}.so<br>ln -sfv ../../lib/libreadline.so.5 /usr/lib/libreadline.so<br>ln -sfv ../../lib/libhistory.so.5 /usr/lib/libhistory.so  </p>
+</blockquote>
+<p>Zlib-1.2.3</p>
+<blockquote>
+<p>很多程序中的压缩或者解压缩程序都会用到这个库<br>-——————–<br>./configure –prefix=/usr –shared –libdir=/lib<br>make<br>make install<br>rm -v /lib/libz.so<br>ln -sfv ../../lib/libz.so.1.2.3 /usr/lib/libz.so<br>make clean<br>./configure –prefix=/usr<br>make<br>make install<br>chmod -v 644 /usr/lib/libz.a  </p>
+</blockquote>
+<p>Autoconf-2.61</p>
+<blockquote>
+<p>生成用于自动配置源代码的 shell 脚本</p>
+<p>命令：autoconf、autoheader等<br>-——————-<br>./configure –prefix=/usr<br>make<br>make install  </p>
+</blockquote>
+<p>Automake-1.10</p>
+<blockquote>
+<p>与 Autoconf 配合使用，产生 Makefile 文件<br>-——————<br>./configure –prefix=/usr<br>make<br>make install  </p>
+</blockquote>
+<p>Bash-3.2</p>
+<blockquote>
+<p>bash shell<br>-———————<br>tar -xvf ../bash-doc-3.2.tar.gz<br>sed -i “s|htmldir = @htmldir@|htmldir = /usr/share/doc/bash-3.2|” \<br>    Makefile.in<br>patch -Np1 -i ../bash-3.2-fixes-5.patch<br>./configure –prefix=/usr –bindir=/bin \<br>    –without-bash-malloc –with-installed-readline<br>make<br>sed -i ‘s/LANG/LC_ALL/‘ tests/intl.tests<br>sed -i ‘s@tests@&amp; &lt;/dev/tty@’ tests/run-test<br>chown -Rv nobody ./<br>su-tools nobody -s /bin/bash -c “make tests”<br>make install<br>exec /bin/bash –login +h  </p>
+</blockquote>
+<p>Bzip2-1.0.4</p>
+<blockquote>
+<p>包含了对文件进行压缩和解压缩的工具<br>-———————<br>patch -Np1 -i ../bzip2-1.0.4-install_docs-1.patch<br>make -f Makefile-libbz2_so<br>make clean<br>make<br>make PREFIX=/usr install<br>cp -v bzip2-shared /bin/bzip2<br>cp -av libbz2.so* /lib<br>ln -sv ../../lib/libbz2.so.1.0 /usr/lib/libbz2.so<br>rm -v /usr/bin/{bunzip2,bzcat,bzip2}<br>ln -sv bzip2 /bin/bunzip2<br>ln -sv bzip2 /bin/bzcat  </p>
+</blockquote>
+<p>Diffutils-2.8.1</p>
+<blockquote>
+<p>显示两个文件或目录的差异</p>
+<p>命令：cmp、diff<br>-———————–<br>patch -Np1 -i ../diffutils-2.8.1-i18n-1.patch<br>touch man/diff.1<br>./configure –prefix=/usr<br>make<br>make install  </p>
+</blockquote>
+<p>File-4.21</p>
+<blockquote>
+<p>用来判断文件类型的工具</p>
+<p>命令：file<br>-————————<br>./configure –prefix=/usr<br>make<br>make install  </p>
+</blockquote>
+<p>Findutils-4.2.31</p>
+<blockquote>
+<p>查找文件的工具</p>
+<p>命令：find、updatedb、locate、xargs<br>-———————-<br>./configure –prefix=/usr –libexecdir=/usr/lib/findutils \<br>    –localstatedir=/var/lib/locate<br>make<br>make install<br>mv -v /usr/bin/find /bin<br>sed -i -e ‘s/find:=${BINDIR}/find:=\/bin/‘ /usr/bin/updatedb  </p>
+</blockquote>
+<p>Flex-2.5.33</p>
+<blockquote>
+<p>能生成识别文本模式的程序的工具<br>-——————-<br>./configure –prefix=/usr<br>make<br>make install<br>ln -sv libfl.a /usr/lib/libl.a  </p>
+<blockquote>
+<p>cat &gt; /usr/bin/lex &lt;&lt; “EOF”<br>#!/bin/sh<br># Begin /usr/bin/lex  </p>
+<p>exec /usr/bin/flex -l “$@”  </p>
+<p># End /usr/bin/lex<br>EOF  </p>
+</blockquote>
+<p>chmod -v 755 /usr/bin/lex  </p>
+</blockquote>
+<p>GRUB-0.97</p>
+<blockquote>
+<p>包含 GRand 统一引导装载程序<br>-—————-<br>patch -Np1 -i ../grub-0.97-disk_geometry-1.patch<br>./configure –prefix=/usr<br>make<br>make install<br>mkdir -v /boot/grub<br>cp -v /usr/lib/grub/i386-pc/stage{1,2} /boot/grub  </p>
+</blockquote>
+<p>Gawk-3.1.5</p>
+<blockquote>
+<p>包含用于管理文本文件的程序</p>
+<p>命令：awk等<br>-——————–<br>patch -Np1 -i ../gawk-3.1.5-segfault_fix-1.patch<br>./configure –prefix=/usr –libexecdir=/usr/lib  </p>
+<blockquote>
+<p>cat &gt;&gt; config.h &lt;&lt; “EOF”<br>#define HAVE_LANGINFO_CODESET 1<br>#define HAVE_LC_MESSAGES 1<br>EOF  </p>
+</blockquote>
+<p>make<br>make install  </p>
+</blockquote>
+<p>Gettext-0.16.1</p>
+<blockquote>
+<p>系统的国际化和本地化<br>-—————<br>./configure –prefix=/usr<br>make<br>make install  </p>
+</blockquote>
+<p>Grep-2.5.1a</p>
+<blockquote>
+<p>搜索文件中符合指定匹配模式的行</p>
+<p>命令：grep<br>-————–<br>patch -Np1 -i ../grep-2.5.1a-redhat_fixes-2.patch<br>chmod +x tests/fmbtest.sh<br>./configure –prefix=/usr –bindir=/bin<br>make<br>make install  </p>
+</blockquote>
+<p>Groff-1.18.1.4</p>
+<blockquote>
+<p>包含几个处理和格式化文本的程序<br>-—————-<br>patch -Np1 -i ../groff-1.18.1.4-debian_fixes-1.patch<br>sed -i -e ‘s/2010/002D/‘ -e ‘s/2212/002D/‘ \<br>    -e ‘s/2018/0060/‘ -e ‘s/2019/0027/‘ font/devutf8/R.proto<br>PAGE=A4 ./configure –prefix=/usr –enable-multibyte<br>make<br>make install<br>ln -sv eqn /usr/bin/geqn<br>ln -sv tbl /usr/bin/gtbl  </p>
+</blockquote>
+<p>Gzip-1.3.12</p>
+<blockquote>
+<p>压缩和解压文件的程序<br>-——————-<br>./configure –prefix=/usr –bindir=/bin<br>make<br>make install<br>mv -v /bin/{gzexe,uncompress,zcmp,zdiff,zegrep} /usr/bin<br>mv -v /bin/{zfgrep,zforce,zgrep,zless,zmore,znew} /usr/bin  </p>
+</blockquote>
+<p>Inetutils-1.5</p>
+<blockquote>
+<p>包含基本的网络程序</p>
+<p>配置文件:/etc</p>
+<p>命令：ping、ftp、telnet等<br>-——————-<br>patch -Np1 -i ../inetutils-1.5-no_server_man_pages-2.patch<br>./configure –prefix=/usr –libexecdir=/usr/sbin \<br>    –sysconfdir=/etc –localstatedir=/var \<br>    –disable-ifconfig –disable-logger –disable-syslogd \<br>    –disable-whois –disable-servers<br>make<br>make install<br>mv -v /usr/bin/ping /bin  </p>
+</blockquote>
+<p>IPRoute2-2.6.20-070313</p>
+<blockquote>
+<p>基本的和高级的基于 IPv4 网络的程序</p>
+<p>命令：ip、arpd守护程序、<br>-—————-<br>sed -i -e ‘/tc-bfifo.8/d’ -e ‘/tc-pfifo.8/s/pbfifo/bfifo/‘ Makefile<br>make SBINDIR=/sbin<br>make SBINDIR=/sbin install<br>mv -v /sbin/arpd /usr/sbin  </p>
+</blockquote>
+<p>Kbd-1.12</p>
+<blockquote>
+<p>键盘映射表和键盘工具<br>-——————-<br>patch -Np1 -i ../kbd-1.12-backspace-1.patch<br>patch -Np1 -i ../kbd-1.12-gcc4_fixes-1.patch<br>./configure –datadir=/lib/kbd<br>make<br>make install<br>mv -v /usr/bin/{kbd_mode,openvt,setfont} /bin  </p>
+</blockquote>
+<p>Less-406</p>
+<blockquote>
+<p>一个文本文件查看器</p>
+<p>命令：less<br>-———————<br>./configure –prefix=/usr –sysconfdir=/etc<br>make<br>make install  </p>
+</blockquote>
+<p>Make-3.81</p>
+<blockquote>
+<p>自动地确定一个大型程序的哪些片段需要重新编译，并且发出命令去重新编译它们</p>
+<p>应该和autoconf和automake有关系<br>-——————–<br>./configure –prefix=/usr<br>make<br>make install  </p>
+</blockquote>
+<p>Man-DB-2.4.4</p>
+<blockquote>
+<p>查找和显示 man 手册页的程序</p>
+<p>命令：man等</p>
+<p>-———————<br>sed -i -e ‘\%\t/usr/man%d’ -e ‘\%\t/usr/local/man%d’ src/man_db.conf.in</p>
+<blockquote>
+<p>cat &gt;&gt; include/manconfig.h.in &lt;&lt; “EOF”</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>#define WEB_BROWSER “exec /usr/bin/lynx”</p>
+</blockquote>
+<blockquote>
+<p>#define COL “/usr/bin/col”</p>
+</blockquote>
+<blockquote>
+<p>#define VGRIND “/usr/bin/vgrind”</p>
+</blockquote>
+<blockquote>
+<p>#define GRAP “/usr/bin/grap”</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>EOF</p>
+</blockquote>
+<p>patch -Np1 -i ../man-db-2.4.4-fixes-1.patch</p>
+<p>./configure –prefix=/usr –enable-mb-groff –disable-setuid</p>
+<p>make &amp;&amp; make install  </p>
+</blockquote>
+<p>Mktemp-1.5</p>
+<blockquote>
+<p>包含用于在 shell 脚本中创建安全临时文件的程序<br>-——————–<br>patch -Np1 -i ../mktemp-1.5-add_tempfile-3.patch<br>./configure –prefix=/usr –with-libc<br>make<br>make install<br>make install-tempfile  </p>
+</blockquote>
+<p>Module-Init-Tools-3.2.2</p>
+<blockquote>
+<p>处理 2.5.47 及以上版本的内核模块时使用的工具</p>
+<p>命令：modprobe、insmod、depmod、lsmod</p>
+<p>安装位置:/sbin<br>-——————<br>patch -Np1 -i ../module-init-tools-3.2.2-modprobe-1.patch<br>./configure<br>make check<br>make distclean<br>./configure –prefix=/ –enable-zlib<br>make<br>make INSTALL=install install  </p>
+</blockquote>
+<p>Patch-2.5.4</p>
+<blockquote>
+<p>补丁命令，一般和diff一起用</p>
+</blockquote>
+<blockquote>
+<p>命令：patch<br>-—————-<br>./configure –prefix=/usr<br>make<br>make install  </p>
+</blockquote>
+<p>Psmisc-22.5</p>
+<blockquote>
+<p>用于显示进程信息的程序</p>
+<p>命令：pstree、killall<br>-—————–<br>./configure –prefix=/usr –exec-prefix=””<br>make<br>make install<br>mv -v /bin/pstree* /usr/bin<br>ln -sv killall /bin/pidof  </p>
+</blockquote>
+<p>Shadow-4.0.18.1</p>
+<blockquote>
+<p>用于在安全方式下处理密码的程序</p>
+<p>配置文件/etc</p>
+<p>库文件:/usr/lib、/lib</p>
+<p>命令位置:/bin、/usr/bin</p>
+<p>命令：su、passwd、login、useradd、userdel、chsh</p>
+<p>-—————–<br>patch -Np1 -i ../shadow-4.0.18.1-useradd_fix-2.patch</p>
+<p>./configure –libdir=/lib –sysconfdir=/etc –enable-shared \</p>
+<p>    –without-selinux</p>
+<p>sed -i ‘s/groups$(EXEEXT) //‘ src/Makefile</p>
+<p>find man -name Makefile -exec sed -i ‘s/groups\.1 / /‘ {} \;</p>
+<p>sed -i -e ‘s@#MD5_CRYPT_ENAB.no@MD5_CRYPT_ENAB yes@’ \</p>
+<p>    -e ‘s@/var/spool/mail@/var/mail@’ etc/login.defs</p>
+<p>make</p>
+<p>make install</p>
+<p>mv -v /usr/bin/passwd /bin</p>
+<p>mv -v /lib/libshadow.*a /usr/lib</p>
+<p>rm -v /lib/libshadow.so</p>
+<p>ln -sfv ../../lib/libshadow.so.0 /usr/lib/libshadow.so</p>
+<p>pwconv</p>
+<p>grpconv</p>
+<p>useradd -D -b /home</p>
+<p>sed -i ‘s/yes/no/‘ /etc/default/useradd</p>
+<p>passwd root   #一定要设置root密码  </p>
+</blockquote>
+<p>Sysklogd-1.4.1</p>
+<blockquote>
+<p>记录系统日志信息的程序</p>
+<p>命令：klogd守护程序、syslogd<br>-—————-<br>patch -Np1 -i ../sysklogd-1.4.1-fixes-2.patch<br>patch -Np1 -i ../sysklogd-1.4.1-8bit-1.patch<br>make<br>make install  </p>
+<blockquote>
+<p>cat &gt; /etc/syslog.conf &lt;&lt; “EOF”<br># Begin /etc/syslog.conf  </p>
+<p>auth,authpriv.* -/var/log/auth.log<br>*.*;auth,authpriv.none -/var/log/sys.log<br>daemon.* -/var/log/daemon.log<br>kern.* -/var/log/kern.log<br>mail.* -/var/log/mail.log<br>user.* -/var/log/user.log<br>*.emerg *  </p>
+<p># End /etc/syslog.conf<br>EOF  </p>
+</blockquote>
+</blockquote>
+<p>Sysvinit-2.86  </p>
+<blockquote>
+<p>一些控制系统启动、运行、关闭的程序</p>
+<p>配置文件：/etc/inittab</p>
+<p>命令：shutdown、init、reboot等<br>-——————<br>sed -i ‘s@Sending processes@&amp; configured via /etc/inittab@g’ \<br>    src/init.c<br>make -C src<br>make -C src install  </p>
+<blockquote>
+<p>cat &gt; /etc/inittab &lt;&lt; “EOF”<br># Begin /etc/inittab  </p>
+<p>id:3:initdefault:  </p>
+<p>si::sysinit:/etc/rc.d/init.d/rc sysinit  </p>
+<p>l0:0:wait:/etc/rc.d/init.d/rc 0<br>l1:S1:wait:/etc/rc.d/init.d/rc 1<br>l2:2:wait:/etc/rc.d/init.d/rc 2<br>l3:3:wait:/etc/rc.d/init.d/rc 3<br>l4:4:wait:/etc/rc.d/init.d/rc 4<br>l5:5:wait:/etc/rc.d/init.d/rc 5<br>l6:6:wait:/etc/rc.d/init.d/rc 6  </p>
+<p>ca:12345:ctrlaltdel:/sbin/shutdown -t1 -a -r now  </p>
+<p>su:S016:once:/sbin/sulogin  </p>
+<p>1:2345:respawn:/sbin/agetty tty1 9600<br>2:2345:respawn:/sbin/agetty tty2 9600<br>3:2345:respawn:/sbin/agetty tty3 9600<br>4:2345:respawn:/sbin/agetty tty4 9600<br>5:2345:respawn:/sbin/agetty tty5 9600<br>6:2345:respawn:/sbin/agetty tty6 9600  </p>
+<p># End /etc/inittab  </p>
+</blockquote>
+<blockquote>
+<p>EOF  </p>
+</blockquote>
+</blockquote>
+<p>Tar-1.18</p>
+<blockquote>
+<p>一个归档程序<br>-————-<br>./configure –prefix=/usr –bindir=/bin –libexecdir=/usr/sbin<br>make<br>make install  </p>
+</blockquote>
+<p>Texinfo-4.9</p>
+<blockquote>
+<p>读取、写入、转换 Info 文档的程序</p>
+<p>命令：info等<br>-—————<br>patch -Np1 -i ../texinfo-4.9-multibyte-1.patch<br>patch -Np1 -i ../texinfo-4.9-tempfile_fix-1.patch<br>./configure –prefix=/usr<br>make<br>make install<br>make TEXMF=/usr/share/texmf install-tex<br>cd /usr/share/info<br>rm dir<br>for f in *<br>do install-info $f dir 2&gt;/dev/null<br>done  </p>
+</blockquote>
+<p>Udev-113</p>
+<blockquote>
+<p>包含动态地创建设备节点的程序</p>
+<p>命令：udevinfo等<br>-—————–<br>tar -xvf ../udev-config-6.3.tar.bz2<br>install -dv /lib/{firmware,udev/devices/{pts,shm}}<br>mknod -m0666 /lib/udev/devices/null c 1 3<br>ln -sv /proc/self/fd /lib/udev/devices/fd<br>ln -sv /proc/self/fd/0 /lib/udev/devices/stdin<br>ln -sv /proc/self/fd/1 /lib/udev/devices/stdout<br>ln -sv /proc/self/fd/2 /lib/udev/devices/stderr<br>ln -sv /proc/kcore /lib/udev/devices/core<br>make EXTRAS=”`echo extras/*/`“<br>make DESTDIR=/ EXTRAS=”`echo extras/*/`“ install<br>cp -v etc/udev/rules.d/[0-9]* /etc/udev/rules.d/<br>cd udev-config-6.3<br>make install<br>make install-doc<br>make install-extra-doc<br>cd ..<br>install -m644 -v docs/writing_udev_rules/index.html \<br>    /usr/share/doc/udev-113/index.html  </p>
+</blockquote>
+<p>Util-linux-2.12r</p>
+<blockquote>
+<p>包含许多工具。其中比较重要的是加载、卸载、格式化、分区和管理硬盘驱动器，打开 tty 端口和得到内核消息</p>
+<p>命令位置：/usr/bin</p>
+<p>命令：mount、whereis、cfdisk、<br>-—————<br>sed -e ‘s@etc/adjtime@var/lib/hwclock/adjtime@g’ \<br>    -i $(grep -rl ‘/etc/adjtime’ .)<br>mkdir -pv /var/lib/hwclock<br>patch -Np1 -i ../util-linux-2.12r-cramfs-1.patch<br>patch -Np1 -i ../util-linux-2.12r-lseek-1.patch<br>./configure<br>make HAVE_KILL=yes HAVE_SLN=yes<br>make HAVE_KILL=yes HAVE_SLN=yes install  </p>
+</blockquote>
+<p>Vim-7.1 </p>
+<blockquote>
+<p>强大的文本编辑器<br>-————-<br>patch -Np1 -i ../vim-7.1-fixes-1.patch<br>patch -Np1 -i ../vim-7.1-mandir-1.patch<br>echo ‘#define SYS_VIMRC_FILE “/etc/vimrc”‘ &gt;&gt; src/feature.h<br>./configure –prefix=/usr –enable-multibyte<br>make<br>make install<br>ln -sv vim /usr/bin/vi<br>for L in “” fr it pl ru; do<br>    ln -sv vim.1 /usr/share/man/$L/man1/vi.1<br>done<br>ln -sv ../vim/vim71/doc /usr/share/doc/vim-7.1  </p>
+<blockquote>
+<p>cat &gt; /etc/vimrc &lt;&lt; “EOF”<br>“ Begin /etc/vimrc  </p>
+<p>set nocompatible<br>set backspace=2<br>syntax on<br>if (&amp;term == “iterm”) || (&amp;term == “putty”)<br>  set background=dark<br>endif  </p>
+<p>“ End /etc/vimrc<br>EOF  </p>
+</blockquote>
+</blockquote>
+<p>2、清理</p>
+<p>logout</p>
+<p>mv $LFS/tools $LFS/root</p>
+<p>mv $LFS/sources $LFS/root</p>
+<p>mv $LFS/build $LFS/root</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/991075949/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/991075949/" class="post-title-link" itemprop="url">LFS制作-4、目标系统-2目标工具链</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2012-10-25 15:22:00" itemprop="dateCreated datePublished" datetime="2012-10-25T15:22:00+08:00">2012-10-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/lfs/" itemprop="url" rel="index"><span itemprop="name">lfs</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -852,260 +1596,182 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>启动流程补充：  </p>
+          <p>1、Linux-2.6.22.5 API Headers </p>
+<p>#头文件，安装位置/usr/include，里面的*.h都是头文件</p>
+<p>#内核就相当于CPU，而头文件就相当于CPU的针脚，对CPU的操作都是通过针脚传命令进去的。</p>
+<p>sed -i ‘/scsi/d’ include/Kbuild</p>
 <blockquote>
-<p>电脑开机<br>|<br>CPU，北桥运行<br>|<br>BIOS在flash memory运行<br>|<br>BIOS检测硬件<br>|<br>BIOS读取CMOS中的用户设定<br>|<br>BIOS信息整合成SMBIOS写入内存中<br>|<br>BIOS自解压到内存中<br>|<br>BIOS启动POST程序  </p>
-<blockquote>
-<p>初始化各种主板芯片组</p>
+<p>#当前行的上一行插入/scsi/d</p>
 </blockquote>
+<p>make mrproper</p>
+<p>make headers_check</p>
+<p>make INSTALL_HDR_PATH=dest headers_install</p>
+<p>cp -rv dest/include/* /usr/include</p>
+<p>2、Man-pages-2.63 </p>
+<p>make install</p>
+<p>3、Glibc-2.5.1</p>
+<p>#包含了主要的C库。这个库提供了基本例程，用于分配内存、搜索目录、打开关闭文件、读写文件、字串处理、模式匹配、数学计算等等。Glibc 的编译系统是高度自给自足的，即使当前编译器 specs 文件和连接器还指向 /tools 目录，也能正确安装</p>
+<p>#安装位置:/usr/bin、/usr/lib</p>
+<p>#包含的命令如：ldd、ldconfig</p>
+<p>#包含的库文件：ld.so、libc</p>
+<p>-—————————————————————–</p>
+<p>tar -xvf ../glibc-libidn-2.5.1.tar.gz</p>
+<p>mv glibc-libidn-2.5.1 libidn</p>
+<p>sed -i ‘/vi_VN.TCVN/d’ localedata/SUPPORTED</p>
 <blockquote>
-<p>初始化键盘控制器8042.</p>
-<p>初始化中断向量,中断服务例程.<br>初始化VGA BIOS控制器<br>显示BIOS的版本和公司名称<br>扫描软驱和各种介质容量<br>读取CMOS的启动顺序配置，并检测启动装置是否正常  </p>
+<p>#当前行的上一行插入/vi_VN.TCVN/d</p>
 </blockquote>
-<p>|<br>BIOS将所有检测到的临时设备信息写入SMBIOS___________^__以上只能通过诊断卡查看错误信息。<br>|<br>BIOS调用INT 19H的2号功能来读出硬盘MBR扇区的内容,将其读入到内存0000:7C00h,并跳转至此处执行<br>|<br>BIOS启动MBR上面的引导程序stage1<br>|<br>引导程序加载stage1.5<br>|<br>引导程序通过stage1.5识别文件系统，并加载文件系统中的stage2<br>|<br>stage2加载grub.conf配置文件<br>|<br>通过配置文件加载kernel和initrd  </p>
-</blockquote>
+<p>sed -i \</p>
+<p>‘s|libs -o|libs -L/usr/lib -Wl,-dynamic-linker=/lib/ld-linux.so.2 -o|’ \</p>
+<p>        scripts/test-installation.pl</p>
+<p>sed -i ‘s|@BASH@|/bin/bash|’ elf/ldd.bash.in</p>
+<p>mkdir -v ../glibc-build</p>
+<p>cd ../glibc-build</p>
+<p>../glibc-2.5.1/configure –prefix=/usr \</p>
+<p>    –disable-profile –enable-add-ons \</p>
+<p>    –enable-kernel=2.6.0 –libexecdir=/usr/lib/glibc</p>
+<p>make</p>
+<p>touch /etc/ld.so.conf</p>
+<p>make install</p>
+<p>make localedata/install-locales</p>
+<p>cat &gt; /etc/nsswitch.conf &lt;&lt; “EOF”</p>
 <blockquote>
-<p>资料来源：  </p>
+<p># Begin /etc/nsswitch.conf</p>
+<p>passwd: files</p>
+<p>group: files</p>
+<p>shadow: files</p>
+<p>hosts: files dns</p>
+<p>networks: files</p>
+<p>protocols: files</p>
+<p>services: files</p>
+<p>ethers: files</p>
+<p>rpc: files</p>
+<p># End /etc/nsswitch.conf</p>
 </blockquote>
+<p>EOF</p>
+<p>#nsswitch.conf：系统数据库及名字服务开关配置文件</p>
+<p>cp -v –remove-destination /usr/share/zoneinfo/Asia/Shanghai \</p>
+<p>    /etc/localtime</p>
+<p>cat &gt; /etc/ld.so.conf &lt;&lt; “EOF”</p>
 <blockquote>
-<p>linux操作系统之奥秘  </p>
+<p># Begin /etc/ld.so.conf</p>
+<p>/usr/local/lib</p>
+<p>/opt/lib</p>
+<p># End /etc/ld.so.conf</p>
 </blockquote>
+<p>EOF</p>
+<p>4、调整工具链</p>
+<p>mv -v /tools/bin/{ld,ld-old}</p>
+<p>mv -v /tools/$(gcc -dumpmachine)/bin/{ld,ld-old}</p>
+<p>mv -v /tools/bin/{ld-new,ld}</p>
+<p>ln -sv /tools/bin/ld /tools/$(gcc -dumpmachine)/bin/ld</p>
+<p>gcc -dumpspecs | sed \     -e ‘s@/tools/lib/ld-linux.so.2@/lib/ld-linux.so.2@g’ \     -e ‘/\*startfile_prefix_spec:/{n;s@.*@/usr/lib/ @}’ \     -e ‘/\*cpp:/{n;s@$@ -isystem /usr/include@}’ &gt; \     `dirname $(gcc –print-libgcc-file-name)`/specs</p>
+<p>测试：很重要</p>
+<p>echo ‘main(){}’ &gt; dummy.c</p>
+<p>cc dummy.c -v -Wl,–verbose &amp;&gt; dummy.log</p>
+<p>readelf -l a.out | grep ‘: /lib’</p>
 <blockquote>
-<p><a target="_blank" rel="noopener" href="http://zhumeng8337797.blog.163.com/blog/static/1007689142011828012299/">http://zhumeng8337797.blog.163.com/blog/static/1007689142011828012299/</a><br><a target="_blank" rel="noopener" href="http://blog.csdn.net/kendyhj9999/article/details/7293925">http://blog.csdn.net/kendyhj9999/article/details/7293925</a></p>
+<p>结果：[Requesting program interpreter: /lib/ld-linux.so.2]</p>
 </blockquote>
-<p>启动流程  </p>
+<p>grep -o ‘/usr/lib.*/crt[1in].*succeeded’ dummy.log</p>
 <blockquote>
-<p>1、开机后，BIOS读取CMOS的信息，然后BIOS里的自检程序对硬件进行自检，自检确定可启动的设备后，<br>      通过刚才从CMOS里获取的第一个启动设备的代号，去读第一个启动设备的MBR<br>2、MBR里面存有引导程序，引导程序里面记录了linux核心（vmlinuz）和initrd.img的存放地址，<br>      引导程序通过这个地址来加载linux核心<br>3、linux核心解压缩到内存中，并通过initrd.img来建立虚拟盘，虚拟盘加载驱动，并读取BIOS的硬件信息交给核心，<br>      linux核心检测所有硬件并从虚拟盘中加载驱动<br>4、linux核心加载完驱动后删除虚拟盘，并执行第一个程序/sbin/init<br>5、init：  </p>
-<blockquote>
-<p>程序：/sbin/init<br>配置：/etc/inittab  </p>
-<blockquote>
-<p>cat /etc/inittab | grep -v ^# | grep -v ^$<br>id:5:initdefault:                            #默认是按5来启动，initdefault:表示默认运行等级<br>si::sysinit:/etc/rc.d/rc.sysinit        #启动服务前先根据/etc/rc.d/rc.sysinit进行检测和设置<br>l0:0:wait:/etc/rc.d/rc 0                 #sysinit：表示系统初始化操作项目<br>l1:1:wait:/etc/rc.d/rc 1                 #wait：后面的接的项目必须执行完才能继续<br>l2:2:wait:/etc/rc.d/rc 2<br>l3:3:wait:/etc/rc.d/rc 3<br>l4:4:wait:/etc/rc.d/rc 4<br>l5:5:wait:/etc/rc.d/rc 5                                 #就是按这个启动相关的服务<br>l6:6:wait:/etc/rc.d/rc 6<br>ca::ctrlaltdel:/sbin/shutdown -t3 -r now       #按crtl+alt+del重启<br>pf::powerfail:/sbin/shutdown -f -h +2 “Power Failure; System Shutting Down”<br>#接UPS后的设置<br>pr:12345:powerokwait:/sbin/shutdown -c “Power Restored; Shutdown Cancelled”<br>#接UPS后的设置<br>1:2345:respawn:/sbin/mingetty tty1            #开启6个tty终端，respawn表示不能结束终端，<br>2:2345:respawn:/sbin/mingetty tty2            #结束后会自动开起来<br>3:2345:respawn:/sbin/mingetty tty3<br>4:2345:respawn:/sbin/mingetty tty4<br>5:2345:respawn:/sbin/mingetty tty5<br>6:2345:respawn:/sbin/mingetty tty6<br>x:5:once:/etc/X11/prefdm -nodaemon         #按5启动的话开启X11  </p>
+<p>结果：</p>
+<p>/usr/lib/crt1.o succeeded</p>
+<p>/usr/lib/crti.o succeeded</p>
+<p>/usr/lib/crtn.o succeeded</p>
 </blockquote>
-</blockquote>
-<p>5.1、/etc/rc.d/rc.sysinit                                                  #<a target="_blank" rel="noopener" href="http://www.byywee.com/page/M0/S611/611349.html">rc.sysinit详解</a></p>
+<p>grep -B1 ‘^ /usr/include’ dummy.log</p>
 <blockquote>
-<p>首先/etc下面也有很多rc目录，但都是链接文件，链接到/etc/rc.d目录里面  </p>
+<p>结果：</p>
+<p>#include &lt;…&gt; search starts here:</p>
+<p> /usr/include</p>
+</blockquote>
+<p>grep ‘SEARCH.*/usr/lib’ dummy.log |sed ‘s|; |\n|g’</p>
 <blockquote>
-<p>ls -l /etc | grep rc | awk ‘{print $9 $10 $11}’ | grep -v ^$<br>init.d-&gt;rc.d/init.d<br>rc-&gt;rc.d/rc<br>rc0.d-&gt;rc.d/rc0.d<br>rc1.d-&gt;rc.d/rc1.d<br>rc2.d-&gt;rc.d/rc2.d<br>rc3.d-&gt;rc.d/rc3.d<br>rc4.d-&gt;rc.d/rc4.d<br>rc5.d-&gt;rc.d/rc5.d<br>rc6.d-&gt;rc.d/rc6.d<br>rc.d<br>rc.local-&gt;rc.d/rc.local<br>rc.sysinit-&gt;rc.d/rc.sysinit<br>所以实质上，所有的rc配置文件都放在/etc/rc.d目录下  </p>
+<p>结果：</p>
+<p>SEARCH_DIR(“/tools/i686-pc-linux-gnu/lib”)</p>
+<p>SEARCH_DIR(“/usr/lib”)</p>
+<p>SEARCH_DIR(“/lib”);</p>
 </blockquote>
-<p>这个配置文件有600多行，服务相关配置文件全部存放在/etc/sysconfig里，任务有：  </p>
+<p>grep “/lib/libc.so.6 “ dummy.log</p>
 <blockquote>
-<p>设置网络<br>给HOSTNAME赋值<br>加载/proc<br>加载/usb驱动<br>加载/sys<br>运行/etc/init.d/functions    #<a target="_blank" rel="noopener" href="http://kangpeng.sinaapp.com/?p=24">functions文件详解</a><br>检测是否开启SElinux<br>屏幕默认字体设置<br>屏幕上输出：welcome to 什么什么<br>设置日志级别  </p>
+<p>结果：attempt to open /lib/libc.so.6 succeeded</p>
 </blockquote>
+<p>grep found dummy.log</p>
 <blockquote>
-<p>*给cmdline赋值<br>开始接口设备检测：  </p>
+<p>结果：found ld-linux.so.2 at /lib/ld-linux.so.2</p>
+</blockquote>
+<p>5、 Binutils-2.17 </p>
+<p>#Binutils 是一组开发工具，包括连接器、汇编器和其他用于目标文件和档案的工具。</p>
+<p>#安装位置/usr/bin下</p>
+<p>#包含的命令：as、ld</p>
+<p>expect -c “spawn ls”</p>
 <blockquote>
-<p>IDE<br>SCSI<br>network<br>sound<br>其他  </p>
+<p>结果：spawn ls</p>
 </blockquote>
-<p>加载用户自定义模块：/etc/sysconfig/modules/*.modules<br>加载模块：/etc/rc.modules，这个模块fedora4里面没找到<br>挂载/dev/pts<br>配置核心设置值/etc/sysctl.conf<br>设置系统时间<br>设置主机名<br>设置ACPI<br>确定是否进行fsck<br>设置RAID<br>设置LVM2<br>卸载initrd<br>进行quota转换<br>以读写方式挂载根目录：/<br>*清除selinux<br>清除/etc/mtab<br>挂载信息重新写入/etc/mtab  </p>
+<p>mkdir -v ../binutils-build</p>
+<p>cd ../binutils-build</p>
+<p>../binutils-2.17/configure –prefix=/usr \</p>
+<p>    –enable-shared</p>
+<p>make tooldir=/usr</p>
+<p>make tooldir=/usr install</p>
+<p>cp -v ../binutils-2.17/include/libiberty.h /usr/include</p>
+<p>6、GCC-4.1.2 </p>
+<p>#GCC 软件包包含 GNU 编译器，其中有 C 和 C++ 编译器。</p>
+<p>#安装位置/usr/bin</p>
+<p>#包含的命令如gcc、c++、g++等</p>
+<p>sed -i ‘s/install_to_$(INSTALL_DEST) //‘ libiberty/Makefile.in</p>
+<p>sed -i ‘s/^XCFLAGS =$/&amp; -fomit-frame-pointer/‘ gcc/Makefile.in</p>
+<p>sed -i ‘s@\./fixinc\.sh@-c true@’ gcc/Makefile.in</p>
+<p>sed -i ‘s/@have_mktemp_command@/yes/‘ gcc/gccbug.in</p>
+<p>mkdir -v ../gcc-build</p>
+<p>cd ../gcc-build</p>
+<p>../gcc-4.1.2/configure –prefix=/usr \</p>
+<p>    –libexecdir=/usr/lib –enable-shared \</p>
+<p>    –enable-threads=posix –enable-__cxa_atexit \</p>
+<p>    –enable-clocale=gnu –enable-languages=c,c++</p>
+<p>make</p>
+<p>make install</p>
+<p>ln -sv ../usr/bin/cpp /lib</p>
+<p>ln -sv gcc /usr/bin/cc</p>
+<p>测试</p>
+<p>echo ‘main(){}’ &gt; dummy.c</p>
+<p>cc dummy.c -v -Wl,–verbose &amp;&gt; dummy.log</p>
+<p>readelf -l a.out | grep ‘: /lib’</p>
 <blockquote>
-<p>/<br>/proc<br>/sys<br>/dev/pts<br>/proc/bus/usb  </p>
+<p>结果：</p>
+<p>[Requesting program interpreter: /lib/ld-linux.so.2]</p>
 </blockquote>
-<p>挂载所有其他文件系统，并开启quota<br>??<br>??<br>启动随机数<br>对系统进行重新设置<br>清除临时文件<br>将启动信息写入到/var/log/dmesg<br>告知已离开rc.sysinit  </p>
-</blockquote>
-</blockquote>
-<p>5.2、/etc/rc.d/rc5.d  </p>
+<p>grep -o ‘/usr/lib.*/crt[1in].*succeeded’ dummy.log</p>
 <blockquote>
+<p>结果：</p>
+<p>/usr/lib/gcc/i686-pc-linux-gnu/4.1.2/../../../crt1.o succeeded</p>
+<p>/usr/lib/gcc/i686-pc-linux-gnu/4.1.2/../../../crti.o succeeded</p>
+<p>/usr/lib/gcc/i686-pc-linux-gnu/4.1.2/../../../crtn.o succeeded</p>
+</blockquote>
+<p>grep -B1 ‘^ /usr/include’ dummy.log</p>
 <blockquote>
-<p>该目录下的文件全部都是链接文件，全部链接到/etc/init.d下面，而/etc/init.d是链接到/etc/rc.d/init.d的<br>所以，该目录下所有文件都是链接到/etc/rc.d/init.d。该目录就是启动相关服务的作用。<br>/etc/init.d里面是脚本，而/etc/sysconfig/里面是这些脚本的设置文件<br><a target="_blank" rel="noopener" href="http://www.cnblogs.com/hbycool/articles/2207103.html">#服务详解</a><br>S：表示开机时启动，数字表示启动顺序  </p>
+<p>结果：</p>
+<p>#include &lt;…&gt; search starts here:</p>
+<p> /usr/local/include</p>
+<p> /usr/lib/gcc/i686-pc-linux-gnu/4.1.2/include</p>
+<p> /usr/include</p>
+</blockquote>
+<p>grep ‘SEARCH.*/usr/lib’ dummy.log |sed ‘s|; |\n|g’</p>
 <blockquote>
-<p>ls | sort<br>S03vmware-tools<br>S05kudzu               #硬件检测，硬件不经常更新建议关闭<br>S06cpuspeed        #动态调节cpu速度来节能<br>S08iptables<br>S09isdn                 #isdn用户用的<br>S09pcmcia            #支持笔记本接口<br>S10network<br>S12syslog<br>S13portmap<br>S14nfslock<br>S15mdmonitor        #监测RAID和lvm的信息<br>S18auditd               #kernel的审计<br>S18rpcidmapd        #用于nfs<br>S19rpcgssd            #用于nfs<br>S25bluetooth<br>S25netfs<br>S26apmd<br>S28autofs<br>S30nscd                 #为nis、ldap提供更快的验证<br>S33nifd<br>S34mDNSResponder<br>S44acpid<br>S55cups<br>S55sshd<br>S80sendmail<br>S85gpm                  #支持鼠标<br>S87iiim                    #中文输入法<br>S90crond<br>S90xfs<br>S95anacron<br>S95atd<br>S97messagebus       #IPC进程间通信<br>S97rhnsd                  #通知官方的安全信息以及为系统打补丁<br>S98cups-config-daemon<br>S98haldaemon<br>S99local                    #用户自定义开机启动的程序  </p>
+<p>结果：</p>
+<p>SEARCH_DIR(“/usr/i686-pc-linux-gnu/lib”)</p>
+<p>SEARCH_DIR(“/usr/local/lib”)</p>
+<p>SEARCH_DIR(“/lib”)</p>
+<p>SEARCH_DIR(“/usr/lib”);</p>
 </blockquote>
-<p>K表示关机时关闭的服务  </p>
+<p>grep “/lib/libc.so.6 “ dummy.log</p>
 <blockquote>
-<p>K01yum<br>K02NetworkManager<br>K02NetworkManagerDispatcher<br>K05saslauthd                     #sasl认证<br>K10psacct                          #监测进程<br>K20nfs<br>K24irda<br>K30spamassassin<br>K35vncserver<br>K35winbind<br>K50netdump<br>K69rpcsvcgssd<br>K73ypbind<br>K74ntpd<br>K85mdmpd<br>K89named<br>K89netplugd                       #检测网络接口<br>K89rdisc<br>K94diskdump  </p>
+<p>结果：attempt to open /lib/libc.so.6 succeeded</p>
 </blockquote>
-</blockquote>
+<p>grep found dummy.log</p>
 <blockquote>
-<p>另外应该还会启动xinetd  </p>
-<blockquote>
-<p>里面包含验证等服务：  </p>
-<blockquote>
-<p>cvs<br>eklogin<br>gssftp<br>klogin<br>krb5-telnet<br>kshell<br>rsync  </p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>5.3、/etc/X11/prefdm            #<a target="_blank" rel="noopener" href="http://www.jcwcn.com/article-20906-1.html">详解</a></p>
-<blockquote>
-<p>设置是否自动登录<br>选择界面  </p>
-</blockquote>
-<p>6、开启/bin/login  </p>
-<p>7、登录后由shell控制主机</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3510056611/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/3510056611/" class="post-title-link" itemprop="url">鸟哥基础第十七章</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2012-09-27 11:23:00" itemprop="dateCreated datePublished" datetime="2012-09-27T11:23:00+08:00">2012-09-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>963</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>系统本身的服务，由ps、top等查看、管理；提供外部的网络服务，由netstat等查看、管理。<br>二十一章是网络服务，而下面的都是系统服务。  </p>
-<p>PID：  </p>
-<blockquote>
-<p>pid是根据用户的相关uid\gid计算出来的，用户的权限就是pid决定的<br>ppid：父进程  </p>
-</blockquote>
-<p>作业管理：  </p>
-<blockquote>
-<p>jobs：          查看后台作业数<br>&amp;：              将任务放到后台执行<br>fg 作业号 ： 将任务从后台拿到前台来执行<br>ctrl+z：        将任务放到后台暂停<br>bg 作业号： 将后台暂停的作业执行起来  </p>
-</blockquote>
-<blockquote>
-<p>kill 删除作业  </p>
-<blockquote>
-<p>kill -1 作业号：重启作业<br>kill -9 作业号 ：强制删除<br>kill -15 作业号：正常终止  </p>
-</blockquote>
-</blockquote>
-<p>进程管理  </p>
-<blockquote>
-<p>查看：ps 、top 、pstree  </p>
-<blockquote>
-<p>ps -l：查看pid详细信息  </p>
-<p><img src="http://img5.ph.126.net/rrKT1xL6p3Ho7EDM9aDaBA==/1591178043362340965.jpg" alt="鸟哥基础第十七章 - leaf - ------坚持雅操------" title="鸟哥基础第十七章 - leaf - ------坚持雅操------"></p>
-<blockquote>
-<p>S是状态：R：run 正在运行  S：sleep 睡眠状态<br>ADDR：    -：表示正在运行<br>WCHAN： -：表示正在运行  </p>
-</blockquote>
-<p>top -d 2 -p 4121  </p>
-<p><img src="http://img2.ph.126.net/pCEoPAZcCc3t6Zsa5DByDg==/2655153455329455852.jpg" alt="鸟哥基础第十七章 - leaf - ------坚持雅操------" title="鸟哥基础第十七章 - leaf - ------坚持雅操------"></p>
-<blockquote>
-<p>最上面是总的信息，最下面一行是跟踪的进程  </p>
-</blockquote>
-<blockquote>
-<p>top -d   表示多少时间更新一次<br>top -p   专门查看某个进程<br>top -n   设置更新几次<br>top -b   就是把top的内容输出，保存到文件  </p>
-</blockquote>
-<p>pstree -Aup  </p>
-<blockquote>
-<p>列出当前进程树，并显示PID和所属的账户  </p>
-</blockquote>
-</blockquote>
-<p>删除：kill    </p>
-<blockquote>
-<p>同作业管理  </p>
-</blockquote>
-<p>执行顺序：nice、renice  </p>
-<blockquote>
-<p>调整优先级用  </p>
-<blockquote>
-<p>优先级是个不断变化的值：最新优先级=原优先级+nice值<br>root可用范围：负20~正19  </p>
-</blockquote>
-</blockquote>
-<p>进程-文件相互查找：fuser、lsof、pidof  </p>
-<blockquote>
-<p>fuser 通过目录查正在使用该目录的进程号  </p>
-<blockquote>
-<p>fuser -k ：删除进程号  </p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>lsof：通过进程找出在用的文件  </p>
-<blockquote>
-<p>lsof -u ：查找某个用户名所打开的文件<br>lsof +d ：查处某个目录下所有打开的文件  </p>
-</blockquote>
-<p>pidof：通过进程找出pid  </p>
-</blockquote>
-</blockquote>
-<p>系统资源观察  </p>
-<blockquote>
-<p>free、uname、uptime、dmesg、sar、netstat、/proc/  </p>
-</blockquote>
-<blockquote>
-<p>uname ：查看系统核心等信息  </p>
-<blockquote>
-<p>-a：linux版本、CPU类型等信息<br>-r：linux  </p>
-</blockquote>
-<p>dmesg：查看开机启动的信息  </p>
-<p>sar：主要是查看cpu的状态  </p>
-<p>netstat：网络状况  </p>
-<blockquote>
-<p>netstat -a 所有tcp/udp连接状况、套接字状况等<br>netstat -t tcp<br>netstat -u udp<br>netstat -p 列出pid号<br>netstat -n 已端口号来显示<br>netstat -l  列出正在监听的服务  </p>
-<p>netstat -tulnp 查看tcp/udp的连接信息  </p>
-</blockquote>
-<blockquote>
-</blockquote>
-<p>/proc目录：前面查看系统信息多是在这个目录里面取出来的。</p>
+<p>结果：found ld-linux.so.2 at /lib/ld-linux.so.2</p>
 </blockquote>
 
       
@@ -1126,7 +1792,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/53952828/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3518050721/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1142,7 +1808,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/53952828/" class="post-title-link" itemprop="url">鸟哥基础第十六章</a>
+            <a href="/posts/3518050721/" class="post-title-link" itemprop="url">LFS制作-4、目标系统-1chroot和建相关文件</a>
         </h2>
 
         <div class="post-meta">
@@ -1152,14 +1818,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2012-09-25 10:12:00" itemprop="dateCreated datePublished" datetime="2012-09-25T10:12:00+08:00">2012-09-25</time>
+              <time title="创建时间：2012-10-25 13:30:00" itemprop="dateCreated datePublished" datetime="2012-10-25T13:30:00+08:00">2012-10-25</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1171,7 +1837,7 @@
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
+                  <a href="/categories/Linux/lfs/" itemprop="url" rel="index"><span itemprop="name">lfs</span></a>
                 </span>
             </span>
 
@@ -1181,14 +1847,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
+              <span>1.7k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
+              <span>6 分钟</span>
             </span>
 
         </div>
@@ -1198,75 +1864,80 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>at  </p>
+          <p>挂载相关系统</p>
+<p>#export LFS=/mnt/lfs</p>
+<p>#mkdir -pv $LFS</p>
+<p>#mount -v -t ext3 /dev/hda1 $LFS<br>#ln -sv $LFS/tools /  </p>
+<p>mkdir -pv $LFS/{dev,proc,sys}</p>
+<p>mknod -m 600 $LFS/dev/console c 5 1</p>
+<p>mknod -m 666 $LFS/dev/null c 1 3</p>
+<p>mount -v –bind /dev $LFS/dev</p>
+<p>mount -vt devpts devpts $LFS/dev/pts</p>
+<p>mount -vt tmpfs shm $LFS/dev/shm</p>
+<p>mount -vt proc proc $LFS/proc</p>
+<p>mount -vt sysfs sysfs $LFS/sys</p>
+<p>chroot “$LFS” /tools/bin/env -i \</p>
+<p>    HOME=/root TERM=”$TERM” PS1=’\u:\w\$ ‘ \</p>
+<p>    PATH=/bin:/usr/bin:/sbin:/usr/sbin:/tools/bin \</p>
+<p>    /tools/bin/bash –login +h</p>
+<p>-————————————————————————————</p>
+<p>1、建标准的目录树</p>
+<p>mkdir -pv /{bin,boot,etc/opt,home,lib,mnt,opt}</p>
+<p>mkdir -pv /{media/{floppy,cdrom},sbin,srv,var}</p>
+<p>install -dv -m 0750 /root</p>
+<p>install -dv -m 1777 /tmp /var/tmp</p>
+<p>mkdir -pv /usr/{,local/}{bin,include,lib,sbin,src}</p>
+<p>mkdir -pv /usr/{,local/}share/{doc,info,locale,man}</p>
+<p>mkdir -v  /usr/{,local/}share/{misc,terminfo,zoneinfo}</p>
+<p>mkdir -pv /usr/{,local/}share/man/man{1..8}</p>
+<p>for dir in /usr /usr/local; do</p>
+<p>  ln -sv share/{man,doc,info} $dir</p>
+<p>done</p>
+<p>mkdir -v /var/{lock,log,mail,run,spool}</p>
+<p>mkdir -pv /var/{opt,cache,lib/{misc,locate},local}</p>
+<p>2、建必要的符号连接</p>
+<p>ln -sv /tools/bin/{bash,cat,echo,grep,pwd,stty} /bin</p>
+<p>ln -sv /tools/bin/perl /usr/bin</p>
+<p>ln -sv /tools/lib/libgcc_s.so{,.1} /usr/lib</p>
+<p>ln -sv /tools/lib/libstdc++.so{,.6} /usr/lib</p>
+<p>ln -sv bash /bin/sh</p>
 <blockquote>
-<p>命令：               /usr/bin/at  </p>
+<p>#安装软件包的时候相应的连接会被替代掉</p>
 </blockquote>
-<blockquote>
-<p>服务atd：          /etc/init.d/atd<br>使用限制：        /etc/at.deny          /etc/at.allow是不存在的可以新建一个，<br>任务存放目录： /var/spool/at         ug都是daemon，是由守护进程inet负责处理的<br>相关命令：  </p>
-<blockquote>
-<p>at  </p>
-<blockquote>
-<p>at 9:10  </p>
-<blockquote>
-<p>/bin/sync  </p>
-</blockquote>
-<blockquote>
-<p>ctrl+d  </p>
-</blockquote>
-<p>#这个命令，如果时间已经过了，则下一天再运行  </p>
-<p>at 9:10 2012-09-25  </p>
-<blockquote>
-<p>/bin/sync<br>ctrl+d  </p>
-</blockquote>
-<p>#这个命令，强制在这个时间执行，如果设置的时间已经过了，则任务就没了<br>如现在9：30，如果设置9：00的话，用atq是找不到这个任务的  </p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>atq                              查看有多少任务<br>atrm 任务号                删除任务  </p>
-</blockquote>
-</blockquote>
-<p>crontab  </p>
-<blockquote>
-<p>命令：                /usr/bin/crontab  </p>
-</blockquote>
-<blockquote>
-<p>服务crond：      /etc/init.d/crond<br>使用限制：        /etc/cron.deny<br>任务存放目录： /var/spool/cron/             用户的任务  </p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>/etc/crontab                  系统的任务，由于不止一个，所以把任务放在目录里，直接执行目录<br>/etc/cron.daily<br>/etc/cron.hourly<br>/etc/cron.monthly<br>/etc/cron.weekly  </p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>任务执行记录： /var/log/cron 下<br>crontab格式：  </p>
-<blockquote>
-<p>[root@localhost cron]# cat /etc/crontab<br>SHELL=/bin/bash<br>PATH=/sbin:/bin:/usr/sbin:/usr/bin<br>MAILTO=root<br>HOME=/  </p>
-<p># run-parts<br>01 * * * * root run-parts /etc/cron.hourly<br>02 4 * * * root run-parts /etc/cron.daily<br>22 4 * * 0 root run-parts /etc/cron.weekly<br>42 4 1 * * root run-parts /etc/cron.monthly<br>#分 时 日 月 周<br>#run-parts：执行目录下所有脚本的意思  </p>
-</blockquote>
-<p>相关命令  </p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>crontab -e   编辑命令，一个命令一行(增删多可以)<br>crontab -l    查看命令<br>crontab -r   删除所有任务 就相当于把/var/spool/cron/账户 这个文件删除  </p>
-</blockquote>
-<p>补充：20130923  </p>
-<blockquote>
-<p>用户的cron配置：保存在/var/spool/cron<br>系统的cron配置：保存在/etc/crontab<br>run-parts：后接文件或文件夹  </p>
-</blockquote>
-<blockquote>
-</blockquote>
-<p>列子：<br>touch ~/test.sh<br>chmod 755 test.sh<br>vi test.sh  </p>
-<blockquote>
-<p>#!/bin/bash<br>/bin/touch  ~/`date +%Y%m%d%H%M`  </p>
-</blockquote>
-<p>crontab -e  </p>
-<blockquote>
-<p>*/1 * * * *  /home/leaf/test.sh  </p>
-</blockquote>
-<p>sudo /etc/init.d/crond restart<br>效果：  </p>
-<p><img src="http://img7.ph.126.net/kn8-SzwWOoq-4tQffpOqNA==/6597419411354177057.jpg" alt="鸟哥基础第十六章 - leaf - ------坚持雅操------" title="鸟哥基础第十六章 - leaf - ------坚持雅操------"></p>
-</blockquote>
+<p>3、建/etc/mtab  </p>
+<p>touch /etc/mtab</p>
+<p>4、建/etc/passwd</p>
+<p>cat &gt; /etc/passwd &lt;&lt; “EOF”</p>
+<p>root:x:0:0:root:/root:/bin/bash</p>
+<p>nobody:x:99:99:Unprivileged User:/dev/null:/bin/false</p>
+<p>EOF</p>
+<p>5、建/etc/group</p>
+<p>cat &gt; /etc/group &lt;&lt; “EOF”</p>
+<p>root:x:0:</p>
+<p>bin:x:1:</p>
+<p>sys:x:2:</p>
+<p>kmem:x:3:</p>
+<p>tty:x:4:</p>
+<p>tape:x:5:</p>
+<p>daemon:x:6:</p>
+<p>floppy:x:7:</p>
+<p>disk:x:8:</p>
+<p>lp:x:9:</p>
+<p>dialout:x:10:</p>
+<p>audio:x:11:</p>
+<p>video:x:12:</p>
+<p>utmp:x:13:</p>
+<p>usb:x:14:</p>
+<p>cdrom:x:15:</p>
+<p>mail:x:34:</p>
+<p>nogroup:x:99:</p>
+<p>EOF</p>
+<p>6、从新用bash登录，这样就有名字了</p>
+<p>exec /tools/bin/bash –login +h</p>
+<p>7、建日志文件</p>
+<p>touch /var/run/utmp /var/log/{btmp,lastlog,wtmp}</p>
+<p>chgrp -v utmp /var/run/utmp /var/log/lastlog</p>
+<p>chmod -v 664 /var/run/utmp /var/log/lastlog</p>
 
       
     </div>
@@ -1286,7 +1957,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1715014373/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1902492967/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1302,7 +1973,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/1715014373/" class="post-title-link" itemprop="url">鸟哥基础第十五章</a>
+            <a href="/posts/1902492967/" class="post-title-link" itemprop="url">LFS制作-3、临时系统-2必需软件</a>
         </h2>
 
         <div class="post-meta">
@@ -1312,14 +1983,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2012-09-24 16:17:00" itemprop="dateCreated datePublished" datetime="2012-09-24T16:17:00+08:00">2012-09-24</time>
+              <time title="创建时间：2012-10-25 12:35:00" itemprop="dateCreated datePublished" datetime="2012-10-25T12:35:00+08:00">2012-10-25</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1331,7 +2002,7 @@
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
+                  <a href="/categories/Linux/lfs/" itemprop="url" rel="index"><span itemprop="name">lfs</span></a>
                 </span>
             </span>
 
@@ -1341,14 +2012,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>980</span>
+              <span>1.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
+              <span>7 分钟</span>
             </span>
 
         </div>
@@ -1358,868 +2029,77 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>首先是分区  </p>
-<blockquote>
-<p>su<br>fdisk -l             查看当前所有分区  </p>
-<p><img src="http://img3.ph.126.net/QAqxCcW2i4IQYZqSoYDRiQ==/206884107899483713.jpg" alt="鸟哥基础第十五章 - leaf - ------坚持雅操------" title="鸟哥基础第十五章 - leaf - ------坚持雅操------"></p>
-<blockquote>
-<p> 由于原先没分扩展分区，所以成1、2、3了  </p>
-</blockquote>
-<p>fdisk /dev/sda<br>m     查看分区命令<br>p      和fdisk -l相同<br>n      新建分区  </p>
-<blockquote>
-<p>提示建主分区还是扩展分区，我选e，扩展分区，并选了全部剩余容量  </p>
-</blockquote>
-<p>n      再新建分区，选了全部剩余容量<br>p      再查看的时候就有新分区了  </p>
-<blockquote>
-<p><img src="http://img8.ph.126.net/meamGjfknSjsQ3s8mh8nmA==/1553178921507229398.jpg" alt="鸟哥基础第十五章 - leaf - ------坚持雅操------" title="鸟哥基础第十五章 - leaf - ------坚持雅操------"></p>
-</blockquote>
-<p> w      保存  </p>
-</blockquote>
-<p>格式化分区  </p>
-<blockquote>
-<p>mkfs.ext3 -L “quota” /dev/sda5  </p>
-</blockquote>
-<p>挂载和开机自动挂载  </p>
-<blockquote>
-<p>mkdir -m 777 /media/disk  </p>
-</blockquote>
-<blockquote>
-<p>mount -t ext3 /dev/sda5 /media/disk  </p>
-</blockquote>
-<blockquote>
-<p>cat /etc/mtab能看到记录了：/dev/sda5 /media/disk ext3 rw 0 0  </p>
-<p>自动挂载就是把这个记录写在/etc/fstab里面<br>LABEL=/quota            /media/disk             ext3    defaults,usrquota,grpquota 1 2  </p>
-<p>然后用remount -a测试一下，以防止写错。  </p>
-<blockquote>
-<p>如果没测试就重启，万一写错的话就会进入单用户模式，用以下命令重新加载了再修改  </p>
-</blockquote>
-<blockquote>
-<p>mount -n -o remount,rw /  </p>
-</blockquote>
-<p>重启后可用  </p>
-<p><img src="http://img8.ph.126.net/R_vXbDifxixP63I_wFGquQ==/6597137936378477398.jpg" alt="鸟哥基础第十五章 - leaf - ------坚持雅操------" title="鸟哥基础第十五章 - leaf - ------坚持雅操------"></p>
-<p> </p>
-</blockquote>
-<p>配额相关操作  </p>
-<blockquote>
-<p>quotacheck -avug   扫描后会建2个文件：aquota.group  aquota.user  </p>
-<blockquote>
-<p>针对分区进行磁盘配额情况的扫描  </p>
-</blockquote>
-<blockquote>
-<p>-a 扫描有配额参数的文件系统<br>-u 针对用户扫描的情况，建aquota.usr<br>-g 针对用户组扫描的情况，建aquota.group<br>-v  查看<br>-m 强制扫描  </p>
-<p><img src="http://img0.ph.126.net/xvsG5iSxAi7BZR5TwqoaBQ==/6597339147006348650.jpg" alt="鸟哥基础第十五章 - leaf - ------坚持雅操------" title="鸟哥基础第十五章 - leaf - ------坚持雅操------"></p>
-<p>   </p>
-</blockquote>
-<p>quotaon -avug  </p>
-<blockquote>
-<p>启动配额，关闭是quotaoff -a  </p>
-<p><img src="http://img9.ph.126.net/ZW_HFnNNZsLbAhfqPZTkGw==/1347139238555032639.jpg" alt="鸟哥基础第十五章 - leaf - ------坚持雅操------" title="鸟哥基础第十五章 - leaf - ------坚持雅操------"></p>
-<p>   </p>
-</blockquote>
-<p>建账户  </p>
-<blockquote>
-<p>groupadd qgroup<br>useradd -m -g qgroup quser1<br>useradd -m -g qgroup quser2<br>passwd quser1<br>passwd quser2  </p>
-</blockquote>
-<p>设置用户配额  </p>
-<blockquote>
-<p>edquota -u quser1                     是用vi操作的，设置配额<br>edquota -p quser1 quser2         -p：copy   复制权限的意思<br>edquota -t                                  设置宽限时间<br>edquota -g qgroup                      设置用户组配额  </p>
-</blockquote>
-<p>查看配额情况  </p>
-<blockquote>
-<p>quota -vu  quser1 quser2<br>quota -vg  qgroup<br>repquota -av<br>quota 和 repquota 都是查看命令，效果差不多  </p>
-</blockquote>
-<blockquote>
-</blockquote>
-<p>自动启动设置  </p>
-<blockquote>
-<p>配额在开机时会随系统启动，所以不用设置<br>但是如何设置可以看一下：  </p>
-<blockquote>
-<p>vi /etc/rc.d/rc.local<br>/sbin/quotaon -avug  </p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>效果  </p>
-<blockquote>
-<p>80M-100M之间  </p>
-<blockquote>
-<p><img src="http://img1.ph.126.net/5iojTtFke-RqVqK9pVq9ig==/6597175319773821701.jpg" alt="鸟哥基础第十五章 - leaf - ------坚持雅操------" title="鸟哥基础第十五章 - leaf - ------坚持雅操------">  </p>
-</blockquote>
-<p>超出100M  </p>
-<blockquote>
-<p><img src="http://img6.ph.126.net/a7tx7xN4Kgvgg--UnkC5cw==/2630102182402203346.jpg" alt="鸟哥基础第十五章 - leaf - ------坚持雅操------" title="鸟哥基础第十五章 - leaf - ------坚持雅操------"></p>
-</blockquote>
-<p>   </p>
-</blockquote>
-<blockquote>
-<blockquote>
-</blockquote>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/161992610/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/161992610/" class="post-title-link" itemprop="url">鸟哥基础第十四章</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2012-09-21 15:41:00" itemprop="dateCreated datePublished" datetime="2012-09-21T15:41:00+08:00">2012-09-21</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.5k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>9 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>账户的配置文件  </p>
-<blockquote>
-<p>/etc/passwd  </p>
-<blockquote>
-<p>cat /etc/passwd | grep ^root  </p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>root:        x:           0:       0:         root:             /root:            /bin/bash<br>用户名    已加密   UID     GID     账户介绍      账户家目录    该账户用的shell  </p>
-<blockquote>
-<p>x：表示已加密，并且存放在/etc/shadow里面<br>UID、GID的ID号设置：/etc/login.defs<br>/root：是否建家目录：/etc/login.defs  </p>
-<blockquote>
-<p>  家目录所在位置：/etc/default/useradd   对root无效  </p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>/etc/shadow  </p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>cat /etc/shadow | grep ^root<br>root:$1$tl3LqaXl$7CJiLfD9fbWtPjDluR1TT0:15594:0:99999:7:7:16594:  </p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>root:      $1……T0:    15594:            0:            99999:                   7:                            7:                 16594:                       空<br>用户名      密码       最后一次     密码不可     密码必须要      密码到期警告           密码的失效时间     账户的失效日期         保留字段<br> 更改密码      更改的天     更改的天数     时间,到期前7天        到期后再过7天      这个是账户的失效<br> 的时间           数                                       提示                         才失效                  时间  </p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>密码的相关限制：/etc/login.defs  </p>
-</blockquote>
-<p>/etc/group  </p>
-<blockquote>
-<p>cat /etc/group | grep ^root</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>root:x:0:root  </p>
-</blockquote>
-<blockquote>
-<p>第4个字段的root表示，那个用户属于root用户组<br>第4个字段可以添加多个账户，但是只享受用户组的权限而不是用户的权限  root,test<br>查看、更改、离开有效用户组的方法  </p>
-<blockquote>
-<p>查看：groups<br>更改：newgrp  test<br>离开有效用户组：exit  </p>
-</blockquote>
-<p>切换用户组的条件：  </p>
-<blockquote>
-<p>用户组必须有密码<br>root必须在这个用户组里面  </p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>/etc/default/useradd  </p>
-<blockquote>
-<p># useradd defaults file<br>GROUP=100                    #默认的用户组<br>HOME=/home                   #家目录默认存放位置<br>INACTIVE=-1                    #密码失效时间<br>EXPIRE=                           #账户的失效时间<br>SHELL=/bin/bash              #默认的shell<br>SKEL=/etc/skel                 #给新账户预先设置的内容  </p>
-</blockquote>
-<p>/etc/login.defs  </p>
-<blockquote>
-<p>cat /etc/login.defs | grep -v ^# | grep -v ^$<br>MAIL_DIR        /var/spool/mail              #邮箱默认存放路径<br>PASS_MAX_DAYS   99999                       #密码必须更改的天数<br>PASS_MIN_DAYS   0                                #密码不可更改的天数<br>PASS_MIN_LEN    5                                 #密码最小长度<br>PASS_WARN_AGE   7                               #密码快到期之前7天警告<br>UID_MIN                   500<br>UID_MAX                 60000<br>GID_MIN                   500<br>GID_MAX                 60000<br>CREATE_HOME     yes                             #默认建家目录  </p>
-</blockquote>
-<p>/etc/skel/*  </p>
-<blockquote>
-<p>skel是目录，目录下放的所有文件，都会放到新用户的家目录里面  </p>
-</blockquote>
-<p>其他  </p>
-<blockquote>
-<p>/var/log/messages：所有操作记录<br>/var/log/secure：      权限的操作记录</p>
-</blockquote>
-</blockquote>
-<p>账户操作的相关命令  </p>
-<blockquote>
-<p>useradd：  </p>
-<blockquote>
-<p>useradd -m name     建账户时建家目录<br>useradd -M name     建账户时不建家目录<br>useradd -d /tmp/home/name  name     建账户时指定家目录  </p>
-</blockquote>
-<p>usermod:  </p>
-<blockquote>
-<p>usermod -L name     冻结账户<br>usermod -U name     解锁账户<br>usermod -d /tmp/home/name -m name    新建家目录  </p>
-</blockquote>
-<p>passwd：  </p>
-<blockquote>
-<p>passwd -l name         冻结账户<br>passwd -u name        解锁账户<br>passwd -  </p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>userdel：  </p>
-<blockquote>
-<p>userdel -r name     账户连同该账户的家目录一起删除  </p>
-</blockquote>
-<p>pwck:  </p>
-<blockquote>
-<p>检查/etc/passwd /etc/shadow有没有语法错误  </p>
-</blockquote>
-<p>chpasswd：  </p>
-<blockquote>
-<p>echo “name:password” | chpasswd -m <br>以前面的格式读入，并以md5码加密明文密码，并存入/etc/shadow中  </p>
-</blockquote>
-<p>chage：  </p>
-<blockquote>
-<p>修改账户密码的时效  </p>
-</blockquote>
-<p>groupadd、groupmod、 groupdel、gpasswd、groups、newgrp<br>id：  </p>
-<blockquote>
-<p>id name ：查看uid、gid等信息  </p>
-</blockquote>
-<p>su、sudo：  </p>
-<blockquote>
-<p>su：要输入root密码<br>sudo：输入本账户密码即可  </p>
-</blockquote>
-<blockquote>
-<p>在/etc/group里面加入账户，这个账户只有相关用户组的权限<br>而在/etc/sudoers里面加入账户后，能获取相应的权限，如能运行/sbin里面的命令等  </p>
-</blockquote>
-<p>/etc/sudoers  </p>
-<blockquote>
-<p># User privilege specification<br>root    ALL=(ALL) ALL              #拥有所有的权限  </p>
-<p># Uncomment to allow people in group wheel to run all commands<br># %wheel        ALL=(ALL)       ALL      #用户组拥有所有的权限   </p>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>#%wheel 表示用户组  </p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<p># Same thing without a password<br># %wheel        ALL=(ALL)       NOPASSWD: ALL    #不用输入密码直接拥有所有的权限<br># Samples<br># %users  ALL=/sbin/mount /cdrom,/sbin/umount /cdrom<br># %users  localhost=/sbin/shutdown -h now  </p>
-</blockquote>
-<p>用户对话等命令  </p>
-<blockquote>
-<p>mesg、wall、talk、wrtie、mail  </p>
-</blockquote>
-</blockquote>
-<p>pam模块  </p>
-<blockquote>
-<p>pam模块都存放在/lib/security目录中  </p>
-<p><img src="http://img2.ph.126.net/KMpQogP6ns8pGlA0Z_aLfg==/6597866912586278182.jpg" alt="鸟哥基础第十四章 - leaf - ------坚持雅操------" title="鸟哥基础第十四章 - leaf - ------坚持雅操------"></p>
-<p> <br>pam配置都存放在/etc/pam.d目录中  </p>
-<p><img src="http://img1.ph.126.net/G9UPNWgFFCB0Ocxg1jxwEA==/6597841623818838691.jpg" alt="鸟哥基础第十四章 - leaf - ------坚持雅操------" title="鸟哥基础第十四章 - leaf - ------坚持雅操------"></p>
-<p> <br>pam模块的相关说明都存放在/usr/share/doc/pam*的五个目录中  </p>
-</blockquote>
-<blockquote>
-<p><img src="http://img7.ph.126.net/k5rxzcfeVhNZK7sjsSCdtQ==/6597180817331929947.jpg" alt="鸟哥基础第十四章 - leaf - ------坚持雅操------" title="鸟哥基础第十四章 - leaf - ------坚持雅操------"></p>
-<p> <br>pam的验证类别和验证步骤过后的操作  </p>
-<blockquote>
-<p>验证类别：  </p>
-<blockquote>
-<p>auth：          用于用户密码验证<br>account：    用于用户使用权限的验证<br>session：    主要是记录相关操作  </p>
-</blockquote>
-<blockquote>
-<p>password：主要是提供修改密码的验证  </p>
-</blockquote>
-<p>验证后的操作：  </p>
-<blockquote>
-<p>required：验证成不成功，后面的模块照样运行<br>requisite：验证不成功，   后面的模块就不再运行<br>sufficient：验证成功，      后面的模块就不再运行<br>optional：主要是记录信息用  </p>
-</blockquote>
-<p>/etc/pam.d/login的配置  </p>
-<blockquote>
-<p><img src="http://img3.ph.126.net/THMhANCWhqdyBpWKdG6SPQ==/6597925186702550563.jpg" alt="鸟哥基础第十四章 - leaf - ------坚持雅操------" title="鸟哥基础第十四章 - leaf - ------坚持雅操------"></p>
-</blockquote>
-<blockquote>
-<p> <br>pam_securetty.so：用于预防不安全的登录  </p>
-<blockquote>
-<p>该模块会读取：/etc/securetty   </p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>里面设置的终端都是安全的，不在里面的都算不安全的<br>里面设置的终端能用root登录，里面没有的终端则不能用root登录  </p>
-</blockquote>
-</blockquote>
-<p>pam_nologin.so：也是控制用户的登录，但对root没有效果  </p>
-<p>其他pam相关的设置文件放在/etc/security/目录下</p>
-</blockquote>
-</blockquote>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3196769991/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/3196769991/" class="post-title-link" itemprop="url">鸟哥基础第十三章</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2012-09-20 10:34:00" itemprop="dateCreated datePublished" datetime="2012-09-20T10:34:00+08:00">2012-09-20</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>961</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>shell脚本对于系统管理非常重要，不会写也至少要能读懂  </p>
-<p>脚本开头有个特殊的注释：#!  这个是标注脚本所要用的解释器。  </p>
-<blockquote>
-<p>如#!/bin/bash    #!一定要合用。  </p>
-</blockquote>
-<p>test、[ ]  </p>
-<blockquote>
-<p>test的参数非常重要，不然就看不懂脚本<br>0表示成立，非0表示不成立<br>类型检测  </p>
-<blockquote>
-<p>-e：文件名是否存在，exist<br>-f：是否为文件,file<br>-d：目录<br>-b、-c、-s、-p、-L  </p>
-</blockquote>
-<p>权限  </p>
-<blockquote>
-<p>-r、-w、-x<br>-u、-g、-k  suid 、sgid、sbit (就是特殊权限)<br>-s：是否为空白文件  </p>
-</blockquote>
-<p>比较  </p>
-<blockquote>
-<p>-nt：newer than<br>-ot：older than<br>-et：equal than  </p>
-</blockquote>
-<p>数值判断  </p>
-<blockquote>
-<p>-eq： equal<br>-ne： not equal<br>-gt：  greater than<br>-lt：   less than<br>-ge： greater than or equal<br>-le：  less than or equal  </p>
-</blockquote>
-<p>字符串判断  </p>
-<blockquote>
-<p>-z：是否为空字符串<br>-n：是否为非空字符串<br>=<br>!=  </p>
-</blockquote>
-<p>多条件判断  </p>
-<blockquote>
-<p>-a：and 2个或多个条件一起满足<br>-o：or    满足一个即可<br>！  </p>
-</blockquote>
-</blockquote>
-<p>shell脚本的默认变量和函数的默认变量  </p>
-<blockquote>
-<p>shell  </p>
-<blockquote>
-<p>   sh shell.sh                opt1     opt2     opt3<br>           $0                       $1       $2         $3  </p>
-</blockquote>
-<p>function  </p>
-<blockquote>
-<p>function printit(){…}<br>printit    1<br>  $0       $1  </p>
-</blockquote>
-<p>shell的$1是脚本后面跟的参数，而函数的$1是函数后面的参数，两者不一致  </p>
-</blockquote>
-<p>判断、循环语句，[]主要用在if里面  </p>
-<blockquote>
-<p>if […]; then  </p>
-<blockquote>
-<p>…  </p>
-</blockquote>
-<p>elif […];then  </p>
-<blockquote>
-<p>….  </p>
-</blockquote>
-<p>else  </p>
-<blockquote>
-<p>….  </p>
-</blockquote>
-<p>fi<br>-—————————————————–  </p>
-</blockquote>
-<blockquote>
-<p>case $ in  </p>
-<blockquote>
-<p>“”)  </p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>……  </p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>;;  </p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>“”)  </p>
-<blockquote>
-<p>……<br>;;  </p>
-</blockquote>
-<p>*)  </p>
-<blockquote>
-<p>…..<br>;;  </p>
-</blockquote>
-</blockquote>
-<p>esac<br>-——————————————————-<br>while […]  成立的话一直运行。<br>do  </p>
-<blockquote>
-<p>…..  </p>
-</blockquote>
-<p>done<br>-——————————————————-<br>until [….] 成立的话就不再执行<br>do  </p>
-<blockquote>
-<p>…..  </p>
-</blockquote>
-<p>done<br>-——————————————————-<br>for ((   ..;   ..;   …   )) 两个括号是因为shell里面的数值运算多是先定义才能用的，不定义的话就要用(())括起来<br>do                             #for的的条件是清楚的，而while是不清楚的  </p>
-<blockquote>
-<p>………..  </p>
-</blockquote>
-<p>done<br>-———————————–<br>for var in  .. .. ..<br>do  </p>
-<blockquote>
-<p>……..  </p>
-</blockquote>
-<p>done  </p>
-</blockquote>
-<p>脚本调试  </p>
-<blockquote>
-<p>sh -x sh15.sh 可以针对脚本一步一步执行，便于找出问题所在  </p>
-<p>sh -n sh15.sh  检查语法错误，没错误的话不会显示任何东西</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/4086592917/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/4086592917/" class="post-title-link" itemprop="url">鸟哥基础第十二章</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2012-09-19 17:29:00" itemprop="dateCreated datePublished" datetime="2012-09-19T17:29:00+08:00">2012-09-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.6k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>10 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>正则表达式对于系统管理来说是必备的知识点，可以说是基础中的基础，本章只是很简单的介绍了一下。<br>第十章、第十一章的相关字符处理的内容多放到这边来了  </p>
-<p>字符串处理  </p>
-<blockquote>
-<p>grep、sed     取行<br>cut、  awk     取字段  </p>
-<p>cut：  </p>
-<blockquote>
-<p>echo $PATH | cut -d ‘:’ -f 3,5   以：为分隔符 区第3个和第5个字段<br>echo $PATH | cut -c 3-            从第三个字符开始取后面所有的字符  </p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>awk：  </p>
-<blockquote>
-<p>cut处理不了多个空格为分隔符的数据，awk则可以处理<br>awk命令格式：awk ‘ ‘  </p>
-<p>cat /etc/passwd | awk ‘BEGIN         {FS=”:”}              $3 &lt; 10                   {print $1    “\t”     $3}’<br>                                    条件        以:为分隔符     只要第3个字段&lt;10     屏幕显示 第一个和第三个字段<br>                                                                                                             第一个和第3个字段中间tab隔开  </p>
-<blockquote>
-<p>其中BEGIN 是为了能从第一行开始处理，不加BEGIN则从第二行开始处理  </p>
-</blockquote>
-<p>last | awk ‘{print    $1    “\t lines:”              NR                  “\t columes:”                NF    } ‘  </p>
-</blockquote>
-</blockquote>
-<p>                                                       tab+文字    awk在处理第几行                              每一行有多少个字段  </p>
-<blockquote>
-<p>grep：  </p>
-<blockquote>
-<p>last | grep -v ‘root’                   选择没有root的行(反向选择)<br>grep -n ‘[^g]oo’ test.txt            选择oo前面不含g的字符的行<br>grep -n ‘^[g]’ test.txt               选择有g开头的行  </p>
-<blockquote>
-<p><img src="http://img1.ph.126.net/x_kShbSnbeQzw_1wucyf7w==/6597720677539774381.jpg" alt="鸟哥基础第十二章 - leaf - ------坚持雅操------" title="鸟哥基础第十二章 - leaf - ------坚持雅操------"></p>
-</blockquote>
-<blockquote>
-<p> 其中第二个很有意思：除了第一行其他多显示出来了。  </p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>grep -n ‘g.o’ test.txt            .代表有任意一个字符，必须有1个字符<br>grep -n ‘go*‘ test.txt            *代表有0个或多个重复的前面的字符。如g、go、goo、gooo等等<br>                                           .*就是0个或多个任意字符<br>grep -n ‘go\{2,5\}’ test.txt    代表有2个指5个o的字符<br>-————————<br>egrep -n ‘go+d’ test.txt         扩展grep命令，+代表1个或多个o<br>egrep -n ‘go?d’ test.txt         ?代表没有或者1个o<br>egrep -n ‘gd|good’ test.txt    选有gd或者有good的行  | 是或的意思，不是管道命令  </p>
-</blockquote>
-<p>sed  </p>
-<blockquote>
-<p>先看printf命令  </p>
-<blockquote>
-<p>printf   ‘       %10s\t                 %5i\t                %8.2f \n      ’                        `cat printf.txt`  </p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>                      10个字符+tab      5个整数+tab       8个整数2个小数点+换行        先cat，在printf  </p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>nl /etc/passwd | sed ‘2a test’           在第3行加入 test为内容的一行。2a就是在第二行下面一行<br>nl /etc/passwd | sed ‘2i test’            在第二行加入test为内容的一行。<br>                                                        2i就是在第二行上面加一行，加入后test就是第二行了  </p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>nl /etc/passwd | sed ‘2,5c test’         把第二至第五行替换为test  </p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>ifconfig eth0 | grep ‘inet’|   \<br>sed ‘   s                    /                ^.*addr:           /                             /           g’                 | sed ‘s/Bcast.*$//g’<br>         s表示替换      /格式     要替换的内容      /格式    替换为空    /格式   g表示结束  </p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>cat /etc/passwd | sed -e ‘4d’ -e ‘6c no six line’ &gt; /tmp/test/passwd  </p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>-e表示在直接在当前命令行上处理<br>4d 就是删除第4行<br>6c 就是把第6行替换为 no six line  </p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>字符转换命令  </p>
-<blockquote>
-<p>unix2dos、dos2unix：文档格式转换。  </p>
-<blockquote>
-<p>dos2unix -n old new   n表示保留旧文件<br>unix和ms的字符格式是不一样的：  </p>
-<blockquote>
-<p>unix是$<br>MS是M$  </p>
-</blockquote>
-<p><img src="http://img8.ph.126.net/J5l7lA5vecS6fgU_7lBymQ==/1299851442467638348.jpg" alt="鸟哥基础第十二章 - leaf - ------坚持雅操------" title="鸟哥基础第十二章 - leaf - ------坚持雅操------"></p>
-<p>   </p>
-</blockquote>
-<p>tr：替换、删除字符串  </p>
-<blockquote>
-<p>tr默认是替换命令  </p>
-<blockquote>
-<p>last | tr ‘[a]‘ ‘[A]‘                      ：a替换为A  </p>
-</blockquote>
-<p>tr -d 删除字符  </p>
-<blockquote>
-<p>cat /etc/passwd | tr -d ‘：’      ：删除：  </p>
-</blockquote>
-</blockquote>
-<p>col：tab转为空格  </p>
-<blockquote>
-<p>col -x  </p>
-</blockquote>
-<p>expand：tab转为空格，转成多少个空格可以自定义  </p>
-<blockquote>
-<p>enpand -t 4  </p>
-</blockquote>
-<p>join:2个文件，如果第一个字段一致，就粘成同一行，且第一个字段放在第一个  </p>
-<blockquote>
-<p>join -t ‘:’ /etc/passwd /etc/shadow  </p>
-<blockquote>
-<p>以：作为分隔符，比较第一个字段，<br>如root这一行：<br>2个文件的第一个字段都是root，所以就把2个文件的root这一行合并在一起，<br>并且把第二个文件的root删除，只保留第一个文件的root，并且放在最前面  </p>
-<p>/etc/passwd      root:x:0:0:root:/root:/bin/bash<br>/etc/shadow      root:$1$tl3LqaXl$7CJiLfD9fbWtPjDluR1TT0:15594:0:99999:7:::<br>join后                root:x:0:0:root:/root:/bin/bash:$1$tl3LqaXl$7CJiLfD9fbWtPjDluR1TT0:15594:0:99999:7:::  </p>
-</blockquote>
-</blockquote>
-<p>paste：2个文件的内容粘在一起。默认tab分隔  </p>
-<blockquote>
-<p>paste /etc/passwd /etc/shadow<br>paste后        root:x:0:0:root:/root:/bin/bash root:$1$tl3LqaXl$7CJiLfD9fbWtPjDluR1TT0:15594:0:99999:7:::  </p>
-</blockquote>
-</blockquote>
-<p>其他重要命令  </p>
-<blockquote>
-<p>排序命令  </p>
-<blockquote>
-<p>sort：排序  </p>
-<blockquote>
-<p>cat /etc/passwd | sort -t ‘:’ -k 3     以：为分隔符，以第3个字段进行排序  </p>
-</blockquote>
-<blockquote>
-</blockquote>
-<p>uniq：重复的仅显示一次  </p>
-<blockquote>
-<p>last | cut -d ‘ ‘ -f 1 | sort | uniq       以空格为分隔符，取第一个字段，进行排序，再把重复的删除只留一个  </p>
-</blockquote>
-<p>wc：就是对文件的字数、行数、 字符数进行统计  </p>
-<blockquote>
-<p>cat /etc/passwd | wc      显示字数、行数、字符数，其中行数不包括空行  </p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>split：拆分命令(很有用)  </p>
-<blockquote>
-<p>split -b 300k /tmp/termcap  /tmp/1/term           拆分  </p>
-<blockquote>
-<p>显示结果：terma  termb termc  </p>
-</blockquote>
-<p>cat term* &gt;&gt; termcap                                       合并  </p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="http://baike.baidu.com/view/2285387.htm">xargs</a>：参数代换  </p>
-<blockquote>
-<p>把前面的结果作为参数给后面的命令用  </p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>cat “$accountfile” | cut -d ‘:’ -f1 | xargs -n 1 useradd -m  </p>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>把前面的用户名，每次一位的取给后面的useradd命令做参数用<br>也就是<br>for ((i=1;i&lt;=n;i++))  </p>
-<blockquote>
-<p>do  </p>
-<blockquote>
-<p>useradd -m f1  </p>
-</blockquote>
-<p>done  </p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>xargs -n 3 finger  </p>
-<blockquote>
-<p>-n 就是一次取3个参数，也就是 finger 参数1 参数2 参数3 。然后循环的取直到取完结束。  </p>
-</blockquote>
-<p>xargs -p finger  </p>
-<blockquote>
-<p>-p就是询问y 还是n  </p>
-</blockquote>
-</blockquote>
-<p>diff：以行为单位比较  </p>
-<blockquote>
-<p>diff /etc /tmp/test    </p>
-</blockquote>
-<p>cmp：以字符为单位比较  </p>
-<blockquote>
-<p>cmp /etc/passwd /tmp/test  </p>
-</blockquote>
-<p>patch:打补丁命令  </p>
-<p>pr：打印  </p>
-<blockquote>
-<p>pr /etc/passwd</p>
-</blockquote>
-</blockquote>
+          <p>Ncurses-5.6 </p>
+<p>./configure –prefix=/tools –with-shared \</p>
+<p>    –without-debug –without-ada –enable-overwrite</p>
+<p>make &amp;&amp; make install </p>
+<p>Bash-3.2 </p>
+<p>patch -Np1 -i ../bash-3.2-fixes-5.patch</p>
+<p>./configure –prefix=/tools –without-bash-malloc</p>
+<p>ln -vs bash /tools/bin/sh</p>
+<p>Bzip2-1.0.4 </p>
+<p>make &amp;&amp; make PREFIX=/tools install</p>
+<p>Coreutils-6.9</p>
+<p>./configure –prefix=/tools &amp;&amp; make &amp;&amp; make install</p>
+<p>cp -v src/su /tools/bin/su-tools</p>
+<p>Diffutils-2.8.1 </p>
+<p>./configure –prefix=/tools &amp;&amp; make &amp;&amp; make install</p>
+<p>Findutils-4.2.31 </p>
+<p>./configure –prefix=/tools &amp;&amp; make &amp;&amp; make install</p>
+<p>Gawk-3.1.5</p>
+<p>./configure –prefix=/tools</p>
+<p>cat &gt;&gt; config.h &lt;&lt; “EOF”</p>
+<blockquote>
+<p>#define HAVE_LANGINFO_CODESET 1</p>
+<p>#define HAVE_LC_MESSAGES 1</p>
+</blockquote>
+<p>EOF</p>
+<p>make &amp;&amp; make install</p>
+<p>Gettext-0.16.1</p>
+<p>cd gettext-tools</p>
+<p>./configure –prefix=/tools –disable-shared</p>
+<p>make -C gnulib-lib</p>
+<p>make -C src msgfmt</p>
+<p>cp -v src/msgfmt /tools/bin</p>
+<p>Grep-2.5.1a</p>
+<p>./configure –prefix=/tools \</p>
+<p>    –disable-perl-regexp</p>
+<p>make &amp;&amp; make install</p>
+<p>Gzip-1.3.12</p>
+<p>./configure –prefix=/tools &amp;&amp; make &amp;&amp; make install</p>
+<p>Make-3.81</p>
+<p>./configure –prefix=/tools &amp;&amp; make &amp;&amp; make install</p>
+<p>Patch-2.5.4 </p>
+<p>./configure –prefix=/tools &amp;&amp; make &amp;&amp; make install</p>
+<p>Perl-5.8.8 </p>
+<p>patch -Np1 -i ../perl-5.8.8-libc-2.patch</p>
+<p>./configure.gnu –prefix=/tools -Dstatic_ext=’Data/Dumper Fcntl IO POSIX’</p>
+<p>make perl utilities</p>
+<p>cp -v perl pod/pod2man /tools/bin</p>
+<p>mkdir -pv /tools/lib/perl5/5.8.8</p>
+<p>cp -Rv lib/* /tools/lib/perl5/5.8.8</p>
+<p>Sed-4.1.5 </p>
+<p>./configure –prefix=/tools &amp;&amp; make &amp;&amp; make install</p>
+<p>Tar-1.18 </p>
+<p>./configure –prefix=/tools &amp;&amp; make &amp;&amp; make install</p>
+<p>Texinfo-4.9 </p>
+<p>./configure –prefix=/tools &amp;&amp; make &amp;&amp; make install</p>
+<p>Util-linux-2.12r </p>
+<p>sed -i ‘s@/usr/include@/tools/include@g’ configure</p>
+<blockquote>
+<p>#把/usr/include替换为/tools/include</p>
+</blockquote>
+<p>./configure</p>
+<p>make -C lib</p>
+<p>make -C mount mount umount</p>
+<p>make -C text-utils more</p>
+<p>cp -v mount/{,u}mount text-utils/more /tools/bin</p>
+<blockquote>
+<p>#把mount/mount mount/umount text-utils/more 复制到/tools/bin下</p>
+</blockquote>
+<p>清理和改权限</p>
+<p>不做也没关系</p>
+<p>logout</p>
 
       
     </div>
@@ -2238,7 +2118,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/17/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/19/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/17/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/17/">17</a><span class="page-number current">18</span><a class="page-number" href="/page/19/">19</a><span class="space">&hellip;</span><a class="page-number" href="/page/37/">37</a><a class="extend next" rel="next" href="/page/19/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2289,12 +2169,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">399k</span>
+    <span title="站点总字数">447k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">24:11</span>
+    <span title="站点阅读时长">27:06</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

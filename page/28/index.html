@@ -245,20 +245,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">282</span>
+          <span class="site-state-item-count">365</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">60</span>
+        <span class="site-state-item-count">72</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">57</span>
+        <span class="site-state-item-count">68</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -304,7 +304,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3097134107/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/439235368/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -320,7 +320,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/3097134107/" class="post-title-link" itemprop="url">ubuntu server 10.04 安装 LAMP</a>
+            <a href="/posts/439235368/" class="post-title-link" itemprop="url">考虑不周</a>
         </h2>
 
         <div class="post-meta">
@@ -330,14 +330,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2010-09-28 17:37:00" itemprop="dateCreated datePublished" datetime="2010-09-28T17:37:00+08:00">2010-09-28</time>
+              <time title="创建时间：2011-11-10 16:54:00" itemprop="dateCreated datePublished" datetime="2011-11-10T16:54:00+08:00">2011-11-10</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -345,11 +345,11 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+                  <a href="/categories/Live/" itemprop="url" rel="index"><span itemprop="name">Live</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/server/" itemprop="url" rel="index"><span itemprop="name">server</span></a>
+                  <a href="/categories/Live/%E7%82%B9%E6%BB%B4/" itemprop="url" rel="index"><span itemprop="name">点滴</span></a>
                 </span>
             </span>
 
@@ -359,104 +359,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>1、安装软件：apt-get install apache2 mysql-server mysql-client php5 php5-gd php5-mysql<br>            1&gt; 可以打开<a target="_blank" rel="noopener" href="http://127.0.0.1/">http://127.0.0.1/</a>     说明apache已启动<br>            2&gt; 设置mysql root 密码             mysql亦已启动<br>2、设置www权限：`sudo chmod 777 /var/www<br>3、启用 mod_rewrite 模块<br>   终端命令：sudo a2enmod rewrite<br>   重启Apache服务器：sudo /etc/init.d/apache2 restart<br>       1&gt; php 设置成功  </p>
-<p>4、安装phpmyadmin (非必须，就是设置mysql比较容易点)<code>sudo apt-get install phpmyadmin     另外输入上面设置的mysql密码           sudo ln -s /usr/share/phpmyadmin /var/www    (非必须，好像不连接也能用的)  </code>  </p>
-<p><strong>在/var/www内新建网页用于测试</strong><br>1、``<?php phpinfo(); ?>  用来测试PHP是否好用<br>2、<br><code>&lt;?php   $link = mysql\_connect(&quot;localhost&quot;,&quot;root&quot;,&quot;添入刚才设置的密码&quot;);   if (!$link)   &#123;   die(&#39;Could not connect: &#39; . mysql\_error());   &#125;   else echo &quot;Mysql Is Working&quot;;   mysql\_close($link);   ?&gt;   </code>测试mysql是否可用  </p>
-<p><strong>其他测试：</strong><br>netstat -tunl<br>查看 80端口和 3306端口即可知道 apache2 和 mysql 是否启动  </p>
-<p><strong>相关配置文件：</strong><br>1、apache2 相关文件：<br>   /etc/apache2/apache2.conf    apache配置文件<br>   /etc/apache2/conf.d          自定义配置文件<br>   /var/www                     网页存放区<br>   /usr/sbin/apache2ctl         apache的执行文件<br>   /usr/bin/htpasswd            apache密码保护<br>`2、mysql 相关文件：<br>      /etc/mysql/my.cnf                              mysql配置文件<br>3、mysql相关文件：<br>     /etc/php5/apache2/php.ini                 php配置文件<br>     /etc/php5/conf.d/mysql.ini                  php支持mysql接口  </p>
-<p>参考：<br><a target="_blank" rel="noopener" href="http://blog.myspace.cn/e/407367767.htm">http://blog.myspace.cn/e/407367767.htm</a><br><a target="_blank" rel="noopener" href="http://farlee.info/archives/ubuntu-server-install-lamp-phpmyadmin-vsftpd-zend-framework.html">http://farlee.info/archives/ubuntu-server-install-lamp-phpmyadmin-vsftpd-zend-framework.html</a>    (内有乱码解决方案，挺好)</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/4091169391/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/4091169391/" class="post-title-link" itemprop="url">ubuntu server 配置samba遇到的问题</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2010-09-24 17:16:00" itemprop="dateCreated datePublished" datetime="2010-09-24T17:16:00+08:00">2010-09-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Services/" itemprop="url" rel="index"><span itemprop="name">Services</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Services/samba/" itemprop="url" rel="index"><span itemprop="name">samba</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>126</span>
+              <span>65</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -473,9 +376,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>1、开放了防火墙<br>2、samba服务开着的<br>3、smb.conf都对的，放到桌面上能用<br>4、文件夹权限也都对的  </p>
-<p>百思不得其解，最后还是权限出了问题  </p>
-<p>安装ubuntu server的时候选择了“加密用户目录“，导致用户目录里的资料都不能共享，即使共享了别人也访问不了</p>
+          <p>只考虑到做长途的不便和做动车的舒适，却没考虑到换车、买票、等车的时间差，造成最终到达目的地时差了4个小时之多！<br>而且更累，费用更高！</p>
 
       
     </div>
@@ -495,7 +396,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3255764824/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3914124749/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -511,7 +412,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/3255764824/" class="post-title-link" itemprop="url">ubuntu server 10.04 samba 需要用户名和密码访问</a>
+            <a href="/posts/3914124749/" class="post-title-link" itemprop="url">设置WDS</a>
         </h2>
 
         <div class="post-meta">
@@ -521,14 +422,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2010-09-24 11:00:00" itemprop="dateCreated datePublished" datetime="2010-09-24T11:00:00+08:00">2010-09-24</time>
+              <time title="创建时间：2011-10-29 13:29:00" itemprop="dateCreated datePublished" datetime="2011-10-29T13:29:00+08:00">2011-10-29</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -536,11 +437,11 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Services/" itemprop="url" rel="index"><span itemprop="name">Services</span></a>
+                  <a href="/categories/Hardware/" itemprop="url" rel="index"><span itemprop="name">Hardware</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Services/samba/" itemprop="url" rel="index"><span itemprop="name">samba</span></a>
+                  <a href="/categories/Hardware/tplink/" itemprop="url" rel="index"><span itemprop="name">tplink</span></a>
                 </span>
             </span>
 
@@ -550,298 +451,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.5k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>6 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>1、防火墙开启相关端口</p>
-<blockquote>
-<p>sudo ufw enable               #开启ufw</p>
-<p>sudo ufw default deny      #关闭外部对本机的所有访问</p>
-<p>sudo ufw allow 137</p>
-<p>sudo ufw allow 138</p>
-<p>sudo ufw allow 139</p>
-<p>sudo ufw allow 445</p>
-<p>ufw相关操作请查看 <a target="_blank" rel="noopener" href="http://wiki.ubuntu.org.cn/UFW%E9%98%B2%E7%81%AB%E5%A2%99%E7%AE%80%E5%8D%95%E8%AE%BE%E7%BD%AE">http://wiki.ubuntu.org.cn/UFW防火墙简单设置</a></p>
-</blockquote>
-<blockquote>
-<p>ufw补充：sudo ufw allow from 192.168.2.0/24 to any port 21   #允许某个IP访问某个端口</p>
-</blockquote>
-<p>2、设置要共享的文件夹权限</p>
-<blockquote>
-<p>chmod 0777 TEMP</p>
-</blockquote>
-<p>3、写配置</p>
-<p>[global]</p>
-<blockquote>
-<p>workgroup = WORKGROUP</p>
-<p>netbios name = IT-TEST</p>
-<p>server string = it-test</p>
-<p>display charset = utf-8</p>
-<p>dos charset = cp936</p>
-<p>socket options = TCP_NODELAY SO_RCVBUF=8192 SO_SNDBUF=8192</p>
-<p>dns proxy = no</p>
-<p>template shell = /bin/false</p>
-<p>winbind use default domain = no</p>
-<p>security = user</p>
-<p>encrypt passwords = yes</p>
-<p>smb passwd file = /etc/samba/smbpasswd</p>
-<p>name resolve order = lmhosts bcast host</p>
-<p>#hosts allow 表示允许哪些网段可以访问</p>
-</blockquote>
-<p>[homes]                              #[homes]表示家目录，不是共享文件夹名称</p>
-<blockquote>
-<p>comment = user home directories</p>
-<p>browseable=no        #不允许别人查看</p>
-<p>writable = yes           #允许登陆用户读写</p>
-</blockquote>
-<p>[temp]</p>
-<blockquote>
-<p>comment = read write</p>
-<p>path = /media/TEMP</p>
-<p>writeable = yes</p>
-<p>public = yes</p>
-<p>write list=@test1                                       #表示组成员可访问</p>
-<p>#valid users = test001，test0022            #设置某些用户可访问</p>
-<p>#only guest=yes 表示采用nobody也就是guest的权限登陆。</p>
-<p>create mode = 0666</p>
-<p>directory mode = 0777</p>
-</blockquote>
-<p>4、新建 smbpasswd文件</p>
-<blockquote>
-<p>smbpasswd默认是没有的，通过smbpasswd -a等添加用户后就有了。</p>
-<p>samba的用户首先必须是系统用户，也就是/etc/passwd里面有的，然后才能成为samba用户</p>
-<p>备注：是系统用户不一定就能登陆系统。</p>
-<p>smbpasswd的操作就4个命令</p>
-<p>smbpasswd -a 添加用户</p>
-<p>smbpasswd -x 删除用户</p>
-<p>smbpasswd -e 启用用户</p>
-<p>smbpasswd -d 禁用用户</p>
-</blockquote>
-<p>5、添加系统账户、群组</p>
-<blockquote>
-<p>1&gt;添加群组 ：sudo groupadd  test1</p>
-<p>2&gt;添加账户：</p>
-</blockquote>
-<blockquote>
-<p>sudo useradd -M -s /sbin/nologin -d /dev/null -g test1  test001    </p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>#加入群组，只用于登陆samba，不登陆系统，不建家目录，</p>
-</blockquote>
-</blockquote>
-<p>6、给samba添加用户</p>
-<blockquote>
-<p>sudo smbpasswd -a test001              #这个用户名必须和上面的对应起来。要输入两遍密码</p>
-</blockquote>
-<p>7、smb相关命令</p>
-<blockquote>
-<p>smbstatus：服务端查看连接到本服务器的连接状态</p>
-</blockquote>
-<blockquote>
-<p>smbclient -L //IP ：查看资源列表</p>
-<p>smbclient //IP -U user ：使用用户身份登陆到samba服务器，然后使用ftp命令上传下载文件</p>
-<p>smbmount //IP /mnt/share -o username=user    挂在共享文件夹到本地 。参数同mount</p>
-<p>mount -t smbfs //IP /mnt/share -o username=user</p>
-</blockquote>
-<p>以上2013.10.09更改，接下去学习smb.conf配置文件。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3822141323/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/3822141323/" class="post-title-link" itemprop="url">ubuntu10.04 sshd_config 配置文件 注解</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2010-09-23 08:36:00" itemprop="dateCreated datePublished" datetime="2010-09-23T08:36:00+08:00">2010-09-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/server/" itemprop="url" rel="index"><span itemprop="name">server</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.2k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>8 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p># Package generated configuration file<br># See the sshd_config(5) manpage for details  </p>
-<p># What ports, IPs and protocols we listen for<br>    # 端口号<br>Port 22<br># Use these options to restrict which interfaces/protocols sshd will bind to<br>    #监听服务器的哪个网卡的ssh联机<br>#ListenAddress ::<br>#ListenAddress 0.0.0.0<br>    #使用的协议<br>Protocol 2<br># HostKeys for protocol version 2<br>    #服务器密钥存放地址<br>HostKey /etc/ssh/ssh_host_rsa_key<br>HostKey /etc/ssh/ssh_host_dsa_key<br>#Privilege Separation is turned on for security<br>UsePrivilegeSeparation yes  </p>
-<p># Lifetime and size of ephemeral version 1 server key<br>    #v1的key存活时间<br>KeyRegenerationInterval 3600<br>    #公钥的长度<br>ServerKeyBits 768  </p>
-<p># Logging<br>SyslogFacility AUTH<br>LogLevel INFO  </p>
-<p># Authentication:<br>LoginGraceTime 120<br>    #是否允许root登录<br>PermitRootLogin no<br>    #用户的host key改变时就不接受联机<br>StrictModes yes  </p>
-<p>RSAAuthentication yes<br>PubkeyAuthentication yes<br>    #不用密码即可登录<br>AuthorizedKeysFile    %h/.ssh/authorized_keys  </p>
-<p># Don’t read the user’s ~/.rhosts and ~/.shosts files<br>    #取消.rhosts来做认证<br>IgnoreRhosts yes<br># For this to work you will also need host keys in /etc/ssh_known_hosts<br>RhostsRSAAuthentication no<br># similar for protocol version 2<br>HostbasedAuthentication no<br># Uncomment if you don’t trust ~/.ssh/known_hosts for RhostsRSAAuthentication<br>#IgnoreUserKnownHosts yes  </p>
-<p># To enable empty passwords, change to yes (NOT RECOMMENDED)<br>    #不允许空密码登录<br>PermitEmptyPasswords no  </p>
-<p># Change to yes to enable challenge-response passwords (beware issues with<br># some PAM modules and threads)<br>ChallengeResponseAuthentication no  </p>
-<p># Change to no to disable tunnelled clear text passwords<br>#PasswordAuthentication yes  </p>
-<p># Kerberos options<br>#KerberosAuthentication no<br>#KerberosGetAFSToken no<br>#KerberosOrLocalPasswd yes<br>#KerberosTicketCleanup yes  </p>
-<p># GSSAPI options<br>#GSSAPIAuthentication no<br>#GSSAPICleanupCredentials yes  </p>
-<p>X11Forwarding yes<br>X11DisplayOffset 10<br>PrintMotd no<br>PrintLastLog yes<br>TCPKeepAlive yes<br>#UseLogin no  </p>
-<p>#MaxStartups 10:30:60<br>#Banner /etc/issue.net  </p>
-<p># Allow client to pass locale environment variables<br>AcceptEnv LANG LC_*  </p>
-<p>Subsystem sftp /usr/lib/openssh/sftp-server  </p>
-<p># Set this to ‘yes’ to enable PAM authentication, account processing,<br># and session processing. If this is enabled, PAM authentication will<br># be allowed through the ChallengeResponseAuthentication and<br># PasswordAuthentication.  Depending on your PAM configuration,<br># PAM authentication via ChallengeResponseAuthentication may bypass<br># the setting of “PermitRootLogin without-password”.<br># If you just want the PAM account and session checks to run without<br># PAM authentication, then enable this but set PasswordAuthentication<br># and ChallengeResponseAuthentication to ‘no’.<br>UsePAM yes</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/4027130446/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/4027130446/" class="post-title-link" itemprop="url">ubuntuserver 支持鼠标操作</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2010-09-18 09:29:00" itemprop="dateCreated datePublished" datetime="2010-09-18T09:29:00+08:00">2010-09-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/Q-A/" itemprop="url" rel="index"><span itemprop="name">Q&A</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>29</span>
+              <span>305</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -858,7 +468,10 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>sudo apt-get install gpm 即可<br>右击表示粘帖</p>
+          <p>0、同一品牌的无线路由器<br>1、一定要是“局域网端口”下的MAC地址，在设备背面查看条形码<br>2、设置无线频道为固定的数值，推荐使用1、6或11<br>3、进行中继的两个路由器，SSID可以相同，也可以不同。<br>     如果希望无线客户端在两个无线路由器的范围内实现漫游，请将SSID设为相同<br>4、设置A：不启动wds<br>5、设置B：启动wds、填写A的MAC地址，局域网IP设置为同网段  </p>
+<p>转载自：<a target="_blank" rel="noopener" href="http://net.zol.com.cn/251/2514602_all.html#p2515756">http://net.zol.com.cn/251/2514602_all.html#p2515756</a><br>              <a target="_blank" rel="noopener" href="http://net.zol.com.cn/topic/2555231.html">http://net.zol.com.cn/topic/2555231.html</a>  </p>
+<p>注意点！</p>
+<p>主路由一定不要启动wds，从路由器要启动wds并进行设置！</p>
 
       
     </div>
@@ -878,7 +491,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1574750591/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3033960186/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -894,7 +507,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/1574750591/" class="post-title-link" itemprop="url">一张网卡上设置多个IP</a>
+            <a href="/posts/3033960186/" class="post-title-link" itemprop="url">光纤熔接</a>
         </h2>
 
         <div class="post-meta">
@@ -904,14 +517,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2010-07-30 15:50:00" itemprop="dateCreated datePublished" datetime="2010-07-30T15:50:00+08:00">2010-07-30</time>
+              <time title="创建时间：2011-10-10 21:29:00" itemprop="dateCreated datePublished" datetime="2011-10-10T21:29:00+08:00">2011-10-10</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -919,11 +532,11 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
+                  <a href="/categories/Hardware/" itemprop="url" rel="index"><span itemprop="name">Hardware</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Windows/Q-A/" itemprop="url" rel="index"><span itemprop="name">Q&A</span></a>
+                  <a href="/categories/Hardware/%E5%85%89%E7%BA%A4/" itemprop="url" rel="index"><span itemprop="name">光纤</span></a>
                 </span>
             </span>
 
@@ -933,110 +546,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>471</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><a target="_blank" rel="noopener" href="http://tech.sina.com.cn/s/2005-08-29/0917705474.shtml">http://tech.sina.com.cn/s/2005-08-29/0917705474.shtml</a>  </p>
-<p> 每台电脑网卡只有一块，如何才能让它们既能上ADSL，又能访问校园网呢?在查阅了相关网络方面的资料之后，我们终于找到了一个解决办法，那就是采用软路由的方式来解决。因为我们都是使用的WinXP<a target="_blank" rel="noopener" href="http://www.iask.com/n?k=%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F" title="操作系统">操作系统</a>，在Win2000以上的操作系统就自带了软路由route命令，其具体操作如下:</p>
-<p> 1、打开本地连接属性里的Internet协议(TCP/IP)属性，选择[备用配置]的选项页，点选[用户配置]并填写上校园网所分配的IP地址，子网掩码和默认网关，并确认。</p>
-<p><img src="http://img161.ph.126.net/JW4GF6nMA9jLPjYIQ-BNeA==/1439181555922966914.jpg" alt="一张网卡上设置多个IP - leaf - ------坚持雅操------" title="一张网卡上设置多个IP - leaf - ------坚持雅操------"></p>
-<p> </p>
-<p> 2、运行cmd，命令提示符下输入“route – p add 174.0.0.0 mask 255.255.253.0 174.14.40.1 metric 2”，然后回车。</p>
-<p> 在通过以上的设置，我们对四台机器的网卡都设置了双IP，从此四台都可以高枕无忧地独立访问校园网和因特网了。</p>
-<p>20120924补充</p>
-<blockquote>
-<p>linux下添加多IP方法</p>
-<p>ifconfig eth0:0 192.168.5.5 (跟网络设备上添加子接口的方法差不多)</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2992577269/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/2992577269/" class="post-title-link" itemprop="url">windows控制面板的用户帐号图标找不到了</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2010-07-16 14:35:00" itemprop="dateCreated datePublished" datetime="2010-07-16T14:35:00+08:00">2010-07-16</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Windows/Q-A/" itemprop="url" rel="index"><span itemprop="name">Q&A</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>27</span>
+              <span>24</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -1053,7 +563,7 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>运行 里面 输入 control userpasswords2</p>
+          <p>步骤：剥皮、放套管、切线、熔接、套管。不过挺贵的</p>
 
       
     </div>
@@ -1073,7 +583,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1042151429/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/993237299/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1089,7 +599,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/1042151429/" class="post-title-link" itemprop="url">ubuntu10.04 安装共享打印机(CUPS)</a>
+            <a href="/posts/993237299/" class="post-title-link" itemprop="url">固态电容品牌</a>
         </h2>
 
         <div class="post-meta">
@@ -1099,14 +609,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2010-07-16 08:38:00" itemprop="dateCreated datePublished" datetime="2010-07-16T08:38:00+08:00">2010-07-16</time>
+              <time title="创建时间：2011-10-06 11:51:00" itemprop="dateCreated datePublished" datetime="2011-10-06T11:51:00+08:00">2011-10-06</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1114,11 +624,11 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+                  <a href="/categories/Hardware/" itemprop="url" rel="index"><span itemprop="name">Hardware</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/Q-A/" itemprop="url" rel="index"><span itemprop="name">Q&A</span></a>
+                  <a href="/categories/Hardware/%E7%94%B5%E5%AE%B9/" itemprop="url" rel="index"><span itemprop="name">电容</span></a>
                 </span>
             </span>
 
@@ -1128,14 +638,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>576</span>
+              <span>148</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>1 分钟</span>
             </span>
 
         </div>
@@ -1145,204 +655,27 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>1、安装打印机驱动<br>      系统-系统管理-打印 添加 选canon-ix5000<br>2、安装cups<br>      sudo apt-get install cupsys<br>3、调试<br>      <a target="_blank" rel="noopener" href="http://127.0.0.1:631/printers">http://127.0.0.1:631/printers</a> 打开管理页面  </p>
-<p><img src="http://img.ph.126.net/vurHjkaPT9r7AV-W0gDY3w==/3280309378587648520.jpg" alt="ubuntu10.04 安装共享打印机(CUPS) - leaf - ------坚持雅操------" title="ubuntu10.04 安装共享打印机(CUPS) - leaf - ------坚持雅操------"></p>
-<p> <br>4、在其他电脑上添加网络打印机<br>     <a target="_blank" rel="noopener" href="http://192.168.2.188:631/printers/canon-ix5000">http://192.168.2.188:631/printers/canon-ix5000</a>  </p>
-<p>5、关于不能添加打印机：(由于选了 Use Kerberos authentication(FAQ))</p>
-<p>提示：</p>
-<p>请输入您的用户名称和密码或者 root 用户的用户名称和密码来访问此页面。如果您正在使用 Kerberos 鉴定，请确定您拥有的 Kerberos 票据是有效的。</p>
-<p>解决方法：</p>
-<p>修改/etc/cups/cupsd.conf文件下的</p>
-<Policy default>
-
-<Policy authenticated>
-
-<p>全部改为 </p>
-<p>  Order allow,deny</p>
-<p>  Allow all</p>
-<p>即可</p>
-<p>添加好了再改回去好了</p>
-<p>20140809补充：/etc/group 里面lp这一行添加用户，用来管理cups服务</p>
-<p>安装PDF打印机  <a target="_blank" rel="noopener" href="http://www.oschina.net/p/cups-pdf">http://www.oschina.net/p/cups-pdf</a> <br>1、sudo aptitude install cups-pdf<br>2、更改  /usr/lib/cups/backend/ cups-pdf权限(加上SUID权限)</p>
-<p>sudo chmod u+s cups-pdf</p>
-<p>可以看到打印里已经加了一台PDF打印机</p>
-<p>试验结果：能打印，但总是提示错误</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1833866432/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/1833866432/" class="post-title-link" itemprop="url">ubuntu 10.04    samba 匿名访问 可读可写</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2010-07-14 11:27:00" itemprop="dateCreated datePublished" datetime="2010-07-14T11:27:00+08:00">2010-07-14</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Services/" itemprop="url" rel="index"><span itemprop="name">Services</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Services/samba/" itemprop="url" rel="index"><span itemprop="name">samba</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.5k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>5 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>基础知识：</p>
-<p>SMB服务：services message block 是由微软开发的。</p>
-<p>samba的进程：</p>
-<blockquote>
-<p>smbd：用于提供服务器中的共享资源。</p>
-<p>nmbd：用于提供NETBIOS主机名称解析。(在域和工作组中可以找到，网上邻居可以找到)</p>
-</blockquote>
-<p>0、开放防火墙<br>安装 gufw， sudo apt-get install gufw<br>在系统-系统管理-防火墙配置：勾选已启用，然后全部选允许进入好了，也可以把端口 137 138 139 445 加入<br>1、安装samba  </p>
-<blockquote>
-<p>sudo apt-get install samba        #samba软件</p>
-<p>sudo apt-get install smbfs         #samba文件系统</p>
-<p>sudo apt-get install swat           #图形化samba管理</p>
-</blockquote>
-<p>2、设置文件权限</p>
-<blockquote>
-<p>chmod 0755 3SHARE</p>
-<p>chmod 1777 5TEMP</p>
-</blockquote>
-<p>3、配置文件</p>
-<p>其中#后面的都是说明文档，而；后面的都是实例文档</p>
-<p> [global]<br>    workgroup = WORKGROUP     #设置工作组<br>    netbios name = 信息中心          #网上邻居上用的名字<br>    server string = it001                    #对主机的描述说明  </p>
-<p>    display charset = utf-8<br>    dos charset = cp936  </p>
-<p>    log file = /var/log/samba/%m.log   #对每个访客建独立日志记录。</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>#%m.log表示按登陆名称建目录  </p>
-<p>#由于是匿名的，所有访客都记录在nobody.log下面(未验证)</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>    max log size = 50                          #日志最大50KB  </p>
-<p>    security = share                             #安全级别：share user server domain</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>#server：让另一台主机提供验证服务</p>
-<p>#domain：让域控制器来提供验证服务</p>
-</blockquote>
-</blockquote>
-<p>#2014.08.12  补充  </p>
-<blockquote>
-<p>在samba4中 share 和 server 已被弃用（ubuntu14.04）<br>改为<br> security = user  </p>
-<p>    map to guest = Bad User</p>
-<p>参考：<a target="_blank" rel="noopener" href="http://blog.chinaunix.net/uid-74892-id-4232517.html">http://blog.chinaunix.net/uid-74892-id-4232517.html</a></p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>    socket options = TCP_NODELAY SO_RCVBUF=8192 SO_SNDBUF=8192<br>    dns proxy = no<br>    template shell = /bin/false<br>    winbind use default domain = no  </p>
-<p>#[homes] 表示登陆用户自己的家目录。就是每个登陆linux的用户都有各自的家目录是一样的。  </p>
-<p>[share]<br>    comment = read only<br>    path = /home/it001/3SHARE<br>    read only = yes<br>    public = yes                     #共享的意思，所有人都可见。  </p>
-<p>[temp]<br>    comment = read write<br>    path = /home/it001/5TEMP<br>    writeable = yes<br>    public = yes<br>    create mode = 0666<br>    directory mode = 1777  </p>
-<p>[printers]<br>    comment = All Printers<br>    path = /var/spool/samba<br>    printable = Yes<br>    browseable = yes  </p>
-<p>关于swat   (2012.11.20添加)  </p>
-<blockquote>
-<p>由xinet负责进程的管理<br>配置文件：/etc/inetd.conf<br>配置内容：swat        stream    tcp    nowait.400    root    /usr/sbin/tcpd    /usr/sbin/swat  </p>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>流                                               使用TCP wrapper  </p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>端口:901<br>端口设置:/etc/services  </p>
-<p>参考：<a target="_blank" rel="noopener" href="http://yuanbin.blog.51cto.com/363003/117105">http://yuanbin.blog.51cto.com/363003/117105</a><br>浏览器访问：127.0.0.1:901  </p>
-<p><img src="http://img1.ph.126.net/zWPbEpo0nYIscHXNqQs9-A==/6598068123214412271.jpg" alt="ubuntu 10.04    samba 匿名访问 可读可写 - leaf - ------坚持雅操------" title="ubuntu 10.04    samba 匿名访问 可读可写 - leaf - ------坚持雅操------"></p>
-<p> </p>
+          <p>转载自：<a target="_blank" rel="noopener" href="http://tu.pcpop.com/pic-715464-1.htm">http://tu.pcpop.com/pic-715464-1.htm</a>  </p>
+<p>日系<br>1、富士通： FP  </p>
+<p><img src="http://img2.ph.126.net/SXwSfif1kmaTHxwlMnpgvA==/1151514129740284542.png" alt="固态电容品牌 - leaf - ------坚持雅操------" title="固态电容品牌 - leaf - ------坚持雅操------"></p>
+<p> 2、尼吉康(蓝宝石)： LE、LF  </p>
+<p><img src="http://img2.ph.126.net/4CBHXc7KIfWYzz9xmOeQLw==/66709569497417682.png" alt="固态电容品牌 - leaf - ------坚持雅操------" title="固态电容品牌 - leaf - ------坚持雅操------"></p>
+<p> 3、日化：“口”型</p>
+<p><img src="http://img5.ph.126.net/vEE9iI65kphqqeFIdlQMsg==/2746914297736278855.png" alt="固态电容品牌 - leaf - ------坚持雅操------" title="固态电容品牌 - leaf - ------坚持雅操------"></p>
+<p> 4、三洋：紫色+SEPC/SVP  </p>
+<p><img src="http://img0.ph.126.net/Z6xaYnt-pfvFnMiBFyDeeg==/2575496036919494930.png" alt="固态电容品牌 - leaf - ------坚持雅操------" title="固态电容品牌 - leaf - ------坚持雅操------"></p>
+<p> 5、富士康为华硕代工：FP5K</p>
+<p><img src="http://img8.ph.126.net/iVgQ61AnxCx7nltNTqeddw==/2684989802859937208.png" alt="固态电容品牌 - leaf - ------坚持雅操------" title="固态电容品牌 - leaf - ------坚持雅操------"></p>
+<p>台系<br>1、斐成：粉红色  </p>
+<p><img src="http://img6.ph.126.net/0YIIX4dN9nAmkRpTyt_Zbg==/1304073567117458726.png" alt="固态电容品牌 - leaf - ------坚持雅操------" title="固态电容品牌 - leaf - ------坚持雅操------"></p>
+<p> 2、立隆：OCR、OCRZ  </p>
+<p><img src="http://img4.ph.126.net/_508R67imRredzmaLpxVrA==/25332747920946034.png" alt="固态电容品牌 - leaf - ------坚持雅操------" title="固态电容品牌 - leaf - ------坚持雅操------"></p>
+<p> 3、万裕：ULR</p>
+<p><img src="http://img3.ph.126.net/dOsdYUk_fhpAIKr2GjswDQ==/2519482516554070253.png" alt="固态电容品牌 - leaf - ------坚持雅操------" title="固态电容品牌 - leaf - ------坚持雅操------">  </p>
+<p><img src="http://img1.ph.126.net/wLPoyPCByMdSuPyRsoBcrQ==/622341173524248611.png" alt="固态电容品牌 - leaf - ------坚持雅操------" title="固态电容品牌 - leaf - ------坚持雅操------"></p>
 <p>   </p>
-</blockquote>
-<p>注释2013.10.09更新。其他说明在另一篇有写。</p>
+<p> 4、钰邦：一般华硕上用</p>
+<p><img src="http://img3.ph.126.net/4MwuF-841c900b6DJYZBew==/2519482516554070263.png" alt="固态电容品牌 - leaf - ------坚持雅操------" title="固态电容品牌 - leaf - ------坚持雅操------"></p>
 
       
     </div>
@@ -1362,7 +695,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2863864731/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2127272775/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1378,7 +711,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/2863864731/" class="post-title-link" itemprop="url">ubuntu相关收藏</a>
+            <a href="/posts/2127272775/" class="post-title-link" itemprop="url">路由器端口映射设置</a>
         </h2>
 
         <div class="post-meta">
@@ -1388,14 +721,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2010-07-01 19:45:00" itemprop="dateCreated datePublished" datetime="2010-07-01T19:45:00+08:00">2010-07-01</time>
+              <time title="创建时间：2011-09-28 15:26:00" itemprop="dateCreated datePublished" datetime="2011-09-28T15:26:00+08:00">2011-09-28</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 15:44:26" itemprop="dateModified" datetime="2020-08-04T15:44:26+08:00">2020-08-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1403,11 +736,11 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+                  <a href="/categories/Hardware/" itemprop="url" rel="index"><span itemprop="name">Hardware</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/Q-A/" itemprop="url" rel="index"><span itemprop="name">Q&A</span></a>
+                  <a href="/categories/Hardware/TPlink/" itemprop="url" rel="index"><span itemprop="name">TPlink</span></a>
                 </span>
             </span>
 
@@ -1417,7 +750,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>286</span>
+              <span>365</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -1434,10 +767,761 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>ubuntu9.10 桌面培训     <a target="_blank" rel="noopener" href="http://people.ubuntu.com/~happyaron/udc-cn/">http://people.ubuntu.com/~happyaron/udc-cn/</a>  </p>
-<p>linux 加入到windows域中 <a target="_blank" rel="noopener" href="http://rainbird.blog.51cto.com/211214/197509">http://rainbird.blog.51cto.com/211214/197509</a>            (可惜是centos下的)  </p>
-<p>TortoiseSVN  <a target="_blank" rel="noopener" href="http://tortoisesvn.net/docs/nightly/TortoiseSVN/_zh/_CN/tsvn-preface.html#tsvn-preface-about">http://tortoisesvn.net/docs/nightly/TortoiseSVN\_zh\_CN/tsvn-preface.html#tsvn-preface-about</a>  </p>
-<p>RFC文档目录 <a target="_blank" rel="noopener" href="http://oss.org.cn/man/develop/rfc/default.htm">http://oss.org.cn/man/develop/rfc/default.htm</a></p>
+          <p>转自：<a target="_blank" rel="noopener" href="http://zhenyuanxianliuhai.blog.163.com/blog/static/397900200832053821546/">http://zhenyuanxianliuhai.blog.163.com/blog/static/397900200832053821546/</a>  </p>
+<h5 id="TP-LINK410路由器端口映射"><a href="#TP-LINK410路由器端口映射" class="headerlink" title="TP-LINK410路由器端口映射"></a>TP-LINK410路由器端口映射</h5><hr>
+<p>**第一步：打开浏览器，输入路由器IP，默认为192.168.1.1 (此网关IP在dos命令符下键入ipconfig可得到).  </p>
+<p>第二步：输入密码；默认帐号和密码：admin**</p>
+<p><img src="http://img1.ph.126.net/USTVGLXCcM2QHQbTT1sKoQ==/2880896386650534901.jpg" alt="路由器端口映射设置 - leaf - ------坚持雅操------" title="路由器端口映射设置 - leaf - ------坚持雅操------"></p>
+<p> </p>
+<p><strong>第三步：点击左边的转发规则，再选择虚拟服务器，打开虚拟服务器的设置画面</strong></p>
+<p><img src="http://img4.ph.126.net/NpuhUjT1-QtMG4bxNaybaw==/1293377518002438074.jpg" alt="路由器端口映射设置 - leaf - ------坚持雅操------" title="路由器端口映射设置 - leaf - ------坚持雅操------"></p>
+<p> </p>
+<p><img src="http://img5.ph.126.net/yqI7nBLxNRq9SiUz92_zfw==/1136877430951313375.jpg" alt="路由器端口映射设置 - leaf - ------坚持雅操------" title="路由器端口映射设置 - leaf - ------坚持雅操------"></p>
+<p> </p>
+<p><strong>第四步：在服务端口处填上跟我们软件相一致的上线端口号，安装时默认的端口号是2006，IP地址 处填写你的本机IP地址(此IP在dos命令符下键入ipconfig可得到)，如这里的本机IP为192.168.1.2只需要填写最后一位数；协议处 请选择TCP，启用处打钩，最后别忘了按保存！到此端口设置已完成！</strong></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1735849152/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/1735849152/" class="post-title-link" itemprop="url">H3C S3600 命令学习-display</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2011-09-22 20:21:00" itemprop="dateCreated datePublished" datetime="2011-09-22T20:21:00+08:00">2011-09-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Network/" itemprop="url" rel="index"><span itemprop="name">Network</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Network/huawei/" itemprop="url" rel="index"><span itemprop="name">huawei</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>149</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>查电脑对应的交换机接口  </p>
+<p>display mac-address 1c6f-65ae-eae2   </p>
+<p>查接口对应的电脑MAC地址  </p>
+<p>display mac-address interface Ethernet1/0/3  </p>
+<p>而MAC地址可以通过ping 和 arp查，这样就不用跑到每台电脑上测端口了。  </p>
+<p>虽然别人多会了，不过我也终于会了</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1736813283/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/1736813283/" class="post-title-link" itemprop="url">【引用】net命令用法</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2011-09-08 20:45:00" itemprop="dateCreated datePublished" datetime="2011-09-08T20:45:00+08:00">2011-09-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Network/" itemprop="url" rel="index"><span itemprop="name">Network</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Network/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">基础</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>7.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>26 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>大家在操作Windows 9X/NT/2000/XP/2003系统的过程中，都会或多或少会遇到这样或那样的问题；特别是网管员在维护单位的局域网或广域网时候，如果能掌握一些Windows 系统的网络命令使用技巧，常常会给工作带来极大的方便，有时能起到事倍功半的效果；本文就Net 网络命令在实际操作中使用技巧，供大家参考。</p>
+<p>本</p>
+<p>文</p>
+<p>主</p>
+<p>要</p>
+<p>内</p>
+<p>容</p>
+<p>NET View</p>
+<p>NET User</p>
+<p>NET Use</p>
+<p>NET Time</p>
+<p>Net Start</p>
+<p>Net Pause</p>
+<p>Net Continue</p>
+<p>NET Stop</p>
+<p>Net Statistics</p>
+<p>Net Share</p>
+<p>Net Session</p>
+<p>Net Send</p>
+<p>Net Print</p>
+<p>Net Name</p>
+<p>Net Localgroup</p>
+<p>Net Group</p>
+<p>Net File</p>
+<p>Net Config</p>
+<p>Net Computer</p>
+<p>Net Accounts</p>
+<p>　我们知道NET命令是一个命令行命令，Net 命令有很多函数用于实用和核查计算机之间的NetBIOS连接，可以查看我们的管理网络环境、服务、用户、登陆等信息内容；要想获得Net 的HELP可以(1)在Windows下可以用图形的方式，开始-&gt;帮助-&gt;索引-&gt;输入NET；(2)在COMMAND下可以用字符方式：NET /?或NET或NET HELP取得相应的方法的帮助。所有Net命令接受选项/yes和/no(可缩写为/y和/n)。</p>
+<p>　　下面对NET命令的不同参数的使用技巧介绍如下：</p>
+<p>　　1、Net ViewI</p>
+<p>　　作 用：显示域列表、计算机列表或指定计算机的共享资源列表。</p>
+<p>　　命令格式：Net view [\\computername | /domain[:domainname]]</p>
+<p>　　有关参数说明：</p>
+<p>　　·键入不带参数的Net view显示当前域的计算机列表</p>
+<p>　　·\\computername 指定要查看其共享资源的计算机</p>
+<p>　　·/domain[:domainname]指定要查看其可用计算机的域</p>
+<p>　　例如：Net view <a href="file://ghq/">\\GHQ</a>查看GHQ计算机的共享资源列表。</p>
+<p>　　　　　Net view /domain:XYZ 查看XYZ域中的机器列表。</p>
+<p>　　2、Net User</p>
+<p>　　作 用：添加或更改用户帐号或显示用户帐号信息。</p>
+<p>　　命令格式：Net user [username [password | *] [options]] [/domain]</p>
+<p>　　有关参数说明：</p>
+<p>　　·键入不带参数的Net user查看计算机上的用户帐号列表</p>
+<p>　　·username添加、删除、更改或查看用户帐号名</p>
+<p>　　·password为用户帐号分配或更改密码</p>
+<p>　　·提示输入密码</p>
+<p>　　·/domain在计算机主域的主域控制器中执行操作。该参数仅在 Windows NT Server 域成员的 Windows NT Workstation 计算机上可用。默认情况下，Windows NT Server 计算机在主域控制器中执行操作。注意：在计算机主域的主域控制器发生该动作。它可能不是登录域。</p>
+<p>　　例如：Net user ghq123查看用户GHQ123的信息。</p>
+<p>　　3、Net Use</p>
+<p>　　作 用：连接计算机或断开计算机与共享资源的连接，或显示计算机的连接信息。</p>
+<p>　　命令格式：Net use [devicename | *] [\\computername\sharename[\volume]] [password|*]][/user:[domainname\]username][[/delete]| [/persistent:{yes | no}]]</p>
+<p>　　有关参数说明：</p>
+<p>　　·键入不带参数的Net use列出网络连接</p>
+<p>　　·devicename指定要连接到的资源名称或要断开的设备名称</p>
+<p>　　·\\computername\sharename服务器及共享资源的名称</p>
+<p>　　·password访问共享资源的密码</p>
+<p>　　·*提示键入密码</p>
+<p>　　·/user指定进行连接的另外一个用户</p>
+<p>　　·domainname指定另一个域</p>
+<p>　　·username指定登录的用户名</p>
+<p>　　·/home将用户连接到其宿主目录</p>
+<p>　　·/delete取消指定网络连接</p>
+<p>　　·/persistent控制永久网络连接的使用。</p>
+<p>　　例如：Net use f: <a href="file://ghq/TEMP">\\GHQ\TEMP</a> 将<a href="file://ghq/TEMP">\\GHQ\TEMP</a>目录建立为F盘</p>
+<p>　　　　　Net use f: \GHQ\TEMP /delete 断开连接。</p>
+<p>　　4、Net Time</p>
+<p>　　作 用：使计算机的时钟与另一台计算机或域的时间同步。</p>
+<p>　　命令格式：Net time [\\computername | /domain[:name]] [/set]</p>
+<p>　　有关参数说明：</p>
+<p>　　·\\computername要检查或同步的服务器名</p>
+<p>　　·/domain[:name]指定要与其时间同步的域</p>
+<p>　　·/set使本计算机时钟与指定计算机或域的时钟同步。</p>
+<p>　　5、Net Start</p>
+<p>　　作 用：启动服务，或显示已启动服务的列表。</p>
+<p>　　命令格式：Net start service</p>
+<p>　　6、Net Pause</p>
+<p>　　作 用：暂停正在运行的服务。</p>
+<p>　　命令格式：Net pause service</p>
+<p>　　7、Net Continue</p>
+<p>　　作 用：重新激活挂起的服务。</p>
+<p>　　命令格式：Net continue service 　　</p>
+<p>　　8、Net Stop</p>
+<p>　　作 用：停止 Windows NT/2000/2003 网络服务。</p>
+<p>　　命令格式：Net stop service</p>
+<p>　　下面我们来看看上面四条命令里服务包含哪些服务：</p>
+<p>　　(1)alerter(警报)；</p>
+<p>　　(2)client service for Netware(Netware 客户端服务)</p>
+<p>　　(3)clipbook server(剪贴簿服务器)</p>
+<p>　　(4)computer browser(计算机浏览器)</p>
+<p>　　(5)directory replicator(目录复制器)</p>
+<p>　　(6)ftp publishing service (ftp )(ftp 发行服务)</p>
+<p>　　(7)lpdsvc</p>
+<p>　　(8)Net logon(网络登录)</p>
+<p>　　(9)Network dde(网络 dde)</p>
+<p>　　(10)Network dde dsdm(网络 dde dsdm)</p>
+<p>　　(11)Network monitor agent(网络监控代理)</p>
+<p>　　(12)ole(对象链接与嵌入)</p>
+<p>　　(13)remote access connection manager(远程访问连接管理器)</p>
+<p>　　(14)remote access isnsap service(远程访问 isnsap 服务)</p>
+<p>　　(15)remote access server(远程访问服务器)</p>
+<p>　　(16)remote procedure call (rpc) locator(远程过程调用定位器)</p>
+<p>　　(17)remote procedure call (rpc) service(远程过程调用服务)</p>
+<p>　　(18)schedule(调度)</p>
+<p>　　(19)server(服务器)</p>
+<p>　　(20)simple tcp/ip services(简单 TCP/IP 服务)</p>
+<p>　　(21)snmp</p>
+<p>　　(22)spooler(后台打印程序)</p>
+<p>　　(23)tcp/ip Netbios helper(TCP/IP NETBIOS 辅助工具)</p>
+<p>　　(24)ups</p>
+<p>　　(25)workstation(工作站)</p>
+<p>　　(26)messenger(信使)</p>
+<p>　　(27)dhcp client</p>
+<p>　　9、Net Statistics</p>
+<p>　　作 用：显示本地工作站或服务器服务的统计记录。</p>
+<p>　　命令格式：Net statistics [workstation | server]</p>
+<p>　　有关参数说明：</p>
+<p>　　·键入不带参数的Net statistics列出其统计信息可用的运行服务</p>
+<p>　　·workstation显示本地工作站服务的统计信息</p>
+<p>　　·server显示本地服务器服务的统计信息</p>
+<p>　　例如：Net statistics server | more显示服务器服务的统计信息。</p>
+<p>　　10、Net Share</p>
+<p>　　作 用：创建、删除或显示共享资源。</p>
+<p>　　命令格式：Net share sharename=drive:path [/users:number | /unlimited] [/remark:”text”]</p>
+<p>　　有关参数说明：</p>
+<p>　　· 键入不带参数的Net share显示本地计算机上所有共享资源的信息</p>
+<p>　　· sharename是共享资源的网络名称</p>
+<p>　　· drive:path指定共享目录的绝对路径</p>
+<p>　　· /users:number设置可同时访问共享资源的最大用户数</p>
+<p>　　· /unlimited不限制同时访问共享资源的用户数</p>
+<p>　　· /remark:”text “添加关于资源的注释，注释文字用引号引住</p>
+<p>　　例如： Net share yesky=c:\temp /remark:”my first share”</p>
+<p>　　以yesky为共享名共享C:\temp</p>
+<p>　　Net share yesky /delete停止共享yesky目录</p>
+<p>　　11、Net Session</p>
+<p>　　作 用：列出或断开本地计算机和与之连接的客户端的会话。</p>
+<p>　　命令格式：Net session [\\computername] [/delete]</p>
+<p>　　有关参数说明：</p>
+<p>　　·键入不带参数的Net session显示所有与本地计算机的会话的信息。</p>
+<p>　　·\\computername标识要列出或断开会话的计算机。</p>
+<p>　　·/delete结束与 \computername 计算机会话并关闭本次会话期间计算机的所有打开文件。如果省略\computername 参数，将取消与本地计算机的所有会话。</p>
+<p>　　例如：Net session <a href="file://ghq/">\\GHQ</a>要显示计算机名为GHQ的客户端会话信息列表。</p>
+<p>　12、Net Send</p>
+<p>　　作 用：向网络的其他用户、计算机或通信名发送消息。</p>
+<p>　　命令格式：Net send {name | * | /domain[:name] | /users} message</p>
+<p>　　有关参数说明：</p>
+<p>　　·name要接收发送消息的用户名、计算机名或通信名</p>
+<p>　　·* 将消息发送到组中所有名称</p>
+<p>　　·/domain[:name]将消息发送到计算机域中的所有名称</p>
+<p>　　·/users将消息发送到与服务器连接的所有用户</p>
+<p>　　·message作为消息发送的文本</p>
+<p>　　例如：Net send /users server will shutdown in 10 minutes.给所有连接到服务器的用户发送消息。</p>
+<p>　　13、Net Print</p>
+<p>　　作 用：显示或控制打印作业及打印队列。</p>
+<p>　　命令格式：Net print [\\computername ] job# [/hold | /release | /delete]</p>
+<p>　　有关参数说明：</p>
+<p>　　·computername共享打印机队列的计算机名</p>
+<p>　　·sharename打印队列名称</p>
+<p>　　·job#在打印机队列中分配给打印作业的标识号</p>
+<p>　　·/hold使用 job# 时，在打印机队列中使打印作业等待</p>
+<p>　　·/release释放保留的打印作业</p>
+<p>　　·/delete从打印机队列中删除打印作业</p>
+<p>　　例如：Net print <a href="file://ghq/HP8000">\\GHQ\HP8000</a>列出<a href="file://ghq/">\\GHQ</a>计算机上HP8000打印机队列的目录。</p>
+<p>　　14、Net Name</p>
+<p>　　作 用：添加或删除消息名（有时也称别名），或显示计算机接收消息的名称列表。</p>
+<p>　　命令格式：Net name [name [/add | /delete]]</p>
+<p>　　有关参数说明：</p>
+<p>　　·键入不带参数的Net name列出当前使用的名称</p>
+<p>　　·name指定接收消息的名称</p>
+<p>　　·/add将名称添加到计算机中</p>
+<p>　　·/delete从计算机中删除名称</p>
+<p>　　15、Net Localgroup</p>
+<p>　　作 用：添加、显示或更改本地组。</p>
+<p>　　命令格式：Net localgroup groupname {/add [/comment:”text “] | /delete} [/domain]</p>
+<p>　　有关参数说明：</p>
+<p>　　·键入不带参数的Net localgroup显示服务器名称和计算机的本地组名称</p>
+<p>　　·groupname要添加、扩充或删除的本地组名称</p>
+<p>　　·/comment: “text “为新建或现有组添加注释</p>
+<p>　　·/domain在当前域的主域控制器中执行操作，否则仅在本地计算机上执行操作</p>
+<p>　　·name [ …]列出要添加到本地组或从本地组中删除的一个或多个用户名或组名</p>
+<p>　　·/add将全局组名或用户名添加到本地组中</p>
+<p>　　·/delete从本地组中删除组名或用户名</p>
+<p>　　例如：Net localgroup ggg /add 将名为ggg的本地组添加到本地用户帐号数据库；</p>
+<p>　　Net localgroup ggg 显示ggg本地组中的用户。</p>
+<p>　　16、Net Group</p>
+<p>　　作 用：在 Windows NT/2000/2003 Server 域中添加、显示或更改全局组。</p>
+<p>　　命令格式：Net group groupname {/add [/comment:”text “] | /delete} [/domain]</p>
+<p>　　有关参数说明：</p>
+<p>　　·键入不带参数的Net group显示服务器名称及服务器的组名称</p>
+<p>　　·groupname要添加、扩展或删除的组</p>
+<p>　　·/comment:”text “为新建组或现有组添加注释</p>
+<p>　　·/domain在当前域的主域控制器中执行该操作，否则在本地计算机上执行操作</p>
+<p>　　·username[ …]列表显示要添加到组或从组中删除的一个或多个用户</p>
+<p>　　·/add添加组或在组中添加用户名</p>
+<p>　　·/delete删除组或从组中删除用户名</p>
+<p>　　例如：Net group ggg GHQ1 GHQ2 /add将现有用户帐号GHQ1和GHQ2添加到本地计算机的ggg组。</p>
+<p>　　17、Net File</p>
+<p>　　作 用：显示某服务器上所有打开的共享文件名及锁定文件数。</p>
+<p>　　命令格式：Net file [id [/close]]</p>
+<p>　　有关参数说明：</p>
+<p>　　·键入不带参数的Net file获得服务器上打开文件的列表</p>
+<p>　　·id文件标识号</p>
+<p>　　·/close关闭打开的文件并释放锁定记录</p>
+<p>　　18、Net Config</p>
+<p>　　作 用：显示当前运行的可配置服务，或显示并更改某项服务的设置。</p>
+<p>　　命令格式：Net config [service [options]]</p>
+<p>　　有关参数说明：</p>
+<p>　　·键入不带参数的Net config显示可配置服务的列表</p>
+<p>　　·service通过Net config命令进行配置的服务(server或workstation)</p>
+<p>　　·options服务的特定选项</p>
+<p>　　19、Net Computer</p>
+<p>　　作 用：从域数据库中添加或删除计算机。</p>
+<p>　　命令格式：Net computer <a href="file://computername/">\\computername</a> {/add | /del}</p>
+<p>　　有关参数说明：</p>
+<p>　　·\\computername指定要添加到域或从域中删除的计算机</p>
+<p>　　·/add将指定计算机添加到域</p>
+<p>　　·/del将指定计算机从域中删除</p>
+<p>　　例如：Net computer <a href="file://js/">\\js</a> /add将计算机js 添加到登录域。</p>
+<p>　　20、Net Accounts</p>
+<p>　　作 用：更新用户帐号数据库、更改密码及所有帐号的登录要求。</p>
+<p>　　命令格式：Net accounts [/forcelogoff:{minutes | no}] [/minpwlen:length] [/maxpwage:{days | unlimited}] [/minpwage:days] [/uniquepw:number] [/domain]</p>
+<p>　　有关参数说明：</p>
+<p>　　·键入不带参数的Net accounts显示当前密码设置、登录时限及域信息</p>
+<p>　　·/forcelogoff:{minutes | no}设置当用户帐号或有效登录时间过期时</p>
+<p>　　·/minpwlen:length设置用户帐号密码的最少字符数</p>
+<p>　　·/maxpwage:{days | unlimited}设置用户帐号密码有效的最大天数</p>
+<p>　　·/minpwage:days设置用户必须保持原密码的最小天数</p>
+<p>　　·/uniquepw:number要求用户更改密码时，必须在经过number次后才能重复使用与之相同的密码</p>
+<p>　　·/domain在当前域的主域控制器上执行该操作</p>
+<p>　　·/sync当用于主域控制器时，该命令使域中所有备份域控制器同步</p>
+<p>　　例如：Net accounts /minpwlen:8 将用户帐号密码的最少字符数设置为8。</p>
+<p>　　当然Net命令具体在Win98/NT/2000/XP/2003环境中使用，可能会存在一些差异，请大家参考有关的资料说明，在此就不多说了。</p>
+<p>　　下面是一个将Net、ping 和ipconfig 命令组合起来使用，测试局域网的连通性，判定远程计算机Microsoft 网络服务的文件和打印机有无共享的实际例子。仅供同志们在学习操作Net网络命令做参考，具体步骤如下：</p>
+<p>　　1）首先我们要使用 Ping 命令测试 TCP/IP 的连接性，然后用 ipconfig 命令的显示，以确保网卡不处于“媒体已断开”状态。</p>
+<p>　　2）打开DOS命令提示符，然后使用IP地址对所需主机进行 Ping 命令测试。</p>
+<p>　　如果 Ping 命令失败，出现“Request timed out”消息，请验证主机 IP 地址是否正确，主机是否运行，以及该计算机和主机之间的所有网关（路由器）是否运行。</p>
+<p>　　3）要使用 Ping 命令测试主机名称解析功能，请使用主机名称 ping 所需的主机。</p>
+<p>如果 Ping 命令失败，出现“Unable to resolve target system name”消息，请验证主机名称是否正确，以及主机名称是否能被 DNS 服务器解析。</p>
+<p>　　4）要使用Net view 命令测试 TCP/IP 连接，请打开命令提示符，然后键入 Net view\\计算机名称。Net view 命令将通过建立临时连接，列出使用 Windows XP/NT/2000/2003 的计算机上的文件和打印共享。如果在指定的计算机上没有文件或打印共享， Net view 命令将显示“There are no entries in the list”消息。</p>
+<p>如果 Net view 命令失败，出现“System error 53 has occurred”消息，请验证计算机名称是否正确，使用 Windows XP/NT/2000/2003 的计算机是否运行，以及该计算机和使用 Windows XP/NT/2000/2003 的计算机之间的所有网关（路由器）是否运行。</p>
+<p>　　如果Net view 命令失败，出现“System error 5 has occurred.Access is denied.”消息，请验证您登录所用的帐户是否具有查看远程计算机上共享的权限。</p>
+<p>　　要进一步解决连通性问题，请执行以下操作：</p>
+<p>　　a)使用 Ping 命令 ping 计算机名称。</p>
+<p>　　如果 Ping 命令失败，出现“Unable to resolve target system name”消息，则计算机名称无法解析为 IP 地址。</p>
+<p>　　b)使用Net view 命令和运行 Windows XP/NT/2000/2003 的计算机的 IP 地址，如下所示：</p>
+<p>　　Net view <a href="file://ip/">\\IP</a> 地址；如果Net view 命令成功，那么计算机名称 解析成错误的 IP 地址。</p>
+<p>　　如果Net view 命令失败，出现“System error 53 has occurred”消息，则说明远程计算机可能没有运行 Microsoft 网络服务的文件和打印机共享</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2647626534/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/2647626534/" class="post-title-link" itemprop="url">USB量产操作</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2011-08-30 17:17:00" itemprop="dateCreated datePublished" datetime="2011-08-30T17:17:00+08:00">2011-08-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hardware/" itemprop="url" rel="index"><span itemprop="name">Hardware</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hardware/U%E7%9B%98/" itemprop="url" rel="index"><span itemprop="name">U盘</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>926</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>以下全部按照 <a target="_blank" rel="noopener" href="http://bbs.mydigit.cn/">数码之家</a> 里介绍的进行操作</p>
+<p>买了一款 pny-m1-8G的U盘，准备做光驱用，这样就不用买光驱了</p>
+<p>方法有2种：1、UltraISO      2、对USB进行底层设置</p>
+<p>-——————————————————————————————————————–</p>
+<p>我买的pny m1 详细信息：</p>
+<p>芯片是：SMI SM3255AB 的</p>
+<p><img src="http://img.ph.126.net/YJlXLQdXDVuMgJ5Vb_-P3Q==/2742973648062255091.jpg" alt="USB量产 - leaf - ------坚持雅操------" title="USB量产 - leaf - ------坚持雅操------"></p>
+<p>用量产工具检测出flash型号，并用闪存精灵检查出闪存的参数如下：</p>
+<p><img src="http://img.ph.126.net/Ogwg3oMmUVw5fryb5Y7bhA==/2490772068929505785.jpg" alt="USB量产 - leaf - ------坚持雅操------" title="USB量产 - leaf - ------坚持雅操------"></p>
+<p>-——————————————————————————————————————–</p>
+<p>软件：</p>
+<p>MyDiskTest V2.93｜U盘扩容检测/速度测试工具 <a target="_blank" rel="noopener" href="http://dl.mydigit.net/2010/09/mydisktest.html">http://dl.mydigit.net/2010/09/mydisktest.html</a></p>
+<p>ChipGenius芯片精灵V3.01｜USB主控芯片检测工具 ：<a target="_blank" rel="noopener" href="http://www.mydigit.cn/chipgenius.htm">http://www.mydigit.cn/chipgenius.htm</a> </p>
+<p>SMI3255AB最新量产工具SM32x_K0530_SM3255AB_(v2.03.42  )</p>
+<p><a target="_blank" rel="noopener" href="http://bbs.mydigit.cn/read.php?tid=290932">http://bbs.mydigit.cn/read.php?tid=290932</a></p>
+<p>FlashGenius V3.5｜闪存精灵/FLASH参数查询 <a target="_blank" rel="noopener" href="http://dl.mydigit.net/2010/09/FlashGenius.html">http://dl.mydigit.net/2010/09/FlashGenius.html</a></p>
+<p>-———————————————————————————————————————-</p>
+<p>量产操作：</p>
+<p>1、第一次量产操作</p>
+<p>按照这个一步一步操作即可</p>
+<p> <a target="_blank" rel="noopener" href="http://bbs.mydigit.cn/read.php?tid=211490">慧荣SM321~SM3257 量产CDROM成功 全文图解</a></p>
+<p><a target="_blank" rel="noopener" href="http://bbs.mydigit.cn/read.php?tid=46874">一看就会，smi32x量产详细图示教程(已添加说明文字）</a></p>
+<p>做好后我看跳出来说要格式化，然后就格式化了，格了之后才知道错了。。。把光驱格成空了。(本来直接拔出来，再插即可)</p>
+<p>2、然后工程调试，把权限分出去的盘清除掉</p>
+<p>参考 <a target="_blank" rel="noopener" href="http://bbs.mydigit.cn/read.php?tid=107138">预防及解决“SMI方案量产CDROM后，再次量产引起无法识别出盘符问题”</a></p>
+<p>点-tools-multiple erase all 清除</p>
+<p>清除后拔出内存再插虽然能显示USB，却显示0M空间，我郁闷了。。。。</p>
+<p>而且setting也不能操作</p>
+<p>3、重做量产操作，然后直接拔掉U盘，再插上，搞定</p>
+<p>这时，setting可以重新设置，跟第一步是一样的，做好后就是你想要的U盘了</p>
+<p><img src="http://img.ph.126.net/Oj36vbdG1tsPwPUN9FdXZg==/3098758018624523789.jpg" alt="USB量产操作 - leaf - ------坚持雅操------" title="USB量产操作 - leaf - ------坚持雅操------"></p>
+<p>其他：<a target="_blank" rel="noopener" href="http://bbs.mydigit.cn/read.php?tid=117966">SMI方案U盘不识别盘后安装工厂驱动详细步骤</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2417698190/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/2417698190/" class="post-title-link" itemprop="url">配置 H3C S3600</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2011-08-26 13:56:00" itemprop="dateCreated datePublished" datetime="2011-08-26T13:56:00+08:00">2011-08-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:26" itemprop="dateModified" datetime="2020-08-04T15:44:26+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Network/" itemprop="url" rel="index"><span itemprop="name">Network</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Network/huawei/" itemprop="url" rel="index"><span itemprop="name">huawei</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>508</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>minicom -C conf-s3600  </p>
+<p>display current-configuration                                #查看当前配置<br>system-view<br>sysname H3C                                                       #更改交换机名<br>vlan 1 to 4                                                            #划分vlan 1-4<br>vlan 7                                                                   #划分vlan7<br>interface Vlan-interface3<br>ip address 192.168.1.3 255.255.255.0<br>interface Ethernet1/0/1<br>port access vlan 7<br>interface Ethernet1/0/2<br>port access vlan 3<br>vlan 4<br>port Ethernet 1/0/3 to Ethernet 1/0/36<br>vlan 2<br>port Ethernet 1/0/37 to Ethernet 1/0/48<br>interface GigabitEthernet1/1/1<br>duplex full<br>port link-type trunk<br>port trunk permit vlan all<br>user-interface aux 0 7<br>user-interface vty 0<br>user privilege level 3<br>set authentication password 7 ***<br>user-interface vty 1 4<br>save</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2414203280/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/2414203280/" class="post-title-link" itemprop="url">关于车</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2011-08-17 17:29:00" itemprop="dateCreated datePublished" datetime="2011-08-17T17:29:00+08:00">2011-08-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Live/" itemprop="url" rel="index"><span itemprop="name">Live</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Live/%E7%82%B9%E6%BB%B4/" itemprop="url" rel="index"><span itemprop="name">点滴</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>212</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>排量：发动机做功的空间。喷空气、油料进去，活塞做功。<br>缸：   就是活塞数，有几个缸就有几个活塞。<br>          活塞连接曲轴，一字排开，旋转做功。<br>          缸的排列有2种，1排，跟曲轴平行排列；2排，跟曲轴平行排列。<br>曲轴：传递动力，曲轴有一段是弯曲的，连接活塞。<br>功率：P=FV P是功率，F是牵引力，V是速度。<br>           P是一定的，档位就是变换F，3档及以下注重F，3档以上注重V<br>换档：就是换齿轮。<br>积碳：发动机上壁由于燃烧不充分而附着了碳粉，会导致排量减少，动力缺失。  </p>
+<p><img src="http://img.ph.126.net/sy1swWlpEalVgk4nN7K3Cw==/32088147361895534.png" alt="关于车 - leaf - ------坚持雅操------" title="关于车 - leaf - ------坚持雅操------"></p>
 
       
     </div>
@@ -1456,7 +1540,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/27/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/27/">27</a><span class="page-number current">28</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/29/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/27/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/27/">27</a><span class="page-number current">28</span><a class="page-number" href="/page/29/">29</a><span class="space">&hellip;</span><a class="page-number" href="/page/37/">37</a><a class="extend next" rel="next" href="/page/29/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1507,12 +1591,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">399k</span>
+    <span title="站点总字数">447k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">24:11</span>
+    <span title="站点阅读时长">27:06</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

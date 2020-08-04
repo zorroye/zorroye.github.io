@@ -245,20 +245,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">282</span>
+          <span class="site-state-item-count">365</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">60</span>
+        <span class="site-state-item-count">72</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">57</span>
+        <span class="site-state-item-count">68</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -304,7 +304,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3239604257/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/4063874116/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -320,7 +320,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/3239604257/" class="post-title-link" itemprop="url">网络互连-1IP协议基础</a>
+            <a href="/posts/4063874116/" class="post-title-link" itemprop="url">[转载]Mac OS X 系统启动过程</a>
         </h2>
 
         <div class="post-meta">
@@ -330,14 +330,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2012-12-10 15:10:00" itemprop="dateCreated datePublished" datetime="2012-12-10T15:10:00+08:00">2012-12-10</time>
+              <time title="创建时间：2013-03-13 08:21:00" itemprop="dateCreated datePublished" datetime="2013-03-13T08:21:00+08:00">2013-03-13</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 15:44:26" itemprop="dateModified" datetime="2020-08-04T15:44:26+08:00">2020-08-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -345,11 +345,11 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Network/" itemprop="url" rel="index"><span itemprop="name">Network</span></a>
+                  <a href="/categories/Hackintosh/" itemprop="url" rel="index"><span itemprop="name">Hackintosh</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Network/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">基础</span></a>
+                  <a href="/categories/Hackintosh/%E5%8E%9F%E7%90%86/" itemprop="url" rel="index"><span itemprop="name">原理</span></a>
                 </span>
             </span>
 
@@ -359,14 +359,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>699</span>
+              <span>2.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
+              <span>10 分钟</span>
             </span>
 
         </div>
@@ -376,77 +376,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>关于互联网和因特网  </p>
-<blockquote>
-<p>互联网：多个网络相连而成的网络。<br>因特网：使用TCP/IP协议，将多个网络相连而成的网络  </p>
-</blockquote>
-<p>网络层的协议有：IP、ARP、RARP、ICMP、IGMP等  </p>
-<p>IP数据报报头格式：  </p>
-<blockquote>
-<p>版本<br>头部长度：4bit。每个单位代表4B，所以头部长度最长：15*4=60B<br>服务类型：8bit。  </p>
-<blockquote>
-<p>优先级：3bit，<br>D        ：要求更低的时延<br>T        ：要求更高的吞吐量<br>R        ：要求更高的可靠性<br>C        ：要求更小的路由代价<br>未用  </p>
-</blockquote>
-<p>总长度：16bit。表示一个IP数据包最大是64KB  </p>
-<blockquote>
-<blockquote>
-<p>由于数据链路层的MTU有限制，所以就有了分片的概念。  </p>
-</blockquote>
-</blockquote>
-<p>标识：发数据包时计数器的当前值。  </p>
-<blockquote>
-<p> 同个数据包分片后其标识是一样的。这样就知道他们是同个包分出来的。  </p>
-</blockquote>
-<p>标志：分2种，MF=1后面还有分片；MF=0后面没有分片。<br>片偏移：分片后，每个分片的起始字节/8。  </p>
-<blockquote>
-<p> 如第二个分片从1400字节开始，则片偏移=1400/8=175  </p>
-</blockquote>
-<p>生存时间<br>协议：8bit。数据提交给哪个上层协议。<br>首部检验和<br>源地址<br>目标地址<br>可选<br>数据  </p>
-</blockquote>
-<blockquote>
-<p>CIDR：网络部分不分类，直接划分掩码。  </p>
-</blockquote>
-<p>ARP：  </p>
-<blockquote>
-<p>将IP传为MAC地址。  </p>
-</blockquote>
-<p>RARP：  </p>
-<blockquote>
-<p>无盘工作站：运行ROM里面有RARP程序—&gt;获取IP地址—&gt;下载所需的操作系统和TCP/IP软件等  </p>
-</blockquote>
-<p>ICMP报文格式：  </p>
-<blockquote>
-<p>IP报头|ICMP报文  </p>
-<blockquote>
-<blockquote>
-<p>|  </p>
-</blockquote>
-</blockquote>
-<p>类型–代码–检验和–相关类型的具体报文内容  </p>
-</blockquote>
-<blockquote>
-<p>类型：2种。差错报文和询问报文<br>代码：类型的值。  </p>
-<blockquote>
-<p>差错报文有5种<br>询问报文有4种  </p>
-</blockquote>
-<p>检验和：对整个ICMP报文进行检验<br>数据：根据不同类型不同的值写入不同的内容。  </p>
-</blockquote>
-<p>IGMP报文格式：  </p>
-<blockquote>
-<p>IGMP就是组播协议，用于视频会议等。  </p>
-</blockquote>
-<blockquote>
-<p>IP报头|IGMP报文  </p>
-<blockquote>
-<blockquote>
-<p>|  </p>
-</blockquote>
-</blockquote>
-<p>类型–响应时间–检验和–组地址  </p>
-</blockquote>
-<blockquote>
-<p>IP报头：里面使用的是D类地址。<br>类型：3种</p>
-</blockquote>
+          <p>转自：<a target="_blank" rel="noopener" href="http://nbbbs.zol.com.cn/24/544_237379.html">http://nbbbs.zol.com.cn/24/544_237379.html</a><br>文章是07年的，有点旧  </p>
+<p>启动过程：<br>1、 电源开启。<br>2、 执行固件中的代码。<br>3、 收集硬件信息并初始硬件。<br>4、 选择启动项（通常是选择 OS ，但有时会选择硬件测试等类似情况。）。用户可能会被提示进行启动选择。<br>5、 控制权交给 /System/Library/CoreServices/BootX （启动引导器）。 BootX 载入内核并描绘 OS 标识（如有）。BootX 尝试载入先前缓存的设备驱动列表（根据 /usr/sbin/kextcache 进行创建或更新）。缓存的类型为 mkext 且为多内核扩展包含了信息词典（info dictionaries）与二进制文件。注意：如果 mkext 缓存丢失或损坏，BootX 将在 /System/Library/Extensions 中搜索当前方案中所需要的扩展（由该扩展包中 Info.plist 文件的 OSBundleRequired 属性值进行决定。）<br>6、 执行内核中的 init 例程。决定要启动之系统的根设备。从此刻起，将不再使用固件中的程序。<br>7、 由内核初始各种 Mach/BSD 数据结构。<br>8、 初始 I/O （输入输出）设备。<br>9、 内核开始运行 /sbin/mach_init ，Mach 服务命名（引导程序）后台。mach_init 为服务名和要准备访问其它服务所用的 Mach 端口提供映射。<br>到这步时，启动开始转为用户等级：<br>10、 mach_init 开始 /sbin/init，传统的 BSD 初始化（init）进程。初始化将决定运行等级，并运行 /etc/rc.boot （设置让机器能够运行单用户－single user 模式）。<br>在此步中，将执行： rc.boot 与其它 rc 脚本源程序 /etc/rc.common，一个包含实用功能的 shell 脚本，如 CheckForNetwork() （检查如网络已启动）， GetPID(), purgedir() （仅删除目录内容， 而非结构），等。<br>11、 rc.boot 会显示要启动的类型（多用户，安全模式，光驱，网络等等）。网络启动的情况下（ sysctl 的变量 kern.netboot 将会为何种情况而设之为 1 ），其将用一个启动参数来运行 /etc/rc.netboot 。<br>/etc/rc.netboot 会处理网络启动的参数特征。例如:执行网络和（如有）本地挂载。其还会呼叫 /usr/bin/nbst 来关联当作根设备使用的磁盘镜像到一个影子文件（shadow file）。此方法是将那个希望处于本地存储器的文件（磁盘）重定向写入到影子文件。<br>12、 rc.boot 会在必须进行文件系统一致性检查（file system consistency check， fsck）时，显示图形。单用户模式和用光盘启动时不会运行 fsck。安全模式启动时总会运行 fsck。rc.boot 也会处理 fsck 的返回状态。<br>13、 如果 rc.boot 成功退出， /etc/rc 多用户启动脚本将会运行。如果正在从一个光驱启动，脚本将切换到 /etc/rc.cdrom （安装）。<br>14、 /etc/rc 挂载本地文件系统 (HFS+、HFS、UFS、/dev/fd、/.vol)，确保目录 /private/var/tmp 存在，然后运行 /etc/rc.installer_cleanup 如果有（重启前，会由安装器离开）。<br>15、 /etc/rc.cleanup 运行。其将“清理”一定数量的 Unix 与 Mac 特殊目录/文件。<br>16、 启动缓存 （BootCache）开始。<br>17、 各种 sysctl 变量被设置（如：vnodes 的最大值、System V IPC 等）。如果 /etc/sysctl.conf 已存在 (在 Mac OS X Server 中为 /etc/sysctl-macosxserver.conf)，它将读取和设置 sysctl 变量为已包含在其中的。<br>18、 syslogd 开始。<br>19、 创建机器检查符号文件（Mach symbol file）。<br>20、 /etc/rc 开始 kextd 后台进程，用来从内核或委托进程 （client processes）加载所需的内核扩展。<br>21、 /usr/libexec/register_mach_bootstrap_servers 将运行以加载包含在 /etc/mach_init.d 中的各种 Mach 引导程序所基于的服务。<br>22、 portmap 与 netinfo 开始。<br>23、 如 /System/Library/Extensions.mkext 旧于 /System/Library/Extensions， /etc/rc 将删除已存在的 mkext 并创建一个新的（不存在时，会创建）。<br>24、 /etc/rc 启动 /usr/sbin/update，一个后台程序，用来频繁地清空磁盘上的互联网文件系统缓存。<br>25、 /etc/rc 启动虚拟内存系统。 设置 /private/var/vm 为一个交换目录。/sbin/dynamic_pager 以适当的参数启动（交换文件名路径模板、已创建的交换文件大小、当创建额外交换文件或删除已存在文件时，指定高、低水平的警报切换开关。）<br>26、 /etc/rc 启动 /usr/libexec/fix_prebinding 以修复错误地预连编二进制文件 （prebound binaries）<br>27、 /etc/rc 执行 /etc/rc.cleanup 以清除并重置文件与设备。<br>28、 /etc/rc 最后将启动 /sbin/SystemStarter ，处理启动项从下列位置： /System/Library/StartupItems 与 /Library/StartupItems。一个启动项是一个程序、一个 shell 脚本、匹配一个文件夹名的名称。文件夹包含一个属性列表文件含有一些配对的关键值，如： Deion、Provides、Requires、 OrderPreference、启动与停止信息等等。您可以运行 SystemStarter -n -D 以作为根用户 (root) 来进行程序打印调试与从属信息（不包含现在已经在运行的任何项目）。<br>29、 CoreGraphics 启动开始 Apple 类型服务后台(ATSServer) 和 Window 服务器 (WindowServer)。<br>默认下，loginwindow 程序 (loginwindow.app 位于 /System/Library/CoreServices 目录下) 已为控制设备执行。如果您不想运行到图形登录，可以修改 /etc/ttys 中相关的行。</p>
 
       
     </div>
@@ -466,7 +397,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1617765300/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3839016931/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -482,7 +413,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/1617765300/" class="post-title-link" itemprop="url">打开excel2007文件显示空白</a>
+            <a href="/posts/3839016931/" class="post-title-link" itemprop="url">ubuntu10.04 调整屏幕亮度</a>
         </h2>
 
         <div class="post-meta">
@@ -492,107 +423,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2012-12-07 10:12:00" itemprop="dateCreated datePublished" datetime="2012-12-07T10:12:00+08:00">2012-12-07</time>
+              <time title="创建时间：2013-03-12 19:37:00" itemprop="dateCreated datePublished" datetime="2013-03-12T19:37:00+08:00">2013-03-12</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Windows/Q-A/" itemprop="url" rel="index"><span itemprop="name">Q&A</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>94</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>EXCEL选项→高级→常规，取消对“忽略使用动态数据交换（DDE）的其他应用程序”的勾选  </p>
-<p>转自：<a target="_blank" rel="noopener" href="http://zhidao.baidu.com/question/202525385.html">http://zhidao.baidu.com/question/202525385.html</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/723620388/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/723620388/" class="post-title-link" itemprop="url">系统备份工具---ucloner</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2012-12-06 23:02:00" itemprop="dateCreated datePublished" datetime="2012-12-06T23:02:00+08:00">2012-12-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -614,233 +452,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>841</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>ucloner适用于ubuntu12.04，<a target="_blank" rel="noopener" href="http://forum.ubuntu.org.cn/viewtopic.php?t=372432">http://forum.ubuntu.org.cn/viewtopic.php?t=372432</a><br>软件下载地址：<a target="_blank" rel="noopener" href="http://code.google.com/p/ucloner/">http://code.google.com/p/ucloner/</a>  </p>
-<p>用软件之前先安装如下软件：  </p>
-<blockquote>
-<p>sudo apt-get install squashfs-tools<br>sudo apt-get install python-gtk2 zenity python-vte  </p>
-</blockquote>
-<p>备份：  </p>
-<blockquote>
-<p>打开./ucloner_gui.py  </p>
-</blockquote>
-<blockquote>
-<p>设置保存目录，设置要排除的目录即可。生成squashfs文件  </p>
-</blockquote>
-<p>还原  </p>
-<blockquote>
-<p>将squashfs文件和Ucloner复制到U盘  </p>
-</blockquote>
-<blockquote>
-<p>用同版本的光盘或U盘启动，ubuntu10.04-x86的系统用ubuntu10.04-x86的盘<br>设置存放目录，设置分区和grub等即可还原。<br>#目标系统可以不格式化，选current<br>#不格式化可以保护原先在盘里面的资料  </p>
-</blockquote>
-<blockquote>
-</blockquote>
-<blockquote>
-<p>还原的时候如果原先分区有多个盘，可以用命令行来设置还原<br>如分区如下<br>/                /dev/sda1<br>/home       /dev/sda5<br>/usr          /dev/sda6<br>/var          /dev/sda7<br>swap        /dev/sda8  </p>
-<p>则还原命令如下  </p>
-</blockquote>
-<blockquote>
-<p>sudo  ./ucloner_cmd.py  mode=restore  lang=cn   restore_from=/media/disk-1/ubuntu-10.04.squashfs   /=/dev/sda1  /_fs=ext4   /home=/dev/sda5  /home_fs=current    /usr=/dev/sda6  /usrl_fs=ext4   /var=/dev/sda7  /var_fs=ext4   grubdev=/dev/sda   swap=/dev/sda8  </p>
-</blockquote>
-<p> <br>克隆  </p>
-<blockquote>
-<p>主要用于在多台配置相同的电脑中快速安装系统。<br>接上其他电脑的硬盘，然后分好区， 然后就可以克隆了。<br>克隆好后把硬盘接回其他电脑上就可以用了。  </p>
-</blockquote>
-<p>制作lived系统  </p>
-<blockquote>
-<p>不会  </p>
-</blockquote>
-<p>Ucloner和ghost的区别是：硬盘间操作，ucloner要先分区再还原。<br>分区最好用Gparted</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2594647187/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/2594647187/" class="post-title-link" itemprop="url">linux下u盘启动盘制作工具---Unetbootin</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2012-12-06 21:23:00" itemprop="dateCreated datePublished" datetime="2012-12-06T21:23:00+08:00">2012-12-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/Q-A/" itemprop="url" rel="index"><span itemprop="name">Q&A</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>47</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>本文被删除过，但觉得仍然有必要放上，所以重建了一次  </p>
-<p>注意：U盘只能格式化为FAT32，才能被识别  </p>
-<p><img src="http://img0.ph.126.net/4OWy0q-jif55qW-hYguKow==/2497527468371563790.png" alt="linux下u盘启动盘制作工具---Unetbootin - leaf - ------坚持雅操------" title="linux下u盘启动盘制作工具---Unetbootin - leaf - ------坚持雅操------"></p>
-<p> </p>
-<p><img src="http://img0.ph.126.net/M4MQNPWfBzXPiM8KfVC3hg==/1015280241013234840.png" alt="linux下u盘启动盘制作工具---Unetbootin - leaf - ------坚持雅操------" title="linux下u盘启动盘制作工具---Unetbootin - leaf - ------坚持雅操------"></p>
-<p> </p>
-<p><img src="http://img8.ph.126.net/_VhTs0S7A0YZATqajRfVuw==/6597730573144936398.png" alt="linux下u盘启动盘制作工具---Unetbootin - leaf - ------坚持雅操------" title="linux下u盘启动盘制作工具---Unetbootin - leaf - ------坚持雅操------"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3868300778/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/3868300778/" class="post-title-link" itemprop="url">[转载]linux系统挂载光盘镜像ISO的方法</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2012-12-04 12:01:00" itemprop="dateCreated datePublished" datetime="2012-12-04T12:01:00+08:00">2012-12-04</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>535</span>
+              <span>542</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -857,12 +469,17 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p><a target="_blank" rel="noopener" href="http://www.jb51.net/os/RedHat/1050.html">http://www.jb51.net/os/RedHat/1050.html</a>  </p>
-<p>ISO：<br>iso 格式的光盘镜像可以说是最普遍和通用的了，处理起来非常方便，挂载命令：<br>( 假设镜像文件名为 download，挂载点为 /mount-point ，下同)<br>mount -t iso9660 -o loop,user download.iso  /mount-point  </p>
-<p>MDF：<br>mdf 是 Win 下的虚拟光驱软件 Alcohol 120% 的专有格式，你可以用 mdf2iso 把 mdf  文件转换成 iso 格式再挂载，或者尝试用下面的命令挂载：<br>mount download.mdf /mount-point -o loop=/dev/loop0<br>不过遗憾的是，有些分轨的 mdf 文件，这样还是无能为力。  </p>
-<p>BIN (or  BIN + CUE )：<br>可以用 cdemu 挂载，也可以用 bin2iso 转换成 iso 再挂载，也可以 bchunk 转换 bin+cue 到 iso 。  </p>
-<p>NRG：<br>nrg 格式的镜像文件是 Nero 的专有格式，你可以用 nrg2iso 转换成 iso 再挂载，或者尝试下面的命令：<br>mount -o loop,offset=307200 download.nrg /mount-point  </p>
-<p>CCD：<br>ccd 是 CloneCD 的专有格式，你可以用 ccd2iso 转换成 iso 再挂载。</p>
+          <p>参考：<a target="_blank" rel="noopener" href="http://www.linuxidc.com/Linux/2012-06/63727.htm">http://www.linuxidc.com/Linux/2012-06/63727.htm</a>  </p>
+<p>1、安装软件：sudo apt-get install laptop-mode-tools  </p>
+<p>2、配置文件：<br>文章提到2个配置文件，但我笔记本上配置一个就可以了<br>sudo nano  /etc/laptop-mode/conf.d/lcd-brightness.conf  </p>
+<blockquote>
+<p>CONTROL_BRIGHTNESS=1<br>BATT_BRIGHTNESS_COMMAND=”echo 70”<br>LM_AC_BRIGHTNESS_COMMAND=”echo 70”<br>NOLM_AC_BRIGHTNESS_COMMAND=”echo 70”<br>BRIGHTNESS_OUTPUT=”/proc/acpi/video/AVGA/LCD/brightness  </p>
+<p>备注：<br>首先调整亮度，<br>然后 cat /proc/acpi/video/AVGA/LCD/brightness 会限制当前亮度<br>然后替代上面的70参数即可  </p>
+<p>变量说明<br>BATT_BRIGHTNESS_COMMAND          使用电池时亮度<br>LM_AC_BRIGHTNESS_COMMAND       使用交流电时亮度<br>NOLM_AC_BRIGHTNESS_COMMAND  ？？  </p>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>2、好像系统管理里面的电源管理也可以调的。绕弯了。。。</p>
 
       
     </div>
@@ -882,7 +499,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3345977369/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3231248921/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -898,7 +515,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/3345977369/" class="post-title-link" itemprop="url">[转载]ubuntu10.04 x64 安装PacketTracer5.3</a>
+            <a href="/posts/3231248921/" class="post-title-link" itemprop="url">买了台mini电脑</a>
         </h2>
 
         <div class="post-meta">
@@ -908,14 +525,139 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2012-12-03 18:29:00" itemprop="dateCreated datePublished" datetime="2012-12-03T18:29:00+08:00">2012-12-03</time>
+              <time title="创建时间：2013-03-10 14:53:00" itemprop="dateCreated datePublished" datetime="2013-03-10T14:53:00+08:00">2013-03-10</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Live/" itemprop="url" rel="index"><span itemprop="name">Live</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Live/%E7%82%B9%E6%BB%B4/" itemprop="url" rel="index"><span itemprop="name">点滴</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>324</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p><img src="http://img1.ph.126.net/2qR4R-BPV7Ve4JKhKOkDmg==/6598213258750020352.jpg" alt="买了台mini电脑 - leaf - ------坚持雅操------" title="买了台mini电脑 - leaf - ------坚持雅操------"></p>
+<p><img src="http://img0.ph.126.net/OgMilLWMrbLvko26u0m5xA==/6597528263006125374.jpg" alt="买了台mini电脑 - leaf - ------坚持雅操------" title="买了台mini电脑 - leaf - ------坚持雅操------"></p>
+<p>  <br>配置：  </p>
+<blockquote>
+<p>CPU：INTEL ATOM D2550<br>显卡：INTEL GMA 3600 集成<br>内存：DDR3-1333 2G<br>硬盘：日立 160G  </p>
+</blockquote>
+<blockquote>
+<p>大小：2/3 A4纸  </p>
+</blockquote>
+<p>使用感受：<br>1、显卡：  </p>
+<blockquote>
+<p>知道intel的显卡弱，没想到这么弱。更坑爹的是intel提供的XP驱动也垃圾！<br>我装了1.15版本的XP驱动。本来就没打算玩游戏，但是看高清1280X768竟然有时候还会卡一下。  </p>
+</blockquote>
+<p>2、温度：  </p>
+<blockquote>
+<p>这台电脑的问题在50度左右。  </p>
+</blockquote>
+<p>3、噪音：  </p>
+<blockquote>
+<p>风扇转速在5000转以上，不知道能不能换个散热器。  </p>
+</blockquote>
+<p>4、机箱：  </p>
+<blockquote>
+<p>由于不是买微步的主板，所以机箱后面我改了一下才能装。  </p>
+</blockquote>
+<p>5、应用：  </p>
+<blockquote>
+<p>上网、聊天、查资料都可以，速度也挺快的。  </p>
+</blockquote>
+<p>6、用电量：  </p>
+<blockquote>
+<p>40W的用电量还是有的，没想象中的少。  </p>
+</blockquote>
+<p>总结：除了小，真的没啥优点了。各位如果想买请三思。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/332203575/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/332203575/" class="post-title-link" itemprop="url">linux目录摘记</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2013-02-27 16:37:00" itemprop="dateCreated datePublished" datetime="2013-02-27T16:37:00+08:00">2013-02-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -937,14 +679,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.5k</span>
+              <span>428</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>6 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -954,20 +696,40 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>转自：<br><a target="_blank" rel="noopener" href="http://kaslnetwork.com/articles/installing-cisco-packettracer-5-3-2-on-64-bit-ubuntu-or-debian/?doing%5C_wp%5C_cron=1354528617.3749530315399169921875">http://kaslnetwork.com/articles/installing-cisco-packettracer-5-3-2-on-64-bit-ubuntu-or-debian/?doing\_wp\_cron=1354528617.3749530315399169921875</a>  </p>
-<p>PacketTracer5.3只有32位的，而且提供的软件是bin文件。以下提供如何在ubuntu 64位下安装<br>方法是：<br>安装的时候提取出packettracer的deb文件，然后装好32位库文件，再强制安装packettracer即可  </p>
-<p>1、下载packettracer5.3  </p>
+          <p>查看书名：系统架构和目录解析_邱世华  </p>
+<p>/lib：存放函数库和内核模块  </p>
 <blockquote>
-<p>下载地址我忘了，有需要的可以留言。  </p>
+<p>/lib/modules：存放内核模块ko<br>内核模块加载顺序：  </p>
+<blockquote>
+<p>/lib/modules/`uname -r`/initrd/—–&gt;<br>/lib/modules/`uname -r`/updates/—-&gt;<br>/lib/modules/`uname -r`/kernel/drivers/  </p>
 </blockquote>
-<p>2、建sh脚本：PacketTracerx64Hack.sh</p>
-<p>#!/bin/bash  </p>
-<p># PacketTracer Installer Hack<br># Written by K. Law @ <a target="_blank" rel="noopener" href="http://kaslit.com/">http://kaslit.com</a><br># PacketTracer is a program by Cisco Systems  </p>
-<h1 id=""><a href="#" class="headerlink" title=""></a></h1><p># The purpose of this script is to install PacketTracer on<br># the unsupported 64-bit Ubuntu or Debian Linux platforms  </p>
-<p>echo “Installing Required Libraries”<br>apt-get -y install ia32-libs-gtk<br>echo “ia32-libs-gtk is the key to the installation. Without it, PacketTracer will not work.”<br>echo “.deb file exists in /tmp”<br>echo “ “<br>echo “copying installer to ./“<br>echo “ “<br>cp -v /tmp/selfextract.*/Packet* ./<br>echo “Copy Successful”<br>echo “ “<br>echo “Installing Libraries”<br>wget -c <a target="_blank" rel="noopener" href="http://content.kaslit.com/downloads/getlibs-all.deb">http://content.kaslit.com/downloads/getlibs-all.deb</a><br>dpkg -i getlibs-all.deb<br>echo “ “<br>echo “Running dpkg -i –force-architecture Packet*.deb”<br>dpkg -i –force-architecture Packet*.deb<br>echo “ “<br>echo “PacketTracer is installed”<br>echo “ “<br>echo “Applying libs”<br>getlibs /usr/local/PacketTracer5/bin/PacketTracer5<br>echo “ “<br>echo “PacketTracer should now be installed - However, this script is light and does not detect errors.”<br>echo “ “<br>echo “Running PacketTracer”<br>echo “ “<br>echo “Did PacketTracer Not Install? If not, look for the ia32-libs-gtk file in the Debian/Ubuntu repositories. It is the key to the successful install.” &gt; ~/PacketTracer_README_IF_IT_FAILED.txt<br>/usr/local/PacketTracer5/packettracer</p>
-<p>3、安装  </p>
+</blockquote>
 <blockquote>
-<p>sudo sh PacketTracer53*<br>点<enter>阅读说明，阅读到90%的时候，另开一个终端<br>sudo sh PacketTracerx64Hack.sh<br>该脚本会自动复制packettracer的deb文件，并自动安装</p>
+<p>/lib/security：存放PAM库文件so  </p>
+<blockquote>
+<p>用于PAM机制认证  </p>
+</blockquote>
+</blockquote>
+<p>/etc/default：存放系统软件默认值的目录  </p>
+<blockquote>
+<p>如/etc/default/useradd：就设置了添加账户时的默认参数信息。  </p>
+</blockquote>
+<p>/dev：设备文件目录  </p>
+<blockquote>
+<p>操作系统Ring概念：  </p>
+<blockquote>
+<p>用户使用应用程序操作硬件—&gt;<br>应用程序调用模块—&gt;<br>模块使用虚拟文件系统中对应的文件—-&gt;<br>虚拟文件系统请求内核对硬件进行操作。  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>/proc：程序信息和系统设置目录  </p>
+<blockquote>
+<p>查看cpu信息：cat /proc/cpuinfo  </p>
+</blockquote>
+<p>/sys：系统分类信息  </p>
+<blockquote>
+<p>以分类的方式列出系统信息。</p>
 </blockquote>
 
       
@@ -988,7 +750,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3933523040/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3898123418/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1004,7 +766,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/3933523040/" class="post-title-link" itemprop="url">gentoo安装：2xfce桌面</a>
+            <a href="/posts/3898123418/" class="post-title-link" itemprop="url">学习ldap:2安装openldap</a>
         </h2>
 
         <div class="post-meta">
@@ -1014,14 +776,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2012-11-30 16:40:00" itemprop="dateCreated datePublished" datetime="2012-11-30T16:40:00+08:00">2012-11-30</time>
+              <time title="创建时间：2013-02-25 16:40:00" itemprop="dateCreated datePublished" datetime="2013-02-25T16:40:00+08:00">2013-02-25</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1029,11 +791,11 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                  <a href="/categories/Services/" itemprop="url" rel="index"><span itemprop="name">Services</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/gentoo/" itemprop="url" rel="index"><span itemprop="name">gentoo</span></a>
+                  <a href="/categories/Services/ldap/" itemprop="url" rel="index"><span itemprop="name">ldap</span></a>
                 </span>
             </span>
 
@@ -1043,7 +805,126 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>899</span>
+              <span>2.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>9 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>安装：openssl+berkeleydb+sasl+mit kerberos+openldap<br>参考：<a target="_blank" rel="noopener" href="http://www.linuxfromscratch.org/blfs/view/svn/index.html">http://www.linuxfromscratch.org/blfs/view/svn/index.html</a>  </p>
+<p>1、openssl<br><a target="_blank" rel="noopener" href="http://www.openssl.org/source/openssl-1.0.1c.tar.gz">http://www.openssl.org/source/openssl-1.0.1c.tar.gz</a><br><a target="_blank" rel="noopener" href="http://www.linuxfromscratch.org/patches/blfs/svn/openssl-1.0.1c-fix/_manpages-1.patch">http://www.linuxfromscratch.org/patches/blfs/svn/openssl-1.0.1c-fix\_manpages-1.patch</a>  </p>
+<blockquote>
+<p>patch -Np1 -i ../openssl-1.0.1c-fix_manpages-1.patch<br>./config  shared<br>make<br>make  install  </p>
+</blockquote>
+<p>2、BerkeleyDB<br><a target="_blank" rel="noopener" href="http://download.oracle.com/berkeley-db/db-5.3.21.tar.gz">http://download.oracle.com/berkeley-db/db-5.3.21.tar.gz</a>  </p>
+<blockquote>
+<p>cd build_unix                        ../dist/configure<br>make<br>make  install<br>ln -v -sf  /usr/local/BerkeleyDB.5.3/include/* /usr/include<br>ln -v -sf  /usr/local/BerkeleyDB.5.3/lib/*     /usr/lib  </p>
+</blockquote>
+<p>3、Cyrus SASL<br><a target="_blank" rel="noopener" href="http://ftp.andrew.cmu.edu/pub/cyrus-mail/cyrus-sasl-2.1.25.tar.gz">http://ftp.andrew.cmu.edu/pub/cyrus-mail/cyrus-sasl-2.1.25.tar.gz</a><br><a target="_blank" rel="noopener" href="http://www.linuxfromscratch.org/patches/blfs/svn/cyrus-sasl-2.1.25-fixes-1.patch">http://www.linuxfromscratch.org/patches/blfs/svn/cyrus-sasl-2.1.25-fixes-1.patch</a>  </p>
+<blockquote>
+<p>patch -Np1 -i ../cyrus-sasl-2.1.25-fixes-1.patch<br>./configure<br>make<br>make install<br>ln -s /usr/local/lib/sasl2 /usr/lib/sasl2  </p>
+</blockquote>
+<p>4、mit kerberos<br><a target="_blank" rel="noopener" href="http://web.mit.edu/kerberos/www/dist/krb5/1.11/krb5-1.11-signed.tar">http://web.mit.edu/kerberos/www/dist/krb5/1.11/krb5-1.11-signed.tar</a>  </p>
+<blockquote>
+<p>cd src  </p>
+</blockquote>
+<blockquote>
+<p>./configure  –prefix=/usr  –localstatedir=/var/lib    –enable-dns-for-realm<br>make<br>make install<br>for LIBRARY in gssapi_krb5 gssrpc k5crypto kadm5clnt_mit kadm5srv_mit \<br>               kdb5 krb5 krb5support verto ; do<br>    chmod -v 755 /usr/lib/lib$LIBRARY.so.*.*<br>done &amp;&amp;<br>mv -v /usr/lib/libkrb5.so.3*        /lib &amp;&amp;<br>mv -v /usr/lib/libk5crypto.so.3*    /lib &amp;&amp;<br>mv -v /usr/lib/libkrb5support.so.0* /lib &amp;&amp;<br>ln -v -sf ../../lib/libkrb5.so.3.3        /usr/lib/libkrb5.so        &amp;&amp;<br>ln -v -sf ../../lib/libk5crypto.so.3.1    /usr/lib/libk5crypto.so    &amp;&amp;<br>ln -v -sf ../../lib/libkrb5support.so.0.1 /usr/lib/libkrb5support.so &amp;&amp;<br>mv -v /usr/bin/ksu /bin &amp;&amp;<br>chmod -v 755 /bin/ksu   &amp;&amp;<br>install -v -dm755 /usr/share/doc/krb5-1.11 &amp;&amp;<br>cp -vfr ../doc/*  /usr/share/doc/krb5-1.11 &amp;&amp;<br>unset LIBRARY  </p>
+</blockquote>
+<p>5、openldap<br><a href="ftp://ftp.openldap.org/pub/OpenLDAP/openldap-release/openldap-2.4.33.tgz">ftp://ftp.openldap.org/pub/OpenLDAP/openldap-release/openldap-2.4.33.tgz</a><br><a target="_blank" rel="noopener" href="http://www.linuxfromscratch.org/patches/blfs/svn/openldap-2.4.33-blfs/_paths-1.patch">http://www.linuxfromscratch.org/patches/blfs/svn/openldap-2.4.33-blfs\_paths-1.patch</a><br><a target="_blank" rel="noopener" href="http://www.linuxfromscratch.org/patches/blfs/svn/openldap-2.4.33-symbol/_versions-1.patch">http://www.linuxfromscratch.org/patches/blfs/svn/openldap-2.4.33-symbol\_versions-1.patch</a><br><a target="_blank" rel="noopener" href="http://www.linuxfromscratch.org/patches/blfs/svn/openldap-2.4.33-ntlm-1.patch">http://www.linuxfromscratch.org/patches/blfs/svn/openldap-2.4.33-ntlm-1.patch</a>  </p>
+<blockquote>
+<p>patch -Np1 -i ../openldap-2.4.33-ntlm-1.patch<br>patch -Np1 -i ../openldap-2.4.33-blfs_paths-1.patch<br>patch -Np1 -i ../openldap-2.4.33-symbol_versions-1.patch<br>autoconf<br>./configure \  </p>
+<blockquote>
+<p>--with-tls=openssl \<br>--enable-spasswd \<br>--disable-static \<br>--disable-debug \<br>--enable-dynamic \<br>--enable-crypt \<br>--enable-modules \<br>--enable-rlookups \<br>--enable-backends=mod \<br>--enable-overlays=mod \<br>--disable-ndb \<br>--disable-sql  </p>
+</blockquote>
+<p>make depend    #config结束后会提示这一步操作<br>make test          #全部通过<br>make<br>make install  </p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2420451105/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/2420451105/" class="post-title-link" itemprop="url">学习ldap：1概述</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2013-02-22 18:22:00" itemprop="dateCreated datePublished" datetime="2013-02-22T18:22:00+08:00">2013-02-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Services/" itemprop="url" rel="index"><span itemprop="name">Services</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Services/ldap/" itemprop="url" rel="index"><span itemprop="name">ldap</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>710</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -1060,30 +941,52 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>参考：<br><a target="_blank" rel="noopener" href="http://www.gentoo.org/doc/en/xorg-config.xml">http://www.gentoo.org/doc/en/xorg-config.xml</a><br><a target="_blank" rel="noopener" href="http://www.gentoo.org/doc/zh/_cn/xorg-config.xml">http://www.gentoo.org/doc/zh\_cn/xorg-config.xml</a><br><a target="_blank" rel="noopener" href="http://www.gentoo.org/doc/zh/_cn/xfce-config.xml">http://www.gentoo.org/doc/zh\_cn/xfce-config.xml</a><br><a target="_blank" rel="noopener" href="http://blog.csdn.net/fo1/_sky/article/details/6339910">http://blog.csdn.net/fo1\_sky/article/details/6339910</a><br>1、安装Xorg  </p>
+          <p>我看的是这两本书：  </p>
 <blockquote>
-<p>nano -w /etc/portage/make.conf  </p>
-<blockquote>
-<p>INPUT_DEVICES=”keyboard mouse”<br>VIDEO_CARDS=”vmware”  </p>
+<p>WindowsServer2003活动目录_商宏图<br>ldap系统管理_蒋大伟 (繁体版)  </p>
 </blockquote>
-<p>emerge libdrm<br>emerge mesa<br>emerge –autounmask-write  xorg-x11<br>dispatch-conf<br>emerge xorg-x11  </p>
-</blockquote>
+<p>windows AD 把ldap和域控等功能做的很好了。看windows AD 对于理解概念，对于了解DNS+LDAP+域控+权限+域管理+集成应用程序等运作很有帮助。  </p>
+<p>目录服务：  </p>
 <blockquote>
-<p>#要安装125个包<br>env-update<br>source /etc/profile<br>Xorg -configure<br>X -config /root/xorg.conf.new<br>cp /root/xorg.conf.new /etc/X11/xorg.conf<br>startx 进行测试  </p>
-</blockquote>
-<p>2、安装xfce  </p>
-<blockquote>
-<p>由于安装gnome出现问题解决不了，所以安装了xfce<br>libdiscid   rarian(包含在hal下) 这2个软件不知道怎么装。  </p>
-<p>USE=”-gnome -kde -minimal -qt4 branding dbus hal jpeg lock session startup-notification thunar X”<br>emerge thunar-volman<br>emerge python<br>emerge pambase<br>emerge -avt xfce4-meta<br>for x in plugdev cdrom cdrw usb ; do gpasswd -a leaf $x ; done<br>env-update &amp;&amp; source /etc/profile<br>echo “exec startxfce4” &gt; ~/.xinitrcemerge xf86-input-evdev  #解决鼠标动不了的问题<br>startx<br>后面的附加程序都没有装  </p>
-</blockquote>
-<p>界面如下：  </p>
-<blockquote>
-<p><img src="http://img3.ph.126.net/ybaTpHC0ug5NfXM9OjlNIQ==/6597557949819376093.jpg" alt="gentoo安装：2xfce桌面 - leaf - ------坚持雅操------" title="gentoo安装：2xfce桌面 - leaf - ------坚持雅操------">  </p>
-<p>对以后LFS装桌面有好处～。。。  </p>
-<p> </p>
+<p>目录：存放信息的一个存放地。  </p>
 </blockquote>
 <blockquote>
+<p>服务：提供存放和查询等功能。<br>目录服务：提供存放信息的场所和向用户提供查询服务。<br>DNS就是目录服务：其储存域名&lt;—&gt;IP的对应 并提供给用户查询<br>和数据库的区别：目录服务侧重查询功能，而数据库侧重存储功能。  </p>
 </blockquote>
+<p>LDAP：  </p>
+<blockquote>
+<p>用于规范目录服务存取和查询等功能的协议。<br>规范的内容：ldif文档语法，纲要定义，属性、属性的类型、属性的值，如何认证，如何构建目录树，如何做主从目录服务。  </p>
+</blockquote>
+<blockquote>
+<p>LDAP的结构：  </p>
+<blockquote>
+<p>dc-ou-cn-cn的值(存储资料)<br>各节点都包含属性类型objectclass，属性类型确定该节点能存储那些信息。  </p>
+<p>纲要(schema)：相当于数据结构，它被用来决定数据怎样被存储<br>属性类型：相当于变量类型，确定能存储那些信息。  </p>
+<blockquote>
+<p>objectclass：结构物件类别。<br>dcobject：辅助类别，用于增加可存储的资料内容  </p>
+</blockquote>
+<blockquote>
+<p>ldap使用OID对属性类型进行标识，确保唯一。  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>LDAP的安全：  </p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>通道安全：SSL、StartTLS、SASL<br>认证：匿名，明文密码，加密密码，结合加密通道的加密密码，使用其他软件进行认证<br>授权(acl)：设置读写ldap目录的权限。  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>LDAP和应用程序的整合  </p>
+<blockquote>
+<p>MAIL<br>SAMBA<br>FTP<br>CUPS<br>windowsAD  </p>
+</blockquote>
+</blockquote>
+<p>要学的内容包括：<br>ldap各功能介绍，ldif文档介绍<br>openldap安装和配置文件说明<br>ldap认证<br>ldap整合</p>
 
       
     </div>
@@ -1103,7 +1006,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3997419446/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3112032052/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1119,7 +1022,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/3997419446/" class="post-title-link" itemprop="url">MYSQL：1基础</a>
+            <a href="/posts/3112032052/" class="post-title-link" itemprop="url">Ubuntu10.04 安装阿里旺旺</a>
         </h2>
 
         <div class="post-meta">
@@ -1129,14 +1032,124 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2012-11-29 14:12:00" itemprop="dateCreated datePublished" datetime="2012-11-29T14:12:00+08:00">2012-11-29</time>
+              <time title="创建时间：2013-01-31 02:23:00" itemprop="dateCreated datePublished" datetime="2013-01-31T02:23:00+08:00">2013-01-31</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/Q-A/" itemprop="url" rel="index"><span itemprop="name">Q&A</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>943</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>阿里旺旺下载地址：<a target="_blank" rel="noopener" href="http://ge.tt/8sPpGIA">http://ge.tt/8sPpGIA</a><br>#地址能打开，但是很慢。<br>附下载地址：<a target="_blank" rel="noopener" href="http://pan.baidu.com/share/link?shareid=260186&uk=336411764">http://pan.baidu.com/share/link?shareid=260186&amp;uk=336411764</a>  </p>
+<p>1、下载相应的库文件  </p>
+<blockquote>
+<p>直接安装会提示：错误： 依赖关系没有满足：libqtcore4 (&gt;= 4:4.7.0~beta1)  </p>
+<p><img src="http://img0.ph.126.net/hhGY_S7U2FPMVyidhi2R7w==/6597222598774607540.jpg" alt="Ubuntu10.04 X64 安装阿里旺旺方法 - leaf - ------坚持雅操------" title="Ubuntu10.04 X64 安装阿里旺旺方法 - leaf - ------坚持雅操------"></p>
+</blockquote>
+<p>下载相应库文件：  </p>
+<blockquote>
+<p>libqtcore4_4.7.4-0ubuntu8.2_amd64.deb<br>libqt4-dbus_4.7.4-0ubuntu8.2_amd64.deb<br>libqt4-xmlpatterns_4.7.4-0ubuntu8.2_amd64.deb<br>libqt4-network_4.7.4-0ubuntu8.2_amd64.deb<br>libqtgui4_4.7.4-0ubuntu8.2_amd64.deb<br>libqt4-sql_4.7.4-0ubuntu8.2_amd64.deb  </p>
+</blockquote>
+<p>下载地址：<a target="_blank" rel="noopener" href="http://packages.ubuntu.com/">http://packages.ubuntu.com/</a>  </p>
+<p>2、安装库文件<br>一、将库文件一个一个解压，再解压里面的data.tar.lzma，将相应的库文件放到相应的文件夹下<br>如：sudo cp -a ～/libqtcore4_4.7.4-0ubuntu8.2_amd64/usr/lib/x86_64-linux-gnu/*  /usr/lib/x86_64-linux-gnu/<br>       #这里我没有复制其中的文件夹，只复制和文件包名字相同在的库文件<br>二、sudo ldconfig  </p>
+<p>3、安装阿里旺旺<br>解压阿里旺旺，把对应的文件放到对应的目录下面即可  </p>
+<blockquote>
+<p>把其中的AiWangWang AliWWAutoUpdate 放到/usr/bin下面<br>把其中的AiWangWang文件夹    放到/usr/share下面<br>把其中的aliwangwang.desktop 放到/usr/share/applications 下面<br>把其中的doc/aliwangwang        放到/usr/share/doc/ 下面<br>把其中的AliWangWang.png       放到/usr/share/pixmaps 下面  </p>
+</blockquote>
+<p>运行效果  </p>
+<p><img src="http://img0.ph.126.net/ki1l8xMeD43XCvKSWu3QLg==/6598123098796218750.jpg" alt="Ubuntu10.04 X64 安装阿里旺旺方法 - leaf - ------坚持雅操------" title="Ubuntu10.04 X64 安装阿里旺旺方法 - leaf - ------坚持雅操------"></p>
+<p><a target="_blank" rel="noopener" href="http://pan.baidu.com/share/link?shareid=260186&amp;uk=336411764">http://pan.baidu.com/share/link?shareid=260186&amp;uk=336411764</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1856401235/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/1856401235/" class="post-title-link" itemprop="url">mysql自动删除备份文件</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2013-01-23 16:18:00" itemprop="dateCreated datePublished" datetime="2013-01-23T16:18:00+08:00">2013-01-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1158,7 +1171,104 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>514</span>
+              <span>303</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>从工具箱中拖入 “执行 T-SQL 语句”任务 到维护计划中</p>
+<p>双击 “执行 T-SQL 语句”任务 编辑SQL 执行内容：</p>
+<p>declare @d Nvarchar(64);<br>set @d = convert(varchar,dateadd(day,-7,getdate()),120);<br>EXECUTE master.dbo.xp_delete_file 0,N’E:\OA数据备份’,N’bak’,@d;<br>EXECUTE master.dbo.xp_delete_file 0,N’E:\OA数据备份’,N’bak’,@d  </p>
+<p><img src="http://img8.ph.126.net/S7Z1OyGH80HwQRN9hkoiBw==/6598124198307828308.jpg" alt="mysql自动删除备份文件 - leaf - ------坚持雅操------" title="mysql自动删除备份文件 - leaf - ------坚持雅操------"></p>
+<p>   </p>
+<p>转载自：<a target="_blank" rel="noopener" href="http://hi.baidu.com/hiheishuai/item/af0c44af9c76ba17a9cfb741">http://hi.baidu.com/hiheishuai/item/af0c44af9c76ba17a9cfb741</a></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/4193418519/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/4193418519/" class="post-title-link" itemprop="url">十年的电脑，希望还能再用十年</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2013-01-20 21:41:00" itemprop="dateCreated datePublished" datetime="2013-01-20T21:41:00+08:00">2013-01-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Live/" itemprop="url" rel="index"><span itemprop="name">Live</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Live/%E7%82%B9%E6%BB%B4/" itemprop="url" rel="index"><span itemprop="name">点滴</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>448</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -1175,60 +1285,39 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>数据库技术：  </p>
+          <p>2002年8月买的，原始配置如下：  </p>
 <blockquote>
-<p>数据库系统  </p>
+<p>CPU：AMD athlonXP 1800+ 462针<br>主板：双敏大眼怪UKT333<br>内存：DDR-266 256M<br>硬盘：希捷60G<br>网卡：100M/bs<br>显卡：盈通GF MX420<br>光驱：CD光盘<br>软驱：有<br>电源：大水牛<br>机箱：大水牛<br>键鼠：大水牛<br>显示器：飞利浦-17CRT<br>价格：￥5500元  </p>
+</blockquote>
+<p>2008年  </p>
 <blockquote>
-<p>数据库<br>数据库管理系统<br>应用系统：使用数据库的软件<br>应用开发工具<br>数据库管理员  </p>
+<p>显卡风扇被我碰坏了，换了九州风神  V-SHARK(第一次淘宝购物)<br>给显卡内存和主板场效应管加散热贴片<br>光驱换成LG-DVD刻录机  </p>
 </blockquote>
-<p>SQL语言  </p>
+<p>2009年  </p>
 <blockquote>
-<p>DDL：对数据库和表的操作<br>DML：对数据的操作<br>DCL：控制访问权限  </p>
+<p>电源换成航嘉V2.3电源<br>鼠标键盘坏了，换了一个<br>显示器坏了，换了AOC 19寸液晶</p>
 </blockquote>
-<p>数据库访问技术  </p>
+<p>2010年  </p>
 <blockquote>
-<p>ODBC<br>JDBC<br>ADO.NET<br>mysql模块和mysql接口<br>只有使用访问技术，sql语言才能起作用。  </p>
+<p>换了CPU风扇，换成AVC的，转速4000转<br>内存换成DDR-333 512M  </p>
 </blockquote>
-</blockquote>
-<p>MYSQL数据类型：  </p>
+<p>2012年  </p>
 <blockquote>
-<p>整数类型  </p>
+<p>网卡换成D-LINK无线网卡  </p>
+</blockquote>
+<p>2013年  </p>
 <blockquote>
-<p>tinyint                 1B<br>smallint               2B<br>mediumint          3B<br>int                       4B<br>inteage               4B<br>bigint                  8B<br>#有符号数就是把一个字节中的最前面的数当符号使用，这样能表示的最大值就少了1半。  </p>
+<p>CPU换成AMD athlonXP 3000+<br>CPU风扇装了调速器<br>内存条加散热贴片  </p>
 </blockquote>
-<p>浮点数、定点数类型  </p>
+<p>以后  </p>
 <blockquote>
-<p>float                   4B<br>double               8B<br>decimal(M+D)   M+2     #M是整数部分的长度，D是小数点部分的长度。  </p>
+<p>主板：电容坏了换成固态电容；电感坏了换成固态电感；不能修了换成技嘉GA-7VM400AM带SATA接口<br>显卡：换成GF 6800Ultra  </p>
+</blockquote>
+<p>现用途：  </p>
 <blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>  #定点数默认M=10，D=0，<br>  #定点数使用字符串形式存储。数据精度高。  </p>
+<p>上网，影音，跳舞毯  </p>
 </blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>日期、时间类型  </p>
-<blockquote>
-<p>year                 1B         #4位范围：1901-2155   #2位字符串：2000-2069，1970-1999  </p>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>  #2位数字：0000，2001-2069，1970-1999  </p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>date                 4B        <br>time                 3B<br>datetime          8B<br>timestamp       4B<br>#NOW()可以显示当前时间  </p>
-</blockquote>
-<p>字符串类型  </p>
-<blockquote>
-<p>char<br>varchar<br>text                             #用于存字符数据<br>enum<br>set  </p>
-</blockquote>
-<p>二进制类型</p>
-</blockquote>
+<p><img src="http://img4.ph.126.net/-SxRwUC2USZNjs0Ox5vzFw==/6597701985843127674.jpg" alt="十年的电脑，希望还能再用十年 - leaf - ------坚持雅操------" title="十年的电脑，希望还能再用十年 - leaf - ------坚持雅操------"></p>
 
       
     </div>
@@ -1248,7 +1337,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3915535499/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/4203053353/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1264,7 +1353,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/3915535499/" class="post-title-link" itemprop="url">gentoo安装：基本系统</a>
+            <a href="/posts/4203053353/" class="post-title-link" itemprop="url">1、shell摘记</a>
         </h2>
 
         <div class="post-meta">
@@ -1274,369 +1363,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2012-11-28 12:20:00" itemprop="dateCreated datePublished" datetime="2012-11-28T12:20:00+08:00">2012-11-28</time>
+              <time title="创建时间：2013-01-07 09:06:00" itemprop="dateCreated datePublished" datetime="2013-01-07T09:06:00+08:00">2013-01-07</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/gentoo/" itemprop="url" rel="index"><span itemprop="name">gentoo</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>4.6k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>17 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>环境：<br>宿主：              CPU：amd 4核         内存：DDR3 8G           显卡GT8500<br>vmware 9 ：    CPU：2核                  内存：1G                     硬盘：30G<br>参考：<a target="_blank" rel="noopener" href="http://www.gentoo.org/doc/en/handbook/handbook-x86.xml">http://www.gentoo.org/doc/en/handbook/handbook-x86.xml</a><br>下载：<a target="_blank" rel="noopener" href="http://distfiles.gentoo.org/releases/x86/autobuilds/current-iso/install-x86-minimal-20120710.iso">http://distfiles.gentoo.org/releases/x86/autobuilds/current-iso/install-x86-minimal-20120710.iso</a>  </p>
-<p>1、进光盘系统  </p>
-<blockquote>
-<p>光盘启动<br>15秒内按F1，然后输入gentoo进系统  </p>
-</blockquote>
-<p>2、安装网卡驱动  </p>
-<blockquote>
-<p>ifconfig 只找到lo，没有eth0<br>查看设备：lspci  </p>
-<blockquote>
-<p>02:01.0 Ethernet controller: Advanced Micro Devices [AMD] 79c970 [PCnet32 LANCE] (rev 10)  </p>
-</blockquote>
-<p>查看模块：lsmod | grep net  </p>
-<blockquote>
-<p>pcnet32                23142  0  </p>
-</blockquote>
-<p>显然模块是有的，就是没加载<br>安装显卡驱动  </p>
-<blockquote>
-<p>net-setup eth0<br>按照提示选择即可  </p>
-</blockquote>
-</blockquote>
-<p>3、开启ssh  </p>
-<blockquote>
-<p>/etc/init.d/sshd start<br>passwd root  </p>
-</blockquote>
-<p>4、宿主开终端，用ssh连接进光盘系统  </p>
-<blockquote>
-<p>ssh <a href="mailto:&#x72;&#111;&#111;&#116;&#x40;&#49;&#x37;&#50;&#46;&#49;&#54;&#x2e;&#x34;&#x33;&#x2e;&#49;&#x34;&#x32;">&#x72;&#111;&#111;&#116;&#x40;&#49;&#x37;&#50;&#46;&#49;&#54;&#x2e;&#x34;&#x33;&#x2e;&#49;&#x34;&#x32;</a><br>#dhcp获取的IP地址是172.16.43.142  </p>
-</blockquote>
-<p>5、分区、格式化、挂载  </p>
-<blockquote>
-<p>分区  </p>
-<blockquote>
-<p>cfdisk<br>/dev/sda1     ext2           128M               Boot partition<br>/dev/sda2     (swap)     1024M               Swap partition<br>/dev/sda3     ext3     Rest of the disk      Root partition  </p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>建文件系统  </p>
-<blockquote>
-<p>mkfs.ext2 /dev/sda1<br>mkfs.ext3 /dev/sda3<br>mkswap /dev/sda2<br>swapon /dev/sda2  </p>
-</blockquote>
-<p>挂载文件系统  </p>
-<blockquote>
-<p>mount /dev/sda3 /mnt/gentoo                 #/mnt/gentoo文件夹本身就有<br>mkdir /mnt/gentoo/boot<br>mount /dev/sda1 /mnt/gentoo/boot  </p>
-</blockquote>
-</blockquote>
-<p>6、下载stage3和portage包  </p>
-<blockquote>
-<p>stage3已经将目标系统的环境全部建好了，就剩下一些软件、linux内核、grub没装了。  </p>
-</blockquote>
-<blockquote>
-<p>0、cd /mnt/gentoo<br>1、links <a target="_blank" rel="noopener" href="http://www.gentoo.org/main/en/mirrors.xml">http://www.gentoo.org/main/en/mirrors.xml</a>  </p>
-<blockquote>
-<p>#Enter：进入，按键D：下载    按键Q：退出  </p>
-</blockquote>
-<p>2、下载stage3  </p>
-<blockquote>
-<p>downloads-mirrors-6、Asia-China-sohu.inc(http)-releases/x86/autobuilds/20121016/stage3-i686-20121016.tar.bz2<br>#实际地址<br><a target="_blank" rel="noopener" href="http://mirrors.sohu.com/gentoo/releases/x86/autobuilds/20121016/stage3-i686-20121016.tar.bz2">http://mirrors.sohu.com/gentoo/releases/x86/autobuilds/20121016/stage3-i686-20121016.tar.bz2</a>  </p>
-</blockquote>
-<p>3、下载portage包  </p>
-<blockquote>
-<p>downloads-mirrors-6、Asia-China-sohu.inc(http)-snapshots/portage-latest.tar.bz2  </p>
-</blockquote>
-<blockquote>
-<p>#实际地址  </p>
-</blockquote>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="http://mirrors.sohu.com/gentoo/snapshots/portage-latest.tar.bz2">http://mirrors.sohu.com/gentoo/snapshots/portage-latest.tar.bz2</a>  </p>
-</blockquote>
-<p>4、解压  </p>
-<blockquote>
-<p>tar xvjpf stage3-i686-20121016.tar.bz2<br>tar xvjf /mnt/gentoo/portage-latest.tar.bz2 -C /mnt/gentoo/usr  </p>
-</blockquote>
-<blockquote>
-<p>#这里tar参数p：表示按原地址解压  </p>
-</blockquote>
-<p>这里，可以配置/mnt/gentoo/etc/portage/make.conf 来用多核一起编译软件  </p>
-<blockquote>
-<p>nano -w /mnt/gentoo/etc/portage/make.conf<br>MAKEOPTS=”-j2”  </p>
-</blockquote>
-</blockquote>
-<p>7、选源、选同步  </p>
-<blockquote>
-<p>选源<br>mirrorselect -i -o &gt;&gt; /mnt/gentoo/etc/portage/make.conf  </p>
-<blockquote>
-<p>#这里我选了3个  </p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>GENTOO_MIRRORS=”<a target="_blank" rel="noopener" href="http://mirrors.163.com/gentoo/">http://mirrors.163.com/gentoo/</a>  </p>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>  <a href="ftp://mirrors.sohu.com/gentoo/">ftp://mirrors.sohu.com/gentoo/</a><br>  <a target="_blank" rel="noopener" href="http://mirrors.sohu.com/gentoo/&quot;">http://mirrors.sohu.com/gentoo/&quot;</a>  </p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>选同步<br>mirrorselect -i -r -o &gt;&gt; /mnt/gentoo/etc/portage/make.conf  </p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>    SYNC=”rsync://rsync.cn.gentoo.org/gentoo-portage”  </p>
-</blockquote>
-</blockquote>
-<p>8、chroot  </p>
-<blockquote>
-<p>复制dns信息  </p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>cp -L /etc/resolv.conf /mnt/gentoo/etc/  </p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>加载必需的文件系统  </p>
-<blockquote>
-<p>mount -t proc none /mnt/gentoo/proc<br>mount –rbind /sys /mnt/gentoo/sys<br>mount –rbind /dev /mnt/gentoo/dev  </p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>chroot操作  </p>
-<blockquote>
-<p>chroot /mnt/gentoo /bin/bash<br>env-update<br>source /etc/profile<br>export PS1=”(chroot) $PS1”  </p>
-</blockquote>
-</blockquote>
-<p>9、更新portage树，保持安装软件的最新版  </p>
-<blockquote>
-<p>emerge –sync  </p>
-</blockquote>
-<blockquote>
-<p>如果有些软件包已经更新，则再运行emerge –oneshot portage 更新  </p>
-</blockquote>
-<blockquote>
-</blockquote>
-<p>10、自定义安装模式  </p>
-<blockquote>
-<p>eselect profile list  </p>
-<blockquote>
-<p>Available profile symlink targets:<br>  [1]   default/linux/x86/10.0 *<br>  [2]   default/linux/x86/10.0/selinux<br>  [3]   default/linux/x86/10.0/desktop<br>  [4]   default/linux/x86/10.0/desktop/gnome<br>  [5]   default/linux/x86/10.0/desktop/kde<br>  [6]   default/linux/x86/10.0/developer<br>  [7]   default/linux/x86/10.0/server<br>  [8]   hardened/linux/x86<br>  [9]   hardened/linux/x86/selinux<br>  [10]  hardened/linux/uclibc/x86  </p>
-</blockquote>
-<p>eselect profile set 4<br>nano -w /etc/portage/make.conf  </p>
-<blockquote>
-<p>USE=”gtk gnome -qt4 -kde dvd alsa cdr”</p>
-</blockquote>
-<blockquote>
-<p>USE参数很重要，这里是自定义要安装的软件。  </p>
-</blockquote>
-<blockquote>
-<p>USE参数中文说明：<br><a target="_blank" rel="noopener" href="http://linux.chinaunix.net/techdoc/desktop/2007/10/20/970341.shtml">http://linux.chinaunix.net/techdoc/desktop/2007/10/20/970341.shtml</a>  </p>
-</blockquote>
-</blockquote>
-<p>11、安装内核  </p>
-<blockquote>
-<p>设置时区  </p>
-<blockquote>
-<p>cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime<br>echo “Asia/Shanghai” &gt; /etc/timezone  </p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>安装内核源码  </p>
-<blockquote>
-<p>emerge gentoo-sources<br>安装好后查看ls -l /usr/src/linux<br>会有内核源代码 Linux–&gt;Kernel 3.5.7-gentoo  </p>
-</blockquote>
-<p>自动安装内核  </p>
-<blockquote>
-<p>emerge genkernel                          #安装genkernel软件包<br>genkernel all<br>ls /boot/kernel* /boot/initramfs*       #查看是否已经有内核文件  </p>
-</blockquote>
-<p>手动添加内核模块  </p>
-<blockquote>
-<p>列：nano -w /etc/conf.d/modules<br>       modules_2_6=”3c59x”  </p>
-</blockquote>
-</blockquote>
-<p>12、设置配置文件  </p>
-<blockquote>
-<p>nano -w /etc/fstab  </p>
-<blockquote>
-<p>注释掉全部内容，然后添加<br>/dev/sda1   /boot        ext2    defaults,noatime     0 2<br>/dev/sda2   none         swap    sw                   0 0<br>/dev/sda3   /            ext3    noatime              0 1<br>/dev/cdrom  /mnt/cdrom   auto    noauto,user          0 0  </p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>#设置主机名<br>nano -w /etc/conf.d/hostname          </p>
-<blockquote>
-<p>hostname=”leaf”  </p>
-</blockquote>
-<p>#设置域里的计算机名和网络<br>nano -w /etc/conf.d/net  </p>
-<blockquote>
-<p>dns_domain_lo=”leafnet”<br>config_eth0=”dhcp”  </p>
-</blockquote>
-<p>#设置网络接口开机启动<br>cd /etc/init.d  </p>
-<blockquote>
-<p>ln -s net.lo net.eth0<br>rc-update add net.eth0 default   </p>
-</blockquote>
-<p>#设置hosts<br>nano -w /etc/hosts  </p>
-<blockquote>
-<p>127.0.0.1     leaf localhost  </p>
-</blockquote>
-<p>#设置root密码<br>passwd  </p>
-<p>#设置时钟<br>nano -w /etc/conf.d/hwclock  </p>
-<blockquote>
-<p>clock=”local”  </p>
-</blockquote>
-<p>#设置语言<br>locale -a<br>nano -w /etc/locale.gen  </p>
-<blockquote>
-<p>en_US.UTF-8 UTF-8  </p>
-</blockquote>
-<p>nano -w /etc/env.d/02locale  </p>
-<blockquote>
-<p>LANG=”en_US.UTF-8 UTF-8”<br>LC_COLLATE=”C”  </p>
-</blockquote>
-</blockquote>
-<p>13、安装系统工具  </p>
-<blockquote>
-<p>#log工具  </p>
-</blockquote>
-<blockquote>
-<p>emerge syslog-ng<br>rc-update add syslog-ng default  </p>
-</blockquote>
-<blockquote>
-<p>#cron  </p>
-</blockquote>
-<blockquote>
-<p>emerge vixie-cron<br>rc-update add vixie-cron default  </p>
-<p>#安装mlocate<br>emerge mlocate  </p>
-<p>#设置sshd服务开启启动<br>rc-update add sshd default<br>nano -w /etc/inittab  </p>
-<blockquote>
-<p>s0:12345:respawn:/sbin/agetty 9600 ttyS0 vt100<br>s1:12345:respawn:/sbin/agetty 9600 ttyS1 vt100  </p>
-</blockquote>
-<p>#安装dhcp客户端<br>emerge dhcpcd  </p>
-</blockquote>
-<p>14、安装GRUB  </p>
-<blockquote>
-<p>emerge grub</p>
-</blockquote>
-<blockquote>
-<p>nano -w /boot/grub/grub.conf  </p>
-<blockquote>
-<p>default 0<br>timeout 30<br>splashimage=(hd0,0)/boot/grub/splash.xpm.gz  </p>
-<p>title Gentoo Linux 3.3.7<br>root (hd0,0)<br>kernel /boot/kernel-genkernel-x86-3.5.7-gentoo root=/dev/sda3<br>initrd /boot/initramfs-genkernel-x86-3.5.7-gentoo  </p>
-</blockquote>
-<p>grep -v rootfs /proc/mounts &gt; /etc/mtab<br>grub-install –no-floppy /dev/sda<br>grub –no-floppy  </p>
-<blockquote>
-<p>root (hd0,0)<br>setup (hd0)<br>quit   </p>
-</blockquote>
-</blockquote>
-<p>15、重启，至此安装完成  </p>
-<blockquote>
-<p>exit<br>umount -l /mnt/gentoo/dev{/shm,/pts,}<br>umount -l /mnt/gentoo{/boot,/proc,}<br>reboot  </p>
-</blockquote>
-<blockquote>
-</blockquote>
-<p>16、建普通账户和清理文件  </p>
-<blockquote>
-<p>建账户<br>useradd -m -G users,wheel,audio -s /bin/bash leaf<br>passwd leaf  </p>
-</blockquote>
-<blockquote>
-<p>清理文件<br>rm /stage3-i686-20121016.tar.bz2*<br>rm /portage-latest.tar.bz2*  </p>
-</blockquote>
-<p>备注：以上是gentoo基本系统，X window 等都没有安装。  </p>
-<p><img src="http://img3.ph.126.net/2zpvk_RktRS-X3t2soSQ4w==/6598189069493526073.jpg" alt="vmware安装gentoo - leaf - ------坚持雅操------" title="vmware安装gentoo - leaf - ------坚持雅操------"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2889213132/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/2889213132/" class="post-title-link" itemprop="url">[转载]linux下使用logrotate自动备份mysql数据库</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2012-11-23 10:12:00" itemprop="dateCreated datePublished" datetime="2012-11-23T10:12:00+08:00">2012-11-23</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1648,7 +1382,7 @@
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/Q-A/" itemprop="url" rel="index"><span itemprop="name">Q&A</span></a>
+                  <a href="/categories/Ubuntu/shell/" itemprop="url" rel="index"><span itemprop="name">shell</span></a>
                 </span>
             </span>
 
@@ -1658,14 +1392,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.7k</span>
+              <span>166</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>6 分钟</span>
+              <span>1 分钟</span>
             </span>
 
         </div>
@@ -1675,63 +1409,26 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>原文：<a target="_blank" rel="noopener" href="http://islandlinux.org/howto/automated-mysql-backups">http://islandlinux.org/howto/automated-mysql-backups</a><br>参考：<a target="_blank" rel="noopener" href="http://www.cslog.cn/Content/logrotate-mysql-automated-backu/">http://www.cslog.cn/Content/logrotate-mysql-automated-backu/</a>  </p>
-<p>1、建备份账户  </p>
+          <p>括号扩展<br>()<br>[]：<br>{}：  </p>
+<p>系统默认开启的文件  </p>
 <blockquote>
-<p>mysql -u root -p  </p>
-<blockquote>
-<p>GRANT SELECT, LOCK TABLES ON *.* TO backup@localhost IDENTIFIED BY ‘bkup123’;<br>FLUSH PRIVILEGES;<br>EXIT；<br>#账户名：backup   密码：bkup123  </p>
+<p>系统默认开启stdin stdout stderr 并以0、1、2的文件代码做连接  </p>
 </blockquote>
-</blockquote>
-<p>2、建密码文件用于登录  </p>
+<p>转向的运行优先级  </p>
 <blockquote>
-<p>touch .mysql.backup  </p>
-<blockquote>
-<p>[client]<br>user=”backup”<br>password=”bkup123”  </p>
+<p>先运行&lt; &lt;&lt;，然后运行&gt; &gt;&gt;  </p>
 </blockquote>
-<p>chmod 400 .mysql.backup  </p>
-</blockquote>
-<p>3、建备份脚本  </p>
+<p>shell排错<br>bash -v 检查语法<br>bash -x 追踪程序运行  </p>
+<p>记录命令所产生的记录  </p>
 <blockquote>
-<p>cd /usr/local/sbin  </p>
-</blockquote>
+<p>/usr/bin/script 1.txt   </p>
 <blockquote>
-<p>sudo touch  backup_mysql.sh<br>sudo vi backup_mysql.sh  </p>
+<p>命令  </p>
 </blockquote>
-<p>#!/bin/sh  </p>
-<h1 id=""><a href="#" class="headerlink" title=""></a></h1><p># written by Dallas Vogels 2008-10-01  </p>
-<h1 id="-1"><a href="#-1" class="headerlink" title=""></a></h1><p>export PATH=/bin:/usr/bin:/sbin:/usr/sbin  </p>
-<p>#将数据库备份到 /var/backups/mysql<br>OUTPUTDIR=”/var/backups/mysql”<br>OPTIONS=”–all –complete-insert –add-drop-table –extended-insert –quote-names”<br>#密码文件所在位置<br>CONFIG_FILE=”/home/solarit001/.mysql.backup”  </p>
-<p># check that backup dir exists<br>if [ ! -d $OUTPUTDIR ]; then<br>        mkdir $OUTPUTDIR<br>fi  </p>
-<p># get list of databases<br>DATABASES=`echo “SHOW DATABASES” | mysql –defaults-file=”$CONFIG_FILE” mysql`<br>#我这里的结果如下<br>#Database<br>#information_schema<br>#mysql<br>#wordpress  </p>
-<p> for DATABASE in $DATABASES; do  </p>
-<p>#备份名字为*.sql<br>  if [ “$DATABASE” != “Database” -a “$DATABASE” != “information_schema” ]; then<br>    # backup database<br>    mysqldump –defaults-file=”$CONFIG_FILE” $OPTIONS $DATABASE &gt; $OUTPUTDIR/$DATABASE.sql<br>  fi  </p>
-<p>done  </p>
-<p>exit 0  </p>
-<blockquote>
-<p>sudo chmod 500 backup_mysql.sh  </p>
+<p>exit  </p>
 </blockquote>
-<p>4、创建logrotate文件  </p>
+<p>变量  </p>
 <blockquote>
-<p>cd /etc/logrotate.d<br>sudo touch mysql-backups<br>sudo vi mysql-backups  </p>
-</blockquote>
-<p>/var/backups/mysql/*.sql {<br>  daily<br>  copy<br>  missingok<br>  rotate 30<br>  compress<br>  notifempty<br>  create 640 root adm<br>  sharedscripts<br>  prerotate<br>    /usr/local/sbin/backup_mysql.sh  #备份之前先运行backup_mysql.sh<br>  endscript<br>}</p>
-<blockquote>
-<p>5、测试  </p>
-</blockquote>
-<blockquote>
-<p>sudo backup_mysql.sh<br>sudo logrotate -f /etc/logrotate.d/mysql-backups</p>
-</blockquote>
-<blockquote>
-</blockquote>
-<p>问题：<br>mysqldump: Got error: 1044: Access denied for user ‘backup’@’localhost’ to database ‘information_schema’<br>when using LOCK TABLES  </p>
-<p>解决：  </p>
-<blockquote>
-<p>1、加参数：–skip-lock-tables<br>2、不备份被锁定的数据库：  </p>
-<blockquote>
-<p>if [ “$DATABASE” != “Database” -a “$DATABASE” != “information_schema” ]; then  </p>
-</blockquote>
-<p>3、用root账户备份  </p>
 </blockquote>
 
       
@@ -1751,7 +1448,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/13/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/15/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/13/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><span class="page-number current">14</span><a class="page-number" href="/page/15/">15</a><span class="space">&hellip;</span><a class="page-number" href="/page/37/">37</a><a class="extend next" rel="next" href="/page/15/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1802,12 +1499,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">399k</span>
+    <span title="站点总字数">447k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">24:11</span>
+    <span title="站点阅读时长">27:06</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

@@ -245,20 +245,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">282</span>
+          <span class="site-state-item-count">365</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">60</span>
+        <span class="site-state-item-count">72</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">57</span>
+        <span class="site-state-item-count">68</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -304,7 +304,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1917468419/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1577105434/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -320,7 +320,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/1917468419/" class="post-title-link" itemprop="url">第四章实验：SSH登录到cisco路由器</a>
+            <a href="/posts/1577105434/" class="post-title-link" itemprop="url">鸟哥基础第十章、第十一章</a>
         </h2>
 
         <div class="post-meta">
@@ -330,14 +330,279 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2012-05-04 16:23:00" itemprop="dateCreated datePublished" datetime="2012-05-04T16:23:00+08:00">2012-05-04</time>
+              <time title="创建时间：2012-09-19 11:00:00" itemprop="dateCreated datePublished" datetime="2012-09-19T11:00:00+08:00">2012-09-19</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 15:44:26" itemprop="dateModified" datetime="2020-08-04T15:44:26+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>7 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>第十章  </p>
+<blockquote>
+<p>vi编辑器非常重要，分为3种模式  </p>
+<blockquote>
+<p>一般模式：可以查询、增删、替换字符等<br>编辑模式：增删、替换字符<br>命令模式：主要是参数设置、内容保存等命令<br>vi的操作记录多记录在～/.viminfo文件中  </p>
+<p>如果觉得太复杂，可以使用nano文本编辑器，很好用。<br>当然vi只针对命令行环境的时候。如果是图形环境，编辑的软件多了。  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>第十一章  </p>
+<blockquote>
+<p>bash shell 是通向系统管理的基础。是重点中的重点。<br>本章主要讲变量和shell环境设置，字符操作的相关命令放在第十二章一起讲  </p>
+</blockquote>
+<blockquote>
+<p>摘录<br>系统的shell分很多种，最重要的2种：/bin/bash  和 /sbin/nologin      </p>
+<blockquote>
+<p>linux支持的shell文件：/etc/shells<br>ubuntu好像用/bin/false来代替/sbin/nologin的用途的  </p>
+</blockquote>
+<p>变量  </p>
+<blockquote>
+<p>变量书写规则：  </p>
+<blockquote>
+<p>变量赋值用=号，=号两边不能用空格：m=123<br>累加变量的内容：                                “$PATH”:/HOME<br>取消变量用 unset：                              unset m  </p>
+</blockquote>
+<blockquote>
+<p>export用于不同程序之间传递变量值，就是设置为环境变量  </p>
+<p>“”表示保持变量的内容<br>‘’表示把内容变为字符<br>··表示先执行··里面的命令再执行··外面的命令  </p>
+<p>大写变量为系统默认变量，小写变量为自定义变量。系统默认变量一般是${}表示<br>有些字符比较特殊，需要转义：前面加上\  </p>
+<blockquote>
+</blockquote>
+</blockquote>
+<p>变量的相关操作  </p>
+<blockquote>
+<p>查看环境变量  </p>
+<blockquote>
+<p>env 、set、export  </p>
+</blockquote>
+<p>设置环境变量  </p>
+<blockquote>
+<p>export 变量<br>declare -x 自定义环境变量  </p>
+</blockquote>
+<p>定义变量类型  </p>
+<blockquote>
+<p>declare -a 数组<br>declare -i  整数<br>declare -x 自定义环境变量<br>declare -r 变量设置为只读  </p>
+</blockquote>
+<p>变量赋值：  </p>
+<blockquote>
+<p>普通变量赋值：  </p>
+<blockquote>
+<p>m=123  </p>
+</blockquote>
+<p>数组变量赋值  </p>
+<blockquote>
+<p>m[1]=1<br>m[2]=2<br>m[3]=3  </p>
+</blockquote>
+<p>还有键盘赋值  </p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p> read -p “please keyin your name:” -t 30 name      </p>
+</blockquote>
+<blockquote>
+<p>name就是变量名，read就是获取键盘输入，然后把内容给name  </p>
+</blockquote>
+</blockquote>
+<p>查看变量  </p>
+<blockquote>
+<p>echo $变量名      echo $PATH  </p>
+</blockquote>
+<p>取消变量  </p>
+<blockquote>
+<p>unset m  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>shell环境的相关设置文件  </p>
+<blockquote>
+<p>用户登陆时，bash shell会依次执行：  </p>
+<blockquote>
+<p>/etc/profile—&gt;.bash_profile—&gt;.bash_profile—-&gt;.bash_login—-&gt;.profile，最后执行.bashrc  </p>
+</blockquote>
+<p>/etc/profile  </p>
+<blockquote>
+<p>设置PATH、mail路径、history记录条目等  </p>
+</blockquote>
+<p>/etc/bashrc  </p>
+<blockquote>
+<p>每个用户初始设置是这个文件进行设置的，然后才是用户各自的.bashrc  </p>
+</blockquote>
+<p>/etc/profiled/*  </p>
+<blockquote>
+<p>设置bash的规范  </p>
+</blockquote>
+<p>~/.bashrc<br>前面的设置多可以在这个文件里面设置，而且生效<br>默认：  </p>
+<p><img src="http://img0.ph.126.net/yZAOR85lL2E0_9-BPqRTWA==/6597428207446972800.jpg" alt="鸟哥基础第十章、第十一章 - leaf - ------坚持雅操------" title="鸟哥基础第十章、第十一章 - leaf - ------坚持雅操------"></p>
+<p> 在后面加就好了<br>如：umask 022<br>特别说明一点：我用的fedora4里面有些命令大不了，这些命令都是/sbin里面的<br>查PATH发现/sbin不包含在PATH里面，添加一下即可<br>export PATH=$PATH:/sbin  </p>
+</blockquote>
+<p>-————————————————————————————————-  </p>
+<blockquote>
+<p>语言环境设置：<br>/etc/sysconfig/i18n  </p>
+<blockquote>
+<p><img src="http://img6.ph.126.net/2UIz5GESTs2dUZv9y85Hzg==/1016687615896710596.jpg" alt="鸟哥基础第十章、第十一章 - leaf - ------坚持雅操------" title="鸟哥基础第十章、第十一章 - leaf - ------坚持雅操------"></p>
+</blockquote>
+<p>/etc/man.config  </p>
+<blockquote>
+<p>设置man文档路径 <br>如：MANPATH /usr/man  </p>
+</blockquote>
+<p>.inputrc  </p>
+<blockquote>
+<p>用来定义按键的功能，是readline()函数库的配置文件  </p>
+</blockquote>
+<p>登录消息提示<br>/etc/issue：登录前显示的内容  </p>
+<blockquote>
+<p><img src="http://img4.ph.126.net/t5-ysPRyQyir9dP-0ISBNQ==/6597224797797031104.jpg" alt="鸟哥基础第十章、第十一章 - leaf - ------坚持雅操------" title="鸟哥基础第十章、第十一章 - leaf - ------坚持雅操------"></p>
+</blockquote>
+<p> /etc/motd：登录后显示的内容  </p>
+<blockquote>
+<p><img src="http://img6.ph.126.net/4DS-qq-Qm9JSg7EsGDfzbA==/996421417573634226.jpg" alt="鸟哥基础第十章、第十一章 - leaf - ------坚持雅操------" title="鸟哥基础第十章、第十一章 - leaf - ------坚持雅操------"></p>
+</blockquote>
+<p>   </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>-————————————————————————————————-  </p>
+</blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+<p>其他  </p>
+<blockquote>
+<p>type：查看命令的类型：内部、外部命令<br>ulimit：给程序或用户配额<br>alias：设置别名<br>unalias：取消别名<br>history：查看历史命令  </p>
+<blockquote>
+<p>history  3    列出最近3条命令<br>history  -w  把当前历史命令写入~/.bash_history中<br>!5               执行history中的第几条命令<br>!!                执行上一条命令  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>数据流重导向  </p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>&gt;      覆盖<br>&gt;&gt;    累加到后面<br>&lt;      文件输入<br>&lt;&lt;     结束的输入字符<br>2&gt;     错误输出，覆盖<br>2&gt;&gt;   错误输出，累加<br>例子：  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<p>cat &gt; catfile &lt; somefile     </p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>把somefile导入进来<br>用cat读取somefile文件<br>然后导出到catfile文件<br>&lt; 比 &gt; 优先处理  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>cat &gt; catfile &lt;&lt; eof  </p>
+<blockquote>
+<p>输eof的时候结束导出  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+<p>；、&amp;&amp;、||、|  </p>
+<blockquote>
+<p>；表示一个程序一个程序执行<br>&amp;&amp;：表示前面的命令没有错误后再接下去执行<br>||：表示前面的命令错误后执行后面的程序  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>|：表示对前面的处理结果再处理。  </p>
+</blockquote>
+</blockquote>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/4214236176/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/4214236176/" class="post-title-link" itemprop="url">CCNA第七章</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2012-09-14 15:22:00" itemprop="dateCreated datePublished" datetime="2012-09-14T15:22:00+08:00">2012-09-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:25" itemprop="dateModified" datetime="2020-08-04T15:44:25+08:00">2020-08-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -350,829 +615,6 @@
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Network/cisco/" itemprop="url" rel="index"><span itemprop="name">cisco</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>805</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>R0开通SSH服务，R1进行连接</p>
-<p><img src="http://img8.ph.126.net/Gp63yqNwYLeIJUti6lcHGQ==/2588162410871966418.jpg" alt="第四章实验：SSH登录到cisco路由器 - leaf - ------坚持雅操------" title="第四章实验：SSH登录到cisco路由器 - leaf - ------坚持雅操------"></p>
-<p>1、设置R0 IP，开启F1/0  </p>
-<blockquote>
-<p>enable  </p>
-</blockquote>
-<blockquote>
-<p>configure terminal<br>interface fastethernet 1/0<br>no shutdown<br>ip address 19.168.1.1 255.255.255.0<br>exit  </p>
-</blockquote>
-<p>2、设置进特权密码  </p>
-<blockquote>
-<p>enable secret 123456  </p>
-</blockquote>
-<p>3、设置ssh  </p>
-<blockquote>
-<p>hostname a123  </p>
-<blockquote>
-<p>#没设置hostname会出现  </p>
-</blockquote>
-<blockquote>
-<p><img src="http://img2.ph.126.net/IWNmX8UoKl9HZAuRqK4t6A==/1005428616827936602.jpg" alt="第四章实验：SSH登录到cisco路由器 - leaf - ------坚持雅操------" title="第四章实验：SSH登录到cisco路由器 - leaf - ------坚持雅操------"></p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>ip domain-name a.com<br>crypto key generate rsa general-keys modulus 1024<br>ip ssh time-out 60                      #会话空闲60秒<br>ip ssh authentication-retries 3   #错误尝试3次<br>line vty 0 4<br>transport input ssh<br>login  </p>
-<blockquote>
-<p>#出现提示  </p>
-</blockquote>
-<blockquote>
-<p><img src="http://img8.ph.126.net/TCkphAtS62gI7HpEok2OWg==/3083276894906012538.jpg" alt="第四章实验：SSH登录到cisco路由器 - leaf - ------坚持雅操------" title="第四章实验：SSH登录到cisco路由器 - leaf - ------坚持雅操------"></p>
-</blockquote>
-</blockquote>
-<p> 4、设置vty登录账户及密码  </p>
-<blockquote>
-<p>exit<br>aaa new-model<br>aaa authentication login default local  </p>
-</blockquote>
-<blockquote>
-<p>username test password test  </p>
-</blockquote>
-<p>5、设置进特权密码  </p>
-<blockquote>
-<p>enable secret 123456<br>end<br>copy running-config startup-config  </p>
-</blockquote>
-<p>-——————————————————————————————-  </p>
-<p>1、设置R1 IP，开启端口  </p>
-<blockquote>
-<p>enable  </p>
-</blockquote>
-<blockquote>
-<p>configure terminal<br>interface fastethernet 1/0<br>no shutdown<br>ip address 19.168.1.2 255.255.255.0<br>end  </p>
-</blockquote>
-<p>2、SSH到R0  </p>
-<blockquote>
-<p>ssh -l test 192.168.1.1<br>然后输入密码test<br>enable<br>然后输入密码 123456  </p>
-</blockquote>
-<p>-——————————————————————————————–  </p>
-<p>1、取消ssh服务  </p>
-<blockquote>
-<p>crypto key zeroize rsa  </p>
-<p><img src="http://img9.ph.126.net/R1Wzt_IJThR0vOpbwoFozw==/2616591383519726509.jpg" alt="第四章实验：SSH登录到cisco路由器 - leaf - ------坚持雅操------" title="第四章实验：SSH登录到cisco路由器 - leaf - ------坚持雅操------"></p>
-<p> </p>
-<p>   </p>
-</blockquote>
-<p>参考文章：<a target="_blank" rel="noopener" href="http://wenku.baidu.com/view/2e81590bf78a6529647d537f.html">http://wenku.baidu.com/view/2e81590bf78a6529647d537f.html</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3424829500/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/3424829500/" class="post-title-link" itemprop="url">ubuntus 最佳方案 3-基于单IP的多虚拟主机</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2012-04-27 15:45:00" itemprop="dateCreated datePublished" datetime="2012-04-27T15:45:00+08:00">2012-04-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/server/" itemprop="url" rel="index"><span itemprop="name">server</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>环境：  </p>
-<blockquote>
-<p>本机：ubuntu10.04.4<br>vmware：ubuntu8.04.4  </p>
-</blockquote>
-<p>说明：  </p>
-<blockquote>
-<p>由于没有建DNS服务器，所以在本机上修改了hosts文件<br>sudo nano /etc/hosts  添加<br>172.16.43.140   <a target="_blank" rel="noopener" href="http://www.a.com/">www.a.com</a><br>172.16.43.140   <a target="_blank" rel="noopener" href="http://www.b.com/">www.b.com</a>  </p>
-</blockquote>
-<p>1、建虚拟目录<br>      /var/www/<a target="_blank" rel="noopener" href="http://www.a.com/">www.a.com</a><br>      /var/www/<a target="_blank" rel="noopener" href="http://www.b.com/">www.b.com</a>  </p>
-<p>2、建配置文件<br>     cd /etc/apache2/sites-available<br>     sudo cp default <a target="_blank" rel="noopener" href="http://www.a.com/">www.a.com</a><br>     sudo cp default <a target="_blank" rel="noopener" href="http://www.b.com/">www.b.com</a>  </p>
-<p>3、修改<a target="_blank" rel="noopener" href="http://www.a.com/">www.a.com</a> 和 <a target="_blank" rel="noopener" href="http://www.b.com/">www.b.com</a> 的配置文件<br>     <a target="_blank" rel="noopener" href="http://www.a.com配置如下/">www.a.com配置如下</a>  </p>
-<blockquote>
-<p>NameVirtualHost 172.16.43.140<br>&lt;VirtualHost 172.16.43.140&gt;<br>        ServerAdmin webmaster@localhost<br>        DocumentRoot /var/www/<a target="_blank" rel="noopener" href="http://www.a.com/">www.a.com</a><br>        ServerName <a target="_blank" rel="noopener" href="http://www.a.com/">www.a.com</a><br>        <Directory /><br>                Options FollowSymLinks<br>                AllowOverride None<br>        </Directory><br>        &lt;Directory /var/www/<a target="_blank" rel="noopener" href="http://www.a.com/&gt;">www.a.com/&gt;</a><br>                Options Indexes FollowSymLinks MultiViews<br>                AllowOverride all<br>                Order allow,deny<br>                allow from all<br>        </Directory>  </p>
-</blockquote>
-<blockquote>
-<p>后面略。。。。  </p>
-</blockquote>
-<p>       <a target="_blank" rel="noopener" href="http://www.b.com配置如下/">www.b.com配置如下</a>  </p>
-<blockquote>
-<p>#NameVirtualHost *<br>&lt;VirtualHost 172.16.43.140&gt;<br>    ServerAdmin webmaster@localhost<br> DocumentRoot /var/www/<a target="_blank" rel="noopener" href="http://www.b.com/">www.b.com</a><br>    ServerName <a target="_blank" rel="noopener" href="http://www.b.com/">www.b.com</a><br>    <Directory /><br>        Options FollowSymLinks<br>        AllowOverride None<br>    </Directory><br> &lt;Directory /var/www/<a target="_blank" rel="noopener" href="http://www.b.com/&gt;">www.b.com/&gt;</a><br>        Options Indexes FollowSymLinks MultiViews<br>        AllowOverride None<br>        Order allow,deny<br>        allow from all<br>    </Directory>  </p>
-</blockquote>
-<blockquote>
-<p>后面略。。。  </p>
-</blockquote>
-<p>4、重启apache2<br>      sudo a2dissite default<br>      sudo a2ensite <a target="_blank" rel="noopener" href="http://www.a.com/">www.a.com</a><br>      sudo a2ensite <a target="_blank" rel="noopener" href="http://www.b.com/">www.b.com</a><br>      sudo /etc/init.d/apache2 restart  </p>
-<p>5、访问网站  </p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="http://www.a.com/">http://www.a.com</a><br><a target="_blank" rel="noopener" href="http://www.b.com/">http://www.b.com</a></p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2177598682/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/2177598682/" class="post-title-link" itemprop="url">ubuntus 最佳方案 -4 LAMP</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2012-04-27 11:01:00" itemprop="dateCreated datePublished" datetime="2012-04-27T11:01:00+08:00">2012-04-27</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/server/" itemprop="url" rel="index"><span itemprop="name">server</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2.4k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>9 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>1、安装lamp套装  </p>
-<blockquote>
-<p>sudo apt-get install apache2 libapache2-mod-php5 php5-mysql mysql-server php5-memcache php5-gd<br>说明：<br>php5-gd用于处理图片格式<br>php5-memcache 用于把内存做缓存用  </p>
-</blockquote>
-<p>2、创建数据库、建用户等  </p>
-<blockquote>
-<p>nano mydb.sql  </p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>DROP TABLE IF EXISTS `users`;<br>CREATE TABLE `users`(<br>  `uid` int(10) unsigned NOT NULL default ‘0’,<br>  `name` varchar(60) NOT NULL default ‘’,<br>  `pass` varchar(32) NOT NULL default ‘’,<br>  `mail` varchar(64) default ‘’,<br>  PRIMARY KEY (`uid`),<br>  UNIQUE KEY `name` (`name`)<br>);  </p>
-<p>INSERT INTO `users` (`uid`, `name`, `pass`, `mail`) VALUES<br>(1, ‘Hiweed’, MD5(‘passwdHiweed’), ‘hiweed@test.com’),<br>(2, ‘Ning’, MD5(‘passwdNing’), ‘ning@test.com’),<br>(3, ‘Guoce’, MD5(‘passwdGuoce’), ‘guoce@test.com’)  </p>
-</blockquote>
-<p>mysqladmin -uroot -p create mydb<br>mysql mydb -uroot -p &lt; mydb.sql<br>检查导入的数据是否正确<br>mysql mydb -uroot -p 然后输入密码<br>mysql&gt; select * from users;  </p>
-<p><img src="http://img1.ph.126.net/_YJiklBfcPvLaHGWFYHlsA==/2493586818696969731.jpg" alt="ubuntus 最佳方案 -4 - leaf - ------坚持雅操------" title="ubuntus 最佳方案 -4 - leaf - ------坚持雅操------"></p>
-<p> 建用户并设置权限<br>mysql&gt; GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, INDEX, ALTER ON mydb.* TO ‘abc’@’localhost’ IDENTIFIED BY ‘123456’;<br>Query OK, 0 rows affected (0.00 sec)  </p>
-<p>mysql&gt; flush privileges;    #刷新使之生效<br>Query OK, 0 rows affected (0.00 sec)  </p>
-<p>mysql&gt; exit<br>Bye  </p>
-</blockquote>
-<p>3、测试PHP  </p>
-<blockquote>
-<p>echo “<?php phpinfo(); ?>“  | sudo tee /var/www/<a target="_blank" rel="noopener" href="http://www.a.com/phpinfo.php">www.a.com/phpinfo.php</a>  </p>
-</blockquote>
-<blockquote>
-<p>装phpmyadmin<br>sudo apt-get install phpmyadmin<br>sudo ln -s /usr/share/phpmyadmin /var/www/<a target="_blank" rel="noopener" href="http://www.a.com/phpmyadmin">www.a.com/phpmyadmin</a>  </p>
-</blockquote>
-<p>4、建站实例drupal  </p>
-<blockquote>
-<p>1、下载drupal  </p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="http://drupal.org/node/3060/release?api%5C_version%5C%5B%5C%5D=87">http://drupal.org/node/3060/release?api\_version\[\]=87</a><br>按书上的，我下载的也是6.6版本<br>tar xvf drupal-6.6.tar.gz<br>sudo mv drupal-6.6/{*,.htaccess} /var/www/<a target="_blank" rel="noopener" href="http://www.a.com/">www.a.com</a>  </p>
-</blockquote>
-<p>2、建drupal数据库和用户  </p>
-<blockquote>
-<p>mysqladmin -uroot -p create drupal6  </p>
-</blockquote>
-<blockquote>
-<p>mysql -uroot -p  </p>
-</blockquote>
-<blockquote>
-<p>mysql&gt; GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, CREATE TEMPORARY TABLES, LOCK TABLES ON drupal6.* TO ‘drupaluser’@’localhost’ IDENTIFIED BY ‘123456’;<br>Query OK, 0 rows affected (0.01 sec)  </p>
-<p>mysql&gt; FLUSH PRIVILEGES;<br>Query OK, 0 rows affected (0.01 sec)  </p>
-<p>mysql&gt; \q<br>Bye  </p>
-</blockquote>
-<p>3、开启clean url功能  </p>
-<blockquote>
-<p>sudo nano /etc/apache2/sites-available/<a target="_blank" rel="noopener" href="http://www.a.com/">www.a.com</a><br>把&lt;Direectory /var/www/<a target="_blank" rel="noopener" href="http://www.a.com/&gt;">www.a.com/&gt;</a> 下面的<br>allowoverride none  改为allowoverride all  </p>
-</blockquote>
-<p>4、配置drupal  </p>
-<blockquote>
-<p>第二步 要更改权限<br>sudo chmod o+w /var/www/<a target="_blank" rel="noopener" href="http://www.a.com/sites/default">www.a.com/sites/default</a><br>sudo chmod o+w /var/www/<a target="_blank" rel="noopener" href="http://www.a.com/sites/default/settings.php">www.a.com/sites/default/settings.php</a><br>第五步 再把权限改回来<br>sudo chmod o-w /var/www/<a target="_blank" rel="noopener" href="http://www.a.com/sites/default">www.a.com/sites/default</a><br>sudo chmod o-w /var/www/<a target="_blank" rel="noopener" href="http://www.a.com/sites/default/settings.php">www.a.com/sites/default/settings.php</a>  </p>
-<p>下载中文模块<br><a target="_blank" rel="noopener" href="http://drupal.org/node/265348">http://drupal.org/node/265348</a>  </p>
-</blockquote>
-</blockquote>
-<p>5、建wordpress  </p>
-<blockquote>
-<p>1、建wordpress数据库和用户  </p>
-<blockquote>
-<p>mysqladmin -uroot -p create wordpress  </p>
-</blockquote>
-<blockquote>
-<p>mysql -uroot -p  </p>
-</blockquote>
-<p>mysql&gt; GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, INDEX, ALTER, CREATE TEMPORARY TABLES, LOCK TABLES ON wordpress.* TO ‘wordpress’@’localhost’ IDENTIFIED BY ‘123456’;<br>Query OK, 0 rows affected (0.01 sec)  </p>
-<p>mysql&gt; FLUSH PRIVILEGES;<br>Query OK, 0 rows affected (0.01 sec)  </p>
-<p>mysql&gt; \q<br>Bye  </p>
-<p>2、改所有者<br>sudo chown -R www-data:www-data /var/www/wordpress  </p>
-<p>3、然后下一步下一步即可  </p>
-<p>附、更改上传文件的大小限制<br>sudo gedit /etc/php5/apache2/php.ini<br>更改  </p>
-<blockquote>
-<p>post_max_size=200M<br>file_uploads=On<br>upload_max_filesize=100M  </p>
-</blockquote>
-<p><img src="http://img2.ph.126.net/b-5dciHZHxuNErJeRiLVHw==/1074952936075702232.jpg" alt="ubuntus 最佳方案 -4 LAMP - leaf - ------坚持雅操------" title="ubuntus 最佳方案 -4 LAMP - leaf - ------坚持雅操------"></p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2254503815/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/2254503815/" class="post-title-link" itemprop="url">ubuntus 最佳方案  3-apache.conf</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2012-04-19 15:30:00" itemprop="dateCreated datePublished" datetime="2012-04-19T15:30:00+08:00">2012-04-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/server/" itemprop="url" rel="index"><span itemprop="name">server</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.7k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>6 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>apache2.conf默认配置如下</p>
-<blockquote>
-<p>ServerRoot “/etc/apache2”</p>
-</blockquote>
-<blockquote>
-<p>LockFile /var/lock/apache2/accept.lock</p>
-</blockquote>
-<blockquote>
-<p>PidFile ${APACHE_PID_FILE}</p>
-<p># Timeout: The number of seconds before receives and sends time out.</p>
-<p>Timeout 300</p>
-<p># KeepAlive: Whether or not to allow persistent connections (more than</p>
-<p># one request per connection). Set to “Off” to deactivate.</p>
-<p>KeepAlive On</p>
-<p># MaxKeepAliveRequests: The maximum number of requests to allow</p>
-<p># during a persistent connection. Set to 0 to allow an unlimited amount.</p>
-<p># We recommend you leave this number high, for maximum performance.</p>
-<p>MaxKeepAliveRequests 100</p>
-<p># KeepAliveTimeout: Number of seconds to wait for the next request from the</p>
-<p># same client on the same connection.</p>
-<p>KeepAliveTimeout 15    #保持连接15秒不断开</p>
-<p># prefork MPM</p>
-<p>&lt;IfModule mpm_prefork_module&gt;</p>
-<p>    StartServers          5</p>
-<p>    MinSpareServers       5</p>
-<p>    MaxSpareServers      10</p>
-<p>    MaxClients          150</p>
-<p>    MaxRequestsPerChild   0</p>
-</IfModule>
-
-
-
-<p># worker MPM</p>
-<p>&lt;IfModule mpm_worker_module&gt;</p>
-<p>    StartServers          2</p>
-<p>    MaxClients          150       #最大连接数</p>
-<p>    MinSpareThreads      25</p>
-<p>    MaxSpareThreads      75 </p>
-<p>    ThreadsPerChild      25</p>
-<p>    MaxRequestsPerChild   0</p>
-</IfModule>
-
-
-
-<p># These need to be set in /etc/apache2/envvars</p>
-<p>User ${APACHE_RUN_USER}</p>
-<p>Group ${APACHE_RUN_GROUP}</p>
-<p>AccessFileName .htaccess</p>
-<p># The following lines prevent .htaccess and .htpasswd files from being </p>
-<p># viewed by Web clients. </p>
-<p>&lt;Files ~ “^\.ht”&gt;</p>
-<p>    Order allow,deny</p>
-<p>    Deny from all</p>
-</Files>
-
-
-
-<p>DefaultType text/plain</p>
-<p>HostnameLookups Off   #off只获取客户的IP地址，on则获取客户的DNS</p>
-<p>ErrorLog /var/log/apache2/error.log</p>
-<p>LogLevel warn</p>
-<p># Include module configuration:</p>
-<p>Include /etc/apache2/mods-enabled/*.load</p>
-<p>Include /etc/apache2/mods-enabled/*.conf</p>
-<p># Include all the user configurations:</p>
-<p>Include /etc/apache2/httpd.conf</p>
-<p># Include ports listing</p>
-<p>Include /etc/apache2/ports.conf</p>
-<p>LogFormat “%h %l %u %t \“%r\“ %&gt;s %b \“%{Referer}i\“ \“%{User-Agent}i\“” combined</p>
-<p>LogFormat “%h %l %u %t \“%r\“ %&gt;s %b” common</p>
-<p>LogFormat “%{Referer}i -&gt; %U” referer</p>
-<p>LogFormat “%{User-agent}i” agent</p>
-<p>ServerTokens Full            #显示HTTP响应头的信息 </p>
-<p>ServerSignature On</p>
-<p>Include /etc/apache2/sites-enabled/</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2458785665/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/2458785665/" class="post-title-link" itemprop="url">ubuntus 最佳方案  3-基于端口的多虚拟主机</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2012-04-19 12:16:00" itemprop="dateCreated datePublished" datetime="2012-04-19T12:16:00+08:00">2012-04-19</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/server/" itemprop="url" rel="index"><span itemprop="name">server</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>1、建虚拟目录<br>      /var/www/<a target="_blank" rel="noopener" href="http://www.a.com/">www.a.com</a><br>      /var/www/<a target="_blank" rel="noopener" href="http://www.b.com/">www.b.com</a>  </p>
-<p>2、修改/etc/apache2/ports.conf<br>      加入Listen 8080  </p>
-<p>3、建配置文件<br>     cd /etc/apache2/sites-available<br>     sudo cp default <a target="_blank" rel="noopener" href="http://www.a.com/">www.a.com</a><br>     sudo cp default <a target="_blank" rel="noopener" href="http://www.b.com/">www.b.com</a>  </p>
-<p>4、修改<a target="_blank" rel="noopener" href="http://www.a.com/">www.a.com</a> 和 <a target="_blank" rel="noopener" href="http://www.b.com/">www.b.com</a> 的配置文件<br>     <a target="_blank" rel="noopener" href="http://www.a.com配置如下/">www.a.com配置如下</a>  </p>
-<blockquote>
-<p>NameVirtualHost *<br>&lt;VirtualHost *&gt;<br>        ServerAdmin webmaster@localhost<br>        DocumentRoot /var/www/<a target="_blank" rel="noopener" href="http://www.a.com/">www.a.com</a><br>        ServerName  <a target="_blank" rel="noopener" href="http://www.a.com/">www.a.com</a><br>        <Directory /><br>                Options FollowSymLinks<br>                AllowOverride None<br>        </Directory><br>        &lt;Directory /var/www/<a target="_blank" rel="noopener" href="http://www.a.com/&gt;">www.a.com/&gt;</a><br>                Options Indexes FollowSymLinks MultiViews<br>                AllowOverride None<br>                Order allow,deny<br>                allow from all<br>        </Directory>  </p>
-</blockquote>
-<blockquote>
-<p>后面略。。。。  </p>
-</blockquote>
-<p>       <a target="_blank" rel="noopener" href="http://www.b.com配置如下/">www.b.com配置如下</a>  </p>
-<blockquote>
-<p>&lt;VirtualHost 172.16.43.140:8080&gt;  </p>
-</blockquote>
-<blockquote>
-<p>        ServerAdmin webmaster@localhost<br>       <br>        DocumentRoot /var/www/<a target="_blank" rel="noopener" href="http://www.b.com/">www.b.com</a><br>       <br>        ServerName <a target="_blank" rel="noopener" href="http://www.b.com/">www.b.com</a>  </p>
-<p>        <Directory /><br>                Options FollowSymLinks<br>                AllowOverride None<br>        </Directory><br>        &lt;Directory /var/www/<a target="_blank" rel="noopener" href="http://www.b.com/&gt;">www.b.com/&gt;</a><br>                Options Indexes FollowSymLinks MultiViews<br>                AllowOverride None<br>                Order allow,deny<br>                allow from all<br>        </Directory>  </p>
-</blockquote>
-<blockquote>
-<p>后面略。。。  </p>
-</blockquote>
-<p>5、重启apache2<br>      sudo a2dissite default<br>      sudo a2ensite <a target="_blank" rel="noopener" href="http://www.a.com/">www.a.com</a><br>      sudo a2ensite <a target="_blank" rel="noopener" href="http://www.b.com/">www.b.com</a><br>      sudo /etc/init.d/apache2 restart  </p>
-<p>然后访问<a target="_blank" rel="noopener" href="http://www.a.com/">www.a.com</a> 就输入 172.16.43.140<br>       访问<a target="_blank" rel="noopener" href="http://www.b.com/">www.b.com</a> 就输入 172.16.43.140:8080  </p>
-<p>参考：<br><a target="_blank" rel="noopener" href="http://wenku.baidu.com/view/c61a0dd6b9f3f90f76c61b18.html">http://wenku.baidu.com/view/c61a0dd6b9f3f90f76c61b18.html</a><br><a target="_blank" rel="noopener" href="http://httpd.apache.org/docs/2.2/vhosts/examples.html">http://httpd.apache.org/docs/2.2/vhosts/examples.html</a></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3499039072/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/3499039072/" class="post-title-link" itemprop="url">ubuntus 最佳方案 3-apache2 default文件介绍</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2012-04-18 22:18:00" itemprop="dateCreated datePublished" datetime="2012-04-18T22:18:00+08:00">2012-04-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/server/" itemprop="url" rel="index"><span itemprop="name">server</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>1.2k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>文件位置：/etc/apache2/sites-available/default</p>
-<p>文档分2部分：NameVirtualHost 和<VirtualHost></VirtualHost></p>
-<p>NameVirtualHost *         指定服务器的网卡，开通线路等<br>&lt;VirtualHost *&gt;               指定虚拟主机的IP地址。<br>        ServerAdmin webmaster@localhost         指定站长EMAIL<br>        <br>        DocumentRoot /var/www/                          指定网站根目录     </p>
-<p> 1&gt;更改为网站存放的位置：如/var/www/blog.test.com<br>        <Directory />                                        ？？全部虚拟主机的设置？？<br>                Options FollowSymLinks                     网站根目录的特性，允许使用符号链接<br>                AllowOverride None                            网站根目录的特性，忽略.htaccess文件的作用<br>        </Directory><br>        &lt;Directory /var/www/&gt;                      2&gt;更改为网站存放的位置：如/var/www/blog.test.com<br>                Options Indexes FollowSymLinks MultiViews<br>                AllowOverride None<br>                Order allow,deny          acl设置，符合下一行allow规则的都能访问，不符合allow规则的不能访问</p>
-<p>               # Order deny,allow        acl设置，符合下一行deny规则的都不能访问，不符合deny规则的能访问<br>                allow from all                控制哪些主机可以访问，默认所有主机都可以访问<br>        </Directory>  </p>
-<p>        ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/<br>        &lt;Directory “/usr/lib/cgi-bin”&gt;<br>                AllowOverride None<br>                Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch<br>                Order allow,deny<br>                Allow from all<br>        </Directory>  </p>
-<p>        ErrorLog /var/log/apache2/error.log    3&gt;log存放的文档位置  </p>
-<p>        # Possible values include: debug, info, notice, warn, error, crit,<br>        # alert, emerg.<br>        LogLevel warn                                     4&gt;设置log信息的等级  </p>
-<p>        CustomLog /var/log/apache2/access.log combined<br>        ServerSignature On  </p>
-<p>    Alias /doc/ “/usr/share/doc/“    设置别名，访问/var/www/blog.test.com/doc 其实就是访问/usr/share/doc<br>    &lt;Directory “/usr/share/doc/“&gt;<br>        Options Indexes MultiViews FollowSymLinks<br>        AllowOverride None<br>        Order deny,allow<br>        Deny from all<br>        Allow from 127.0.0.0/255.0.0.0 ::1/128<br>    </Directory>  </p>
-</VirtualHost>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2706917480/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/2706917480/" class="post-title-link" itemprop="url">ubuntus 最佳方案 -3 apache</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2012-04-18 22:14:00" itemprop="dateCreated datePublished" datetime="2012-04-18T22:14:00+08:00">2012-04-18</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/server/" itemprop="url" rel="index"><span itemprop="name">server</span></a>
                 </span>
             </span>
 
@@ -1199,139 +641,115 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>安装apache2-mpm-worker  </p>
+          <p>EIGRP  </p>
 <blockquote>
-<p>sudo apt-get install apache2</p>
-</blockquote>
-<p>配置文件说明<img src="http://img2.ph.126.net/rjDrEcnNpCK8qcSGcrkM1A==/2500060743161473472.jpg" alt="ubuntus 最佳方案 -3 - leaf - ------坚持雅操------" title="ubuntus 最佳方案 -3 - leaf - ------坚持雅操------">  </p>
+<p>能同时提供多种网络层协议的路由选择。<br>EIGRP通过hello包建立邻居关系。  </p>
 <blockquote>
-<p>apache2.conf:全局配置文件，如允许的进程数、日志等级、ServerTokens等多在这边设置<br>envvars:环境变量，运行apache的用户名和组就在这边设置<br>httpd.conf:用户配置文件，默认空<br>ports.conf:SSL的端口号<br>conf.d:好像是跟编码有关的配置，不是很清楚<br>mods-available:  可用的模块<br>mods-enabled：已在用的模块<br>sites-available:   存在的虚拟主机(网站)<br>sites-enabled:    已经对外服务的虚拟主机</p>
-</blockquote>
-<p>查看模块  </p>
-<blockquote>
-<p>查看可用模块：sudo a2enmod<br>查看已用模块：sudo a2dismod<br>查找要安装的模块名称：apt-cache search xxx</p>
-</blockquote>
-<p>虚拟主机  </p>
-<blockquote>
-<p>虚拟主机有两种：基于IP和基于域名<br>虚拟主机(网站)存放位置：一般为 /var/www/ 下<br>虚拟主机的配置文件放在：/etc/apache2/sites-available/   注:对每个虚拟主机单独建配置文件比较好<br>已用的虚拟主机配置文件：/etc/apache2/sites-enable/   通过a2dissite 和a2ensite 来关闭/开启虚拟主机<br>注：用a2ensite和a2dissite后，sites-enable下会自动创建符号链接<br>详见：ubuntus 最佳方案  3-基于端口的多虚拟主机</p>
-</blockquote>
-<p>虚拟主机配置详解  </p>
-<blockquote>
-<p>详见：ubuntus 最佳方案  3-apache2 default文件介绍</p>
-</blockquote>
-<p>HTTPS的实现  </p>
-<blockquote>
-<p>sudo a2enmod ssl<br>sudo /etc/init.d/apache2 reload<br>sudo apt-get install openssl<br>-————————————-<br>openssl genrsa -des3 -out server.key 1024    #然后输入密码<br>openssl req -new -key server.key -out server.csr    #先输入密码，再输信息<br>openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt<br>sudo cp server.crt /etc/ssl/certs   #公钥<br>sudo cp server.key /etc/ssl/private   #私钥<br>-————————————<br>更改虚拟主机配置<br>添加：<br>SSLEngine on<br>SSLOptions +StrictRequire<br>SSLCertificateFile /etc/ssl/certs/server.crt<br>SSLCertificateKeyFile /etc/ssl/private/server.key  </p>
-<p><img src="http://img1.ph.126.net/EWKDYD0fPBHsN0y_3ZXbLA==/2824601391308859841.jpg" alt="ubuntus 最佳方案 -3 - leaf - ------坚持雅操------" title="ubuntus 最佳方案 -3 - leaf - ------坚持雅操------"><br>-—————————————–  </p>
-<p>sudo /etc/init.d/apache2 restart<br><a target="_blank" rel="noopener" href="https://172.16.43.140/">https://172.16.43.140</a>  </p>
-<p><img src="http://img2.ph.126.net/vcjije7yiPpC1kYykPBB0w==/110619665864714502.jpg" alt="ubuntus 最佳方案 -3 - leaf - ------坚持雅操------" title="ubuntus 最佳方案 -3 - leaf - ------坚持雅操------"></p>
-</blockquote>
-<p> Apache 性能优化</p>
-<blockquote>
-<p>详见 ubuntus 最佳方案  3-apache.conf</p>
-<p>启用压缩</p>
+<p>邻居关系的三个条件：  </p>
 </blockquote>
 <blockquote>
 <blockquote>
-<p>sudo a2enmod deflate</p>
-</blockquote>
+<p>收到hello包或者ack<br>相同的as号<br>相同的度量  </p>
 <blockquote>
-<p>sudo /etc/init.d/apache2 force-reload</p>
-</blockquote>
+<p>度量包括：  </p>
 <blockquote>
-<p>配置文件为：/etc/apache2/mods-enabled/deflate.conf</p>
-</blockquote>
-<blockquote>
-<p>&lt;IfModule mod_deflate.c&gt;</p>
-</blockquote>
-<blockquote>
-<p>          AddOutputFilterByType DEFLATE text/html text/plain text/xml</p>
-</blockquote>
-<blockquote>
-</IfModule>
+<p>带宽（默认）<br>延迟（默认）<br>负载<br>可靠性<br>MTU尺寸  </p>
 </blockquote>
 </blockquote>
-<blockquote>
-<p>使用缓存</p>
-<p>sudo a2enmod disk_cache           (sudo a2enmod mem_cache)</p>
-<p>配置文件/etc/apache2/sites-available/<a target="_blank" rel="noopener" href="http://www.a.com/">www.a.com</a></p>
-<p>在最后添加：</p>
-<p>    &lt;IfModule mod_disk_cache.c&gt;</p>
-<p>        CacheEnable disk /               #缓存类型为硬盘   /为网站的根目录，即对整个网站启用缓存</p>
-<p>        CacheRoot /var/www/<a target="_blank" rel="noopener" href="http://www.a.com/cache">www.a.com/cache</a></p>
-<p>        CacheDefaultExpire 7200    #失效周期，7200s</p>
-<p>        CacheMaxExpire 604800    #最大失效周期，604800s</p>
-<p>    </IfModule></p>
-<p>创建cache文件夹</p>
 </blockquote>
-<blockquote>
-<blockquote>
-<p>sudo mkdir /var/www/<a target="_blank" rel="noopener" href="http://www.a.com/cache">www.a.com/cache</a></p>
+<p>建立邻居关系时，会发送整个路由表。之后只发送变化的部分<br>EIGRP通过RTP来传输，RTP是先用组播更新，再和没联系到的用单播更新。16次单播后宣告失效。<br>组播地址：224.0.0.10  </p>
 </blockquote>
+<p>EIGRP跳数：255<br>EIGRP有3张表：邻居表、拓扑表、路由表<br>EIGRP没有像ospf一样有区域0要求。  </p>
 <blockquote>
-<p>sudo chown www-data:www-data /var/www/<a target="_blank" rel="noopener" href="http://www.a.com/cache">www.a.com/cache</a></p>
+<p>EIGRP分为内部路由(AD=90)和外部路由(AD=170)  </p>
 </blockquote>
+<p>EIGRP和RIPv2支持不连续子网的自动汇总，所以默认时图7.1是不通的。  </p>
 <blockquote>
-<p>sudo /etc/init.d/apache2 restart</p>
+<p>因为172.16.10.0/24和172.16.20.0/24多汇总成172.16.0.0/16，所以路由器就把数据发回原路了。  </p>
+</blockquote>
+<p>EIGRP相关命令  </p>
+<blockquote>
+<blockquote>
+<p>(config)#router eigrp 10<br>(config-router)#network 172.16.0.0<br>(config-router)#network 10.0.0.0  </p>
 </blockquote>
 </blockquote>
 <blockquote>
-<p>压力测试</p>
+<p>其他还有  </p>
 </blockquote>
 <blockquote>
 <blockquote>
-<p>ab -n 20000 -c 200 <a target="_blank" rel="noopener" href="http://localhost/">http://localhost/</a></p>
+<p>(config-router)#maximum-paths 6                   最大负载均衡链路支持6条<br>(config-router)#metric maximum-hops 255     最大跳数支持255<br>(config-router)#passive-interface s0/1             不发送或接收路由信息<br>(config-router)#no auto-summary                   不自动汇总  </p>
 </blockquote>
+<p>再发布命令  </p>
+<blockquote>
+<p>(config)#router eigrp 10<br>(config-router)#redistribute rip metric 10000000 20000 255 1 1500<br>(config)#router rip<br>(config-router)#redistribute eigrp 10 metric 1  </p>
 </blockquote>
+<p>验证命令  </p>
 <blockquote>
-<blockquote>
-<p>ab apache benchmarking</p>
+<p>#show ip eitrp neighbors<br>#show ip eitrp topology<br>#show ip route<br>#show ip route eigrp                只显示eigrp项目  </p>
 </blockquote>
+<p>故障诊断命令  </p>
 <blockquote>
-<p>-n 发送总数</p>
-</blockquote>
-<blockquote>
-<p>-c 一次发送</p>
+<p>debug eigrp packet                  显示hello包数据<br>debug ip eigrp notification        网络变化(出错)时，显示变化的信息  </p>
 </blockquote>
 <blockquote>
 </blockquote>
 </blockquote>
-<p>Apache安全相关  </p>
-<blockquote>
-<p>查看http文件头</p>
 </blockquote>
+<p>OSPF  </p>
 <blockquote>
+<p>ospf一定要规定一个主干区域（区域0），然后其他区域必须有一个接口和主干区域链接。  </p>
 <blockquote>
-<p>telnet 172.16.43.140 80 </p>
+<p>ospf只能在代价相同的链路上实现负载均衡，而eigrp可以在不同代价的链路上实现负载均衡<br>路由器最好配置环回接口lo。这样就可以指定DB路由器  </p>
+<blockquote>
+<p>配置命令：<br>(config)#int loopback 0<br>(config-if)#ip address 172.16.10.1 255.255.255.255    要保证每个路由器的环回接口多是独立网段。  </p>
 </blockquote>
-<blockquote>
-<p>然后输入HEAD / HTTP/1.0 </p>
-</blockquote>
-<blockquote>
-<p>然后可以看到</p>
 </blockquote>
 </blockquote>
 <blockquote>
-<p><img src="http://img6.ph.126.net/MA9PPoapzN4loDA5xqZ5_A==/605452674922044526.jpg" alt="ubuntus 最佳方案 -3 - leaf - ------坚持雅操------" title="ubuntus 最佳方案 -3 - leaf - ------坚持雅操------"></p>
+<p>邻居和邻接  </p>
+<blockquote>
+<p>邻居：只要2个路由器有连接，就是邻居关系。  </p>
+<blockquote>
+<p>  hello包发送地址：224.0.0.5  </p>
 </blockquote>
+<p>邻接：建立邻居关系后，若发DBD包(用于选DB)，则选好DB后就表明建立了邻接关系。  </p>
+<blockquote>
+<p>  建立邻接关系后，发LSA(链路状态通告)，交换路由更新数据，共享路由信息。<br>  备注：只有DR和BDR和Dother建立邻接关系，Dother之间不能建链接关系，只能建邻居关系。<br>  参考：<a target="_blank" rel="noopener" href="http://www.2cto.com/net/201208/145681.html">OSPF的邻接关系是怎么建立成功的</a><br>            <a target="_blank" rel="noopener" href="http://cisco.chinaitlab.com/OSPF/740073.html">OSPF两台路由器之间建立邻接关系过程</a></p>
+</blockquote>
+</blockquote>
+<p>OSPF命令  </p>
 <blockquote>
 <blockquote>
-<p> 更改方法：更改/etc/apache2/apache2.conf 里面的ServerTokens：prod </p>
+<p>(config)#router ospf 12         #12只是ospf的标识，跟区域没有关系，随便标多可以<br>(config-router)#network 192.168.10.0    0.0.0.255          area 0  <br>                                                           子网掩码反码      设置区域0  </p>
+</blockquote>
+<p>在发布命令  </p>
+<blockquote>
+<p>(config)#router eigrp 10<br>(config-router)#ip summary-address eigrp 10 192.168.10.60 255.255.255.224<br>(config)#router ospf 1<br>(config-router)#area 1 range 192.168.10.64 255.255.255.224  </p>
 </blockquote>
 </blockquote>
 <blockquote>
-<p>DDOS防范</p>
+<p>查看命令  </p>
+<blockquote>
+<p>show ip ospf                          ospf相关信息<br>show ip ospf interface f0/0    某个接口的ospf信息<br>show ip ospf database          查看路由器各个接口的ID和相邻路由器的ID<br>show ip ospf neighbor           查看邻居和邻接信息，这样DR和BDR也会显示出来  </p>
+</blockquote>
+<p>调试命令  </p>
+<blockquote>
+<p>debug ip ospf packet              显示hello包的收发<br>debug ip ospf hello                 显示hello包的收发，比上面的详细<br>debug ip ospf adj                    用于查看选举DR、BDR过程  </p>
+</blockquote>
 </blockquote>
 <blockquote>
+<p>DR的选举  </p>
 <blockquote>
-<p>略</p>
-</blockquote>
-</blockquote>
+<p>DR的选举主要看优先级和IP的大小<br>优先级：  </p>
 <blockquote>
+<p>默认为1，越大就越能当DR，0就只能当Dother<br>(config-if)#ip ospf priority 0  </p>
 </blockquote>
-<p>Apache 日志分析  </p>
-<blockquote>
+<p>IP的大小可以通过lo来设置  </p>
 </blockquote>
+</blockquote>
+</blockquote>
+<p>补充及实验：待续</p>
 
       
     </div>
@@ -1351,7 +769,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/387816121/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1043220146/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1367,7 +785,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/387816121/" class="post-title-link" itemprop="url">ubuntus 最佳方案 -2</a>
+            <a href="/posts/1043220146/" class="post-title-link" itemprop="url">鸟哥基础第九章</a>
         </h2>
 
         <div class="post-meta">
@@ -1377,14 +795,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2012-04-17 15:17:00" itemprop="dateCreated datePublished" datetime="2012-04-17T15:17:00+08:00">2012-04-17</time>
+              <time title="创建时间：2012-09-13 15:06:00" itemprop="dateCreated datePublished" datetime="2012-09-13T15:06:00+08:00">2012-09-13</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 15:44:26" itemprop="dateModified" datetime="2020-08-04T15:44:26+08:00">2020-08-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1392,11 +810,11 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/server/" itemprop="url" rel="index"><span itemprop="name">server</span></a>
+                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
                 </span>
             </span>
 
@@ -1406,119 +824,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.3k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>5 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>系统使用：ubuntu-8.04.4-server-i386.iso  </p>
-<p>1、文件目录<br>/sys：用于存放系统信息  </p>
-<p><img src="http://img5.ph.126.net/cXj5mkGxWJmsMc7bmwVVKg==/2583095861291110315.jpg" alt="ubuntus 最佳方案 -2 - leaf - ------坚持雅操------" title="ubuntus 最佳方案 -2 - leaf - ------坚持雅操------"></p>
-<p> <br>2、/etc/fstab<br>      sudo blkid  查看分区uuid  </p>
-<p>3、lvm  逻辑卷管理器<br>     硬盘上面建lvm，lvm上面建分区。易于扩容和备份等  </p>
-<p>4、tasksel  用于快速安装服务套件  </p>
-<p>     <img src="http://img9.ph.126.net/STWB9322u2SY1-r6MX3cOQ==/634163122546532059.jpg" alt="ubuntus 最佳方案 -2 - leaf - ------坚持雅操------" title="ubuntus 最佳方案 -2 - leaf - ------坚持雅操------"></p>
-<p> </p>
-<p> 5、更改语系<br>       查看当前语言设置：locale<br>       语言设置文件：/etc/default/locale  </p>
-<p>       <img src="http://img8.ph.126.net/WNWkGw6u0Doq-dfdelmgPQ==/3084684269789498848.jpg" alt="ubuntus 最佳方案 -2 - leaf - ------坚持雅操------" title="ubuntus 最佳方案 -2 - leaf - ------坚持雅操------"></p>
-<p> <br>6、nano使用方法<br>      ctrl+o ：保存<br>      ctrl+x ：退出<br>      ctrl+w：查找<br>      ctrl+k： 剪切<br>      ctrl+u：撤销  </p>
-<p>      <img src="http://img2.ph.126.net/99RlVjpIJA2LoTEI86bCtw==/2601954684730730712.jpg" alt="ubuntus 最佳方案 -2 - leaf - ------坚持雅操------" title="ubuntus 最佳方案 -2 - leaf - ------坚持雅操------"></p>
-<p> <br>7、mc 图形化资源管理器   </p>
-<p>8、包管理软件<br>     —-apt工具<br>     apt相关文件<br>        /etc/apt/sources.list          软件包资源列表<br>        /etc/apt/apt.conf.d            apt零碎配置文件<br>        /var/cache/apt/archives    存放已经下载的软件包<br>    apt软件仓库分类<br>        main           自由软件，ubuntu完全支持<br>        restricted    不完全自由软件，但被广泛使用，ubuntu也提供支持<br>        universe     依赖社区提供支持，ubuntu不提供安全补丁等支持<br>        multiverse   非自由软件，完全没有支持<br>     apt-get命令<br>        update         更新软件包列表<br>        upgrade       升级所有软件包<br>        purge           彻底删除软件包<br>        source          下载源码包<br>        dist-upgrade  升级整个发行版<br>      apt-cache命令<br>         search          搜索软件包在ubuntu下的名字<br>      aptitude命令<br>         图形界面安装软件<br>      dpkg命令<br>         dpkg -l         查找软件包是否已经安装<br>         dpkg -L        查找软件包包含哪些文件<br>         dpkg -C        查找哪些软件未完成安装<br>         dpkg-reconfigure     自动配置已安装的软件包  </p>
-<p>9、服务的启动和停止<br> update-rc.d  apache defaults    设置默认启动<br>         update-rc.d  apache purge        不自动启动  </p>
-<p>10、网络配置<br>                /etc/network/interfaces   网卡及IP地址配置文件<br>                <img src="http://img2.ph.126.net/1WnTuBHmsufWHtDGPaKQ3w==/1299569967490523612.jpg" alt="ubuntus 最佳方案 -2 - leaf - ------坚持雅操------" title="ubuntus 最佳方案 -2 - leaf - ------坚持雅操------"><br>      重启网络<br>                 /etc/init.d/networking restart       <br>      DNS配置文件<br>                 /etc/resolv.conf<br>                 <img src="http://img2.ph.126.net/dp58g5iEd6j07JkpRHcuQQ==/2759580671688692722.jpg" alt="ubuntus 最佳方案 -2 - leaf - ------坚持雅操------" title="ubuntus 最佳方案 -2 - leaf - ------坚持雅操------"><br>       hosts文件<br>                 /etc/hosts   </p>
-<p>11、时间同步（每天同步一次）<br>       sudo nano /etc/cron.daily/timeupdate<br>          添加： ntpdate ntp.ubuntu.com<br>                     关于ntp servers，访问：<a target="_blank" rel="noopener" href="http://tf.nist.gov/tf-cgi/servers.cgi">http://tf.nist.gov/tf-cgi/servers.cgi</a><br>       sudo chmod 755 /etc/cron.daily/timeupdate  </p>
-<p>12、远程管理ubuntus<br>       —服务器上安装ssh-s<br>           sudo apt-get install openssh-server<br>                 ssh配置文件：/etc/ssh/sshd_config<br>       —客户端远程登录服务器<br>           ssh <a href="mailto:&#x78;&#120;&#120;&#64;&#x31;&#x37;&#50;&#x2e;&#49;&#54;&#x2e;&#52;&#x33;&#x2e;&#x31;&#52;&#x30;">&#x78;&#120;&#120;&#64;&#x31;&#x37;&#50;&#x2e;&#49;&#54;&#x2e;&#52;&#x33;&#x2e;&#x31;&#52;&#x30;</a>    然后输入xxx的密码(xxx为服务器的用户名)  </p>
-<p>        <img src="http://img8.ph.126.net/XNEalyrGgPBGQtUW3fdrig==/1275081644516690278.jpg" alt="ubuntus 最佳方案 -2 - leaf - ------坚持雅操------" title="ubuntus 最佳方案 -2 - leaf - ------坚持雅操------"></p>
-<p> </p>
-<p>        查看那些人登录到本机：who<br>        踢出用户：<br>               ps -ef | grep pts/0<br>               kill -9 5593<br>        <img src="http://img0.ph.126.net/HeI2Igi3XztxiaNamKlQYQ==/2655434930305746040.jpg" alt="ubuntus 最佳方案 -2 - leaf - ------坚持雅操------" title="ubuntus 最佳方案 -2 - leaf - ------坚持雅操------"></p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/563734183/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/563734183/" class="post-title-link" itemprop="url">ubuntus 最佳方案 第一章</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2012-04-17 10:18:00" itemprop="dateCreated datePublished" datetime="2012-04-17T10:18:00+08:00">2012-04-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/server/" itemprop="url" rel="index"><span itemprop="name">server</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>160</span>
+              <span>405</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -1535,10 +841,24 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>linux是你废寝忘食的实验，是你在屡次失败的实验中得来的成长。  </p>
-<p>学习linux，要多多实验，多多尝试。  </p>
-<p>反复研读lfs文档，并能够成功编译两遍以上，这样，对linux的了解会深刻许多<br>(只有能看懂了才能去研读，对里面的基础知识要有一定的了解)  </p>
-<p>知之者不如好知者，好之者不如乐之者。<br>(兴趣永远是最重要的，想想玩游戏是多么有兴致)</p>
+          <p>第九章主要是tar，gzip，bzip，dd，cpio命令，都是系统资料备份的重要命令。<br>一般压缩命令和tar一起用了，所以就看3个命令就好了  </p>
+<blockquote>
+<p>tar：  </p>
+<blockquote>
+<p>tar -cvf /tmp/a.tar  /home/abc   :打包/home/abc这个目录，命名为a.tar，并放到/tmp下面<br>tar -xvf /tmp/a.tar  /home          :把a.tar解压到/home目录下<br>gzip压缩   tar -zcvf<br>bzip压缩   tar -jcvf  </p>
+<p>将某个目录排除之后再打包<br>tar –exclude /home/abc/a -cvf /tmp/a.tar /home/abc  </p>
+</blockquote>
+<p>dd:  </p>
+<blockquote>
+<p>用于系统备份比较多，功能很强大<br>备份分区   dd if=/dev/sda1 of=/mnt/sdb1/abc  </p>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>cpio:  </p>
+<blockquote>
+<p>也是用于系统备份，数据备份。<br>备份：find /etc | cpio -o &gt; /home/etc.cpio<br>还原：cd /etc | cpio -icduv &lt; /home/etc.cpio  </p>
+</blockquote>
+</blockquote>
 
       
     </div>
@@ -1558,7 +878,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/414680952/">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1155753965/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -1574,7 +894,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/posts/414680952/" class="post-title-link" itemprop="url">中控：设置实现机器考勤拍照照片能够实时下载</a>
+            <a href="/posts/1155753965/" class="post-title-link" itemprop="url">鸟哥基础第八章</a>
         </h2>
 
         <div class="post-meta">
@@ -1584,14 +904,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2012-04-02 14:25:00" itemprop="dateCreated datePublished" datetime="2012-04-02T14:25:00+08:00">2012-04-02</time>
+              <time title="创建时间：2012-09-13 14:41:00" itemprop="dateCreated datePublished" datetime="2012-09-13T14:41:00+08:00">2012-09-13</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 15:29:34" itemprop="dateModified" datetime="2020-08-04T15:29:34+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-04 15:44:26" itemprop="dateModified" datetime="2020-08-04T15:44:26+08:00">2020-08-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1599,11 +919,11 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hardware/" itemprop="url" rel="index"><span itemprop="name">Hardware</span></a>
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hardware/%E8%80%83%E5%8B%A4/" itemprop="url" rel="index"><span itemprop="name">考勤</span></a>
+                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
                 </span>
             </span>
 
@@ -1613,7 +933,325 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>780</span>
+              <span>1.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>摘录  </p>
+<blockquote>
+<p>硬盘的构造：硬盘片、磁头、机械臂  </p>
+<blockquote>
+<p><img src="http://img2.ph.126.net/q8nWPXT71-HKLbbzEIejMQ==/43910096384630452.jpg" alt="鸟哥基础第八章 - leaf - ------坚持雅操------" title="鸟哥基础第八章 - leaf - ------坚持雅操------"></p>
+</blockquote>
+<p>   </p>
+<blockquote>
+<p>上面的盘片就是硬盘片，能当镜子用<br>右下三角形的就是机械臂<br>机械臂头上就是磁头，很小很小，是个芯片<br>左下是磁铁，应该是操作机械臂用的  </p>
+</blockquote>
+<blockquote>
+<p>物理扇区是硬盘片上的最小存储物理量，是低级格式化而成的，包括柱面、磁道、扇区都是低级格式化而成的<br>传统物理扇区是512B的，现在改为4KB了<br>逻辑块是高级格式化后系统操作的最小存储单位，只能是512B的倍数  </p>
+</blockquote>
+<p>文件系统  </p>
+<blockquote>
+<p>高级格式化的时候进行文件系统的选择。文件系统就是对磁盘上的数据如何组织的一种方法。<br>就是如何存、如何找(取)的方法。  </p>
+</blockquote>
+<blockquote>
+<p>ext2文件系统会有2个区域。inode表和块区域  </p>
+<blockquote>
+<p>inode表是解决如何找的问题。<br>块区域就是负责存放  </p>
+</blockquote>
+<blockquote>
+<p>inode表存放：文件的属性、文件内容的位置<br>块区域存放：实际内容<br>这里要说一下目录的块区域：  </p>
+<blockquote>
+<p>目录(文件夹)的块区域是存放的是该目录内的文件的名称和文件存放位置<br>名称、位置、内容是对应的，这就是目录最重要的功能：关联性  </p>
+</blockquote>
+</blockquote>
+<p>注意一点：linux下也不是不要磁盘整理。linux的磁盘整理就是全部复制出来再格式化再复制回去就可以了。  </p>
+</blockquote>
+<blockquote>
+<p>查看inode和块的信息命令：dumpe2fs  </p>
+<blockquote>
+<p>这个命令是管理员命令，放在/sbin下<br>sudo dumpe2fs /dev/sda1  </p>
+</blockquote>
+<p><img src="http://img6.ph.126.net/kd4xp39MuNM4RpVay0p3IA==/1317584366000404106.jpg" alt="鸟哥基础第八章 - leaf - ------坚持雅操------" title="鸟哥基础第八章 - leaf - ------坚持雅操------"></p>
+<p>   </p>
+</blockquote>
+<p>文件系统的操作命令：  </p>
+<blockquote>
+<p>df：查看分区的容量等情况  </p>
+<blockquote>
+<p>df -h：df默认单位为KB，-h后默认已GB为单位<br>df -a：列出所有分区，包括虚拟的/proc分区<br>df -T:就是显示分区的文件系统类型，如ext3、ntfs等等  </p>
+</blockquote>
+<p>du：列出某个目录的文件清单和所占容量，默认KB  </p>
+<blockquote>
+<p>du :仅列目录名称和目录的容量<br>du -a：列目录名称和其下的文件及容量<br>du -s：仅列总量  </p>
+</blockquote>
+</blockquote>
+<p>关于连接数  </p>
+<blockquote>
+<p>mkdir 1<br>ls -ld<br>drwxr-xr-x  3 qqq qqq 4096  9月 13 14:20 .<br>ls -ld 1<br>drwxrwxr-x  2 qqq qqq 4096  9月 13 14:20 1<br>上面的3 和2 就是连接数，空目录连接数为2，多一个目录+1。<br>空目录的连接如下<br>.      当前目录<br>..     上一层目录  </p>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>分区、格式化等命令  </p>
+<blockquote>
+<p>分区：fdisk、cfdisk<br>格式化：mkfs    </p>
+<blockquote>
+<p>mkfs -t ext3 -L “演示” /dev/sda6  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>磁盘检查:fsck<br>改卷标：e2lable /dev/sda6 演示2  </p>
+</blockquote>
+<p>挂载命令  </p>
+<blockquote>
+<p>相关文件:/etc/fstab;/etc/mtab<br>/etc/fstab:系统自动挂载的设备<br>/etc/mtab:系统当前挂载的设备  </p>
+<p>挂载命令：mount<br>mkdir /mnt/abc<br>mount -t iso9660  /dev/cdrom /mnt/abc ：t tpye 就是告知系统以iso9660系统格式来挂载和管理/dev/cdrom设备  </p>
+<p>mount -t exit3 -o rw，sync /dev/sda6 /mnt/abc : o参数很有用，可告知对设备的操作权限等<br>文件系统参数见P162，.P169  </p>
+</blockquote>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3012054958/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/3012054958/" class="post-title-link" itemprop="url">鸟哥基础第七章</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2012-09-12 17:26:00" itemprop="dateCreated datePublished" datetime="2012-09-12T17:26:00+08:00">2012-09-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:26" itemprop="dateModified" datetime="2020-08-04T15:44:26+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>第六章有几个命令就放在这边了  </p>
+<blockquote>
+<p>chmod、chown、chgrp：选项  -R    </p>
+</blockquote>
+<p>摘录  </p>
+<blockquote>
+<p>环境变量PATH更改：具体可看一下第十一章  </p>
+</blockquote>
+<blockquote>
+<p>普通操作命令  </p>
+<blockquote>
+<p>mkdir、rmdir：其中mkdir -m 755 test  可更改文件夹权限<br>pwd：显示当前位置<br>ls： -a 隐藏文件也列出来。-l 列出包括属性等详细信息<br>cp：  </p>
+<blockquote>
+<p>-a 全部复制，包括属性、子目录等<br>-l   硬链接   -s 软链接   cp -l 相当于 ln；   cp -s  相当于 ln -s<br>-u 比源文件新才复制过去  </p>
+</blockquote>
+<p>rm ： -r 递归<br>mv ：-u 比源文件新才复制过去  </p>
+</blockquote>
+<p>查看文件命令  </p>
+<blockquote>
+<p>cat：cat -n 显示行号      nl 也是显示行号<br>tac：从最后一行开始显示<br>more：查看时只能往下翻<br>less：查看时能上下翻<br>head：head -n  20  查看前20行<br>tail：查看最后N行<br>od：查看二进制文件，挺有用的  </p>
+</blockquote>
+<p>touch:建空文件，另外还能改时间  </p>
+<blockquote>
+<p>时间有3种：  </p>
+<blockquote>
+<p>改了内容后会更新时间mtime    -m<br>改了文件属性后会更新时间ctime。这个时间是touch改不了的  -c<br>读了文件后会更新时间atime     -a  </p>
+</blockquote>
+<p>其他参数：<br>-t：  -t 201209121639<br>-d：-d 20120912  </p>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>文件\文件夹权限  </p>
+<blockquote>
+<p>suid、sgid、sbit<br>文件权限除了rwx，还有sst<br>完整权限是：0000,sst由第一个数字表示   srwx srwx trwx<br>其中t表示该文件夹下的文件或目录只有管理员和他本人有权删除，其他人没有权删除<br>更改方法:chmod  </p>
+</blockquote>
+<p>文件的隐藏属性，只针对文件而非目录  </p>
+<blockquote>
+<p>文件的属性是指如文件大小，修改时间等等。而rwx是对文件操作的权利(权限)，两者不一样<br>chattr   更改隐藏属性    attr：attribute<br>lsattr    查看隐藏属性  </p>
+</blockquote>
+<blockquote>
+<p>+：增加属性<br>-：减少属性<br>=：设定这个属性  </p>
+<p>属性有哪些呢<br>a：只能增加数据，不能删除<br>i：设置后不能对该文件做任何操作，包括增减数据、删除、改名、设置连接等等<br>S：改了什么立刻写入磁盘  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>搜索命令  </p>
+<blockquote>
+<p>which：which command  只查命令文件(相当于windows只查后缀为exe的文件)<br>whereis、locate  </p>
+<blockquote>
+<p>这2个文件是从指定的记录数据库里面查找的，所以速度比较快，缺点是当天新加的内容查不到<br>但你可以用命令updatedb更新数据库，这样再查就能查到了<br>更新命令：updatedb<br>数据库每日更新：/etc/cron.daily/slocate.cron<br>数据库存放位置：/var/lib/slocate/slocate.db<br>数据库存放位置更改：/etc/updatedb.conf里面改  </p>
+</blockquote>
+<p>find：  </p>
+<blockquote>
+<p>find功能很强大<br>find /home -name 123      在/home目录下查找名字为123的文件<br>find /home -prem +7000  在/home目录下查找有一项特殊权限的6、4、3、2、1就可以<br>find /home -prem -7000   在/home目录下查找有特殊权限的文件。必须是7000权限  </p>
+</blockquote>
+<blockquote>
+<p>find /home -perm -7000 -exec ls -l {} \;   -exec就是对搜索的结果进行进一步的处理  </p>
+</blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1636317233/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/1636317233/" class="post-title-link" itemprop="url">鸟哥基础第六章</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2012-09-12 11:14:00" itemprop="dateCreated datePublished" datetime="2012-09-12T11:14:00+08:00">2012-09-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:26" itemprop="dateModified" datetime="2020-08-04T15:44:26+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>707</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -1630,42 +1268,497 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <p>&lt; page margin cm p margin-bottom cm –&gt; –&lt;</p>
-<p>转载自：中控</p>
-<p>条件一：机器带拍照并且是2010年10月份左右出厂的机器</p>
-<p>目前机器型号有</p>
-<p>1．3.5寸机器，目前只有iclock660、680、M880</p>
-<p>2．8寸屏机器目前有iclock2500、2800</p>
-<p>条件二：客户在使用过程中使用的是TCP/IP的通讯方式</p>
-<p>在机器满足条件以后我们如何设置机器和软件呢？</p>
-<p>系统设置—界面设置-—拍照并保存</p>
-<p><strong>第一步：设置机器</strong></p>
-<ol>
-<li><p>进到机器的通讯设置，3.5寸屏幕的机器在通讯设置里增加一项为web setup,移动左右键选择web setup进入后可以见到以下界面：</p>
-<p><img src="http://img8.ph.126.net/LMIRGAiDH4eBb8K8cJg_DQ==/579275502087899378.jpg" alt="中控：设置实现机器考勤拍照照片能够实时下载 - leaf - ------坚持雅操------" title="中控：设置实现机器考勤拍照照片能够实时下载 - leaf - ------坚持雅操------"></p>
-<p> </p>
-</li>
-<li><p>在webserver中输入IP地址，此IP地址为你所安装考勤软件的电脑的IP地址。例如我软件安装所在电脑的IP地址为：192.168.10.12,那么上面IP就应该填成这个。</p>
-</li>
-</ol>
-<p>端口号为机器和软件通讯所有，一般选用80端口</p>
-<p>注意：一般公司的内部网络不需要设置EnableProcxyServer (代理服务器)直接选择关闭就可以了</p>
-<p>&lt; page margin cm p margin-bottom cm –&gt; –&lt;</p>
-<p><strong>第二步：设置软件</strong></p>
-<ol>
-<li>进入08版考勤管理程序，选择“维护/设置”-—–“系统设置”-—-“Http数据传输”可以见到以下界面：</li>
-</ol>
-<p><img src="http://img1.ph.126.net/27JvQW-M7Yv_AOspFMWP-w==/632755747662919771.jpg" alt="中控：设置实现机器考勤拍照照片能够实时下载 - leaf - ------坚持雅操------" title="中控：设置实现机器考勤拍照照片能够实时下载 - leaf - ------坚持雅操------"></p>
-<p> </p>
-<p>先勾选“支持Http记录传输功能” 端口里输入我们在考勤机内输入的端口号，机器和软件的端口一致。</p>
-<ol start="2">
-<li>点击确认，就完成了软件的设置了。</li>
-</ol>
-<p><strong>第三步：其他设置</strong></p>
-<p>重启考勤机，即可实时上传  </p>
-<p>&lt; page margin cm p margin-bottom cm –&gt; –&lt;</p>
-<p>注意：1、此机器只能在软件开启后时时上传照片。其他例如：考勤记录，人员信息需要手动去下载，和普通机器操作一样。</p>
-<p>2．如果是带拍照功能的机器，增加了BS功能的话。那么如果想实现考勤拍照照片的时时上传，目前只能使用ZKTIME8.0。</p>
+          <p>摘录  </p>
+<blockquote>
+<p>一个是文件属于谁 ：user,group,other<br>一个是那些人对文件有哪些权力:read,write,execute  </p>
+<p>ls -l后第一个标识符含义：  </p>
+<blockquote>
+<p>-：文件<br>d：目录<br>l：链接文件，就是快捷方式<br>b：就是存储设备文件  </p>
+<blockquote>
+<blockquote>
+<p>ls /dev<br>brw-rw—-  1 root disk        1,   0 2012-09-10 07:32 ram0  内存就是属于存储设备，所以标识为b  </p>
+</blockquote>
+</blockquote>
+<p>c：就是输入输出信号的设备文件  </p>
+<blockquote>
+<p>crw-rw—-+ 1 root audio      14,   4 2012-09-10 07:32 audio 声卡做输入输出的设备，所以标识为c  </p>
+</blockquote>
+<p>s：就是用于网络数据链接  </p>
+<blockquote>
+<p>ls /var/run<br>srwxrwxrwx 1 root       root          0 2012-09-10 07:33 vmnat.1499   </p>
+</blockquote>
+<p>p:管道文件，用于解决多个程序访问一个文件时遵守先来先用原则。  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>linux的文件目录，对于新手来说是让人困惑的一个知识点  </p>
+</blockquote>
+<blockquote>
+<p><img src="http://img3.ph.126.net/bRD5b7APHgAFaQ7NmE7WAg==/2555792788550568013.jpg" alt="鸟哥基础第六章 - leaf - ------坚持雅操------" title="鸟哥基础第六章 - leaf - ------坚持雅操------"></p>
+<blockquote>
+<p> 青蓝色的都是链接文件，不用管他<br>bin、sbin：存放命令文件，就是windows的exe文件<br>lib：存放库文件，相当于windows的dll文件<br>boot：存放内核和启动文件如grub<br>root、home：是存放用户文件的地方<br>dev：存放的是设备文件<br>cdrom、media、mnt：是用设备文件的时候必须要挂载，挂载的地方就是这2个地方<br>opt、usr：是存放程序的地方<br>proc：内存中的文件，反映硬件状况<br>selinux：专门的安全模块<br>srv：不太懂，说是存放某些服务所需要访问的数据目录<br>sys：和proc功能差不多。<br>tmp：临时文件夹<br>var：一直变化的文件，如log文件，每时每刻多在更新。数据库的文件也放在这里，网站源码也放在这里  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>vfs：<br>对所有文件系统的支持就是靠这个功能实现的。</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/75920360/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/75920360/" class="post-title-link" itemprop="url">鸟哥基础第五章</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2012-09-11 15:37:00" itemprop="dateCreated datePublished" datetime="2012-09-11T15:37:00+08:00">2012-09-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:26" itemprop="dateModified" datetime="2020-08-04T15:44:26+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>586</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>摘录  </p>
+<blockquote>
+<p>yum更新源  </p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>参看：<a target="_blank" rel="noopener" href="http://xili.me/post/2012-06-09/40028678681">fedora17 yum更新源</a>    里面有非常详细的说明<br>如163镜像：  </p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="http://mirrors.163.com/">http://mirrors.163.com/</a> 点fedora右边的使用帮助，里面有写使用说明<br>：<br>下载fedora-163.repo和fedora-updates-163.repo, 放入/etc/yum.repos.d/<br>运行yum makecache生成缓存  </p>
+</blockquote>
+</blockquote>
+<p>基本命令：  </p>
+<blockquote>
+<p>date   ：  date +%Y/%m/%d       date + %H：%M<br>cal     ： cal 2005     cal  12 2005<br>bc     <br>sync   ：同步<br>reboot<br>halt<br>poweroff<br>shutdown：这边有几个选项还是比较重要的  </p>
+<blockquote>
+<p>shutdown -k +10 ‘将要在10分钟后关机’<br>shutdown -r  +10<br>shutdown -h +10<br>-—————————————–以上是分钟<br>shutdown -t  10      #10秒后关机<br>-—————————————–<br>shutdown -c            #取消关机  </p>
+</blockquote>
+</blockquote>
+<p>在线帮助：  </p>
+<blockquote>
+<p>man date   其中里面的数字含义和每段讲什么多应该了解一下，还有如何查询：/向下  ?向上 <br>info   date  </p>
+</blockquote>
+<p>忘记root密码  </p>
+<blockquote>
+<p>仅针对grub0.99  </p>
+</blockquote>
+<blockquote>
+<p>开机时按e，然后选kernel这一行再按e，进入编辑模式。在最后添加single，按确定。然后再按b启动<br>e-&gt;e-&gt;写入single-&gt;回车-&gt;b 启动  </p>
+<p><img src="http://img0.ph.126.net/Kka7cUvKQ_dt8Acv3lMr2A==/6597733871679262400.jpg" alt="鸟哥基础第五章 - leaf - ------坚持雅操------" title="鸟哥基础第五章 - leaf - ------坚持雅操------"></p>
+<p> 以下为单用户界面  </p>
+<p><img src="http://img7.ph.126.net/_0uUlulXM7FnSUM8kbD4ww==/1276489019400637977.jpg" alt="鸟哥基础第五章 - leaf - ------坚持雅操------" title="鸟哥基础第五章 - leaf - ------坚持雅操------"></p>
+<p> 然后更改/etc/shadow文件中的root密码  </p>
+</blockquote>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3119352/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/3119352/" class="post-title-link" itemprop="url">鸟哥基础第三章、第四章</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2012-09-11 10:03:00" itemprop="dateCreated datePublished" datetime="2012-09-11T10:03:00+08:00">2012-09-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:26" itemprop="dateModified" datetime="2020-08-04T15:44:26+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>269</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>设备号  </p>
+<blockquote>
+<p>打印机  /dev/lp0-2<br>磁带机 /dev/ht0    /dev/st0       </p>
+<blockquote>
+<p>磁带机对于大型数据存储非常重要  </p>
+</blockquote>
+</blockquote>
+<p>这里介绍的是fedora4的安装  </p>
+<blockquote>
+<p>selinux:安全限制比较严格，练习时还是关掉比较好<br>UTC：夏令时，不要勾选  </p>
+</blockquote>
+<p>关于多重启动，特别是先装了linux，再装windows的情况  </p>
+<blockquote>
+<p>装了linux后，用dd将主引导记录考出来，然后装了windows后，再写boot.ini将linux选项写上去就可以了<br>su<br>dd if=/dev/sda of=/home/123/mbr bs=512 count=1  </p>
+</blockquote>
+<p>这个版本有个好的一点就是直接包含了openldap的设置了  </p>
+<blockquote>
+<p><img src="http://img1.ph.126.net/YMrOqIv9DPeNgD8Sk2_S1Q==/1004302716921510971.jpg" alt="鸟哥基础第三章、第四章 - leaf - ------坚持雅操------" title="鸟哥基础第三章、第四章 - leaf - ------坚持雅操------"></p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2435517592/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/2435517592/" class="post-title-link" itemprop="url">鸟哥基础第二章</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2012-09-11 09:51:00" itemprop="dateCreated datePublished" datetime="2012-09-11T09:51:00+08:00">2012-09-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:26" itemprop="dateModified" datetime="2020-08-04T15:44:26+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>147</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>学习：<br>命令行是一定要学的，虽然记了又忘，但还是要忘了再记。<br>shell非常重要，shell脚本对服务器管理非常有用，必学阿  </p>
+<p>文件安全性，账户管理，软件的安装配置，登录文件的分析，自动化任务计划，编写程序多是管理服务器必备的基础知识<br>虽然很多，但是必须要掌握。  </p>
+<p>资料的收集归类、多学多练 是需要的必备条件。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2705186880/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/2705186880/" class="post-title-link" itemprop="url">鸟哥基础第一章</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2012-09-11 09:18:00" itemprop="dateCreated datePublished" datetime="2012-09-11T09:18:00+08:00">2012-09-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 15:44:26" itemprop="dateModified" datetime="2020-08-04T15:44:26+08:00">2020-08-04</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>937</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>我的是第二版。<br>大学时就在看linux的书，也买了redhat9的盘练习，但是很多按书上的操作多出错了，很打击自信心。<br>另外当时安装nvidia显卡驱动还是有很大难度的，我电脑没装成功。最后对linux就处在似懂非懂的状态。  </p>
+<p>鸟哥的书我应该是09年买的，觉得很不错。<br>但是要学的资料很多，有些关于字符串处理的章节看的真的很辛苦(检查日志很有帮助)。<br>现在从新对内容梳理一下，也当成是回顾，把忘记的再从新看一遍。  </p>
+<p>第二版用的是fedora4，镜像里面多不提供下载了，我是在博客里面找到的：<a target="_blank" rel="noopener" href="http://qsvren.blog.163.com/blog/static/35074567200931680023/">电驴下载</a>  </p>
+<p>摘录：  </p>
+<blockquote>
+<p>操作系统核心：与人沟通，并负责管硬件（有空应该再扩展一下，看一下书：操作系统）  </p>
+<blockquote>
+<p>进程控制(管理CPU)<br>内存控制(管理内存条)<br>文件系统管理(管理硬盘)<br>系统调度接口(提供shell，人机接口)  </p>
+</blockquote>
+<p>牛人：stallman 史托曼  </p>
+<blockquote>
+<p>编写了GCC，GLIBC，bash shell，Emacs<br>GCC和GLIBC是构建系统的核心工具，详细可查看<a target="_blank" rel="noopener" href="http://blog.chinaunix.net/uid/436750.html">孙海勇</a>：手把手教你构建自己的linux系统  </p>
+</blockquote>
+<p>关于图形界面  </p>
+<blockquote>
+<p>图形界面X WINDOW 1984年就出来了，比苹果系统和微软多早很多年。  </p>
+</blockquote>
+<p>多任务操作系统  </p>
+<blockquote>
+<p>就是给每个任务分配一个时间片，超过了一定的时间还没做完，就得等待下一个时间分配到了才能继续  </p>
+</blockquote>
+<p>相关规范  </p>
+<blockquote>
+<p>POSIX<br>LSB<br>FHS  </p>
+</blockquote>
+<p>相关网站  </p>
+<blockquote>
+<p>鸟哥 ：<a target="_blank" rel="noopener" href="http://linux.vbird.org/">http://linux.vbird.org/</a>   <a target="_blank" rel="noopener" href="http://vbird.dic.ksu.edu.tw/">http://vbird.dic.ksu.edu.tw/</a>  <br>卧龙小三：<a target="_blank" rel="noopener" href="http://www.ols3.net/">http://www.ols3.net/</a>  <br>study-area: <a target="_blank" rel="noopener" href="http://www.study-area.org/menu2.htm">http://www.study-area.org/menu2.htm</a><br>网络农夫： <a target="_blank" rel="noopener" href="http://netlab.cse.yzu.edu.tw/~statue/freebsd/docs/csh/">http://netlab.cse.yzu.edu.tw/~statue/freebsd/docs/csh/</a><br>狼主：<a target="_blank" rel="noopener" href="http://netlab.kh.edu.tw/index.htm">http://netlab.kh.edu.tw/index.htm</a><br>freebsd: <a target="_blank" rel="noopener" href="http://freebsd.lab.mlc.edu.tw/">http://freebsd.lab.mlc.edu.tw/</a><br>吴仁智：<a target="_blank" rel="noopener" href="http://www.cses.tcc.edu.tw/~chihwu/">http://www.cses.tcc.edu.tw/~chihwu/</a></p>
+</blockquote>
+<blockquote>
+<p>fhs   <a target="_blank" rel="noopener" href="http://proton.pathname.com/fhs/">http://proton.pathname.com/fhs/</a><br>lsb   <a target="_blank" rel="noopener" href="http://www.linuxfoundation.org/collaborate/workgroups/lsb">http://www.linuxfoundation.org/collaborate/workgroups/lsb</a></p>
+</blockquote>
+</blockquote>
+<p>操作系统图  </p>
+<p><img src="http://img6.ph.126.net/0flk9hftHx4kLXZGKkCkfw==/3083839844859752236.jpg" alt="鸟哥基础第一章 - leaf - ------坚持雅操------" title="鸟哥基础第一章 - leaf - ------坚持雅操------"></p>
+<p> <br>gnu图  </p>
+<p><img src="http://img5.ph.126.net/-lbQFx2sOoC0wiJrGL8RvQ==/2604206484544799405.jpg" alt="鸟哥基础第一章 - leaf - ------坚持雅操------" title="鸟哥基础第一章 - leaf - ------坚持雅操------"></p>
 
       
     </div>
@@ -1684,7 +1777,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/21/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><span class="page-number current">22</span><a class="page-number" href="/page/23/">23</a><span class="space">&hellip;</span><a class="page-number" href="/page/29/">29</a><a class="extend next" rel="next" href="/page/23/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/page/21/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/21/">21</a><span class="page-number current">22</span><a class="page-number" href="/page/23/">23</a><span class="space">&hellip;</span><a class="page-number" href="/page/37/">37</a><a class="extend next" rel="next" href="/page/23/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1735,12 +1828,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">399k</span>
+    <span title="站点总字数">447k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">24:11</span>
+    <span title="站点阅读时长">27:06</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
