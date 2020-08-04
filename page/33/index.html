@@ -244,14 +244,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">367</span>
+          <span class="site-state-item-count">366</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -297,117 +303,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1791050251/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/1791050251/" class="post-title-link" itemprop="url">[摘录] ubuntu server 10.04 安装dhcp服务器</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2010-10-13 10:56:00" itemprop="dateCreated datePublished" datetime="2010-10-13T10:56:00+08:00">2010-10-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-01 17:39:37" itemprop="dateModified" datetime="2020-08-01T17:39:37+08:00">2020-08-01</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>&lt;转载自：<a target="_blank" rel="noopener" href="http://xy.zhubajie.com/html/2009/03-30/207077.html&gt;">http://xy.zhubajie.com/html/2009/03-30/207077.html&gt;</a>  </p>
-<p>DHCP服务器提供以下两种配置方法：</p>
-<p>　　地址池</p>
-<p>　　这种方法指定了一个用来动态的提供给第一个访问网络的DHCP客户端的IP地址池（有时也称作区域或范围）。当DHCP客户端离开网络超过一定时间后，IP地址就会被回收到地址池以供其它DHCP客户端使用。</p>
-<p>　　MAC地址</p>
-<p>　　这种方法强制使用DHCP来区别每一块连接上网络的网卡的硬件地址，之后这块网卡每次连上网络请求DHCP服务时都为它提供这个固定的IP地址。</p>
-<p><img src="http://img.ph.126.net/oHeiM9j9UsG7QWm69cUsrQ==/3269331854495906752.png" alt="[摘录] ubuntu server 10.04 安装dhcp服务器 - leaf - ------坚持雅操------" title="[摘录] ubuntu server 10.04 安装dhcp服务器 - leaf - ------坚持雅操------"></p>
-<p> </p>
-<p>　　在ubuntu中安装DHCP服务</p>
-<p>　　sudo apt-get install dhcp3-server</p>
-<p>　　这样就完成安装了。</p>
-<p>　　配置DHCP服务器</p>
-<p>　　如果你的Ubuntu服务器上用友2块网卡，你需要选择哪一块网卡用来监听DHCP服务。默认监听的是eth0。可以通过编辑/etc/default/dhcp3-server这个文件来改变这个默认值。</p>
-<p>　　sudo vi /etc/default/dhcp3-server</p>
-<p>　　找到这行，</p>
-<p>　　INTERFACES=”eth0″</p>
-<p>　　使用下面这行替代它</p>
-<p>　　INTERFACES=”eth1″</p>
-<p>　　保存并退出。这一步可选。</p>
-<p>　　接下来你需要为/etc/dhcp3/dhcpd.conf文件创建一个备份。</p>
-<p>　　cp /etc/dhcp3/dhcpd.conf /etc/dhcp3/dhcpd.conf.back</p>
-<p>　　使用下面的命令编辑/etc/dhcp3/dhcpd.conf文件</p>
-<p>　　sudo vi /etc/dhcp3/dhcpd.conf</p>
-<p>　　使用地址池的方法</p>
-<p>　　你需要修改/etc/dhcp3/dhcpd.conf这个配置文件的以下部分：</p>
-<p><code>default-lease-time 600;   max-lease-time 7200;   option subnet-mask 255.255.255.0;   option broadcast-address 192.168.1.255;   option routers 192.168.1.254;   option domain-name-servers 192.168.1.1, 192.168.1.2;   option domain-name “yourdomainname.com”;   subnet 192.168.1.0 netmask 255.255.255.0 &#123;   range 192.168.1.10 192.168.1.200;   &#125;</code></p>
-<p>　　保存并退出文件</p>
-<p>　　这会导致DHCP服务器提供一个从192.168.1.10-192.168.1.200这个范围的IP地址给客户端。如果客户端没有请求一个租期的话，服务器会默认提供600秒的地址租期给客户端。最大的（允许的）地址租期是7200秒。</p>
-<p>　　使用MAC地址的方法</p>
-<p>　　使用这种方法你可以保留一个固定地址给一些或者所有机器。在下面的示例中我给server1,server2,printer1和priner2保留了固定的IP地址。</p>
-<p><code>default-lease-time 600;   max-lease-time 7200;   option subnet-mask 255.255.255.0;   option broadcast-address 192.168.1.255;   option routers 192.168.1.254;   option domain-name-servers 192.168.1.1, 192.168.1.2;   option domain-name “yourdomainname.com”;   subnet 192.168.1.0 netmask 255.255.255.0 &#123;   range 192.168.1.10 192.168.1.200;   &#125;   host server1 &#123;   hardware ethernet 00:1b:63:ef:db:54;   fixed-address 192.168.1.20;   &#125;   host server2 &#123;   hardware ethernet 00:0a:95:b4:d4:b0;   fixed-address 192.168.1.21;   &#125;   host printer1 &#123;   hardware ethernet 00:16:cb:aa:2a:cd;   fixed-address 192.168.1.22;   &#125;   host printer2 &#123;   hardware ethernet 00:0a:95:f5:8f:b3;   fixed-address 192.168.1.23;   &#125;</code></p>
-<p>　　现在你需要使用下面命令来重启dhcp服务器。</p>
-<p>　　sudo /etc/init.d/dhcp3-server restart</p>
-<p>　　配置Ubuntu的DHCP客户端</p>
-<p>　　如果你想配置你的Ubuntu桌面为DHCP客户端，使用以下步骤。你需要打开/etc/network/interface文件</p>
-<p>　　sudo vi /etc/network/interfaces</p>
-<p>　　确保你的配置文件含有以下行（eth0只是一个示例）</p>
-<p><code>auto lo eth0   iface eth0 inet dhcp   iface lo inet loopback</code></p>
-<p>　　保存并退出文件</p>
-<p>　　你需要使用下面的命令重启网络服务</p>
-<p>　　sudo /etc/init.d/networking restart</p>
-<p>　　如何找到DHCP服务器的IP地址</p>
-<p>　　你需要使用下面的命令</p>
-<p>　　sudo dhclient</p>
-<p>　　或者</p>
-<p>　　tail -n 15 /var/lib/dhcp3/dhclient.*.leases</p>
-<p>未知</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2854902932/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -441,7 +336,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-01 17:39:37" itemprop="dateModified" datetime="2020-08-01T17:39:37+08:00">2020-08-01</time>
+                <time title="修改时间：2020-08-04 09:51:52" itemprop="dateModified" datetime="2020-08-04T09:51:52+08:00">2020-08-04</time>
               </span>
 
           
@@ -506,7 +401,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-01 17:39:37" itemprop="dateModified" datetime="2020-08-01T17:39:37+08:00">2020-08-01</time>
+                <time title="修改时间：2020-08-04 09:51:52" itemprop="dateModified" datetime="2020-08-04T09:51:52+08:00">2020-08-04</time>
               </span>
 
           
@@ -574,7 +469,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-01 17:39:37" itemprop="dateModified" datetime="2020-08-01T17:39:37+08:00">2020-08-01</time>
+                <time title="修改时间：2020-08-04 09:51:51" itemprop="dateModified" datetime="2020-08-04T09:51:51+08:00">2020-08-04</time>
               </span>
 
           
@@ -643,7 +538,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-01 17:39:37" itemprop="dateModified" datetime="2020-08-01T17:39:37+08:00">2020-08-01</time>
+                <time title="修改时间：2020-08-04 09:51:52" itemprop="dateModified" datetime="2020-08-04T09:51:52+08:00">2020-08-04</time>
               </span>
 
           
@@ -708,7 +603,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-01 17:39:37" itemprop="dateModified" datetime="2020-08-01T17:39:37+08:00">2020-08-01</time>
+                <time title="修改时间：2020-08-04 09:51:51" itemprop="dateModified" datetime="2020-08-04T09:51:51+08:00">2020-08-04</time>
               </span>
 
           
@@ -776,7 +671,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-01 17:39:37" itemprop="dateModified" datetime="2020-08-01T17:39:37+08:00">2020-08-01</time>
+                <time title="修改时间：2020-08-04 09:51:51" itemprop="dateModified" datetime="2020-08-04T09:51:51+08:00">2020-08-04</time>
               </span>
 
           
@@ -845,7 +740,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-01 17:39:37" itemprop="dateModified" datetime="2020-08-01T17:39:37+08:00">2020-08-01</time>
+                <time title="修改时间：2020-08-04 09:51:51" itemprop="dateModified" datetime="2020-08-04T09:51:51+08:00">2020-08-04</time>
               </span>
 
           
@@ -915,7 +810,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-01 17:39:37" itemprop="dateModified" datetime="2020-08-01T17:39:37+08:00">2020-08-01</time>
+                <time title="修改时间：2020-08-04 09:51:51" itemprop="dateModified" datetime="2020-08-04T09:51:51+08:00">2020-08-04</time>
               </span>
 
           
@@ -982,7 +877,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-01 17:39:37" itemprop="dateModified" datetime="2020-08-01T17:39:37+08:00">2020-08-01</time>
+                <time title="修改时间：2020-08-04 09:51:51" itemprop="dateModified" datetime="2020-08-04T09:51:51+08:00">2020-08-04</time>
               </span>
 
           
@@ -1086,6 +981,87 @@
 <p>mount -t smbfs //IP /mnt/share -o username=user</p>
 </blockquote>
 <p>以上2013.10.09更改，接下去学习smb.conf配置文件。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3822141323/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/3822141323/" class="post-title-link" itemprop="url">ubuntu10.04 sshd_config 配置文件 注解</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2010-09-23 08:36:00" itemprop="dateCreated datePublished" datetime="2010-09-23T08:36:00+08:00">2010-09-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-04 09:51:51" itemprop="dateModified" datetime="2020-08-04T09:51:51+08:00">2020-08-04</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p># Package generated configuration file<br># See the sshd_config(5) manpage for details  </p>
+<p># What ports, IPs and protocols we listen for<br>    # 端口号<br>Port 22<br># Use these options to restrict which interfaces/protocols sshd will bind to<br>    #监听服务器的哪个网卡的ssh联机<br>#ListenAddress ::<br>#ListenAddress 0.0.0.0<br>    #使用的协议<br>Protocol 2<br># HostKeys for protocol version 2<br>    #服务器密钥存放地址<br>HostKey /etc/ssh/ssh_host_rsa_key<br>HostKey /etc/ssh/ssh_host_dsa_key<br>#Privilege Separation is turned on for security<br>UsePrivilegeSeparation yes  </p>
+<p># Lifetime and size of ephemeral version 1 server key<br>    #v1的key存活时间<br>KeyRegenerationInterval 3600<br>    #公钥的长度<br>ServerKeyBits 768  </p>
+<p># Logging<br>SyslogFacility AUTH<br>LogLevel INFO  </p>
+<p># Authentication:<br>LoginGraceTime 120<br>    #是否允许root登录<br>PermitRootLogin no<br>    #用户的host key改变时就不接受联机<br>StrictModes yes  </p>
+<p>RSAAuthentication yes<br>PubkeyAuthentication yes<br>    #不用密码即可登录<br>AuthorizedKeysFile    %h/.ssh/authorized_keys  </p>
+<p># Don’t read the user’s ~/.rhosts and ~/.shosts files<br>    #取消.rhosts来做认证<br>IgnoreRhosts yes<br># For this to work you will also need host keys in /etc/ssh_known_hosts<br>RhostsRSAAuthentication no<br># similar for protocol version 2<br>HostbasedAuthentication no<br># Uncomment if you don’t trust ~/.ssh/known_hosts for RhostsRSAAuthentication<br>#IgnoreUserKnownHosts yes  </p>
+<p># To enable empty passwords, change to yes (NOT RECOMMENDED)<br>    #不允许空密码登录<br>PermitEmptyPasswords no  </p>
+<p># Change to yes to enable challenge-response passwords (beware issues with<br># some PAM modules and threads)<br>ChallengeResponseAuthentication no  </p>
+<p># Change to no to disable tunnelled clear text passwords<br>#PasswordAuthentication yes  </p>
+<p># Kerberos options<br>#KerberosAuthentication no<br>#KerberosGetAFSToken no<br>#KerberosOrLocalPasswd yes<br>#KerberosTicketCleanup yes  </p>
+<p># GSSAPI options<br>#GSSAPIAuthentication no<br>#GSSAPICleanupCredentials yes  </p>
+<p>X11Forwarding yes<br>X11DisplayOffset 10<br>PrintMotd no<br>PrintLastLog yes<br>TCPKeepAlive yes<br>#UseLogin no  </p>
+<p>#MaxStartups 10:30:60<br>#Banner /etc/issue.net  </p>
+<p># Allow client to pass locale environment variables<br>AcceptEnv LANG LC_*  </p>
+<p>Subsystem sftp /usr/lib/openssh/sftp-server  </p>
+<p># Set this to ‘yes’ to enable PAM authentication, account processing,<br># and session processing. If this is enabled, PAM authentication will<br># be allowed through the ChallengeResponseAuthentication and<br># PasswordAuthentication.  Depending on your PAM configuration,<br># PAM authentication via ChallengeResponseAuthentication may bypass<br># the setting of “PermitRootLogin without-password”.<br># If you just want the PAM account and session checks to run without<br># PAM authentication, then enable this but set PasswordAuthentication<br># and ChallengeResponseAuthentication to ‘no’.<br>UsePAM yes</p>
 
       
     </div>
