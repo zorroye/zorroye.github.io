@@ -235,7 +235,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">365</span>
+          <span class="site-state-item-count">366</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -294,6 +294,144 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1791050251/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/1791050251/" class="post-title-link" itemprop="url">[摘录] ubuntu server 10.04 安装dhcp服务器</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2010-10-13 10:56:00" itemprop="dateCreated datePublished" datetime="2010-10-13T10:56:00+08:00">2010-10-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-05 13:55:22" itemprop="dateModified" datetime="2020-08-05T13:55:22+08:00">2020-08-05</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/server/" itemprop="url" rel="index"><span itemprop="name">server</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>8 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>&lt;转载自：<a target="_blank" rel="noopener" href="http://xy.zhubajie.com/html/2009/03-30/207077.html&gt;">http://xy.zhubajie.com/html/2009/03-30/207077.html&gt;</a>  </p>
+<p>DHCP服务器提供以下两种配置方法：</p>
+<p>　　地址池</p>
+<p>　　这种方法指定了一个用来动态的提供给第一个访问网络的DHCP客户端的IP地址池（有时也称作区域或范围）。当DHCP客户端离开网络超过一定时间后，IP地址就会被回收到地址池以供其它DHCP客户端使用。</p>
+<p>　　MAC地址</p>
+<p>　　这种方法强制使用DHCP来区别每一块连接上网络的网卡的硬件地址，之后这块网卡每次连上网络请求DHCP服务时都为它提供这个固定的IP地址。</p>
+<p><img src="http://img.ph.126.net/oHeiM9j9UsG7QWm69cUsrQ==/3269331854495906752.png" alt="[摘录] ubuntu server 10.04 安装dhcp服务器 - leaf - ------坚持雅操------" title="[摘录] ubuntu server 10.04 安装dhcp服务器 - leaf - ------坚持雅操------"></p>
+<p> </p>
+<p>　　在ubuntu中安装DHCP服务</p>
+<p>　　sudo apt-get install dhcp3-server</p>
+<p>　　这样就完成安装了。</p>
+<p>　　配置DHCP服务器</p>
+<p>　　如果你的Ubuntu服务器上用友2块网卡，你需要选择哪一块网卡用来监听DHCP服务。默认监听的是eth0。可以通过编辑/etc/default/dhcp3-server这个文件来改变这个默认值。</p>
+<p>　　sudo vi /etc/default/dhcp3-server</p>
+<p>　　找到这行，</p>
+<p>　　INTERFACES=”eth0″</p>
+<p>　　使用下面这行替代它</p>
+<p>　　INTERFACES=”eth1″</p>
+<p>　　保存并退出。这一步可选。</p>
+<p>　　接下来你需要为/etc/dhcp3/dhcpd.conf文件创建一个备份。</p>
+<p>　　cp /etc/dhcp3/dhcpd.conf /etc/dhcp3/dhcpd.conf.back</p>
+<p>　　使用下面的命令编辑/etc/dhcp3/dhcpd.conf文件</p>
+<p>　　sudo vi /etc/dhcp3/dhcpd.conf</p>
+<p>　　使用地址池的方法</p>
+<p>　　你需要修改/etc/dhcp3/dhcpd.conf这个配置文件的以下部分：</p>
+<p><code>default-lease-time 600;   max-lease-time 7200;   option subnet-mask 255.255.255.0;   option broadcast-address 192.168.1.255;   option routers 192.168.1.254;   option domain-name-servers 192.168.1.1, 192.168.1.2;   option domain-name “yourdomainname.com”;   subnet 192.168.1.0 netmask 255.255.255.0 &#123;   range 192.168.1.10 192.168.1.200;   &#125;</code></p>
+<p>　　保存并退出文件</p>
+<p>　　这会导致DHCP服务器提供一个从192.168.1.10-192.168.1.200这个范围的IP地址给客户端。如果客户端没有请求一个租期的话，服务器会默认提供600秒的地址租期给客户端。最大的（允许的）地址租期是7200秒。</p>
+<p>　　使用MAC地址的方法</p>
+<p>　　使用这种方法你可以保留一个固定地址给一些或者所有机器。在下面的示例中我给server1,server2,printer1和priner2保留了固定的IP地址。</p>
+<p><code>default-lease-time 600;   max-lease-time 7200;   option subnet-mask 255.255.255.0;   option broadcast-address 192.168.1.255;   option routers 192.168.1.254;   option domain-name-servers 192.168.1.1, 192.168.1.2;   option domain-name “yourdomainname.com”;   subnet 192.168.1.0 netmask 255.255.255.0 &#123;   range 192.168.1.10 192.168.1.200;   &#125;   host server1 &#123;   hardware ethernet 00:1b:63:ef:db:54;   fixed-address 192.168.1.20;   &#125;   host server2 &#123;   hardware ethernet 00:0a:95:b4:d4:b0;   fixed-address 192.168.1.21;   &#125;   host printer1 &#123;   hardware ethernet 00:16:cb:aa:2a:cd;   fixed-address 192.168.1.22;   &#125;   host printer2 &#123;   hardware ethernet 00:0a:95:f5:8f:b3;   fixed-address 192.168.1.23;   &#125;</code></p>
+<p>　　现在你需要使用下面命令来重启dhcp服务器。</p>
+<p>　　sudo /etc/init.d/dhcp3-server restart</p>
+<p>　　配置Ubuntu的DHCP客户端</p>
+<p>　　如果你想配置你的Ubuntu桌面为DHCP客户端，使用以下步骤。你需要打开/etc/network/interface文件</p>
+<p>　　sudo vi /etc/network/interfaces</p>
+<p>　　确保你的配置文件含有以下行（eth0只是一个示例）</p>
+<p><code>auto lo eth0   iface eth0 inet dhcp   iface lo inet loopback</code></p>
+<p>　　保存并退出文件</p>
+<p>　　你需要使用下面的命令重启网络服务</p>
+<p>　　sudo /etc/init.d/networking restart</p>
+<p>　　如何找到DHCP服务器的IP地址</p>
+<p>　　你需要使用下面的命令</p>
+<p>　　sudo dhclient</p>
+<p>　　或者</p>
+<p>　　tail -n 15 /var/lib/dhcp3/dhclient.*.leases</p>
+<p>未知</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2854902932/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -327,7 +465,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 16:18:40" itemprop="dateModified" datetime="2020-08-04T16:18:40+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-05 13:55:22" itemprop="dateModified" datetime="2020-08-05T13:55:22+08:00">2020-08-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -419,7 +557,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 16:18:40" itemprop="dateModified" datetime="2020-08-04T16:18:40+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-05 13:55:22" itemprop="dateModified" datetime="2020-08-05T13:55:22+08:00">2020-08-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -515,7 +653,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 16:18:40" itemprop="dateModified" datetime="2020-08-04T16:18:40+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-05 13:55:22" itemprop="dateModified" datetime="2020-08-05T13:55:22+08:00">2020-08-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -607,7 +745,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 16:18:40" itemprop="dateModified" datetime="2020-08-04T16:18:40+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-05 13:55:22" itemprop="dateModified" datetime="2020-08-05T13:55:22+08:00">2020-08-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -702,7 +840,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 16:18:40" itemprop="dateModified" datetime="2020-08-04T16:18:40+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-05 13:55:22" itemprop="dateModified" datetime="2020-08-05T13:55:22+08:00">2020-08-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -798,7 +936,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 16:18:40" itemprop="dateModified" datetime="2020-08-04T16:18:40+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-05 13:55:22" itemprop="dateModified" datetime="2020-08-05T13:55:22+08:00">2020-08-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -895,7 +1033,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 16:18:40" itemprop="dateModified" datetime="2020-08-04T16:18:40+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-05 13:55:22" itemprop="dateModified" datetime="2020-08-05T13:55:22+08:00">2020-08-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -989,7 +1127,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 16:18:40" itemprop="dateModified" datetime="2020-08-04T16:18:40+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-05 13:55:22" itemprop="dateModified" datetime="2020-08-05T13:55:22+08:00">2020-08-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1172,7 +1310,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 16:18:40" itemprop="dateModified" datetime="2020-08-04T16:18:40+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-05 13:55:22" itemprop="dateModified" datetime="2020-08-05T13:55:22+08:00">2020-08-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1243,102 +1381,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3830180328/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/3830180328/" class="post-title-link" itemprop="url">更新server的源 sources.list</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2010-09-22 14:54:00" itemprop="dateCreated datePublished" datetime="2010-09-22T14:54:00+08:00">2010-09-22</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 16:18:40" itemprop="dateModified" datetime="2020-08-04T16:18:40+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">基础</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>192</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>1、用sftp 上传sources.list<br>      sftp server用户名@server主机名<br>      输入 server用户名的密码  </p>
-<p>    put /etc/apt/sources.list /etc/apt/.  </p>
-<p> (ssh 的使用查看上一篇： 从网络接手server：2、ssh到server)   </p>
-<p>2、更新源<br>     exit<br>    ssh server用户名@server主机名<br>   输入 server用户名的密码  </p>
-<p>   sudo apt-get update</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1393,12 +1435,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">447k</span>
+    <span title="站点总字数">448k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">27:06</span>
+    <span title="站点阅读时长">27:10</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

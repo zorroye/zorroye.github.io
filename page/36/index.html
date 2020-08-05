@@ -235,7 +235,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">365</span>
+          <span class="site-state-item-count">366</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -294,6 +294,190 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2598844820/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/2598844820/" class="post-title-link" itemprop="url">鸟哥的linux私房菜-基础学习篇(第二版)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2010-06-09 20:30:00" itemprop="dateCreated datePublished" datetime="2010-06-09T20:30:00+08:00">2010-06-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-05 13:55:23" itemprop="dateModified" datetime="2020-08-05T13:55:23+08:00">2020-08-05</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>9 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>2011-05-11更新</p>
+<p>要深入学习及加强的有：</p>
+<p>       1、vim多练习</p>
+<p>       2、sed、awk、grep、cut、sort、uniq深入学习</p>
+<p>       3、shell脚本深入学习</p>
+<p>       4、PAM模块学习</p>
+<p>       5、quota实践(和ldap、samba一起)</p>
+<p>       6、at、crontab实践</p>
+<p>       7、grub2学习</p>
+<p>       8、make学习</p>
+<p>       9、日志管理、系统备份实践</p>
+<p>     10、logrotate实践</p>
+<p>     11、xorg.conf 学习</p>
+<p>     12、内核编译、驱动模块管理等联系</p>
+<p>第一部分</p>
+<p>一、<br>    GNU、GPL、FSF、LSB、LHS、VFS(六)<br>二、<br>    多学、多练、多总结、多领悟</p>
+<p>三、</p>
+<p>    分区</p>
+<p>    硬件设备号：/dev/lp0 /dev/st0 /dev/ht0</p>
+<p>四、</p>
+<p>    系统安装：</p>
+<p>        utc：夏令时，没有用不要设置</p>
+<p>        selinux：没什么用，关掉好了</p>
+<p>    多重启动：</p>
+<p>        dd if=dev/sda? of=/home/mbr bs=512 count=1 #?为linux安装的盘符</p>
+<p>        然后复制到windows盘，安装windows并更改boot.ini</p>
+<p>五、</p>
+<p>     1、date +% 、cal 、bc scale </p>
+<p>     2、startx、exit、快捷键<br>     3、man info<br>     4、shutdown -t -h -r -c -k  -t 秒数  其他 +分钟</p>
+<p>第二部分</p>
+<p>六、</p>
+<p>     1、u、g、o、a  421 <br>     2、chown、chgrp、chmod -R                                                                    注意 -R<br>     3、- d l b c s p<br>     4、LHS<br>七、</p>
+<p>    1、cd - ~ . .. 、 ls -a -l -i -d <br>         mkdir -m -p  rmdir -p<br>    2、cp mv rm   :cp -a -p -d -r -f -i -l -s -u                                                   注意 -u -r<br>    3、cat tac nl more less head tail od<br>    4、umask chattr lsattr  文件的安全属性 特殊权限<br>          chattr +i +a</p>
+<p>          –t–t–s<br>    5、which whereis locate find<br>         whereis  -m -b -s<br>         find -time -user  -name -perm -exec                                                     要掌握<br>八、<br>     df、du、cfdisk、fsck、mount、mkfs、ln</p>
+<p>     /etc/fstab  /etc/mtab</p>
+<p>    1、扇区、物理存取原理<br>    2、df du </p>
+<p>         df：系统目录 du：当前目录<br>          fdisk mke2fs mkswap fsck<br>    3、ln -s <br>    4、mount  -t -o -L      -o rw,sync,auto,dev,suid,exec,user,defaults,remount  要掌握<br>         将设备文件挂载到目录<br>         ：e2lable 设备名 lable<br>         dumpe2fs<br>    5、/etc/fstab</p>
+<p>    6、mkswap、swapon、swapoff <br>九、</p>
+<p>     tar、dd、cpio<br>    1、tar -z -j -c -x -v -f -p -P –exclude  -N<br>    2、dd if=dev/sda? of=/home/mbr bs=512 count=1 #?为linux安装的盘符<br>    3、cpio -ocvB -icduv<br> <br>第三部分  <br>十、</p>
+<p>     编辑模式：0、$、g、G、x、d、y、p、c、u、</p>
+<p>     命令模式：w、q、e！、：w、ZZ、：set nu <br>十一、</p>
+<p>     cut、grep、sort、uniq、tee、split、xargs、alias、history、&amp;&amp; ||</p>
+<p>     配置文件：bashrc、profile、inputrc、locale</p>
+<p>十二、<br>     sed、awk、grep、printf、字符<br>十三、<br>   1、if elif else fi<br>   2、case $n in “”) *) esac<br>   3、while [] do done<br>      unil [] do done<br>   4、for n in     do done  </p>
+<p>第四部分<br>十四、</p>
+<p>   配置文件：passwd、shadow、securetty、nologin、sudoers</p>
+<p>   groups、newgrp、useradd、passwd、userdel、who、mail</p>
+<p>十五、<br>   quota quotacheck edquota quotaon quotaoff </p>
+<p>   1、useradd、passwd</p>
+<p>   2、vi /etc/fstab、mount -o remount </p>
+<p>   3、quotacheck -avug</p>
+<p>   4、quotaon -avug</p>
+<p>   5、edquota -u  edquota -p  edquota -t </p>
+<p>   6、/etc/rc.d/rc.local</p>
+<p>   #   repquota -a </p>
+<p>十六、</p>
+<p>   at.deny、cron.deny、crontab</p>
+<p>   at、atq、atrm<br>   crontab -l <br>十七、</p>
+<p>   &amp;、jobs、fg % 、bg % 、kill</p>
+<p>   ps aux、top、pstree -Aup</p>
+<p>   free、rname -r -a 、uptime、dmesg、</p>
+<p>   fuser、lsof、pidof        #不熟</p>
+<p>第五部分<br>十八、</p>
+<p>    启动过程、inittab、rc.sysinit、sysconfig、rc.local、</p>
+<p>    lsmod、modinfo、modprobe  -r、modprobe.conf </p>
+<p>    grub设置</p>
+<p>十九、<br>    configure   make   make clean   make install</p>
+<p>    ldconfig、ldd  <br>二十、<br>   rpm -ivh<br>二一、<br>    xinetd.conf、hosts.deny</p>
+<p>    独立守护程序<br>二二、</p>
+<p>    syslog.conf<br>    logrotate：</p>
+<p>        monthly          #每个月轮替</p>
+<p>        size=10M       #大于10M自动轮替</p>
+<p>        rotate 5          #保存5份</p>
+<p>        compress       #压缩</p>
+<p>        sharedscripts  #？</p>
+<p>        prerotate        #轮替前预处理</p>
+<p>             /usr/bin/chattr -a /var/log/admin.log</p>
+<p>        endscript</p>
+<p>        sharedscripts</p>
+<p>        postrotate      #轮替处理</p>
+<p>            /usr/bin/killall -HUP syslogd</p>
+<p>            /usr/bin/chattr +a /var/log/admin.log</p>
+<p>        endscript</p>
+<p>二三、<br>        多种备份手段<br>二四、<br>        xorg.conf、inittab</p>
+<p>          module         #加载模块</p>
+<p>          inputdevice   #键盘鼠标设置</p>
+<p>          files              #显示字体</p>
+<p>          monitor         #水平、垂直刷新频率</p>
+<p>          device           #显卡驱动</p>
+<p>          screen          #屏幕分辨率</p>
+<p>          serverlayout  #要用的设置</p>
+<p>二五、<br>       lspci、iostat</p>
+<p>       LVM<br>二六、<br>   核心编译</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3696908557/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -327,7 +511,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 16:18:40" itemprop="dateModified" datetime="2020-08-04T16:18:40+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-05 13:55:22" itemprop="dateModified" datetime="2020-08-05T13:55:22+08:00">2020-08-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -419,7 +603,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 16:18:40" itemprop="dateModified" datetime="2020-08-04T16:18:40+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-05 13:55:22" itemprop="dateModified" datetime="2020-08-05T13:55:22+08:00">2020-08-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -517,7 +701,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 16:18:40" itemprop="dateModified" datetime="2020-08-04T16:18:40+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-05 13:55:23" itemprop="dateModified" datetime="2020-08-05T13:55:23+08:00">2020-08-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -623,7 +807,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 16:18:40" itemprop="dateModified" datetime="2020-08-04T16:18:40+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-05 13:55:22" itemprop="dateModified" datetime="2020-08-05T13:55:22+08:00">2020-08-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -739,7 +923,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 16:18:40" itemprop="dateModified" datetime="2020-08-04T16:18:40+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-05 13:55:22" itemprop="dateModified" datetime="2020-08-05T13:55:22+08:00">2020-08-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -840,7 +1024,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 16:18:40" itemprop="dateModified" datetime="2020-08-04T16:18:40+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-05 13:55:22" itemprop="dateModified" datetime="2020-08-05T13:55:22+08:00">2020-08-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -955,7 +1139,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 16:18:40" itemprop="dateModified" datetime="2020-08-04T16:18:40+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-05 13:55:22" itemprop="dateModified" datetime="2020-08-05T13:55:22+08:00">2020-08-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1051,7 +1235,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 16:18:40" itemprop="dateModified" datetime="2020-08-04T16:18:40+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-05 13:55:22" itemprop="dateModified" datetime="2020-08-05T13:55:22+08:00">2020-08-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1163,7 +1347,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 16:18:40" itemprop="dateModified" datetime="2020-08-04T16:18:40+08:00">2020-08-04</time>
+                <time title="修改时间：2020-08-05 13:55:22" itemprop="dateModified" datetime="2020-08-05T13:55:22+08:00">2020-08-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1329,112 +1513,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2396266300/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/2396266300/" class="post-title-link" itemprop="url">[安装记录]2、系统设置</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2010-01-24 23:19:00" itemprop="dateCreated datePublished" datetime="2010-01-24T23:19:00+08:00">2010-01-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-04 16:18:40" itemprop="dateModified" datetime="2020-08-04T16:18:40+08:00">2020-08-04</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">基础</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>751</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>20140805关闭访客访问</p>
-<blockquote>
-<p>sudo gedit /etc/lightdm/lightdm.conf</p>
-<p>添加</p>
-<p>[SeatDefaults]</p>
-<p>user-session=ubuntu</p>
-<p>greeter-session=unity-greeter</p>
-<p>allow-guest=false</p>
-</blockquote>
-<p>1、右键菜单添加终端选项<br> sudo apt-get install nautilus-open-terminal</p>
-<p>2、标题栏控制按钮放在右边<br>      gconf-editor<br>     apps-metacity-general-button_layout:menu:minimize,maximize,close  </p>
-<p>3、安装字体<br> 在/home/ywz/ 新建文件夹 .fonts<br> 把windows、macosx 的 *.ttf 文件放到里面即可  </p>
-<p>4、设置输入法<br>      新装的系统输入法是 ctrl+space<br>      改为 ctrl+shift_L： 要先按住shift_L 在按其他键 才行</p>
-<p>5、indicator-applet-session 设置(安装thunderbird之后)<br> 设定右上方的indicator-applet，以Thunderbird取代预设的Evolution<br> sudo gedit /usr/share/indicators/messages/applications/thunderbird     #新建<br> 添加一行： /usr/share/applications/thunderbird.desktop                #thunderbird先安装好<br> 保存即可  </p>
-<p>6、在桌面上显示我的电脑等图标<br> 打开配置编辑器:gconf-editor<br> 选择 apps → nautilus → desktop<br> 勾选 computer_icon_visible、home_icon_visible 和 trash_icon_visible 边上的复选框。<br> 或者<br> tweak里面设置</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1489,12 +1567,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">447k</span>
+    <span title="站点总字数">448k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">27:06</span>
+    <span title="站点阅读时长">27:10</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
