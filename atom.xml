@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://zorroye.github.io/"/>
-  <updated>2020-08-17T08:13:21.891Z</updated>
+  <updated>2020-08-17T11:05:40.659Z</updated>
   <id>https://zorroye.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://zorroye.github.io/posts/2464779298/"/>
     <id>https://zorroye.github.io/posts/2464779298/</id>
     <published>2017-03-21T02:53:00.000Z</published>
-    <updated>2020-08-17T08:13:21.891Z</updated>
+    <updated>2020-08-17T11:05:40.659Z</updated>
     
     <content type="html"><![CDATA[<p>exe文件分发基本上就三种方式</p><p>1、用SCCM,LANDESK，ManageEngine Desktop Central等去更新部署</p><p>2、发布msi文件，或者用advanced installed 制作msi文件。（zap发布exe程序好像不能用了）</p><p>3、批处理命令配合au3等软件做安装脚本去部署软件</p>]]></content>
     
@@ -51,7 +51,7 @@
     <link href="https://zorroye.github.io/posts/3603248865/"/>
     <id>https://zorroye.github.io/posts/3603248865/</id>
     <published>2017-02-13T08:26:00.000Z</published>
-    <updated>2020-08-17T08:13:21.781Z</updated>
+    <updated>2020-08-17T11:05:40.562Z</updated>
     
     <content type="html"><![CDATA[<p>raid卡：6i</p><p>网卡BMC5709c</p><p><a href="http://zh.community.dell.com/support/_forums/poweredge/f/279/t/2809">http://zh.community.dell.com/support\_forums/poweredge/f/279/t/2809</a></p><p>raid驱动从上面的地址下载</p><p><a href="http://blog.csdn.net/littlefang/article/details/6851864">http://blog.csdn.net/littlefang/article/details/6851864</a></p><p>U盘用winsetupfromusb制作</p><p><a href="http://mydown.yesky.com/driver/33918848.html">http://mydown.yesky.com/driver/33918848.html</a></p><p>网卡驱动下载地址</p>]]></content>
     
@@ -81,7 +81,7 @@
     <link href="https://zorroye.github.io/posts/4260766327/"/>
     <id>https://zorroye.github.io/posts/4260766327/</id>
     <published>2017-02-06T09:31:00.000Z</published>
-    <updated>2020-08-17T08:13:21.922Z</updated>
+    <updated>2020-08-17T11:05:40.690Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://img0.ph.126.net/WM8JhC8ipC1sgiwPTkl0mQ==/6631930882328517807.png" alt="华为策略路由设置走双线 - leaf - ------勤解万难------" title="华为策略路由设置走双线 - leaf - ------勤解万难------"></p><p>acl name acl-tocmcc 3600  </p><p> rule 5 permit ip source 网段1 0.0.0.255 </p><p>acl name acl-toctcc 3601  </p><p> rule 5 permit ip source 网段2 0.0.0.255 </p><p>acl name acl-toroute 3602  </p><p> rule 5 permit ip destination 路由器内网IP 0 </p><p>traffic classifier 3 operator or</p><p> if-match acl acl-toroute</p><p>traffic classifier 2 operator or</p><p> if-match acl acl-toctcc</p><p>traffic classifier 1 operator or</p><p> if-match acl acl-tocmcc</p><p>traffic behavior 3</p><p>traffic behavior 2</p><p> redirect interface Dialer1</p><p>traffic behavior 1                        </p><p> redirect ip-nexthop 静态IP</p><p>traffic policy 1</p><p> classifier 3 behavior 3</p><p> classifier 2 behavior 2</p><p> classifier 1 behavior 1</p><p>interface Eth-Trunk1</p><p> traffic-policy 1 inbound</p>]]></content>
     
@@ -109,7 +109,7 @@
     <link href="https://zorroye.github.io/posts/3461743172/"/>
     <id>https://zorroye.github.io/posts/3461743172/</id>
     <published>2017-01-24T01:42:00.000Z</published>
-    <updated>2020-08-17T08:13:22.000Z</updated>
+    <updated>2020-08-17T11:05:40.753Z</updated>
     
     <content type="html"><![CDATA[<p>策略路由重定向数据流</p><p>acl name acl-tocmcc 3600  </p><p> rule 5 permit ip source 10.1.22.0 0.0.0.255 </p><p> rule 10 permit ip source 10.1.31.0 0.0.0.15 </p><p> rule 15 permit ip source 10.1.32.0 0.0.0.15 </p><p>traffic classifier 1 operator or</p><p> if-match acl acl-tocmcc</p><p>#</p><p>traffic behavior 1</p><p> redirect ip-nexthop ***.***.***.***</p><p>#</p><p>traffic policy 1</p><p> classifier 1 behavior 1</p><p>interface ETH-trunk 1</p><p> traffic-policy 1 inbound</p>]]></content>
     
@@ -140,7 +140,7 @@
     <link href="https://zorroye.github.io/posts/2104355930/"/>
     <id>https://zorroye.github.io/posts/2104355930/</id>
     <published>2017-01-20T01:06:00.000Z</published>
-    <updated>2020-08-17T08:13:21.781Z</updated>
+    <updated>2020-08-17T11:05:40.562Z</updated>
     
     <content type="html"><![CDATA[<p>需求：</p><p>1、拉了一根电信20M pppoe拨号宽带和一根移动50M 静态IP。  </p><p>      双线接入后DDNS自动绑定在了移动IP上了，需要将DDNS解析到电信IP上面</p><p>2、用的DDNS是3322的，DNS服务器IP是members.3322.org和<a href="http://www.3322.org/">www.3322.org</a></p><p>华为路由策略</p><p>acl name acl-dxddns 3500</p><p>rule permit ip destination  118.184.176.13 0</p><p>rule permit ip destination  118.184.176.15 0</p><p>policy-based-route dxddns permit node 10</p><p>if-match acl 3500</p><p>apply output-interface Dialer 1</p><p>quit</p><p>ip local policy-based-route dxddns</p>]]></content>
     
@@ -171,7 +171,7 @@
     <link href="https://zorroye.github.io/posts/500960709/"/>
     <id>https://zorroye.github.io/posts/500960709/</id>
     <published>2017-01-11T05:59:00.000Z</published>
-    <updated>2020-08-17T08:13:21.891Z</updated>
+    <updated>2020-08-17T11:05:40.659Z</updated>
     
     <content type="html"><![CDATA[<p>参考</p><p><a href="http://support.icafe8.com/technologynews/focus/1943.html">http://support.icafe8.com/technologynews/focus/1943.html</a></p><p><a href="https://www.broadcom.cn/support/download-search?dk=bacs">https://www.broadcom.cn/support/download-search?dk=bacs</a></p><p>我的是BCM5709C</p><p>下载软件</p><p><img src="http://img1.ph.126.net/qFZyY_Z-aYu-sj7c7zrcxA==/6631874807234833246.png" alt="win2008 R2 四网口绑定 - leaf - ------勤解万难------" title="win2008 R2 四网口绑定 - leaf - ------勤解万难------"></p><p><img src="http://img2.ph.126.net/4wjPUf4OWYK0iccF1IcD9g==/6632018843258289422.png" alt="win2008 R2 四网口绑定 - leaf - ------勤解万难------" title="win2008 R2 四网口绑定 - leaf - ------勤解万难------"></p>]]></content>
     
@@ -200,7 +200,7 @@
     <link href="https://zorroye.github.io/posts/886412846/"/>
     <id>https://zorroye.github.io/posts/886412846/</id>
     <published>2016-11-25T05:59:00.000Z</published>
-    <updated>2020-08-17T08:13:21.969Z</updated>
+    <updated>2020-08-17T11:05:40.737Z</updated>
     
     <content type="html"><![CDATA[<p>刷好后，进SD卡，里面有个config文件，用notepad++打开</p><p>2个参数</p><p>hdmi_mode=82                                #1080p</p><p>hdmi_group=2                                       #DMT</p><p>即可</p>]]></content>
     
@@ -231,7 +231,7 @@
     <link href="https://zorroye.github.io/posts/942033720/"/>
     <id>https://zorroye.github.io/posts/942033720/</id>
     <published>2016-11-08T01:29:00.000Z</published>
-    <updated>2020-08-17T08:13:21.765Z</updated>
+    <updated>2020-08-17T11:05:40.546Z</updated>
     
     <content type="html"><![CDATA[<p>buffalo必须先root</p><p>下载vlmcsd</p><blockquote><p>vlmcsd-svn796-2015-07-18-Hotbird64.7z</p></blockquote><blockquote><p><a href="http://rgho.st/8jnLk5tst">http://rgho.st/8jnLk5tst</a></p></blockquote><p>使用的是arm5el-glibc</p><p>vlmcsd-svn796-2015-07-18-Hotbird64\binaries\Linux\arm\little-endian\glibc\vlmcs-armv5el-glibc</p><p>我放的目录是/usr/local/vlmcsd下</p><p>ssh进去 ./vlmcsd 即可</p><p>备注：1688端口不能被占用</p><p>开机启动</p><p>echo ‘/usr/local/vlmcsd/vlmcsd -l /var/log/vlmcsd.log &gt; /dev/null 2&gt;&amp;1 ‘ &gt;/etc/init.d/vlmcsd.sh</p><p>chmod 755 /etc/init.d/vlmcsd.sh</p><p>ln -s /etc/init.d/vlmcsd.sh  /etc/rc.d/sysinit.d/S99vlmcsd.sh </p><p>chmod 777 /etc/rc.d/sysinit.d/S99vlmcsd.sh</p><blockquote></blockquote>]]></content>
     
@@ -265,7 +265,7 @@
     <link href="https://zorroye.github.io/posts/867340037/"/>
     <id>https://zorroye.github.io/posts/867340037/</id>
     <published>2016-10-07T01:00:00.000Z</published>
-    <updated>2020-08-17T08:13:21.922Z</updated>
+    <updated>2020-08-17T11:05:40.690Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://img1.ph.126.net/gCjkxtw8xugDoXI-VWT8yw==/6631549351794629980.png" alt="华为设置管理网段 - leaf - ------勤解万难------" title="华为设置管理网段 - leaf - ------勤解万难------"></p><p>10.1.11.0   办公网段</p><p>10.1.252.0 管理网段</p><p>单独给交换机设置IP地址，会导致10.1.11.11访问不了10.1.252.21</p><p>需要在S5700S-li上设置一条静态路由</p><p>ip route-static 10.1.11.0 24 10.1.252.11</p><p>即可</p>]]></content>
     
@@ -293,7 +293,7 @@
     <link href="https://zorroye.github.io/posts/760246906/"/>
     <id>https://zorroye.github.io/posts/760246906/</id>
     <published>2016-09-28T09:32:00.000Z</published>
-    <updated>2020-08-17T08:13:21.765Z</updated>
+    <updated>2020-08-17T11:05:40.546Z</updated>
     
     <content type="html"><![CDATA[<p>vlan21</p><p>acl name acl-vlan21 3010</p><p>rule deny ip source 10.1.21.0 0.0.0.255 destination 10.1.22.0 0.0.0.255</p><p>rule deny ip source 10.1.21.0 0.0.0.255 destination 10.1.31.0 0.0.0.15</p><p>rule deny ip source 10.1.21.0 0.0.0.255 destination 10.1.32.0 0.0.0.15</p><p>rule deny ip source 10.1.21.0 0.0.0.255 destination 10.1.252.0 0.0.0.63</p><p>traffic-filter vlan 21 inbound acl name acl-vlan21</p><p>vlan22</p><p>acl name acl-vlan22 3015</p><p>rule deny ip source 10.1.22.0 0.0.0.255 destination 192.168.1.0 0.0.0.255</p><p>rule deny ip source 10.1.22.0 0.0.0.255 destination 10.1.31.0   0.0.0.15</p><p>rule deny ip source 10.1.22.0 0.0.0.255 destination 10.1.32.0   0.0.0.15</p><p>rule deny ip source 10.1.22.0 0.0.0.255 destination 10.1.128.0  0.0.0.63</p><p>rule deny ip source 10.1.22.0 0.0.0.255 destination 10.1.252.0  0.0.0.63</p><p>traffic-filter vlan 22 inbound acl name acl-vlan22</p><p>vlan31</p><p>acl name acl-vlan31 3020</p><p>rule deny ip source 10.1.31.0 0.0.0.15 destination 10.1.32.0   0.0.0.15</p><p>rule deny ip source 10.1.31.0 0.0.0.15 destination 10.1.128.0  0.0.0.63</p><p>rule deny ip source 10.1.31.0 0.0.0.15 destination 10.1.252.0  0.0.0.63</p><p>traffic-filter vlan 31 inbound acl name acl-vlan31</p><p>vlan32</p><p>acl name acl-vlan32 3025</p><p>rule deny ip source 10.1.32.0 0.0.0.15 destination 10.1.128.0  0.0.0.63</p><p>rule deny ip source 10.1.32.0 0.0.0.15 destination 10.1.252.0  0.0.0.63</p><p>traffic-filter vlan 32 inbound acl name acl-vlan32</p><p>vlan128</p><p>acl name acl-vlan128 3030</p><p>rule deny ip source 10.1.128.0 0.0.0.63 destination 10.1.252.0  0.0.0.63</p><p>traffic-filter vlan 128 inbound acl name acl-vlan128</p><p>vlan252</p><p>无</p>]]></content>
     
@@ -324,7 +324,7 @@
     <link href="https://zorroye.github.io/posts/884278273/"/>
     <id>https://zorroye.github.io/posts/884278273/</id>
     <published>2016-09-28T09:31:00.000Z</published>
-    <updated>2020-08-17T08:13:21.765Z</updated>
+    <updated>2020-08-17T11:05:40.546Z</updated>
     
     <content type="html"><![CDATA[<p>acl 3005</p><p>rule permit ip source 10.1.11.0 0.0.0.255 destination 10.1.21.0 0.0.0.255</p><p>rule permit ip source 10.1.11.0 0.0.0.255 destination 10.1.22.0 0.0.0.255</p><p>rule permit ip source 10.1.11.0 0.0.0.255 destination 10.1.31.0 0.0.0.15</p><p>rule permit ip source 10.1.11.0 0.0.0.255 destination 10.1.32.0 0.0.0.15</p><p>rule permit ip source 10.1.11.0 0.0.0.255 destination 10.1.252.0 0.0.0.63</p><p>acl 3006</p><p>rule permit ip source 10.1.11.21 0 destination 10.1.21.0 0.0.0.255</p><p>rule permit ip source 10.1.11.21 0 destination 10.1.22.0 0.0.0.255</p><p>rule permit ip source 10.1.11.21 0 destination 10.1.31.0 0.0.0.15</p><p>rule permit ip source 10.1.11.21 0 destination 10.1.32.0 0.0.0.15</p><p>rule permit ip source 10.1.11.21 0 destination 10.1.252.0 0.0.0.63</p><p>traffic classifier vlan11c1 </p><p>if-match acl 3005</p><p>traffic classifier vlan11c2 </p><p>if-match acl 3006</p><p>traffic behavior vlan11b1</p><p>deny</p><p>traffic behavior vlan11b2</p><p>permit</p><p>traffic policy vlan11p1</p><p>classifier vlan11c2 behavior vlan11b2</p><p>classifier vlan11c1 behavior vlan11b1</p><p>vlan 11</p><p>traffic-policy vlan11p1 inbound</p>]]></content>
     
@@ -354,7 +354,7 @@
     <link href="https://zorroye.github.io/posts/2739087025/"/>
     <id>https://zorroye.github.io/posts/2739087025/</id>
     <published>2016-09-24T06:56:00.000Z</published>
-    <updated>2020-08-17T08:13:21.797Z</updated>
+    <updated>2020-08-17T11:05:40.578Z</updated>
     
     <content type="html"><![CDATA[<p>二层eth-trunk配置</p><p>#switchA</p><p>#建eth-trunk端口<br>interface Eth-Trunk11  </p><blockquote><p> description GE19 GE20 s5720-S5700S48P</p><p> port link-type trunk</p><p> port trunk allow-pass vlan 2 to 4094</p><p>#eth-trunk设置</p><p> mode lacp</p><p> max active-linknumber 2</p><p>#arp保护</p><p> arp anti-attack rate-limit enable</p><p> arp-miss anti-attack rate-limit enable</p></blockquote><p>interface GigabitEthernet0/0/19  </p><blockquote><p> eth-trunk 11</p><p> lacp priority 100</p></blockquote><p>interface GigabitEthernet0/0/20  </p><blockquote><p> eth-trunk 11</p><p> lacp priority 100</p></blockquote><p>#switchB</p><p>#建eth-trunk端口</p><p>interface Eth-Trunk11  </p><blockquote><p> port link-type trunk</p><p> port trunk allow-pass vlan 2 to 4094</p><p>#eth-trunk设置</p><p> mode lacp</p><p> max active-linknumber 2</p></blockquote><p>interface GigabitEthernet0/0/47  </p><blockquote><p> eth-trunk 11</p></blockquote><p>interface GigabitEthernet0/0/48  </p><blockquote><p> eth-trunk 11</p></blockquote><p>-————————————————————————————————-</p><p>三层eth-trunk配置</p><p>routeA</p><p>interface Eth-Trunk1</p><blockquote><p> undo portswitch</p><p> ip address 10.1.1.1 255.255.255.252</p><p> mode lacp-static</p><p> max active-linknumber 2</p></blockquote><p>interface GigabitEthernet0/0/0</p><blockquote><p> undo portswitch</p><p> eth-trunk 1</p></blockquote><p>interface GigabitEthernet0/0/1</p><blockquote><p> undo portswitch</p><p> eth-trunk 1</p></blockquote><p>switchB</p><p>interface Eth-Trunk1</p><blockquote><p> undo portswitch</p><p> ip address 10.1.1.2 255.255.255.252</p><p> mode lacp</p><p> max active-linknumber 2</p></blockquote><p>interface GigabitEthernet0/0/21</p><blockquote><p> eth-trunk 1</p><p> lacp priority 100</p></blockquote><p>interface GigabitEthernet0/0/22</p><blockquote><p> eth-trunk 1</p><p> lacp priority 100</p></blockquote>]]></content>
     
@@ -386,9 +386,9 @@
     <link href="https://zorroye.github.io/posts/2492908723/"/>
     <id>https://zorroye.github.io/posts/2492908723/</id>
     <published>2016-09-12T03:09:00.000Z</published>
-    <updated>2020-08-17T08:13:21.844Z</updated>
+    <updated>2020-08-17T11:05:40.612Z</updated>
     
-    <content type="html"><![CDATA[<p>接console口</p><p>交换机重启</p><p>按CTRL+B</p><p>密码 <a href="mailto:&#x41;&#x64;&#109;&#105;&#110;&#x40;&#x68;&#x75;&#x61;&#x77;&#101;&#x69;&#46;&#99;&#x6f;&#x6d;">&#x41;&#x64;&#109;&#105;&#110;&#x40;&#x68;&#x75;&#x61;&#x77;&#101;&#x69;&#46;&#99;&#x6f;&#x6d;</a></p><p>按7  Clear password for console user</p><p>按1  Boot with default mode</p>]]></content>
+    <content type="html"><![CDATA[<p>接console口</p><p>交换机重启</p><p>按CTRL+B</p><p>密码 <a href="mailto:&#65;&#x64;&#109;&#x69;&#110;&#64;&#104;&#x75;&#x61;&#x77;&#101;&#x69;&#x2e;&#x63;&#111;&#109;">&#65;&#x64;&#109;&#x69;&#110;&#64;&#104;&#x75;&#x61;&#x77;&#101;&#x69;&#x2e;&#x63;&#111;&#109;</a></p><p>按7  Clear password for console user</p><p>按1  Boot with default mode</p>]]></content>
     
     <summary type="html">
     
@@ -397,7 +397,7 @@
         &lt;p&gt;接console口&lt;/p&gt;
 &lt;p&gt;交换机重启&lt;/p&gt;
 &lt;p&gt;按CTRL+B&lt;/p&gt;
-&lt;p&gt;密码 &lt;a href=&quot;mailto:&amp;#x41;&amp;#x64;&amp;#109;&amp;#105;&amp;#110;&amp;#x40;&amp;#x68;&amp;#x75;&amp;#x61;&amp;#x77;&amp;#101;&amp;#x69;&amp;
+&lt;p&gt;密码 &lt;a href=&quot;mailto:&amp;#65;&amp;#x64;&amp;#109;&amp;#x69;&amp;#110;&amp;#64;&amp;#104;&amp;#x75;&amp;#x61;&amp;#x77;&amp;#101;&amp;#x69;&amp;#x
       
     
     </summary>
@@ -417,7 +417,7 @@
     <link href="https://zorroye.github.io/posts/1177160713/"/>
     <id>https://zorroye.github.io/posts/1177160713/</id>
     <published>2016-09-11T17:17:00.000Z</published>
-    <updated>2020-08-17T08:13:21.844Z</updated>
+    <updated>2020-08-17T11:05:40.612Z</updated>
     
     <content type="html"><![CDATA[<p>建密钥对</p><p>dsa local-key-pair create</p><p>配置vty界面</p><p>user-interface vty 0 4</p><p>authentication-mode aaa</p><p>protocol inbound all</p><p>user privilege level 15</p><p>建ssh账号</p><p>aaa</p><p>local-user client001 password irreversible-cipher Huawei@123</p><p>local-user client001 privilege level 3<br>local-user client001 service-type ssh http</p><p>quit       </p><p>#顺便把http登录也加入</p><p>ssh user client001 authentication-type password  </p><p>开通ssh</p><p>stelnet server enable</p>]]></content>
     
@@ -450,7 +450,7 @@
     <link href="https://zorroye.github.io/posts/2171983291/"/>
     <id>https://zorroye.github.io/posts/2171983291/</id>
     <published>2016-09-11T16:31:00.000Z</published>
-    <updated>2020-08-17T08:13:21.969Z</updated>
+    <updated>2020-08-17T11:05:40.737Z</updated>
     
     <content type="html"><![CDATA[<p>interface gigabitethernet 0/0/46<br>port link-type access<br>port default vlan 22  </p><p>trunk模式配置<br>interface gigabitethernet 0/0/46<br>port link-type trunk<br>port trunk allow vlan all<br>undo port trunk allow vlan 1</p>]]></content>
     
@@ -479,7 +479,7 @@
     <link href="https://zorroye.github.io/posts/1048826736/"/>
     <id>https://zorroye.github.io/posts/1048826736/</id>
     <published>2016-09-11T16:24:00.000Z</published>
-    <updated>2020-08-17T08:13:21.844Z</updated>
+    <updated>2020-08-17T11:05:40.612Z</updated>
     
     <content type="html"><![CDATA[<p>interface gigabitethernet 0/0/48<br>undo switchport<br>ip address 10.1.1.2 30  </p><p>三层eth-trunk配ip地址<br>interface eth-trunk 1<br>ip address 10.1.1.2 30<br>interface gigabitethernet 0/0/47<br>eth-trunk 1<br>interface gigabitethernet 0/0/48<br>eth-trunk 1</p>]]></content>
     
@@ -508,7 +508,7 @@
     <link href="https://zorroye.github.io/posts/2650134662/"/>
     <id>https://zorroye.github.io/posts/2650134662/</id>
     <published>2016-08-25T03:52:00.000Z</published>
-    <updated>2020-08-17T08:13:21.985Z</updated>
+    <updated>2020-08-17T11:05:40.737Z</updated>
     
     <content type="html"><![CDATA[<p>硬盘录像机和摄像头密码设置成一样 </p><p>协议选onvif </p><p>然后摄像头和硬盘录像机都重启一下 就好了</p>]]></content>
     
@@ -539,7 +539,7 @@
     <link href="https://zorroye.github.io/posts/3822660973/"/>
     <id>https://zorroye.github.io/posts/3822660973/</id>
     <published>2016-08-10T10:40:00.000Z</published>
-    <updated>2020-08-17T08:13:21.922Z</updated>
+    <updated>2020-08-17T11:05:40.690Z</updated>
     
     <content type="html"><![CDATA[<p>system-view</p><p>#设置观察端口</p><p>observe-port interface  GigabitEthernet 0/0/7</p><p>#设置要镜像的端口</p><p>interface GigabitEthernet 0/0/2</p><p>mirror to observe-port both</p>]]></content>
     
@@ -571,7 +571,7 @@
     <link href="https://zorroye.github.io/posts/2440562317/"/>
     <id>https://zorroye.github.io/posts/2440562317/</id>
     <published>2016-08-05T00:50:00.000Z</published>
-    <updated>2020-08-17T08:13:21.969Z</updated>
+    <updated>2020-08-17T11:05:40.737Z</updated>
     
     <content type="html"><![CDATA[<p>服务器上面有账号，客户端如果也用这个账号，然后用了不同的密码，会导致远程组件配置工具测试不成功。</p><p>解决方法：</p><p>客户端账号使用服务器上相关账号的相同密码</p><p>或者</p><p>客户端使用不同的账号进行登录</p>]]></content>
     
@@ -604,7 +604,7 @@
     <link href="https://zorroye.github.io/posts/3763007372/"/>
     <id>https://zorroye.github.io/posts/3763007372/</id>
     <published>2016-07-24T10:55:00.000Z</published>
-    <updated>2020-08-17T08:13:21.891Z</updated>
+    <updated>2020-08-17T11:05:40.659Z</updated>
     
     <content type="html"><![CDATA[<p><a href="https://www.baidu.com/s?ie=UTF-8&amp;wd=win2012%E6%97%A0%E6%B3%95%E5%AE%89%E8%A3%85.net3.5">https://www.baidu.com/s?ie=UTF-8&amp;wd=win2012%E6%97%A0%E6%B3%95%E5%AE%89%E8%A3%85.net3.5</a></p><p>1、挂载安装盘</p><p>2、安装的时候选指定备用源路径</p><p>3、选择安装盘路径 如E:\Sources\SxS</p><p>安装完毕</p>]]></content>
     
