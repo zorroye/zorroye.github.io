@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-yes.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-yes.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-yes.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="google12621f48345db2f9.html">
+  <meta name="baidu-site-verification" content="baidu_verify_EF7GhxbEmo.html">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"zorroye.github.io","root":"/","scheme":"Gemini","version":"8.0.0-rc.5","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"valine","storage":true,"lazyload":false,"nav":null,"activeClass":"valine"},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"path":"search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}};
+  </script>
+
+  <meta name="description" content="1、环境准备OS：        Macos 10.15.6Node.js：   12.18.3 LTSGit：       自带tools：     Vscode">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Github+Hexo+Next+Appveyor 建站指南">
+<meta property="og:url" content="https://zorroye.github.io/posts/2959710163/index.html">
+<meta property="og:site_name" content="Ye&#39;s Blog">
+<meta property="og:description" content="1、环境准备OS：        Macos 10.15.6Node.js：   12.18.3 LTSGit：       自带tools：     Vscode">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-08-18T06:44:00.000Z">
+<meta property="article:modified_time" content="2020-08-18T08:44:45.007Z">
+<meta property="article:author" content="ZorroYe">
+<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="next">
+<meta property="article:tag" content="github">
+<meta property="article:tag" content="appveyor">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://zorroye.github.io/posts/2959710163/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Github+Hexo+Next+Appveyor 建站指南 | Ye's Blog</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?2b0dbd880dfaff3fde3fcb1beb61713d";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Ye's Blog" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Ye's Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">勤解万难</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">78</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">62</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">367</span></a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
+        <li class="menu-item menu-item-commonweal">
+
+    <a href="/404/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>公益 404</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container">
+  <div class="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <section class="post-toc-wrap sidebar-panel">
+          <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1%E3%80%81%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="nav-text">1、环境准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2%E3%80%81hexo%E5%8D%9A%E5%AE%A2%E6%A1%86%E6%9E%B6%E5%AE%89%E8%A3%85"><span class="nav-text">2、hexo博客框架安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3%E3%80%81next%E4%B8%BB%E9%A2%98%E5%AE%89%E8%A3%85"><span class="nav-text">3、next主题安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4%E3%80%81%E5%9F%BA%E7%A1%80%E9%85%8D%E7%BD%AE"><span class="nav-text">4、基础配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4-1%E3%80%81hexo-config-yml"><span class="nav-text">4.1、hexo&#x2F;_config.yml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-2%E3%80%81next-config-yml"><span class="nav-text">4.2、next&#x2F;_config.yml</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5%E3%80%81%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE"><span class="nav-text">5、个性化配置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#5-1%E3%80%81hexo-config-yml"><span class="nav-text">5.1、hexo&#x2F;_config.yml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-2%E3%80%81next-config-yml"><span class="nav-text">5.2、next&#x2F;_config.yml</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6%E3%80%81%E6%96%87%E7%AB%A0%E8%BF%81%E7%A7%BB"><span class="nav-text">6、文章迁移</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7%E3%80%81appveyor%E8%87%AA%E5%8A%A8%E6%9B%B4%E6%96%B0"><span class="nav-text">7、appveyor自动更新</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8%E3%80%81%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3%EF%BC%9A"><span class="nav-text">8、参考文档：</span></a></li></ol></div>
+      </section>
+      <!--/noindex-->
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="ZorroYe"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">ZorroYe</p>
+  <div class="site-description" itemprop="description">升级认知，看透本质</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">367</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">62</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">78</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=260 height=52 src="//music.163.com/outchain/player?type=0&id=5186533478&auto=1&height=32">
+</iframe>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="qq:439753096?call|chat" title="QQ → qq:439753096?call|chat" rel="noopener" target="_blank"><i class="fab fa-qq fa-fw"></i>QQ</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:439753096@qq.com" title="E-Mail → mailto:439753096@qq.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll animated">
+    <div class="links-of-blogroll-title"><i class="fa fa-globe fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://blog.daliansky.net/" title="https:&#x2F;&#x2F;blog.daliansky.net&#x2F;" rel="noopener" target="_blank">黑果小兵</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://blog.skk.moe/" title="https:&#x2F;&#x2F;blog.skk.moe&#x2F;" rel="noopener" target="_blank">Sukka's Blog</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://blog.xjn819.com/" title="https:&#x2F;&#x2F;blog.xjn819.com&#x2F;" rel="noopener" target="_blank">Xjn's Blog</a>
+        </li>
+    </ul>
+  </div>
+
+      </section>
+        <div class="back-to-top animated">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/zorroye" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+      
+
+      
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2959710163/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Github+Hexo+Next+Appveyor 建站指南
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2020-08-18 14:44:00 / 修改时间：16:44:45" itemprop="dateCreated datePublished" datetime="2020-08-18T14:44:00+08:00">2020-08-18</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Cloud/" itemprop="url" rel="index"><span itemprop="name">Cloud</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Cloud/github/" itemprop="url" rel="index"><span itemprop="name">github</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/posts/2959710163/" class="post-meta-item leancloud_visitors" data-flag-title="Github+Hexo+Next+Appveyor 建站指南" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/posts/2959710163/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/2959710163/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span class="post-meta-item-text">本文字数：</span>
+              <span>5.9k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>22 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h2 id="1、环境准备"><a href="#1、环境准备" class="headerlink" title="1、环境准备"></a>1、环境准备</h2><blockquote><p>OS：        Macos 10.15.6<br>Node.js：   12.18.3 LTS<br>Git：       自带<br>tools：     Vscode</p>
+</blockquote>
+
+<a id="more"></a>
+
+<h2 id="2、hexo博客框架安装"><a href="#2、hexo博客框架安装" class="headerlink" title="2、hexo博客框架安装"></a>2、hexo博客框架安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br><span class="line">mkdir Blog</span><br><span class="line">hexo init Blog</span><br><span class="line">cd Blog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<h2 id="3、next主题安装"><a href="#3、next主题安装" class="headerlink" title="3、next主题安装"></a>3、next主题安装</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-theme-next</span><br><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;next-theme&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
+
+<h2 id="4、基础配置"><a href="#4、基础配置" class="headerlink" title="4、基础配置"></a>4、基础配置</h2><h3 id="4-1、hexo-config-yml"><a href="#4-1、hexo-config-yml" class="headerlink" title="4.1、hexo/_config.yml"></a>4.1、hexo/_config.yml</h3><ul>
+<li><p>4.1.1 设置标题等</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">title: Ye&#39;s Blog</span><br><span class="line">subtitle: 勤解万难</span><br><span class="line">description: 升级认知，看透本质</span><br><span class="line">keywords:</span><br><span class="line">author: ZorroYe</span><br><span class="line">language: zh-CN</span><br><span class="line">timezone: Asia&#x2F;Shanghai</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>4.1.2 设置博客主题</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theme: next</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>4.1.3 设置 hexo d 要上传的地址</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    type: git</span><br><span class="line">    repo: https:&#x2F;&#x2F;github.com&#x2F;zorroye&#x2F;zorroye.github.io.git</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="4-2、next-config-yml"><a href="#4-2、next-config-yml" class="headerlink" title="4.2、next/_config.yml"></a>4.2、next/_config.yml</h3><ul>
+<li><p>4.2.1 设置缓存</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cache:</span><br><span class="line">    enable: true</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>4.2.2 设置logo</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">favicon:</span><br><span class="line">    small: &#x2F;images&#x2F;favicon-16x16-yes.png</span><br><span class="line">    medium: &#x2F;images&#x2F;favicon-32x32-yes.png</span><br><span class="line">    apple_touch_icon: &#x2F;images&#x2F;apple-touch-icon-yes.png</span><br><span class="line">    safari_pinned_tab: &#x2F;images&#x2F;logo.svg</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>4.2.3 设置皮肤及颜色</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># Schemes</span><br><span class="line">#scheme: Muse</span><br><span class="line">#scheme: Mist</span><br><span class="line">#scheme: Pisces</span><br><span class="line">scheme: Gemini</span><br><span class="line"></span><br><span class="line"># Dark Mode</span><br><span class="line">#darkmode: false</span><br><span class="line">darkmode: true</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>4.2.4 设置菜单</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd Blog</span><br><span class="line">hexo new page tags</span><br><span class="line">hexo new page categorise</span><br><span class="line">hexo new page schedule</span><br><span class="line">mkdir Blog&#x2F;source&#x2F;404 &amp;&amp; touch 404&#x2F;index.md</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">menu:</span><br><span class="line">    home: &#x2F; || fa fa-home</span><br><span class="line">    about: &#x2F;about&#x2F; || fa fa-user</span><br><span class="line">    tags: &#x2F;tags&#x2F; || fa fa-tags</span><br><span class="line">    categories: &#x2F;categories&#x2F; || fa fa-th</span><br><span class="line">    archives: &#x2F;archives&#x2F; || fa fa-archive</span><br><span class="line">    schedule: &#x2F;schedule&#x2F; || fa fa-calendar</span><br><span class="line">    sitemap: &#x2F;sitemap.xml || fa fa-sitemap</span><br><span class="line">    commonweal: &#x2F;404&#x2F; || fa fa-heartbeat</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>4.2.5 设置联系方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">social:</span><br><span class="line">  QQ: qq:439753096?call|chat || fab fa-qq</span><br><span class="line">  E-Mail: mailto:439753096@qq.com || fa fa-envelope</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>4.2.6 设置友情链接</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># Blog rolls</span><br><span class="line">links_settings:</span><br><span class="line">    icon: fa fa-globe</span><br><span class="line">    title: Links</span><br><span class="line">    # Available values: block | inline</span><br><span class="line">    layout: block</span><br><span class="line"></span><br><span class="line">links:</span><br><span class="line">    黑果小兵: https:&#x2F;&#x2F;blog.daliansky.net&#x2F;</span><br><span class="line">    Sukka&#39;s Blog: https:&#x2F;&#x2F;blog.skk.moe&#x2F;</span><br><span class="line">    Xjn&#39;s Blog: https:&#x2F;&#x2F;blog.xjn819.com&#x2F;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>4.2.7 设置打赏</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">reward_settings:</span><br><span class="line">    # If true, a donate button will be displayed in every article by default.</span><br><span class="line">    enable: true</span><br><span class="line">    animation: false</span><br><span class="line">    #comment: Buy me a coffee</span><br><span class="line"></span><br><span class="line">reward:</span><br><span class="line">    wechatpay: &#x2F;images&#x2F;wechatpay.jpg</span><br><span class="line">    alipay: &#x2F;images&#x2F;alipay.jpg</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>4.2.8 设置回到顶部</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">back2top:</span><br><span class="line">    enable: true</span><br><span class="line">    # Back to top in sidebar.</span><br><span class="line">    sidebar: true</span><br><span class="line">    # Scroll percent label in b2t button.</span><br><span class="line">    scrollpercent: true</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>4.2.9 设置角标</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">github_banner:</span><br><span class="line">    enable: true</span><br><span class="line">    permalink: https:&#x2F;&#x2F;github.com&#x2F;zorroye</span><br><span class="line">    title: Follow me on GitHub</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>4.2.10 设置TOC</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">toc:</span><br><span class="line">    enable: true</span><br><span class="line">    # Automatically add list number to toc.</span><br><span class="line">    number: false</span><br><span class="line">    # If true, all words will placed on next lines if header width longer then sidebar width.</span><br><span class="line">    wrap: true</span><br><span class="line">    # If true, all level of TOC in a post will be displayed, rather than the activated part of it.</span><br><span class="line">    expand_all: true</span><br><span class="line">    # Maximum heading depth of generated toc.</span><br><span class="line">    max_depth: 3</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="5、个性化配置"><a href="#5、个性化配置" class="headerlink" title="5、个性化配置"></a>5、个性化配置</h2><h3 id="5-1、hexo-config-yml"><a href="#5-1、hexo-config-yml" class="headerlink" title="5.1、hexo/_config.yml"></a>5.1、hexo/_config.yml</h3><ul>
+<li><p>5.1.1 永久链接</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">url: https:&#x2F;&#x2F;zorroye.github.io&#x2F;</span><br><span class="line">root: &#x2F;</span><br><span class="line"># permalink: :year&#x2F;:month&#x2F;:day&#x2F;:title&#x2F;</span><br><span class="line"># permalink_defaults:</span><br><span class="line">permalink: posts&#x2F;:abbrlink&#x2F;</span><br><span class="line">abbrlink:</span><br><span class="line">    alg: crc32 #support crc16(default) and crc32</span><br><span class="line">    rep: dec   #support dec(default) and hex</span><br><span class="line">pretty_urls:</span><br><span class="line">    trailing_index: true # Set to false to remove trailing &#39;index.html&#39; from permalinks</span><br><span class="line">    trailing_html: true # Set to false to remove trailing &#39;.html&#39; from permalinks</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>5.1.2 本地搜索</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-searchdb --save</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">search:</span><br><span class="line">    path: search.xml</span><br><span class="line">    pield: post</span><br><span class="line">    format: html</span><br><span class="line">    limit: 10000 </span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">local_search:</span><br><span class="line">    enable: true</span><br><span class="line">    # If auto, trigger search by changing input.</span><br><span class="line">    # If manual, trigger search by pressing enter key or search button.</span><br><span class="line">    trigger: auto</span><br><span class="line">    # Show top n results per article, show all results by setting to -1</span><br><span class="line">    top_n_per_article: 1</span><br><span class="line">    # Unescape html strings to the readable one.</span><br><span class="line">    unescape: false</span><br><span class="line">    # Preload the search data when the page loads.</span><br><span class="line">    preload: false</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>5.1.3 字数统计</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-word-counter --save</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">symbols_count_time:</span><br><span class="line">    symbols: true</span><br><span class="line">    time: true</span><br><span class="line">    total_symbols: true</span><br><span class="line">    total_time: true</span><br><span class="line">    awl: true</span><br><span class="line">    wpm: 275</span><br></pre></td></tr></table></figure>
+<p>next/_config.yml也要配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">symbols_count_time:</span><br><span class="line">    separated_meta: true</span><br><span class="line">    item_text_post: true</span><br><span class="line">    item_text_total: false</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<ul>
+<li><p>5.1.4 站点地图</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save</span><br><span class="line">npm install hexo-generator-baidu-sitemap --save</span><br></pre></td></tr></table></figure>
+<p>  网站设置：略</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Plugins:</span><br><span class="line">  - hexo-generator-baidu-sitemap</span><br><span class="line">  - hexo-generator-sitemap</span><br><span class="line"></span><br><span class="line">baidusitemap:</span><br><span class="line">    path: baidusitemap.xml</span><br><span class="line"></span><br><span class="line">sitemap:</span><br><span class="line">    path: sitemap.xml</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>5.1.5 看板娘</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-helper-live2d@3.x --save</span><br><span class="line">npm install live2d-widget-model-miku --save</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">live2d: </span><br><span class="line">    enable: true </span><br><span class="line">    scriptFrom: local </span><br><span class="line">    pluginRootPath: live2dw&#x2F; </span><br><span class="line">    pluginJsPath: lib&#x2F; </span><br><span class="line">    pluginModelPath: assets&#x2F; </span><br><span class="line">    tagMode: false </span><br><span class="line">    log: false </span><br><span class="line">    model: </span><br><span class="line">        use: live2d-widget-model-miku</span><br><span class="line">    display:</span><br><span class="line">        position: right </span><br><span class="line">        width: 260 </span><br><span class="line">        height: 400 </span><br><span class="line">    mobile: </span><br><span class="line">        show: true </span><br><span class="line">    react: </span><br><span class="line">        opacity: 0.8</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="5-2、next-config-yml"><a href="#5-2、next-config-yml" class="headerlink" title="5.2、next/_config.yml"></a>5.2、next/_config.yml</h3><ul>
+<li>5.2.1 添加评论功能<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">valine:</span><br><span class="line">    enable: true</span><br><span class="line">    appId: hDUtOYptQ2tkDzGUszvs3g4N-gzGzoHsz # Your leancloud application appid</span><br><span class="line">    appKey: 6bM5r8tXF8x5HTop81N5Iz5z # Your leancloud application appkey</span><br><span class="line">    placeholder: Just go go # Comment box placeholder</span><br><span class="line">    avatar: mm # Gravatar style</span><br><span class="line">    meta: [nick, mail, link] # Custom comment header</span><br><span class="line">    pageSize: 10 # Pagination size</span><br><span class="line">    language: zh-cn # Language, available values: en, zh-cn</span><br><span class="line">    visitor: true # Article reading statistic</span><br><span class="line">    comment_count: true # If false, comment count will only be displayed in post page, not in home page</span><br><span class="line">    recordIP: true # Whether to record the commenter IP</span><br><span class="line">    serverURLs: # When the custom domain name is enabled, fill it in here (it will be detected automatically by default, no need to fill in)</span><br><span class="line">    enableQQ: false # Whether to enable the Nickname box to automatically get QQ Nickname and QQ Avatar</span><br><span class="line">    requiredFields: [] # Set required fields: [&#39;nick&#39;] | [&#39;nick&#39;,&#39;mail&#39;]</span><br><span class="line">    #post_meta_order: 0</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="6、文章迁移"><a href="#6、文章迁移" class="headerlink" title="6、文章迁移"></a>6、文章迁移</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-migrator-wordpress --save</span><br><span class="line">hexo migrate wordpress &lt;source&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="7、appveyor自动更新"><a href="#7、appveyor自动更新" class="headerlink" title="7、appveyor自动更新"></a>7、appveyor自动更新</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">clone_depth: 5</span><br><span class="line">environment:</span><br><span class="line">nodejs_version: &quot;12&quot;</span><br><span class="line">access_token:</span><br><span class="line">    secure: KVCa2He1FC4lxjT8fIM6Kz&#x2F;eM+k54JLP1jF1lL60YwVk67A7YFOufqpCz2gopRfL</span><br><span class="line">install:</span><br><span class="line">    - ps: Install-Product node $env:nodejs_version</span><br><span class="line">    - npm install</span><br><span class="line">    - node --version</span><br><span class="line">    - npm --version</span><br><span class="line">    - npm install</span><br><span class="line">    - npm install hexo-cli -g</span><br><span class="line">    - npm install hexo-theme-next --save</span><br><span class="line">    - npm install gulp --save</span><br><span class="line">    - npm install hexo-abbrlink --save</span><br><span class="line">    - npm install hexo-generator-searchdb --save</span><br><span class="line">    - npm install hexo-generator-sitemap --save</span><br><span class="line">    - npm install hexo-generator-baidu-sitemap --save</span><br><span class="line">    - npm install hexo-word-counter --save</span><br><span class="line">    - npm install hexo-helper-live2d@3.x --save</span><br><span class="line">    - npm install live2d-widget-model-miku --save</span><br></pre></td></tr></table></figure>
+
+<h2 id="8、参考文档："><a href="#8、参考文档：" class="headerlink" title="8、参考文档："></a>8、参考文档：</h2><blockquote><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a><br><a target="_blank" rel="noopener" href="https://theme-next.js.org/">https://theme-next.js.org/</a><br><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1662817#">https://cloud.tencent.com/developer/article/1662817#</a></p>
+</blockquote>
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="reward-container">
+  <div></div>
+  <button onclick="document.querySelector('.post-reward').classList.toggle('active');">
+    赞赏
+  </button>
+  <div class="post-reward">
+      <div>
+        <img src="/images/wechatpay.jpg" alt="ZorroYe 微信">
+        <span>微信</span>
+      </div>
+      <div>
+        <img src="/images/alipay.jpg" alt="ZorroYe 支付宝">
+        <span>支付宝</span>
+      </div>
+
+  </div>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/hexo/" rel="tag"><i class="fa fa-tag"></i> hexo</a>
+              <a href="/tags/next/" rel="tag"><i class="fa fa-tag"></i> next</a>
+              <a href="/tags/github/" rel="tag"><i class="fa fa-tag"></i> github</a>
+              <a href="/tags/appveyor/" rel="tag"><i class="fa fa-tag"></i> appveyor</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/posts/2464779298/" rel="prev" title="win2012域控分发exe文件">
+                  <i class="fa fa-chevron-left"></i> win2012域控分发exe文件
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+  
+  
+  
+
+
+
+      
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      
+
+      
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ZorroYe</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">454k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">27:32</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.0/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+
+
+  <script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  
+
+  
+<script>
+NexT.utils.loadComments('#valine-comments', () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
+    new Valine(Object.assign({
+      el  : '#valine-comments',
+      path: location.pathname,
+    }, {"enable":true,"appId":"hDUtOYptQ2tkDzGUszvs3g4N-gzGzoHsz","appKey":"6bM5r8tXF8x5HTop81N5Iz5z","placeholder":"Just go go","avatar":"mm","meta":["nick","mail","link"],"pageSize":10,"language":"zh-cn","visitor":true,"comment_count":true,"recordIP":true,"serverURLs":null,"enableQQ":false,"requiredFields":[]}
+    ));
+  }, window.Valine);
+});
+</script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":260,"height":400},"mobile":{"show":true},"react":{"opacity":0.8}});</script></body>
+</html>

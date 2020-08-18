@@ -150,17 +150,17 @@
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">78</span></a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">62</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">367</span></a>
 
   </li>
         <li class="menu-item menu-item-schedule">
@@ -249,20 +249,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">366</span>
+          <span class="site-state-item-count">367</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">61</span>
+        <span class="site-state-item-count">62</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">74</span>
+        <span class="site-state-item-count">78</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -328,6 +328,192 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1902492967/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/1902492967/" class="post-title-link" itemprop="url">LFS制作-3、临时系统-2必需软件</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2012-10-25 12:35:00" itemprop="dateCreated datePublished" datetime="2012-10-25T12:35:00+08:00">2012-10-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/lfs/" itemprop="url" rel="index"><span itemprop="name">lfs</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/posts/1902492967/" class="post-meta-item leancloud_visitors" data-flag-title="LFS制作-3、临时系统-2必需软件" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/posts/1902492967/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/1902492967/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span class="post-meta-item-text">本文字数：</span>
+              <span>1.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>7 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>Ncurses-5.6 </p>
+<p>./configure –prefix=/tools –with-shared \</p>
+<p>    –without-debug –without-ada –enable-overwrite</p>
+<p>make &amp;&amp; make install </p>
+<p>Bash-3.2 </p>
+<p>patch -Np1 -i ../bash-3.2-fixes-5.patch</p>
+<p>./configure –prefix=/tools –without-bash-malloc</p>
+<p>ln -vs bash /tools/bin/sh</p>
+<p>Bzip2-1.0.4 </p>
+<p>make &amp;&amp; make PREFIX=/tools install</p>
+<p>Coreutils-6.9</p>
+<p>./configure –prefix=/tools &amp;&amp; make &amp;&amp; make install</p>
+<p>cp -v src/su /tools/bin/su-tools</p>
+<p>Diffutils-2.8.1 </p>
+<p>./configure –prefix=/tools &amp;&amp; make &amp;&amp; make install</p>
+<p>Findutils-4.2.31 </p>
+<p>./configure –prefix=/tools &amp;&amp; make &amp;&amp; make install</p>
+<p>Gawk-3.1.5</p>
+<p>./configure –prefix=/tools</p>
+<p>cat &gt;&gt; config.h &lt;&lt; “EOF”</p>
+<blockquote>
+<p>#define HAVE_LANGINFO_CODESET 1</p>
+<p>#define HAVE_LC_MESSAGES 1</p>
+</blockquote>
+<p>EOF</p>
+<p>make &amp;&amp; make install</p>
+<p>Gettext-0.16.1</p>
+<p>cd gettext-tools</p>
+<p>./configure –prefix=/tools –disable-shared</p>
+<p>make -C gnulib-lib</p>
+<p>make -C src msgfmt</p>
+<p>cp -v src/msgfmt /tools/bin</p>
+<p>Grep-2.5.1a</p>
+<p>./configure –prefix=/tools \</p>
+<p>    –disable-perl-regexp</p>
+<p>make &amp;&amp; make install</p>
+<p>Gzip-1.3.12</p>
+<p>./configure –prefix=/tools &amp;&amp; make &amp;&amp; make install</p>
+<p>Make-3.81</p>
+<p>./configure –prefix=/tools &amp;&amp; make &amp;&amp; make install</p>
+<p>Patch-2.5.4 </p>
+<p>./configure –prefix=/tools &amp;&amp; make &amp;&amp; make install</p>
+<p>Perl-5.8.8 </p>
+<p>patch -Np1 -i ../perl-5.8.8-libc-2.patch</p>
+<p>./configure.gnu –prefix=/tools -Dstatic_ext=’Data/Dumper Fcntl IO POSIX’</p>
+<p>make perl utilities</p>
+<p>cp -v perl pod/pod2man /tools/bin</p>
+<p>mkdir -pv /tools/lib/perl5/5.8.8</p>
+<p>cp -Rv lib/* /tools/lib/perl5/5.8.8</p>
+<p>Sed-4.1.5 </p>
+<p>./configure –prefix=/tools &amp;&amp; make &amp;&amp; make install</p>
+<p>Tar-1.18 </p>
+<p>./configure –prefix=/tools &amp;&amp; make &amp;&amp; make install</p>
+<p>Texinfo-4.9 </p>
+<p>./configure –prefix=/tools &amp;&amp; make &amp;&amp; make install</p>
+<p>Util-linux-2.12r </p>
+<p>sed -i ‘s@/usr/include@/tools/include@g’ configure</p>
+<blockquote>
+<p>#把/usr/include替换为/tools/include</p>
+</blockquote>
+<p>./configure</p>
+<p>make -C lib</p>
+<p>make -C mount mount umount</p>
+<p>make -C text-utils more</p>
+<p>cp -v mount/{,u}mount text-utils/more /tools/bin</p>
+<blockquote>
+<p>#把mount/mount mount/umount text-utils/more 复制到/tools/bin下</p>
+</blockquote>
+<p>清理和改权限</p>
+<p>不做也没关系</p>
+<p>logout</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/762957521/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -362,7 +548,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 11:21:23" itemprop="dateModified" datetime="2020-08-18T11:21:23+08:00">2020-08-18</time>
+                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -481,7 +667,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 11:21:23" itemprop="dateModified" datetime="2020-08-18T11:21:23+08:00">2020-08-18</time>
+                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -704,7 +890,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 11:21:23" itemprop="dateModified" datetime="2020-08-18T11:21:23+08:00">2020-08-18</time>
+                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -861,7 +1047,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 11:21:23" itemprop="dateModified" datetime="2020-08-18T11:21:23+08:00">2020-08-18</time>
+                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1088,7 +1274,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 11:21:23" itemprop="dateModified" datetime="2020-08-18T11:21:23+08:00">2020-08-18</time>
+                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1331,7 +1517,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 11:21:23" itemprop="dateModified" datetime="2020-08-18T11:21:23+08:00">2020-08-18</time>
+                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1488,7 +1674,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 11:21:23" itemprop="dateModified" datetime="2020-08-18T11:21:23+08:00">2020-08-18</time>
+                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1668,7 +1854,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 11:21:23" itemprop="dateModified" datetime="2020-08-18T11:21:23+08:00">2020-08-18</time>
+                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1875,7 +2061,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 11:21:22" itemprop="dateModified" datetime="2020-08-18T11:21:22+08:00">2020-08-18</time>
+                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -2052,129 +2238,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/764026250/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/764026250/" class="post-title-link" itemprop="url">关于东奥会计继续教育打不开视频</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2012-10-08 15:14:00" itemprop="dateCreated datePublished" datetime="2012-10-08T15:14:00+08:00">2012-10-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 11:21:23" itemprop="dateModified" datetime="2020-08-18T11:21:23+08:00">2020-08-18</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Windows/" itemprop="url" rel="index"><span itemprop="name">Windows</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Windows/Q-A/" itemprop="url" rel="index"><span itemprop="name">Q&A</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/posts/764026250/" class="post-meta-item leancloud_visitors" data-flag-title="关于东奥会计继续教育打不开视频" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/posts/764026250/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/posts/764026250/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-              <span class="post-meta-item-text">本文字数：</span>
-              <span>107</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-              <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>视频能听声音，没图像显示为绿色<br>1、设置mediaplayer  </p>
-<blockquote>
-<p>工具-选项-性能-视频加速-选 无  </p>
-</blockquote>
-<p>2、设置IE浏览器  </p>
-<blockquote>
-<p>一般出现在IE8或者更改一级的IE浏览器里，原因就是“兼容性视图”。只要点一下然后关闭IE再开，就能看了</p>
-</blockquote>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -2230,13 +2293,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">448k</span>
+    <span title="站点总字数">454k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">27:10</span>
+    <span title="站点阅读时长">27:32</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
