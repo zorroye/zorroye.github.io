@@ -160,7 +160,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">367</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">368</span></a>
 
   </li>
         <li class="menu-item menu-item-schedule">
@@ -249,7 +249,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">367</span>
+          <span class="site-state-item-count">368</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -328,6 +328,124 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/4111776144/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/4111776144/" class="post-title-link" itemprop="url">移动GPU 浮点运算比较</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2014-07-18 21:57:00" itemprop="dateCreated datePublished" datetime="2014-07-18T21:57:00+08:00">2014-07-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hardware/" itemprop="url" rel="index"><span itemprop="name">Hardware</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hardware/mphone/" itemprop="url" rel="index"><span itemprop="name">mphone</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/posts/4111776144/" class="post-meta-item leancloud_visitors" data-flag-title="移动GPU 浮点运算比较" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/posts/4111776144/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/4111776144/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span class="post-meta-item-text">本文字数：</span>
+              <span>499</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>默认300MH下  </p>
+<p>ipad2/iphone4S     PowerVR SGX543MP2           19.2GFLOPS<br>RK3288                  Mali-T760（4 ShaderCore）   21.6GFLOPS<br>iphone5                  PowerVR SGX543MP3            28.8GFLOPS<br>ipad3                       PowerVR SGX543MP4            38.4GFLOPS<br>全志A80T               PowerVR G6230                        38.4GFLOPS<br>骁龙600                  Adreno 320                                  38.4GFLOPS<br>骁龙800／801       Adreno 330                                  76.8GFLOPS<br>ipad4                       PowerVR SGX554MP4             76.8GFLOPS<br>iphone5s（A7）   PowerVR G6430                         76.8GFLOPS<br>Iphone6？？          PowerVR GX6650                    115.2GFLOPS<br>小米平板                 NVIDIA K1                                 115.2GFLOPS<br> 骁龙805                 Adreno 420                                115.2GFLOPS  </p>
+<p><a target="_blank" rel="noopener" href="http://bbs.imp3.net/thread-11142812-1-1.html">http://bbs.imp3.net/thread-11142812-1-1.html</a><br><a target="_blank" rel="noopener" href="http://www.leiphone.com/5s-g6430.html">http://www.leiphone.com/5s-g6430.html</a><br><a target="_blank" rel="noopener" href="http://news.mydrivers.com/1/293/293965.htm">http://news.mydrivers.com/1/293/293965.htm</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/4072456105/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -362,7 +480,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -485,7 +603,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -614,7 +732,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -781,7 +899,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -935,7 +1053,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1066,7 +1184,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1239,7 +1357,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1398,7 +1516,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1613,7 +1731,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1817,657 +1935,6 @@
 <p>备注：代码就是上面得出的代码</p>
 <p>显示如下</p>
 <p><img src="http://img0.ph.126.net/K64uUlyS4T_yY8_kyZFrWw==/860750478881228391.jpg" alt="msi EX465安装MACOSX 声卡驱动 - leaf - ------坚持雅操------" title="msi EX465安装MACOSX 声卡驱动 - leaf - ------坚持雅操------"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2873657863/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/2873657863/" class="post-title-link" itemprop="url">msi EX465安装MACOSX ACPI</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2013-12-08 18:02:00" itemprop="dateCreated datePublished" datetime="2013-12-08T18:02:00+08:00">2013-12-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hackintosh/" itemprop="url" rel="index"><span itemprop="name">Hackintosh</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hackintosh/ex465/" itemprop="url" rel="index"><span itemprop="name">ex465</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/posts/2873657863/" class="post-meta-item leancloud_visitors" data-flag-title="msi EX465安装MACOSX ACPI" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/posts/2873657863/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/posts/2873657863/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-              <span class="post-meta-item-text">本文字数：</span>
-              <span>3.4k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-              <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>12 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p><a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/forum.php?mod=viewthread&amp;tid=1098975">http://bbs.pcbeta.com/forum.php?mod=viewthread&amp;tid=1098975</a></p>
-<p><a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/viewthread-594984-1-5.html">http://bbs.pcbeta.com/viewthread-594984-1-5.html</a></p>
-<p>一、原生电源管理</p>
-<p>1、加载AppleHPET</p>
-<blockquote>
-<p>搜索PNP0103</p>
-<p>我的代码</p>
-</blockquote>
-<p>                Device (HPET)</p>
-<p>                {</p>
-<p>                    Name (_HID, EisaId (“PNP0103”))</p>
-<p>                    Name (ATT3, ResourceTemplate ()</p>
-<p>                    {</p>
-<p>                        IRQNoFlags ()</p>
-<p>                            {0}</p>
-<p>                        IRQNoFlags ()</p>
-<p>                            {8}</p>
-<p>                        Memory32Fixed (ReadOnly,</p>
-<p>                            0xFED00000,         // Address Base</p>
-<p>                            0x00000400,         // Address Length</p>
-<p>                            )</p>
-<p>                    })</p>
-<p>                    Name (ATT4, ResourceTemplate ()</p>
-<p>                    {</p>
-<p>                    })</p>
-<p>                    Method (_CRS, 0, NotSerialized)</p>
-<p>                    {</p>
-<p>                        If (LEqual (HPFL (), One))</p>
-<p>                        {</p>
-<p>                            Return (ATT4)</p>
-<p>                        }</p>
-<p>                        Else</p>
-<p>                        {</p>
-<p>                            Return (ATT3)</p>
-<p>                        }</p>
-<p>                    }</p>
-<p>                    Method (_STA, 0, NotSerialized)</p>
-<p>                    {</p>
-<p>                        If (LEqual (HPFL (), One))</p>
-<p>                        {</p>
-<p>                            Return (0x0A)</p>
-<p>                        }</p>
-<p>                        Else</p>
-<p>                        {</p>
-<p>                            Return (0x0F)</p>
-<p>                        }</p>
-<p>                    }</p>
-<p>                }</p>
-<blockquote>
-<p>改为</p>
-</blockquote>
-<p>                Device (HPET)</p>
-<p>                {</p>
-<p>                    Name (_HID, EisaId (“PNP0103”))</p>
-<p>                    Name (ATT3, ResourceTemplate ()</p>
-<p>                    {</p>
-<p>                        IRQNoFlags ()</p>
-<p>                            {0}</p>
-<p>                        IRQNoFlags ()</p>
-<p>                            {8}</p>
-<p>                        Memory32Fixed (ReadOnly,</p>
-<p>                            0xFED00000,         // Address Base</p>
-<p>                            0x00000400,         // Address Length</p>
-<p>                            )</p>
-<p>                    })</p>
-<p>                    Method (_CRS, 0, NotSerialized)</p>
-<p>                    {</p>
-<p>                        Return (ATT3)</p>
-<p>                    }</p>
-<p>                    Method (_STA, 0, NotSerialized)</p>
-<p>                    {</p>
-<p>                        Return (0x0F)</p>
-<p>                    }</p>
-<p>                }</p>
-<blockquote>
-<p>重启后应该已加载AppleHPET</p>
-</blockquote>
-<p>2、加载AppleLPC</p>
-<blockquote>
-<p>搜索：Name (_ADR, 0x00020000)</p>
-<p>一、在Device前加入以下代码</p>
-</blockquote>
-<p>                Method (_DSM, 4, NotSerialized)</p>
-<p>                {</p>
-<p>                    Store (Package (0x08)</p>
-<p>                        {</p>
-<p>                            “device-id”,</p>
-<p>                            Buffer (0x04)</p>
-<p>                            {</p>
-<p>                                 0xAC, 0x0A, 0x00, 0x00</p>
-<p>                            },</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<p> “vendor-id”, </p>
-</blockquote>
-</blockquote>
-</blockquote>
-<p>                            Buffer (0x04)</p>
-<p>                            {</p>
-<p>                                0xDE, 0x10, 0x00, 0x00</p>
-<p>                            }, </p>
-<p>                            “IOName”, </p>
-<p>                            Buffer (0x0D)</p>
-<p>                            {</p>
-<p>                                “pci10de,aac”</p>
-<p>                            }, </p>
-<p>                            “name”, </p>
-<p>                            Buffer (0x0D)</p>
-<p>                            {</p>
-<p>                                “pci10de,aac”</p>
-<p>                            }</p>
-<p>                        }, Local0)</p>
-<p>                    DTGP (Arg0, Arg1, Arg2, Arg3, RefOf (Local0))</p>
-<p>                    Return (Local0)</p>
-<blockquote>
-<p>二、在dsdt头部的method模块前面加入以下代码</p>
-<p>备注：不加会出现DTGP错误</p>
-</blockquote>
-<blockquote>
-<p>    Method (DTGP, 5, NotSerialized)</p>
-<p>    {</p>
-<p>        If (LEqual (Arg0, Buffer (0x10)</p>
-<p>                {</p>
-<p>                    /* 0000 */   0xC6, 0xB7, 0xB5, 0xA0, 0x18, 0x13, 0x1C, 0x44,</p>
-<p>                    /* 0008 */   0xB0, 0xC9, 0xFE, 0x69, 0x5E, 0xAF, 0x94, 0x9B</p>
-<p>                }))</p>
-<p>        {</p>
-<p>            If (LEqual (Arg1, One))</p>
-<p>            {</p>
-<p>                If (LEqual (Arg2, Zero))</p>
-<p>                {</p>
-<p>                    Store (Buffer (One)</p>
-<p>                        {</p>
-<p>                             0x03</p>
-<p>                        }, Arg4)</p>
-<p>                    Return (One)</p>
-<p>                }</p>
-<p>                If (LEqual (Arg2, One))</p>
-<p>                {</p>
-<p>                    Return (One)</p>
-<p>                }</p>
-<p>            }</p>
-<p>        }</p>
-<p>        Store (Buffer (One)</p>
-<p>            {</p>
-<p>                 0x00</p>
-<p>            }, Arg4)</p>
-<p>        Return (Zero)</p>
-<p>    }</p>
-<p>重启应该已加载AppleLPC.kext </p>
-<p>仿冒的是10de;nVidia Corporation;0aac;MCP79 LPC Bridge;Bridge;ISA bridge</p>
-</blockquote>
-<p>3、更改相关kext</p>
-<blockquote>
-<p>打开最新fakesmc，</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>修改相关参数</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>Contents下新建文件夹PlugIns，放入相关kext。然后把fakesmc加入/S/L/E下</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>删除Nullintercpumanagement.kext </p>
-<p>重启 即可加载原生驱动了。</p>
-</blockquote>
-<p><img src="http://img1.ph.126.net/CUsEg0mdRS_8A1hiuHBwJQ==/6608250700398870511.jpg" alt="msi EX465安装MACOSX ACPI - leaf - ------坚持雅操------" title="msi EX465安装MACOSX ACPI - leaf - ------坚持雅操------"></p>
-<p> </p>
-<p> 二、CPU降频</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/viewthread-1071634-1-1.html">http://bbs.pcbeta.com/viewthread-1071634-1-1.html</a></p>
-</blockquote>
-<blockquote>
-<p>我不添加SSDT也有2档降频。所以我直接加档位即可。</p>
-</blockquote>
-<blockquote>
-<p>1、提取SSDT，并放入/Extra下面</p>
-</blockquote>
-<blockquote>
-<p>2、变色龙勾选Drop SSDT</p>
-</blockquote>
-<blockquote>
-<p>3、安装相关kext和工具查看CPU能变的频率</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>安装VoodooMonitor.kext、VoodooPState.kext</p>
-</blockquote>
-<blockquote>
-<p>打开Voodoomonitor.app 来查看所有的频率</p>
-</blockquote>
-<blockquote>
-<p>记录如下：</p>
-</blockquote>
-<blockquote>
-<p>十进制16进制control值</p>
-</blockquote>
-<blockquote>
-<p>2546  &gt;09F2491F</p>
-</blockquote>
-<blockquote>
-<p>2412096C091E</p>
-</blockquote>
-<blockquote>
-<p>227808E6481D</p>
-</blockquote>
-<blockquote>
-<p>21440860081C</p>
-</blockquote>
-<blockquote>
-<p>201007DA471B</p>
-</blockquote>
-<blockquote>
-<p>18760754071A</p>
-</blockquote>
-<blockquote>
-<p>174206CE4619</p>
-</blockquote>
-<blockquote>
-<p>160806480617</p>
-</blockquote>
-<p>4、按电压和频率倍数算出大致的使用电量</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>十六进制算出电量电压外频倍数</p>
-</blockquote>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>88b8   &lt;35000  =1100  X31</p>
-</blockquote>
-<blockquote>
-<p>76E430436108728</p>
-</blockquote>
-<blockquote>
-<p>6D2E27950107526</p>
-</blockquote>
-<blockquote>
-<p>639025488106224</p>
-</blockquote>
-<blockquote>
-<p>5A3C23100105022</p>
-</blockquote>
-<blockquote>
-<p>510420740103720</p>
-</blockquote>
-<blockquote>
-<p>481218450102518</p>
-</blockquote>
-<blockquote>
-<p>3E8016000100016</p>
-</blockquote>
-<blockquote>
-</blockquote>
-<p>5、改有PSS代码的那个SSDT文件，我的是SSDT-1.aml</p>
-</blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>Name (_PSS, Package (0x08)</p>
-</blockquote>
-<blockquote>
-<p>        {</p>
-</blockquote>
-<blockquote>
-<p>            Package (0x06)</p>
-</blockquote>
-<blockquote>
-<p>            {</p>
-</blockquote>
-<blockquote>
-<p>                0x000009F2, </p>
-</blockquote>
-<blockquote>
-<p>                0x000088B8, </p>
-</blockquote>
-<blockquote>
-<p>                0x0000000A, </p>
-</blockquote>
-<blockquote>
-<p>                0x0000000A, </p>
-</blockquote>
-<blockquote>
-<p>                0x0000491F,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000491F</p>
-</blockquote>
-<blockquote>
-<p>            }, </p>
-</blockquote>
-<blockquote>
-<p>            Package (0x06)</p>
-</blockquote>
-<blockquote>
-<p>            {</p>
-</blockquote>
-<blockquote>
-<p>                0x0000096C, </p>
-</blockquote>
-<blockquote>
-<p>                0x000076E4,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000000A, </p>
-</blockquote>
-<blockquote>
-<p>                0x0000000A, </p>
-</blockquote>
-<blockquote>
-<p>                0x0000091E, </p>
-</blockquote>
-<blockquote>
-<p>                0x0000091E</p>
-</blockquote>
-<blockquote>
-<p>            }, </p>
-</blockquote>
-<blockquote>
-<p>            Package (0x06)</p>
-</blockquote>
-<blockquote>
-<p>            {</p>
-</blockquote>
-<blockquote>
-<p>                0x000008E6,</p>
-</blockquote>
-<blockquote>
-<p>                0x00006D2E,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000000A,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000000A,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000481D,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000481D</p>
-</blockquote>
-<blockquote>
-<p>            }, </p>
-</blockquote>
-<blockquote>
-<p>            Package (0x06)</p>
-</blockquote>
-<blockquote>
-<p>            {</p>
-</blockquote>
-<blockquote>
-<p>                0x00000860,</p>
-</blockquote>
-<blockquote>
-<p>                0x00006390,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000000A,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000000A,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000081C,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000081C</p>
-</blockquote>
-<blockquote>
-<p>            }, </p>
-</blockquote>
-<blockquote>
-<p>            Package (0x06)</p>
-</blockquote>
-<blockquote>
-<p>            {</p>
-</blockquote>
-<blockquote>
-<p>                0x000007DA,</p>
-</blockquote>
-<blockquote>
-<p>                0x00005A3C,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000000A,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000000A,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000471B,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000471B</p>
-</blockquote>
-<blockquote>
-<p>            }, </p>
-</blockquote>
-<blockquote>
-<p>            Package (0x06)</p>
-</blockquote>
-<blockquote>
-<p>            {</p>
-</blockquote>
-<blockquote>
-<p>                0x00000754,</p>
-</blockquote>
-<blockquote>
-<p>                0x00005104,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000000A,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000000A,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000071A,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000071A</p>
-</blockquote>
-<blockquote>
-<p>            }, </p>
-</blockquote>
-<blockquote>
-<p>            Package (0x06)</p>
-</blockquote>
-<blockquote>
-<p>            {</p>
-</blockquote>
-<blockquote>
-<p>                0x000006CE,</p>
-</blockquote>
-<blockquote>
-<p>                0x00004812,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000000A,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000000A,</p>
-</blockquote>
-<blockquote>
-<p>                0x00004619,</p>
-</blockquote>
-<blockquote>
-<p>                0x00004619</p>
-</blockquote>
-<blockquote>
-<p>            }, </p>
-</blockquote>
-<blockquote>
-<p>            Package (0x06)</p>
-</blockquote>
-<blockquote>
-<p>            {</p>
-</blockquote>
-<blockquote>
-<p>                0x00000648,</p>
-</blockquote>
-<blockquote>
-<p>                0x00003E80,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000000A,</p>
-</blockquote>
-<blockquote>
-<p>                0x0000000A,</p>
-</blockquote>
-<blockquote>
-<p>                0x00000617,</p>
-</blockquote>
-<blockquote>
-<p>                0x00000617</p>
-</blockquote>
-<blockquote>
-<p>            }</p>
-</blockquote>
-<blockquote>
-<p>        })</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<blockquote>
-<p>备注：</p>
-</blockquote>
-<blockquote>
-<p>1、有中间频率，但是不会稳在中间频率。你动几下就能看到中间频率。</p>
-</blockquote>
-<blockquote>
-<p>2、也可以直接在DSDT里面添加代码即可。参见<a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/forum.php?mod=viewthread&tid=1098975">第一个地址</a></p>
-</blockquote>
-<blockquote>
-</blockquote>
-<p>三、关机断电</p>
-<blockquote>
-<p><a target="_blank" rel="noopener" href="http://bbs.pcbeta.com/viewthread-900017-1-1.html">http://bbs.pcbeta.com/viewthread-900017-1-1.html</a></p>
-<p>搜索Method (_PTS, 1, NotSerialized) 只要在里面添加Else和一对｛｝即可</p>
-<p>    Method (_PTS, 1, NotSerialized)</p>
-<p>    {</p>
-<p>        If (LEqual (Arg0, 0x05))</p>
-<p>        {</p>
-<p>            Store (Zero, SLPE)</p>
-<p>            Sleep (0x10)</p>
-<p>        }</p>
-<p>        Else</p>
-<p> {</p>
-<p>            Store (Arg0, DBG8)</p>
-<p>            PTS (Arg0)</p>
-<p>            Store (Zero, Index (WAKP, Zero))</p>
-<p>            Store (Zero, Index (WAKP, One))</p>
-<p>            If (LAnd (LEqual (Arg0, 0x04), LEqual (OSFL (), 0x02)))</p>
-<p>            {</p>
-<p>                Sleep (0x0BB8)</p>
-<p>            }</p>
-<p>            Store (ASSB, WSSB)</p>
-<p>            Store (AOTB, WOTB)</p>
-<p>            Store (AAXB, WAXB)</p>
-<p>            Store (Arg0, ASSB)</p>
-<p>            Store (OSFL (), AOTB)</p>
-<p>            Store (Zero, AAXB)</p>
-<p>        }</p>
-<p>    }</p>
-<p>备注：因USB问题导致无法重启和睡眠，正在解决中。。。</p>
-</blockquote>
-<p>四、睡眠</p>
-<blockquote>
-</blockquote>
 
       
     </div>

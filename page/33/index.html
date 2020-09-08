@@ -160,7 +160,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">367</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">368</span></a>
 
   </li>
         <li class="menu-item menu-item-schedule">
@@ -249,7 +249,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">367</span>
+          <span class="site-state-item-count">368</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -328,6 +328,125 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2047342109/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/2047342109/" class="post-title-link" itemprop="url">ubuntu server 10.04 :使用ssh 密钥登录服务器</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2010-11-06 15:02:00" itemprop="dateCreated datePublished" datetime="2010-11-06T15:02:00+08:00">2010-11-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/server/" itemprop="url" rel="index"><span itemprop="name">server</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/posts/2047342109/" class="post-meta-item leancloud_visitors" data-flag-title="ubuntu server 10.04 :使用ssh 密钥登录服务器" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/posts/2047342109/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/2047342109/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span class="post-meta-item-text">本文字数：</span>
+              <span>820</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>1、在客户端生成私钥：<br>      sudo apt-get install ssh-client<br>      ssh-keygen -t rsa            # (ssh-keygen -t rsa -C “my key”)<br>                                             #生成密钥：包含公钥、私钥，存放在～/.ssh/  下<br>                                             #提示输入密钥加密口令，而不是登录服务器的密码  </p>
+<p>2、将公钥复制到服务器上<br>     ssh-copy-id -i ~/.ssh/id_rsa.pub  <a href="mailto:&#x74;&#x65;&#x73;&#x74;&#x40;&#x31;&#57;&#50;&#46;&#49;&#x36;&#56;&#x2e;&#49;&#x2e;&#49;&#48;">&#x74;&#x65;&#x73;&#x74;&#x40;&#x31;&#57;&#50;&#46;&#49;&#x36;&#56;&#x2e;&#49;&#x2e;&#49;&#48;</a><br>     会提示要求你测试一下<br>     输入 ssh   <a href="mailto:&#116;&#x65;&#x73;&#116;&#x40;&#x31;&#57;&#50;&#x2e;&#49;&#x36;&#56;&#46;&#x31;&#x2e;&#x31;&#x30;">&#116;&#x65;&#x73;&#116;&#x40;&#x31;&#57;&#50;&#x2e;&#49;&#x36;&#56;&#46;&#x31;&#x2e;&#x31;&#x30;</a> 会提示你输入密钥的加密口令，输入后即可登录远程服务器  </p>
+<p>配置ssh<br>配置文件在 /etc/init.d/sshd_config<br>1、更改端口 将22 更改为其他端口 更改后以后登录的格式为  ssh <a href="mailto:&#x74;&#x65;&#115;&#116;&#64;&#49;&#x39;&#x32;&#x2e;&#x31;&#x36;&#x38;&#46;&#49;&#x2e;&#49;&#x30;">&#x74;&#x65;&#115;&#116;&#64;&#49;&#x39;&#x32;&#x2e;&#x31;&#x36;&#x38;&#46;&#49;&#x2e;&#49;&#x30;</a> -p 端口号<br>2、禁用密码登录，仅允许密钥登录<br>   PermitRootLogin no<br>   PasswordAuthentication no<br>   UsePAM no<br>  然后重启 ssh ：sudo /etc/init.d/ssh restart  </p>
+<p>其他：<br>1、修改密钥加密口令： ssh-keygen -p<br>2、限制scp占用的带宽： scp -l 256 <a href="mailto:&#116;&#101;&#x73;&#x74;&#64;&#x31;&#57;&#50;&#46;&#x31;&#x36;&#56;&#46;&#49;&#x2e;&#x31;&#x30;">&#116;&#101;&#x73;&#x74;&#64;&#x31;&#57;&#50;&#46;&#x31;&#x36;&#56;&#46;&#49;&#x2e;&#x31;&#x30;</a>:/ .       #256Kb/s</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/664058515/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -362,7 +481,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -478,7 +597,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -640,7 +759,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -756,7 +875,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -876,7 +995,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -992,7 +1111,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1111,7 +1230,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1231,7 +1350,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1352,7 +1471,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1415,213 +1534,6 @@
           <p>1、开放了防火墙<br>2、samba服务开着的<br>3、smb.conf都对的，放到桌面上能用<br>4、文件夹权限也都对的  </p>
 <p>百思不得其解，最后还是权限出了问题  </p>
 <p>安装ubuntu server的时候选择了“加密用户目录“，导致用户目录里的资料都不能共享，即使共享了别人也访问不了</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3255764824/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/3255764824/" class="post-title-link" itemprop="url">ubuntu server 10.04 samba 需要用户名和密码访问</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2010-09-24 11:00:00" itemprop="dateCreated datePublished" datetime="2010-09-24T11:00:00+08:00">2010-09-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Services/" itemprop="url" rel="index"><span itemprop="name">Services</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Services/samba/" itemprop="url" rel="index"><span itemprop="name">samba</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/posts/3255764824/" class="post-meta-item leancloud_visitors" data-flag-title="ubuntu server 10.04 samba 需要用户名和密码访问" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/posts/3255764824/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/posts/3255764824/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-              <span class="post-meta-item-text">本文字数：</span>
-              <span>1.5k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-              <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>6 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>1、防火墙开启相关端口</p>
-<blockquote>
-<p>sudo ufw enable               #开启ufw</p>
-<p>sudo ufw default deny      #关闭外部对本机的所有访问</p>
-<p>sudo ufw allow 137</p>
-<p>sudo ufw allow 138</p>
-<p>sudo ufw allow 139</p>
-<p>sudo ufw allow 445</p>
-<p>ufw相关操作请查看 <a target="_blank" rel="noopener" href="http://wiki.ubuntu.org.cn/UFW%E9%98%B2%E7%81%AB%E5%A2%99%E7%AE%80%E5%8D%95%E8%AE%BE%E7%BD%AE">http://wiki.ubuntu.org.cn/UFW防火墙简单设置</a></p>
-</blockquote>
-<blockquote>
-<p>ufw补充：sudo ufw allow from 192.168.2.0/24 to any port 21   #允许某个IP访问某个端口</p>
-</blockquote>
-<p>2、设置要共享的文件夹权限</p>
-<blockquote>
-<p>chmod 0777 TEMP</p>
-</blockquote>
-<p>3、写配置</p>
-<p>[global]</p>
-<blockquote>
-<p>workgroup = WORKGROUP</p>
-<p>netbios name = IT-TEST</p>
-<p>server string = it-test</p>
-<p>display charset = utf-8</p>
-<p>dos charset = cp936</p>
-<p>socket options = TCP_NODELAY SO_RCVBUF=8192 SO_SNDBUF=8192</p>
-<p>dns proxy = no</p>
-<p>template shell = /bin/false</p>
-<p>winbind use default domain = no</p>
-<p>security = user</p>
-<p>encrypt passwords = yes</p>
-<p>smb passwd file = /etc/samba/smbpasswd</p>
-<p>name resolve order = lmhosts bcast host</p>
-<p>#hosts allow 表示允许哪些网段可以访问</p>
-</blockquote>
-<p>[homes]                              #[homes]表示家目录，不是共享文件夹名称</p>
-<blockquote>
-<p>comment = user home directories</p>
-<p>browseable=no        #不允许别人查看</p>
-<p>writable = yes           #允许登陆用户读写</p>
-</blockquote>
-<p>[temp]</p>
-<blockquote>
-<p>comment = read write</p>
-<p>path = /media/TEMP</p>
-<p>writeable = yes</p>
-<p>public = yes</p>
-<p>write list=@test1                                       #表示组成员可访问</p>
-<p>#valid users = test001，test0022            #设置某些用户可访问</p>
-<p>#only guest=yes 表示采用nobody也就是guest的权限登陆。</p>
-<p>create mode = 0666</p>
-<p>directory mode = 0777</p>
-</blockquote>
-<p>4、新建 smbpasswd文件</p>
-<blockquote>
-<p>smbpasswd默认是没有的，通过smbpasswd -a等添加用户后就有了。</p>
-<p>samba的用户首先必须是系统用户，也就是/etc/passwd里面有的，然后才能成为samba用户</p>
-<p>备注：是系统用户不一定就能登陆系统。</p>
-<p>smbpasswd的操作就4个命令</p>
-<p>smbpasswd -a 添加用户</p>
-<p>smbpasswd -x 删除用户</p>
-<p>smbpasswd -e 启用用户</p>
-<p>smbpasswd -d 禁用用户</p>
-</blockquote>
-<p>5、添加系统账户、群组</p>
-<blockquote>
-<p>1&gt;添加群组 ：sudo groupadd  test1</p>
-<p>2&gt;添加账户：</p>
-</blockquote>
-<blockquote>
-<p>sudo useradd -M -s /sbin/nologin -d /dev/null -g test1  test001    </p>
-</blockquote>
-<blockquote>
-<blockquote>
-<p>#加入群组，只用于登陆samba，不登陆系统，不建家目录，</p>
-</blockquote>
-</blockquote>
-<p>6、给samba添加用户</p>
-<blockquote>
-<p>sudo smbpasswd -a test001              #这个用户名必须和上面的对应起来。要输入两遍密码</p>
-</blockquote>
-<p>7、smb相关命令</p>
-<blockquote>
-<p>smbstatus：服务端查看连接到本服务器的连接状态</p>
-</blockquote>
-<blockquote>
-<p>smbclient -L //IP ：查看资源列表</p>
-<p>smbclient //IP -U user ：使用用户身份登陆到samba服务器，然后使用ftp命令上传下载文件</p>
-<p>smbmount //IP /mnt/share -o username=user    挂在共享文件夹到本地 。参数同mount</p>
-<p>mount -t smbfs //IP /mnt/share -o username=user</p>
-</blockquote>
-<p>以上2013.10.09更改，接下去学习smb.conf配置文件。</p>
 
       
     </div>

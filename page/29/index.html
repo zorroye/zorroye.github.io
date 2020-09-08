@@ -160,7 +160,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">367</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">368</span></a>
 
   </li>
         <li class="menu-item menu-item-schedule">
@@ -249,7 +249,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">367</span>
+          <span class="site-state-item-count">368</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -328,6 +328,153 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2647626534/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/2647626534/" class="post-title-link" itemprop="url">USB量产操作</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2011-08-30 17:17:00" itemprop="dateCreated datePublished" datetime="2011-08-30T17:17:00+08:00">2011-08-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hardware/" itemprop="url" rel="index"><span itemprop="name">Hardware</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hardware/udisk/" itemprop="url" rel="index"><span itemprop="name">udisk</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/posts/2647626534/" class="post-meta-item leancloud_visitors" data-flag-title="USB量产操作" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/posts/2647626534/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/2647626534/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span class="post-meta-item-text">本文字数：</span>
+              <span>926</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>以下全部按照 <a target="_blank" rel="noopener" href="http://bbs.mydigit.cn/">数码之家</a> 里介绍的进行操作</p>
+<p>买了一款 pny-m1-8G的U盘，准备做光驱用，这样就不用买光驱了</p>
+<p>方法有2种：1、UltraISO      2、对USB进行底层设置</p>
+<p>-——————————————————————————————————————–</p>
+<p>我买的pny m1 详细信息：</p>
+<p>芯片是：SMI SM3255AB 的</p>
+<p><img src="http://img.ph.126.net/YJlXLQdXDVuMgJ5Vb_-P3Q==/2742973648062255091.jpg" alt="USB量产 - leaf - ------坚持雅操------" title="USB量产 - leaf - ------坚持雅操------"></p>
+<p>用量产工具检测出flash型号，并用闪存精灵检查出闪存的参数如下：</p>
+<p><img src="http://img.ph.126.net/Ogwg3oMmUVw5fryb5Y7bhA==/2490772068929505785.jpg" alt="USB量产 - leaf - ------坚持雅操------" title="USB量产 - leaf - ------坚持雅操------"></p>
+<p>-——————————————————————————————————————–</p>
+<p>软件：</p>
+<p>MyDiskTest V2.93｜U盘扩容检测/速度测试工具 <a target="_blank" rel="noopener" href="http://dl.mydigit.net/2010/09/mydisktest.html">http://dl.mydigit.net/2010/09/mydisktest.html</a></p>
+<p>ChipGenius芯片精灵V3.01｜USB主控芯片检测工具 ：<a target="_blank" rel="noopener" href="http://www.mydigit.cn/chipgenius.htm">http://www.mydigit.cn/chipgenius.htm</a> </p>
+<p>SMI3255AB最新量产工具SM32x_K0530_SM3255AB_(v2.03.42  )</p>
+<p><a target="_blank" rel="noopener" href="http://bbs.mydigit.cn/read.php?tid=290932">http://bbs.mydigit.cn/read.php?tid=290932</a></p>
+<p>FlashGenius V3.5｜闪存精灵/FLASH参数查询 <a target="_blank" rel="noopener" href="http://dl.mydigit.net/2010/09/FlashGenius.html">http://dl.mydigit.net/2010/09/FlashGenius.html</a></p>
+<p>-———————————————————————————————————————-</p>
+<p>量产操作：</p>
+<p>1、第一次量产操作</p>
+<p>按照这个一步一步操作即可</p>
+<p> <a target="_blank" rel="noopener" href="http://bbs.mydigit.cn/read.php?tid=211490">慧荣SM321~SM3257 量产CDROM成功 全文图解</a></p>
+<p><a target="_blank" rel="noopener" href="http://bbs.mydigit.cn/read.php?tid=46874">一看就会，smi32x量产详细图示教程(已添加说明文字）</a></p>
+<p>做好后我看跳出来说要格式化，然后就格式化了，格了之后才知道错了。。。把光驱格成空了。(本来直接拔出来，再插即可)</p>
+<p>2、然后工程调试，把权限分出去的盘清除掉</p>
+<p>参考 <a target="_blank" rel="noopener" href="http://bbs.mydigit.cn/read.php?tid=107138">预防及解决“SMI方案量产CDROM后，再次量产引起无法识别出盘符问题”</a></p>
+<p>点-tools-multiple erase all 清除</p>
+<p>清除后拔出内存再插虽然能显示USB，却显示0M空间，我郁闷了。。。。</p>
+<p>而且setting也不能操作</p>
+<p>3、重做量产操作，然后直接拔掉U盘，再插上，搞定</p>
+<p>这时，setting可以重新设置，跟第一步是一样的，做好后就是你想要的U盘了</p>
+<p><img src="http://img.ph.126.net/Oj36vbdG1tsPwPUN9FdXZg==/3098758018624523789.jpg" alt="USB量产操作 - leaf - ------坚持雅操------" title="USB量产操作 - leaf - ------坚持雅操------"></p>
+<p>其他：<a target="_blank" rel="noopener" href="http://bbs.mydigit.cn/read.php?tid=117966">SMI方案U盘不识别盘后安装工厂驱动详细步骤</a></p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2417698190/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -362,7 +509,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -479,7 +626,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -596,7 +743,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -727,7 +874,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -844,7 +991,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -969,7 +1116,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1106,7 +1253,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1364,7 +1511,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1723,7 +1870,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -2046,213 +2193,6 @@
 <p>      部署文件放在/var/lib/ocsinventory-reports/download</p>
 <p>      ipd文件夹放在/var/lib/ocsinventory-reports/ipd</p>
 <p>      snmp文件放在/var/lib/ocsinventory-reports/snmp</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/607051261/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/607051261/" class="post-title-link" itemprop="url">ubuntu10.04 安装 OCS Inventory + GLPI</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2011-05-03 12:00:00" itemprop="dateCreated datePublished" datetime="2011-05-03T12:00:00+08:00">2011-05-03</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/server/" itemprop="url" rel="index"><span itemprop="name">server</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/posts/607051261/" class="post-meta-item leancloud_visitors" data-flag-title="ubuntu10.04 安装 OCS Inventory + GLPI" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/posts/607051261/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/posts/607051261/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-              <span class="post-meta-item-text">本文字数：</span>
-              <span>2.7k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-              <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>10 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>1、ocs ：IT设备<strong>配置</strong>管理</p>
-<p>2、glpi ：IT设备<strong>资产</strong>管理</p>
-<p>-———————————————————————————————————————————-</p>
-<p>方法一：编译安装</p>
-<p>安装服务端</p>
-<p>1、sudo apt-get install apache2 apache2-doc </p>
-<p>     sudo su -c ‘ echo ServerName 127.0.1.1 &gt;&gt; /etc/apache2/apache2.conf’</p>
-<p>     sudo /etc/init.d/apache2 reload</p>
-<p>2、sudo apt-get install mysql-server</p>
-<p>3、sudo apt-get install php5 php5-cgi php5-cli php5-dev php5-gd php5-mysql libapache2-mod-php5 </p>
-<p>4、sudo apt-get install \</p>
-<p>     dmidecode nmap perl libapache-dbi-perl libapache2-mod-perl2 libcompress-zlib-perl       \</p>
-<p>     libcrypt-ssleay-perl libdbd-mysql-perl libdbi-perl libdigest-md5-perl libmodule-install-perl  \</p>
-<p>     libnet-cups-perl libnet-ip-perl libnet-snmp-perl libnet-ssleay-perl libnmap-parser-perl        \</p>
-<p>     libphp-pclzip libproc-daemon-perl libproc-pid-file-perl libsoap-lite-perl libwww-perl            \</p>
-<p>     libxml-simple-perl</p>
-<p>       #安装perl相关，另外nmblookup已经有了</p>
-<p>5、安装zip</p>
-<p>     sudo apt-get install libpcre3 libpcre3-dev</p>
-<p>     <a target="_blank" rel="noopener" href="http://pecl.php.net/package/zip">下载zip</a> </p>
-<p>     tar -xvf zip-1.10.2.tgz</p>
-<p>     cd zip-1.10.2</p>
-<p>     phpize</p>
-<p>     ./configure</p>
-<p>     make</p>
-<p>     sudo make install </p>
-<p>6、安装 XML-Entities</p>
-<p>     wget <a target="_blank" rel="noopener" href="http://mirror.osqdu.org/CPAN/authors/id/S/SI/SIXTEASE/XML-Entities-1.0000.tar.gz">http://mirror.osqdu.org/CPAN/authors/id/S/SI/SIXTEASE/XML-Entities-1.0000.tar.gz</a></p>
-<p>      tar -xvf XML-Entities-1.0000.tar.gz</p>
-<p>      cd XML-Entities</p>
-<p>      perl Makefile.PL</p>
-<p>      make</p>
-<p>      sudo make install</p>
-<p>      或者</p>
-<p>       cpan -i XML:Entities</p>
-<p>7、安装OCS</p>
-<p>      wget \</p>
-<p>      <a target="_blank" rel="noopener" href="http://launchpad.net/ocsinventory-server/stable-2.0/2.0rc4/+download/OCSNG/_UNIX/_SERVER-2.0rc4.tar.gz">http://launchpad.net/ocsinventory-server/stable-2.0/2.0rc4/+download/OCSNG\_UNIX\_SERVER-2.0rc4.tar.gz</a></p>
-<p>      tar -xvf OCSNG_UNIX_SERVER-2.0rc4.tar.gz</p>
-<p>      cd OCSNG_UNIX_SERVER-2.0rc4</p>
-<p>      sudo sh ./setup.sh  #默认到底</p>
-<p>8、sudo /etc/init.d/apache2 restart</p>
-<p>9、浏览器打开：</p>
-<p>     <a target="_blank" rel="noopener" href="http://127.0.0.1/ocsreports">http://127.0.0.1/ocsreports</a></p>
-<p>     login MYSQL:                root</p>
-<p>     Mot de passe MYSQL:   密码</p>
-<p>     Nom de la base donnée: 要创建的数据库名，默认即可</p>
-<p>     MYSQL HostName:        localhost</p>
-<p>     <a target="_blank" rel="noopener" href="http://127.0.0.1/ocsreports/index.php">http://127.0.0.1/ocsreports/index.php</a></p>
-<p>     admin：admin</p>
-<p>10、sudo rm /usr/share/ocsinventory-reports/ocsreports/install.php</p>
-<p>     重设admin密码</p>
-<p>     重设ocs数据库的连接密码</p>
-<p>           1、改ocs的密码</p>
-<p>           2、改/usr/share/ocsinventory-reports/ocsreports/dbconfig.inc.php里面的代码</p>
-<p>-—————————————————-</p>
-<p>安装客户端</p>
-<p>wget \</p>
-<p>      <a target="_blank" rel="noopener" href="http://launchpad.net/ocsinventory-unix-agent/stable-2.0/2.0rc4/+download/Ocsinventory-Agent-2.0rc4.tar.gz">http://launchpad.net/ocsinventory-unix-agent/stable-2.0/2.0rc4/+download/Ocsinventory-Agent-2.0rc4.tar.gz</a></p>
-<p>      tar -xvf Ocsinventory-Agent-2.0rc4.tar.gz</p>
-<p>      cd Ocsinventory-Agent-2.0rc4</p>
-<p>      perl Makefile.PL</p>
-<p>      make</p>
-<p>      sudo make install   #要设置server的计算机名，其他默认即可</p>
-<p>-———————————————————————————————————————————–</p>
-<p>方法二：apt-get安装</p>
-<p>1、安装ampp，同方法一：1、2、3</p>
-<p>2、安装perl插件，同方法一：4、5、6</p>
-<p>3、sudo apt-get install ocsinventory-server  ocsinventory-reports  </p>
-<p> #设置mysql的密码，设置ocs数据库的密码</p>
-<p>4、sudo apt-get install ocsinventory-agent</p>
-<p>5、sudo  dpkg-reconfigure ocsinventory-agent </p>
-<p>6、sudo ocsinventory-agent</p>
-<p>-———————————————————————————————————————————–<br>中文化：<br>暂无<br>-———————————————————————————————————————————–  </p>
-<p>GLPI安装：</p>
-<p>tar -xvf glpi-0.78.4.tar.gz</p>
-<p>sudo mv glpi /var/www</p>
-<p>cd /var/www</p>
-<p>sudo chown -R www-data:www-data glpi</p>
-<p><a target="_blank" rel="noopener" href="http://localhost/glpi">http://localhost/glpi</a> 设置</p>
-<p>-————————————————————————————————————————————</p>
-<p>参考：</p>
-<p>1、扩展阅读：<a target="_blank" rel="noopener" href="http://ossbox.net/open-source-IT-Asset-Mgmt">开源IT资产管理</a></p>
-<p>-—————————————————–</p>
-<p>1、<a target="_blank" rel="noopener" href="http://doc.ubuntu-fr.org/ocs_inventory%7C#installation_du_client_linux">OCS Inventory</a></p>
-<p><a target="_blank" rel="noopener" href="http://doc.ubuntu-fr.org/ocs_inventory%7C#installation_du_client_linux"></a>2、<a target="_blank" rel="noopener" href="http://wiki.ocsinventory-ng.org/index.php/Documentation:Main">OCS Inventory NG 2.x Documentation</a>  </p>
-<p>2、<a target="_blank" rel="noopener" href="http://www.itpub.net/thread-1321323-1-1.html">IT Inventory and Resource Management with OCS Inventory NG 1.02.pdf</a></p>
-<p>3、<a target="_blank" rel="noopener" href="http://zhjack.blog.163.com/blog/static/143149200810702324478/">Ubuntu下安装 OCS Inventory 电脑资产管理系统</a></p>
-<p>4、<a target="_blank" rel="noopener" href="http://viong.blog.51cto.com/844766/503694">(三)开源IT资产管理系统–&gt;OCS（unix）客户端代理安装</a></p>
-<p>5、<a target="_blank" rel="noopener" href="http://hi.baidu.com/kan_jian/blog/item/ae5c5a3411e64e3c5bb5f59f.html">这几天在装ocs inventory</a></p>
-<p>-—————————————————-</p>
-<p>1、<a target="_blank" rel="noopener" href="http://www.glpi-project.org/wiki/doku.php?id=en:manual:admin:0_index">GLPI Administration Manual</a><br>2、<a target="_blank" rel="noopener" href="http://viong.blog.51cto.com/844766/503735">(四)开源IT资产管理系统–&gt;部署GLPI与OCS数据同步</a></p>
 
       
     </div>

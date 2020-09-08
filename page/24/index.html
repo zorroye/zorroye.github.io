@@ -160,7 +160,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">367</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">368</span></a>
 
   </li>
         <li class="menu-item menu-item-schedule">
@@ -249,7 +249,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">367</span>
+          <span class="site-state-item-count">368</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -328,6 +328,143 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2993408280/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/2993408280/" class="post-title-link" itemprop="url">CCNA第三章 子网</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2012-08-27 11:19:00" itemprop="dateCreated datePublished" datetime="2012-08-27T11:19:00+08:00">2012-08-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Network/" itemprop="url" rel="index"><span itemprop="name">Network</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Network/cisco/" itemprop="url" rel="index"><span itemprop="name">cisco</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/posts/2993408280/" class="post-meta-item leancloud_visitors" data-flag-title="CCNA第三章 子网" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/posts/2993408280/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/2993408280/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span class="post-meta-item-text">本文字数：</span>
+              <span>399</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>vlsm是为了节省ip地址，达到减少网络流量，有利于汇总的目的<br>支持vlsm的就是无类路由，有类指的是abc类<br>IP寻址除错  </p>
+<blockquote>
+<p>ping 127.0.0.1 不通  是协议问题<br>ping本机地址不通    是网卡问题  </p>
+</blockquote>
+<p>子网  </p>
+<blockquote>
+<p>掩码只能到/30，因为需要1个IP表示网段，1个IP表示广播地址  </p>
+<p>/29 知道块地址就好算了  </p>
+<blockquote>
+<p>主机数量：32-29=3—&gt;2^3=8—&gt;8-2=6<br>子网数量：29-24=5—&gt;2^5=32  或者   256/8=32<br>子网掩码：/29：32-29=3—&gt;2^3=8—&gt;256-8=248<br>反码计算：/29：32-29=3—&gt;2^3=8—&gt;8-1=7  </p>
+</blockquote>
+</blockquote>
+<p>变长子网掩码(VLSM)  </p>
+<blockquote>
+<p>主要是为了更好的提高网络效率，节省IP资源，用于无类路由协议  </p>
+</blockquote>
+<p>汇总：用于精简路由表  </p>
+<p>IP寻址除错  </p>
+<blockquote>
+<p>ping 127.0.0.1 不通  是协议问题<br>ping本机地址不通    是网卡问题  </p>
+</blockquote>
+<p>摘录<br>(config)#ip subnet-zero</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1805198217/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -362,7 +499,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -550,7 +687,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -747,7 +884,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -863,7 +1000,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -981,7 +1118,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1115,7 +1252,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1245,7 +1382,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1365,7 +1502,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1486,7 +1623,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1562,127 +1699,6 @@
 <p>对媒体：<br>错别字和剧目对中华文化毒害匪浅。  </p>
 <p>人权高于主权是必然。<br>把主权高于人权绝对化是逆潮流而行。  </p>
 <p>一个人要坚持信仰，不要做汪藻之类的小人。</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3698678189/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/3698678189/" class="post-title-link" itemprop="url">2012.07.07动车晚点2个多小时</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2012-07-08 11:51:00" itemprop="dateCreated datePublished" datetime="2012-07-08T11:51:00+08:00">2012-07-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:44" itemprop="dateModified" datetime="2020-08-18T16:44:44+08:00">2020-08-18</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Live/" itemprop="url" rel="index"><span itemprop="name">Live</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Live/%E7%82%B9%E6%BB%B4/" itemprop="url" rel="index"><span itemprop="name">点滴</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/posts/3698678189/" class="post-meta-item leancloud_visitors" data-flag-title="2012.07.07动车晚点2个多小时" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/posts/3698678189/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/posts/3698678189/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-              <span class="post-meta-item-text">本文字数：</span>
-              <span>145</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-              <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>买的是19：43分的D365，等到21：56分才开，我K！</p>
-<p>就一站路，本来10多分钟就到了，做公交车的话要2个小时，所以多坐动车。</p>
-<p>本来应该想到的：每次下雨，动车都会晚点。没想到晚点2个多小时！</p>
-<p>当天下午1点半开始下大雨，下了好几个小时。</p>
-<p>铁道部的设备就是垃圾，不抗雨！每次大雨都晚点！多成惯例了！</p>
-<p><img src="http://img2.ph.126.net/DAnag92bqYepK7eY-Y2iMQ==/2799831593358538052.jpg" alt="2012.07.07动车晚点2个多小时 - leaf - ------坚持雅操------" title="2012.07.07动车晚点2个多小时 - leaf - ------坚持雅操------"></p>
 
       
     </div>

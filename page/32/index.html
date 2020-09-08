@@ -160,7 +160,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">367</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">368</span></a>
 
   </li>
         <li class="menu-item menu-item-schedule">
@@ -249,7 +249,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">367</span>
+          <span class="site-state-item-count">368</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -328,6 +328,127 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/769538398/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/769538398/" class="post-title-link" itemprop="url">LFS制作流程记录</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2011-01-01 16:57:00" itemprop="dateCreated datePublished" datetime="2011-01-01T16:57:00+08:00">2011-01-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/lfs/" itemprop="url" rel="index"><span itemprop="name">lfs</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/posts/769538398/" class="post-meta-item leancloud_visitors" data-flag-title="LFS制作流程记录" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/posts/769538398/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/769538398/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span class="post-meta-item-text">本文字数：</span>
+              <span>685</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>00、硬盘分区、挂载硬盘  </p>
+<p>00、用主系统制作临时系统，然后chroot到临时系统<br>-——————————————————-以上完成制作环境  </p>
+<p>01、建dev,proc,sys等目录<br>02、建FHS相关目录<br>03、建系统用户<br>04、编译内核头文件<br>05、编译glibc<br>06、调整工具链(由临时系统调整到目标系统)<br>07、编译binutils,gcc (汇编、编译、连接器等)<br>-——————————————————–以上完成目标系统的工具链，(工具链是linux系统的基础)  </p>
+<p>08、安装基础功能软件(如udev,grub,bootscript,make,tar,openssl等)<br>      关于软件安装目录：<br>             如QQ：其命令qq.exe安装在   bin文件夹下<br>                          其库文件安装在          bin文件夹下<br>                          其他相关文件安装在   bin文件夹下<br>             而linux的软件呢：<br>                          其命令安装在               /usr/bin文件夹下<br>                          其库文件安装在            /usr/lib文件夹下<br>                          其他相关文件安装在     /usr/share/相关文件夹下<br>           一个是什么都放在一个文件夹下，一个是分开放，仅此而已<br>-———————————————————<br>09、安装linux内核<br>10、配置系统(如设定时间、键盘、网络、fstab等)<br>11、设置启动器(将grub写入MBR)<br>-——————————————————以上完成系统制作  </p>
+<p>其实以上过程跟我们用光盘安装系统的过程相类似，只是一个是手动安装一个是脚本自动安装<br>1、设置语言<br>2、设置键盘<br>3、设置时区<br>4、分区 、格式化<br>5、安装软件、内核<br>6、设置用户名、密码<br>7、设置启动器<br>重启完成系统安装<br>-——————————————————-  </p>
+<p>12、安装完后，缺少什么软件装什么软件</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1795889865/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -362,7 +483,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -479,7 +600,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -595,7 +716,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -750,7 +871,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -904,7 +1025,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1021,7 +1142,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1141,7 +1262,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1262,7 +1383,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1379,7 +1500,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1440,125 +1561,6 @@
     
     <div class="post-body" itemprop="articleBody">
           <p>1、安装apache： sudo apt-get install apache2<br>2、创建虚拟主机：<br>      cd /etc/apache2/sites-available<br>      sudo cp -a default blog.test.com<br>     sudo mkdir /var/www/blog.test.com<br>     更改blog.test.com配置：略<br>3、开启虚拟主机：<br>     sudo a2dissite default<br>     sudo a2ensite blog.test.com<br>     sudo /etc/init.d/apache2 restart<br>4、设置ssl<br>     1、启动模块 sudo a2enmod ssl<br>     2、创建key openssl genrsa -des3 -out server.key 1024<br>           创建csr证书 openssl req -new -key server.key -out server.csr<br>           创建crt自己认证的证书  openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt<br>     3、安装证书<br>            sudo cp server.crt /etc/ssl/certs<br>            sudo cp server.key /etc/ssl/private<br>     4、修改配置 blog.test.com<br>          DocumentRoot一行的下方加入内容：<br>          SSLEngine on<br>          SSLOptions +StrictRequire<br>         SSLCertificateFile /etc/ssl/certs/server.crt<br>         SSLCertificateKeyFile /etc/ssl/private/server.key<br>      5、重启apache<br>            sudo /etc/init.d/apache2 restart</p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2047342109/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/2047342109/" class="post-title-link" itemprop="url">ubuntu server 10.04 :使用ssh 密钥登录服务器</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2010-11-06 15:02:00" itemprop="dateCreated datePublished" datetime="2010-11-06T15:02:00+08:00">2010-11-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/server/" itemprop="url" rel="index"><span itemprop="name">server</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/posts/2047342109/" class="post-meta-item leancloud_visitors" data-flag-title="ubuntu server 10.04 :使用ssh 密钥登录服务器" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/posts/2047342109/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/posts/2047342109/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-              <span class="post-meta-item-text">本文字数：</span>
-              <span>821</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-              <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>1、在客户端生成私钥：<br>      sudo apt-get install ssh-client<br>      ssh-keygen -t rsa            # (ssh-keygen -t rsa -C “my key”)<br>                                             #生成密钥：包含公钥、私钥，存放在～/.ssh/  下<br>                                             #提示输入密钥加密口令，而不是登录服务器的密码  </p>
-<p>2、将公钥复制到服务器上<br>     ssh-copy-id -i ~/.ssh/id_rsa.pub  <a href="mailto:&#x74;&#x65;&#x73;&#116;&#x40;&#x31;&#57;&#50;&#46;&#49;&#54;&#x38;&#x2e;&#49;&#x2e;&#x31;&#48;">&#x74;&#x65;&#x73;&#116;&#x40;&#x31;&#57;&#50;&#46;&#49;&#54;&#x38;&#x2e;&#49;&#x2e;&#x31;&#48;</a><br>     会提示要求你测试一下<br>     输入 ssh   <a href="mailto:&#116;&#101;&#x73;&#x74;&#64;&#49;&#x39;&#50;&#46;&#49;&#x36;&#x38;&#x2e;&#x31;&#46;&#x31;&#x30;">&#116;&#101;&#x73;&#x74;&#64;&#49;&#x39;&#50;&#46;&#49;&#x36;&#x38;&#x2e;&#x31;&#46;&#x31;&#x30;</a> 会提示你输入密钥的加密口令，输入后即可登录远程服务器  </p>
-<p>配置ssh<br>配置文件在 /etc/init.d/sshd_config<br>1、更改端口 将22 更改为其他端口 更改后以后登录的格式为  ssh <a href="mailto:&#116;&#x65;&#x73;&#x74;&#x40;&#x31;&#57;&#x32;&#46;&#49;&#54;&#x38;&#x2e;&#49;&#x2e;&#x31;&#x30;">&#116;&#x65;&#x73;&#x74;&#x40;&#x31;&#57;&#x32;&#46;&#49;&#54;&#x38;&#x2e;&#49;&#x2e;&#x31;&#x30;</a> -p 端口号<br>2、禁用密码登录，仅允许密钥登录<br>   PermitRootLogin no<br>   PasswordAuthentication no<br>   UsePAM no<br>  然后重启 ssh ：sudo /etc/init.d/ssh restart  </p>
-<p>其他：<br>1、修改密钥加密口令： ssh-keygen -p<br>2、限制scp占用的带宽： scp -l 256 <a href="mailto:&#116;&#101;&#x73;&#x74;&#x40;&#x31;&#x39;&#50;&#x2e;&#49;&#54;&#56;&#x2e;&#x31;&#x2e;&#49;&#48;">&#116;&#101;&#x73;&#x74;&#x40;&#x31;&#x39;&#50;&#x2e;&#49;&#54;&#56;&#x2e;&#x31;&#x2e;&#49;&#48;</a>:/ .       #256Kb/s</p>
 
       
     </div>

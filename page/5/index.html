@@ -160,7 +160,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">367</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">368</span></a>
 
   </li>
         <li class="menu-item menu-item-schedule">
@@ -249,7 +249,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">367</span>
+          <span class="site-state-item-count">368</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -328,6 +328,175 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2480527377/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/2480527377/" class="post-title-link" itemprop="url">ubuntu14.04 链接iscsi</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2016-02-06 17:56:00" itemprop="dateCreated datePublished" datetime="2016-02-06T17:56:00+08:00">2016-02-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Ubuntu/Q-A/" itemprop="url" rel="index"><span itemprop="name">Q&A</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/posts/2480527377/" class="post-meta-item leancloud_visitors" data-flag-title="ubuntu14.04 链接iscsi" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/posts/2480527377/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/2480527377/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span class="post-meta-item-text">本文字数：</span>
+              <span>991</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>一、安装  </p>
+<blockquote>
+<p>sudo apt-get install open-iscsi 然后重启  </p>
+</blockquote>
+<p>二、配置  </p>
+<blockquote>
+<p>sudo nano /etc/iscsi/iscsi.conf<br>#设置开机自动连接iscsi设备  </p>
+<blockquote>
+<p>node.startup = automatic   </p>
+</blockquote>
+<p>#设置单向验证的账号密码  </p>
+<blockquote>
+<p>node.session.auth.authmethod = CHAP<br>node.session.auth.username = username<br>node.session.auth.password = password<br>-———双向验证再增加以下两行—————<br>node.session.auth.username_in = username<br>node.session.auth.password_in = password</p>
+</blockquote>
+</blockquote>
+<blockquote>
+</blockquote>
+<p>三、连接  </p>
+<blockquote>
+<p>查找iscsi设备<br>运行该命令后在/etc/iscsi下面会多出nodes和send_targets文件夹  </p>
+<blockquote>
+<p>sudo iscsiadm -m discovery -t sendtargets -p 192.168.3.12  </p>
+</blockquote>
+<p>连接  </p>
+<blockquote>
+<p>sudo iscsiadm -m node -T iqn.ubuntu -p 192.168.3.12 -l  </p>
+<p><img src="http://img2.ph.126.net/MAwRwRK7yJjnuvmtUKIAaA==/6631214000750360321.png" alt="ubuntu14.04 链接iscsi - leaf - ------勤解万难------" title="ubuntu14.04 链接iscsi - leaf - ------勤解万难------"></p>
+<p> </p>
+<p><img src="http://img0.ph.126.net/93IO30mUx6IiDu-2D2kXPg==/6598138492018427937.png" alt="ubuntu14.04 链接iscsi - leaf - ------勤解万难------" title="ubuntu14.04 链接iscsi - leaf - ------勤解万难------"></p>
+<p>   </p>
+</blockquote>
+<p>格式化及挂载  </p>
+<blockquote>
+<p>fdisk /dev/sdd<br>mkfs.ext4 /dev/sdd1<br>mkdir /mnt/iscsi1<br>mount /dev/sdd1 /mnt/iscsi1  </p>
+</blockquote>
+</blockquote>
+<p>四、配置开机挂载  </p>
+<blockquote>
+<p>设置网络为动态获取或者静态地址/etc/network/interface</p>
+<blockquote>
+<p>auto eth1<br>iface eth1 inet dhcp  </p>
+</blockquote>
+<p>查看设备UUID  </p>
+<blockquote>
+<p>ls -l /dev/disk/by-uuid 可以看到刚挂载的设备的UUID  </p>
+</blockquote>
+<p>更改/etc/fstab  </p>
+<blockquote>
+<p>UUID=c017977c-a0d8-4e6b-9eee-38b6f5c17ebc    /mnt/iscsi1 ext4 _netdev,relatime 0 2  </p>
+</blockquote>
+</blockquote>
+<p>参考<br><a target="_blank" rel="noopener" href="http://blog.csdn.net/sinchb/article/details/8433994">http://blog.csdn.net/sinchb/article/details/8433994</a><br><a target="_blank" rel="noopener" href="http://blog.csdn.net/wbryfl/article/details/6702347">http://blog.csdn.net/wbryfl/article/details/6702347</a><br>其他<br><a target="_blank" rel="noopener" href="http://www.server-world.info/en/note?os=Ubuntu%5C_14.04&amp;p=iscsi&amp;f=2">http://www.server-world.info/en/note?os=Ubuntu\_14.04&amp;p=iscsi&amp;f=2</a><br><a target="_blank" rel="noopener" href="http://manpages.ubuntu.com/manpages/hardy/man8/iscsiadm.8.html">http://manpages.ubuntu.com/manpages/hardy/man8/iscsiadm.8.html</a>  </p>
+<blockquote>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/355074636/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -362,7 +531,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -480,7 +649,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -603,7 +772,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -736,7 +905,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -864,7 +1033,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1009,7 +1178,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1156,7 +1325,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1320,7 +1489,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1469,7 +1638,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1544,129 +1713,6 @@
 <p><img src="http://img1.ph.126.net/e_9osl7dkcf92L5KJX9D0A==/6619436032189572817.png" alt="申请了一个阿里云免费虚拟主机 - leaf - ------勤解万难------" title="申请了一个阿里云免费虚拟主机 - leaf - ------勤解万难------"></p>
 <p> </p>
 <p><img src="http://img2.ph.126.net/lfnWq_0FfvPQsr94ZYmrUg==/6631318454351558021.png" alt="申请了一个阿里云免费虚拟主机 - leaf - ------勤解万难------" title="申请了一个阿里云免费虚拟主机 - leaf - ------勤解万难------"></p>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/1375113552/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/1375113552/" class="post-title-link" itemprop="url">linux 系统测试软件4枚</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2015-10-29 21:24:00" itemprop="dateCreated datePublished" datetime="2015-10-29T21:24:00+08:00">2015-10-29</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/" itemprop="url" rel="index"><span itemprop="name">Ubuntu</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Ubuntu/Q-A/" itemprop="url" rel="index"><span itemprop="name">Q&A</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/posts/1375113552/" class="post-meta-item leancloud_visitors" data-flag-title="linux 系统测试软件4枚" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/posts/1375113552/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/posts/1375113552/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-              <span class="post-meta-item-text">本文字数：</span>
-              <span>162</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-              <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>cpuburn  测试cpu稳定性<br>sudo apt-get install cpuburn<br>burnP6 || echo $? &amp;    几核就开几个  </p>
-<p><img src="http://img1.ph.126.net/JwfOWt5VQwBlnfrOmDLJUw==/2435321498519146474.png" alt="linux 系统测试软件4枚 - leaf - ------勤解万难------" title="linux 系统测试软件4枚 - leaf - ------勤解万难------"></p>
-<p> <br>burnintest  拷机软件  免费试用30天  </p>
-<p><img src="http://img1.ph.126.net/iFcjHlm6YIxhUmfX206yqA==/6630750006840901435.png" alt="linux 系统测试软件4枚 - leaf - ------勤解万难------" title="linux 系统测试软件4枚 - leaf - ------勤解万难------"></p>
-<p> <br>iptop 流量监控工具<br>sudo apt-get install iptop  </p>
-<p><img src="http://img1.ph.126.net/7R2IJ6fgI8Ks6ZEkMrBNKQ==/6630889644817625518.png" alt="linux 系统测试软件4枚 - leaf - ------勤解万难------" title="linux 系统测试软件4枚 - leaf - ------勤解万难------"></p>
-<p> <br>流量监控工具iptraf (功能强大)<br>sudo apt-get install iptraf  </p>
-<p><img src="http://img1.ph.126.net/RGv0IA5WQCZEyMpDM8fo4w==/6631408614304992811.png" alt="linux 系统测试软件4枚 - leaf - ------勤解万难------" title="linux 系统测试软件4枚 - leaf - ------勤解万难------"></p>
 
       
     </div>

@@ -160,7 +160,7 @@
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">367</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">368</span></a>
 
   </li>
         <li class="menu-item menu-item-schedule">
@@ -249,7 +249,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">367</span>
+          <span class="site-state-item-count">368</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -328,6 +328,229 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/3196769991/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="ZorroYe">
+      <meta itemprop="description" content="升级认知，看透本质">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Ye's Blog">
+    </span>
+
+    
+    
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/3196769991/" class="post-title-link" itemprop="url">鸟哥基础第十三章</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2012-09-20 10:34:00" itemprop="dateCreated datePublished" datetime="2012-09-20T10:34:00+08:00">2012-09-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/posts/3196769991/" class="post-meta-item leancloud_visitors" data-flag-title="鸟哥基础第十三章" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/posts/3196769991/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/posts/3196769991/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span class="post-meta-item-text">本文字数：</span>
+              <span>961</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>shell脚本对于系统管理非常重要，不会写也至少要能读懂  </p>
+<p>脚本开头有个特殊的注释：#!  这个是标注脚本所要用的解释器。  </p>
+<blockquote>
+<p>如#!/bin/bash    #!一定要合用。  </p>
+</blockquote>
+<p>test、[ ]  </p>
+<blockquote>
+<p>test的参数非常重要，不然就看不懂脚本<br>0表示成立，非0表示不成立<br>类型检测  </p>
+<blockquote>
+<p>-e：文件名是否存在，exist<br>-f：是否为文件,file<br>-d：目录<br>-b、-c、-s、-p、-L  </p>
+</blockquote>
+<p>权限  </p>
+<blockquote>
+<p>-r、-w、-x<br>-u、-g、-k  suid 、sgid、sbit (就是特殊权限)<br>-s：是否为空白文件  </p>
+</blockquote>
+<p>比较  </p>
+<blockquote>
+<p>-nt：newer than<br>-ot：older than<br>-et：equal than  </p>
+</blockquote>
+<p>数值判断  </p>
+<blockquote>
+<p>-eq： equal<br>-ne： not equal<br>-gt：  greater than<br>-lt：   less than<br>-ge： greater than or equal<br>-le：  less than or equal  </p>
+</blockquote>
+<p>字符串判断  </p>
+<blockquote>
+<p>-z：是否为空字符串<br>-n：是否为非空字符串<br>=<br>!=  </p>
+</blockquote>
+<p>多条件判断  </p>
+<blockquote>
+<p>-a：and 2个或多个条件一起满足<br>-o：or    满足一个即可<br>！  </p>
+</blockquote>
+</blockquote>
+<p>shell脚本的默认变量和函数的默认变量  </p>
+<blockquote>
+<p>shell  </p>
+<blockquote>
+<p>   sh shell.sh                opt1     opt2     opt3<br>           $0                       $1       $2         $3  </p>
+</blockquote>
+<p>function  </p>
+<blockquote>
+<p>function printit(){…}<br>printit    1<br>  $0       $1  </p>
+</blockquote>
+<p>shell的$1是脚本后面跟的参数，而函数的$1是函数后面的参数，两者不一致  </p>
+</blockquote>
+<p>判断、循环语句，[]主要用在if里面  </p>
+<blockquote>
+<p>if […]; then  </p>
+<blockquote>
+<p>…  </p>
+</blockquote>
+<p>elif […];then  </p>
+<blockquote>
+<p>….  </p>
+</blockquote>
+<p>else  </p>
+<blockquote>
+<p>….  </p>
+</blockquote>
+<p>fi<br>-—————————————————–  </p>
+</blockquote>
+<blockquote>
+<p>case $ in  </p>
+<blockquote>
+<p>“”)  </p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>……  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>;;  </p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>“”)  </p>
+<blockquote>
+<p>……<br>;;  </p>
+</blockquote>
+<p>*)  </p>
+<blockquote>
+<p>…..<br>;;  </p>
+</blockquote>
+</blockquote>
+<p>esac<br>-——————————————————-<br>while […]  成立的话一直运行。<br>do  </p>
+<blockquote>
+<p>…..  </p>
+</blockquote>
+<p>done<br>-——————————————————-<br>until [….] 成立的话就不再执行<br>do  </p>
+<blockquote>
+<p>…..  </p>
+</blockquote>
+<p>done<br>-——————————————————-<br>for ((   ..;   ..;   …   )) 两个括号是因为shell里面的数值运算多是先定义才能用的，不定义的话就要用(())括起来<br>do                             #for的的条件是清楚的，而while是不清楚的  </p>
+<blockquote>
+<p>………..  </p>
+</blockquote>
+<p>done<br>-———————————–<br>for var in  .. .. ..<br>do  </p>
+<blockquote>
+<p>……..  </p>
+</blockquote>
+<p>done  </p>
+</blockquote>
+<p>脚本调试  </p>
+<blockquote>
+<p>sh -x sh15.sh 可以针对脚本一步一步执行，便于找出问题所在  </p>
+<p>sh -n sh15.sh  检查语法错误，没错误的话不会显示任何东西</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/4086592917/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -362,7 +585,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -683,7 +906,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -972,7 +1195,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1196,7 +1419,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1329,7 +1552,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1516,7 +1739,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1695,7 +1918,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1844,7 +2067,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1993,7 +2216,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
+                <time title="修改时间：2020-09-08 15:46:04" itemprop="dateModified" datetime="2020-09-08T15:46:04+08:00">2020-09-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -2072,124 +2295,6 @@
 <blockquote>
 <p><img src="http://img1.ph.126.net/YMrOqIv9DPeNgD8Sk2_S1Q==/1004302716921510971.jpg" alt="鸟哥基础第三章、第四章 - leaf - ------坚持雅操------" title="鸟哥基础第三章、第四章 - leaf - ------坚持雅操------"></p>
 </blockquote>
-
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://zorroye.github.io/posts/2435517592/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.png">
-      <meta itemprop="name" content="ZorroYe">
-      <meta itemprop="description" content="升级认知，看透本质">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Ye's Blog">
-    </span>
-
-    
-    
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/2435517592/" class="post-title-link" itemprop="url">鸟哥基础第二章</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2012-09-11 09:51:00" itemprop="dateCreated datePublished" datetime="2012-09-11T09:51:00+08:00">2012-09-11</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2020-08-18 16:44:45" itemprop="dateModified" datetime="2020-08-18T16:44:45+08:00">2020-08-18</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/%E9%B8%9F%E5%93%A5%E7%9A%84%E7%A7%81%E6%88%BF%E8%8F%9C/" itemprop="url" rel="index"><span itemprop="name">鸟哥的私房菜</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/posts/2435517592/" class="post-meta-item leancloud_visitors" data-flag-title="鸟哥基础第二章" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/posts/2435517592/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/posts/2435517592/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-              <span class="post-meta-item-text">本文字数：</span>
-              <span>147</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-              <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <p>学习：<br>命令行是一定要学的，虽然记了又忘，但还是要忘了再记。<br>shell非常重要，shell脚本对服务器管理非常有用，必学阿  </p>
-<p>文件安全性，账户管理，软件的安装配置，登录文件的分析，自动化任务计划，编写程序多是管理服务器必备的基础知识<br>虽然很多，但是必须要掌握。  </p>
-<p>资料的收集归类、多学多练 是需要的必备条件。</p>
 
       
     </div>
